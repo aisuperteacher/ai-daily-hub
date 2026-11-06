@@ -1,0 +1,1173 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffe168">
+<meta name="description" content="2026年11月4日全球AI大模型与Agent技术官方日报，13家厂商官方增量巡检，包含完整七维分析、版本基线、迁移矩阵与工程清单。">
+<title>全球 AI 大模型与 Agent 技术官方日报 · 2026-11-04</title>
+<style>
+:root { color-scheme: light; --ink:#17202b; --paper:#fffaf0; --line:#1d2631; --accent:#ffdc45; --warm:#ff7c58; --cool:#84dfe7; --muted:#5d6570; }
+* {box-sizing:border-box}
+html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body {margin:0; background:var(--paper); color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","Microsoft Yahei","PingFang SC",sans-serif;font-size:16px;line-height:1.75; overflow-x:hidden}
+a {color:#0058af; overflow-wrap:anywhere;text-underline-offset:3px}
+a:focus-visible {outline:3px solid #f56b38;outline-offset:2px}
+.site-head {background:var(--accent);border-bottom:5px solid var(--line); padding:1.8rem max(20px,calc((100vw - 1140px)/2)) 1.3rem}
+.kicker {display:inline-block;font-size:12px;font-weight:850;letter-spacing:.12em;padding:.25rem .55rem;background:var(--ink);color:#fff}
+.site-head h1 {font-size:clamp(1.85rem,5vw,3.5rem);line-height:1.18;letter-spacing:-.055em;max-width:1050px;margin:.8rem 0}
+.site-head p {margin:.4rem 0;font-weight:650}
+.subhead {color:#37434a;font-size:.94rem}
+.shell {max-width:1220px;margin:0 auto;padding:20px 26px 80px;display:grid;grid-template-columns:225px minmax(0,1fr);gap:26px}
+.toc {align-self:start;position:sticky;top:16px;max-height:calc(100vh - 32px);overflow-y:auto;background:#fff;border:2px solid var(--line);box-shadow:5px 5px 0 var(--line);padding:12px}
+.toc-title {font-weight:900;font-size:.88rem;letter-spacing:.06em;padding:.35rem .4rem;margin-bottom:8px;background:var(--cool)}
+.toc a {display:block;text-decoration:none;color:var(--ink);padding:.43rem .4rem;border-bottom:1px solid #e3e3df;font-size:.79rem;line-height:1.35;font-weight:650}
+.toc a:hover {background:var(--accent)}
+.paper {min-width:0;max-width:100%;}
+.paper h1 {display:none}
+.paper h2 {background:var(--cool);padding:.8rem 1rem;border:3px solid var(--line);box-shadow:6px 6px 0 var(--line);font-size:clamp(1.13rem,2.7vw,1.55rem);line-height:1.35;margin:3rem 0 1.3rem;scroll-margin-top:24px}
+.paper h3 {font-size:1.09rem;margin:1.9rem 0 .7rem;padding-left:.65rem;border-left:6px solid var(--warm);line-height:1.45}
+.paper p {margin:.7em 0 1em;overflow-wrap:anywhere}
+.paper strong {font-weight:850}
+.paper em {color:#344552}
+.paper h2:first-of-type {margin-top:1.5rem}
+.paper blockquote {margin:1.25em 0;padding:12px 16px;background:#fff0c8;border-left:5px solid var(--warm)}
+.paper hr {margin:2.5rem 0;border:0;border-top:3px solid var(--ink)}
+.table-scroll {max-width:100%; overflow-x:auto; overscroll-behavior-x:contain;margin:1.1rem 0 1.8rem;border:2px solid var(--line);border-radius:2px;background:white;-webkit-overflow-scrolling:touch}
+table {width:100%;min-width:580px;border-collapse:collapse;text-align:left;font-size:.86rem;line-height:1.58}
+th,td {border-bottom:1px solid #d4d3cc;padding:.7rem .8rem;vertical-align:top;overflow-wrap:anywhere}
+th {background:#ffde6b;color:#142029;font-weight:850;white-space:normal}
+tr:nth-child(even) td {background:#f9faf8}
+pre {margin:1.1rem 0 1.4rem;max-width:100%;overflow:auto;background:#1c2630;color:#f3f6f7;padding:15px 18px;border-left:5px solid var(--warm);font-size:.82rem;line-height:1.52;border-radius:0 4px 4px 0;tab-size:2;-webkit-overflow-scrolling:touch}
+pre code {color:inherit;white-space:pre;overflow-wrap:normal;font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace}
+code {font-family:ui-monospace,Consolas,monospace;font-size:.9em;background:#f0eee4;padding:.14rem .3rem;overflow-wrap:anywhere}
+pre code {background:none;padding:0}
+ul,ol {padding-left:1.45em}
+li {margin:.38em 0}
+input[type=checkbox] {accent-color:#202b33; vertical-align:middle}
+.site-footer {max-width:1140px;margin:0 auto 30px;padding:1rem 20px;border-top:3px solid var(--line);font-size:.82rem;color:var(--muted)}
+.skip {position:absolute;left:-9999px;top:0;background:#fff;padding:12px}
+.skip:focus {left:12px;z-index:9}
+@media(max-width:850px){.shell{display:block;padding:16px 16px 70px}.toc{position:static;max-height:none;margin:0 0 1.6rem;box-shadow:4px 4px 0 var(--line)}.toc-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 9px}.site-head{padding:1.4rem 16px}.paper h2{box-shadow:4px 4px 0 var(--line)}}
+@media(max-width:460px){body{font-size:15px}.toc-links{display:block}.shell{padding:12px 12px 52px}.site-head{padding:1.2rem 14px}.paper h2{font-size:1.18rem;padding:.7rem .65rem;box-shadow:3px 3px 0 var(--line)}.paper h3{font-size:1rem}.paper p{line-height:1.76} pre{font-size:.72rem;padding:11px 10px}th,td{padding:.5rem .6rem}table{font-size:.79rem}.table-scroll{margin-left:0;margin-right:0}}
+@media print {.site-head{background:#fff}.shell{display:block}.toc{display:none}.paper h2{box-shadow:none;break-after:avoid}table{min-width:0}pre{white-space:pre-wrap;overflow-wrap:anywhere}.table-scroll{overflow:visible}a{text-decoration:underline;color:#000}}
+
+.paper h2 {overflow-wrap:anywhere;} .paper h3 {scroll-margin-top:15px;} .paper .task-list-item {list-style:none;margin-left:-1.45em;} .paper .task-list-item input{margin-right:.55em;}
+
+:root {--accent:#ffe168;--warm:#ff7e54;--cool:#8bdce4}
+.site-head{position:relative;isolation:isolate;overflow:hidden}
+.site-head:after{content:"2026 / 11 / 04";position:absolute;right:max(15px,calc((100vw - 1160px)/2));bottom:-.28em;font-weight:900;line-height:1;color:rgba(19,27,34,.11);font-size:clamp(4.4rem,12vw,9rem);letter-spacing:-.08em;z-index:-1;white-space:nowrap;pointer-events:none}
+.paper h2 {background:#8bdce4}
+.paper h2:nth-of-type(4n+2){background:#ffe168}
+.paper h2:nth-of-type(4n+3){background:#ffa785}
+.paper h2:nth-of-type(4n){background:#add6b3}
+.paper h3{font-weight:850}
+.paper > p:nth-of-type(-n+5){font-size:1.035em}
+.toc a:focus-visible{outline:3px solid #fa7449}
+.task-list-item{position:relative}
+mark{background:#ffe57b}
+@media(max-width:460px){.site-head:after{font-size:4.5rem;bottom:-.23em}.paper>p:nth-of-type(-n+5){font-size:1em}}
+@media print {body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.paper h2{background:#fff!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#content">跳转正文</a>
+<header class="site-head">
+<span class="kicker">GLOBAL AI / AGENT OFFICIAL DAILY</span>
+<h1>全球 AI 大模型与 Agent<br>技术官方日报</h1>
+<p>2026.11.04 · 北京时间 · 十三家厂商</p>
+<div class="subhead">完整独立可读 · 官方增量核验 · 单文件离线 HTML</div>
+</header>
+<div class="shell">
+<nav class="toc" aria-label="报告目录"><div class="toc-title">INDEX / 目录</div><div class="toc-links"><a href="#s1">今日必看摘要</a><a href="#s2">一、OpenAI｜Java SDK 4.97.0 → 4.98.0：身份联合与长连接 Agent 能力</a><a href="#s3">二、Anthropic｜Claude Code 2.1.317 / 2.1.318：企业权限、MCP、Hooks 和恢复可靠性</a><a href="#s4">三、Anthropic｜Claude 文本水印：模型覆盖、参数约束与内容治理</a><a href="#s5">四、Anthropic｜Java SDK 3.4.0：Analytics、RBAC 和 Agent 错误类型</a><a href="#s6">五、OpenAI｜Codex CLI 0.167.0-alpha.4</a><a href="#s7">六、Google｜Gemini CLI 0.67.0 Nightly：Whisper 下载状态修复</a><a href="#s8">七、13 家厂商官方巡检状态表</a><a href="#s9">八、正式版本与 Model ID 基线</a><a href="#s10">九、跨厂商兼容性、迁移与生产风险矩阵</a><a href="#s11">十、今日工程行动 Checklist</a><a href="#s12">十一、综合判断</a></div></nav>
+<main id="content" class="paper"><h1>全球 AI 大模型与 Agent 技术官方日报</h1>
+<p><strong>2026 年 11 月 4 日（星期三）｜北京时间｜13 家厂商官方增量巡检</strong></p>
+<p><strong>核验窗口：</strong>以 2026 年 11 月 3 日上一期日报为基线，检查截至 2026 年 11 月 4 日上午约 08:35（北京时间）已经公开、能够核实的官方资料。GitHub Release 的原始 UTC 日期单独注明。</p>
+<p>本期重点不是新基础模型的性能排名，而是 <strong>OpenAI Java SDK 的认证与 Agent 协议增强、Claude Code 的执行安全和恢复修复，以及 Anthropic 文本水印正式覆盖范围</strong>。</p>
+<p>本期确认：OpenAI Java SDK 发布 <code>4.97.0</code>、<code>4.98.0</code>；Claude Code 发布 <code>2.1.317</code>、<code>2.1.318</code>；Anthropic 在 11 月 3 日更新文本水印的适用说明。Codex 和 Gemini CLI 则有预发布变化。另外补录 Anthropic Java SDK <code>3.4.0</code>，并明确其实际发布日期。</p>
+<p>所有更新均区分正式版、Beta、Alpha、Nightly、历史补录与无法充分核实的渠道，不因没有新闻就给厂商强行凑数。</p>
+<hr/>
+<h2 id="s1">今日必看摘要</h2>
+<p><strong>① OpenAI Java SDK 4.98.0 正式发布（11 月 3 日 UTC · 必看 · Java / 企业 AI Gateway）。</strong> <code>4.97.0</code> 增强 Live Responses 工具委派、WebSocket 最终响应重建和 MCP 参数流进度；<code>4.98.0</code> 增加工作负载身份提供方及身份联合规则相关 API 定义。适合企业 Java Agent、长连接和无长期静态密钥的身份治理。官方：<a href="https://github.com/openai/openai-java/releases/tag/v4.98.0" rel="noopener noreferrer" target="_blank">OpenAI Java SDK 发布记录</a>。</p>
+<p><strong>② Claude Code 2.1.318：MCP 配置、安全确认与任务恢复修复（11 月 4 日 08:01 北京时间发布 · 必看）。</strong> 连续两个版本涉及 Agent SDK Hook 失败阻断、身份信息外发确认、MCP 配置文件并发写入、会话恢复、Compaction、Headless 任务状态和企业 Gateway 成本治理。<code>2.1.318</code> 是目前已核实的 Latest 正式版。官方：<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.317" rel="noopener noreferrer" target="_blank">2.1.317</a> · <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.318" rel="noopener noreferrer" target="_blank">2.1.318</a>。</p>
+<p><strong>③ Anthropic：明确 Claude 文本水印的模型覆盖与参数限制（11 月 3 日官方日志 · 建议看，内容平台与合规团队必看）。</strong> 官方确认部分 Claude 模型的文本带有水印；在 Sonnet 4.6 上，非默认 <code>temperature</code>、<code>top_p</code>、<code>top_k</code> 可能使水印失效。文本水印不添加隐藏字符或额外 Token，检测接口仍为限定访问。官方：<a href="https://platform.claude.com/docs/en/release-notes/overview" rel="noopener noreferrer" target="_blank">Claude Release Notes</a> · <a href="https://platform.claude.com/docs/en/build-with-claude/text-watermark" rel="noopener noreferrer" target="_blank">Text Watermark</a>。</p>
+<hr/>
+<h2 id="s2">一、OpenAI｜Java SDK 4.97.0 → 4.98.0：身份联合与长连接 Agent 能力</h2>
+<p><strong>官方版本：<code>v4.97.0</code>、<code>v4.98.0</code></strong></p>
+<p><strong>发布时间：2026-11-03 18:21、22:09 UTC，即北京时间 11 月 4 日 02:21、06:09</strong></p>
+<p><strong>状态：正式 Release；<code>4.98.0</code> 是已核实的 Latest</strong></p>
+<p><strong>优先级：必看</strong></p>
+<p>官方直接来源：<a href="https://github.com/openai/openai-java/releases/tag/v4.97.0" rel="noopener noreferrer" target="_blank">OpenAI Java SDK 4.97.0</a> · <a href="https://github.com/openai/openai-java/releases/tag/v4.98.0" rel="noopener noreferrer" target="_blank">4.98.0</a></p>
+<h3 id="sub1">1）内容是什么？准确版本与具体功能</h3>
+<div aria-label="可横向滚动的数据表" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>版本</th>
+<th>官方变更</th>
+<th>实际工程意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.97.0</td>
+<td>Live Responses 扩展 Delegation Tool 选项</td>
+<td>增强实时 Agent 的工具委派类型</td>
+</tr>
+<tr>
+<td>4.97.0</td>
+<td>WebSocket 支持可选的最终 Response 重建</td>
+<td>改善流式结果的最终对象获取</td>
+</tr>
+<tr>
+<td>4.97.0</td>
+<td>收集 MCP 参数的流式进度</td>
+<td>便于观察工具参数生成过程</td>
+</tr>
+<tr>
+<td>4.97.0</td>
+<td>修复 X.509 别名与 Issuer Hint 的处理</td>
+<td>影响证书身份选择的兼容性</td>
+</tr>
+<tr>
+<td>4.98.0</td>
+<td>新增 Workload Identity Providers 与 Federation Rules 的 API 定义</td>
+<td>为工作负载身份联合提供 SDK 接口支持</td>
+</tr>
+</tbody>
+</table></div>
+<p>两次 Release 都是真正的新版本，不是昨天 <code>4.96.0</code> 的重复报道。</p>
+<p>需要强调：<strong>SDK 增加 API 定义，不等于每个 OpenAI 组织已经开通对应的身份联合管理权限。</strong> 是否可以实际创建、使用或管理工作负载身份提供方，仍须核实 API 官方文档及当前组织权限。</p>
+<h3 id="sub2">2）核心变化、技术机制与知识点</h3>
+<p><strong>Workload Identity Federation</strong></p>
+<p>传统服务端可能将长期 API Key 放入环境变量、密钥管理系统或 CI Secret。身份联合的方向是使用工作负载所属平台提供的可信身份，通过受控的信任关系获得访问凭据，而不是永久持有某个共享静态密钥。</p>
+<pre aria-label="可横向滚动的代码块" tabindex="0"><code class="language-text">Java / Spring Boot Workload
+          |
+          v
+Cloud / Runtime Identity
+          |
+          v
+Federation Trust Rules
+          |
+          v
+Scoped Authentication
+          |
+          v
+OpenAI API
+</code></pre>
+<p>这是通用身份联合架构解释，<strong>不是 OpenAI 本次新增功能的完整正式认证流程或请求 Schema</strong>。具体支持哪些身份提供方、Claim、Audience、Subject、Token 交换及权限范围，不能根据 SDK Release Notes 自行推断。</p>
+<p><strong>WebSocket Final Response Reconstruction</strong></p>
+<p>流式调用可能将一个 Response 拆分为多个事件：</p>
+<pre aria-label="可横向滚动的代码块" tabindex="0"><code class="language-text">response.created
+       |
+       v
+response.output.delta
+       |
+       v
+tool / MCP progress
+       |
+       v
+response.completed
+       |
+       v
+Final Response Object
+</code></pre>
+<p>新增的可选重建能力有助于调用者从流式事件中获得最终响应对象。但企业程序仍应明确区分：</p>
+<ul>
+<li>正常完成的模型输出。</li>
+<li>客户端断线导致的未完成输出。</li>
+<li>工具已经执行但模型尚未形成最终回答。</li>
+<li>Response 已完成但后续业务持久化失败。</li>
+</ul>
+<p><strong>流重建不等于业务事务已经提交。</strong></p>
+<p><strong>MCP 参数生成进度</strong></p>
+<p>模型可能分批输出 MCP 工具参数。这些进度事件可用于界面展示、调试和观测，但参数尚未完整生成时，不应该随意执行具有业务副作用的工具。工具执行应使用完整、经过 Schema 校验且已完成授权的输入。</p>
+<h3 id="sub3">3）为什么有价值？官方证据与性能边界</h3>
+<p>价值主要体现在三个方面：第一，身份联合有助于长期改善多环境 API 密钥治理；第二，WebSocket 结果重建可以减少开发者手动拼接流式事件的复杂度；第三，MCP 参数进度有利于定位 Agent 究竟卡在模型生成、参数组合、网关调用还是工具执行。</p>
+<p>不过，官方没有公布能够泛化到所有 Java 工作负载的统一 P95 延迟、Token 成本或准确率提升数据。本次也没有宣布新的 GPT 基础模型、Context Window 或通用 Thinking 档位。</p>
+<h3 id="sub4">4）适用产品、业务场景及工程用途</h3>
+<p>重点适用于 Java 17+ 的 Responses WebSocket 应用、Spring Boot、企业 AI Gateway、MCP Tool Calling、Live Agent、CI/CD、Kubernetes 工作负载及多组织密钥管理。</p>
+<p>对于仍只使用普通 HTTPS 同步请求、没有相关工具需求的项目，没有必要为了这些新功能立即重构架构。</p>
+<h3 id="sub5">5）对 Java、Nacos、分布式与企业 AI Gateway 的帮助</h3>
+<p>建议在 Provider Adapter 中分离：</p>
+<pre aria-label="可横向滚动的代码块" tabindex="0"><code class="language-text">ProviderAuthStrategy
+    |
+    +-- Static API Key
+    |
+    +-- Managed Credential
+    |
+    +-- Federated Workload Identity
+</code></pre>
+<p>同时把 <code>requestId</code>、<code>responseId</code>、<code>streamId</code>、<code>toolCallId</code>、<code>credentialSource</code> 和 <code>businessTaskId</code> 关联起来。</p>
+<p>Nacos 可以保存<strong>非敏感路由和策略配置</strong>，但不建议在普通明文配置中保存长期密钥、证书私钥或短期访问令牌。</p>
+<p>域内网关应继续处理业务身份、租户和资源授权，不能把模型供应商的工作负载认证当作业务授权。</p>
+<h3 id="sub6">6）实践步骤、代码与验收标准</h3>
+<p>建议在独立测试分支将 Maven 依赖固定为：</p>
+<pre aria-label="可横向滚动的代码块" tabindex="0"><code class="language-xml">&lt;dependency&gt;
+    &lt;groupId&gt;com.openai&lt;/groupId&gt;
+    &lt;artifactId&gt;openai-java&lt;/artifactId&gt;
+    &lt;version&gt;4.98.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>执行：</p>
+<pre aria-label="可横向滚动的代码块" tabindex="0"><code class="language-powershell">mvn dependency:tree
+mvn test
+</code></pre>
+<p>然后至少覆盖以下测试：</p>
+<ol>
+<li>旧版普通 Responses 请求继续正常工作。</li>
+<li>WebSocket 在正常完成、服务端错误和网络中断时能给出正确状态。</li>
+<li>MCP 参数进度只用于展示和观测，未完成参数不会提前执行。</li>
+<li>X.509 别名选择符合既有认证配置。</li>
+<li>新身份联合能力只在确认账户权限和正式 API 文档后测试。</li>
+<li>第三方 Base URL 不支持新事件或管理接口时，错误可以准确定位，不会无限重试。</li>
+</ol>
+<p><strong>验收标准：</strong>无鉴权回归、无重复业务副作用、流式完成状态准确、事件类型完整、Token 和成本能够复核。</p>
+<h3 id="sub7">7）优先级、Breaking Change 与迁移判断</h3>
+<p><strong>必看；Java AI Gateway 在用者建议测试后升级。</strong></p>
+<p>当前 Release Notes 没有声明统一的 Major Breaking Change，但 WebSocket、认证、模型工具委派与证书处理都可能影响特定环境。</p>
+<p>特别是第三方 API 中转站：支持普通 OpenAI 兼容 Chat Completions，不代表支持 Live Responses、WebSocket、MCP 参数事件或工作负载身份管理。</p>
+<hr/>
+<h2 id="s3">二、Anthropic｜Claude Code 2.1.317 / 2.1.318：企业权限、MCP、Hooks 和恢复可靠性</h2>
+<p><strong>正式版本：<code>v2.1.317</code>、<code>v2.1.318</code></strong></p>
+<p><strong>原始发布时间：2026-11-03 01:25 UTC、2026-11-04 00:01 UTC</strong></p>
+<p><strong>北京时间：11 月 3 日 09:25、11 月 4 日 08:01</strong></p>
+<p><strong>当前已核实 Latest：<code>2.1.318</code></strong></p>
+<p><strong>优先级：必看</strong></p>
+<p>官方直接来源：<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.317" rel="noopener noreferrer" target="_blank">Claude Code 2.1.317</a> · <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.318" rel="noopener noreferrer" target="_blank">Claude Code 2.1.318</a></p>
+<h3 id="sub8">1）内容是什么？准确版本和主要变化</h3>
+<p>两次更新集中在 Agent 执行安全、身份与配置保护、企业 Gateway、会话恢复、MCP 和无人值守任务。</p>
+<div aria-label="可横向滚动的数据表" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th>主要变化</th>
+<th>版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agent SDK Hooks</td>
+<td><code>onFailure: "block"</code>：Hook 失败可以阻断动作</td>
+<td>2.1.317</td>
+</tr>
+<tr>
+<td>隐私安全</td>
+<td>Web 或 Shell 工具外发账户邮箱前增加确认</td>
+<td>2.1.317</td>
+</tr>
+<tr>
+<td>企业成本</td>
+<td>Claude Apps Gateway 增加成本分析接口与群组归属记录</td>
+<td>2.1.317</td>
+</tr>
+<tr>
+<td>OTel</td>
+<td>新增 Plan、Seat、Provider、Custom Base URL 属性</td>
+<td>2.1.317</td>
+</tr>
+<tr>
+<td>第三方 Gateway</td>
+<td>修复安全检查返回 403/422 时 Auto Mode 连续失败</td>
+<td>2.1.317</td>
+</tr>
+<tr>
+<td>MCP</td>
+<td>修复配置锁、写入失败误报成功、服务端握手兼容</td>
+<td>2.1.318</td>
+</tr>
+<tr>
+<td>Compaction</td>
+<td>修复空闲压缩错误地用非摘要内容替换会话</td>
+<td>2.1.318</td>
+</tr>
+<tr>
+<td>Resume</td>
+<td>修复 <code>--continue</code> 丢失历史及恢复后工具状态异常</td>
+<td>2.1.318</td>
+</tr>
+<tr>
+<td>Headless</td>
+<td>修复被中断任务错误报告成功、停止后继续执行等问题</td>
+<td>2.1.318</td>
+</tr>
+<tr>
+<td>认证</td>
+<td>增加登录到期时间和提前告警</td>
+<td>2.1.318</td>
+</tr>
+<tr>
+<td>企业网关</td>
+<td><code>mantle</code> 上游新增 <code>assume_role</code> 相关能力</td>
+<td>2.1.318</td>
+</tr>
+</tbody>
+</table></div>
+<p>完整 Release Notes 还包含云端 Runner、Remote Control、证书、插件和共享网络主目录配置的多项修复。</p>
+<h3 id="sub9">2）核心技术机制与关键知识点</h3>
+<p><strong>Hook 失败应当怎样处理？</strong></p>
+<p>在权限敏感的场景，Hook 不应默认采用失败开放策略。例如：</p>
+<pre aria-label="可横向滚动的代码块" tabindex="0"><code class="language-text">Agent Requests Tool
+        |
+        v
+PreTool Hook
+        |
+        +-- Allow -&gt; Tool Execution
+        |
+        +-- Deny  -&gt; Stop
+        |
+        +-- Failure
+                 |
+                 v
+          onFailure: block
+                 |
+                 v
+               Stop
+</code></pre>
+<p>这里的 <code>onFailure: "block"</code> 是 Agent SDK Hook Callback 的新增配置能力。它不意味着所有现有 Hook 都自动采用阻断策略，也不意味着客户端 Hook 可以代替业务服务端授权。</p>
+<p><strong>MCP 配置并发写入</strong></p>
+<p>同一用户可能同时打开多个 Claude Code 终端、IDE、远程会话。这些进程可能同时修改 MCP、Plugin 或登录设置。</p>
+<p>如果某个进程在没有文件锁时写入配置，就存在丢失更新或覆盖其他进程修改的问题。新版修复了 <code>claude mcp add/remove</code> 的锁处理，并改善共享网络主目录中的配置保存行为。</p>
+<p>但官方也明确提示，<strong>其他进程之后保存配置时仍有可能替换先前的配置内容</strong>。因此不能把它理解为已经提供跨机器、强一致性的分布式配置事务。</p>
+<p><strong>Agent Resume 与业务副作用</strong></p>
+<p>这次修复尤其值得企业 Agent 开发者关注：</p>
+<pre aria-label="可横向滚动的代码块" tabindex="0"><code class="language-text">Agent Running
+      |
+      v
+Tool Executed
+      |
+      v
+Session Interrupted
+      |
+      v
+Resume
+      |
+      v
+Check Execution Ledger
+      |
+      +-- Already Completed -&gt; Reuse Result
+      |
+      +-- Not Executed -&gt; Safe Retry
+      |
+      +-- Unknown -&gt; Reconcile / Human Review
+</code></pre>
+<p>如果恢复时错误地认为某个工具没有执行，可能重复提交订单、发送通知或更新数据。如果错误地认为任务已经成功，则可能遗漏后续操作。</p>
+<p>因此，<strong>正确的 Agent 恢复必须建立在实际执行证据上，而不仅是对话历史。</strong></p>
+<p><strong>Compaction 的正确性</strong></p>
+<p>这次修复了某些空闲 Compaction 把会话内容替换为非摘要回复的问题。Compaction 不只是压缩 Token，更要保持任务目标、权限限制、已完成操作和待处理事项的一致性。对长周期 AI Coding 和企业 Agent 而言，错误压缩可能导致后续任务逻辑偏移。</p>
+<h3 id="sub10">3）为什么有价值？官方证据与性能边界</h3>
+<p>这两版最实际的收益是减少权限错误、配置丢失、任务状态不一致和长会话问题。对通过第三方 API Base URL、远程 Runner 或多个终端协作的用户，比一般界面更新更重要。</p>
+<p>但官方没有提供可推广的统一准确率、P95 加速或 Token 成本下降数字。新增 OTel 属性也只是提高可观测性，并不保证实际调用更便宜。</p>
+<h3 id="sub11">4）适用业务和工程场景</h3>
+<p>重点适用于 Windows/PowerShell、Git Bash、Claude Code、Agent SDK、MCP、Skills、Plugins、企业 IdP、Claude Apps Gateway、Bedrock、远程 Runner、Cloud Sessions、IDE 和 Headless CI。</p>
+<p>其中部分修复专门针对 macOS/Linux，不能未经验证地描述为 Windows 同样受到完全相同的影响。</p>
+<h3 id="sub12">5）对 Java、Spring Boot、Nacos、企业 Gateway 的帮助</h3>
+<p>建议将 Agent 任务设计为可追踪的状态机，并保存：</p>
+<pre aria-label="可横向滚动的代码块" tabindex="0"><code class="language-text">taskId
+sessionId
+agentId
+parentAgentId
+modelProvider
+effectiveEffort
+toolCallId
+permissionDecision
+executionAttempt
+idempotencyKey
+resumeCheckpoint
+finalBusinessStatus
+</code></pre>
+<p>另外，企业 Gateway 最好区分模型费用、开发者归属、团队归属与最终业务成本。</p>
+<p>2.1.317 的成本分析端点属于 Claude Apps Gateway 的管理能力，不能与 Anthropic Claude Platform 的 Analytics API 混为一谈。</p>
+<p><code>assume_role</code> 也应理解为特定上游的身份与费用归属能力，不代表任意第三方 Base URL 都支持它。</p>
+<h3 id="sub13">6）实际升级、操作步骤及验收标准</h3>
+<p>PowerShell：</p>
+<pre aria-label="可横向滚动的代码块" tabindex="0"><code class="language-powershell">claude --version
+where.exe claude
+winget list Anthropic.ClaudeCode
+</code></pre>
+<p>根据实际安装渠道进行升级。官方目前优先推荐原生安装方式；npm 安装方式已被标为 Deprecated，不建议默认使用旧 npm 升级路径。</p>
+<p>测试建议覆盖：</p>
+<ol>
+<li>Hook 回调失败时明确拒绝工具执行。</li>
+<li>两个终端同时修改 MCP 设置，检查是否产生配置覆盖。</li>
+<li>共享主目录或只读配置文件情况下，不应把保存失败报告为成功。</li>
+<li><code>--continue</code> 在异常工具响应后保留必要历史。</li>
+<li>Stop、Resume 和后台子 Agent 不能导致工具重复执行。</li>
+<li>自定义 Gateway 403/422 能得到正确错误处理。</li>
+<li><code>claude auth status</code> 可以正确反映登录有效状态。</li>
+<li>长会话 Compaction 后任务目标和权限仍保持一致。</li>
+</ol>
+<p><strong>验收标准：</strong>未授权工具执行为零、配置失败可感知、历史恢复正确、业务操作不重复、日志可追踪。</p>
+<h3 id="sub14">7）优先级、兼容性与迁移成本</h3>
+<p><strong>必看。已使用 Claude Code 的开发环境建议先在隔离仓库升级验证。</strong></p>
+<p>若有复杂 MCP、Hooks、远程 Runner 或自建 Gateway，应进行专门回归，避免仅根据版本号判断安全。</p>
+<p>本次不代表 Claude 基础模型的 Context Window、Thinking 档位、模型价格或正式 Model ID 发生变化。</p>
+<hr/>
+<h2 id="s4">三、Anthropic｜Claude 文本水印：模型覆盖、参数约束与内容治理</h2>
+<p><strong>官方日期：2026-11-03</strong></p>
+<p><strong>类型：API 行为说明及内容来源治理</strong></p>
+<p><strong>状态：支持模型已经启用；检测能力仍为限定预览</strong></p>
+<p><strong>优先级：建议看；内容平台与合规团队必看</strong></p>
+<p>官方来源：<a href="https://platform.claude.com/docs/en/release-notes/overview" rel="noopener noreferrer" target="_blank">Claude Platform Release Notes</a> · <a href="https://platform.claude.com/docs/en/build-with-claude/text-watermark" rel="noopener noreferrer" target="_blank">Text Watermark</a> · <a href="https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content" rel="noopener noreferrer" target="_blank">How Claude Marks AI-Generated Content</a></p>
+<h3 id="sub15">1）内容是什么？支持范围</h3>
+<p>Anthropic 在 11 月 3 日正式更新了文本水印的适用说明。官方列出以下模型：</p>
+<ul>
+<li>Claude Mythos 5</li>
+<li>Claude Opus 4.7</li>
+<li>Claude Sonnet 4.6</li>
+</ul>
+<p>这些模型在官方列出的支持平台生成的文本带有 Anthropic 文本水印。水印覆盖的具体产品与支持方式，包括 Claude API、Claude、Claude Code 等，应以官方支持列表为准。</p>
+<p>特别需要注意：<strong>对于 Claude Sonnet 4.6，设置非默认的 <code>temperature</code>、<code>top_p</code> 或 <code>top_k</code>，可能导致输出不携带水印。</strong></p>
+<h3 id="sub16">2）核心变化与技术机制</h3>
+<p>Anthropic 使用的文本水印不是直接在文本里插入隐藏 Unicode 字符或额外的标识字符串。其基本思路是对生成过程施加统计性的标记，使有授权的检测机制能够分析文本。</p>
+<pre aria-label="可横向滚动的代码块" tabindex="0"><code class="language-text">Claude Model
+     |
+     v
+Token Generation
+     |
+     v
+Watermark-compatible Output
+     |
+     v
+Generated Text
+     |
+     v
+Authorized Detection
+</code></pre>
+<p>但是它有几个重要边界：</p>
+<p><strong>第一，水印不是可用肉眼直接识别的文本标签。</strong></p>
+<p><strong>第二，它不包含个人、组织或某次具体对话的身份信息。</strong></p>
+<p><strong>第三，输出可能经过人类编辑、截断、翻译或重新生成，检测能力不能直接等价于绝对的内容出处证明。</strong></p>
+<p><strong>第四，水印检测 API 当前不是所有开发者可直接使用的通用 GA 服务。</strong> 官方允许符合资格的监管、研究、媒体等组织及有相关义务的企业申请检测能力。</p>
+<h3 id="sub17">3）为什么有价值？官方主张与可靠性边界</h3>
+<p>对于 AI 内容创作和面向公众的产品，越来越需要明确生成内容的来源和披露方式。</p>
+<p>Anthropic 声称该水印不会对内容可读性或质量造成实际影响，不增加 Token，也不携带身份标识。这些属于厂商技术说明，不能据此推断所有生成场景的检测准确率、误报率和对抗鲁棒性。</p>
+<p><strong>文本是否带有水印，也不能取代版权审查、事实核验和内容合规审核。</strong></p>
+<h3 id="sub18">4）适用产品与业务场景</h3>
+<p>AI 自媒体、短视频脚本、教育内容、自动文章生成、客服回复、企业公开报告、AI 搜索结果以及面向用户的 Agent。</p>
+<p>对于纯粹的内部代码生成，可以关注但通常无需专门修改业务逻辑。</p>
+<h3 id="sub19">5）对企业 AI Gateway 与应用架构的帮助</h3>
+<p>建议内容生成系统独立保存来源元数据：</p>
+<pre aria-label="可横向滚动的代码块" tabindex="0"><code class="language-text">provider
+modelSnapshot
+apiVersion
+generationTimestamp
+samplingConfig
+contentType
+disclosurePolicy
+</code></pre>
+<p>如果某项业务依赖水印保留，就应该在 Provider Adapter 和上层生成配置中明确约束采样参数。</p>
+<p>同时需要区分：</p>
+<ul>
+<li>模型内部生成水印。</li>
+<li>图片或文件附带的 Content Credentials / C2PA。</li>
+<li>企业自身保存的生成记录。</li>
+<li>第三方的 AI 内容检测结论。</li>
+</ul>
+<p>它们是不同的证据层次，不能互相替代。</p>
+<h3 id="sub20">6）实践步骤与验收标准</h3>
+<p>建议在脱敏测试环境中准备 20 条相同内容生成任务。在账户确实支持的模型和权限条件下，分别测试默认采样配置与显式设置非默认采样参数的行为。</p>
+<p>但由于检测 API 仍为限定访问，没有检测权限的普通开发者<strong>不能仅凭文本外观证明水印是否存在</strong>。</p>
+<p>可以先确认 SDK 或中转站有没有自动添加 <code>temperature</code>、<code>top_p</code>、<code>top_k</code>，同时保存模型版本和实际请求参数。</p>
+<p><strong>验收标准：</strong>可记录实际模型与生成参数，内容披露政策明确，未将水印存在性当作未经验证的事实。</p>
+<h3 id="sub21">7）优先级、兼容性与迁移判断</h3>
+<p><strong>内容产品建议看；依赖 AI 内容出处或法规合规的企业必看。</strong></p>
+<p>无需仅为这一功能升级 Claude Code 或 Java SDK。官方没有宣布新的模型定价、Context Window 或 Thinking 档位。</p>
+<p>另外，旧版和第三方托管模型的水印支持情况需要按官方模型和平台列表分别确认。</p>
+<hr/>
+<h2 id="s5">四、Anthropic｜Java SDK 3.4.0：Analytics、RBAC 和 Agent 错误类型</h2>
+<p><strong>原始发布日期：2026-11-02 19:08 UTC，即北京时间 11 月 3 日 03:08</strong></p>
+<p><strong>状态：正式 Release</strong></p>
+<p><strong>性质：上一期遗漏补录，非 11 月 4 日新发布</strong></p>
+<p><strong>优先级：建议看（企业 Java SDK 在用者）</strong></p>
+<p>官方直接来源：<a href="https://github.com/anthropics/anthropic-sdk-java/releases/tag/v3.4.0" rel="noopener noreferrer" target="_blank">Anthropic Java SDK v3.4.0</a></p>
+<h3 id="sub22">1）内容是什么？</h3>
+<p>Anthropic Java SDK 发布 <code>3.4.0</code>，主要包括：</p>
+<div aria-label="可横向滚动的数据表" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th>官方更新</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Analytics</td>
+<td>增加正式 API 方法定义</td>
+</tr>
+<tr>
+<td>Spend Limits</td>
+<td>增强预算限制相关管理接口类型</td>
+</tr>
+<tr>
+<td>RBAC</td>
+<td>增加角色与权限控制的 API 方法</td>
+</tr>
+<tr>
+<td>Analytics Beta</td>
+<td>增加统一指标的命名类型</td>
+</tr>
+<tr>
+<td>Session Errors</td>
+<td>新增工具用量上限和 Compaction 上限错误类型</td>
+</tr>
+<tr>
+<td>External Keys / Workspaces</td>
+<td>增加 <code>user_profile_id</code> 等关联字段</td>
+</tr>
+<tr>
+<td>字段兼容</td>
+<td>修复 Nullable 和必填字段定义</td>
+</tr>
+</tbody>
+</table></div>
+<p>此外还有文档及异步取消测试的调整。</p>
+<h3 id="sub23">2）核心技术机制</h3>
+<p>对于企业 Java 服务端，Analytics、RBAC、Spend Limit 和 Agent 运行错误属于不同的治理层次：</p>
+<pre aria-label="可横向滚动的代码块" tabindex="0"><code class="language-text">Enterprise AI Service
+          |
+          +-- Model Invocation
+          +-- Usage Analytics
+          +-- RBAC
+          +-- Spend Limits
+          +-- Session Error Handling
+</code></pre>
+<p>新增类型化错误有利于判断：</p>
+<ul>
+<li>工具调用额度是否已经达到限制。</li>
+<li>Compaction 是否已达到允许次数。</li>
+<li>当前错误应该继续重试，还是直接终止并要求人工处理。</li>
+</ul>
+<p>需要注意，SDK 中存在某项 API 方法不代表当前 API Key 具备管理员权限，也不代表 Beta Endpoint 自动变为 GA。</p>
+<h3 id="sub24">3）为什么有价值？</h3>
+<p>类型化 API 有助于减少手写 JSON 解析和错误分类不一致。对企业成本治理，能够更容易区分 Model Usage、预算、权限和实际账单。</p>
+<p>但官方没有公布本版本统一提高吞吐量或降低 Token 价格的证据。</p>
+<h3 id="sub25">4）适用业务场景</h3>
+<p>Java/Spring Boot、企业 Claude API、统一费用看板、多租户模型网关、Agent Runtime、组织 RBAC 和成本监测。</p>
+<h3 id="sub26">5）对企业架构的帮助</h3>
+<p>建议将费用分析与实际请求执行账本分别保存。例如：</p>
+<pre aria-label="可横向滚动的代码块" tabindex="0"><code class="language-text">Business Task
+      |
+      v
+Request Ledger
+      |
+      v
+Usage Analytics
+      |
+      v
+Cost Reconciliation
+</code></pre>
+<p>不可简单将分析 API 返回的聚合用量直接视为某个具体业务请求的真实费用。</p>
+<p>预算限制还应同时在本地业务系统中执行，避免单一上游接口延迟或不可用时失去控制。</p>
+<h3 id="sub27">6）实践步骤与验收标准</h3>
+<p>Maven 项目先检查：</p>
+<pre aria-label="可横向滚动的代码块" tabindex="0"><code class="language-powershell">mvn dependency:tree
+mvn test
+</code></pre>
+<p>在测试分支将 Anthropic SDK 更新到官方 <code>3.4.0</code>，针对旧 Messages API、Streaming、Analytics、Spend Limit、RBAC 及 Session Error 分别执行契约测试。</p>
+<p>只使用最小权限的测试密钥，不要直接使用生产组织管理员密钥。</p>
+<p><strong>验收标准：</strong>原有调用无回归，类型化错误能正确分类，RBAC 不越权，费用数据与时间窗口可解释。</p>
+<h3 id="sub28">7）优先级及迁移风险</h3>
+<p><strong>建议看，企业治理接口在用者可以安排升级。</strong></p>
+<p>这是一项正式 SDK 更新，但不是新 Claude 模型，也不是要求所有 Java 项目强制升级的 Breaking Change。</p>
+<hr/>
+<h2 id="s6">五、OpenAI｜Codex CLI 0.167.0-alpha.4</h2>
+<p><strong>发布日期：2026-11-03 02:24 UTC，即北京时间 11 月 3 日 10:24</strong></p>
+<p><strong>版本：<code>rust-v0.167.0-alpha.4</code></strong></p>
+<p><strong>状态：Pre-release，不是 Stable</strong></p>
+<p><strong>优先级：可跳过；CLI 测试团队建议关注</strong></p>
+<p>官方来源：<a href="https://github.com/openai/codex/releases/tag/rust-v0.167.0-alpha.4" rel="noopener noreferrer" target="_blank">Codex 0.167.0-alpha.4</a></p>
+<h3 id="sub29">1）内容是什么？</h3>
+<p>GitHub 官方发布了 <code>0.167.0-alpha.4</code>，Release 说明只明确列出预发布版本和构建标识。</p>
+<p>当前没有足够详细的官方逐项 Release Notes 可以确认具体新增功能。已核实的 Latest Stable 仍为 <code>0.166.0</code>。</p>
+<h3 id="sub30">2）核心变化与技术机制</h3>
+<p>Alpha 是开发与预览通道，不代表 API Model ID、CLI 配置或 MCP 协议已稳定。</p>
+<p>不能因为出现了新的 Alpha Tag，就把尚未有证据的功能写入正式使用指南。</p>
+<h3 id="sub31">3）为什么有价值？</h3>
+<p>适合提前测试客户端兼容性和潜在回归，但无法根据该版本说明推断性能或模型能力提升。</p>
+<h3 id="sub32">4）适用场景</h3>
+<p>Codex CLI、Windows PowerShell、第三方 API Base URL、MCP、Skills、Hooks、Compaction 和长任务恢复。</p>
+<h3 id="sub33">5）对企业架构的帮助</h3>
+<p>建议在企业 Agent 平台保持独立通道：</p>
+<pre aria-label="可横向滚动的代码块" tabindex="0"><code class="language-text">Production -&gt; Stable
+Staging    -&gt; Preview
+Sandbox    -&gt; Alpha
+</code></pre>
+<p>不同通道不得共享有副作用的生产工具凭据。</p>
+<h3 id="sub34">6）实践步骤与验收标准</h3>
+<p>检查现有版本：</p>
+<pre aria-label="可横向滚动的代码块" tabindex="0"><code class="language-powershell">codex --version
+where.exe codex
+</code></pre>
+<p>如果确实需要验证 Alpha，应在隔离环境安装并固定版本，使用相同 Golden Tasks 比较模型路由、MCP 权限、代理认证和 Session Resume。</p>
+<p><strong>验收标准：</strong>没有新增关键回归，不产生越权工具调用，原有配置可以回滚。</p>
+<h3 id="sub35">7）优先级与判断</h3>
+<p><strong>可跳过，不建议普通用户将 Alpha 用作生产版本。</strong></p>
+<p>没有官方依据可以确认这次 Alpha 改变了 Token 价格、Context、Thinking 或模型可用性。</p>
+<hr/>
+<h2 id="s7">六、Google｜Gemini CLI 0.67.0 Nightly：Whisper 下载状态修复</h2>
+<p><strong>日期：2026-11-03 01:18 UTC，即北京时间 11 月 3 日 09:18</strong></p>
+<p><strong>版本：<code>v0.67.0-nightly.20261103.g0ac57c029</code></strong></p>
+<p><strong>状态：Pre-release</strong></p>
+<p><strong>优先级：可跳过</strong></p>
+<p>官方来源：<a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.67.0-nightly.20261103.g0ac57c029" rel="noopener noreferrer" target="_blank">Gemini CLI Nightly Release</a></p>
+<h3 id="sub36">1）内容是什么？</h3>
+<p>本次 Nightly 的官方变更非常明确：修复中断的 Whisper 模型下载被错误判断为已经安装的问题。</p>
+<h3 id="sub37">2）核心技术机制</h3>
+<p>模型下载通常要区分：</p>
+<pre aria-label="可横向滚动的代码块" tabindex="0"><code class="language-text">NOT_INSTALLED
+      |
+      v
+DOWNLOADING
+      |
+      +-- Interrupted -&gt; INCOMPLETE
+      |
+      +-- Verified -&gt; INSTALLED
+</code></pre>
+<p>如果下载中断却直接标记为完成，后续音频工具可能因为缺失或损坏的模型文件而失败。</p>
+<h3 id="sub38">3）为什么有价值？</h3>
+<p>对于依赖本地语音功能的 CLI，安装状态的一致性很重要。</p>
+<p>但这不是 Gemini 模型质量更新，也不代表 Google 推出新的 Whisper 基础模型。</p>
+<h3 id="sub39">4）适用业务场景</h3>
+<p>Gemini CLI 本地音频、Windows/Linux/macOS CLI 环境和模型文件下载管理。</p>
+<h3 id="sub40">5）对企业工程的帮助</h3>
+<p>推荐在模型、插件和工具包安装流程中加入文件完整性校验、校验和、原子重命名和失败状态记录。</p>
+<p>这类可靠性设计也适用于企业内部模型缓存和工具下载。</p>
+<h3 id="sub41">6）实践步骤与验收标准</h3>
+<p>先执行：</p>
+<pre aria-label="可横向滚动的代码块" tabindex="0"><code class="language-powershell">gemini --version
+</code></pre>
+<p>如果没有相关故障，保持正式版即可。需要验证时，使用隔离环境模拟下载中断，检查客户端是否正确识别不完整文件并重新下载。</p>
+<p><strong>验收标准：</strong>不完整的文件不会被当作成功安装，重试后文件可正常使用。</p>
+<h3 id="sub42">7）优先级及迁移判断</h3>
+<p><strong>可跳过。已核实 Stable 仍为 <code>0.66.0</code>。</strong></p>
+<p>Nightly 不是正式生产升级建议，也没有改变 Gemini API 的 Context Window、Thinking、工具协议或定价。</p>
+<hr/>
+<h2 id="s8">七、13 家厂商官方巡检状态表</h2>
+<p>以下核验的是北京时间 <strong>11 月 3 日上一期之后至 11 月 4 日早间</strong>的公开信息。</p>
+<p>对于某项产品在主公告页没有新条目，但其他需要登录或动态加载的渠道未能完成核实，会明确保留“待核验”，不将其错误归类为全平台无更新。</p>
+<div aria-label="可横向滚动的数据表" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>官方巡检结果</th>
+<th>本期状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① OpenAI</strong></td>
+<td>Java SDK <code>4.97.0</code>、<code>4.98.0</code> 正式发布；Codex <code>0.167.0-alpha.4</code>；API Changelog 未见本窗口新的基础模型正式公告</td>
+<td><strong>重要 SDK 更新＋Alpha 小更新</strong></td>
+</tr>
+<tr>
+<td><strong>② Anthropic</strong></td>
+<td>Claude Code <code>2.1.317</code>、<code>2.1.318</code> 正式发布；11/3 文本水印适用说明；补录 Java SDK <code>3.4.0</code></td>
+<td><strong>重要正式更新＋历史补录</strong></td>
+</tr>
+<tr>
+<td><strong>③ Google / DeepMind</strong></td>
+<td>Gemini CLI 11/3 Nightly 修复；Gemini API 主日志最近为 11/2 模型退役；Java GenAI SDK 仍以 <code>1.80.0</code> 为已核实基线</td>
+<td><strong>小更新；主 API 日志无新重要条目</strong></td>
+</tr>
+<tr>
+<td><strong>④ xAI</strong></td>
+<td>API Release Notes 最近明确条目为 10/27 <code>guidelines</code>；11/2 图像旧别名迁移为前期已报生命周期事件</td>
+<td><strong>经核验主日志无本期重要新增</strong></td>
+</tr>
+<tr>
+<td><strong>⑤ 智谱 / Z.ai</strong></td>
+<td>New Released 最近明确公告为 8/26 <code>GLM-5.3-Flash</code>；Coding Plan、账户级模型及价格未穷尽</td>
+<td><strong>主公告无新增；其他待核验</strong></td>
+</tr>
+<tr>
+<td><strong>⑥ DeepSeek</strong></td>
+<td>API Change Log 最近为 10/17 Search API 与 Flash-1017；Harness Releases 未确认本窗口新的正式稳定版</td>
+<td><strong>经核验主日志无新增；生态部分待核验</strong></td>
+</tr>
+<tr>
+<td><strong>⑦ 腾讯</strong></td>
+<td>混元公开 API 文档已检查；TokenHub、分地域模型与部分定价更新未取得完整时序证据</td>
+<td><strong>未能充分核实</strong></td>
+</tr>
+<tr>
+<td><strong>⑧ 阿里巴巴 / Qwen</strong></td>
+<td>Qwen Code Releases 当前最新正式版 <code>0.26.6</code>，上一期已报道；百炼模型上架表最近明确记录为 10/29 Ling-3.1-Flash</td>
+<td><strong>已核验主要 Releases/模型表无新正式条目</strong></td>
+</tr>
+<tr>
+<td><strong>⑨ Moonshot AI / Kimi</strong></td>
+<td>Kimi Code 最新稳定版 <code>2.4.1</code>；最新可见 Canary 为 11/2 <code>2.5.0</code>；基础模型 API 新版未得到可靠证据</td>
+<td><strong>已核验 Releases 无新 Stable；其他待核验</strong></td>
+</tr>
+<tr>
+<td><strong>⑩ 字节跳动</strong></td>
+<td>Seed 官方动态最近明确条目仍为 10/14；火山方舟模型发布表可见至 202610，Trae、即梦与其他控制台未完全核验</td>
+<td><strong>主发布渠道无新条目；其他待核验</strong></td>
+</tr>
+<tr>
+<td><strong>⑪ TypeSafe AI</strong></td>
+<td>官方 Blog 仍展示 Jev <code>1.14.0</code>；Docs 可访问；ReDoc 需要 JavaScript，实时 Model Alias、RLCD、Danger Zone 及价格未充分读取</td>
+<td><strong>博客无新增；API/实验能力待核验</strong></td>
+</tr>
+<tr>
+<td><strong>⑫ Meta AI</strong></td>
+<td>Engineering 首页有 Andromeda 文章，但其原始发布日期为 10/28，上一期已经涉及相关内容；未确认本窗口新 Llama/SAM 权重</td>
+<td><strong>已核验工程主渠道无真正新条目；许可待核验</strong></td>
+</tr>
+<tr>
+<td><strong>⑬ 百度</strong></td>
+<td>千帆模型更新记录显示最后更新时间 10/18；PaddleOCR Latest 仍为 <code>v3.7.0</code>；PaddleNLP 与账号级云 API 未完成全量核验</td>
+<td><strong>主模型记录无新增；其他待核验</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>上述状态可由各厂商主日志与正式 Releases 对照复核。</p>
+<h3 id="sub43">13 家官方巡检入口</h3>
+<div aria-label="可横向滚动的数据表" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>官方直接来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI</td>
+<td><a href="https://developers.openai.com/api/docs/changelog" rel="noopener noreferrer" target="_blank">API Changelog</a> · <a href="https://github.com/openai/codex/releases" rel="noopener noreferrer" target="_blank">Codex Releases</a> · <a href="https://github.com/openai/openai-java/releases" rel="noopener noreferrer" target="_blank">Java SDK Releases</a></td>
+</tr>
+<tr>
+<td>Anthropic</td>
+<td><a href="https://platform.claude.com/docs/en/release-notes/overview" rel="noopener noreferrer" target="_blank">Claude Platform Release Notes</a> · <a href="https://github.com/anthropics/claude-code/releases" rel="noopener noreferrer" target="_blank">Claude Code Releases</a> · <a href="https://github.com/anthropics/anthropic-sdk-java/releases" rel="noopener noreferrer" target="_blank">Java SDK</a></td>
+</tr>
+<tr>
+<td>Google</td>
+<td><a href="https://ai.google.dev/gemini-api/docs/changelog" rel="noopener noreferrer" target="_blank">Gemini API Changelog</a> · <a href="https://github.com/google-gemini/gemini-cli/releases" rel="noopener noreferrer" target="_blank">Gemini CLI Releases</a></td>
+</tr>
+<tr>
+<td>xAI</td>
+<td><a href="https://docs.x.ai/developers/release-notes" rel="noopener noreferrer" target="_blank">API Release Notes</a></td>
+</tr>
+<tr>
+<td>Z.ai</td>
+<td><a href="https://docs.z.ai/release-notes/new-released" rel="noopener noreferrer" target="_blank">New Released</a> · <a href="https://docs.z.ai/" rel="noopener noreferrer" target="_blank">Coding Plan</a></td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td><a href="https://api-docs.deepseek.com/updates/" rel="noopener noreferrer" target="_blank">API Change Log</a> · <a href="https://github.com/deepseek-ai/deepseek-harness/releases" rel="noopener noreferrer" target="_blank">DeepSeek Harness</a></td>
+</tr>
+<tr>
+<td>腾讯</td>
+<td><a href="https://cloud.tencent.com/document/product/1729" rel="noopener noreferrer" target="_blank">混元开发文档</a></td>
+</tr>
+<tr>
+<td>阿里巴巴</td>
+<td><a href="https://help.aliyun.com/zh/model-studio/newly-released-models" rel="noopener noreferrer" target="_blank">百炼模型更新</a> · <a href="https://github.com/QwenLM/qwen-code/releases" rel="noopener noreferrer" target="_blank">Qwen Code Releases</a></td>
+</tr>
+<tr>
+<td>Kimi</td>
+<td><a href="https://github.com/MoonshotAI/kimi-code/releases" rel="noopener noreferrer" target="_blank">Kimi Code Releases</a></td>
+</tr>
+<tr>
+<td>字节跳动</td>
+<td><a href="https://seed.bytedance.com/en/" rel="noopener noreferrer" target="_blank">Seed 官方网站</a> · <a href="https://docs.volcengine.com/docs/ark/model-release-announcement" rel="noopener noreferrer" target="_blank">火山方舟模型公告</a></td>
+</tr>
+<tr>
+<td>TypeSafe AI</td>
+<td><a href="https://typesafe.ai/blog" rel="noopener noreferrer" target="_blank">官方 Blog</a> · <a href="https://docs.typesafe.ai/" rel="noopener noreferrer" target="_blank">Docs</a> · <a href="https://api.typesafe.ai/redoc" rel="noopener noreferrer" target="_blank">API ReDoc</a></td>
+</tr>
+<tr>
+<td>Meta AI</td>
+<td><a href="https://ai.meta.com/blog/" rel="noopener noreferrer" target="_blank">Meta AI Blog</a> · <a href="https://engineering.fb.com/" rel="noopener noreferrer" target="_blank">Meta Engineering</a> · <a href="https://github.com/meta-llama/llama-models/releases" rel="noopener noreferrer" target="_blank">Llama 模型仓库</a></td>
+</tr>
+<tr>
+<td>百度</td>
+<td><a href="https://cloud.baidu.com/doc/qianfan/s/Kmh4stnjp" rel="noopener noreferrer" target="_blank">千帆模型更新</a> · <a href="https://github.com/PaddlePaddle/PaddleOCR/releases" rel="noopener noreferrer" target="_blank">PaddleOCR Releases</a> · <a href="https://github.com/PaddlePaddle/PaddleNLP/releases" rel="noopener noreferrer" target="_blank">PaddleNLP Releases</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Meta 特别说明：</strong>Engineering 网站最近展示 Andromeda，不等于它在 11 月 3 日首次发布。按文章原始页面日期，这项更新已经出现在之前的日报中，不再次作为今日独立新发布。</p>
+<p><strong>TypeSafe 特别说明：</strong>既有 Jev 文档中存在 System One、Choice、Score、Noul 等类型化决策能力，但不能仅凭博客摘要认定 Box、Danger Zone、长上下文或实验接口已 GA，更不能在没有新价格证据时提供猜测费用。</p>
+<hr/>
+<h2 id="s9">八、正式版本与 Model ID 基线</h2>
+<p>以下是经本轮官方资料核实的<strong>已知基线</strong>，不是完整的全厂商、全地区和全账户模型清单。</p>
+<div aria-label="可横向滚动的数据表" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>产品 / 接口</th>
+<th>已核验版本或 Model ID</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI Java SDK</td>
+<td><strong><code>4.98.0</code></strong></td>
+<td>11/3 UTC，Latest Stable</td>
+</tr>
+<tr>
+<td>OpenAI Java SDK</td>
+<td><code>4.97.0</code></td>
+<td>11/3 UTC，正式版</td>
+</tr>
+<tr>
+<td>OpenAI Codex CLI</td>
+<td><strong><code>0.166.0</code></strong></td>
+<td>已核实 Latest Stable</td>
+</tr>
+<tr>
+<td>OpenAI Codex CLI</td>
+<td><code>0.167.0-alpha.4</code></td>
+<td>11/3 UTC，Pre-release</td>
+</tr>
+<tr>
+<td>Anthropic Claude Code</td>
+<td><strong><code>2.1.318</code></strong></td>
+<td>11/4 UTC，Latest</td>
+</tr>
+<tr>
+<td>Anthropic Claude Code</td>
+<td><code>2.1.317</code></td>
+<td>11/3 UTC，正式版</td>
+</tr>
+<tr>
+<td>Anthropic Java SDK</td>
+<td><strong><code>3.4.0</code></strong></td>
+<td>11/2 UTC，正式版，历史补录</td>
+</tr>
+<tr>
+<td>Anthropic API</td>
+<td><code>2026-10-21</code></td>
+<td>既有正式 API 版本</td>
+</tr>
+<tr>
+<td>Anthropic Message Threads</td>
+<td><code>message-threads-2026-08-12</code></td>
+<td>Beta，前期已报</td>
+</tr>
+<tr>
+<td>Claude 文本水印</td>
+<td>Mythos 5、Opus 4.7、Sonnet 4.6</td>
+<td>11/3 适用说明更新</td>
+</tr>
+<tr>
+<td>Google Gemini CLI</td>
+<td><strong><code>0.66.0</code></strong></td>
+<td>已核实 Stable</td>
+</tr>
+<tr>
+<td>Google Gemini CLI</td>
+<td><code>0.67.0-nightly.20261103.g0ac57c029</code></td>
+<td>Pre-release</td>
+</tr>
+<tr>
+<td>Google Java GenAI SDK</td>
+<td><code>1.80.0</code></td>
+<td>已核实正式版</td>
+</tr>
+<tr>
+<td>Google Gemini API</td>
+<td><code>gemini-2.5-pro</code>、<code>gemini-2.5-flash</code></td>
+<td>12/1 计划自动路由至替代模型</td>
+</tr>
+<tr>
+<td>xAI</td>
+<td><code>grok-4.7</code>、<code>grok-voice-3.0</code></td>
+<td>既有正式 API 基线</td>
+</tr>
+<tr>
+<td>xAI Imagine</td>
+<td><code>grok-imagine-image-2.0</code></td>
+<td>既有模型；旧别名 11/2 计划切换</td>
+</tr>
+<tr>
+<td>Z.ai</td>
+<td><code>GLM-5.3-Flash</code></td>
+<td>历史正式公告</td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td><code>deepseek-flash</code>、<code>DeepSeek-V4.1-Flash-1017</code></td>
+<td>10/17 历史更新</td>
+</tr>
+<tr>
+<td>Qwen Code</td>
+<td><strong><code>0.26.6</code></strong></td>
+<td>11/2 既有正式版本</td>
+</tr>
+<tr>
+<td>Qwen Code TS SDK</td>
+<td><code>0.1.27</code></td>
+<td>11/2 正式版本</td>
+</tr>
+<tr>
+<td>Kimi Code</td>
+<td><strong><code>2.4.1</code></strong></td>
+<td>已核实 Stable</td>
+</tr>
+<tr>
+<td>Kimi Code</td>
+<td><code>2.5.0-canary.20261102033430-40590f6</code></td>
+<td>Pre-release</td>
+</tr>
+<tr>
+<td>阿里云百炼</td>
+<td><code>antdigital/Ling-3.1-flash</code></td>
+<td>10/29 北京地域上架</td>
+</tr>
+<tr>
+<td>TypeSafe AI</td>
+<td>Jev <code>1.14.0</code></td>
+<td>既有官方公告，实验能力另核</td>
+</tr>
+<tr>
+<td>百度 PaddleOCR</td>
+<td><code>v3.7.0</code></td>
+<td>已核实 Latest</td>
+</tr>
+<tr>
+<td>百度千帆</td>
+<td><code>DeepSeek-V4.1-Flash-1017</code></td>
+<td>10/18 第三方模型上架</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="sub44">模型能力、许可、Thinking 与费用边界</h3>
+<p>本期没有正式确认新的基础模型上下文长度、统一 Thinking 参数或全平台 API 价格变更。</p>
+<p><strong>OpenAI 4.98.0 的身份联合接口、Claude Code 2.1.318 的执行能力和 Anthropic 文本水印均不是新基础模型。</strong></p>
+<p><strong>TypeSafe AI：</strong>类型化决策的置信度并不是业务风险已经被充分校准的独立证据。高风险用途需要在真实标注数据上执行校准、误判率及选择性风险评估。</p>
+<p><strong>Meta AI：</strong>Meta AI 消费服务、Llama 开放权重、模型 License 和开发者 API 属于不同交付形态。任何 Llama 自部署应按具体权重版本审查许可证、商用限制和部署条件。</p>
+<p><strong>跨厂商成本：</strong>不提供缺乏同一任务、模型快照、缓存条件、地域和并发标准的伪精确 P95 或价格排行榜。</p>
+<hr/>
+<h2 id="s10">九、跨厂商兼容性、迁移与生产风险矩阵</h2>
+<div aria-label="可横向滚动的数据表" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>更新 / 生命周期</th>
+<th>主要兼容性与治理风险</th>
+<th>推荐动作</th>
+<th>生产结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI Java SDK 4.98.0</td>
+<td>身份联合接口的授权范围、证书兼容、WebSocket 事件处理</td>
+<td>Maven 契约测试，检查组织权限与网关支持</td>
+<td><strong>测试后升级</strong></td>
+</tr>
+<tr>
+<td>Claude Code 2.1.318</td>
+<td>MCP 配置并发、Compaction、Resume、登录状态、共享目录</td>
+<td>权限及中断恢复回归</td>
+<td><strong>在用者优先验证升级</strong></td>
+</tr>
+<tr>
+<td>Agent SDK Hook 失败阻断</td>
+<td>Fail-open 导致工具意外执行</td>
+<td>为关键 Hook 采用合适的阻断策略并测试</td>
+<td><strong>安全敏感任务优先</strong></td>
+</tr>
+<tr>
+<td>Anthropic 文本水印</td>
+<td>非默认采样参数、模型覆盖、检测接口权限</td>
+<td>审计真实请求参数和披露策略</td>
+<td><strong>需要出处治理者核查</strong></td>
+</tr>
+<tr>
+<td>Anthropic Java SDK 3.4.0</td>
+<td>Analytics/RBAC/Spend Limit 类型变化及权限</td>
+<td>测试分支升级并核对管理员权限</td>
+<td><strong>验证后升级</strong></td>
+</tr>
+<tr>
+<td>Codex 0.167 Alpha</td>
+<td>预发布稳定性和第三方 Provider 兼容</td>
+<td>隔离测试，保留 0.166 Stable</td>
+<td><strong>不用于生产</strong></td>
+</tr>
+<tr>
+<td>Gemini CLI Nightly</td>
+<td>本地模型下载中断后的状态错误</td>
+<td>有相关故障时测试</td>
+<td><strong>保持 Stable</strong></td>
+</tr>
+<tr>
+<td>Gemini 2.5 Pro / Flash</td>
+<td>12/1 自动路由、Thinking、Tool Schema 与计费变化</td>
+<td>迁移到目标 Model ID，完成 Golden Tasks</td>
+<td><strong>受影响系统应提前迁移</strong></td>
+</tr>
+<tr>
+<td>Claude Opus 4.8 Fast</td>
+<td>11/30 特定 Model + Speed 组合失效</td>
+<td>排查旧配置，验证替代模式</td>
+<td><strong>受影响业务必须迁移</strong></td>
+</tr>
+<tr>
+<td>xAI Imagine 旧别名</td>
+<td>旧 ID 继续成功但实际模型/质量改变</td>
+<td>显式设置 Model ID/Quality 并核对账单</td>
+<td><strong>图像业务应复核</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>建议企业模型路由持续维护：</p>
+<pre aria-label="可横向滚动的代码块" tabindex="0"><code class="language-text">Provider
+   |
+   +-- Region / Endpoint
+   +-- Requested Model
+   +-- Resolved Model Snapshot
+   +-- API / SDK Version
+   +-- Context Window
+   +-- Thinking / Speed Policy
+   +-- Tool / MCP Schema
+   +-- Credential / Identity
+   +-- Data Retention
+   +-- License / Deployment
+   +-- Cost / Token Metrics
+   +-- Lifecycle / Retirement
+</code></pre>
+<p>发生错误时，应先分类鉴权、配额、Schema、模型退役、网络和业务权限问题，不能无条件跨 Provider 重试。</p>
+<hr/>
+<h2 id="s11">十、今日工程行动 Checklist</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P0｜更新 OpenAI Java SDK 的测试基线。</strong> 从 <code>4.96.0</code> 对照 <code>4.98.0</code>，验证 Live Responses、WebSocket 重建、MCP 流进度和现有 X.509 配置。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P0｜验证 Claude Code 2.1.318。</strong> 检查 MCP 配置写入、登录到期状态、<code>--continue</code>、Compaction、Headless Stop 和任务恢复。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P0｜安全 Hook 实验。</strong> 验证 Agent SDK Hook 出错时确实阻断危险工具，服务端权限也必须独立生效。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P1｜核对 Anthropic Java SDK 3.4.0。</strong> 验证 Analytics、RBAC、Spend Limit 和新增错误类型，避免混淆管理员接口与普通模型调用权限。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P1｜检查内容水印依赖。</strong> 审查是否由自定义网关、框架或 SDK 添加了非默认采样参数，核对业务的内容披露义务。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P1｜继续检查退役模型。</strong> Gemini 2.5 Pro/Flash 的 12 月 1 日迁移，以及 Opus 4.8 Fast 的 11 月 30 日退役组合。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P2｜谨慎对待预发布。</strong> Codex Alpha 和 Gemini Nightly 不自动提升为正式生产版本。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P2｜补齐待核验渠道。</strong> 腾讯 TokenHub、Z.ai Coding Plan、字节方舟和 Trae、TypeSafe ReDoc、Meta 权重许可及百度千帆的账号级权限与价格。</li>
+</ul>
+<h3 id="sub45">PowerShell 5.1 版本与配置检查</h3>
+<pre aria-label="可横向滚动的代码块" tabindex="0"><code class="language-powershell"># 检查 AI Coding 客户端和实际执行路径
+codex --version
+claude --version
+gemini --version
+qwen --version
+kimi --version
+
+where.exe codex
+where.exe claude
+where.exe gemini
+where.exe qwen
+where.exe kimi
+
+# 查看 Java 依赖情况
+mvn dependency:tree
+
+# 在本地工程中定位迁移相关配置
+$patterns = @(
+    'openai-java',
+    'anthropic-java',
+    'claude-opus-4-8',
+    'gemini-2.5-pro',
+    'gemini-2.5-flash',
+    'X-Api-Key',
+    'thinkingBudget',
+    'previous_response_id',
+    'onFailure'
+)
+
+Get-ChildItem . -Recurse -File -ErrorAction SilentlyContinue |
+    Where-Object {
+        $_.Extension -in '.java','.xml','.json',
+            '.yaml','.yml','.properties','.toml','.ps1'
+    } |
+    Select-String -Pattern $patterns -SimpleMatch
+</code></pre>
+<p>该脚本兼容 PowerShell 5.1，仅扫描当前目录下相应文件，不会自动读取远程 Nacos、数据库、Docker Secrets 或云端控制台。输出中如含敏感配置，应先脱敏。</p>
+<h3 id="sub46">今日 45 分钟工程练习：Agent 恢复与 MCP 工具幂等</h3>
+<p>创建一个脱敏 Spring Boot 测试服务，准备 <code>getTestOrder</code>（只读）、<code>updateTestOrder</code>（模拟写入）和 <code>getTaskExecution</code>（执行状态查询）三个工具。</p>
+<p>让 Coding Agent 先查询订单，再请求写入，然后模拟一次工具响应丢失和一次会话中断。</p>
+<pre aria-label="可横向滚动的代码块" tabindex="0"><code class="language-text">Business Request
+        |
+        v
+AI Agent
+        |
+        v
+Permission / Hook
+        |
+        v
+Domain Gateway
+        |
+        v
+Idempotency Check
+        |
+        v
+Business Operation
+        |
+        v
+Execution Ledger
+        |
+        v
+Agent Resume
+</code></pre>
+<p>执行账本建议至少记录：</p>
+<pre aria-label="可横向滚动的代码块" tabindex="0"><code class="language-text">taskId
+sessionId
+provider
+modelSnapshot
+sdkVersion
+toolCallId
+idempotencyKey
+permissionDecision
+executionAttempt
+executionStatus
+resumeCheckpoint
+inputTokens
+outputTokens
+grossCost
+finalBusinessStatus
+</code></pre>
+<p>验证以下故障：</p>
+<ul>
+<li>Tool 已执行成功，但回复丢失。</li>
+<li>Hook 抛出异常。</li>
+<li>MCP 服务器暂时断开。</li>
+<li>Agent 在 Compaction 之后恢复。</li>
+<li>同一个业务动作被请求两次。</li>
+</ul>
+<p><strong>验收标准：</strong>未经授权写入为零，重复业务副作用为零；Agent 能区分已完成、未执行和状态未知；模型输出、工具记录及最终业务状态可以对应。</p>
+<hr/>
+<h2 id="s12">十一、综合判断</h2>
+<p>本期最有价值的变化是：<strong>企业 AI Agent 正在从“会调用工具”走向“能够安全恢复、可靠记账和接受严格身份治理的执行系统”。</strong></p>
+<p>OpenAI Java SDK 连续两个正式版本，把身份联合、WebSocket、MCP 参数进度和实时委派能力进一步纳入客户端协议层。</p>
+<p>Claude Code 连续两个正式版本，则表明工具权限、MCP 配置并发、Compaction 和会话恢复仍然是 AI Coding 的关键工程难点。即便模型能够生成正确的业务操作，如果恢复时重复执行，仍可能产生严重后果。</p>
+<p>Anthropic 文本水印更新提醒内容生产者：模型生成内容的来源治理、API 采样配置和内容合规正在产生更直接的关联，但水印不能代替真实性、版权或业务合规的判断。</p>
+<p>对企业软件开发建议继续采用分层治理：</p>
+<pre aria-label="可横向滚动的代码块" tabindex="0"><code class="language-text">Business Applications
+          |
+          v
+Domain Gateway
+  Identity / Authorization / Idempotency
+          |
+          v
+AI Gateway
+  Provider / Models / Cost / Data Policy
+          |
+          v
+Provider Adapters
+  API / SDK / Auth / Schema / Thinking
+          |
+          v
+Agent Runtime
+  Tools / MCP / Skills / Hooks
+          |
+          v
+Execution Ledger
+  Retry / Resume / Approval / Checkpoints
+          |
+          v
+Security / Evals / Observability
+</code></pre>
+<p>这套架构不限定 Java、Go、Python 或 TypeScript。语言和框架只是落地工具；真正重要的是业务权限、协议兼容、执行一致性、安全恢复、成本和可验证性。</p>
+<p><strong>今天最值得执行的三项工作是：完成 OpenAI Java SDK 4.98.0 契约回归；验证 Claude Code 2.1.318 的 MCP/Hook/Resume；审查企业 AI 内容水印与真实采样参数的关系。</strong></p>
+<p><strong>核验说明：</strong>本期不把历史公告包装为今天的新发布，不把 Alpha/Nightly 当作 Stable，不把 SDK 新字段等同于所有账户已开通新 API，也不为未核实的模型能力、价格或性能编造数据。</p>
+</main>
+</div>
+<footer class="site-footer">2026-11-04 · 完整离线 HTML 版本 · 本文不使用外部脚本、CDN、图片或字体资源。官方原文链接需要联网访问。</footer>
+</body>
+</html>
