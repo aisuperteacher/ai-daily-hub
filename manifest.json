@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "updated_at": "2026-11-06",
+  "categories": [
+    {
+      "id": "official-ai",
+      "name": "全球 AI 模型与 Agent 官方日报",
+      "status": "active",
+      "description": "13 家厂商官方技术增量、版本、迁移与工程实践",
+      "reports": [
+        "2026-11-06",
+        "2026-11-05",
+        "2026-11-04",
+        "2026-11-03",
+        "2026-11-02",
+        "2026-11-01",
+        "2026-10-31",
+        "2026-10-30"
+      ]
+    },
+    {
+      "id": "ai-coding",
+      "name": "AI Coding 工具与架构",
+      "status": "planned",
+      "reports": []
+    },
+    {
+      "id": "github-trending",
+      "name": "GitHub 热榜",
+      "status": "planned",
+      "reports": []
+    },
+    {
+      "id": "ai-video",
+      "name": "AI 短剧制作技术",
+      "status": "planned",
+      "reports": []
+    },
+    {
+      "id": "architecture",
+      "name": "企业级架构精选",
+      "status": "planned",
+      "reports": []
+    },
+    {
+      "id": "offers",
+      "name": "AI / 云服务优惠活动",
+      "status": "planned",
+      "reports": []
+    }
+  ]
+}
