@@ -1,0 +1,704 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="light"><meta name="description" content="2026 年 10 月 31 日全球 AI 大模型与 Agent 技术官方日报：13 家厂商完整官方增量巡检、七维技术分析、版本基线、迁移矩阵和工程 Checklist。"><title>全球 AI 大模型与 Agent 技术官方日报｜2026-10-31</title><style>
+:root{color-scheme:light;--ink:#1c2534;--paper:#fbf8ee;--white:#ffffff;--line:#27354c;--sub:#5c6875;--yellow:#f7d54b;--salmon:#f0937b;--blue:#8fb6f3;--mint:#badcc5;--navy:#172b49}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans CJK SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:16px;line-height:1.85;-webkit-text-size-adjust:100%;overflow-x:hidden}a{color:#164b9c;text-decoration-thickness:1px;text-underline-offset:3px;overflow-wrap:anywhere}a:hover{color:#9a3b26}.top-bar{height:12px;background:linear-gradient(90deg,var(--yellow) 0 23%,var(--blue) 23% 55%,var(--salmon) 55% 77%,var(--mint) 77%)}.container{max-width:1080px;margin:0 auto;padding:24px 26px 80px;min-width:0}.mast{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:3px solid var(--line);margin-bottom:26px;padding-bottom:14px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:800}.mast .mark{background:var(--yellow);border:2px solid var(--line);padding:4px 11px;box-shadow:3px 3px 0 var(--line)}.layout{display:grid;grid-template-columns:minmax(0,1fr);gap:24px}.toc{background:var(--white);border:2px solid var(--line);border-radius:3px;padding:20px 22px;box-shadow:6px 6px 0 var(--mint);margin:0 4px 26px 0}.toc h2{font-size:17px!important;border:0!important;margin:0 0 12px!important;padding:0!important;line-height:1.4}.toc-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 14px}.toc-links a{display:block;padding:5px 1px;border-bottom:1px dashed #c8d0d5;font-size:13px;line-height:1.5}.content{min-width:0}.content h1{font-weight:900;font-size:clamp(28px,5.4vw,49px);letter-spacing:-.04em;line-height:1.22;margin:0 0 14px;overflow-wrap:anywhere}.content h2{font-size:clamp(22px,3.2vw,30px);line-height:1.35;margin:46px 0 16px;padding:0 0 10px;border-bottom:4px solid var(--line);font-weight:900;scroll-margin-top:16px;overflow-wrap:anywhere}.content h2[id^=s]::before{content:'OFFICIAL / ENGINEERING';display:block;font-size:10px;letter-spacing:.22em;color:#6c6660;font-weight:850;margin-bottom:8px}.content h3{font-size:19px;line-height:1.42;font-weight:800;margin:27px 0 10px;overflow-wrap:anywhere}.content p{margin:12px 0 16px;overflow-wrap:anywhere}.content strong{font-weight:780}.content ul{padding-left:1.3em}.content li{margin:7px 0;overflow-wrap:anywhere}.content>p:first-of-type{font-weight:600}.content blockquote{border-left:5px solid var(--salmon);margin:18px 0;padding:4px 18px;background:#fff2e7}.content hr{border:0;border-top:2px dashed var(--line);margin:38px 0}.table-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;margin:19px 0 23px;border:2px solid var(--line);box-shadow:4px 4px 0 var(--yellow);background:var(--white)}table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.58;min-width:530px}th,td{border:1px solid #c9d1d6;text-align:left;vertical-align:top;padding:10px 11px;overflow-wrap:anywhere}thead th{background:var(--navy);color:#fff;white-space:normal}tbody tr:nth-child(even){background:#f0f4f5}pre{max-width:100%;overflow-x:auto;white-space:pre;padding:17px 19px;background:#192b43;color:#e5edf4;border:2px solid #0d1625;border-radius:3px;font-size:12.5px;line-height:1.65;tab-size:2;-webkit-overflow-scrolling:touch}pre code{white-space:pre;overflow-wrap:normal;color:inherit}code{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace;font-size:.9em}p code,li code,td code{background:#e8e8d9;border:1px solid #d3d9ca;border-radius:3px;padding:1px 4px;overflow-wrap:anywhere;white-space:normal}.content>h2:nth-of-type(1){background:var(--yellow);padding:12px 15px;border:2px solid var(--line);box-shadow:4px 4px 0 var(--blue)}input[type=checkbox]{accent-color:#215dac} .foot{margin-top:54px;border-top:3px solid var(--line);padding-top:14px;font-size:12px;color:var(--sub);font-weight:650;line-height:1.7}.label-bar{display:flex;gap:8px;margin:10px 0 20px;flex-wrap:wrap}.chip{font-size:11px;border:1px solid var(--line);padding:2px 10px;background:var(--mint);font-weight:750}.chip:nth-child(2){background:var(--salmon)}.chip:nth-child(3){background:var(--blue)}
+@media(max-width:650px){body{font-size:15px;line-height:1.78}.container{padding:15px 13px 55px}.mast{font-size:10px;letter-spacing:.05em}.toc{margin-right:4px;padding:15px}.toc-links{grid-template-columns:1fr}.toc-links a{font-size:13px;padding:5px 0}.content h1{font-size:30px}.content h2{margin-top:34px;font-size:22px}.content h3{font-size:17px}table{font-size:12px;min-width:500px}th,td{padding:8px 9px}pre{padding:12px;font-size:11px}a{overflow-wrap:anywhere}}@media print{body{background:#fff}.container{max-width:none;padding:0}.mast,.toc,.foot{display:none}h2{break-after:avoid}table,pre{break-inside:avoid}.table-scroll{overflow:visible;box-shadow:none}a{color:inherit}}</style></head><body><div class="top-bar" aria-hidden="true"></div><main class="container"><header class="mast"><span>AI / AGENTS / ENGINEERING</span><span class="mark">31 OCT 2026</span></header><div class="label-bar"><span class="chip">13 PROVIDERS</span><span class="chip">OFFICIAL SOURCES</span><span class="chip">OFFLINE READABLE</span></div><nav class="toc" aria-label="目录"><h2>本期目录 / INDEX</h2><div class="toc-links"><a href="#s1">一、Anthropic｜Claude Opus 4.8 Fast Mode 计划退役</a><a href="#s2">二、Anthropic｜Claude Code v2.1.314：权限、企业路由和网关兼容</a><a href="#s3">三、Qwen Code｜CUA Driver v0.27.0 跨平台桌面驱动</a><a href="#s4">四、Moonshot AI / Kimi｜Kimi Code 2.4.1 正式维护版</a><a href="#s5">五、OpenAI｜跨厂商 AI 训练偏好信号（robots.txt）</a><a href="#s6">六、阿里巴巴 / 阿里云百炼｜Ling-3.1-Flash 上架（历史遗漏补录）</a><a href="#s7">七、腾讯｜六个超自然大模型 2.0 音色（历史遗漏补录）</a><a href="#s8">八、Google｜Gemini CLI 0.67 Nightly 终端修复</a><a href="#s9">九、13 家厂商官方巡检状态表</a><a href="#s10">十、正式版本、Model ID 与生命周期基线</a><a href="#s11">十一、跨厂商兼容性和迁移矩阵</a><a href="#s12">十二、今日工程行动 Checklist</a><a href="#s13">十三、综合工程判断</a></div></nav><article class="content"><h1>全球 AI 大模型与 Agent 技术官方日报</h1>
+<p><strong>2026 年 10 月 31 日 · 星期六 · 北京时间</strong></p>
+<p><strong>覆盖范围：</strong> OpenAI、Anthropic、Google、xAI、智谱/Z.ai、DeepSeek、腾讯、阿里巴巴/Qwen、Moonshot AI/Kimi、字节跳动、TypeSafe AI、Meta AI、百度，共 13 家。</p>
+<p><strong>增量窗口：</strong> 2026 年 10 月 30 日上一期日报后，至 10 月 31 日上午 08:00（北京时间）。GitHub 若按 UTC 显示发布时间，与北京时间应区分。入选事件按工程价值排序；正式新增、历史遗漏、Alpha/Beta/Nightly、预定退役和待核验单独标记，绝不把旧模型的平台上架当作原厂重新发布。</p>
+<p>本期有明确官方依据的实质变化：Anthropic 宣布 Opus 4.8 Fast Mode 将于 11 月 30 日移除；Claude Code 2.1.314 正式发布；Qwen CUA Driver 0.27.0 为预发布；Kimi Code 2.4.1 为正式维护版；OpenAI 宣布未来支持跨厂商 AI 训练偏好信号。另补录 10 月 29 日阿里云百炼 Ling-3.1-Flash 上架及腾讯云六个超自然大模型 2.0 音色。Google Gemini CLI 有一个 Nightly 小修复。</p>
+<h2>今日必看摘要</h2>
+<p><strong>01｜Anthropic：Claude Opus 4.8 Fast Mode 进入退役期（必看）。</strong> 10 月 30 日公告明确，<code>claude-opus-4-8</code> 配合 <code>speed: "fast"</code> 将于 <strong>2026 年 11 月 30 日</strong>停止接受。需保持 Fast Mode 的应用应对照评测 Claude Opus 5.5。这不是 Opus 4.8 整个模型退役。<a href="https://platform.claude.com/docs/en/release-notes/overview">Claude Release Notes</a>。</p>
+<p><strong>02｜Anthropic：Claude Code 2.1.314 正式发布（必看）。</strong> 新增强制工作目录写入边界、身份组路由、Bedrock Guardrail 审计，改进 Thinking Effort 管理、MCP、TLS、Tool Search 回退、Compaction 和工具执行权限。<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.314">官方 Release</a>。</p>
+<p><strong>03｜Qwen Code：CUA Driver 0.27.0 预发布（建议看）。</strong> 提供桌面控制驱动与配套 SDK，特别指出 Windows UIAccess Worker 需在目标机器签名并建立信任；不可将未签名的预发布二进制直接作为正式生产工具。<a href="https://github.com/QwenLM/qwen-code/releases/tag/cua-driver-rs-v0.27.0">官方 Release</a>。</p>
+<hr/>
+<h2 id="s1">一、Anthropic｜Claude Opus 4.8 Fast Mode 计划退役</h2>
+<p><strong>公告日期：</strong> 2026-10-30；<strong>移除日期：</strong> 2026-11-30；<strong>状态：</strong> Deprecated，尚未到停用日；<strong>优先级：必看</strong>。</p>
+<p><strong>官方直接来源：</strong> <a href="https://platform.claude.com/docs/en/release-notes/overview">Claude Platform Release Notes</a> · <a href="https://platform.claude.com/docs/en/build-with-claude/fast-mode">Fast Mode 文档</a>。</p>
+<h3>1）内容与准确范围</h3>
+<p>Anthropic 宣布弃用 Claude Opus 4.8 的 Fast Mode。受影响的是 <code>claude-opus-4-8</code> 与 <code>speed: "fast"</code> 的组合，计划在 2026 年 11 月 30 日之后返回错误。官方建议仍需 Fast Mode 的系统迁移到 Claude Opus 5.5。不能把这条更新误写为整个 Opus 4.8 模型在同一天停止服务。</p>
+<pre aria-label="可横向滚动的代码或流程示例" tabindex="0"><code class="language-json">{"model":"claude-opus-4-8","speed":"fast"}
+</code></pre>
+<h3>2）核心机制与知识点</h3>
+<p>Model ID 决定底层模型，<code>speed</code> 决定服务速度模式，Thinking/Effort 则影响模型推理行为，三者不是同一个配置，也不是自动联动。企业网关如果只对 <code>modelId</code> 做退役管理，却在调用方配置中写死 <code>speed: fast</code>，就可能在模型仍可用时因为速度档位退役造成请求错误。应维护“Provider × Model ID × Capability × Region × Lifecycle”状态，而不仅是简单的字符串别名表。</p>
+<pre aria-label="可横向滚动的代码或流程示例" tabindex="0"><code class="language-text">Business Request -&gt; Provider Adapter
+                         |-- Opus 4.8 + Fast -&gt; 2026-11-30 移除
+                         |-- Opus 5.5 + Fast -&gt; 需验证账户/渠道
+                         +-- Standard -&gt; 另一条独立能力路径
+</code></pre>
+<h3>3）价值与官方宣传边界</h3>
+<p>这一变更是真正可预计的 Breaking Change，优先级高于未经复测的 Benchmark 排名。官方 Fast Mode 文档描述支持的模型可实现<strong>最高约 2.5 倍输出 Token 速度</strong>，重点是 Output Tokens per Second 而非首 Token 时间。该数字为厂商声明，不是独立 P95 证据；迁移后不能预设模型质量、成本、Thinking 和上下文完全相同。</p>
+<p>官方当前列示 Fast Mode 价格：Opus 5.5 <strong>输入 $8/百万 Token、输出 $40/百万 Token</strong>；Opus 5 和 4.8 <strong>输入 $10/百万 Token、输出 $50/百万 Token</strong>。缓存与数据驻留修正可能叠加；这不是所有渠道的最终账单。<a href="https://platform.claude.com/docs/en/build-with-claude/fast-mode">官方计费与适用范围</a>。</p>
+<h3>4）适用业务、产品和工程场景</h3>
+<p>适用于 Claude Messages API、Managed Agents、延迟敏感业务、代码 Agent、多供应商 AI Gateway、企业模型路由，以及 <code>ANTHROPIC_BASE_URL</code> 指向第三方平台的应用。没有使用 Opus 4.8 Fast Mode 的服务不需要仅因该公告改动。</p>
+<h3>5）对 Java/Spring Boot、Nacos、领域 Gateway 的帮助</h3>
+<p>把模型和速度档位分别建模，并记录去留期限：</p>
+<pre aria-label="可横向滚动的代码或流程示例" tabindex="0"><code class="language-yaml">ai:
+  providers:
+    anthropic:
+      routes:
+        coding-fast:
+          model: claude-opus-4-8
+          speed: fast
+          retirementDate: "2026-11-30"
+          migrationRequired: true
+</code></pre>
+<p>这只是<strong>企业应用侧配置示意，不是 Anthropic 官方 YAML Schema</strong>。应与 Nacos 配置、数据库路由、代码常量和环境变量一起盘点。Gateway 必须记录 <code>requestedModel</code>、<code>effectiveModel</code>、<code>requestedSpeed</code>、<code>effectiveSpeed</code>、<code>provider</code> 与降级原因。</p>
+<h3>6）立即行动、代码与验收标准</h3>
+<p>PowerShell 5.1 扫描本地项目：</p>
+<pre aria-label="可横向滚动的代码或流程示例" tabindex="0"><code class="language-powershell">$patterns = @('claude-opus-4-8','"speed"','fast')
+Get-ChildItem . -Recurse -File -ErrorAction SilentlyContinue |
+  Where-Object { $_.Extension -in '.java','.json','.yml','.yaml','.properties','.toml' } |
+  Select-String -Pattern $patterns -SimpleMatch
+</code></pre>
+<p>此扫描仅找候选，<code>fast</code> 也可能与本公告完全无关；并且无法自动读取远程 Nacos。将受影响路由建立任务样本，比较 Opus 4.8 Fast 与经账户许可的 Opus 5.5 Fast 的结构化输出、函数调用、错误、Thinking、成功任务费用和 P95。<strong>验收标准：</strong>停用日期前受影响组合使用量归零，替代方案在质量、安全和成本上满足业务门槛，保留异常回滚。</p>
+<h3>7）优先级与兼容/隐私/成本判断</h3>
+<p><strong>必看，受影响服务应在 11 月 30 日前完成迁移。</strong> 不要据此要求全部 Opus 4.8 普通速度用户迁移。Bedrock、Vertex、Foundry 和第三方网关需分别核验可用地域、认证、协议与真正生效的 Speed 选项；官方标价不可未经核对直接当作这些渠道的报价。模型许可证及数据处理条件按具体产品协议另查。</p>
+<hr/>
+<h2 id="s2">二、Anthropic｜Claude Code v2.1.314：权限、企业路由和网关兼容</h2>
+<p><strong>发布日期：</strong> 2026-10-30（GitHub 标注）；<strong>版本：</strong> <code>v2.1.314</code>；<strong>状态：</strong> Latest 正式 Release；<strong>优先级：必看</strong>。</p>
+<p><strong>官方直接来源：</strong> <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.314">Claude Code v2.1.314</a>。</p>
+<h3>1）官方变更内容</h3>
+<div aria-label="可以横向滚动的数据表格" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th>变化</th>
+<th>影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文件权限</td>
+<td><code>permissions.blockWritesOutsideWorkingDirectories</code></td>
+<td>Write/Edit/NotebookEdit 的工作目录边界</td>
+</tr>
+<tr>
+<td>企业路由</td>
+<td>Claude Apps Gateway Upstream 的 <code>groups</code></td>
+<td>按 IdP 群组选上游，Failover 也遵守</td>
+</tr>
+<tr>
+<td>Bedrock</td>
+<td><code>guardrail_trace</code></td>
+<td>标记触发的 Guardrail，不记录命中文本</td>
+</tr>
+<tr>
+<td>长上下文</td>
+<td>VS Code/Claude Desktop Code Tab 空闲 Compaction</td>
+<td>满足 200K+ Token、缓存失效等条件后处理</td>
+</tr>
+<tr>
+<td>Thinking</td>
+<td>管理员限制 Effort 时自动降级并告知有效档位</td>
+<td>避免反复 <code>Invalid effort level</code></td>
+</tr>
+<tr>
+<td>第三方 Base URL</td>
+<td>拒绝 <code>tool_reference</code> 后去掉 Tool Search 重试一次</td>
+<td>兼容降级并记忆不兼容情况</td>
+</tr>
+<tr>
+<td>MCP / Auth</td>
+<td>修复过期凭证、注销状态、证书链和登录竞争</td>
+<td>降低连接失败</td>
+</tr>
+<tr>
+<td>CI 与沙箱</td>
+<td><code>claude -p</code> 启动失败返回退出码 1，修复 Resume 工作树沙箱与 Hook 执行</td>
+<td>支持可靠失败检测</td>
+</tr>
+</tbody>
+</table></div>
+<p>官方还修复 Bedrock 多图像请求触发反复 <code>400 Input is too long</code>、Foundry 缺少默认部署时回退、PreCompact Hook 大输出造成重复压缩。单个 PreCompact Hook 输出现在截到 <strong>10,000 字符</strong>。</p>
+<h3>2）核心机制、协议与权限语义</h3>
+<p>配置项示例：</p>
+<pre aria-label="可横向滚动的代码或流程示例" tabindex="0"><code class="language-json">{
+  "permissions": {
+    "blockWritesOutsideWorkingDirectories": true
+  }
+}
+</code></pre>
+<p>这是根据官方设置名构造的配置示意，正式应用应依照当前官方设置文档验证。它约束特定文件编辑工具，不替代 Shell/MCP 的操作系统权限，也不替代领域服务的鉴权。对外部业务写入仍需独立租户、用户和资源校验。</p>
+<p><code>groups</code> 使组织按身份提供商群组路由到允许的模型上游；<code>guardrail_trace</code> 改善 Bedrock 安全规则的可观察性。对不支持 <code>tool_reference</code> 的中转站，自动重试可能移除 Tool Search，所以“HTTP 成功”不代表工具发现能力与请求时相同。有效 Effort 也可能因管理员上限而降低。</p>
+<p>空闲 Compaction 明确针对 VS Code 与桌面 Code Tab 的特定条件，不应推导所有 CLI 会话和底层模型 Context Window 自动变更。</p>
+<h3>3）价值与证据边界</h3>
+<p>这次涉及真实文件权限、网关协议降级、身份管理和恢复一致性。模型正确生成代码却意外写出目录、忽略权限或错误恢复，仍属于业务失败。厂商没有给出可外推到所有项目的 P95、Benchmark 或 Token 降本百分比，不凭版本号推定模型速度提升。</p>
+<h3>4）适用场景</h3>
+<p>Windows/PowerShell、Claude Code、MCP、Hooks、Skills、第三方 <code>ANTHROPIC_BASE_URL</code>、Nginx 中转、Bedrock/Vertex/Foundry、Git Worktree、长会话与远程 CI。</p>
+<h3>5）企业 AI Gateway / 微服务价值</h3>
+<p>建议分层验证：<code>Tool Request -&gt; Agent Permission -&gt; Sandbox/FS Policy -&gt; Domain Gateway -&gt; Business Authorization -&gt; Execution Ledger</code>。在日志中额外记录 <code>requestedEffort/effectiveEffort</code>、<code>requestedFeatures/effectiveFeatures</code>、<code>gatewayFallbackReason</code>、<code>toolExecutionStatus</code>，尤其关注 Tool Search 降级和脚本对退出码的判断。Spring Boot 服务端不能因为客户端显示“允许”就跳过本地授权。</p>
+<h3>6）实践与生产回归标准</h3>
+<pre aria-label="可横向滚动的代码或流程示例" tabindex="0"><code class="language-powershell">claude --version
+git --version
+$env:ANTHROPIC_BASE_URL
+$env:CLAUDE_CODE_AUTO_COMPACT_WINDOW
+</code></pre>
+<p>在隔离仓库验证工作目录内允许修改、目录外被拒绝；同时测试 Shell/MCP 的真实安全边界。模拟第三方 Gateway 不支持 <code>tool_reference</code>、管理员限制 Thinking Effort、MCP 登录失效、长会话空闲和恢复。CI 测试 <code>claude -p</code> 启动失败应报告非零退出码。测试 PreCompact Hook 超大输出和 Git Worktree Resume。<strong>验收标准：</strong>零未授权写入、错误原因可见、会话恢复不重复业务动作、规则文件不丢失、有效模型与 Effort 可审计。</p>
+<h3>7）优先级与兼容、Breaking、成本</h3>
+<p><strong>必看；在用 Gateway/MCP/Hooks 的环境应验证后升级。</strong> 不因 CLI 更新推断 Claude 基础模型新价格、Context、Thinking 模式或默认 API 版本变动。Plugin 与托管策略的作用范围要通过真实配置和身份环境核验；不要以客户端 UI 代替安全审计。</p>
+<hr/>
+<h2 id="s3">三、Qwen Code｜CUA Driver v0.27.0 跨平台桌面驱动</h2>
+<p><strong>发布日期：</strong> 2026-10-30；<strong>版本：</strong> <code>cua-driver-rs-v0.27.0</code>；<strong>状态：</strong> Pre-release，非 Qwen Code CLI Stable；<strong>优先级：建议看</strong>。</p>
+<p><strong>官方直接来源：</strong> <a href="https://github.com/QwenLM/qwen-code/releases/tag/cua-driver-rs-v0.27.0">Qwen CUA Driver Release</a>。</p>
+<h3>1）内容与版本</h3>
+<p>预发布包括 macOS 已签名和公证的通用二进制、Linux x86_64/arm64（glibc 2.31 最低版本）、Windows x86_64/arm64 的 UIAccess Worker 与 Native SDK Payload，以及 Node 生态的 <code>@qwen-code/cua-sdk</code>、Browser SDK、<code>@qwen-code/node-repl-mcp</code> 发布流程。Windows Worker 是未签名组件，<strong>在目标机器启用 UIAccess 前须签名并建立信任</strong>。</p>
+<h3>2）技术机制与协议</h3>
+<p>Computer Use Agent 不同于结构化业务 API：它观察屏幕状态，再通过鼠标、键盘和坐标执行动作。模型提出动作，宿主执行环境决定是否允许。</p>
+<pre aria-label="可横向滚动的代码或流程示例" tabindex="0"><code class="language-text">Agent Intent -&gt; Action Approval -&gt; CUA Driver
+                                     |-- Window / Screen State
+                                     |-- Coordinates / Mouse
+                                     +-- Keyboard
+                             -&gt; Desktop Observation -&gt; Verify
+</code></pre>
+<p>官方列出可选配置：</p>
+<pre aria-label="可横向滚动的代码或流程示例" tabindex="0"><code class="language-text">CUA_DRIVER_RS_COORDINATE_SPACE=1
+CUA_DRIVER_RS_COORDINATE_SCALE=1000
+MCP_MODEL_PAYLOAD_FILTER=1
+</code></pre>
+<p>相对坐标与 MCP 文本过滤默认关闭。开关应依特定 API/环境验证，不应未经评估启用或将其误认为完整内容安全方案。</p>
+<h3>3）为什么有价值</h3>
+<p>没有正式 API 的传统桌面应用可通过 CUA 进行受控操作。但 GUI 不稳定、焦点失真、坐标错位、剪贴板泄漏和权限扩大都会影响任务正确率。官方未提供可独立核验的统一桌面任务成功率或 P95，因此不把预发布称为生产成熟。</p>
+<h3>4）适用场景</h3>
+<p>Windows 11 桌面 Agent、测试自动化、浏览器及传统企业 UI 操作、无 API 的辅助流程。已有 REST API/MCP 的场景优先使用结构化接口，而非点击模拟。</p>
+<h3>5）对企业 AI Runtime 的帮助</h3>
+<p>应由宿主管理 <code>allowedWindows</code>、<code>allowedActions</code>、<code>clipboardPolicy</code>、文件和网络权限、人工审批以及工具执行 ID。桌面操作不能因为模型选择了一个动作就默认获得业务授权，重要支付或删除需额外确认。</p>
+<h3>6）实践步骤和验收</h3>
+<p>在隔离 Windows 虚拟机中使用无生产密钥的测试软件；按照 Windows 和发行包的签名要求配置，<strong>不可绕过 UIAccess 的受信任执行要求</strong>。测试缩放、焦点切换、取消、非法窗口、断线恢复和意外重复点击。记录 <code>actionId/windowId/approval/result</code>。<strong>验收标准：</strong>只操作明确允许的界面，失败可停止，真实业务不发生副作用，日志可追溯。</p>
+<h3>7）优先级与风险</h3>
+<p><strong>建议看，只适合隔离 PoC。</strong> 这不是 Qwen 模型更新，也不是 Qwen Code CLI 0.27.0 Stable；不意味着所有 Windows 用户已具备相关签名条件。Qwen Code CLI 已知正式基线仍为 0.26.4，GPU/CPU 或 API Token 成本未因这个驱动版本获得新的统一报价。</p>
+<hr/>
+<h2 id="s4">四、Moonshot AI / Kimi｜Kimi Code 2.4.1 正式维护版</h2>
+<p><strong>发布日期：</strong> 2026-10-30；<strong>版本：</strong> <code>@moonshot-ai/kimi-code@2.4.1</code>；<strong>状态：</strong> Latest 正式版；<strong>优先级：建议看</strong>。</p>
+<p><strong>官方直接来源：</strong> <a href="https://github.com/MoonshotAI/kimi-code/releases/tag/@moonshot-ai%2Fkimi-code@2.4.1">Kimi Code 2.4.1 Release</a>。</p>
+<h3>1）内容是什么</h3>
+<p>官方发布说明包括：单次文件 Read 工具返回上限从最多 <strong>500,000 字符</strong>降低至最多 <strong>100,000 字符或约 25,000 Token（先达到者）</strong>；<code>config.toml</code> 的 <code>[read]</code> 下 <code>max_chars</code> 可调整上限；精简工具、子 Agent 和重复 Goal/Plan Mode 提示词，并改善 Web 交互。</p>
+<h3>2）技术机制与知识点</h3>
+<p>单次工具读取量、底层 Context Window、Compaction 阈值属于三个不同参数。大日志、大 Java 源文件被裁剪后，Agent 如果未识别截断，可能只看前段就尝试重构。理想 Read Tool 应返回 <code>fileId/offset/limit/returnedLength/truncated/nextOffset</code>，便于按范围读完。</p>
+<pre aria-label="可横向滚动的代码或流程示例" tabindex="0"><code class="language-text">Large File -&gt; Read Tool (100k chars / ~25k tokens)
+                      -&gt; Agent Context -&gt; Decide Next Range / Search
+</code></pre>
+<h3>3）为什么有价值</h3>
+<p>减少一次超大读取吞掉上下文的可能性，但也可能在长文件任务中增加漏读风险。缩短提示词不等于所有任务获得相同比例的 Token 降本，官方未提供统一 Benchmark。</p>
+<h3>4）适用场景</h3>
+<p>AI Coding、大型日志、长 SQL/Markdown、Java 源码、Skills、子 Agent、文件分析和长期 Compaction 场景。</p>
+<h3>5）对企业架构的帮助</h3>
+<p>在统一文档工具协议中明确截断信息，并在业务写入之前要求完整代码上下文及受影响文件的校验。与 Spring Boot、Go、Python 等具体语言无关；模型不应把返回片段误当成文件全部内容。</p>
+<h3>6）操作和验收</h3>
+<pre aria-label="可横向滚动的代码或流程示例" tabindex="0"><code class="language-powershell">kimi --version
+</code></pre>
+<p>在隔离项目使用超过 100,000 字符的脱敏文件，分别读取开头、中间与尾部，观察默认上限与是否能正确接续。确有需求时再按官方文档配置 <code>[read].max_chars</code>，不应盲目放大。<strong>验收标准：</strong>能识别缺失部分、完成必要读取，文件修改 Diff 不缺尾部内容，Token 使用可追踪。</p>
+<h3>7）优先级、兼容及成本</h3>
+<p><strong>建议看，常处理大文件的用户优先回归。</strong> Kimi Code 客户端更新不等于 Kimi API Model ID、Context Window、Thinking 或标准价格改变。对第三方 Base URL 仍应独立核验凭证、工具协议和用量。</p>
+<hr/>
+<h2 id="s5">五、OpenAI｜跨厂商 AI 训练偏好信号（robots.txt）</h2>
+<p><strong>发布日期：</strong> 2026-10-30；<strong>状态：</strong> 正式政策/标准化方向公告，但技术落地仍在未来数月；<strong>优先级：建议看</strong>。</p>
+<p><strong>官方来源：</strong> <a href="https://openai.com/index/helping-websites-express-ai-training-preferences/">Making it easier for websites to express AI training preferences</a> · <a href="https://developers.openai.com/api/docs/bots">OpenAI Crawlers 文档</a>。</p>
+<h3>1）内容是什么</h3>
+<p>OpenAI 宣布将支持 <code>robots.txt</code> 中表达基础生成式 AI 模型训练偏好的<strong>跨厂商通用信号</strong>，参与 IETF AI Preferences 工作组；官方计划在未来数月实施，并会另行公布细节。现有 OpenAI Crawler 的 robots 控制仍继续适用。这不是今天已经提供的全局通用爬虫协议生效公告。</p>
+<h3>2）技术机制</h3>
+<p>网站目前可能针对多个爬虫逐一制定规则。共享信号的目标是减少重复配置，让多个参与供应商读取同一训练偏好说明。训练偏好、网站允许抓取、搜索索引、AI 搜索引用和版权许可不等价。</p>
+<pre aria-label="可横向滚动的代码或流程示例" tabindex="0"><code class="language-text">Website robots.txt
+    |-- Current Crawler Controls
+    +-- Future Shared Training Preference -&gt; Participating AI Providers
+</code></pre>
+<h3>3）价值与证据边界</h3>
+<p>有助于独立网站、媒体和内容创作者表达训练偏好，但它是自愿的标准化工作，不代表所有模型提供商强制执行，也没有官方证据证明新语法已经全面实施。</p>
+<h3>4）适用场景</h3>
+<p>AI 自媒体网站、技术博客、在线课程、企业公开文档、出版社、独立 SaaS 内容平台和版权治理。</p>
+<h3>5）企业软件架构帮助</h3>
+<p>由 Nginx/Cloudflare/静态网站统一管理 <code>robots.txt</code>，检查 CDN 缓存，确保站点规则与数据政策一致。企业 RAG 另需遵守数据来源、引用和授权规则；不要把爬虫训练偏好当作 AI Gateway API 认证方式。</p>
+<h3>6）实践步骤与验收</h3>
+<p>检查自有站点 <code>https://example.com/robots.txt</code>（示例域名），核对既有 User-agent、路径规则和缓存。<strong>不要擅自部署尚未确认的共享信号语法。</strong> 等 IETF 和 OpenAI 公布可实施的正式细节后再配置。验收为网站规则可正确访问、不破坏正常索引与合法业务，并可记录变更时间。</p>
+<h3>7）优先级与风险</h3>
+<p><strong>建议看，当前无需迁移模型、SDK、Codex 或 Responses API。</strong> 未来标准范围与供应商执行条件仍需官方核实。</p>
+<hr/>
+<h2 id="s6">六、阿里巴巴 / 阿里云百炼｜Ling-3.1-Flash 上架（历史遗漏补录）</h2>
+<p><strong>原始上架日期：</strong> 2026-10-29；<strong>性质：</strong> 上期遗漏补录，非今天新发；<strong>Model ID：</strong> <code>antdigital/Ling-3.1-flash</code>；<strong>地域：</strong> 华北 2（北京）；<strong>优先级：建议看</strong>。</p>
+<p><strong>官方来源：</strong> <a href="https://help.aliyun.com/zh/model-studio/newly-released-models">百炼模型上下架与更新</a>。</p>
+<h3>1）内容</h3>
+<p>阿里云百炼公告，蚂蚁数科直供的 Ling-3.1-Flash 在北京地域上架。官方描述约 560B 总参数、单 Token 激活约 25B、最大 1M Token Context、文本输入、默认混合思考，用于通用 Agent、搜索、办公、研发及科研任务。<strong>不是 10 月 31 日的新 Qwen 模型发布。</strong></p>
+<h3>2）机制</h3>
+<p>MoE 激活规模和总参数规模不同。模型家族、模型快照、平台服务、区域 Endpoint、账户权限与 <code>Thinking</code> 控制又是不同层次：<code>Model -&gt; Aliyun Model Studio -&gt; cn-beijing Endpoint -&gt; Application</code>。官方上限不代表任意账户、任意工具或全部请求可以无条件使用 1M Token。</p>
+<h3>3）价值与证据</h3>
+<p>提供新的文本长上下文候选，但没有经过统一独立测量的 P95、成功任务成本或工具质量比较。默认思考可能给简单任务带来额外延迟。对于营销或 Benchmark 宣传，需与真实任务对照。</p>
+<h3>4）适用场景</h3>
+<p>长文档分析、代码审查、复杂业务 Agent、跨领域知识检索、候选模型评测。</p>
+<h3>5）企业工程用途</h3>
+<pre aria-label="可横向滚动的代码或流程示例" tabindex="0"><code class="language-yaml">provider: aliyun-modelstudio
+region: cn-beijing
+modelId: antdigital/Ling-3.1-flash
+modality: text
+thinkingDefault: enabled
+</code></pre>
+<p>以上是<strong>自定义应用配置示例</strong>，非官方 SDK 结构。Java/Spring Boot 与跨语言 Gateway 都应按 Endpoint 分开记录认证、Schema、上下文、配额、数据地域和定价。</p>
+<h3>6）试用验收</h3>
+<p>通过百炼控制台核实 Model ID、访问资格与计费后，用 20—30 条脱敏任务测试结构化输出、Thinking、工具能力、响应时延、缓存和真实用量。逐步提升 Prompt 长度，区分客户端超时与模型上下文限制。<strong>验收：</strong>在质量、成本和可靠性至少一项有可复测收益，不因宣传即切换生产流量。</p>
+<h3>7）优先级与风险</h3>
+<p><strong>建议看，先 PoC。</strong> 地域/实名/账号、工具协议和账单必须按官方现行条款核实，不能照搬其他供应商的模型参数和价格。</p>
+<hr/>
+<h2 id="s7">七、腾讯｜六个超自然大模型 2.0 音色（历史遗漏补录）</h2>
+<p><strong>原始发布日期：</strong> 2026-10-29；<strong>性质：</strong> 语音服务目录变化，上期遗漏补录；<strong>优先级：建议看（音频业务）</strong>。</p>
+<p><strong>官方来源：</strong> <a href="https://cloud.tencent.com/document/product/1073/49616">腾讯云语音合成产品动态</a>。</p>
+<h3>1）内容</h3>
+<p>新增六个音色：云嘉尔（慵懒男声）、云嘉和（温和男声）、云嘉瑜（情感解说女声）、云嘉辉（激情解说男声）、云小璇（活力女青年）、云佳洁（轻熟姐姐）。10 月 27 日已宣布超自然大模型 2.0 音色归类及新计费；10 月 29 日是音色目录增量。不是新混元文本模型或所有 TokenHub API 升级。</p>
+<h3>2）机制</h3>
+<p><code>Script -&gt; TTS Model -&gt; Voice ID / Emotion / Style / Rate -&gt; Audio File</code>。Voice ID 和音色展示名称必须区分，不能只凭中文描述构造真实 API 参数。角色配音还需管理历史声音版本。</p>
+<h3>3）价值与证据</h3>
+<p>可增加 AI 短剧、解说与客服的角色语音选择，但没有独立的自然度评分与统一价格比对。产品名称“超自然”不应当作可量化的音质保证。</p>
+<h3>4）适用场景</h3>
+<p>AI 短剧、社媒视频、配音解说、语音客服和角色化 AI 助手。</p>
+<h3>5）架构价值</h3>
+<p>建议建立 <code>provider/modelId/voiceId/voiceVersion/scriptId/audioFormat/duration/billingVersion</code>，生成工作流保留 Voice ID、输入文本和费用，不把音色名称当成永久稳定接口标识。</p>
+<h3>6）实践验收</h3>
+<p>用官方音色列表查询准确 Voice ID，选择同一段约 20 秒普通/情绪/术语文本生成六段音频，记录实际格式、延迟、稳定性和账单。<strong>验收：</strong>角色适配度、发音、可重复性和成本满足项目要求；有旧音色回滚方案。</p>
+<h3>7）优先级与风险</h3>
+<p><strong>语音业务建议看，普通后端开发者可跳过。</strong> 未获得完整官方新旧价格对应表，本期不填猜测数字；用户上传参考声音和复刻功能应有合法授权与同意。</p>
+<hr/>
+<h2 id="s8">八、Google｜Gemini CLI 0.67 Nightly 终端修复</h2>
+<p><strong>发布日期：</strong> 2026-10-30；<strong>版本：</strong> <code>v0.67.0-nightly.20261030.gb633c0703</code>；<strong>状态：</strong> Pre-release；<strong>优先级：可跳过</strong>。</p>
+<p><strong>官方来源：</strong> <a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.67.0-nightly.20261030.gb633c0703">Gemini CLI Nightly Release</a>。</p>
+<h3>1）内容</h3>
+<p>本次主要澄清 README 中 Gemini CLI 的范围、限制和工具生态，并修复终端宽度变化时内联历史内容重绘的边界问题。不是 Gemini 基础模型新发布。</p>
+<h3>2）技术机制</h3>
+<p>TUI 会根据终端宽度重新布局历史记录。过量或重复重绘会造成卡顿或视觉混乱；它与 Model API 的 Context、Thinking、Tool Calling 无直接关系。</p>
+<h3>3）价值与证据</h3>
+<p>可能改善长历史终端会话的显示体验；没有官方统一推理性能、成本和准确率结果可用。</p>
+<h3>4）适用场景</h3>
+<p>Windows Terminal、PowerShell、SSH、IDE 终端和 Gemini CLI 编码 Agent。</p>
+<h3>5）企业工程帮助</h3>
+<p>把 TUI 状态和长期任务执行状态分开保存。终端重绘错误不应影响审计和业务执行账本。</p>
+<h3>6）实践验收</h3>
+<pre aria-label="可横向滚动的代码或流程示例" tabindex="0"><code class="language-powershell">gemini --version
+</code></pre>
+<p>仅有相关故障时，在隔离环境生成长会话，改变终端宽度，检查历史信息、复制和滚动。<strong>验收：</strong>显示与执行日志一致、不丢失、不重复。</p>
+<h3>7）优先级与风险</h3>
+<p><strong>可跳过；正常使用时保留已核实 <code>0.66.0</code> Stable。</strong> 不把 Nightly 当生产正式版，模型 Context、SDK 和价格未随此版本改变。</p>
+<hr/>
+<h2 id="s9">九、13 家厂商官方巡检状态表</h2>
+<p>状态针对 <strong>2026-10-30 上期之后至 2026-10-31 08:00（北京时间）</strong>。 “经核验无新增”只指已检查的官方发布面，不等于已穷尽所有账号、区域、动态控制台或私有 Preview。不能完整读取的渠道标记“待核验”。</p>
+<div aria-label="可以横向滚动的数据表格" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>核验依据与结果</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① OpenAI</strong></td>
+<td>10/30 发布 AI 训练偏好信号支持计划；Codex Release 最新核实仍为 0.166.0，前期已报；API Changelog 未找到新正式模型</td>
+<td><strong>重要政策更新；主 API 无新模型证据</strong></td>
+</tr>
+<tr>
+<td><strong>② Anthropic</strong></td>
+<td>10/30 Opus 4.8 Fast Mode 退役公告；Claude Code v2.1.314 正式版</td>
+<td><strong>两项重要更新</strong></td>
+</tr>
+<tr>
+<td><strong>③ Google / DeepMind</strong></td>
+<td>Gemini API Changelog 最近 10/27 <code>gemini-api</code> Beta，Gemini CLI 10/30 Nightly</td>
+<td><strong>小更新；API 主日志无重要新增</strong></td>
+</tr>
+<tr>
+<td><strong>④ xAI</strong></td>
+<td>API Release Notes 最近 10/27 <code>guidelines</code>，11/2 Imagine 旧别名迁移需关注</td>
+<td><strong>经核验主日志无新增；退役提醒</strong></td>
+</tr>
+<tr>
+<td><strong>⑤ 智谱 / Z.ai</strong></td>
+<td>New Released 最新可见 8/26 GLM-5.3-Flash；Coding Plan/账号控制台不全</td>
+<td><strong>公告无新条目；其他待核验</strong></td>
+</tr>
+<tr>
+<td><strong>⑥ DeepSeek</strong></td>
+<td>原厂 Change Log 最近 10/17 Search API / Flash-1017；Harness Alpha 前期已报</td>
+<td><strong>经核验主日志无重要新增</strong></td>
+</tr>
+<tr>
+<td><strong>⑦ 腾讯</strong></td>
+<td>混元主文档无可确认新基础模型；10/29 六个 TTS 2.0 音色补录；TokenHub 地区动态不全</td>
+<td><strong>历史小更新；部分待核验</strong></td>
+</tr>
+<tr>
+<td><strong>⑧ 阿里巴巴 / Qwen</strong></td>
+<td>Qwen CUA Driver v0.27.0 Pre-release；百炼 10/29 北京 Ling-3.1-Flash 补录；Qwen Code Stable 0.26.4</td>
+<td><strong>预发布小更新＋历史补录</strong></td>
+</tr>
+<tr>
+<td><strong>⑨ Moonshot / Kimi</strong></td>
+<td>Kimi Code v2.4.1 10/30 正式 Release</td>
+<td><strong>正式版本小更新</strong></td>
+</tr>
+<tr>
+<td><strong>⑩ 字节跳动</strong></td>
+<td>Seed 首页最近显著更新 10/14；方舟部分页面需 JS，Trae/即梦/各区域服务未穷举</td>
+<td><strong>主动态无新条目；其他待核验</strong></td>
+</tr>
+<tr>
+<td><strong>⑪ TypeSafe AI</strong></td>
+<td>Blog 仍以 Jev 1.14.0 为主要公告；Docs 可读、ReDoc 依赖 JS</td>
+<td><strong>博客无新增；API/实验能力待核验</strong></td>
+</tr>
+<tr>
+<td><strong>⑫ Meta AI</strong></td>
+<td>Engineering 最新可核实 10/29 JiTTesting；研究站部分访问失败，Llama 权重/许可无新发布证据</td>
+<td><strong>工程主渠道无新增；模型/研究待核验</strong></td>
+</tr>
+<tr>
+<td><strong>⑬ 百度</strong></td>
+<td>千帆模型表最后更新 10/18；PaddleOCR Releases 已核实基线 3.7.0</td>
+<td><strong>主表无新增；其他待核验</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3>官方巡检入口</h3>
+<div aria-label="可以横向滚动的数据表格" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>第一方来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI</td>
+<td><a href="https://developers.openai.com/api/docs/changelog">API Changelog</a> · <a href="https://github.com/openai/codex/releases">Codex Releases</a></td>
+</tr>
+<tr>
+<td>Anthropic</td>
+<td><a href="https://platform.claude.com/docs/en/release-notes/overview">Platform Release Notes</a> · <a href="https://github.com/anthropics/claude-code/releases">Claude Code</a></td>
+</tr>
+<tr>
+<td>Google</td>
+<td><a href="https://ai.google.dev/gemini-api/docs/changelog">Gemini API</a> · <a href="https://github.com/google-gemini/gemini-cli/releases">Gemini CLI</a></td>
+</tr>
+<tr>
+<td>xAI</td>
+<td><a href="https://docs.x.ai/developers/release-notes">xAI Release Notes</a></td>
+</tr>
+<tr>
+<td>智谱 / Z.ai</td>
+<td><a href="https://docs.z.ai/release-notes/new-released">New Released</a> · <a href="https://docs.z.ai/">Docs</a></td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td><a href="https://api-docs.deepseek.com/updates/">Change Log</a></td>
+</tr>
+<tr>
+<td>腾讯</td>
+<td><a href="https://cloud.tencent.com/document/product/1729">混元文档</a> · <a href="https://cloud.tencent.com/document/product/1073/49616">TTS 更新</a></td>
+</tr>
+<tr>
+<td>阿里 / Qwen</td>
+<td><a href="https://help.aliyun.com/zh/model-studio/newly-released-models">百炼更新</a> · <a href="https://github.com/QwenLM/qwen-code/releases">Qwen Code</a></td>
+</tr>
+<tr>
+<td>Kimi</td>
+<td><a href="https://github.com/MoonshotAI/kimi-code/releases">Kimi Code Releases</a></td>
+</tr>
+<tr>
+<td>字节</td>
+<td><a href="https://seed.bytedance.com/en/">Seed</a> · <a href="https://docs.volcengine.com/docs/ark?lang=zh">火山方舟</a></td>
+</tr>
+<tr>
+<td>TypeSafe AI</td>
+<td><a href="https://typesafe.ai/blog">Blog</a> · <a href="https://docs.typesafe.ai/">Docs</a> · <a href="https://api.typesafe.ai/redoc">ReDoc</a></td>
+</tr>
+<tr>
+<td>Meta AI</td>
+<td><a href="https://www.meta.ai/">Meta AI</a> · <a href="https://engineering.fb.com/">Engineering</a></td>
+</tr>
+<tr>
+<td>百度</td>
+<td><a href="https://cloud.baidu.com/doc/qianfan/s/Kmh4stnjp">千帆模型更新</a> · <a href="https://github.com/PaddlePaddle/PaddleOCR/releases">PaddleOCR Releases</a></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="s10">十、正式版本、Model ID 与生命周期基线</h2>
+<p>这张表是<strong>已核实版本基线，不是全行业完整模型清单</strong>。旧条目按原始日期标记，绝不重新包装成今日新品。</p>
+<div aria-label="可以横向滚动的数据表格" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>产品或接口</th>
+<th>版本 / Model ID</th>
+<th>生命周期与可用性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude API Fast</td>
+<td><code>claude-opus-4-8</code> + <code>speed:"fast"</code></td>
+<td><strong>Deprecated，2026-11-30 移除</strong></td>
+</tr>
+<tr>
+<td>Claude API Fast</td>
+<td><code>claude-opus-5-5</code> + <code>speed:"fast"</code></td>
+<td>官方可用；具体区域/账户另验</td>
+</tr>
+<tr>
+<td>Claude Code</td>
+<td><code>v2.1.314</code></td>
+<td>最新核实正式版，10/30</td>
+</tr>
+<tr>
+<td>Anthropic API</td>
+<td><code>2026-10-21</code></td>
+<td>正式 API 版本，历史基线</td>
+</tr>
+<tr>
+<td>Anthropic Java SDK</td>
+<td><code>3.0.0</code></td>
+<td>已有主版本，须契约测试</td>
+</tr>
+<tr>
+<td>OpenAI Codex CLI</td>
+<td><code>0.166.0</code></td>
+<td>已核实 Stable，10/29</td>
+</tr>
+<tr>
+<td>Gemini CLI</td>
+<td><code>0.66.0</code></td>
+<td>已核实 Stable</td>
+</tr>
+<tr>
+<td>Gemini CLI</td>
+<td><code>0.67.0-nightly.20261030.gb633c0703</code></td>
+<td><strong>Pre-release</strong></td>
+</tr>
+<tr>
+<td>Gemini API</td>
+<td><code>gemini-4-argon</code></td>
+<td>10/13 已有 GA 基线</td>
+</tr>
+<tr>
+<td>Qwen Code</td>
+<td><code>0.26.4</code></td>
+<td>已核实 Stable</td>
+</tr>
+<tr>
+<td>Qwen CUA Driver</td>
+<td><code>0.27.0</code></td>
+<td><strong>Pre-release，非 CLI Stable</strong></td>
+</tr>
+<tr>
+<td>Kimi Code</td>
+<td><code>2.4.1</code></td>
+<td><strong>正式版，10/30</strong></td>
+</tr>
+<tr>
+<td>阿里百炼</td>
+<td><code>antdigital/Ling-3.1-flash</code></td>
+<td>10/29 北京上架，历史补录</td>
+</tr>
+<tr>
+<td>DeepSeek 原厂</td>
+<td><code>DeepSeek-V4.1-Flash-1017</code></td>
+<td>10/17 模型快照，既有基线</td>
+</tr>
+<tr>
+<td>DeepSeek Harness</td>
+<td><code>0.2.2-alpha.2</code></td>
+<td>10/28 Alpha，历史基线</td>
+</tr>
+<tr>
+<td>xAI</td>
+<td><code>grok-4.7</code>、<code>grok-voice-3.0</code></td>
+<td>官方已有 API 模型基线</td>
+</tr>
+<tr>
+<td>智谱 / Z.ai</td>
+<td><code>GLM-5.3-Flash</code></td>
+<td>已有公告</td>
+</tr>
+<tr>
+<td>TypeSafe AI</td>
+<td>Jev <code>1.14.0</code></td>
+<td>已公告；实验别名与价格未全部核实</td>
+</tr>
+<tr>
+<td>PaddleOCR</td>
+<td><code>v3.7.0</code></td>
+<td>已有正式版</td>
+</tr>
+<tr>
+<td>百度千帆</td>
+<td><code>DeepSeek-V4.1-Flash-1017</code></td>
+<td>10/18 第三方平台上架，非百度自研模型</td>
+</tr>
+</tbody>
+</table></div>
+<h3>TypeSafe AI 的证据边界</h3>
+<p><a href="https://docs.typesafe.ai/">TypeSafe AI 开发文档</a>确认 Jev 为 System One 类型化决策模型。Choice、Score、Noul 等返回结构化结果，某些类型还提供概率和置信度。但本期没有核实 Jev 新版本、Danger Zone、Box/RLCD 或校准参数、Java SDK、实际价格、Context 上限与别名出现正式变更。开发者应该把实验能力与生产 GA 清晰分开，绝不将厂家性能宣传代替独立评测。</p>
+<h3>Meta AI 的证据边界</h3>
+<p>未核实到本窗口新增 Llama 权重、正式 SDK/API 或生产许可的发布。Llama Stack 项目路径与现有仓库重定向不能单独当作 Meta Llama 的新版本消息。自部署前必须核实具体权重版本的许可证、商业限制、分发条件和可用地域；Meta AI 消费产品功能不可自动等同于开发者可接入 API。</p>
+<h3>经官方核实的 Fast Mode 价格</h3>
+<div aria-label="可以横向滚动的数据表格" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>模型</th>
+<th style="text-align:right">Fast 输入 / 百万 Token</th>
+<th style="text-align:right">Fast 输出 / 百万 Token</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude Opus 5.5</td>
+<td style="text-align:right">$8</td>
+<td style="text-align:right">$40</td>
+</tr>
+<tr>
+<td>Claude Opus 5 / 4.8</td>
+<td style="text-align:right">$10</td>
+<td style="text-align:right">$50</td>
+</tr>
+</tbody>
+</table></div>
+<p>这是 <a href="https://platform.claude.com/docs/en/build-with-claude/fast-mode">Anthropic Fast Mode 文档</a>当前标价，Prompt Cache 与地域等修正可以叠加；不能代替具体云渠道的完整最终账单。Opus 4.8 Fast 11/30 移除后不能凭上述价格继续使用。官方所称最高约 2.5 倍是 Output Tokens/s 条件收益，不是独立 P95 结论。</p>
+<p><strong>跨厂商统一比较限制：</strong>没有相同任务、模型快照、区域、推理配置、并发、工具数量、缓存命中与计费条件下的可靠统一数据，不能生成虚构的 13 家价格/性能排行榜。需要独立验证 Context Window、实际 Thinking、Tool Schema、SDK 语言、认证、数据保留、许可、Token 计数与费用。</p>
+<h2 id="s11">十一、跨厂商兼容性和迁移矩阵</h2>
+<div aria-label="可以横向滚动的数据表格" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>更新</th>
+<th>主要兼容 / 安全 / 成本风险</th>
+<th>推荐操作</th>
+<th>生产结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opus 4.8 Fast 退役</td>
+<td>11/30 后特定 <code>model + speed</code> 报错</td>
+<td>模型注册表加能力退役日，迁移到受支持组合并评测</td>
+<td><strong>受影响者必须处理</strong></td>
+</tr>
+<tr>
+<td>Claude Code 2.1.314</td>
+<td>工作目录保护、IdP 组路由、Effort 降级、Tool Search Fallback、Hook/Compaction</td>
+<td>受控权限、第三方网关、Resume、认证回归</td>
+<td><strong>验证后升级</strong></td>
+</tr>
+<tr>
+<td>Qwen CUA 0.27.0</td>
+<td>Windows 未签名 UIAccess、GUI 误操作、桌面数据暴露</td>
+<td>隔离 VM、签名信任、窗口白名单、审批</td>
+<td><strong>不直接生产</strong></td>
+</tr>
+<tr>
+<td>Kimi Code 2.4.1</td>
+<td>文件读取截断，长代码或日志不完整</td>
+<td>范围读取、截断标记与代码 Diff 检查</td>
+<td><strong>在用者测试后升级</strong></td>
+</tr>
+<tr>
+<td>OpenAI robots.txt 计划</td>
+<td>跨厂商信号尚未完成实施</td>
+<td>保留既有爬虫规则，等待正式细节</td>
+<td><strong>无需即时迁移</strong></td>
+</tr>
+<tr>
+<td>百炼 Ling-3.1-Flash</td>
+<td>北京地域、权限、默认 Thinking、长上下文与费用</td>
+<td>独立 Endpoint 能力评测</td>
+<td><strong>PoC</strong></td>
+</tr>
+<tr>
+<td>腾讯 TTS 音色</td>
+<td>音色映射与新计费、历史角色一致性</td>
+<td>六音色测试、账单回归</td>
+<td><strong>按需试用</strong></td>
+</tr>
+<tr>
+<td>Gemini CLI Nightly</td>
+<td>预发布兼容变化</td>
+<td>出现特定 TUI 问题才试 Nightly</td>
+<td><strong>保留 Stable</strong></td>
+</tr>
+<tr>
+<td>xAI Imagine 旧别名</td>
+<td>2026-11-02 计划转为新模型低画质路径</td>
+<td>搜索旧 Model ID、显式质量、成本与画质评测</td>
+<td><strong>受影响者提前处理</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>推荐 Model Registry 分层字段：<code>Provider / Endpoint / Region / ModelSnapshot / API Version / SDK Version / Context Window / Thinking / Speed / InputOutput Schema / Tool Protocol / Authentication / Data Retention / License / Pricing / Lifecycle</code>。不能把同一底层模型在不同云服务中的行为、权限、成本视为完全等价。重试写入/支付/通知工具必须由业务服务端保证幂等。</p>
+<h2 id="s12">十二、今日工程行动 Checklist</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P0｜排查 Opus 4.8 Fast。</strong> 搜索代码、Nacos、Gateway、数据库和第三方配置中的 <code>claude-opus-4-8</code> 与 <code>speed: fast</code>，列出必须在 11/30 之前迁移的路由。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P0｜Claude Code 2.1.314 回归。</strong> 检查目录写入拒绝、IdP 群组、Tool Search 降级、Effort、MCP/Hook 及恢复。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P1｜Kimi Code 2.4.1 大文件验证。</strong> 用大于 100,000 字符的文件确认工具截断与分段读取，不遗漏尾部信息。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P1｜Qwen CUA 桌面安全评估。</strong> Windows VM 中确认签名、UIAccess 信任、窗口权限与人工审批。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P1｜百炼 Ling-3.1-Flash PoC。</strong> 核查北京地区访问资格、模型参数、Thinking、费用及任务正确率。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P2｜检查 robots.txt。</strong> 检查当前网站规则和 CDN 缓存，不提前使用未确认的新共享训练偏好语法。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P2｜试用腾讯 TTS 音色。</strong> 如涉及 AI 短剧/短视频，核实准确 Voice ID、音质、延迟和费用。</li>
+</ul>
+<h3>PowerShell 5.1 版本检查和本地扫描</h3>
+<pre aria-label="可横向滚动的代码或流程示例" tabindex="0"><code class="language-powershell"># 查看版本和实际执行路径
+codex --version
+claude --version
+kimi --version
+qwen --version
+gemini --version
+where.exe codex
+where.exe claude
+where.exe kimi
+where.exe qwen
+where.exe gemini
+
+# 扫描候选旧配置，结果可能包含敏感字段，分享前必须脱敏
+$patterns = @(
+  'claude-opus-4-8',
+  'blockWritesOutsideWorkingDirectories',
+  'tool_reference',
+  'grok-imagine-image-quality'
+)
+Get-ChildItem . -Recurse -File -ErrorAction SilentlyContinue |
+  Where-Object { $_.Extension -in '.java','.json','.yaml','.yml','.properties','.toml','.ps1' } |
+  Select-String -Pattern $patterns -SimpleMatch
+</code></pre>
+<p>脚本只扫描当前目录，不读取远程 Nacos、数据库、Docker Secrets 或企业控制台。未安装的 CLI 报找不到命令不代表当前系统服务出错。</p>
+<h3>45 分钟实践：Agent 权限与恢复验证</h3>
+<p>用一个隔离代码仓库设计三个任务：读取超过默认限额的文件；修改允许的测试文件；尝试修改不允许目录的文件。分别用当前 Claude Code/Kimi Code 运行，检查权限、截断、工具返回、Diff 和最终任务状态。模拟一次工具超时和一次 Session 中断，再恢复任务，检查是否发生重复业务操作。</p>
+<pre aria-label="可横向滚动的代码或流程示例" tabindex="0"><code class="language-text">taskId
+sessionId
+provider
+modelSnapshot
+requestedEffort
+effectiveEffort
+toolCallId
+requestedPath
+permissionDecision
+executionStatus
+readTruncated
+retryCause
+finalBusinessStatus
+</code></pre>
+<p><strong>验收标准：</strong> 未授权操作为零、读取截断可识别、Session Resume 无重复副作用、错误归因准确，调用成本与 Token 可核对。敏感操作必须有服务端最终授权和审计记录。</p>
+<h2 id="s13">十三、综合工程判断</h2>
+<p>本期最重要的趋势是：<strong>模型生命周期的细粒度能力治理与 Agent 实际执行边界同时变得更严格。</strong> Opus 4.8 Fast 的退役说明 Model ID 之外，Speed、Thinking、地区和渠道也需要维护生命周期。Claude Code 2.1.314 增强文件权限、企业路由和第三方网关兼容；Qwen CUA 将 Agent 扩展到桌面应用，使 OS 权限、设备签名和审批准入成为真实约束；Kimi Code 2.4.1 则提醒我们上下文管理不只是更长窗口，还必须确保读取完整和成本可控。</p>
+<p>推荐继续采用语言中立的企业架构：</p>
+<pre aria-label="可横向滚动的代码或流程示例" tabindex="0"><code class="language-text">Business Applications
+       |
+       v
+Domain Gateway (Auth / Tenant / Rules)
+       |
+       v
+AI Gateway (Model Registry / Policy / Cost)
+       |
+       v
+Provider Adapters (Region / API / Speed / Thinking / Schema)
+       |
+       v
+Agent Runtime (MCP / Skills / Tools / Workflow)
+       |
+       v
+Execution Ledger (Retry / Resume / Idempotency)
+       |
+       v
+Security / Evals / Observability
+</code></pre>
+<p>Java/Spring Boot、Go、Python、TypeScript、Nacos 和云托管 Agent 都是可替换的实现工具。应优先建设协议适配、模型能力退役预警、工具权限、可恢复执行、业务幂等、隐私合规和真实任务评测。</p>
+<p><strong>今日前三项工程动作：</strong> 盘点 Claude Opus 4.8 Fast 用量；在隔离环境验证 Claude Code 2.1.314 的权限和网关回退；检查 Kimi Code 2.4.1 是否造成大文件读取遗漏。</p>
+<p><strong>真实性说明：</strong> 本报告以官方原文的版本、发布日期、适用范围和公开状态为依据；厂商声称的性能指标与独立验证分离；无法确认的价格、上下文、实际 Thinking、Model ID、地域及实验接口均标注待核验，不使用二手报道代替原文。</p>
+</article><footer class="foot">本文是离线自包含的中文完整报告，不含远程脚本、字体、图像或 CDN。正文离线可读；官方来源链接需联网打开。更新时间与状态请以各厂商官方原文为准。</footer></main></body></html>
