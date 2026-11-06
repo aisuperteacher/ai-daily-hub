@@ -1,69 +1,124 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AI Daily Hub · 研究与技术日报</title>
-<meta name="description" content="汇总 AI 大模型、Agent、AI Coding、企业级架构和开源情报的完整中文日报。">
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>AI Daily Hub｜全部 AI 日报与专题归档</title>
+<meta name="description" content="AI 官方模型日报、AI Coding、GitHub 热榜、企业架构、自媒体政策、AI 短剧、科技简报、AI 云权益和每日五词精讲，按栏目和日期归档。">
 <style>
-:root{--ink:#18231f;--paper:#f5f2e9;--card:#fffdf7;--line:#2d3933;--mint:#dbefdf;--yellow:#f9de77;--orange:#f66e4f;--blue:#315bb8;--muted:#64726c}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Noto Sans SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--paper)}
-button,input,select{font:inherit}button{cursor:pointer}a{color:inherit}
-.site-head{border-bottom:2px solid var(--line);background:var(--yellow);padding:18px clamp(16px,3vw,48px);display:flex;justify-content:space-between;gap:20px;align-items:center}
-.brand{font-weight:950;font-size:clamp(25px,3vw,44px);letter-spacing:-1.6px}.brand span{color:#ba3a2a}
-.smallcaps{font-weight:800;letter-spacing:.12em;font-size:11px;text-transform:uppercase}
-.head-side{text-align:right;font-size:13px;font-weight:700}
-.shell{max-width:1600px;margin:auto;display:grid;grid-template-columns:280px minmax(0,1fr);gap:0;min-height:calc(100vh - 90px)}
-aside{border-right:2px solid var(--line);padding:26px 20px;background:#e9eadf}
-.kicker{font-size:11px;font-weight:900;letter-spacing:.12em;color:var(--muted);margin-bottom:10px}
-.topic{display:flex;width:100%;border:1.5px solid var(--line);border-radius:10px;background:var(--card);margin-bottom:9px;padding:12px;gap:12px;text-align:left;align-items:center}
-.topic.active{background:var(--mint);box-shadow:3px 3px 0 var(--ink)}.topic[disabled]{opacity:.52;cursor:not-allowed}
-.topic strong{font-size:13px;display:block}.topic small{font-size:11px;color:var(--muted);display:block;margin-top:4px}
-main{min-width:0;padding:24px clamp(15px,3vw,42px)}
-.page-title{font-weight:950;font-size:clamp(25px,4vw,51px);letter-spacing:-.07em;line-height:1.12;margin:5px 0 13px}
-.lead{color:#526059;max-width:800px;line-height:1.75;font-size:14px;margin:0 0 24px}
-.toolbar{display:flex;align-items:end;flex-wrap:wrap;gap:12px;margin-bottom:16px}
-.picker{flex:0 1 270px}.search{flex:1 1 260px;min-width:0}
-label{font-size:12px;font-weight:850;display:block;margin-bottom:7px}
-select,input{width:100%;background:#fff;border:1.5px solid var(--line);border-radius:9px;padding:11px;font-size:14px;outline-offset:3px}
-.actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.action{border:1.5px solid var(--line);background:var(--white,#fff);padding:10px 12px;border-radius:9px;font-weight:780;font-size:13px;text-decoration:none}
-.action.primary{background:var(--orange);color:white}.action:disabled{opacity:.45;cursor:not-allowed}
-.panel{border:2px solid var(--line);background:#fff;border-radius:12px;overflow:hidden;box-shadow:5px 6px 0 #18231f15}
-.panel-head{background:var(--mint);padding:12px 16px;border-bottom:2px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:center}
-.panel-head strong{font-size:14px}.panel-head small{font-size:12px;color:var(--muted)}
-.report-frame{display:block;width:100%;height:80vh;min-height:530px;border:0;background:white}
-.date-strip{display:flex;overflow:auto;gap:7px;padding:6px 0 17px}
-.date-chip{border:1.5px solid var(--line);border-radius:9px;padding:8px 12px;background:#fff;white-space:nowrap;font-weight:750;font-size:12px}
-.date-chip.active{background:var(--yellow)}
-.search-results{display:none;border:2px solid var(--line);border-radius:12px;background:white;padding:14px;margin:12px 0 20px}
-.search-results.show{display:block}.result{display:block;width:100%;text-align:left;padding:12px;border:1px solid #d8ded8;border-radius:9px;background:#fcfdf9;margin-top:8px}
-.result strong{font-size:13px}.result small{display:block;color:var(--muted);line-height:1.5;margin-top:5px;white-space:normal;overflow-wrap:anywhere}
-.notice{font-size:12px;color:var(--muted);line-height:1.6;margin:12px 0 0}.foot{margin:34px 0;color:var(--muted);font-size:12px;border-top:1px solid #adb6ad;padding-top:18px;line-height:1.8}
-@media(max-width:900px){.shell{grid-template-columns:1fr}aside{border-right:0;border-bottom:2px solid var(--line);padding:12px 16px}.topic-list{display:flex;overflow-x:auto;gap:9px}.topic{min-width:185px;max-width:230px;margin:0}.site-head{padding:13px 16px}.head-side{font-size:11px}.report-frame{height:76vh}main{padding:18px 14px}.page-title{font-size:30px}}
-@media(max-width:460px){.head-side{display:none}.action{font-size:12px}.panel-head{align-items:flex-start;flex-direction:column}.report-frame{min-height:470px}.brand{font-size:30px}}
-</style></head><body>
-<header class="site-head"><div><div class="smallcaps">RESEARCH / ENGINEERING / DAILY INTELLIGENCE</div><div class="brand">AI <span>DAILY</span> HUB<span style="color:var(--ink)">.</span></div></div><div class="head-side">独立档案 / 一日一刊<br>OFFICIAL SOURCES FIRST</div></header>
-<div class="shell"><aside><div class="kicker">TOPIC CHANNELS / 专题栏目</div><nav class="topic-list" id="topics" aria-label="日报栏目"></nav><p class="notice">仅已归档的完整日报可打开。其他栏目将在迁移后逐步上线。</p></aside>
-<main><div class="kicker">ARCHIVE / 全文历史</div><h1 class="page-title" id="title">全球 AI 大模型与 Agent 官方日报</h1><p class="lead">从官方更新日志、模型版本、SDK 与研究文章提取有工程价值的增量信息。完整保留七维分析、13 家巡检、版本基线、兼容迁移和实践步骤。</p>
-<div class="toolbar"><div class="picker"><label for="date">选择日报日期</label><select id="date" aria-label="选择日期"></select></div><div class="search"><label for="search">跨日期全文搜索</label><input id="search" placeholder="例如：Claude、MCP、Thinking、价格" type="search" autocomplete="off"></div>
-<div class="actions"><button class="action" id="prev">上一期</button><button class="action" id="next">下一期</button><a class="action primary" id="open" target="_blank" rel="noopener">单独打开完整日报 ↗</a></div></div>
-<div class="date-strip" id="dates" aria-label="日期快捷切换"></div><section class="search-results" id="results" aria-live="polite"></section>
-<section class="panel"><div class="panel-head"><strong id="selected">完整日报正文</strong><small>原文独立 HTML · 保留官方链接与代码</small></div>
-<iframe class="report-frame" id="frame" title="当前日期完整日报" loading="eager" referrerpolicy="no-referrer"></iframe></section>
-<p class="notice">内容遵循官方来源优先原则；历史日报中“最新”仅指原报告写作时点。已归档正文不等于当前仍有效的模型或价格。联网阅读 GitHub Pages 时，点击官方来源会跳转至原站。</p>
-<footer class="foot">AI Daily Hub · GitHub Pages 静态站点。每篇日报独立存储于 reports/YYYY-MM-DD.html；首页通过 manifest.json 加载日期索引，便于未来增加其它专题和自动化工作流。项目仓库：<a href="https://github.com/aisuperteacher/ai-daily-hub">aisuperteacher/ai-daily-hub</a>。</footer></main></div>
+:root{--paper:#f5f1e8;--ink:#1d2924;--sub:#657168;--line:#35443a;--card:#fffdf7;--mint:#dff0df;--pink:#ffc1ad;--yellow:#f8de7b;--blue:#335db4;--muted:#e9eee6;--shadow:5px 6px 0 rgba(32,48,40,.13)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI","Noto Sans SC","Microsoft Yahei",sans-serif}
+a{color:inherit}button,input,select{font:inherit}button{cursor:pointer}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+header{background:var(--yellow);border-bottom:2px solid var(--line);padding:16px clamp(16px,3vw,50px);display:flex;align-items:center;justify-content:space-between;gap:20px}
+.eyebrow{font-size:10px;font-weight:900;letter-spacing:.16em}
+.logo{font-weight:950;font-size:clamp(28px,3vw,45px);line-height:1;letter-spacing:-.07em}.logo em{font-style:normal;color:#bc432b}
+.header-right{font-size:12px;text-align:right;font-weight:750;color:#47554a}
+.layout{display:grid;grid-template-columns:295px minmax(0,1fr);max-width:1600px;margin:0 auto;min-height:calc(100vh - 90px)}
+.sidebar{border-right:2px solid var(--line);padding:25px 19px;background:#eeede2;min-width:0}
+.sidelabel{font-size:11px;font-weight:900;letter-spacing:.12em;color:var(--sub);margin:0 0 11px}
+.topics{display:grid;gap:9px}
+.topic{border:1.5px solid var(--line);background:var(--card);text-align:left;padding:12px 10px;display:flex;align-items:center;gap:10px;width:100%;border-radius:11px;min-width:0}
+.topic[aria-current="true"]{background:var(--mint);box-shadow:3px 3px 0 #334b3933}
+.topic-icon{width:35px;height:35px;border:1.5px solid var(--ink);border-radius:8px;background:#fff;display:grid;place-items:center;font-size:21px;flex:0 0 35px}
+.topic-body{min-width:0;flex:1}.topic-title{font-weight:850;font-size:12.5px;line-height:1.4;display:block}.topic-sub{display:block;color:var(--sub);font-size:10.5px;margin-top:2px;line-height:1.4}
+.topic-stat{font-size:10px;font-weight:800;white-space:nowrap;border-radius:99px;padding:2px 7px;background:#e8e9e7;color:#566057}
+.topic-stat.run{background:#c0ebcc;color:#225536}.topic-stat.mix{background:#fbe5b2;color:#664d12}
+.sidebar-hint{border-top:1px solid #bdc7bc;margin-top:22px;padding-top:14px;color:var(--sub);font-size:11px;line-height:1.7}
+.main{min-width:0;padding:26px clamp(15px,3.2vw,46px)}
+.minilabel{color:var(--sub);font-weight:900;letter-spacing:.13em;font-size:11px}
+h1{font-size:clamp(28px,3.6vw,51px);line-height:1.1;letter-spacing:-.06em;font-weight:950;max-width:1000px;margin:8px 0 10px}
+.lead{color:var(--sub);line-height:1.78;font-size:13.5px;max-width:930px;margin:0 0 16px}
+.stats{display:flex;gap:9px;flex-wrap:wrap;margin:13px 0 20px}
+.stat{border:1px solid #a7b4a7;border-radius:8px;background:#fff9e8;padding:7px 10px;font-size:12px;font-weight:750}
+.stat:nth-child(2){background:#e3f0e5}
+.state{border-radius:99px;font-size:11px;font-weight:800;padding:3px 10px;background:#d9e9d9}
+.state.paused{background:#ece8e0}.state.mixed{background:#ffe9b3}
+.workarea{border:2px solid var(--line);border-radius:13px;padding:17px;background:var(--card);box-shadow:var(--shadow)}
+.controls{display:flex;align-items:end;gap:10px;flex-wrap:wrap}
+.field{min-width:175px;flex:0 1 240px}.searchfield{flex:1 1 260px;min-width:200px}
+label{display:block;font-size:12px;font-weight:840;margin-bottom:7px}
+input,select{width:100%;border:1.5px solid var(--line);border-radius:9px;background:white;padding:10px 12px;min-height:44px;outline-offset:3px}
+button.action,a.action{border:1.5px solid var(--line);border-radius:9px;background:#fff;color:var(--ink);padding:10px 12px;font-size:12px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;min-height:42px}
+a.action.strong{background:var(--pink)}
+button.action:disabled{cursor:default;opacity:.4}
+.control-buttons{display:flex;gap:7px;flex-wrap:wrap}
+.days{display:flex;gap:7px;overflow-x:auto;padding:14px 0 3px;scrollbar-width:thin}
+.day{font-size:12px;font-weight:760;border:1px solid var(--line);background:white;border-radius:8px;padding:7px 11px;white-space:nowrap}
+.day[aria-current="true"]{background:var(--yellow)}
+.results{display:none;margin:16px 0;border:2px solid var(--line);border-radius:11px;padding:14px;background:white}
+.results.show{display:block}.result{width:100%;display:block;text-align:left;border:1px solid #d7ddd3;background:#fcfdfa;border-radius:9px;padding:10px 12px;margin-top:9px}
+.result strong{display:block;font-size:13px}.result small{display:block;color:var(--sub);line-height:1.65;overflow-wrap:anywhere;margin-top:5px}
+.framewrap{border:2px solid var(--line);border-radius:12px;overflow:hidden;background:white;margin-top:17px;min-width:0}
+.framehead{background:var(--mint);border-bottom:2px solid var(--line);padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.framehead strong{font-size:13px}.framehead span{color:var(--sub);font-size:11px}
+iframe{display:block;border:0;width:100%;height:min(79vh,1050px);min-height:560px;background:white}
+.empty{padding:44px clamp(16px,4vw,56px);background:linear-gradient(135deg,#fff 0%,#f9fbf4 100%);min-height:410px}
+.empty-symbol{width:62px;height:62px;border:2px solid var(--line);border-radius:14px;display:grid;place-items:center;background:var(--yellow);font-size:28px;margin-bottom:19px}
+.empty h2{font-size:clamp(22px,3vw,30px);margin:0 0 9px;letter-spacing:-.05em;line-height:1.3}
+.empty p{max-width:680px;font-size:13.5px;color:#566357}
+.empty .explain{border-left:4px solid var(--orange,#df6650);padding:8px 15px;background:#fff2e8;margin-top:20px;font-size:13px}
+.private-note{font-size:12px;color:var(--sub);line-height:1.7;border:1px solid #d1d8cd;border-radius:9px;padding:11px 13px;margin-top:18px;background:#f0f3ec}
+footer{border-top:1px solid #a6b3a9;font-size:12px;line-height:1.8;color:var(--sub);margin:28px 0 0;padding:16px 0 0}
+footer a{color:var(--blue)}
+@media(max-width:920px){.layout{display:block}.sidebar{border-right:0;border-bottom:2px solid var(--line);padding:13px 14px}.topics{display:flex;overflow-x:auto;padding:0 0 7px;gap:9px}.topic{flex:0 0 218px}.sidebar-hint{display:none}.main{padding:20px 14px}.framehead{align-items:flex-start;flex-direction:column}iframe{height:75vh}}
+@media(max-width:480px){header{padding:13px 16px}.header-right{display:none}.workarea{padding:12px}.controls{display:grid;grid-template-columns:1fr}.field,.searchfield{min-width:0;width:100%}.control-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.control-buttons a{grid-column:1/-1}iframe{height:70vh;min-height:440px}.empty{padding:30px 15px;min-height:370px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div><div class="eyebrow">AI RESEARCH / TOOLING / ENGINEERING / LEARNING</div><div class="logo">AI <em>DAILY</em> HUB.</div></div><div class="header-right">公开技术日报归档<br>OFFICIAL SOURCES · COMPLETE REPORTS</div></header>
+<div class="layout">
+<aside class="sidebar"><div class="sidelabel">TOPIC CHANNELS / 日报栏目</div><nav class="topics" id="topics" aria-label="按栏目切换"></nav><div class="sidebar-hint">栏目已建立 ≠ 任务已自动迁入。只显示经过内容验证的完整报告；个人备份和项目级 CI 不公开。</div></aside>
+<main class="main">
+<div class="minilabel">ARCHIVE / MULTI-CHANNEL LIBRARY</div>
+<h1 id="title">全球 AI 大模型与 Agent 官方日报</h1>
+<p class="lead" id="description">按厂商官方发布核验的完整日报，支持按日期切换、全文搜索和独立打开。</p>
+<div class="stats" id="stats"></div>
+<div class="workarea">
+<div class="controls">
+<div class="field"><label for="date">选择日期或历史期次</label><select id="date" aria-label="选择历史报告"></select></div>
+<div class="searchfield"><label for="search">搜索所有已归档完整日报</label><input id="search" type="search" autocomplete="off" placeholder="关键词：Agent、MCP、价格、Claude..."></div>
+<div class="control-buttons"><button class="action" id="prev" type="button">上一期</button><button class="action" id="next" type="button">下一期</button><a class="action strong" id="open" target="_blank" rel="noopener">独立打开完整正文 ↗</a></div>
+</div><div class="days" id="days" aria-label="已归档报告"></div>
+<div class="results" id="results" aria-live="polite"></div>
+<div class="framewrap"><div class="framehead"><strong id="selected">完整报告</strong><span id="hint">按原文显示 · 日期与官方链接保留</span></div>
+<iframe id="frame" title="当前日期的完整原文日报" loading="eager" referrerpolicy="no-referrer"></iframe>
+<section class="empty" id="empty" hidden><div class="empty-symbol">◫</div><h2>栏目已上线，完整原文尚待归档</h2><p id="empty-desc">该栏目目前没有能验证的完整历史日报文件。</p><div class="explain"><strong>完整性原则：</strong>只有取得可读取的原始 HTML 或完整正文后，才将对应日期标记为“已归档”。不会把任务执行通知或不完整片段冒充全文。</div></section>
+</div>
+<div class="private-note">公开页面仅包含适合公开的技术、资讯和学习内容。知识库备份、私人账户数据与项目级 CI 等不会被自动发布至公开仓库。部分任务在 ChatGPT 中已暂停，网站栏目不会自动重新启用它们。</div>
+</div>
+<footer>GitHub Pages 静态归档 · <a href="https://github.com/aisuperteacher/ai-daily-hub" target="_blank" rel="noopener">源代码仓库</a> · 每份完整日报保留独立 HTML · Github Pages 用于展示；将生成过程迁移到 GitHub Actions 仍需单独实现和验证。来源时效与模型价格请以报告日期和对应厂商官网为准。</footer>
+</main></div>
 <script>
 (function(){
-'use strict';
-var meta, active, current, cache={};
+"use strict";
+var meta,active,selected=null,cache={},searchSerial=0;
 var el=function(id){return document.getElementById(id)};
-function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
-function archive(){return (active&&active.reports)||[]}
-function path(d){return 'reports/'+d+'.html'}
-function renderTopics(){el('topics').innerHTML=meta.categories.map(function(c){return '<button class="topic'+(c.id===active.id?' active':'')+'" '+(c.status==='active'?'':'disabled')+' data-id="'+esc(c.id)+'"><span style="font-size:20px">'+(c.status==='active'?'▣':'▫')+'</span><span><strong>'+esc(c.name)+'</strong><small>'+(c.status==='active'?c.reports.length+' 份完整日报':'即将迁入')+'</small></span></button>'}).join('')}
-function renderDates(){var ds=archive();el('date').innerHTML=ds.map(function(d){return '<option value="'+d+'">'+d+'</option>'}).join('');el('dates').innerHTML=ds.map(function(d){return '<button class="date-chip'+(current===d?' active':'')+'" data-date="'+d+'">'+d+'</button>'}).join('');el('prev').disabled=ds.indexOf(current)>=ds.length-1;el('next').disabled=ds.indexOf(current)<=0}
-function choose(d){if(!archive().includes(d))return;current=d;el('date').value=d;el('selected').textContent=d+' · 全球 AI 大模型与 Agent 技术官方日报';el('frame').src=path(d);el('open').href=path(d);renderDates();var u=new URL(location.href);u.searchParams.set('date',d);history.replaceState(null,'',u.pathname+u.search)}
-function textOf(doc){['script','style','nav','footer'].forEach(function(t){doc.querySelectorAll(t).forEach(function(n){n.remove()})});return (doc.body?doc.body.textContent:doc.documentElement.textContent).replace(/\s+/g,' ').trim()}
-async function search(q){var pane=el('results');q=q.trim().toLowerCase();if(!q){pane.classList.remove('show');pane.innerHTML='';return}pane.classList.add('show');pane.innerHTML='<strong>正在检索 '+archive().length+' 份完整日报…</strong>';var result=[];for(var i=0;i<archive().length;i++){var d=archive()[i];try{if(!cache[d]){var r=await fetch(path(d));if(!r.ok)throw Error(r.status);cache[d]=textOf(new DOMParser().parseFromString(await r.text(),'text/html'))}var t=cache[d],index=t.toLowerCase().indexOf(q);if(index>=0)result.push({date:d,context:t.slice(Math.max(0,index-55),Math.min(t.length,index+125))})}catch(e){console.warn('Search unavailable',d,e)}}if(el('search').value.trim().toLowerCase()!==q)return;pane.innerHTML='<strong>检索结果：'+result.length+' 个日期命中</strong>'+(result.length?result.map(function(x){return '<button class="result" data-date="'+x.date+'"><strong>'+x.date+'</strong><small>'+esc(x.context)+'</small></button>'}).join(''):'<p>没有匹配的日报内容。试试较短的关键词。</p>')}
-function init(d){meta=d;active=d.categories.find(function(c){return c.status==='active'})||d.categories[0];renderTopics();var u=new URL(location.href),specified=u.searchParams.get('date');current=archive().includes(specified)?specified:archive()[0];choose(current);el('topics').addEventListener('click',function(e){var b=e.target.closest('[data-id]');if(!b)return;var c=meta.categories.find(function(t){return t.id===b.dataset.id});if(c&&c.status==='active'){active=c;renderTopics();current=archive()[0];choose(current)}});el('dates').addEventListener('click',function(e){var b=e.target.closest('[data-date]');if(b)choose(b.dataset.date)});el('date').addEventListener('change',function(){choose(this.value)});el('prev').addEventListener('click',function(){choose(archive()[archive().indexOf(current)+1])});el('next').addEventListener('click',function(){choose(archive()[archive().indexOf(current)-1])});var timer;el('search').addEventListener('input',function(){clearTimeout(timer);timer=setTimeout(function(){search(el('search').value)},250)});}
-fetch('manifest.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw Error('Manifest '+r.status);return r.json()}).then(init).catch(function(e){el('title').textContent='归档索引加载失败';el('date').innerHTML='';el('selected').textContent='请刷新页面或检查 manifest.json';console.error(e)});
+function escapeHTML(s){return String(s).replace(/[&<>"']/g,function(ch){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]})}
+function isComplete(r){return r&&r.kind==="full"&&typeof r.path==="string"&&r.path.startsWith("reports/")}
+function reportList(){return (active&&active.reports||[]).filter(isComplete)}
+function stateText(t){return t==="running"?"任务运行中":t==="paused"?"任务已暂停":t==="mixed"?"部分任务运行中":"未核实"}
+function stateClass(t){return t==="paused"?"paused":t==="mixed"?"mixed":"run"}
+function setUrl(cat,report){var u=new URL(location.href);u.searchParams.set("topic",cat.id);if(report)u.searchParams.set("date",report.date);else u.searchParams.delete("date");history.replaceState(null,"",u.pathname+u.search+u.hash)}
+function renderTopics(){el("topics").innerHTML=(meta.categories||[]).map(function(t){return '<button type="button" class="topic" data-topic="'+escapeHTML(t.id)+'" aria-current="'+(t.id===active.id?'true':'false')+'"><span class="topic-icon">'+escapeHTML(t.icon||"◈")+'</span><span class="topic-body"><span class="topic-title">'+escapeHTML(t.name)+'</span><span class="topic-sub">'+escapeHTML(t.short||"")+'</span></span><span class="topic-stat '+(t.task_status==="running"?"run":t.task_status==="mixed"?"mix":"")+'">'+(t.reports&&t.reports.length?t.reports.length+" 期":"待归档")+'</span></button>'}).join("")}
+function renderHeader(){el("title").textContent=active.name;el("description").textContent=active.description||"";el("stats").innerHTML='<span class="state '+stateClass(active.task_status)+'">'+stateText(active.task_status)+'</span><span class="stat">'+escapeHTML(active.cadence||"")+'</span><span class="stat">已归档完整报告 '+reportList().length+' 期</span>'+(active.last_run?'<span class="stat">最近记录的执行日期：'+escapeHTML(active.last_run)+'</span>':"")}
+function renderOptions(){var r=reportList();el("date").innerHTML=r.length?r.map(function(x){return '<option value="'+escapeHTML(x.path)+'">'+escapeHTML(x.label||x.date)+'</option>'}).join(""):'<option value="">暂无已归档完整原文</option>';el("date").disabled=!r.length;el("days").innerHTML=r.map(function(x){return '<button type="button" class="day" data-path="'+escapeHTML(x.path)+'" aria-current="'+(selected&&selected.path===x.path?'true':'false')+'">'+escapeHTML(x.label||x.date)+'</button>'}).join("");var i=r.findIndex(function(x){return selected&&x.path===selected.path});el("prev").disabled=!r.length||i>=r.length-1;el("next").disabled=!r.length||i<=0;el("open").style.display=r.length?"inline-flex":"none";if(r.length){el("date").value=selected.path;el("open").href=selected.path}}
+function renderReader(){var r=reportList();if(!r.length){el("frame").style.display="none";el("frame").removeAttribute("src");el("empty").hidden=false;el("selected").textContent=active.name+" · 等待完整原文归档";el("hint").textContent="不以摘要替代全文";el("empty-desc").textContent="已建立该专题的页面和任务状态记录；最近一次记录的运行日期为 "+(active.last_run||"未取得")+"。完整 HTML 或全文在当前可访问文件库中尚未取得。";selected=null;renderOptions();return}el("frame").style.display="block";el("empty").hidden=true;el("selected").textContent=(selected.title||selected.date);el("hint").textContent="完整历史内容 · 以该期原始发布日期为准";el("frame").src=selected.path;renderOptions()}
+function selectReport(r){if(!r)return;selected=r;renderReader();setUrl(active,r)}
+function chooseCategory(c,wanted){if(!c)return;active=c;renderTopics();renderHeader();var r=reportList();selectReport(r.find(function(x){return x.date===wanted||x.path===wanted})||r[0]||null);if(!r.length){renderReader();setUrl(c,null)}}
+function reportForPath(p){return reportList().find(function(r){return r.path===p})}
+function plainText(raw){var parsed=new DOMParser().parseFromString(raw,"text/html");["script","style","nav"].forEach(function(tag){parsed.querySelectorAll(tag).forEach(function(e){e.remove()})});return (parsed.body?parsed.body.textContent:"").replace(/\s+/g," ").trim()}
+async function searchAll(q){var seq=++searchSerial;var pane=el("results");q=q.trim().toLowerCase();if(!q){pane.classList.remove("show");pane.innerHTML="";return}pane.classList.add("show");var all=[];meta.categories.forEach(function(c){(c.reports||[]).filter(isComplete).forEach(function(r){all.push({category:c,report:r})})});pane.innerHTML="<strong>正在搜索 "+all.length+" 份完整原文…</strong>";var hits=[];for(var i=0;i<all.length;i++){var e=all[i],path=e.report.path;try{if(!cache[path]){var response=await fetch(path,{cache:"force-cache"});if(!response.ok)throw Error("HTTP "+response.status);cache[path]=plainText(await response.text())}var full=cache[path],index=full.toLowerCase().indexOf(q);if(index>=0){hits.push({category:e.category,report:e.report,text:full.slice(Math.max(0,index-65),Math.min(full.length,index+155))})}}catch(err){console.warn("Archive source unavailable",path,err)}if(seq!==searchSerial)return}if(seq!==searchSerial)return;pane.innerHTML='<strong>搜索结果：'+hits.length+' 期命中</strong>'+(hits.length?hits.map(function(x){return '<button type="button" class="result" data-result="'+escapeHTML(x.report.path)+'" data-topic="'+escapeHTML(x.category.id)+'"><strong>'+escapeHTML(x.category.name)+' · '+escapeHTML(x.report.label||x.report.date)+'</strong><small>'+escapeHTML(x.text)+'</small></button>'}).join(""):'<p>当前完整归档中没有命中。未取得全文的栏目暂不能纳入搜索。</p>')}
+function init(d){meta=d;var url=new URL(location.href),wantedTopic=url.searchParams.get("topic"),wantedDate=url.searchParams.get("date");var first=d.categories[0];var cat=d.categories.find(function(x){return x.id===wantedTopic})||first;chooseCategory(cat,wantedDate);
+el("topics").addEventListener("click",function(e){var b=e.target.closest("button[data-topic]");if(b)chooseCategory(meta.categories.find(function(c){return c.id===b.dataset.topic}),null)});
+el("days").addEventListener("click",function(e){var b=e.target.closest("button[data-path]");if(b)selectReport(reportForPath(b.dataset.path))});
+el("date").addEventListener("change",function(){selectReport(reportForPath(this.value))});
+el("prev").addEventListener("click",function(){var a=reportList();selectReport(a[a.indexOf(selected)+1])});
+el("next").addEventListener("click",function(){var a=reportList();selectReport(a[a.indexOf(selected)-1])});
+var timer;el("search").addEventListener("input",function(){clearTimeout(timer);var q=this.value;timer=setTimeout(function(){searchAll(q)},250)});
+el("results").addEventListener("click",function(e){var b=e.target.closest("[data-result]");if(!b)return;var c=meta.categories.find(function(x){return x.id===b.dataset.topic});chooseCategory(c,b.dataset.result);el("results").classList.remove("show");el("search").value=""});
+}
+fetch("manifest.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw Error("Manifest request failed: "+r.status);return r.json()}).then(init).catch(function(err){el("title").textContent="归档索引加载失败";el("description").textContent="请确认 GitHub Pages 已发布 main 分支的 manifest.json 并刷新页面。";el("frame").style.display="none";console.error(err)});
 })();
-</script></body></html>
+</script>
+</body></html>
