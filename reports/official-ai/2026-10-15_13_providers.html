@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+<head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="light" name="color-scheme"/><title>全球 AI 大模型与 Agent 技术官方日报｜2026-10-15｜13家厂商补录完整版</title><style>
+:root{--ink:#18272c;--ink2:#40575e;--paper:#f9f5e9;--card:#fffdf5;--line:#17252c;--shadow:#17252c;--red:#f35e4c;--yellow:#fbd55f;--mint:#96dbcc;--blue:#b9cde9}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",system-ui,-apple-system,sans-serif;line-height:1.76;font-size:15px;overflow-wrap:anywhere}
+.top-band{height:13px;background:repeating-linear-gradient(90deg,var(--red) 0 56px,var(--yellow) 56px 112px,var(--mint) 112px 168px,var(--blue) 168px 224px)}
+.mast{padding:24px max(24px,calc((100vw - 1420px)/2));border-bottom:3px solid var(--ink);background:var(--yellow)}
+.mast .eyebrow{font-size:12px;font-weight:900;letter-spacing:.14em;margin-bottom:8px}
+.mast h1{font-size:clamp(26px,3.4vw,52px);line-height:1.18;letter-spacing:-.035em;margin:0;max-width:1090px}
+.mast .subtitle{font-size:13px;margin-top:12px;font-weight:700}
+.wrapper{max-width:1420px;padding:24px 22px 80px;margin:auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:30px;align-items:start}
+.sidebar{position:sticky;top:15px;border:2px solid var(--ink);border-radius:5px;background:var(--card);max-height:calc(100vh - 32px);overflow:auto;box-shadow:5px 5px 0 var(--shadow)}
+.side-head{background:var(--mint);border-bottom:2px solid var(--ink);padding:12px 13px;font-size:13px;font-weight:950;letter-spacing:.07em}
+.toc-link{display:block;padding:10px 13px;text-decoration:none;color:var(--ink);font-size:12px;line-height:1.55;border-bottom:1px solid #e5e1d5}
+.toc-link:hover,.toc-link:focus{background:#fff0ba;color:#111}
+.content{min-width:0}
+article{background:var(--card);border:2px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:clamp(16px,3.5vw,50px);border-radius:3px}
+article>h1:first-child{display:none}
+article>p:first-of-type{font-weight:650;color:var(--ink2)}
+h2{font-size:clamp(21px,2.2vw,31px);line-height:1.24;border-left:9px solid var(--red);padding:10px 14px;background:var(--yellow);border-bottom:2px solid var(--ink);margin:52px 0 24px;scroll-margin-top:16px}
+h3{font-size:18px;line-height:1.3;margin-top:30px;margin-bottom:8px;scroll-margin-top:12px}
+h2::before{content:"◆ ";font-size:.8em}
+h3::before{content:"↳ ";color:#c44839}
+p{margin:10px 0 15px}
+a{color:#0a6477;text-decoration-thickness:1.5px;text-underline-offset:3px}
+a:hover{color:#c13b23}
+strong{font-weight:850}
+blockquote{border-left:6px solid var(--red);padding:5px 18px;background:#fff1df;margin:20px 0}
+hr{border:0;border-top:2px dashed #bec7bb;margin:36px 0}
+ol,ul{padding-left:1.45rem}
+li{margin:7px 0}
+pre{background:#1b2b30;color:#e8f6f0;border-radius:4px;border:2px solid var(--ink);padding:18px;overflow-x:auto;line-height:1.55;font-size:12px;white-space:pre;max-width:100%}
+pre code{color:inherit;background:none;border:0;padding:0}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;background:#e2efe8;padding:2px 4px;border-radius:3px;font-size:.88em;overflow-wrap:anywhere}
+.table-wrap{overflow-x:auto;max-width:100%;margin:18px 0 24px;border:2px solid var(--ink);border-radius:4px}
+table{border-collapse:collapse;width:100%;min-width:540px;font-size:13px;background:#fff}
+th{background:var(--mint);color:#12242b;font-weight:900;text-align:left}
+td,th{border-right:1px solid #cbd6d2;border-bottom:1px solid #d8dbd0;padding:11px 12px;vertical-align:top}
+tr:nth-child(even) td{background:#f3f6f2}
+tr:last-child td{border-bottom:0}
+.task-li{list-style:none;margin-left:-1.4rem;background:#f2f5f0;border-bottom:1px solid #d2ded8;padding:8px 10px}
+.task-li label{display:flex;gap:10px;align-items:start;cursor:pointer}
+.task-li input{margin-top:7px;accent-color:#d94b3a;flex-shrink:0}
+.task-li input:checked+span{text-decoration:line-through;opacity:.66}
+.document-tag{display:inline-flex;background:var(--red);border:2px solid var(--ink);padding:5px 10px;box-shadow:3px 3px var(--ink);font-size:12px;font-weight:900;margin-right:8px}
+.legend{margin:20px 0 0;display:flex;gap:8px;flex-wrap:wrap}
+.legend>span{background:var(--card);padding:6px 9px;border:1.5px solid var(--ink);font-size:12px;font-weight:bold}
+footer{margin-top:20px;color:var(--ink2);font-size:12px;line-height:1.7}
+.to-top{display:inline-block;border:2px solid var(--ink);background:var(--mint);color:var(--ink);padding:8px 12px;text-decoration:none;font-weight:bold;margin-top:12px}
+@media(max-width:900px){.wrapper{grid-template-columns:1fr;gap:20px;padding:14px 12px 65px}.sidebar{position:static;max-height:none;box-shadow:3px 3px var(--ink)}.toc-link{display:inline-block;border:1px solid #dee4df;margin:4px;padding:7px 8px}.toc-inner{padding:5px}.mast{padding:20px 16px}.mast h1{font-size:29px}article{box-shadow:4px 4px var(--ink);padding:17px}h2{margin-top:37px}table{min-width:500px}}
+@media(max-width:480px){body{font-size:14px}.wrapper{padding:9px 9px 48px}.mast h1{font-size:26px}article{padding:13px}h2{font-size:21px;padding:9px}h3{font-size:16px}pre{font-size:11px;padding:11px}th,td{padding:9px}table{min-width:470px}}
+@media print{body{background:#fff}.top-band,.sidebar,.to-top{display:none}.wrapper{display:block;max-width:100%;padding:0}article{border:0;box-shadow:none;padding:0}.mast{background:#fff;padding:10px;border-bottom:2px solid #333}h2{page-break-after:avoid}pre,.table-wrap{page-break-inside:avoid}}
+</style></head>
+<body>
+<div class="top-band"></div>
+<header class="mast" id="top"><div class="eyebrow">OFFICIAL TECH INTELLIGENCE · 13 PROVIDERS · OCT 15 2026</div><h1>全球 AI 大模型与 Agent 技术官方日报</h1><p class="subtitle">2026 年 10 月 15 日 · 13 家厂商补录完整版 · 原 11 家全文保留 · 自包含离线报告</p><div class="legend"><span>官方原文优先</span><span>必看 / 建议看 / 可跳过</span><span>模型迁移与兼容性</span><span>Java · Agent · AI Coding</span></div></header>
+<div class="wrapper"><aside aria-label="报告目录" class="sidebar"><div class="side-head">CONTENTS / 章节导航</div><div class="toc-inner"><a class="toc-link" href="#sec-01">今日必看摘要</a><a class="toc-link" href="#sec-02">1. OpenAI｜GPT-4 系列模型退役与企业模型生命周期治理</a><a class="toc-link" href="#sec-10">2. TypeSafe AI｜Jev 1.14.0：让 AI 决策成为可以组合的软件原语</a><a class="toc-link" href="#sec-18">3. Anthropic｜OpenTelemetry Beta：Agent 加入企业分布式追踪</a><a class="toc-link" href="#sec-26">4. xAI｜Grok Voice 3.0：语音模型别名发生自动切换</a><a class="toc-link" href="#sec-34">5. Google｜Gemini 4 Argon：百万 Token 统一预算与长输出</a><a class="toc-link" href="#sec-42">6. 阿里巴巴｜百炼 Managed Agents：开发文档 10 月 14 日修订</a><a class="toc-link" href="#sec-50">7. Anthropic｜Claude Code 2.1.300 与 Agent SDK TS 0.3.300</a><a class="toc-link" href="#sec-58">8. 字节跳动｜Seed Alignment &amp; Preparedness 研究团队</a><a class="toc-link" href="#sec-meta-wonder">补录 9｜Meta Muse Wonder / Muse Wonder Full</a><a class="toc-link" href="#sec-meta-gem">补录 10｜Meta GEM 中央推荐模型</a><a class="toc-link" href="#sec-meta-research">补录 11｜Meta Muse 研究型 Agent</a><a class="toc-link" href="#sec-baidu-baseline">补录 12｜百度千帆与 PaddleOCR 基线</a><a class="toc-link" href="#sec-meta-baidu-judgment">补录之后的跨厂商判断</a><a class="toc-link" href="#sec-59">十三家厂商官方巡检状态</a><a class="toc-link" href="#sec-60">本期核实版本/模型状态</a><a class="toc-link" href="#sec-61">跨厂商兼容性与迁移矩阵</a><a class="toc-link" href="#sec-63">今日工程行动清单</a><a class="toc-link" href="#sec-64">今日综合判断</a></div></aside><main class="content"><article><h1>全球 AI 大模型与 Agent 技术官方日报</h1>
+<p><strong>2026 年 10 月 15 日 · 星期四 · 北京时间 · 13 家厂商扩围重编版</strong></p>
+<p><strong>本期厂商：</strong> OpenAI、Anthropic、Google、xAI、智谱、DeepSeek、腾讯、阿里巴巴、Kimi、字节跳动、TypeSafe AI。</p>
+<p><strong>核验窗口：</strong> 2026 年 10 月 14 日至 15 日上午的官方发布。Google 10 月 13 日重大模型更新作为首次扩围补录，明确注明日期。此前今日已报的 OpenAI、Anthropic 内容统一保留，便于一次完整阅读，但不是二次发布。</p>
+<h2 class="section-heading" id="sec-01">今日必看摘要</h2><p class="expanded-note"><strong>十三家补录说明：</strong>本次加入 Meta AI、百度；Meta 10 月 12–13 日的发布属于历史补录，10 月 14 日 Muse 研究文章属于本期真正新增。百度在 10 月 14–15 日未核实到重大新发布。为遵守“今日必看最多三条”，原三条摘要保持不变。</p>
+<ol>
+<li><strong>OpenAI｜10 月 14 日｜必看。GPT-4 系列指定快照正式进入弃用期。</strong> 2027 年 1 月 14 日关闭 GPT-4o、GPT-4o mini、GPT-4.1 的指定快照及对应微调模型，推荐迁移到 <code>gpt-6-luna</code>。Java AI Gateway 应开始扫描配置和业务 Eval。官方：<a href="https://developers.openai.com/api/docs/deprecations">Deprecations</a>。</li>
+<li><strong>TypeSafe AI｜10 月 14 日｜必看。Jev 1.14.0 与实验能力。</strong> <code>jev-preview</code> 发布新版本，增加实验性图像、边界框 <code>box</code>、长上下文。重点核验模型别名、置信度和 Danger Zone 可靠性。官方：<a href="https://typesafe.ai/blog/jev-1-14">Jev 1.14</a>。</li>
+<li><strong>Anthropic｜10 月 14 日｜必看。OpenTelemetry Beta 与 Java 2.72.0。</strong> Claude API、托管 Agent、客户端工具调用可逐步接入标准化 Trace，重视隐私与用量重复计算。官方：<a href="https://platform.claude.com/docs/en/release-notes/overview">Platform Release Notes</a>。</li>
+</ol>
+<p>另有 xAI Grok Voice 3.0、Google Gemini 4 Argon（10 月 13 日的扩围补录）、阿里云百炼 Managed Agents 文档更新。</p>
+<hr/>
+<h2 class="section-heading" id="sec-02">1. OpenAI｜GPT-4 系列模型退役与企业模型生命周期治理</h2>
+<p><strong>官方发布：2026-10-14｜优先级：必看｜已弃用，但不是现在就关闭</strong></p>
+<h3 class="section-heading" id="sec-03">1）内容是什么</h3>
+<p>OpenAI 设定了统一的 <strong>2027-01-14</strong> 关闭日期：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>模型快照</th>
+<th>关闭日期</th>
+<th>官方推荐替代</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gpt-4o-2024-08-06</code></td>
+<td>2027-01-14</td>
+<td><code>gpt-6-luna</code></td>
+</tr>
+<tr>
+<td><code>gpt-4o-2024-11-20</code></td>
+<td>2027-01-14</td>
+<td><code>gpt-6-luna</code></td>
+</tr>
+<tr>
+<td><code>gpt-4o-mini-2024-07-18</code></td>
+<td>2027-01-14</td>
+<td><code>gpt-6-luna</code></td>
+</tr>
+<tr>
+<td><code>gpt-4.1-2025-04-14</code></td>
+<td>2027-01-14</td>
+<td><code>gpt-6-luna</code></td>
+</tr>
+<tr>
+<td><code>gpt-4.1-mini-2025-04-14</code></td>
+<td>2027-01-14</td>
+<td><code>gpt-6-luna</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>对应 Fine-tuned Models 同期退役。OpenAI 模型查询 API 可以返回可选 <code>shutdown_date</code> 字段，适合自动巡检。</p>
+<h3 class="section-heading" id="sec-04">2）核心变化与技术机制</h3>
+<p><strong>模型生命周期必须成为 AI Gateway 的正式数据对象。</strong> 典型状态从 <code>ACTIVE → DEPRECATED → MIGRATION_REQUIRED → RETIRED</code>。Deprecated 不等于立即不可用；但退休后不可无限重复发起原 Model ID 请求。</p>
+<h3 class="section-heading" id="sec-05">3）为什么有价值</h3>
+<p>模型替换并不等于行为完全兼容，尤其 JSON Schema、Tool Calling、多模态输入、Reasoning 参数与业务分类阈值可能变化；即使 HTTP 请求成功，业务结果也可能不同。</p>
+<h3 class="section-heading" id="sec-06">4）适用场景</h3>
+<p>Java/Spring Boot AI Gateway、Nacos 模型路由、RAG、结构化业务输出、Tool Calling、第三方 API Gateway、微调模型和长期企业应用。</p>
+<h3 class="section-heading" id="sec-07">5）对开发与 Java/AI 工程的具体帮助</h3>
+<p>建议统一模型元信息：</p>
+<pre><code class="language-java">record ModelLifecycleInfo(
+    String provider,
+    String modelId,
+    String replacementModel,
+    String lifecycleStatus,
+    String shutdownDate,
+    boolean migrationValidated
+) {}
+</code></pre>
+<p>这是推荐应用设计，不是 OpenAI SDK 类。Model Registry 应在正式路由前检查模型关闭时间，限制新增业务使用已弃用模型，并管理迁移进度。</p>
+<h3 class="section-heading" id="sec-08">6）是否立即阅读、迁移或试用</h3>
+<p><strong>立即扫描，迁移前先评测。</strong> PowerShell 5 示例：</p>
+<pre><code class="language-powershell">$models = @(
+  "gpt-4o-2024-08-06",
+  "gpt-4o-2024-11-20",
+  "gpt-4o-mini-2024-07-18",
+  "gpt-4.1-2025-04-14",
+  "gpt-4.1-mini-2025-04-14"
+)
+
+Get-ChildItem . -Recurse -File |
+  Where-Object {
+    $_.Extension -in ".java",".yml",".yaml",".json",".properties"
+  } |
+  Select-String -Pattern $models -SimpleMatch
+</code></pre>
+<p>另行排查远程 Nacos、数据库、CI 和第三方 Provider Mapping，因为本地扫描不覆盖这些配置。采集 50～100 个真实业务用例，比较 GPT-4 旧模型与 <code>gpt-6-luna</code> 的正确率、结构化输出、Tool Calling、延迟、Token 成本和安全行为。高风险 Agent 写操作只能在测试环境比对。</p>
+<h3 class="section-heading" id="sec-09">7）优先级、兼容性、迁移成本</h3>
+<p><strong>必看。</strong> 文本迁移成本低～中；复杂 Tool Calling 和微调模型中～高。官方替代不代表已经通过业务验证。</p>
+<p><strong>官方原文：</strong> <a href="https://developers.openai.com/api/docs/deprecations">OpenAI API Deprecations</a></p>
+<hr/>
+<h2 class="section-heading" id="sec-10">2. TypeSafe AI｜Jev 1.14.0：让 AI 决策成为可以组合的软件原语</h2>
+<p><strong>官方发布：2026-10-14 前后｜优先级：必看｜新增厂商首次专题</strong></p>
+<h3 class="section-heading" id="sec-11">1）内容是什么</h3>
+<p>TypeSafe AI 发布 <strong>Jev: For the builders AND dreamers</strong>，将 <code>jev-1.14.0</code> 放到 <code>jev-preview</code>，整体优化特别强调多语言表现；同期展示实验性图像输入、新 <code>box</code> 边界框题型、长上下文与可选择开启的 Danger Zone。官方计划约一周后把 <code>jev-latest</code> 切换到新版本。</p>
+<h3 class="section-heading" id="sec-12">2）核心变化与技术机制</h3>
+<p>Jev 与通用 LLM 聊天输出不同：</p>
+<pre><code class="language-text">Business State
+    ↓
+Typed Questions
+    ↓
+System One / Jev
+    ↓
+Choice / Score / Noul
+    ↓
+Typed Answers + Probabilities
+    ↓
+Java Business Policy
+</code></pre>
+<p><code>Choice</code> 在固定选项中选择；<code>Score</code> 对条件评分；<code>Noul</code> 判断陈述成立概率。新 <code>Box</code> 用于返回单个 Bounding Box。实验性能力需单独开启：</p>
+<pre><code class="language-http">TypeSafe-Danger-Zone-Images: true
+TypeSafe-Danger-Zone-Long-Context: true
+</code></pre>
+<p><strong>生产可靠性提醒：</strong> TypeSafe 官方说这些功能尚未达到生产可靠性标准，图像、超长上下文都需要谨慎。</p>
+<p><strong>版本核验冲突：</strong> 新博客称 <code>jev-preview</code> 已指向 1.14.0；当前检索到的官方 Models 文档缓存却仍显示 1.13.0。请用账户实时的 <code>GET /v1/models</code> 和响应中的 <code>model</code> 字段进行核对，生产阈值测试应锁定固定版本，不依赖浮动 Alias。</p>
+<h3 class="section-heading" id="sec-13">3）为什么有价值</h3>
+<p>Tool Router、工单分类、审核评分、重试判断等本质上是小而频繁的决策，未必值得每次调用大型生成模型。Jev 可以成为低延迟 Decision Layer。然而<strong>类型安全不等于语义不会出错；置信度不等于实际正确率</strong>。官方招聘匹配客户案例宣称降低 88% 成本、将中位完成时间缩短约一半，但这是特定客户工作流，不是跨任务的普适速度/费用优势。</p>
+<h3 class="section-heading" id="sec-14">4）适用场景</h3>
+<p>API/Tool Routing、工单分类、候选人匹配、内容审核、Agent 决策节点、低风险自动处理辅助、需人工复核的概率判断。不适用于替代长文本生成、复杂 Coding 或长推理。</p>
+<h3 class="section-heading" id="sec-15">5）对 Java/Spring Boot/AI Gateway 的具体帮助</h3>
+<p>架构可设计为：</p>
+<pre><code class="language-text">Business Request
+      ↓
+Decision Gateway (Jev / Other)
+      ↓
+Confidence + Fixed Business Rules
+      ├── 已通过风险阈值 → 低风险操作
+      └── 未通过       → 强模型 / 人工复核
+      ↓
+Domain Service
+</code></pre>
+<p>适用 HTTP API 请求形状示例：</p>
+<pre><code class="language-json">{
+  "state": "支付接口连续失败三天，客户要求紧急处理。",
+  "model": "jev-preview",
+  "questions": {
+    "department": {
+      "type": "choice",
+      "instructions": "Which department should own this ticket?",
+      "criteria": {
+        "payments": "Payment and settlement failures",
+        "technical": "General integration or system defects",
+        "sales": "Pricing and subscriptions"
+      }
+    },
+    "urgent": {
+      "type": "noul",
+      "instructions": "Does the ticket need urgent attention?"
+    }
+  }
+}
+</code></pre>
+<p>官方接口：<code>POST https://api.typesafe.ai/v1/systemone</code>，使用 Bearer Key。中文数据效果必须单独评估。模型只提供辅助判断，业务授权与状态变更仍由应用掌握。</p>
+<h3 class="section-heading" id="sec-16">6）是否立即阅读、试用或迁移</h3>
+<p><strong>做小规模 PoC，实验功能不要直接投产。</strong> 选 200 条脱敏且带人工标签的工单；固定版本比较 Jev 与当前模型；测分类准确率、误路由率、P95 和千次业务成本；用独立验证集计算置信度校准误差；设置人工复核阈值；再单独测试图像、Box 与长上下文；回归模型别名漂移时的阈值安全性。英语表现不能直接推断中文业务表现。</p>
+<h3 class="section-heading" id="sec-17">7）优先级、兼容性、迁移成本</h3>
+<p><strong>必看。</strong> Java HTTP 接入成本低，但校准、审批、评测和审计需要持续投入。其协议不是通用 Chat Completions；不应替换现有文本生成 Adapter。</p>
+<p><strong>官方来源：</strong> <a href="https://typesafe.ai/blog/jev-1-14">Jev 1.14</a> · <a href="https://docs.typesafe.ai/models">Models</a> · <a href="https://docs.typesafe.ai/introduction/quickstart">Quick Start</a> · <a href="https://docs.typesafe.ai/primitives/choice">Choice</a> · <a href="https://typesafe.ai/blog/jack-jill-jev-case-study">招聘匹配客户案例</a></p>
+<hr/>
+<h2 class="section-heading" id="sec-18">3. Anthropic｜OpenTelemetry Beta：Agent 加入企业分布式追踪</h2>
+<p><strong>官方发布：2026-10-14｜优先级：必看</strong></p>
+<h3 class="section-heading" id="sec-19">1）内容是什么</h3>
+<p>Anthropic 推出 OpenTelemetry Export Beta，覆盖 Claude Messages API、Claude Managed Agents、官方多语言 SDK。Java SDK 基线为 <code>2.72.0</code>；SDK 包括 Python、TypeScript、C#、Go、Java、PHP、Ruby。</p>
+<h3 class="section-heading" id="sec-20">2）核心变化</h3>
+<p><strong>SDK Client Tracing 与 API/Managed Agent Server Tracing 是两个层次。</strong> 前者主要涵盖应用发起的模型请求与本地工具调用；后者追踪平台内模型、Agent 会话事件。是否成为一条完整调用链取决于 Trace Context 传播和配置：</p>
+<pre><code class="language-text">HTTP Request
+     ↓
+Spring Boot Controller
+     ↓
+Agent Application Service
+     ↓
+Claude Java SDK CLIENT Span
+     ↓
+Tool / MCP Execution
+     ↓
+Business Result
+</code></pre>
+<p>必须有 Tracer Provider 和 OTel Exporter/Collector；仅升级 SDK 不等于自动产生对外监控平台。</p>
+<h3 class="section-heading" id="sec-21">3）为什么有价值</h3>
+<p>跨 Agent 和多 Tool 的调用链才能明确知道哪个环节慢、哪一次 Retry 失败、Tool 是否被重复调用，HTTP 200 不能证明业务流程成功。</p>
+<h3 class="section-heading" id="sec-22">4）适用场景</h3>
+<p>Spring Boot AI Gateway、Claude API、Managed Agents、多 Agent、MCP、生产故障排查、Agent Eval、LLMOps。</p>
+<h3 class="section-heading" id="sec-23">5）对 Java 与 AI 工程的具体帮助</h3>
+<p>建议 Execution Ledger / Span 统一关联：<code>businessTaskId</code>、<code>traceId</code>、<code>sessionId</code>、<code>agentId</code>、<code>toolCallId</code>、<code>provider</code>、<code>model</code>、<code>executionStatus</code>。不将个人信息、原始 Prompt 或业务密钥直接加入 Span 属性。</p>
+<h3 class="section-heading" id="sec-24">6）是否立即试用</h3>
+<p><strong>测试环境立即做 Metadata Only PoC。</strong> 准备 <code>/api/agent/test</code>，通过 Claude SDK 触发 Tool Call；配置 Console Exporter 或测试 Collector；检查 Trace ID、耗时、失败路径和敏感信息。多层 Span 可能都包含 Token Usage：<strong>不要简单求和当成账单</strong>。Full Content 模式必须经过数据分类和脱敏审查。</p>
+<h3 class="section-heading" id="sec-25">7）优先级、兼容性、迁移成本</h3>
+<p><strong>必看。</strong> SDK 接入低～中，企业部署 OTel Collector 和治理需要中等工作。Beta 的语义属性/导出数据格式未来可能变化。</p>
+<p><strong>官方来源：</strong> <a href="https://platform.claude.com/docs/en/release-notes/overview">Claude Platform Release Notes</a> · <a href="https://platform.claude.com/docs/en/manage-claude/opentelemetry">OpenTelemetry</a> · <a href="https://github.com/anthropics/anthropic-sdk-java/releases/tag/v2.72.0">Java SDK 2.72.0</a></p>
+<hr/>
+<h2 class="section-heading" id="sec-26">4. xAI｜Grok Voice 3.0：语音模型别名发生自动切换</h2>
+<p><strong>官方发布：2026-10-14｜优先级：语音业务必看，其余建议看</strong></p>
+<h3 class="section-heading" id="sec-27">1）内容是什么</h3>
+<p>xAI 上线 <code>grok-voice-3.0</code> 并弃用 <code>grok-voice-2.0</code>；<code>grok-voice-latest</code> 已自动解析到新版。API Shape 不变；官方称价格不变。</p>
+<h3 class="section-heading" id="sec-28">2）核心变化</h3>
+<pre><code class="language-text">requestedModel: grok-voice-latest
+                 ↓
+resolvedModel: grok-voice-3.0
+</code></pre>
+<p>即使代码没有改，底层语音模型行为也改变。xAI 公告宣称在语音基准和响应延迟上取得优势；独立榜单结果仍应结合具体网络与语言重新测试。</p>
+<h3 class="section-heading" id="sec-29">3）为什么有价值</h3>
+<p>实时 Voice Agent 对 Turn Taking、Interrupt、Latency 和 Tool Calling 敏感。Alias 漂移可能影响音色与交互表现，也可能改善质量。</p>
+<h3 class="section-heading" id="sec-30">4）适用场景</h3>
+<p>语音客服、车载语音、实时助手、电话 AI Agent、销售咨询、实时语音控制。</p>
+<h3 class="section-heading" id="sec-31">5）对开发与 Agent 工程的帮助</h3>
+<p>追踪 <code>requestedModel</code>、<code>resolvedModel</code>、<code>voiceSessionId</code>、<code>turnLatency</code>、<code>interruptionCount</code>、<code>toolCallCount</code>、<code>taskSuccess</code>。Java Backend 管理会话状态与底层 Model 分离。</p>
+<h3 class="section-heading" id="sec-32">6）是否立即试用</h3>
+<p>已有 Grok Voice 集成应尽快对比固定 2.0 与 3.0：普通话、英语、混合语音，噪声、打断、停顿、Tool Call、重连、超时和真实 Session 版本；再决定固定 <code>grok-voice-3.0</code> 还是使用 <code>grok-voice-latest</code>。</p>
+<h3 class="section-heading" id="sec-33">7）优先级、兼容性、迁移成本</h3>
+<p><strong>语音应用必看，其他开发者建议看。</strong> API 形状兼容不代表声音或业务行为完全兼容；基础迁移成本低，测试成本取决于业务覆盖。</p>
+<p><strong>官方来源：</strong> <a href="https://docs.x.ai/developers/release-notes">xAI Release Notes</a> · <a href="https://x.ai/news/grok-voice-3">Grok Voice 3.0</a></p>
+<hr/>
+<h2 class="section-heading" id="sec-34">5. Google｜Gemini 4 Argon：百万 Token 统一预算与长输出</h2>
+<p><strong>正式发布：2026-10-13｜优先级：必看｜首次扩围历史补录，不是 15 日新发布</strong></p>
+<h3 class="section-heading" id="sec-35">1）内容是什么</h3>
+<p>Google Gemini API 宣布 <code>gemini-4-argon</code> GA，用于复杂 Coding、Agent、数学和科学等任务。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>官方信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model ID</td>
+<td><code>gemini-4-argon</code></td>
+</tr>
+<tr>
+<td>Unified Window</td>
+<td>1,048,576 Tokens</td>
+</tr>
+<tr>
+<td>Thinking Level</td>
+<td><code>low</code>、<code>medium</code>、<code>high</code></td>
+</tr>
+<tr>
+<td>默认 Thinking</td>
+<td><code>medium</code></td>
+</tr>
+<tr>
+<td>10 月优惠输入价格</td>
+<td>$2 / 1M Tokens</td>
+</tr>
+<tr>
+<td>10 月优惠输出价格</td>
+<td>$10 / 1M Tokens（含 Thinking）</td>
+</tr>
+<tr>
+<td>12 月 1 日起</td>
+<td>输入 $4 / 1M，输出 $20 / 1M</td>
+</tr>
+<tr>
+<td>优惠截止</td>
+<td>2026-11-30</td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="section-heading" id="sec-36">2）核心变化</h3>
+<p>Input、Thinking 和 Output 共享统一上下文预算。<strong>百万总预算不等于一条普通 HTTP 响应能返回百万 Tokens。</strong> Interactions 与 GenerateContent 有不同的长输出/续接方式；应用不能混用两套 Schema。Thinking 会占用输出预算。</p>
+<p>迁移时重点检查：显式 <code>cachedContents</code> 不支持；采样参数如 <code>temperature</code>、<code>top_p</code>、<code>top_k</code> 不再作为有效控制手段；大量输出要使用后台执行或正确的续接机制；对多轮 Function Calling 要保留对应的状态信息。</p>
+<h3 class="section-heading" id="sec-37">3）为什么有价值</h3>
+<p>更适合长程 Coding、复杂文档和研究任务。百万 Token 并不保证每个位置的上下文检索都同样准确，也不意味着应放弃分段检索和任务分解。</p>
+<h3 class="section-heading" id="sec-38">4）适用场景</h3>
+<p>Monorepo 分析、Java 工程代码审查、长篇技术规格生成、复杂 Agent 规划、数学、科学与企业知识处理。</p>
+<h3 class="section-heading" id="sec-39">5）对 Java/AI 工程的具体帮助</h3>
+<p>建立独立 Gemini Provider Adapter，区分 <code>thinking_level</code>、Context Caching、Long Decode 和 Interactions Session State。不要在通用 Model Configuration 中假设各厂商参数语义完全一致。</p>
+<h3 class="section-heading" id="sec-40">6）是否立即试用</h3>
+<p><strong>建议控制成本进行 Coding Eval。</strong> 官方 Interactions API 的最小示例：</p>
+<pre><code class="language-bash">curl "https://generativelanguage.googleapis.com/v1beta/interactions" \
+  -H "x-goog-api-key: $GEMINI_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "gemini-4-argon",
+    "input": "Review this transaction workflow for race conditions.",
+    "generation_config": {
+      "thinking_level": "medium"
+    }
+  }'
+</code></pre>
+<p>对同一批 Java / Spring Boot 任务比较 <code>low</code>、<code>medium</code>、<code>high</code> 的完成率、首次有用结果耗时、总 Token 和每次成功成本。此 Body 属于 Interactions API，不能直接复用到传统 GenerateContent。</p>
+<h3 class="section-heading" id="sec-41">7）优先级、兼容性、迁移成本</h3>
+<p><strong>必看，但属补录。</strong> 独立接入成本中等；从已有 Gemini 集成迁移要重点处理 Caching、Thinking、旧请求参数与续接机制。官方推荐不意味着用户现有所有功能会自动兼容。</p>
+<p><strong>官方来源：</strong> <a href="https://ai.google.dev/gemini-api/docs/changelog">Gemini API Changelog</a> · <a href="https://ai.google.dev/gemini-api/docs/latest-model">Gemini 4 Argon Guide</a> · <a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/guides/gemini-4-argon">Google Cloud Guide</a></p>
+<hr/>
+<h2 class="section-heading" id="sec-42">6. 阿里巴巴｜百炼 Managed Agents：开发文档 10 月 14 日修订</h2>
+<p><strong>官方文档更新时间：2026-10-14｜优先级：建议看｜文档更新 ≠ 当天发布新产品</strong></p>
+<h3 class="section-heading" id="sec-43">1）内容是什么</h3>
+<p>阿里云百炼 Managed Agents API 概览、Session 发起与管理文档在 10 月 14 日更新。文档覆盖 Agent、Environment、Session、Tool、MCP 和事件流的开发方式。</p>
+<h3 class="section-heading" id="sec-44">2）核心变化与知识点</h3>
+<pre><code class="language-text">Agent Configuration
+       ↓
+Environment / Sandbox
+       ↓
+Session
+       ↓
+Event Stream
+       ↓
+Tool Execution
+       ↓
+Persistent History
+</code></pre>
+<p>当前文档描述的 Endpoint：<code>https://{workspace_id}.{region}.maas.aliyuncs.com/api/v1/agentstudio</code>，其中已核实说明当前 <code>cn-beijing</code>。官方 SDK 要求：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Managed Agents 功能</th>
+<th>Python SDK</th>
+<th>Java SDK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基础模块</td>
+<td>1.26.2+</td>
+<td>2.22.24+</td>
+</tr>
+<tr>
+<td>Session 级覆盖和 MCP Header</td>
+<td>1.27.7+</td>
+<td>2.23.2+</td>
+</tr>
+</tbody>
+</table></div>
+<p>以上是官方文档当前列出的基线，不能推断为 10 月 14 日才新增的功能。</p>
+<h3 class="section-heading" id="sec-45">3）为什么有价值</h3>
+<p>托管 Runtime 让团队不必完全自建 Sandbox、Session Lifecycle、Tool Execution 与 SSE 历史，适合生产型长时间 Agent。</p>
+<h3 class="section-heading" id="sec-46">4）适用场景</h3>
+<p>Java 微服务 Agent、云端数据分析、文件处理、MCP、国内企业场景、只读巡检及长时任务。</p>
+<h3 class="section-heading" id="sec-47">5）对 Java/Agent 工程的帮助</h3>
+<p>比较自建 Agent Runtime、百炼 Managed Agents、OpenAI Agents API 与 Claude Managed Agents 的权责边界，重点关注状态持久化、Environment 复用、工具审批、数据隔离、SDK、地域与成本。</p>
+<h3 class="section-heading" id="sec-48">6）是否值得立即试用</h3>
+<p><strong>建议只读 PoC：</strong> 创建测试 Agent、Environment，创建 Session，发送事件，订阅 SSE，断开后验证恢复和历史可追溯性。检查真实账户地域权限、Agent Sandbox 配置和 SDK 版本。文档更新时间并不证明所有地区都已经开通功能。</p>
+<h3 class="section-heading" id="sec-49">7）优先级、兼容性、迁移成本</h3>
+<p><strong>建议看。</strong> 新接入成本中等；既有项目没有强制迁移要求。已接入项目应回归 Session 级配置覆盖和 MCP Headers。</p>
+<p><strong>官方来源：</strong> <a href="https://help.aliyun.com/zh/model-studio/managed-agents-api-overview">Managed Agents API</a> · <a href="https://help.aliyun.com/zh/model-studio/managed-agents-session-event">Create Session</a> · <a href="https://help.aliyun.com/zh/model-studio/managed-agents-session-operations">Session Operations</a></p>
+<hr/>
+<h2 class="section-heading" id="sec-50">7. Anthropic｜Claude Code 2.1.300 与 Agent SDK TS 0.3.300</h2>
+<p><strong>官方发布：2026-10-14 UTC｜优先级：AI Coding 用户必看｜今日已报</strong></p>
+<h3 class="section-heading" id="sec-51">1）内容是什么</h3>
+<p><code>Claude Code 2.1.300</code> 与 <code>Claude Agent SDK TypeScript 0.3.300</code> 发布。主题包括 OTel、MCP Tool Search、Compaction/Resume、Git Worktree、Hook Input Schema 和 Connector Permissions。</p>
+<h3 class="section-heading" id="sec-52">2）核心变化</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th>工程影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GenAI OTel</td>
+<td>统一 Agent Trace 语义</td>
+</tr>
+<tr>
+<td>Tool Search / MCP Reconnect</td>
+<td>改善重连后工具发现</td>
+</tr>
+<tr>
+<td>Compaction / Resume</td>
+<td>长会话恢复需要回归测试</td>
+</tr>
+<tr>
+<td>Git Worktree</td>
+<td>多 Agent 工作区可靠性</td>
+</tr>
+<tr>
+<td>Hook Input Validation</td>
+<td>Hook 修改输入需符合 Tool Schema</td>
+</tr>
+<tr>
+<td>Thinking Config</td>
+<td>请求配置与实际配置可能不同</td>
+</tr>
+<tr>
+<td>Connector Permissions</td>
+<td>检查组织级审批策略</td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="section-heading" id="sec-53">3）为什么有价值</h3>
+<p>长时间执行的 Coding Agent 必须正确恢复上下文、工具状态和权限，模型本身代码能力不足以保证可交付性。</p>
+<h3 class="section-heading" id="sec-54">4）适用场景</h3>
+<p>Windows、PowerShell、第三方 <code>ANTHROPIC_BASE_URL</code>、Skills、MCP、Hooks、Plugins、多 Agent 编码与长上下文。</p>
+<h3 class="section-heading" id="sec-55">5）对 Java/AI 工程的帮助</h3>
+<p>建议持久化 <code>RequestedModelConfig</code>、<code>EffectiveModelConfig</code>、<code>SessionState</code>、<code>ToolRegistry</code>、<code>WorkspaceRevision</code>、<code>PermissionDecision</code> 和 <code>ExecutionLedger</code>。Tool 幂等、实际权限和审计由应用运行时保证，不仅靠模型文字指示。</p>
+<h3 class="section-heading" id="sec-56">6）是否值得立即升级</h3>
+<p><strong>测试后升级：</strong> <code>claude --version</code> 核实当前版本；回归 MCP Reconnect、Session Compaction/Resume、<code>--worktree</code> 起点、Hook Input Validation、Connector Permissions、自定义 API Gateway 和模型名行为。</p>
+<h3 class="section-heading" id="sec-57">7）优先级、兼容性、迁移成本</h3>
+<p><strong>AI Coding 用户必看。</strong> CLI 升级成本低；大量使用自定义 Hook、MCP 或多 Agent 的环境需要中等回归投入。</p>
+<p><strong>官方来源：</strong> <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.300">Claude Code v2.1.300</a> · <a href="https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.300">TypeScript Agent SDK v0.3.300</a></p>
+<hr/>
+<h2 class="section-heading" id="sec-58">8. 字节跳动｜Seed Alignment &amp; Preparedness 研究团队</h2>
+<p><strong>官方日期：2026-10-14｜优先级：一般开发者可跳过</strong></p>
+<ol>
+<li><strong>内容：</strong> Seed 公布 Alignment &amp; Preparedness 研究团队的招募与重点方向。</li>
+<li><strong>核心变化：</strong> 关注安全基础设施、模型行为规范、安全评估和前沿 AI 准备度。</li>
+<li><strong>价值：</strong> 模型能力与风险治理将越来越需要协同评估。</li>
+<li><strong>场景：</strong> Agent 权限治理、模型安全、红队与上线前评估。</li>
+<li><strong>工程帮助：</strong> 借鉴 Tool 权限上限、人工审批、审计、风险分类等设计；此公告本身没有新 API 或 SDK。</li>
+<li><strong>是否立即阅读：</strong> AI 安全研究者建议看，普通 Java 开发无需立即行动。</li>
+<li><strong>优先级：</strong> 可跳过；它是组织/研究方向公告，不是新模型发布或 Breaking Change。</li>
+</ol>
+<p><strong>官方来源：</strong> <a href="https://seed.bytedance.com/zh/blog/seed-alignment-preparedness-team-looking-for-global-talents">字节跳动 Seed 公告</a></p>
+<hr/>
+<h2 class="section-heading" id="sec-meta-wonder">补录 9｜Meta AI：Muse Wonder 与 Muse Wonder Full——前沿 Coding Agent 正式发布</h2><p><strong>官方发布日期：2026-10-12｜历史补录（非 10 月 15 日新增）｜优先级：必看。</strong></p><h3>1）内容是什么？</h3><p>Meta 正式推出 <strong>Muse Wonder</strong> 和 <strong>Muse Wonder Full</strong> 两个前沿 Agent 模型。</p><div class="table-wrap"><table>
+<thead>
+<tr>
+<th>模型</th>
+<th>当前官方使用入口</th>
+<th>适合方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Muse Wonder</td>
+<td>Meta Model API、Muse Code</td>
+<td>API 集成、AI Coding、Agent</td>
+</tr>
+<tr>
+<td>Muse Wonder Full</td>
+<td>Muse Code 订阅用户</td>
+<td>复杂编程与长时间 Agent 任务</td>
+</tr>
+</tbody>
+</table></div><p>Meta 开发者文章公布 Muse Wonder API 上线价格为：每百万输入 Tokens <strong>4 美元</strong>，每百万输出 Tokens <strong>20 美元</strong>。不能据此推断 Muse Wonder Full 也有相同的公开 API 价格。<a href="https://dev.meta.ai/resources/blog/build-with-muse-wonder">Meta 官方开发者公告</a>。</p><h3>2）核心变化与技术机制</h3><p>Meta 重点介绍了两类能力：</p><ul>
+<li><strong>Active Memory（主动记忆）</strong>：在跨会话工作中保留重要上下文，并在新任务需要时检索相关信息。</li>
+<li><strong>Active Focus（持续专注）</strong>：遇到障碍时尝试其他解决方案，恢复任务执行，并在重要操作前请求确认。</li>
+</ul><p>这些是 Meta 对模型和 Agent 能力的描述，不意味着任何接入方都自动获得可无限保存、完全可靠的长期记忆。Meta 还强调持续软件工程、浏览器操作、工具执行和金融、法律、健康等专业领域任务能力。</p><h3>3）为什么有价值？</h3><p>对于 AI Coding，评价标准正在从单次补全代码转向持续完成复杂任务。例如修复一个跨多个 Maven Module 的缺陷，可能涉及定位问题、修改代码、运行测试、发现测试失败和继续修复。Muse Wonder 应纳入与 GPT、Claude、Gemini 的同场景 Coding Agent 对比，但官方 Benchmark 不能直接等同于你自己的项目表现。</p><h3>4）适合哪些应用场景？</h3><p>企业代码库维护、跨文件重构、多步骤 Agent、长时间软件工程任务、自动化研究和业务文档处理。</p><h3>5）对 Java / Spring Boot / AI 工程的具体帮助</h3><p>建议在现有模型评测体系增加：</p><pre><code class="language-text">AI Coding Evaluation
+       │
+       ├── OpenAI / Codex
+       ├── Anthropic / Claude Code
+       ├── Google / Gemini
+       └── Meta / Muse Wonder
+               │
+               ▼
+       Common Task Evaluation
+               │
+               ├── Correctness
+               ├── Tests Passed
+               ├── Tool Success
+               ├── Time to Completion
+               └── Cost per Successful Task
+</code></pre><p><strong>Muse Wonder 是通过 Meta Model API 提供的模型，不应与 Llama 开放权重模型混为一谈。</strong> 没有证据表明 Muse Wonder 的模型权重已公开，也不能默认它支持所有 OpenAI 兼容 API 参数。</p><h3>6）是否值得立即试用？</h3><p>建议选择 <strong>10～20 个 Java 项目任务</strong>，与现有主力模型进行对照测试。统一测试仓库、任务说明、工具权限、超时和验收条件，记录每次成功任务的成本和耗时。先确认账户 API 权限及精确 Model ID，再编写调用代码；不要根据产品展示名称猜测模型 ID。</p><h3>7）优先级与迁移成本</h3><p><strong>必看。</strong> 对已有跨厂商 AI Gateway，新增 Provider Adapter 的工作量为低到中等；长任务状态管理、Tool Calling 差异和回归评测成本为中等。无需修改现有生产模型配置。</p><p><strong>官方来源：</strong> <a href="https://about.fb.com/news/2026/10/introducing-muse-wonder-models/">Meta 发布公告</a> · <a href="https://research.meta.ai/blog/muse-wonder">技术研究</a> · <a href="https://dev.meta.ai/resources/blog/build-with-muse-wonder">开发者接入与价格</a></p><hr/><h2 class="section-heading" id="sec-meta-gem">补录 10｜Meta GEM：一个中央基础模型服务多个推荐和广告业务领域</h2><p><strong>官方发布日期：2026-10-13｜历史补录｜优先级：建议看。</strong></p><h3>1）内容是什么？</h3><p>Meta 发布工程文章 <strong>Meta’s Generative Ads Model (GEM): Scaling the Central Model and Compute Engine for Frontier Ads AI</strong>，介绍将多个广告场景的预测能力整合到统一基础模型中的架构演进。</p><h3>2）核心变化与关键知识点</h3><p>Meta 不再只为 Facebook、Instagram、Reels 等场景分别优化模型，而是建设统一的中央基础模型，再通过知识迁移与针对性优化支撑各业务场景。</p><p>关键技术包括：</p><ul>
+<li>跨业务领域、跨推荐目标的统一模型。</li>
+<li>新的 Kunlun 模型架构。</li>
+<li>面向实时预测的离线预计算与多层服务体系。</li>
+<li>通过压缩表示与历史序列向下游模型迁移知识。</li>
+<li>低精度计算和分布式并行训练优化。</li>
+</ul><p>Meta 在文章中披露了转化率、广告点击率和训练效率的内部改善结果。这些数字是 Meta 特定广告系统中的结果，不能直接迁移成普通企业 AI 项目的收益预测。</p><h3>3）为什么有价值？</h3><p>这篇文章讨论的是企业架构中一个非常重要的问题：<strong>哪些能力应该统一沉淀，哪些能力应该留在具体业务领域？</strong> 中央模型负责学习通用表示，领域模型或下游服务负责适应具体场景。这与企业 AI 能力平台和领域微服务治理有相似的设计取舍。</p><h3>4）适用场景</h3><p>推荐系统、广告投放、客户画像、业务风险评分、跨业务线预测和多领域 AI 能力平台。</p><h3>5）对 Java / AI 工程的具体帮助</h3><p>可以借鉴而不是照搬：</p><pre><code class="language-text">Central AI Capability
+        │
+        ├── Shared Features / Embeddings
+        ├── Model Registry
+        ├── Feature Freshness
+        └── Evaluation
+                │
+                ▼
+      Domain-specific Services
+        ├── Order Domain
+        ├── Customer Domain
+        ├── Risk Domain
+        └── Operations Domain
+</code></pre><p>对于传统企业系统，更值得先解决领域之间的指标口径、模型版本、数据新鲜度和权限隔离，而不是自建 Meta 规模的推荐基础模型。</p><h3>6）是否值得立即实践？</h3><p>建议用两个不同领域的分类任务验证统一特征服务的价值：先分别建立 Baseline，再复用一部分通用 Embedding 或特征计算，比较准确率、延迟、特征更新成本和跨领域数据隔离效果。</p><h3>7）优先级与迁移成本</h3><p><strong>建议看。</strong> 这是架构研究和工程实践文章，不是对外发布的新 SDK。现有 Java 或 AI Gateway 项目不需要迁移。</p><p><strong>官方来源：</strong> <a href="https://engineering.fb.com/2026/10/13/ml-applications/generative-ads-model-gem-scaling-frontier-ads-ai/">Meta GEM 工程深度文章</a></p><hr/><h2 class="section-heading" id="sec-meta-research">补录 11｜Meta Muse：人类专家主导的研究型 Agent 工作流</h2><p><strong>官方发布日期：2026-10-14｜本期真正新增｜优先级：建议看。</strong></p><h3>1）内容是什么？</h3><p>Meta 发布 <strong>Accelerating Scientific Research in Health Data Science With Muse Models</strong>，介绍由人类研究人员主导、AI 辅助执行的研究工作流。研究团队使用 Muse Spark 1.3 和 Muse Wonder 结合内部 Coding Scaffold，处理公共数据及获得许可的约 <strong>500 万份去标识化电子健康记录</strong>，在四周内组织完成 <strong>十份研究手稿</strong>，并经过统计专家和外部专家等多层审阅。</p><h3>2）核心变化与关键知识点</h3><p>最重要的并不是生成了多少篇文稿，而是：</p><pre><code class="language-text">Human Researcher
+       ↓
+Hypothesis / Requirements
+       ↓
+AI Coding &amp; Analysis
+       ↓
+Data Quality Check
+       ↓
+Evidence / Results
+       ↓
+Expert Review
+       ↓
+Revised Research Output
+</code></pre><p>AI 能编写和运行分析代码，但研究假设、数据使用、统计方法及最终结论仍由专家负责。</p><h3>3）为什么有价值？</h3><p>它展示了一种比简单问答更成熟的 Agent 工作方式：长期任务有明确的人类负责人、执行过程可检查、结果需要独立验证。但十份手稿和参与者报告的效率收益不能视为医学结论已经获得独立证实，也不能作为诊疗建议。</p><h3>4）适用场景</h3><p>金融数据分析、合规报告、经营分析、软件质量审查、企业研究和专业资料整理。</p><h3>5）对 Java / Agent 工程的帮助</h3><p>可以设计：</p><pre><code class="language-text">ResearchTask
+    ↓
+DataAccessPolicy
+    ↓
+AnalysisAgent
+    ↓
+Executable Result
+    ↓
+Evidence Validator
+    ↓
+Human Approval
+    ↓
+Report Artifact
+</code></pre><p>其中 Java 业务层保留数据访问权限、任务审计、结果版本与审批状态。</p><h3>6）是否值得立即实践？</h3><p>建议用非敏感测试数据完成一个小练习：让 Agent 根据订单和支付数据提出异常假设、生成查询、执行分析并形成报告；再由独立 SQL 校验器重新计算关键指标。只有指标一致、来源可追踪且经过审阅，任务才算成功。</p><h3>7）优先级与迁移成本</h3><p><strong>建议看。</strong> 这是新的官方研究案例，而不是新的 API 或 SDK 版本。借鉴其工作流无需直接迁移现有模型。</p><p><strong>官方来源：</strong> <a href="https://research.meta.ai/blog/accelerating-scientific-research-in-health-data-science-with-muse-models">Meta AI Research 原文</a></p><hr/><h2 class="section-heading" id="sec-baidu-baseline">补录 12｜百度：官方核验与技术基线补充</h2><p><strong>本期状态：暂未核实到 2026-10-14 至 2026-10-15 重要官方新增。</strong></p><p>本次检查了百度智能云千帆模型更新记录、平台更新动态、百度智能云新闻公告以及 PaddlePaddle、PaddleOCR、PaddleNLP 官方仓库。检索到的千帆模型更新记录页面标注更新时间为 <strong>2026 年 7 月 9 日</strong>；PaddleOCR 官方 Releases 显示的最新正式版为 <strong>v3.7.0，发布于 2026 年 6 月 11 日</strong>。这些都是当前核验到的已有版本，不能认定为今天的新发布。部分官方动态渠道的索引不够及时，因此本期结论是“未核实到”，并非绝对确认没有其他发布。</p><h3>1）内容是什么？——千帆与 PaddleOCR 历史技术基线</h3><p>百度值得长期纳入日报的两类工程能力是：</p><ul>
+<li><strong>百度千帆：</strong> 模型 API、模型路由、Agent 开发、MCP 工具、知识库及企业级服务治理。</li>
+<li><strong>PaddleOCR：</strong> 文档图像识别、复杂文档解析及文档处理模型。</li>
+</ul><p>官方 PaddleOCR v3.7.0 发布说明介绍了 PP-OCRv6，覆盖多语言识别、不同规模模型，以及 CPU、GPU 和边缘推理能力。</p><h3>2）核心技术与关键知识点</h3><p>PaddleOCR v3.7.0 中，PP-OCRv6 官方发布说明列出的参数规模包括：</p><div class="table-wrap"><table>
+<thead>
+<tr>
+<th>档位</th>
+<th>模型规模</th>
+<th>推荐评估方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tiny</td>
+<td>约 1.5M</td>
+<td>端侧、极轻量 OCR</td>
+</tr>
+<tr>
+<td>Small</td>
+<td>约 7.7M</td>
+<td>资源受限环境</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>约 34.5M</td>
+<td>服务端识别质量</td>
+</tr>
+</tbody>
+</table></div><p>官方说明还涉及 <strong>50 种语言</strong>的统一支持，以及针对特定识别场景的优化。参数规模和官方速度数据不能代替你在扫描件、合同、表格等真实文档上的测试。</p><h3>3）为什么有价值？</h3><p>企业 RAG 的一个常见瓶颈并不在模型生成阶段，而在<strong>原始文档解析质量</strong>。如果 OCR 把合同金额、表格列或章节编号识别错误，后面的 Embedding、Retrieval 和 LLM 都可能沿着错误证据生成结果。</p><h3>4）适合哪些应用场景？</h3><p>合同审查、发票识别、金融文档、企业知识库、多模态 RAG、表格抽取、历史档案整理和自动化文档工作流。</p><h3>5）对 Java / Spring Boot / AI 工程的具体帮助</h3><p>推荐拆分模型推理与业务编排：</p><pre><code class="language-text">Document Upload
+       ↓
+Spring Boot
+       ↓
+File Validation / Object Storage
+       ↓
+PaddleOCR Processing Worker
+       ↓
+Structured Document
+       ↓
+Chunk / Embedding / Index
+       ↓
+Qianfan / Other LLM
+       ↓
+RAG Answer + Evidence
+</code></pre><p>PaddleOCR 可以作为独立 Python 或推理服务运行，Java 通过内部 API 调用。这样既不用强行把 Python OCR 代码移植到 Java，也不必把企业业务事务交给模型处理。</p><h3>6）是否值得立即阅读和实践？</h3><p><strong>建议做一个 30～60 分钟文档解析 PoC：</strong></p><ol>
+<li>准备 20 份无敏感信息的 PDF 或文档图片，包含文字、表格及不同拍摄质量。</li>
+<li>测试 PaddleOCR 支持的文档解析或 OCR 流程，并为不同任务选择合适模型。</li>
+<li>对比人工标注的文本、金额和表格结构。</li>
+<li>把识别结果保存为带页码、位置和来源信息的结构化文档。</li>
+<li>通过现有 Embedding/RAG 流程建立索引。</li>
+<li>要求最终问答引用可追踪到原文的页码和片段。</li>
+<li>衡量字段准确率、表格恢复率、端到端延迟和每份文档成本。</li>
+</ol><p><strong>验收标准：</strong> 关键字段能够由人工复核，OCR 错误不应被后续生成模型掩盖成确定事实。</p><h3>7）优先级、兼容性与迁移成本</h3><p><strong>建议看。</strong> 本条是历史技术基线，不要求今天升级现有 PaddleOCR 或千帆版本。如果需要自建文档服务，Java + 独立 OCR Worker 的集成成本通常为中等；复杂版面恢复、多语言测试和生产部署需额外验证。</p><p><strong>官方来源：</strong> <a href="https://cloud.baidu.com/doc/qianfan/s/Kmh4stnjp">百度千帆模型更新记录</a> · <a href="https://cloud.baidu.com/doc/qianfan/s/Mmh8l4qwj">百度千帆更新动态</a> · <a href="https://github.com/PaddlePaddle/PaddleOCR/releases">PaddleOCR 官方 Releases</a></p><hr/><h2 class="section-heading" id="sec-meta-baidu-judgment">补录之后的跨厂商判断</h2><div class="table-wrap"><table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>此次补充结果</th>
+<th>本期处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Meta AI</td>
+<td>10 月 12 日 Muse Wonder、10 月 13 日 GEM 均为历史补录；10 月 14 日研究型 Agent 新文章</td>
+<td>新增三个详细专题</td>
+</tr>
+<tr>
+<td>百度</td>
+<td>本期尚未核实到重要新发布；已核对千帆和 PaddleOCR 工程基线</td>
+<td>新增技术基线与巡检记录</td>
+</tr>
+</tbody>
+</table></div><p><strong>本日原有 Top 3 摘要维持三条：</strong> Muse Wonder 虽属于值得关注的重大模型更新，但实际发布日期是 10 月 12 日，因此作为历史补录展开，不挤掉今天按发布时间与迁移紧迫性选出的必看事项。</p><p><strong>新增工程行动：</strong></p><ul>
+<li>将 Muse Wonder 加入跨厂商 Coding Agent 评测候选名单，先确认实际 API 权限、价格、Model ID 和可用地域。</li>
+<li>将 Meta GEM 的跨领域共享模型设计作为架构学习资料，而不是直接重建其超大规模系统。</li>
+<li>为长时间研究型 Agent 引入可执行结果验证、证据审查和人工确认。</li>
+<li>将百度千帆的模型上下架、平台 API 和 PaddleOCR 官方 Releases 纳入定期核验。</li>
+<li>用 PaddleOCR + Java + RAG 做一次带证据溯源的企业文档处理小练习。</li>
+</ul><p><strong>最终判断：</strong> Meta 已经提供可通过开发者 API 使用的前沿 Agent 模型，应该进入实际编码任务比较；百度则更值得同时关注模型服务平台、文档处理及本地化企业 AI 工程能力，不应只把它看作一个聊天产品。</p><h2 class="section-heading" id="sec-59">十三家厂商官方巡检状态</h2>
+<p>本表只针对本期查验的官方来源和时间窗口，不代表穷尽全部官网页面和仓库。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>结果</th>
+<th>本期处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI</td>
+<td>GPT-4 系列指定快照弃用</td>
+<td>必看，启动迁移检查</td>
+</tr>
+<tr>
+<td>Anthropic</td>
+<td>OTel、Java SDK、Claude Code、Agent SDK</td>
+<td>必看</td>
+</tr>
+<tr>
+<td>Google</td>
+<td>Gemini 4 Argon，10 月 13 日 GA</td>
+<td>扩围补录</td>
+</tr>
+<tr>
+<td>xAI</td>
+<td>Grok Voice 3.0；2.0 弃用</td>
+<td>语音业务必看</td>
+</tr>
+<tr>
+<td>智谱 / Z.ai</td>
+<td>已查官方发布记录，未核实 14–15 日重要新增</td>
+<td>不凑数</td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td>已查官方更新日志，未核实 14–15 日重要新增</td>
+<td>不凑数</td>
+</tr>
+<tr>
+<td>腾讯</td>
+<td>已检查混元资料；TokenHub 部分页面检索不完整</td>
+<td>未能充分核实</td>
+</tr>
+<tr>
+<td>阿里巴巴</td>
+<td>Managed Agents 文档于 14 日修订</td>
+<td>建议看</td>
+</tr>
+<tr>
+<td>Kimi</td>
+<td>Kimi Code 官方 Releases 未见窗口内新 Stable</td>
+<td>暂无核实新增</td>
+</tr>
+<tr>
+<td>字节跳动</td>
+<td>Seed 安全研究团队公告</td>
+<td>可跳过</td>
+</tr>
+<tr>
+<td>TypeSafe AI</td>
+<td>Jev 1.14.0 和 Danger Zone</td>
+<td>必看</td>
+</tr>
+<tr><td>Meta AI</td><td>10/14 研究型 Agent 文章；10/12 Muse Wonder、10/13 GEM 历史补录</td><td>新增三个完整专题；补录与本期新增分开标记</td></tr><tr><td>百度 / 文心 / 千帆</td><td>官方模型/平台日志本窗口未核实到新版本；PaddleOCR v3.7 为既有版本</td><td>未核实到重要新增；补充技术基线，不作为当天新闻</td></tr></tbody>
+</table></div>
+<p>其他官方核验入口：<a href="https://docs.z.ai/release-notes/new-released">Z.ai</a> · <a href="https://api-docs.deepseek.com/zh-cn/updates/">DeepSeek</a> · <a href="https://cloud.tencent.com/document/product/1729">腾讯混元</a> · <a href="https://docs.modelstudio.console.alibabacloud.com/en/model-studio/newly-released-models">阿里模型动态</a> · <a href="https://github.com/MoonshotAI/kimi-code/releases">Kimi Code</a> · <a href="https://seed.bytedance.com/zh/">ByteDance Seed</a> · <a href="https://typesafe.ai/">TypeSafe AI</a></p>
+<p>DeepSeek 官方更新日志最近检索到 9 月 10 日的 V4.1 Flash；阿里云国际版模型上下架列表最近核实条目为 10 月 9 日 Qwen Image 2.1 Turbo；这些旧变更不作为今天新增。</p>
+<h2 class="section-heading" id="sec-60">本期核实版本/模型状态</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>组件</th>
+<th>当前核验基线</th>
+<th>注意事项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI Java</td>
+<td>4.81.0</td>
+<td>本期未确认新的正式版</td>
+</tr>
+<tr>
+<td>Codex Stable</td>
+<td>0.162.1</td>
+<td>不将 Alpha 当正式版</td>
+</tr>
+<tr>
+<td>Anthropic Java</td>
+<td>2.72.0</td>
+<td>OTel 相关</td>
+</tr>
+<tr>
+<td>Claude Code</td>
+<td>2.1.300</td>
+<td>MCP/Hooks/Resume 回归</td>
+</tr>
+<tr>
+<td>Claude Agent SDK TS</td>
+<td>0.3.300</td>
+<td>输入验证和权限</td>
+</tr>
+<tr>
+<td>Google Gemini</td>
+<td>gemini-4-argon / GA</td>
+<td>1M 统一预算</td>
+</tr>
+<tr>
+<td>xAI Grok Voice</td>
+<td>grok-voice-3.0</td>
+<td>latest Alias 已切换</td>
+</tr>
+<tr>
+<td>TypeSafe Jev</td>
+<td>1.14.0 / Preview</td>
+<td>别名实时查询</td>
+</tr>
+<tr>
+<td>Kimi Code</td>
+<td>最近核实 2.1.1</td>
+<td>非本期新增</td>
+</tr>
+<tr><td>Meta Muse Wonder</td><td>2026-10-12 发布；Meta Model API / Muse Code</td><td>本次补录；Muse Wonder Full 为 Muse Code 订阅入口</td></tr><tr><td>百度 PaddleOCR</td><td>v3.7.0（2026-06-11）</td><td>已验证的历史正式版，不属于本期新版本</td></tr></tbody>
+</table></div>
+<h2 class="section-heading" id="sec-61">跨厂商兼容性与迁移矩阵</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>更新</th>
+<th>兼容或治理风险</th>
+<th>推荐行动</th>
+<th>迁移成本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI GPT-4 退役</td>
+<td>明确 Shutdown Deadline</td>
+<td>启动模型迁移 Eval</td>
+<td>中</td>
+</tr>
+<tr>
+<td>TypeSafe Jev 1.14</td>
+<td>Preview、Alias、置信度漂移</td>
+<td>Pin 版本与阈值评测</td>
+<td>低～中</td>
+</tr>
+<tr>
+<td>Anthropic OpenTelemetry</td>
+<td>Beta Schema、敏感内容、Token 去重</td>
+<td>Metadata Only PoC</td>
+<td>中</td>
+</tr>
+<tr>
+<td>xAI Voice 3.0</td>
+<td>模型 Alias 自动切换</td>
+<td>语音回归测试</td>
+<td>低～中</td>
+</tr>
+<tr>
+<td>Gemini 4 Argon</td>
+<td>Caching、Thinking、长输出方式变化</td>
+<td>Provider Adapter + Eval</td>
+<td>中</td>
+</tr>
+<tr>
+<td>百炼 Managed Agents</td>
+<td>SDK/Region/MCP/Session 差异</td>
+<td>非生产只读 PoC</td>
+<td>中</td>
+</tr>
+<tr>
+<td>Claude Code/SDK</td>
+<td>Hook、MCP、Resume、权限行为</td>
+<td>升级前回归</td>
+<td>低～中</td>
+</tr>
+<tr>
+<td>Seed 研究公告</td>
+<td>无直接兼容风险</td>
+<td>了解即可</td>
+<td>无</td>
+</tr>
+<tr><td>Meta Muse Wonder（10/12 补录）</td><td>模型 API 与 Muse Code/Full 入口有别；未验证 OpenAI 参数兼容</td><td>选取 10–20 个 Java Coding Task 做公平 Eval</td><td>低～中（接入），中（评测）</td></tr><tr><td>Meta GEM（10/13 补录）</td><td>Meta 特殊推荐系统规模与普通企业不同</td><td>学习中央能力与领域适配的取舍</td><td>无强制迁移</td></tr><tr><td>Meta Muse 研究案例（10/14 新增）</td><td>Agent 分析错误、数据权限和研究结论审阅风险</td><td>增加独立验证器与人工审查</td><td>中（工程落地）</td></tr><tr><td>百度 PaddleOCR v3.7（历史基线）</td><td>OCR/文档错误可能污染下游 RAG</td><td>用可溯源数据集验证 OCR→RAG 全链路</td><td>中（新增集成）</td></tr></tbody>
+</table></div>
+<h3 class="section-heading" id="sec-62">跨厂商比较说明</h3>
+<p>TypeSafe Jev、OpenAI Decisions API 和通用 LLM Structured Outputs 虽然都可能给出结构化结果，但分别适合不同任务。不能仅比较每百万输入 Tokens 的价格，需要在<strong>相同任务和相同质量阈值</strong>下比较准确率、校准误差、P95 延迟、错误自动执行比例、人工复核率及每次成功任务成本。</p>
+<h2 class="section-heading" id="sec-63">今日工程行动清单</h2>
+<ul>
+<li class="task-li"><label><input type="checkbox"/> <span>扫描 Java、Nacos、数据库、CI、第三方网关中使用的 GPT-4 弃用快照。</span></label></li>
+<li class="task-li"><label><input type="checkbox"/> <span>对 GPT-4 → GPT-6 Luna 准备业务 Eval，再灰度迁移。</span></label></li>
+<li class="task-li"><label><input type="checkbox"/> <span>用 200 条脱敏工单验证 Jev 1.14 的分类准确率、中文能力、校准与成本。</span></label></li>
+<li class="task-li"><label><input type="checkbox"/> <span>测试 xAI Voice 3.0 的 Alias、打断、重连、混合语言和 Tool Calls。</span></label></li>
+<li class="task-li"><label><input type="checkbox"/> <span>在 Java 测试环境打通 Anthropic OpenTelemetry；默认 Metadata Only。</span></label></li>
+<li class="task-li"><label><input type="checkbox"/> <span>评测 Gemini 4 Argon 的三档 Thinking、缓存兼容、长输出和费用。</span></label></li>
+<li class="task-li"><label><input type="checkbox"/> <span>验证百炼 Managed Agents 的 Java SDK、Region、Session、SSE 和 MCP。</span></label></li>
+<li class="task-li"><label><input type="checkbox"/> <span>对 Claude Code 2.1.300 执行 Windows、MCP、Hooks、Worktree、Resume 回归。</span></label></li>
+<li class="task-li"><label><input type="checkbox"/> <span>将 ModelLifecycleRegistry、DecisionGateway、AgentExecutionTrace 纳入企业 AI 架构待办。</span></label></li>
+<li class="task-li"><label><input type="checkbox"/><span>核验 Meta Model API 对 Muse Wonder 的实际账号权限、定价及 Model ID，使用同任务对比不同 Coding Agent。</span></label></li><li class="task-li"><label><input type="checkbox"/><span>研究 Meta GEM 统一特征/领域服务架构，但不要直接复制其超大规模训练系统。</span></label></li><li class="task-li"><label><input type="checkbox"/><span>对研究型 Agent 加入独立可执行验证、专家审阅、数据权限与审计。</span></label></li><li class="task-li"><label><input type="checkbox"/><span>长期监控百度千帆模型更新日志、PaddlePaddle 与 PaddleOCR 官方 Releases。</span></label></li><li class="task-li"><label><input type="checkbox"/><span>建立 Java + PaddleOCR + RAG 的证据溯源与文档字段准确率 PoC。</span></label></li></ul>
+<h2 class="section-heading" id="sec-64">今日综合判断</h2>
+<p>本期从两家扩展到十三家：OpenAI 的模型生命周期治理、Anthropic 的 Agent 可观测性、Google 的长上下文推理、xAI 的实时语音、TypeSafe 的类型化小决策、阿里巴巴的托管 Agent、Meta 的 Muse Wonder 前沿 Agent 与工程研究，以及百度千帆和 PaddleOCR 的文档处理基线。Meta 部分明确区分了 10 月 12–13 日历史补录和 10 月 14 日真正新增；百度没有将旧版重报为今天的新功能。</p>
+<p>真正的长期工程能力，不是单纯接入更多模型，而是建立可持续的 <strong>模型生命周期、决策评测、运行时执行记录、工具权限、成本、风险与可观测性</strong> 体系；并坚持按真实业务任务比较供应商，而不是按营销 Benchmark 排名。</p>
+</article><footer>本报告是完整的本期技术日报离线版本。官方链接在联网时打开；本文文字、表格、代码和导航均可离线阅读。<p><a class="to-top" href="#top">↑ 返回顶部</a></p></footer></main></div>
+</body></html>
