@@ -1,0 +1,744 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="color-scheme" content="light"><meta name="theme-color" content="#ffdc45"><title>全球 AI 大模型与 Agent 技术官方日报 · 2026-11-03</title><style>
+:root { color-scheme: light; --ink:#17202b; --paper:#fffaf0; --line:#1d2631; --accent:#ffdc45; --warm:#ff7c58; --cool:#84dfe7; --muted:#5d6570; }
+* {box-sizing:border-box}
+html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body {margin:0; background:var(--paper); color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","Microsoft Yahei","PingFang SC",sans-serif;font-size:16px;line-height:1.75; overflow-x:hidden}
+a {color:#0058af; overflow-wrap:anywhere;text-underline-offset:3px}
+a:focus-visible {outline:3px solid #f56b38;outline-offset:2px}
+.site-head {background:var(--accent);border-bottom:5px solid var(--line); padding:1.8rem max(20px,calc((100vw - 1140px)/2)) 1.3rem}
+.kicker {display:inline-block;font-size:12px;font-weight:850;letter-spacing:.12em;padding:.25rem .55rem;background:var(--ink);color:#fff}
+.site-head h1 {font-size:clamp(1.85rem,5vw,3.5rem);line-height:1.18;letter-spacing:-.055em;max-width:1050px;margin:.8rem 0}
+.site-head p {margin:.4rem 0;font-weight:650}
+.subhead {color:#37434a;font-size:.94rem}
+.shell {max-width:1220px;margin:0 auto;padding:20px 26px 80px;display:grid;grid-template-columns:225px minmax(0,1fr);gap:26px}
+.toc {align-self:start;position:sticky;top:16px;max-height:calc(100vh - 32px);overflow-y:auto;background:#fff;border:2px solid var(--line);box-shadow:5px 5px 0 var(--line);padding:12px}
+.toc-title {font-weight:900;font-size:.88rem;letter-spacing:.06em;padding:.35rem .4rem;margin-bottom:8px;background:var(--cool)}
+.toc a {display:block;text-decoration:none;color:var(--ink);padding:.43rem .4rem;border-bottom:1px solid #e3e3df;font-size:.79rem;line-height:1.35;font-weight:650}
+.toc a:hover {background:var(--accent)}
+.paper {min-width:0;max-width:100%;}
+.paper h1 {display:none}
+.paper h2 {background:var(--cool);padding:.8rem 1rem;border:3px solid var(--line);box-shadow:6px 6px 0 var(--line);font-size:clamp(1.13rem,2.7vw,1.55rem);line-height:1.35;margin:3rem 0 1.3rem;scroll-margin-top:24px}
+.paper h3 {font-size:1.09rem;margin:1.9rem 0 .7rem;padding-left:.65rem;border-left:6px solid var(--warm);line-height:1.45}
+.paper p {margin:.7em 0 1em;overflow-wrap:anywhere}
+.paper strong {font-weight:850}
+.paper em {color:#344552}
+.paper h2:first-of-type {margin-top:1.5rem}
+.paper blockquote {margin:1.25em 0;padding:12px 16px;background:#fff0c8;border-left:5px solid var(--warm)}
+.paper hr {margin:2.5rem 0;border:0;border-top:3px solid var(--ink)}
+.table-scroll {max-width:100%; overflow-x:auto; overscroll-behavior-x:contain;margin:1.1rem 0 1.8rem;border:2px solid var(--line);border-radius:2px;background:white;-webkit-overflow-scrolling:touch}
+table {width:100%;min-width:580px;border-collapse:collapse;text-align:left;font-size:.86rem;line-height:1.58}
+th,td {border-bottom:1px solid #d4d3cc;padding:.7rem .8rem;vertical-align:top;overflow-wrap:anywhere}
+th {background:#ffde6b;color:#142029;font-weight:850;white-space:normal}
+tr:nth-child(even) td {background:#f9faf8}
+pre {margin:1.1rem 0 1.4rem;max-width:100%;overflow:auto;background:#1c2630;color:#f3f6f7;padding:15px 18px;border-left:5px solid var(--warm);font-size:.82rem;line-height:1.52;border-radius:0 4px 4px 0;tab-size:2;-webkit-overflow-scrolling:touch}
+pre code {color:inherit;white-space:pre;overflow-wrap:normal;font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace}
+code {font-family:ui-monospace,Consolas,monospace;font-size:.9em;background:#f0eee4;padding:.14rem .3rem;overflow-wrap:anywhere}
+pre code {background:none;padding:0}
+ul,ol {padding-left:1.45em}
+li {margin:.38em 0}
+input[type=checkbox] {accent-color:#202b33; vertical-align:middle}
+.site-footer {max-width:1140px;margin:0 auto 30px;padding:1rem 20px;border-top:3px solid var(--line);font-size:.82rem;color:var(--muted)}
+.skip {position:absolute;left:-9999px;top:0;background:#fff;padding:12px}
+.skip:focus {left:12px;z-index:9}
+@media(max-width:850px){.shell{display:block;padding:16px 16px 70px}.toc{position:static;max-height:none;margin:0 0 1.6rem;box-shadow:4px 4px 0 var(--line)}.toc-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 9px}.site-head{padding:1.4rem 16px}.paper h2{box-shadow:4px 4px 0 var(--line)}}
+@media(max-width:460px){body{font-size:15px}.toc-links{display:block}.shell{padding:12px 12px 52px}.site-head{padding:1.2rem 14px}.paper h2{font-size:1.18rem;padding:.7rem .65rem;box-shadow:3px 3px 0 var(--line)}.paper h3{font-size:1rem}.paper p{line-height:1.76} pre{font-size:.72rem;padding:11px 10px}th,td{padding:.5rem .6rem}table{font-size:.79rem}.table-scroll{margin-left:0;margin-right:0}}
+@media print {.site-head{background:#fff}.shell{display:block}.toc{display:none}.paper h2{box-shadow:none;break-after:avoid}table{min-width:0}pre{white-space:pre-wrap;overflow-wrap:anywhere}.table-scroll{overflow:visible}a{text-decoration:underline;color:#000}}
+
+.paper h2 {overflow-wrap:anywhere;} .paper h3 {scroll-margin-top:15px;} .paper .task-list-item {list-style:none;margin-left:-1.45em;} .paper .task-list-item input{margin-right:.55em;}
+</style></head><body><a class="skip" href="#content">跳转正文</a><header class="site-head"><span class="kicker">GLOBAL AI / AGENT OFFICIAL DAILY</span><h1>全球 AI 大模型与 Agent<br>技术官方日报</h1><p>2026.11.03 · 北京时间 · 十三家厂商</p><div class="subhead">完整独立可读 · 官方增量核验 · 纯文本离线单文件</div></header><div class="shell"><nav class="toc" aria-label="报告目录"><div class="toc-title">INDEX / 目录</div><div class="toc-links"><a href="#s1">今日必看摘要</a><a href="#s2">一、Google｜Gemini 2.5 Pro / Flash 退役及自动模型迁移</a><a href="#s3">二、Anthropic｜Messages API Message Threads Beta：服务端短期会话</a><a href="#s4">三、阿里巴巴 / Qwen｜Qwen Code 0.26.6 与 TypeScript SDK 0.1.27</a><a href="#s5">四、Moonshot AI / Kimi｜Kimi Code 2.5.0 Canary 的 Agent 运行时实验</a><a href="#s6">五、Google｜Gemini CLI 11 月 2 日 Nightly</a><a href="#s7">六、13 家厂商官方巡检状态表</a><a href="#s8">七、经可靠核验的正式版本与 Model ID 基线</a><a href="#s9">八、跨厂商兼容性、成本与迁移矩阵</a><a href="#s10">九、今日工程行动 Checklist</a><a href="#s11">十、综合工程判断</a></div></nav><main id="content" class="paper"><h1>全球 AI 大模型与 Agent 技术官方日报</h1>
+<p><strong>2026 年 11 月 3 日（星期二）｜北京时间｜13 家厂商官方增量巡检</strong></p>
+<p><strong>核验窗口：</strong>以 2026 年 11 月 2 日的日报为基线，检查至 11 月 3 日早间。美国当地 11 月 2 日发布、北京时间今天早间可见的正式更新纳入本期。本期重点关注 Google Gemini 模型退役和自动路由、Anthropic 长会话 Message Threads Beta，以及 Qwen Code 正式版升级。全部按实际业务风险排序，不按厂商平均分配条目。</p>
+<h2 id="s1">今日必看摘要</h2>
+<p><strong>① Google：Gemini 2.5 Pro / Flash 宣布退役，12 月 1 日自动切换模型。</strong> <code>gemini-2.5-pro</code> 将转向 <code>gemini-3.8-flash</code>，<code>gemini-2.5-flash</code> 将转向 <code>gemini-3.5-flash-lite</code>。Function Calling、Thought Signature、Thinking 参数与计费均需迁移检查。<strong>必看。</strong> <a href="https://aistudio.google.com/docs/changelog" rel="noopener noreferrer" target="_blank">Google 原文</a>。</p>
+<p><strong>② Anthropic：Messages API 新增 Message Threads Beta。</strong> 长时间 Agent 可以只上传新增消息，服务端在短时间内维护会话，减少重复传输与处理。该功能不符合 Zero Data Retention 和 HIPAA 要求，且有严格的状态与配置限制。<strong>必看。</strong> <a href="https://platform.claude.com/docs/en/build-with-claude/message-threads" rel="noopener noreferrer" target="_blank">Anthropic 原文</a>。</p>
+<p><strong>③ 阿里巴巴 Qwen Code 0.26.6 正式发布。</strong> 新增 Web Shell 任务活动视图、模型调用指标、Headless Prompt Hooks 等功能，并修复 MCP 工具发现、Agent 恢复及 Windows 安装器问题。TypeScript SDK 同步到 <code>0.1.27</code>。<strong>建议看。</strong> <a href="https://github.com/QwenLM/qwen-code/releases/tag/v0.26.6" rel="noopener noreferrer" target="_blank">Qwen 原文</a>。</p>
+<hr/>
+<h2 id="s2">一、Google｜Gemini 2.5 Pro / Flash 退役及自动模型迁移</h2>
+<p><strong>官方标题：Gemini API Release Notes — November 2, 2026</strong></p>
+<p><strong>原始发布日期：2026-11-02｜计划切换：2026-12-01｜状态：Deprecated｜优先级：必看</strong></p>
+<p>官方来源：<a href="https://aistudio.google.com/docs/changelog" rel="noopener noreferrer" target="_blank">Gemini API 更新日志</a> · <a href="https://ai.google.dev/gemini-api/docs/deprecations" rel="noopener noreferrer" target="_blank">模型退役记录</a> · <a href="https://ai.google.dev/gemini-api/docs/pricing" rel="noopener noreferrer" target="_blank">Gemini API 定价</a>。</p>
+<h3>1）更新内容、准确 Model ID 与发布范围</h3>
+<p>Google 于 11 月 2 日正式宣布两项模型退役安排：</p>
+<div aria-label="可横向滚动的表格 1" class="table-scroll" role="region"><table>
+<thead>
+<tr>
+<th>旧 Model ID</th>
+<th>12 月 1 日计划自动路由至</th>
+<th>计费口径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gemini-2.5-pro</code></td>
+<td><code>gemini-3.8-flash</code></td>
+<td>按 Gemini 3.8 Flash 费率</td>
+</tr>
+<tr>
+<td><code>gemini-2.5-flash</code></td>
+<td><code>gemini-3.5-flash-lite</code></td>
+<td>按 Gemini 3.5 Flash-Lite 费率</td>
+</tr>
+</tbody>
+</table></div>
+<p>这两个旧模型目前已经从 Google AI Studio 可选模型中移除。<strong>12 月 1 日后旧 ID 请求将自动指向替代模型。</strong> 风险不一定表现为失败，也可能表现为请求成功但能力与费用改变。此公告直接针对 Gemini API；Vertex AI 的 Publisher Model ID、区域和退役安排须独立核实。</p>
+<h3>2）核心技术机制与 Breaking Changes</h3>
+<p>本次变化不只是替换字符串。Google 明确指出 Function Calling 协议与校验、<code>thought_signature</code> 验证、<code>thinking_level</code> 替代 <code>thinking_budget</code>、部分采样参数移除以及 Prefilled Model Turns 不再支持等兼容性风险。</p>
+<p>旧参数示例（<strong>不是新模型迁移后请求</strong>）：</p>
+<pre><code class="language-json">{
+  "model": "gemini-2.5-pro",
+  "generationConfig": {
+    "thinkingConfig": {"thinkingBudget": 8192}
+  }
+}
+</code></pre>
+<p>不能把数字 8192 直接迁移成新 <code>thinkingLevel</code>；需按目标模型的官方枚举与结构处理。</p>
+<pre><code class="language-text">Business Application
+       -&gt; Enterprise AI Gateway
+       -&gt; Old Model ID
+       -&gt; Provider Alias Resolver
+       -&gt; After 2026-12-01: New Model
+             -&gt; Thinking Schema
+             -&gt; Tool Validation
+             -&gt; New Pricing
+             -&gt; Potential Behavior Change
+</code></pre>
+<p>应同时记录 <code>requestedModel</code> 与 <code>resolvedModel</code>，防止自动别名迁移掩盖真实执行模型。</p>
+<h3>3）为什么有价值？技术与成本判断</h3>
+<p>这是确定的生产生命周期风险，优先级高于一般模型发布新闻。可能出现参数/工具请求直接报错、响应正常但结果行为变化、缓存和输入输出 Thinking 计费变化。Google 公布了目标模型的计费口径，但本期没有在相同地区、上下文及工具预算下获得可信的旧新价格与 P95 对照，因此不猜测降本百分比。</p>
+<h3>4）适用产品、业务场景和工程用途</h3>
+<p>影响 Gemini API 文本生成、Java/Spring Boot、Function Calling Agent、RAG、多模态理解、AI Coding、后台研究及用 Nacos 管理模型路由的微服务。未使用旧 ID 的项目只需记录生命周期，无需为了公告迁移。</p>
+<h3>5）对 Java、AI Gateway、Nacos 和分布式架构的帮助</h3>
+<p>应将 <code>provider</code>、<code>requestedModel</code>、<code>resolvedModel</code>、<code>region</code>、<code>apiVersion</code>、<code>thinkingSchema</code>、<code>toolProtocolVersion</code>、<code>lifecycleStatus</code>、<code>rerouteDate</code>、<code>pricingPolicy</code>、<code>lastValidatedAt</code> 分开管理。<code>InterfaceClient.invoke(...)</code> 等领域网关继续管理业务身份和权限，模型 Schema 变化由 Provider Adapter 处理，而不是侵入业务领域接口。</p>
+<h3>6）迁移步骤、命令与验收标准</h3>
+<p>PowerShell 5.1 本地扫描示例：</p>
+<pre><code class="language-powershell">$patterns = @('gemini-2.5-pro','gemini-2.5-flash','thinkingBudget','thinking_budget','thought_signature')
+Get-ChildItem . -Recurse -File -ErrorAction SilentlyContinue |
+  Where-Object { $_.Extension -in '.java','.json','.yaml','.yml','.properties','.toml','.ts','.py' } |
+  Select-String -Pattern $patterns -SimpleMatch
+</code></pre>
+<p>另需检查远程 Nacos、数据库模型配置、CI Secrets、云端应用。使用 20 条 Golden Tasks 覆盖 JSON、连续 Tool Calling、Thought Signature、文本和多模态请求，比较目标模型的 HTTP 400、工具结果、缓存、Token、费用与 P95。</p>
+<p><strong>验收标准：</strong>旧 Model ID 均进入迁移清单；新 Schema 通过验证；任务正确率达到业务门槛；费用可解释；12 月 1 日前完成生产切换。</p>
+<h3>7）优先级、迁移代价与结论</h3>
+<p><strong>必看。生产系统必须在 12 月 1 日前完成受影响调用的迁移验证。</strong> 简单文本迁移代价可能较低；复杂 Agent Tool Calling、Thinking、多模态需充分回归。官方未保证新旧模型完全等价。</p>
+<hr/>
+<h2 id="s3">二、Anthropic｜Messages API Message Threads Beta：服务端短期会话</h2>
+<p><strong>官方标题：Message threads｜发布：2026-11-02｜Beta Header：<code>message-threads-2026-08-12</code>｜状态：Beta｜优先级：必看</strong></p>
+<p>官方来源：<a href="https://platform.claude.com/docs/en/release-notes/overview" rel="noopener noreferrer" target="_blank">Claude Platform Release Notes</a> · <a href="https://platform.claude.com/docs/en/build-with-claude/message-threads" rel="noopener noreferrer" target="_blank">Message Threads 开发指南</a>。</p>
+<h3>1）内容是什么？版本与可用范围</h3>
+<p>Anthropic 为 Messages API 引入 Message Threads。传统多轮请求需反复提交完整历史；新功能把会话短期保留在服务端，后续只发送增量消息并引用上次 Response ID。支持 Claude API、Claude Platform on AWS、Google Cloud 上 Anthropic 托管模型和 Microsoft Foundry。处于 Beta，需要指定 Header；账户与云端实际权限仍应核对。</p>
+<h3>2）核心机制、请求 Schema 与状态约束</h3>
+<p>创建请求主要字段：</p>
+<pre><code class="language-json">{
+  "model": "claude-opus-5-5", "max_tokens": 1024,
+  "messages": [{"role":"user","content":"查询一个测试订单"}],
+  "thread": {"type":"create"}
+}
+</code></pre>
+<p>下一轮继续：</p>
+<pre><code class="language-json">{
+  "model": "claude-opus-5-5", "max_tokens": 1024,
+  "messages": [{"role":"user","content":"解释它的当前状态"}],
+  "thread": {"type":"continue","previous_message_id":"&lt;PREVIOUS_RESPONSE_ID&gt;"}
+}
+</code></pre>
+<p>两个 JSON 是核心字段示例，真实调用还需要鉴权、<code>anthropic-version</code> 及请求头：</p>
+<pre><code class="language-http">anthropic-beta: message-threads-2026-08-12
+</code></pre>
+<pre><code class="language-text">Agent Request -&gt; Thread Create -&gt; Server-side Conversation
+       -&gt; New Message + Previous Response ID
+       -&gt; Thread Continue -&gt; Model Response
+</code></pre>
+<p>状态约束：<code>system</code> 和 <code>tools</code> 只在 Create 提交，Continue 不可重复发送；模型、Thinking、Tool Choice、输出格式等固定字段不一致可能返回 <code>thread_fingerprint_mismatch</code>。MCP 服务器地址/Token 和 Container ID 并非全部自动存储，需按文档再次提供。Thread 是追加式结构；从旧 Response ID 分叉或修改历史需要新 Thread。对于 <code>pause_turn</code>，按文档发送空消息续跑，而不是插入新的用户轮次。</p>
+<h3>3）价值、性能、成本与隐私</h3>
+<p>减少完整对话历史重复上传、验证和 Tokenization 开销，有利于长会话的请求体大小和首 Token 延迟稳定性。但<strong>该功能不改变 Token 价格和 Rate Limits</strong>，不代表历史 Token 自动免费。最关键的治理限制：<strong>Message Threads 不符合 ZDR，也不符合 HIPAA 要求。</strong> 服务端采用加密短期内存，不写持久存储；Thread 在最后一次请求后约 5 分钟过期，数据最晚在最后使用后 1 小时删除。</p>
+<h3>4）适用业务场景</h3>
+<p>多轮 Coding Agent、连续领域问答、长工具链、自动研究和需要低传输开销的内部助手。ZDR/HIPAA 等严格合规业务不应启用这项 Beta，应沿用满足其政策的既有方案。</p>
+<h3>5）对 Java / Spring Boot / Nacos / AI Gateway 的帮助</h3>
+<pre><code class="language-text">Business Task State
+       -&gt; Local Execution Ledger
+       -&gt; Provider Thread Reference
+       -&gt; Anthropic Message Thread
+</code></pre>
+<p>本地账本仍需保存 <code>taskId</code>、<code>previousMessageId</code>、<code>toolCallId</code>、用户授权和幂等键。短期供应商 Thread 不能当企业业务数据库。Gateway 应将其作为可关闭的 Provider Capability，并对不符合数据政策的租户禁止使用。</p>
+<h3>6）教程、实践代码和验收</h3>
+<p>使用脱敏数据，比较普通完整历史请求与 Thread 五轮只读查询，模拟 Thinking/Tools 更改、Thread 过期、404 与网络中断；重建完整历史时不能重新执行已完成的写入工具。</p>
+<p>Python SDK 简化示例：</p>
+<pre><code class="language-python">import anthropic
+client = anthropic.Anthropic()
+thread = client.beta.messages.thread(
+    model="claude-opus-5-5",
+    max_tokens=1024,
+    system="You are a read-only test assistant."
+)
+first = thread.send({"role":"user","content":"Describe a sample order."})
+second = thread.send({"role":"user","content":"Summarize the order status."})
+</code></pre>
+<p>Java SDK 也有 Thread Helper，但具体类型与方法名要遵守对应已安装版本，不能照搬 Python 方法名。<strong>验收标准：</strong>续接正确；过期可恢复；MCP 授权不丢失；业务写入不重复；数据保留政策符合要求；P50/P95 与费用可复测。</p>
+<h3>7）优先级、兼容性与迁移判断</h3>
+<p><strong>必看，仅适合数据保留策略允许的场景进行 Beta PoC。</strong> 验证 Beta Header、固定字段、SDK 版本、缓存和 Compaction；金融等有严格零保留要求的业务不可只为降低延迟而直接上线。</p>
+<hr/>
+<h2 id="s4">三、阿里巴巴 / Qwen｜Qwen Code 0.26.6 与 TypeScript SDK 0.1.27</h2>
+<p><strong>官方发布日期：2026-11-02 UTC｜CLI：<code>v0.26.6</code> 正式版｜SDK：<code>v0.1.27</code> 正式版｜优先级：建议看</strong></p>
+<p>官方来源：<a href="https://github.com/QwenLM/qwen-code/releases/tag/v0.26.6" rel="noopener noreferrer" target="_blank">Qwen Code v0.26.6</a> · <a href="https://github.com/QwenLM/qwen-code/releases/tag/sdk-typescript-v0.1.27" rel="noopener noreferrer" target="_blank">TypeScript SDK v0.1.27</a>。</p>
+<h3>1）内容是什么？准确版本与功能</h3>
+<p>Qwen Code 0.26.6 的 Release Notes 标记 <strong>No known breaking changes</strong>。配套 TypeScript SDK <code>0.1.27</code> 捆绑 CLI 构建版本 <code>0.26.6</code>。</p>
+<div aria-label="可横向滚动的表格 2" class="table-scroll" role="region"><table>
+<thead>
+<tr>
+<th>模块</th>
+<th>具体变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Web Shell</td>
+<td>会话活动视图区分审批、输入、错误、运行中、未读任务</td>
+</tr>
+<tr>
+<td>模型观测</td>
+<td>请求成功率、输出速度、首 Token 延迟及模型级失败信息</td>
+</tr>
+<tr>
+<td>Workflow</td>
+<td>Web Shell 的 Workflow 控制和工具不可用提示</td>
+</tr>
+<tr>
+<td>Agent Runtime</td>
+<td>实验性 Unified Agent Loop 扩展到更多 ACP Turn</td>
+</tr>
+<tr>
+<td>Hooks</td>
+<td>Headless 模式支持 <code>prompt.submit</code> Hooks</td>
+</tr>
+<tr>
+<td>MCP</td>
+<td>避免重复工具名遮蔽整个 MCP Server 的其他工具</td>
+</tr>
+<tr>
+<td>Agent 恢复</td>
+<td>缺少子任务执行证据时不能错误补全历史状态</td>
+</tr>
+<tr>
+<td>Windows</td>
+<td>更新时先停止绑定的运行时，减少文件锁导致的升级失败</td>
+</tr>
+<tr>
+<td>外部模型上下文</td>
+<td>修复 Kimi K3 Model ID 被误识别成小上下文版本</td>
+</tr>
+</tbody>
+</table></div>
+<p>还改进了 Web Shell 审批文本的控制字符与双向字符处理，避免屏幕显示与审批意图不一致。</p>
+<h3>2）核心技术机制与关键知识点</h3>
+<p>重要方向是<strong>执行证据优先于状态推断</strong>：</p>
+<pre><code class="language-text">Parent Agent -&gt; Child Agent -&gt; Tool Call
+                    |             |
+                    v             v
+               Execution Ledger / Result Delivery
+                             |
+                             v
+                      Reconciliation
+                       /        \
+                 Evidence     No evidence
+                  Apply       Unknown/Review
+</code></pre>
+<p>MCP 同名工具冲突应只影响冲突名称，而不能让独立工具全部消失。模型指标区分 TTFT、输出速度和失败率，优于只显示总 Token。Headless Prompt Hook 可在提交前检查输入，但不能替代业务服务端授权。</p>
+<h3>3）为什么有价值？性能与证据边界</h3>
+<p>主要是增强 Agent 可靠性、状态追溯、错误定位与成本诊断。UI 展示输出速度不意味着模型推理能力或 P95 自动改善；没有可推广到所有环境的官方性能提升百分比。</p>
+<h3>4）适用业务场景</h3>
+<p>多模型 AI Coding、企业 Web Shell、ACP、MCP、Skills、Hooks、PR Review、Headless CI、Managed Agent、Windows 开发环境。</p>
+<h3>5）对 Java / Spring Boot / Gateway 的帮助</h3>
+<p>建议分别保存 <code>taskId</code>、<code>agentSessionId</code>、父子任务、工具执行证据、审批决定、Model Usage 与最终业务状态。即使 Agent 恢复后预期某项操作已经执行，也必须依赖业务服务记录确认，不能凭模型推断将订单更新为成功。K3 上下文识别修复是客户端识别 Model ID 的变化，<strong>不是 Moonshot 在当天发布新的 Kimi 权重</strong>。</p>
+<h3>6）升级、测试与验收</h3>
+<p>PowerShell 5.1：</p>
+<pre><code class="language-powershell">qwen --version
+where.exe qwen
+node --version
+npm install -g @qwen-code/qwen-code@0.26.6
+</code></pre>
+<p>升级操作仅建议在隔离测试环境先执行。验证 Headless Hooks、MCP 同名工具、子任务中断恢复、Windows 文件锁、Workflow 和模型 TTFT 统计。TypeScript 应单独核对 SDK 0.1.27 与嵌入式 CLI 一致性。</p>
+<p><strong>验收标准：</strong>未授权执行为零；子任务状态有证据；MCP 冲突不遮蔽其他工具；中断后恢复不重复写入；观测指标能对应真实模型请求。</p>
+<h3>7）优先级、Breaking Change 与迁移代价</h3>
+<p><strong>建议看。使用 Web Shell、Managed Agent、Hooks、MCP 的开发者值得回归后升级。</strong> 官方没有列出已知 Breaking Changes，但自定义插件和第三方模型配置仍需回归。此客户端版本不代表基础模型价格或许可证更新。</p>
+<hr/>
+<h2 id="s5">四、Moonshot AI / Kimi｜Kimi Code 2.5.0 Canary 的 Agent 运行时实验</h2>
+<p><strong>发布日期：2026-11-02｜版本：<code>2.5.0-canary.20261102033430-40590f6</code>｜状态：Pre-release｜优先级：建议看（普通用户可跳过）</strong></p>
+<p>官方来源：<a href="https://github.com/MoonshotAI/kimi-code/releases/tag/@moonshot-ai%2Fkimi-code@2.5.0-canary.20261102033430-40590f6" rel="noopener noreferrer" target="_blank">Kimi Code Canary Release</a>。</p>
+<h3>1）内容是什么？</h3>
+<p>本次 Canary 更新包括：ACP 请求在启动完成前排队；合并不同工作区目录的 Skills；避免归档会话在索引刷新前重新出现在活动列表；按文件夹范围获取 Git Status；将工具声明与实际执行解耦；调整 Agent Core v2 的 Compaction 测试预算。这是实验性客户端更新，非新的 Kimi 模型发布。</p>
+<h3>2）核心技术机制</h3>
+<pre><code class="language-text">Tool Discovery / Disclosure
+       -&gt; Permission Gate
+       -&gt; Tool Execution
+</code></pre>
+<p>模型可以看到工具，不代表它获得权限。ACP 初始化、会话索引刷新和工具真正执行属于不同的状态机。</p>
+<h3>3）为什么有价值？</h3>
+<p>多工作目录环境下 Skills 发现和权限容易混淆。分离声明与执行，有助于防止错误授权；但 Canary 没有稳定部署承诺，也没有独立统一的性能改进数据。</p>
+<h3>4）适用业务场景</h3>
+<p>多工作区编码、ACP 客户端、多 Agent、Skills、Git 自动化、Agent Runtime 架构研究。</p>
+<h3>5）对企业架构的帮助</h3>
+<p>能力至少区分 <code>DISCOVERABLE</code>、<code>AUTHORIZED</code>、<code>EXECUTED</code>。服务端根据用户、租户、资源重新判权；工具目录不能充当访问许可。</p>
+<h3>6）实践步骤与验收</h3>
+<p>用隔离仓库测试两工作区 Skills、ACP 初始化前请求、工具拒绝和子任务恢复。<strong>验收标准：</strong>初始化前不错误执行；拒绝的工具无副作用；归档会话不恢复为活动任务。</p>
+<h3>7）优先级与风险</h3>
+<p><strong>建议看，普通用户保持 <code>2.4.1</code> Stable。</strong> 不把 <code>2.5.0-canary</code> 误标为正式版，也不从客户端发布推测新的 Context、Thinking 或价格。</p>
+<hr/>
+<h2 id="s6">五、Google｜Gemini CLI 11 月 2 日 Nightly</h2>
+<p><strong>日期：2026-11-02 UTC｜版本：<code>v0.67.0-nightly.20261102.g6814e00d6</code>｜Pre-release｜优先级：可跳过</strong></p>
+<p>官方来源：<a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.67.0-nightly.20261102.g6814e00d6" rel="noopener noreferrer" target="_blank">Gemini CLI Nightly Release</a>。</p>
+<h3>1）内容及来源</h3>
+<p>Google 发布新的 Gemini CLI Nightly，GitHub 明确标记 Pre-release，列出完整代码比较链接。当前 Release 没有可靠完整的新功能列表，不将未合并的 PR 或内部实验写成正式发布能力。</p>
+<h3>2）核心机制</h3>
+<p>Nightly 是开发回归通道，不保证适合生产部署，也不等于 Gemini API 发布了新基础模型或新协议。</p>
+<h3>3）价值及限制</h3>
+<p>可供定位 Windows、终端、MCP 或长期任务问题；不是性能改善或价格变化证据。</p>
+<h3>4）适用场景</h3>
+<p>Gemini CLI 研发测试、Windows Terminal、CI、MCP、插件、Agent Coding。</p>
+<h3>5）对企业架构的帮助</h3>
+<p>生产明确区分 <code>stable</code>、<code>preview</code>、<code>nightly</code>，避免自动将实验包写入共享环境。</p>
+<h3>6）测试与验收</h3>
+<p>PowerShell 检查 <code>gemini --version</code>；只在隔离项目启用 Nightly，固定测试任务，验证工具权限、插件、配置迁移与回滚。<strong>验收标准：</strong>无新增安全违规和关键任务回归，构建通道可以审计。</p>
+<h3>7）优先级</h3>
+<p><strong>可跳过，Stable 基线保持 <code>0.66.0</code>。</strong> 未核实到与该 Nightly 绑定的新 Context、Thinking、定价或 API Breaking Change。</p>
+<hr/>
+<h2 id="s7">六、13 家厂商官方巡检状态表</h2>
+<p><strong>巡检基线：</strong>11 月 2 日日报；新增窗口为 11 月 2 日至 11 月 3 日早间。公开渠道的“无新增”不代表私有控制台、全部地域与企业 Preview 都没有更新。</p>
+<div aria-label="可横向滚动的表格 3" class="table-scroll" role="region"><table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>本期核验结果</th>
+<th>巡检状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① OpenAI</td>
+<td>API Changelog 最新正式条目仍为 10/30 GPT-6 Rosalind；Codex 最新 Alpha <code>0.167.0-alpha.3</code>，Stable <code>0.166.0</code>；Java SDK Latest <code>4.96.0</code></td>
+<td><strong>已核验主要 API / Release 渠道无本窗口重要新增</strong></td>
+</tr>
+<tr>
+<td>② Anthropic</td>
+<td>11/2 Message Threads Beta 正式公布；Claude Code Latest <code>2.1.316</code></td>
+<td><strong>重要 API 新增</strong></td>
+</tr>
+<tr>
+<td>③ Google / DeepMind</td>
+<td>11/2 Gemini 2.5 Pro/Flash 退役公告；Gemini CLI Nightly；Java SDK Latest <code>1.80.0</code></td>
+<td><strong>重要生命周期更新＋Nightly 小更新</strong></td>
+</tr>
+<tr>
+<td>④ xAI</td>
+<td>Release Notes 最近新增 10/27 <code>guidelines</code>；11/2 Imagine 旧别名切换已在前期报道</td>
+<td><strong>已核验主日志无新发布；既定迁移提醒</strong></td>
+</tr>
+<tr>
+<td>⑤ Z.ai</td>
+<td>New Released 最近 8/26 GLM-5.3-Flash；Coding Plan 和账号限定信息未穷尽</td>
+<td><strong>主公告无新增；其他待核验</strong></td>
+</tr>
+<tr>
+<td>⑥ DeepSeek</td>
+<td>API Change Log 最近 10/17 Search API 和 Flash-1017；未确认本窗口新基础模型；社区 Discussion 不算正式 Release</td>
+<td><strong>主日志无新增；生态部分待核验</strong></td>
+</tr>
+<tr>
+<td>⑦ 腾讯</td>
+<td>混元官方入口已查；TTS 动态最新为 10/30；TokenHub 区域与价格更新证据不完整</td>
+<td><strong>已查渠道无新增；TokenHub 待核验</strong></td>
+</tr>
+<tr>
+<td>⑧ 阿里巴巴 / Qwen</td>
+<td>Qwen Code <code>0.26.6</code>、TS SDK <code>0.1.27</code>；百炼上架表最近明确 10/29 Ling-3.1-Flash</td>
+<td><strong>重要 Coding Agent 更新</strong></td>
+</tr>
+<tr>
+<td>⑨ Kimi</td>
+<td>11/2 Kimi Code 2.5.0 Canary；Stable <code>2.4.1</code>；基础 API 新版未核实</td>
+<td><strong>预发布小更新；API 待核验</strong></td>
+</tr>
+<tr>
+<td>⑩ 字节跳动</td>
+<td>Seed 官网最新显著动态 10/14；火山方舟有 10 月模型记录，但 Trae、即梦和动态控制台未完全比对</td>
+<td><strong>主站无新增；其他待核验</strong></td>
+</tr>
+<tr>
+<td>⑪ TypeSafe AI</td>
+<td>Blog 仍展示 Jev <code>1.14.0</code>；Docs 可读；ReDoc 依赖 JavaScript，动态别名、价格和 Danger Zone 未完整核实</td>
+<td><strong>博客无新增；API/实验功能待核验</strong></td>
+</tr>
+<tr>
+<td>⑫ Meta AI</td>
+<td>Engineering 最新显著文章 10/29 JiTTesting；AI Blog 无本窗口新文章；Llama Release 无同期新权重</td>
+<td><strong>已查主渠道无新增；权重许可核验未穷尽</strong></td>
+</tr>
+<tr>
+<td>⑬ 百度</td>
+<td>千帆模型表更新时间 10/18；PaddleOCR Latest <code>v3.7.0</code>；PaddleNLP 没有本窗口新正式版</td>
+<td><strong>已查模型表/仓库无新增；云控制台待核验</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3>各厂商官方巡检入口</h3>
+<div aria-label="可横向滚动的表格 4" class="table-scroll" role="region"><table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>官方直接来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI</td>
+<td><a href="https://developers.openai.com/api/docs/changelog" rel="noopener noreferrer" target="_blank">API Changelog</a> · <a href="https://github.com/openai/codex/releases" rel="noopener noreferrer" target="_blank">Codex Releases</a> · <a href="https://github.com/openai/openai-java/releases" rel="noopener noreferrer" target="_blank">Java SDK</a></td>
+</tr>
+<tr>
+<td>Anthropic</td>
+<td><a href="https://platform.claude.com/docs/en/release-notes/overview" rel="noopener noreferrer" target="_blank">Platform Release Notes</a> · <a href="https://github.com/anthropics/claude-code/releases" rel="noopener noreferrer" target="_blank">Claude Code</a></td>
+</tr>
+<tr>
+<td>Google</td>
+<td><a href="https://aistudio.google.com/docs/changelog" rel="noopener noreferrer" target="_blank">Gemini API</a> · <a href="https://github.com/google-gemini/gemini-cli/releases" rel="noopener noreferrer" target="_blank">Gemini CLI</a> · <a href="https://github.com/googleapis/java-genai/releases" rel="noopener noreferrer" target="_blank">Java SDK</a></td>
+</tr>
+<tr>
+<td>xAI</td>
+<td><a href="https://docs.x.ai/developers/release-notes" rel="noopener noreferrer" target="_blank">Release Notes</a></td>
+</tr>
+<tr>
+<td>Z.ai</td>
+<td><a href="https://docs.z.ai/release-notes/new-released" rel="noopener noreferrer" target="_blank">New Released</a></td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td><a href="https://api-docs.deepseek.com/updates/" rel="noopener noreferrer" target="_blank">API Change Log</a></td>
+</tr>
+<tr>
+<td>腾讯</td>
+<td><a href="https://cloud.tencent.com/document/product/1729" rel="noopener noreferrer" target="_blank">混元文档</a> · <a href="https://cloud.tencent.com/document/product/1073/49616" rel="noopener noreferrer" target="_blank">TTS 动态</a></td>
+</tr>
+<tr>
+<td>阿里巴巴</td>
+<td><a href="https://help.aliyun.com/zh/model-studio/newly-released-models" rel="noopener noreferrer" target="_blank">百炼模型</a> · <a href="https://github.com/QwenLM/qwen-code/releases" rel="noopener noreferrer" target="_blank">Qwen Code</a></td>
+</tr>
+<tr>
+<td>Kimi</td>
+<td><a href="https://github.com/MoonshotAI/kimi-code/releases" rel="noopener noreferrer" target="_blank">Kimi Code</a></td>
+</tr>
+<tr>
+<td>字节跳动</td>
+<td><a href="https://seed.bytedance.com/en/" rel="noopener noreferrer" target="_blank">Seed</a> · <a href="https://docs.volcengine.com/docs/ark/model-release-announcement" rel="noopener noreferrer" target="_blank">火山方舟</a></td>
+</tr>
+<tr>
+<td>TypeSafe AI</td>
+<td><a href="https://typesafe.ai/blog" rel="noopener noreferrer" target="_blank">Blog</a> · <a href="https://docs.typesafe.ai/" rel="noopener noreferrer" target="_blank">Docs</a> · <a href="https://api.typesafe.ai/redoc" rel="noopener noreferrer" target="_blank">API ReDoc</a></td>
+</tr>
+<tr>
+<td>Meta AI</td>
+<td><a href="https://ai.meta.com/blog/" rel="noopener noreferrer" target="_blank">AI Blog</a> · <a href="https://engineering.fb.com/" rel="noopener noreferrer" target="_blank">Engineering</a> · <a href="https://github.com/meta-llama/llama-models/releases" rel="noopener noreferrer" target="_blank">Llama 模型仓库</a></td>
+</tr>
+<tr>
+<td>百度</td>
+<td><a href="https://cloud.baidu.com/doc/qianfan/s/Kmh4stnjp" rel="noopener noreferrer" target="_blank">千帆更新</a> · <a href="https://github.com/PaddlePaddle/PaddleOCR/releases" rel="noopener noreferrer" target="_blank">PaddleOCR</a> · <a href="https://github.com/PaddlePaddle/PaddleNLP/releases" rel="noopener noreferrer" target="_blank">PaddleNLP</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>TypeSafe AI 的 System One、Choice、Score、Noul、Box、RLCD、校准与实验性上下文属于不同能力；今日无新的正式模型版本与价格证据，不能把旧宣传包装成新增，也不能把类型化返回值自动等同于金融/医疗合规。</p>
+<hr/>
+<h2 id="s8">七、经可靠核验的正式版本与 Model ID 基线</h2>
+<p>以下为已核实基线，不是覆盖所有地域、账号和权限的完整目录。</p>
+<div aria-label="可横向滚动的表格 5" class="table-scroll" role="region"><table>
+<thead>
+<tr>
+<th>产品 / 接口</th>
+<th>标识 / 版本</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Google Gemini 2.5 Pro</td>
+<td><code>gemini-2.5-pro</code></td>
+<td>Deprecated，12/1 路由到 <code>gemini-3.8-flash</code></td>
+</tr>
+<tr>
+<td>Google Gemini 2.5 Flash</td>
+<td><code>gemini-2.5-flash</code></td>
+<td>Deprecated，12/1 路由到 <code>gemini-3.5-flash-lite</code></td>
+</tr>
+<tr>
+<td>Gemini 4 Argon</td>
+<td><code>gemini-4-argon</code></td>
+<td>10/13 GA 历史基线</td>
+</tr>
+<tr>
+<td>Gemini CLI</td>
+<td><code>0.66.0</code></td>
+<td>已核实 Stable</td>
+</tr>
+<tr>
+<td>Gemini CLI Nightly</td>
+<td><code>0.67.0-nightly.20261102.g6814e00d6</code></td>
+<td>Pre-release</td>
+</tr>
+<tr>
+<td>Google Java SDK</td>
+<td><code>1.80.0</code></td>
+<td>10/29 正式版</td>
+</tr>
+<tr>
+<td>Anthropic Message Threads</td>
+<td><code>message-threads-2026-08-12</code></td>
+<td>11/2 Beta Header，非 GA</td>
+</tr>
+<tr>
+<td>Claude Code</td>
+<td><code>2.1.316</code></td>
+<td>10/31 正式版</td>
+</tr>
+<tr>
+<td>Anthropic Java SDK</td>
+<td><code>3.3.0</code></td>
+<td>上期已核实正式基线</td>
+</tr>
+<tr>
+<td>Claude Opus 4.8 Fast</td>
+<td><code>claude-opus-4-8</code> + <code>speed:"fast"</code></td>
+<td>11/30 计划移除这一组合</td>
+</tr>
+<tr>
+<td>Codex CLI</td>
+<td><code>0.166.0</code></td>
+<td>Stable</td>
+</tr>
+<tr>
+<td>Codex CLI Alpha</td>
+<td><code>0.167.0-alpha.3</code></td>
+<td>11/1 Pre-release</td>
+</tr>
+<tr>
+<td>OpenAI Java SDK</td>
+<td><code>4.96.0</code></td>
+<td>11/1 正式版</td>
+</tr>
+<tr>
+<td>OpenAI Rosalind</td>
+<td><code>gpt-6-rosalind</code></td>
+<td>10/30 受控研究访问，历史发布</td>
+</tr>
+<tr>
+<td>Qwen Code</td>
+<td><code>0.26.6</code></td>
+<td>11/2 正式版</td>
+</tr>
+<tr>
+<td>Qwen TS SDK</td>
+<td><code>0.1.27</code></td>
+<td>11/2 正式版</td>
+</tr>
+<tr>
+<td>Kimi Code</td>
+<td><code>2.4.1</code></td>
+<td>已核实 Stable</td>
+</tr>
+<tr>
+<td>Kimi Code Canary</td>
+<td><code>2.5.0-canary.20261102033430-40590f6</code></td>
+<td>Pre-release</td>
+</tr>
+<tr>
+<td>DeepSeek API</td>
+<td><code>deepseek-flash</code> → <code>DeepSeek-V4.1-Flash-1017</code></td>
+<td>10/17 既有版本</td>
+</tr>
+<tr>
+<td>xAI</td>
+<td><code>grok-4.7</code>, <code>grok-voice-3.0</code></td>
+<td>既有 API 基线</td>
+</tr>
+<tr>
+<td>xAI Imagine</td>
+<td><code>grok-imagine-image-2.0</code></td>
+<td>11/2 旧别名既定重定向</td>
+</tr>
+<tr>
+<td>Z.ai</td>
+<td><code>GLM-5.3-Flash</code></td>
+<td>历史正式公告</td>
+</tr>
+<tr>
+<td>阿里百炼</td>
+<td><code>antdigital/Ling-3.1-flash</code></td>
+<td>10/29 北京上架</td>
+</tr>
+<tr>
+<td>TypeSafe</td>
+<td>Jev <code>1.14.0</code></td>
+<td>既有博客版本，实验能力待核</td>
+</tr>
+<tr>
+<td>PaddleOCR</td>
+<td><code>v3.7.0</code></td>
+<td>6/11 历史正式版</td>
+</tr>
+<tr>
+<td>百度千帆</td>
+<td><code>DeepSeek-V4.1-Flash-1017</code></td>
+<td>10/18 第三方上架</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>成本与性能：</strong>Google 退役会改变目标模型及相应费率；Anthropic Threads 不改变 Token 基价与 Rate Limits；客户端新版本不能自动推断基础模型价格变化。没有同一地域、上下文、Thinking、缓存、并发和工具预算下的统一 P95 与价格样本，不提供 13 家猜测排行。</p>
+<p><strong>许可和生产限制：</strong>Llama 开放权重不等于无限制商用，需核对具体版本许可；TypeSafe Jev 结构化原语不代表天然满足金融/医疗法规；云平台上架第三方模型不等于原厂当日发布。</p>
+<hr/>
+<h2 id="s9">八、跨厂商兼容性、成本与迁移矩阵</h2>
+<div aria-label="可横向滚动的表格 6" class="table-scroll" role="region"><table>
+<thead>
+<tr>
+<th>事件</th>
+<th>主要风险</th>
+<th>建议工程动作</th>
+<th>生产判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gemini 2.5 退役</strong></td>
+<td>12/1 自动路由、Function Calling、Thought Signature、Thinking 与费用改变</td>
+<td>扫描旧 ID、迁移 Schema、Golden Tasks</td>
+<td><strong>受影响项目立即安排</strong></td>
+</tr>
+<tr>
+<td><strong>Anthropic Threads Beta</strong></td>
+<td>非 ZDR/HIPAA、短期过期、固定参数、404/400</td>
+<td>非敏感 PoC，本地完整账本</td>
+<td><strong>先 PoC</strong></td>
+</tr>
+<tr>
+<td><strong>Qwen Code 0.26.6</strong></td>
+<td>Headless Hooks、ACP、MCP 同名、恢复状态、Windows 更新</td>
+<td>隔离工作区契约回归</td>
+<td><strong>通过后升级</strong></td>
+</tr>
+<tr>
+<td>Kimi Code Canary</td>
+<td>Skills 合并、ACP 初始化、工具声明/执行分离</td>
+<td>隔离实验</td>
+<td>保持 Stable</td>
+</tr>
+<tr>
+<td>Gemini CLI Nightly</td>
+<td>预发布与插件行为不确定</td>
+<td>仅用于故障验证</td>
+<td>保持 Stable</td>
+</tr>
+<tr>
+<td>OpenAI Java SDK 4.96.0 历史基线</td>
+<td>WebSocket Warmup 与中转兼容</td>
+<td>长任务状态和幂等回归</td>
+<td>按需验证</td>
+</tr>
+<tr>
+<td>Claude Opus 4.8 Fast</td>
+<td>11/30 指定 model + speed 失效</td>
+<td>替代模型/速度组合回归</td>
+<td>到期前完成</td>
+</tr>
+<tr>
+<td>xAI Imagine 历史迁移</td>
+<td>旧别名仍成功但质量、费率变化</td>
+<td>显式 Model ID/Quality</td>
+<td>图像业务确认</td>
+</tr>
+<tr>
+<td>火山方舟既定 EOS</td>
+<td>旧模型生命周期、Embedding 可能需重建向量库</td>
+<td>检查具体 EOS</td>
+<td>按业务计划</td>
+</tr>
+</tbody>
+</table></div>
+<p>企业 Gateway 应将 Provider、Region、Requested/Resolved Model、Snapshot、API/SDK Version、Context Window、Thinking、Tool Protocol、Auth、Data Retention、License、Pricing 和 Lifecycle 作为独立字段维护，不能只记录 <code>modelName</code> 或 <code>baseUrl</code>。对于 HTTP 200 但模型别名已经更换的请求，必须评价真实业务结果。</p>
+<hr/>
+<h2 id="s10">九、今日工程行动 Checklist</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P0｜排查 Gemini 2.5 Pro/Flash。</strong> 检查 Java、Nacos、数据库路由和 Gateway，识别旧 ID、Thinking 和 Function Calling，安排 12/1 前迁移。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P0｜审查 Anthropic Threads 数据合规。</strong> 对 ZDR/HIPAA 场景禁止直接启用，仅在非敏感环境做 Beta 实验。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P1｜Qwen Code 0.26.6 回归。</strong> 检查 Web Shell、Headless Hooks、MCP、子任务恢复和 Windows 安装，保留回滚路径。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P1｜建立 Agent 执行账本。</strong> 将业务任务、Response/Thread、工具调用、审批、重试和最终状态分开保存。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P1｜核对动态别名。</strong> 检查 Google、xAI、第三方 Gateway 的 Requested/Resolved Model，防止无声更换模型。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P2｜补齐巡检盲区。</strong> 腾讯 TokenHub、火山方舟、Z.ai Coding Plan、Meta 权重、TypeSafe API、百度千帆权限继续待核验。</li>
+</ul>
+<h3>PowerShell 5.1 版本与配置扫描</h3>
+<pre><code class="language-powershell">codex --version
+claude --version
+qwen --version
+kimi --version
+gemini --version
+
+where.exe codex
+where.exe claude
+where.exe qwen
+where.exe kimi
+where.exe gemini
+
+$patterns = @(
+    'gemini-2.5-pro','gemini-2.5-flash',
+    'thinkingBudget','thinking_budget','thought_signature',
+    'claude-opus-4-8','grok-imagine-image-quality'
+)
+Get-ChildItem . -Recurse -File -ErrorAction SilentlyContinue |
+  Where-Object { $_.Extension -in '.java','.json','.yaml','.yml','.properties','.toml','.ps1','.ts' } |
+  Select-String -Pattern $patterns -SimpleMatch
+</code></pre>
+<p>脚本仅检查本地目录，不自动访问远程 Nacos、数据库、Kubernetes Secret 或账号控制台。输出可能含敏感配置，分享前须脱敏。</p>
+<h3>今日 45 分钟实践：统一 Gateway 的模型迁移与长会话验证</h3>
+<p>建立脱敏 Spring Boot 测试服务，提供 <code>getTestOrder</code>、<code>getTestPaymentStatus</code>（只读）和 <code>updateTestOrder</code>（模拟写入、要求幂等键）。先对比 Gemini 旧新模型 Schema 与任务，再用 Anthropic 普通 Messages 和 Threads 运行五轮只读对话，模拟 Thread 过期、404、权限拒绝，最后测试 Qwen Code 中断恢复。</p>
+<p>记录字段：</p>
+<pre><code class="language-text">traceId
+taskId
+provider
+region
+requestedModel
+resolvedModel
+apiVersion
+sdkVersion
+threadId
+responseId
+toolCallId
+idempotencyKey
+permissionDecision
+retryCause
+inputTokens
+cachedTokens
+outputTokens
+grossCost
+finalBusinessStatus
+</code></pre>
+<p><strong>验收标准：</strong>未经授权的写入为零，重复业务副作用为零，模型 Schema 兼容，Thread 失效后安全恢复，Token/费用可解释，P95、任务正确率和每成功任务成本可复测。</p>
+<hr/>
+<h2 id="s11">十、综合工程判断</h2>
+<p>本期核心是<strong>模型生命周期管理与 Agent 状态管理日益成为企业 AI 平台底座</strong>。Google Gemini 2.5 退役说明透明别名迁移可能保留 HTTP 200 却改变协议、模型和账单；Gateway 必须维护版本与能力矩阵，而不只是 Base URL。Anthropic Threads 说明长会话性能可能依赖短暂服务端状态，也带来过期、恢复、隐私和字段限制，不能代替本地业务账本。Qwen Code 对恢复、工具发现、Hooks 和观测的强化，让 Agent Runtime 更接近可审计的业务执行系统。</p>
+<pre><code class="language-text">Business Applications
+       |
+       v
+Domain Gateway (Auth / Tenant / Idempotency)
+       |
+       v
+AI Gateway (Model Registry / Lifecycle / Cost)
+       |
+       v
+Provider Adapters (API / SDK / Schema / Thinking)
+       |
+       v
+Agent Runtime (MCP / Skills / Hooks / Tools)
+       |
+       v
+Execution Ledger (Resume / Retry / Approval)
+       |
+       v
+Security / Evals / Observability
+</code></pre>
+<p>Java/Spring Boot、Nacos、Python、Go、TypeScript、云端 Managed Agents 是不同实现选项；长期应以业务场景、权限、协议兼容、费用和可靠性决定取舍。</p>
+<p><strong>本期三个优先动作：排查 Gemini 2.5 退役；评估 Anthropic Threads 的隐私与恢复限制；回归 Qwen Code 0.26.6 的 Agent 执行与 MCP。</strong></p>
+<p><strong>真实性说明：</strong>新发布与历史基线均依据可点击的官方原文。未经可靠官方核实的价格、Model ID、性能、地区及实验能力不杜撰；渠道无法完整核验则明确标注待核验。</p>
+</main></div><footer class="site-footer">本报告可完全离线阅读。官方原文链接需联网访问；未完全核实的渠道均有明确标注。2026-11-03。</footer></body></html>
