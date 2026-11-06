@@ -63,12 +63,13 @@ footer a{color:var(--blue)}
 @media(max-width:920px){.layout{display:block}.sidebar{border-right:0;border-bottom:2px solid var(--line);padding:13px 14px}.topics{display:flex;overflow-x:auto;padding:0 0 7px;gap:9px}.topic{flex:0 0 218px}.sidebar-hint{display:none}.main{padding:20px 14px}.framehead{align-items:flex-start;flex-direction:column}iframe{height:75vh}}
 @media(max-width:480px){header{padding:13px 16px}.header-right{display:none}.workarea{padding:12px}.controls{display:grid;grid-template-columns:1fr}.field,.searchfield{min-width:0;width:100%}.control-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.control-buttons a{grid-column:1/-1}iframe{height:70vh;min-height:440px}.empty{padding:30px 15px;min-height:370px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.study-shortcut{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:18px;border:1.5px solid var(--line);border-radius:10px;background:var(--mint);padding:12px;font-size:13px;font-weight:850;text-decoration:none}@media(max-width:920px){.study-shortcut{margin-bottom:13px;padding:10px 12px}}
 </style>
 </head>
 <body>
-<header><div><div class="eyebrow">AI RESEARCH / TOOLING / ENGINEERING / LEARNING</div><div class="logo">AI <em>DAILY</em> HUB.</div></div><div class="header-right">公开技术日报归档 · <a href="tasks.html">查看归档栏目</a><br>OFFICIAL SOURCES · COMPLETE REPORTS</div></header>
+<header><div><div class="eyebrow">AI RESEARCH / TOOLING / ENGINEERING / LEARNING</div><div class="logo">AI <em>DAILY</em> HUB.</div></div><div class="header-right">公开技术日报归档 · <a href="tasks.html">查看归档栏目</a> · <a href="study/">学习中心</a><br>OFFICIAL SOURCES · COMPLETE REPORTS</div></header>
 <div class="layout">
-<aside class="sidebar"><div class="sidelabel">TOPIC CHANNELS / 日报栏目</div><nav class="topics" id="topics" aria-label="按栏目切换"></nav><div class="sidebar-hint">仅展示本仓库已收录的完整 HTML 报告；按栏目和日期浏览原文。</div></aside>
+<aside class="sidebar"><a class="study-shortcut" href="study/"><span>学以致用 · 学习中心</span><span aria-hidden="true">↗</span></a><div class="sidelabel">TOPIC CHANNELS / 日报栏目</div><nav class="topics" id="topics" aria-label="按栏目切换"></nav><div class="sidebar-hint">仅展示本仓库已收录的完整 HTML 报告；按栏目和日期浏览原文。</div></aside>
 <main class="main">
 <div class="minilabel">ARCHIVE / MULTI-CHANNEL LIBRARY</div>
 <h1 id="title">全球 AI 大模型与 Agent 官方日报</h1>

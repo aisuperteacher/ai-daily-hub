@@ -1,6 +1,7 @@
 # AI Daily Hub · 多栏目技术日报归档
 
 **网站**：[AI Daily Hub](https://aisuperteacher.github.io/ai-daily-hub/)  
+**学习中心**：[按主题学习与回看课程](https://aisuperteacher.github.io/ai-daily-hub/study/)  
 **栏目总览**：[查看全部归档栏目](https://aisuperteacher.github.io/ai-daily-hub/tasks.html)
 
 本仓库保存和展示已经提交的公开技术日报、资讯周报与学习报告（完整 HTML）。网站支持栏目切换、历史日期选择、全文搜索及独立打开原始报告。
@@ -64,3 +65,12 @@
 ## 查看历史报告
 
 在 [日报首页](https://aisuperteacher.github.io/ai-daily-hub/) 按栏目与日期浏览；每期报告都有独立 HTML 路径。历史文件缺失时不以摘要、运行通知或过期链接冒充完整原文。
+
+
+## 学以致用 · 学习中心
+
+[学习中心](https://aisuperteacher.github.io/ai-daily-hub/study/) 按主题整理完整学习 HTML，支持正文关键词搜索、分类、历史版本、在线交互、独立打开与下载。课程目录为 [`study/catalog.json`](./study/catalog.json)。浏览器只记录最近打开的课程，不把访问记录作为掌握证明。
+
+原始课程按内容哈希保存在 `study/lessons/`；相同文件合并来源别名，不同内容保留版本。每日 AI 五词精讲沿用 `reports/learning/` 的原路径，其已发布报告由构建过程加入学习目录。
+
+新增学习页的筛选、完整性检查、导入和发布约定见 [`study/ARCHIVING.md`](./study/ARCHIVING.md)。使用 `scripts/add_lesson.py` 导入课程，`scripts/build_learning_index.py` 刷新并验证目录。GitHub Actions 只发布实际提交的课程，不能自行读取 ChatGPT Library。
