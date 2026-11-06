@@ -25,6 +25,17 @@ ChatGPT 自动化管理接口本次返回 **12 项已启用、0 项暂停**。�
 
 > **说明**：状态以本次接口查询为准，而非以过去的任务运行成功与否推断。表中计划时间按任务定义展示；定时任务可能延迟运行。既有文档中“暂停”状态已据此纠正。页面栏目数与自动化任务数不同，因为后 3 项不进入公开的日报分类。
 
+## GitHub 自动归档和部署（2026-11-06 已配置）
+
+- 9 项公开日报/周报的**独立 ChatGPT 自动化提示词**均增加了完整 HTML 的 GitHub 提交、manifest 合并、并发冲突重试及回读验证规则，且原有执行计划、启用状态和全文交付要求不变。
+- **绝对分离**：`全球 AI 大模型与 Agent 技术官方日报`（任务 ID `6aa07a92a9fc8191ae71ba51b32a7075`）独立生成和归档官方 AI 日报；`全球 AI 大模型与 Agent 技术官方日报｜日期归档 — Auto update`（任务 ID `Automation_da61d44543e08191b799f1b239903674`）是 ChatGPT Page 的独立控制器，未被更改，不参与 GitHub 写入。
+- [查看 12 项任务独立清单](./tasks.html)；公开网页可从首页顶部访问。
+- [GitHub Pages 部署工作流](./.github/workflows/publish-pages.yml) 在 `main` 分支相应文件变更时自动运行，另每天 03:17 UTC（北京时间 11:17）对归档索引进行核验和补齐。仅构建并上传公开文件。
+- [归档校验与补齐脚本](./scripts/reconcile_archive.py) 检查已入库 HTML 的完整性、路径、索引统计；检查并收录符合要求且未入索引的完整 HTML，不以摘要造假。
+- **首次部署实测成功**：GitHub Actions `Publish AI Daily Hub` run [42154234855](https://github.com/aisuperteacher/ai-daily-hub/actions/runs/42154234855)，9 个栏目、11 份完整 HTML 均通过校验，Pages 部署步骤成功。
+- **尚未端到端验证的部分**：新提示词在 ChatGPT 定时执行时能否访问 GitHub connector 并提交完整文件，需要下一次实际运行后检查该期报告是否进入仓库。提示词不授予新的 GitHub 权限，且 GitHub Pages 不会自动拉取 ChatGPT 的私有历史对话。
+- **历史缺失**：已检查当前可访问的 ChatGPT 文件库及 Dropbox 历史备份，无法找回其他栏目原始完整 HTML；旧的截断运行结果或失效 sandbox 链接不可当作完整报告导入。
+
 ## 现有历史报告
 
 当前已入库 **11 份完整 HTML**：
