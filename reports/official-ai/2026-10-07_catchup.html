@@ -1,0 +1,739 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>OpenAI & Anthropic 官方日报补发合集｜2026-10-03～10-07</title><style>
+:root{--ink:#151515;--paper:#fff9e8;--accent:#ff4e3a;--blue:#315efb;--yellow:#ffd934;--green:#82d173;--muted:#6d665d;--line:#202020;--card:#fffef8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,"Noto Sans SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;line-height:1.7}
+.wrap{max-width:1180px;margin:auto;padding:28px 24px 90px}.hero{border:3px solid var(--line);background:var(--yellow);padding:32px;box-shadow:9px 9px 0 var(--ink);margin:12px 0 40px}.hero h1{font-size:clamp(2rem,5vw,4.8rem);line-height:.98;margin:0 0 18px;letter-spacing:-.055em}.hero p{margin:0;font-weight:750}.grid{display:grid;grid-template-columns:260px 1fr;gap:34px}.toc{position:sticky;top:20px;height:max-content;border:2px solid var(--line);background:var(--card);padding:18px;box-shadow:5px 5px 0 var(--ink)}.toc a{display:block;color:var(--ink);text-decoration:none;border-bottom:1px solid #bbb;padding:8px 2px;font-weight:700}.toc a:hover{background:var(--yellow)}main{min-width:0}h1,h2,h3{font-weight:900;letter-spacing:-.025em;line-height:1.2}main>h1{margin-top:60px;border-top:7px solid var(--ink);padding-top:22px;font-size:2.35rem}h2{margin-top:34px;font-size:1.65rem;border-left:9px solid var(--accent);padding-left:14px}h3{margin-top:26px;font-size:1.18rem}p{margin:12px 0}strong{font-weight:900}blockquote{margin:22px 0;padding:16px 20px;border:2px solid var(--line);border-left:12px solid var(--blue);background:#fff;color:#242424;font-weight:650}pre{overflow:auto;background:#151515;color:#f7f1dc;padding:18px;border:3px solid #151515;box-shadow:5px 5px 0 var(--accent);border-radius:0}code{font-family:"Cascadia Code","SFMono-Regular",Consolas,monospace;font-size:.92em;background:#eee6cc;padding:.15em .35em;border:1px solid #a39a85}pre code{background:transparent;border:0;padding:0}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;margin:22px 0;background:#fff}th,td{border:2px solid var(--line);padding:10px 12px;vertical-align:top}th{background:var(--blue);color:#fff;text-align:left}tr:nth-child(even) td{background:#fff6d6}ul,ol{padding-left:24px}li{margin:5px 0}a{color:#0d45d8;text-decoration-thickness:2px;text-underline-offset:3px}hr{border:0;border-top:4px solid var(--ink);margin:48px 0}.badgebar{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.badge{display:inline-block;border:2px solid var(--ink);padding:5px 9px;font-weight:900;background:#fff}.badge.red{background:#ff6c5a}.badge.yellow{background:#ffe36e}.badge.green{background:#8be17c}.footer{margin-top:70px;border-top:5px solid var(--ink);padding-top:20px;color:var(--muted);font-size:.9rem}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.toc{position:relative;top:0}.wrap{padding:18px 14px 60px}.hero{padding:22px;box-shadow:5px 5px 0 var(--ink)}main>h1{font-size:1.9rem}}
+@media print{body{background:#fff}.toc{display:none}.grid{display:block}.hero,pre{box-shadow:none}.wrap{max-width:none}.hero{break-after:page}a{color:#000;text-decoration:none}}
+</style></head><body><div class="wrap"><header class="hero"><h1>OpenAI & Anthropic<br>官方日报补发合集</h1><p>2026-10-03 → 2026-10-07 · 完整文字镜像 · 单文件离线版</p><div class="badgebar"><span class="badge red">Agent Runtime</span><span class="badge yellow">Java / SDK</span><span class="badge green">MCP / Governance</span></div></header><div class="grid"><nav class="toc"><strong>目录 / TIMELINE</strong>
+<a href="#2026-10-03">10/03</a><a href="#2026-10-04">10/04</a><a href="#2026-10-05">10/05</a><a href="#2026-10-06">10/06</a><a href="#2026-10-07">10/07</a><a href="#五天补发后的统一兼容性--迁移矩阵">兼容性矩阵</a><a href="#立即行动清单">行动清单</a>
+<div class="badgebar"><span class="badge red">必看</span><span class="badge yellow">建议看</span><span class="badge green">可保持</span></div></nav><main><h1>OpenAI &amp; Anthropic 官方日报补发合集</h1>
+<p><strong>补发范围：2026-10-03 ～ 2026-10-07｜北京时间 UTC+8</strong></p>
+<blockquote>
+<p>日期口径：按北京时间归档；对没有精确发布时间、只有官方页面日期的条目，按官方页面标注日期归档。GitHub Release 如果跨 UTC 日界线，会同时注明。本文是 10 月 7 日回看过去五天的补发，因此会利用后续 Hotfix 给出回溯提醒，例如 Claude Code 2.1.288 的尾部消息丢失回归后来由 2.1.291 修复。</p>
+</blockquote>
+<hr />
+<h1 id="2026-10-03">2026-10-03</h1>
+<h2>今日必看摘要</h2>
+<p><strong>今日无必看更新。</strong></p>
+<p>今天真正值得记录的是 <strong>Claude Code 2.1.288 / TypeScript Agent SDK 0.3.288</strong>。它带来 MCP OAuth 重新授权、Code Review findings 数量控制、Mods 读取选中文本等能力，但现在回头看，<strong>2.1.288 不应该再作为安装目标</strong>：Anthropic 随后的 2.1.291 明确修复了“2.1.288 中退出 Session 时最后几条消息可能丢失”的回归。</p>
+<h2>🟡 建议看｜Claude Code 2.1.288：MCP OAuth、Code Review 与 Mods 的实用增强</h2>
+<p>GitHub Release 时间为 <strong>2026-10-02 20:19 UTC</strong>，即北京时间 <strong>10 月 3 日 04:19</strong>。</p>
+<h3>1）内容是什么</h3>
+<p>2.1.288 主要新增：</p>
+<ul>
+<li>Mods 新增 <code>$.ui.selection()</code>，可读取 Fullscreen 中最近一次选中文本以及对应 Transcript Row；</li>
+<li>Cloud Session 即使镜像里没有 GitHub CLI，也有内置 <code>gh api</code>；</li>
+<li>Ctrl+C 清掉的 Prompt，可以按 ↑ 恢复，包括粘贴文本和图片；</li>
+<li>MCP Server 在 Tool Call 中途要求新增 OAuth Scope 时，会触发重新认证提示；</li>
+<li><code>/code-review</code> 新增 <code>--max-findings &lt;n&gt;|all</code>，可控制 Review 最多输出多少条 Finding；</li>
+<li>Agents View 增强 Session 搜索和导航。</li>
+</ul>
+<p>TypeScript Agent SDK 同步发布 <strong>0.3.288</strong>，本身无额外独立功能，主要与 Claude Code 2.1.288 parity。</p>
+<h3>2）核心变化 / 关键知识点</h3>
+<p>对生产 Agent 最有意义的是 <strong>MCP OAuth Scope 升级</strong>。真实 OAuth 不是“登录一次后永久可用”，更合理的状态机是：</p>
+<pre><code class="language-text">CONNECTED
+AUTH_REQUIRED
+SCOPE_UPGRADE_REQUIRED
+READY
+</code></pre>
+<p>例如 Tool A 只需 read scope，Tool B 需要 write scope；当前 token 权限不够时，Runtime 应返回可恢复的重新授权状态，而不是普通 500。</p>
+<p><code>/code-review --max-findings</code> 也体现一个重要工程原则：Code Review 不应只追求 Finding 数量，而要控制 <strong>Finding 数量 × 准确率 × 严重度 × 人工 Review 成本</strong>。</p>
+<h3>3）为什么有价值</h3>
+<p>价值主要集中在 <strong>MCP OAuth Lifecycle + Review Output Budget + Mod/UI Integration</strong>。不是架构级 Breaking Change，但属于 Coding Agent 日常生产化必须补齐的细节。</p>
+<h3>4）适合场景</h3>
+<p>Claude Code、MCP、OAuth MCP Server、PR Review、Mods、Cloud Session、多人代码审查。</p>
+<h3>5）对 Java / AI 工程的具体帮助</h3>
+<p>Java MCP Gateway 可以保存：</p>
+<pre><code class="language-text">connectionId
+grantedScopes
+requiredScopes
+tokenExpiresAt
+authState
+</code></pre>
+<p>Tool 执行前比较 <code>requiredScopes ⊆ grantedScopes</code>，不满足则进入可恢复认证流程。Code Review 可以把 <code>maxFindings</code>、<code>minSeverity</code>、<code>confidenceThreshold</code> 变成 Repo Policy。</p>
+<h3>6）现在是否值得安装 / 试用</h3>
+<p><strong>现在不要安装 2.1.288。</strong> 正确做法是了解它引入的能力，但当前安装直接使用 <strong>2.1.291</strong>，因为后续版本修复了 2.1.288 引入的退出时尾部消息丢失回归。</p>
+<h3>7）优先级</h3>
+<p><strong>🟡 建议看；作为当前安装版本则可跳过。</strong></p>
+<p><strong>官方来源：</strong></p>
+<ul>
+<li><a href="https://github.com/anthropics/claude-code/releases">Claude Code 官方 Releases</a></li>
+<li><a href="https://github.com/anthropics/claude-agent-sdk-typescript/releases">Claude Agent SDK TypeScript 官方 Releases</a></li>
+</ul>
+<h3>今日工程结论</h3>
+<pre><code class="language-text">OAuth Connection ≠ OAuth Capability 永久固定
+Code Review ≠ Findings 越多越好
+</code></pre>
+<p>认证状态机和 Review 输出预算都应该成为平台能力。</p>
+<hr />
+<h1 id="2026-10-04">2026-10-04</h1>
+<h2>今日必看摘要</h2>
+<p><strong>🔴 必看｜Claude Code 2.1.289：Managed Permission 不能被 Mod 覆盖，Symlink 不能绕过 Read Deny。</strong></p>
+<h2>🔴 必看｜Claude Code 2.1.289：权限判断必须作用于“真实资源和真实副作用”</h2>
+<p>官方 Release 时间 <strong>2026-10-03 23:07 UTC</strong>，即北京时间 <strong>10 月 4 日 07:07</strong>。</p>
+<h3>1）内容是什么</h3>
+<p>2.1.289 最重要的安全修复有两条：</p>
+<ol>
+<li>Managed Machine 上，Compound Shell Command 内部某个嵌套命令命中组织 <code>deny</code> 或 <code>ask</code> 规则时，不能因为用户安装的 Mod 批准了它，就把组织 Policy 覆盖掉。</li>
+<li><code>Read</code> deny 规则现在同样作用于 <code>@ mention</code> 文件、IDE changed file、IDE selected file、通过 symlink 指向的文件，避免 Agent 通过不同资源引用方式绕过读取限制。</li>
+</ol>
+<p>该版本还修复 2.1.288 的 <code>claude auth status</code> 变化可能导致更频繁登出的 VS Code 回归，并处理 Plugin/Mod 渲染和验证问题。TypeScript Agent SDK 同步到 <strong>0.3.289</strong>，主要与 2.1.289 parity。</p>
+<h3>2）核心变化 / 关键知识点</h3>
+<h4>Policy 优先级必须单调收紧</h4>
+<pre><code class="language-text">Organization / Admin Policy
+           ↓
+Machine Policy
+           ↓
+Project Policy
+           ↓
+Plugin / Mod
+           ↓
+Session
+</code></pre>
+<p>下层可以继续收紧，但不能把上层 <code>DENY</code> 重新变成 <code>ALLOW</code>。</p>
+<h4>Path Authorization 不能依赖字符串</h4>
+<p>错误做法：</p>
+<pre><code class="language-java">if (path.startsWith(workspace)) {
+    allow();
+}
+</code></pre>
+<p>正确思路：</p>
+<pre><code class="language-text">input reference
+  ↓
+normalize
+  ↓
+resolve symlink
+  ↓
+canonical resource
+  ↓
+policy evaluation
+</code></pre>
+<h3>3）为什么有价值</h3>
+<p>共同原则是：<strong>安全策略应该约束实际发生的动作，而不是 Tool 参数或输入字符串表面长什么样。</strong></p>
+<h3>4）适合场景</h3>
+<p>企业 Claude Code、Managed Settings、Mods、Plugins、Shell Tool、IDE、文件读写 Agent、Windows/Linux、受监管开发环境。</p>
+<h3>5）对 Java / AI 工程的具体帮助</h3>
+<p>Java Tool Gateway 可采用：</p>
+<pre><code class="language-text">RawToolCall
+  ↓
+Canonicalize
+  ↓
+ResolveResource
+  ↓
+OrganizationPolicy
+  ↓
+ProjectPolicy
+  ↓
+SessionPolicy
+  ↓
+Execute
+</code></pre>
+<p>文件审计建议保留 <code>requestedPath</code>、<code>canonicalPath</code>、<code>symlinkResolved</code>、<code>policySource</code>、<code>decision</code>。</p>
+<h3>6）是否值得立即阅读 / 试用</h3>
+<p>值得。以今天视角最终仍应直接使用 <strong>2.1.291</strong>，但 2.1.289 的安全修复必须纳入理解和回归测试。</p>
+<h3>7）优先级</h3>
+<p><strong>🔴 必看。</strong></p>
+<p><strong>官方来源：</strong> <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.289">Claude Code 2.1.289</a></p>
+<h2>OpenAI｜今日无重要主 API 正式新增</h2>
+<p>北京时间 10 月 4 日没有需要重新做 Responses / Agents / Java 主集成迁移的 OpenAI 顶层 API Change。OpenAI Java 4.76.0 的 GitHub 页面标注为 <strong>10 月 4 日 18:40 UTC</strong>，折算北京时间已经是 <strong>10 月 5 日 02:40</strong>，所以归到下一天。</p>
+<hr />
+<h1 id="2026-10-05">2026-10-05</h1>
+<h2>今日必看摘要</h2>
+<ol>
+<li><strong>🔴 必看｜Anthropic Models API 新增 <code>capabilities.thinking.types.disabled</code>。</strong> Model Router 不应继续通过 Model ID 猜 Thinking 能力，而应开始做 Capability Negotiation。</li>
+<li><strong>🟡 建议看｜OpenAI API 可在 Organization Settings 内自助接受标准 BAA / 启用 HIPAA Compliance Support。</strong></li>
+<li><strong>🟡 建议看｜OpenAI Java 4.76.0：Custom Voices + Agent Session Webhook Events。</strong> Agents API 更自然地走事件驱动 State Machine。</li>
+</ol>
+<h2>🔴 必看｜Anthropic Models API：直接查询模型是否支持 <code>thinking.disabled</code></h2>
+<h3>1）内容是什么</h3>
+<p>Anthropic 10 月 5 日更新 Claude Platform：<code>GET /v1/models</code> 与 <code>GET /v1/models/{model_id}</code> 新增：</p>
+<pre><code class="language-text">capabilities.thinking.types.disabled
+</code></pre>
+<p>用于告诉调用方某模型是否接受：</p>
+<pre><code class="language-json">{
+  &quot;thinking&quot;: {
+    &quot;type&quot;: &quot;disabled&quot;
+  }
+}
+</code></pre>
+<h3>2）核心变化 / 关键知识点</h3>
+<p>这是从：</p>
+<pre><code class="language-text">Model Name Based Routing
+        ↓
+Capability Based Routing
+</code></pre>
+<p>的关键一步。不要再写：</p>
+<pre><code class="language-java">if (model.startsWith(&quot;claude-sonnet-5-5&quot;)) { ... }
+</code></pre>
+<p>而应该通过 Models API 建立 Capability Profile，再动态构造请求。</p>
+<h3>3）为什么有价值</h3>
+<p>Sonnet 5.5 已证明模型升级会改变 Thinking、Tool Choice、Computer Use、Advisor 等协议行为。Capability 字段比不断增加 <code>if model == ...</code> 更可靠。</p>
+<h3>4）适合场景</h3>
+<p>Java AI Gateway、多模型 Router、Claude API、Fallback、Provider Adapter、Model Registry、长期 Agent。</p>
+<h3>5）对 Java / AI 工程的具体帮助</h3>
+<p>建议维护：</p>
+<pre><code class="language-text">ModelCapabilityProfile {
+    modelId
+    line
+    supportsThinkingDisabled
+    supportedThinkingTypes
+    provider
+    lifecycleStatus
+}
+</code></pre>
+<p>Fallback 时重新 <code>resolve capabilities → normalize request → invoke</code>，而不是只换 Model ID。</p>
+<h3>6）是否值得立即行动</h3>
+<p>值得，尤其是统一 Claude 模型和多 Provider 的 Java Gateway。</p>
+<h3>7）优先级</h3>
+<p><strong>🔴 必看。</strong></p>
+<p><strong>官方来源：</strong> <a href="https://platform.claude.com/docs/en/release-notes/overview">Claude Platform Release Notes</a></p>
+<h2>🟡 建议看｜OpenAI API：HIPAA BAA 自助流程</h2>
+<h3>1）内容是什么</h3>
+<p>OpenAI 10 月 5 日宣布，在 API Platform 的 <code>Organization → General</code> 中新增 HIPAA Compliance Support。符合条件的 Organization Admin 可接受标准 BAA 并启用 HIPAA support。</p>
+<p>官方 Help Center 明确说明：</p>
+<ul>
+<li>通过 OpenAI API 处理 PHI 前，Organization 首先要与 OpenAI 签订 BAA；</li>
+<li>不要求必须先有 Enterprise Agreement；</li>
+<li>Self-service enrollment 要求已有一定 API 使用历史；</li>
+<li><code>Not eligible yet</code> 代表当前尚不满足自助要求；</li>
+<li>需要检查 Covered Services 和配置；</li>
+<li><strong>签 BAA 本身不会自动让你的应用变成 HIPAA compliant。</strong></li>
+</ul>
+<h3>2）核心变化 / 关键知识点</h3>
+<p>合规应分层：</p>
+<pre><code class="language-text">Contract / BAA
+      ↓
+Eligible Service
+      ↓
+Data Retention Configuration
+      ↓
+Application Data Flow
+      ↓
+Logging / Tracing
+      ↓
+RBAC / Audit
+      ↓
+Operational Process
+</code></pre>
+<h3>3）为什么有价值</h3>
+<p>降低医疗/受监管 API 项目的行政接入摩擦，但同时要求应用本身把合规变成 Runtime Policy，而非只在 Console 勾一个开关。</p>
+<h3>4）适合场景</h3>
+<p>医疗 Agent、保险、患者/临床数据、企业 RAG、医疗 Java Backend、受监管 Workflow。</p>
+<h3>5）对 Java / AI 工程的具体帮助</h3>
+<p>可把 <code>dataClassification = PHI</code> 作为调用前 Policy Input：</p>
+<pre><code class="language-text">PHI Request
+  ↓
+Organization BAA Active?
+  ↓
+Endpoint Eligible?
+  ↓
+Retention Policy Allowed?
+  ↓
+Logging Redaction Enabled?
+  ↓
+Provider / Region Allowed?
+  ↓
+Invoke
+</code></pre>
+<h3>6）是否值得立即行动</h3>
+<p>非医疗场景了解即可；有医疗/受监管计划则值得纳入平台设计。</p>
+<h3>7）优先级</h3>
+<p><strong>🟡 建议看。</strong></p>
+<p><strong>官方来源：</strong></p>
+<ul>
+<li><a href="https://developers.openai.com/api/docs/changelog">OpenAI API Changelog</a></li>
+<li><a href="https://help.openai.com/en/articles/8660679-getting-a-business-associate-agreement-for-the-openai-api">OpenAI BAA / HIPAA Help</a></li>
+</ul>
+<h2>🟡 建议看｜OpenAI Java 4.76.0：Agent Session Webhook 让 Agent Runtime 事件驱动</h2>
+<p>GitHub Release 页面日期 <strong>10 月 4 日 18:40 UTC</strong>，北京时间 <strong>10 月 5 日 02:40</strong>。</p>
+<h3>1）内容是什么</h3>
+<p>OpenAI Java SDK 4.76.0 新增：</p>
+<pre><code class="language-text">Custom Voices
++
+Agent Session Webhook Events
+</code></pre>
+<p>Agents Session Webhook 当前支持：</p>
+<pre><code class="language-text">agent.session.created
+agent.session.action_required
+agent.session.in_progress
+agent.session.idle
+agent.session.failed
+</code></pre>
+<p><code>action_required</code> 可表示 <code>function_call</code>、<code>environment_connection</code>、<code>computer_use_approval_request</code>。</p>
+<h3>2）核心变化 / 关键知识点</h3>
+<p>可以从高频 Polling：</p>
+<pre><code class="language-text">GET session
+GET session
+GET session
+...
+</code></pre>
+<p>转成：</p>
+<pre><code class="language-text">OpenAI Agent
+   ↓
+Webhook
+   ↓
+Spring Boot Receiver
+   ↓
+Kafka / Event Bus
+   ↓
+Session State Machine
+</code></pre>
+<p>但 <code>agent.session.idle</code> <strong>只表示 Session 可接收下一次输入，不表示上一 Turn 一定成功</strong>；仍应检查 Turn status 与 Tool Result。</p>
+<h3>3）为什么有价值</h3>
+<p>长时间 Agent 用 Webhook 可以降低请求量、减少状态竞争，并让 Control Plane 与业务 Workflow 更自然地事件化。</p>
+<h3>4）适合场景</h3>
+<p>Spring Boot Agent Platform、Agents API、Computer Use、Self-hosted Sandbox、Long-running Agent、Workflow。</p>
+<h3>5）对 Java / AI 工程的具体帮助</h3>
+<p>建议：</p>
+<pre><code class="language-text">AgentSessionEventHandler
+ ├─ onCreated()
+ ├─ onActionRequired()
+ ├─ onInProgress()
+ ├─ onIdle()
+ └─ onFailed()
+</code></pre>
+<p>Webhook 流程：</p>
+<pre><code class="language-text">verify signature
+→ fast ACK
+→ queue
+→ async processing
+</code></pre>
+<p><code>action_required</code> 到达后，用 sessionId retrieve 当前 Session，再检查 <code>required_actions</code>，不要假设 Webhook 已带完整 Tool 参数。</p>
+<h3>Custom Voices</h3>
+<p>同版本加入 Custom Voice。官方要求音色本人 Consent Recording 和匹配 Sample Recording；Custom Voice 目前只对符合条件客户开放。对当前 Java/Agent 方向，<strong>Session Webhook 的优先级更高</strong>。</p>
+<h3>6）是否值得立即升级</h3>
+<p>做 Agents API 时值得把 <code>4.75.x → 4.76.0</code> 作为测试基线；纯文本 Responses 可按正常升级窗口处理。</p>
+<h3>7）优先级</h3>
+<p><strong>🟡 建议看；Agents API 用户接近必看。</strong></p>
+<p><strong>官方来源：</strong></p>
+<ul>
+<li><a href="https://github.com/openai/openai-java/releases/tag/v4.76.0">OpenAI Java SDK 4.76.0</a></li>
+<li><a href="https://developers.openai.com/api/docs/guides/agents-api/sessions/webhooks">Agents Session Webhooks</a></li>
+<li><a href="https://developers.openai.com/api/docs/guides/custom-voices">Custom Voices</a></li>
+</ul>
+<hr />
+<h1 id="2026-10-06">2026-10-06</h1>
+<h2>今日必看摘要</h2>
+<ol>
+<li><strong>🔴 OpenAI Decisions API Beta</strong>：<code>gpt-6-luna + /v1/decisions</code> 对共享文本/图片做结构化分类和打分，OpenAI 官方称可比 Responses API 快约 10×；Java Reference 已有 <code>client.decisions().create(...)</code>。</li>
+<li><strong>🔴 Claude Code 2.1.290 → 2.1.291</strong>：新增 Subagent/Mod Permission Observability，但 2.1.291 紧急修复 Cloud Permission Answer 丢失和 2.1.288 退出尾部消息丢失回归，因此当前直接使用 2.1.291。</li>
+<li><strong>🔴 Windows/Remote MCP：Codex 0.160.1</strong>：修复 Unix Host 启动 Windows Executor 的 Remote stdio MCP 时丢失 <code>SYSTEMROOT/TEMP/TMP</code>。</li>
+</ol>
+<p>此外 OpenAI 同日重做 API Usage Tier；发布与 Ironclad 的 Computer Use 企业工作流研究；Anthropic 扩大 Cyber Verification Program。</p>
+<h2>🔴 必看｜OpenAI Decisions API：把有限选项判断从开放式生成中拆出来</h2>
+<h3>1）内容是什么</h3>
+<p>OpenAI 10 月 6 日发布：</p>
+<pre><code class="language-text">POST /v1/decisions
+model = gpt-6-luna
+</code></pre>
+<p>官方定位：将文本和图片转换成 typed answers，速度可达到 Responses API 的约 <strong>10×</strong>。</p>
+<p>API 支持：</p>
+<pre><code class="language-text">predicate
+choice
+score
+</code></pre>
+<p>并按问题顺序返回 probability、choice/confidence、score probabilities/confidence，或 per-question refusal。</p>
+<p>Java 官方 Reference 已提供：</p>
+<pre><code class="language-java">DecisionCreateParams params = DecisionCreateParams.builder()
+    .input(&quot;...&quot;)
+    .model(&quot;gpt-6-luna&quot;)
+    .addPredicateQuestion(&quot;...&quot;)
+    .build();
+
+Decision decision = client.decisions().create(params);
+</code></pre>
+<h3>2）核心变化 / 关键知识点</h3>
+<p>这不是另一个更快的 Chat Completion。它最适合：</p>
+<pre><code class="language-text">应该走哪个 Workflow？
+是否满足条件？
+属于哪个类别？
+风险等级是多少？
+哪个候选更适合？
+</code></pre>
+<p>当前限制：</p>
+<ul>
+<li>String 或仅含 <code>user</code> role 的 Message；</li>
+<li>Text + inline image；</li>
+<li>Image 必须 Data URL，不支持外部 URL/File ID；</li>
+<li>一次最多 128 个 Image Part；</li>
+<li>不支持 Function Call、File、Audio、Item Reference。</li>
+</ul>
+<h3>3）为什么有价值</h3>
+<p>很多 Agent 把低熵选择也交给大型 Reasoning Loop：</p>
+<pre><code class="language-text">Input
+→ Responses
+→ 长推理
+→ 最后只需要 A/B/C
+</code></pre>
+<p>Decisions 可以变成：</p>
+<pre><code class="language-text">Input
+→ Decision
+→ Typed Result
+</code></pre>
+<p>减少 Latency、Token、Prompt Complexity 和 Parsing Complexity。</p>
+<h3>4）适合场景</h3>
+<p>Agent Router、Ticket 分类、风险判断、Approval Routing、客服意图、文档/图片审核、Voice Agent Action Selection、多模型 Router。</p>
+<h3>5）对 Java / AI 工程的具体帮助</h3>
+<p>统一 AI Gateway 可以分：</p>
+<pre><code class="language-text">Open-ended task
+→ Responses / Agent
+
+Finite decision
+→ Decisions API
+</code></pre>
+<p>但 <strong>AI Decision 不能直接等于 Business Authorization</strong>。推荐：</p>
+<pre><code class="language-text">AI Decision
+   ↓
+confidence threshold
+   ↓
+deterministic policy
+   ↓
+business authorization
+   ↓
+side effect
+</code></pre>
+<h3>6）教程类：建议直接做的小练习</h3>
+<p>拿一个 Spring Boot Router：</p>
+<pre><code class="language-text">输入：用户问题
+
+Decision questions：
+1. 是否属于订单问题？
+2. 是否需要人工审批？
+3. 风险等级 1~5？
+</code></pre>
+<p>对比：</p>
+<pre><code class="language-text">Decisions API
+vs
+Responses + Structured Output
+</code></pre>
+<p>记录 Accuracy、p50/p95、Cost/task、Refusal Rate、Confidence Calibration，验证官方“10× faster”在你真实环境中的结果。</p>
+<h3>7）优先级 / 迁移成本</h3>
+<p><strong>🔴 必看。</strong> 新增 API，不破坏现有 Responses，迁移成本低，值得加入 AI Gateway Capability Matrix。</p>
+<p><strong>官方来源：</strong></p>
+<ul>
+<li><a href="https://developers.openai.com/api/reference/resources/decisions/methods/create">OpenAI Decisions API</a></li>
+<li><a href="https://developers.openai.com/api/reference/java/resources/decisions/methods/create">OpenAI Decisions API Java</a></li>
+<li><a href="https://developers.openai.com/api/docs/changelog">OpenAI API Changelog</a></li>
+</ul>
+<h2>🔴 必看｜Claude Code 2.1.291：不要停在 2.1.290</h2>
+<h3>1）内容是什么</h3>
+<p>Anthropic 短时间内发布：</p>
+<pre><code class="language-text">2.1.290
+   ↓
+2.1.291
+</code></pre>
+<p>2.1.290 新增：</p>
+<ul>
+<li>Mod <code>turn.step</code> 的 <code>serverToolUses</code>，可看到 API 自己执行的 server-side tool call；</li>
+<li>Plugin Hook <code>tool.check</code> 增加 <code>agentId</code>，可区分 Permission Check 来自主 Session 还是 Subagent。</li>
+</ul>
+<p>随后 2.1.291 紧急修复：</p>
+<ul>
+<li><strong>2.1.290 回归：Cloud Session 可能丢 Permission Prompt 的回答；</strong></li>
+<li><strong>2.1.288 回归：退出 Session 时最后几条消息可能丢失。</strong></li>
+</ul>
+<h3>2）核心变化 / 关键知识点</h3>
+<p>Permission Answer 是 Durable State，不是 UI 临时事件。应保存：</p>
+<pre><code class="language-text">permissionRequestId
+decision
+actor
+timestamp
+agentId
+policyVersion
+</code></pre>
+<p><code>tool.check.agentId</code> 让权限审计从 Session 粒度下沉到 <strong>Agent → Tool Call</strong> 粒度。</p>
+<h3>3）为什么有价值</h3>
+<p>Multi-Agent 进入生产后，如果只知道“这个 Session 调过数据库”，但不知道哪个 Subagent、哪个任务分支、依据谁的批准，就无法真正做治理和审计。</p>
+<h3>4）适合场景</h3>
+<p>Claude Code、Cloud Session、Multi-Agent、Mods/Plugins、Permission Hooks、企业 Coding Agent。</p>
+<h3>5）对 Java / AI 工程的具体帮助</h3>
+<p>建议 Audit Event 至少含：</p>
+<pre><code class="language-text">sessionId
+agentId
+parentAgentId
+toolCallId
+permissionRequestId
+decision
+policySource
+actor
+</code></pre>
+<h3>6）是否值得立即升级</h3>
+<p>是。不要停在 2.1.290，当前直接使用 <strong>2.1.291</strong>。</p>
+<p>TypeScript Agent SDK 同步到 <strong>0.3.291</strong>。0.3.290 还新增/修复：WebFetch <code>offset</code>、partial message 在 cut/interrupted/fallback 时正确 <code>message_stop</code>、Resume Worker Turn 更完整 UUID/resume metadata，以及 Tool Alias deny/ask rule 匹配。</p>
+<h3>7）优先级</h3>
+<p><strong>🔴 必看。</strong></p>
+<p><strong>官方来源：</strong></p>
+<ul>
+<li><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.291">Claude Code 2.1.291</a></li>
+<li><a href="https://github.com/anthropics/claude-agent-sdk-typescript/releases/tag/v0.3.291">Claude Agent SDK TypeScript 0.3.291</a></li>
+</ul>
+<h2>🔴 必看（Windows / Remote MCP）｜Codex 0.160.1 Hotfix</h2>
+<h3>1）内容是什么</h3>
+<p>OpenAI Codex Stable 0.160.1 修复：当 Unix Host 使用显式 Remote Env 启动 Windows Executor 的 Remote stdio MCP 时，保留 <code>SYSTEMROOT</code>、<code>TEMP</code>、<code>TMP</code>，避免把 Windows Executor 启动所需基础环境覆盖掉。</p>
+<h3>2）核心变化 / 关键知识点</h3>
+<p>错误做法：</p>
+<pre><code class="language-text">remoteEnv = userConfiguredEnv
+</code></pre>
+<p>正确模型：</p>
+<pre><code class="language-text">executorBaseEnv
+   +
+approvedRemoteOverrides
+</code></pre>
+<p>并保护 OS Critical Variables。</p>
+<h3>3）为什么有价值</h3>
+<p>跨 OS Agent 经常会把环境变量问题表现成 MCP 启动失败、临时目录错误或进程异常，非常难查。</p>
+<h3>4）适合场景</h3>
+<p>Windows、Remote MCP、Remote Executor、跨 OS Agent、企业开发环境。</p>
+<h3>5）对 Java / AI 工程的具体帮助</h3>
+<p>Process Manager 不要 <code>environment.clear()</code> 后全量覆盖，而应采用 Base Env + Approved Overrides + Protected OS Keys。</p>
+<h3>6）是否值得立即升级</h3>
+<p>Windows / Remote MCP 用户直接 <code>0.160.0 → 0.160.1</code>。其他用户升级成本也极低。</p>
+<h3>7）优先级</h3>
+<p><strong>🔴 Windows/Remote MCP 必看；其他用户 🟡 建议看。</strong></p>
+<p><strong>官方来源：</strong> <a href="https://github.com/openai/codex/releases/tag/rust-v0.160.1">Codex 0.160.1</a></p>
+<h2>🟡 建议看｜OpenAI API Usage Tier 从 5 档简化为 3 档</h2>
+<p>Paid API Tier 现在是：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Tier</th>
+  <th style="text-align:right">累计购买门槛</th>
+  <th style="text-align:right">月度 Usage Limit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Build</td>
+  <td style="text-align:right">$5</td>
+  <td style="text-align:right">$500</td>
+</tr>
+<tr>
+  <td>Launch</td>
+  <td style="text-align:right">$100</td>
+  <td style="text-align:right">$5,000</td>
+</tr>
+<tr>
+  <td>Grow</td>
+  <td style="text-align:right">$500</td>
+  <td style="text-align:right">$200,000</td>
+</tr>
+</tbody>
+</table></div>
+<p>Organization 会按累计 Credit Purchase 自动升级。不同模型仍有各自 RPM/TPM，Grow 下 Luna 的 Standard Limit 也明显高于 Astra/Sol/Terra。</p>
+<h3>工程影响</h3>
+<p>不要在内部配置写死“旧 Tier 3 = 某 RPM”。容量需要由：</p>
+<pre><code class="language-text">Model
++
+Current Usage Tier
++
+Current Limits / Response Headers
+</code></pre>
+<p>共同决定。<code>429 slow_down</code> 与 <code>503 server_is_overloaded</code> 也应按 <code>error.code</code> 区分，不能全部进入同一 Retry。</p>
+<p><strong>优先级：🟡 建议看。</strong></p>
+<p><strong>官方来源：</strong> <a href="https://developers.openai.com/api/docs/guides/rate-limits">OpenAI Rate Limits / Usage Tiers</a></p>
+<h2>🟡 建议看｜OpenAI × Ironclad：Computer Use Eval 应评“业务规则 + 完整 Workflow”</h2>
+<p>OpenAI 10 月 6 日公布与 Ironclad 的研究合作，明确下一阶段 Computer Use Agent 目标：</p>
+<pre><code class="language-text">理解公司 Business Rules
+→ 执行 Multi-step Workflow
+→ 验证最终结果满足原始 Requirement
+</code></pre>
+<p>这意味着企业 Agent Eval 不应只测“按钮点对了吗”，而应测：</p>
+<pre><code class="language-text">流程最终业务状态是否正确？
+审批路径是否符合规则？
+数据是否越权？
+最终结果是否满足需求？
+</code></pre>
+<h3>小练习</h3>
+<p>拿一个模拟流程：</p>
+<pre><code class="language-text">创建订单
+→ 审批
+→ 支付检查
+→ 更新状态
+</code></pre>
+<p>建立 Eval：UI Action Accuracy、Business-rule Compliance、Final-state Correctness、Evidence Completeness、Side-effect Safety。</p>
+<p><strong>优先级：🟡 建议看。</strong></p>
+<p><strong>官方来源：</strong> <a href="https://openai.com/index/advancing-computer-use-with-ironclad/">Advancing computer use with Ironclad</a></p>
+<h2>🟡 建议看｜Anthropic 扩大 Cyber Verification Program</h2>
+<p>Anthropic 10 月 6 日扩大 Cyber Verification Program，形成多层访问机制，为符合条件的安全专业人员提供更强 Cyber 能力与减少 Blocking Classifier 的访问，覆盖 Opus 5.5、Sonnet 5.5、Mythos 5.1 及后续模型。</p>
+<p>主要层级：</p>
+<pre><code class="language-text">Defense Access
+Red Team Access
+Specialized Access
+</code></pre>
+<p>不同层级有不同验证要求和安全控制。一般公开模型仍保留较保守 Cyber Safeguard。</p>
+<h3>对 Java / AI 工程的意义</h3>
+<p>以后做 Secure Coding / Vulnerability Review / Red Team Agent 时，建议把：</p>
+<pre><code class="language-text">普通 Coding Worker Policy
+</code></pre>
+<p>和：</p>
+<pre><code class="language-text">Verified Cyber Worker Policy
+</code></pre>
+<p>分开治理，而不是简单“关闭安全限制”。</p>
+<p><strong>优先级：🟡 建议看。</strong></p>
+<p><strong>官方来源：</strong> <a href="https://www.anthropic.com/news/cyber-verification-program">Anthropic Cyber Verification Program</a></p>
+<hr />
+<h1 id="2026-10-07">2026-10-07（截至北京时间 20:39）</h1>
+<h2>今日必看摘要</h2>
+<p><strong>今日无必看更新。</strong></p>
+<h2>今日无重要官方新增</h2>
+<p>截至北京时间 2026-10-07 20:39，重新核验：OpenAI API Changelog、Codex Stable、OpenAI Java SDK、Claude Platform、Claude Code、Claude Agent SDK TypeScript、Anthropic Java SDK、Anthropic Newsroom，未发现 10 月 7 日新出现且达到本日报标准的正式 API / SDK / Model / Agent Runtime 发布。</p>
+<h2>当前正式版本基线</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>组件</th>
+  <th>当前正式基线</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Codex Stable</td>
+  <td><strong>0.160.1</strong></td>
+</tr>
+<tr>
+  <td>OpenAI Java</td>
+  <td><strong>4.76.0</strong></td>
+</tr>
+<tr>
+  <td>Claude Code</td>
+  <td><strong>2.1.291</strong></td>
+</tr>
+<tr>
+  <td>Claude Agent SDK TypeScript</td>
+  <td><strong>0.3.291</strong></td>
+</tr>
+<tr>
+  <td>Anthropic Java</td>
+  <td><strong>2.68.0</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Codex 后续可见的 0.162.x 仍为 Alpha/Pre-release；OpenAI API Changelog 当前最高日期仍为 10 月 6 日 Decisions API + Usage Tier；Claude Platform 最新条目仍是 10 月 5 日 <code>capabilities.thinking.types.disabled</code>；Anthropic Newsroom 最新正式公告仍为 10 月 6 日 Cyber Verification Program。</p>
+<p>因此今天正确处理是：<strong>不重复昨天内容，保持当前验证基线。</strong></p>
+<p><strong>官方来源：</strong></p>
+<ul>
+<li><a href="https://developers.openai.com/api/docs/changelog">OpenAI API Changelog</a></li>
+<li><a href="https://github.com/openai/codex/releases">Codex Releases</a></li>
+<li><a href="https://github.com/openai/openai-java/releases">OpenAI Java Releases</a></li>
+<li><a href="https://platform.claude.com/docs/en/release-notes/overview">Claude Platform Release Notes</a></li>
+<li><a href="https://github.com/anthropics/claude-code/releases">Claude Code Releases</a></li>
+<li><a href="https://github.com/anthropics/claude-agent-sdk-typescript/releases">Claude Agent SDK TypeScript Releases</a></li>
+<li><a href="https://github.com/anthropics/anthropic-sdk-java/releases">Anthropic Java Releases</a></li>
+<li><a href="https://www.anthropic.com/news">Anthropic Newsroom</a></li>
+</ul>
+<hr />
+<h1 id="五天补发后的统一兼容性--迁移矩阵">五天补发后的统一兼容性 / 迁移矩阵</h1>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>项目</th>
+  <th>当前状态</th>
+  <th>建议</th>
+  <th>工程影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>OpenAI Decisions API</strong></td>
+  <td>Beta，<code>gpt-6-luna</code></td>
+  <td><strong>立即 PoC</strong></td>
+  <td>新的低延迟 typed decision 层</td>
+</tr>
+<tr>
+  <td>Decisions Java</td>
+  <td>官方 Java Reference 已提供</td>
+  <td>建 <code>DecisionService</code></td>
+  <td>低迁移成本</td>
+</tr>
+<tr>
+  <td><strong>OpenAI Usage Tier</strong></td>
+  <td>Build / Launch / Grow</td>
+  <td>更新容量模型</td>
+  <td>Rate-limit / FinOps</td>
+</tr>
+<tr>
+  <td>OpenAI HIPAA</td>
+  <td>Eligible org 可自助 BAA</td>
+  <td>受监管项目评估</td>
+  <td>合规 Control Plane</td>
+</tr>
+<tr>
+  <td><strong>OpenAI Java</strong></td>
+  <td><strong>4.76.0</strong></td>
+  <td>Agents 用户建议升级</td>
+  <td>Session Webhook / Custom Voice</td>
+</tr>
+<tr>
+  <td>Agent Session Webhook</td>
+  <td>created/action_required/in_progress/idle/failed</td>
+  <td>事件驱动 State Machine</td>
+  <td>高价值</td>
+</tr>
+<tr>
+  <td><strong>Codex Stable</strong></td>
+  <td><strong>0.160.1</strong></td>
+  <td>Windows/MCP 用户升级</td>
+  <td>Remote stdio env 修复</td>
+</tr>
+<tr>
+  <td>Codex Alpha</td>
+  <td>0.162.x</td>
+  <td>不进主力</td>
+  <td>未知</td>
+</tr>
+<tr>
+  <td><strong>Claude Code</strong></td>
+  <td><strong>2.1.291</strong></td>
+  <td>直接以此为基线</td>
+  <td>修复 2.1.288/290 回归</td>
+</tr>
+<tr>
+  <td>Claude 2.1.289</td>
+  <td>权限 / Symlink 安全修复</td>
+  <td>已包含在 2.1.291</td>
+  <td>高价值安全修复</td>
+</tr>
+<tr>
+  <td>TS Agent SDK</td>
+  <td><strong>0.3.291</strong></td>
+  <td>升级验证</td>
+  <td>Resume / Stream / Tool Policy</td>
+</tr>
+<tr>
+  <td>Claude Models API</td>
+  <td><code>thinking.types.disabled</code></td>
+  <td>Capability-driven Router</td>
+  <td>架构价值高</td>
+</tr>
+<tr>
+  <td>Anthropic Java</td>
+  <td><strong>2.68.0</strong></td>
+  <td>保持</td>
+  <td>本窗口无新 Java Release</td>
+</tr>
+<tr>
+  <td>Cyber Verification</td>
+  <td>三层 Access</td>
+  <td>Security Agent 用户评估</td>
+  <td>Policy / Access Governance</td>
+</tr>
+</tbody>
+</table></div>
+<h1 id="立即行动清单">立即行动清单</h1>
+<ol>
+<li><strong>Claude Code 主力验证版本设为 2.1.291。</strong> 不要停在 2.1.288 或 2.1.290。</li>
+<li><strong>把 Claude Model Router 从判断模型名称升级为读取 Capability。</strong></li>
+<li><strong>做一个 OpenAI Decisions API 的真实 Java PoC。</strong> 对比 Responses Structured Output 的 Accuracy、p95、Cost/task、Confidence Calibration。</li>
+<li><strong>AI Decision 与 Business Authorization 分层。</strong> AI 决定建议，Java RBAC/Tenant/Business Rule/Idempotency 决定真实写操作。</li>
+<li><strong>Agents API 改成 Webhook-driven。</strong> 同时记住 <code>idle ≠ 上一 Turn 成功</code>。</li>
+<li><strong>Windows/Remote MCP 使用 Codex 0.160.1</strong>，并检查 Process Launcher 不要清空关键 OS 环境变量。</li>
+<li><strong>统一权限原则：Admin DENY 不能被 Plugin / Mod / Subagent 放宽。</strong></li>
+<li><strong>文件权限统一基于 Canonical Resource。</strong> <code>@file</code>、IDE Selection、Symlink、直接 Path 都先 resolve 再授权。</li>
+<li><strong>更新 OpenAI API Capacity / FinOps 配置。</strong> Paid Tier 现在是 Build / Launch / Grow。</li>
+<li><strong>Computer Use Eval 改成 Business Outcome Eval。</strong> 除 UI Action 外增加 Business Rule、Final State、Evidence、Side Effect Safety。</li>
+</ol>
+<h1>五天最重要的主线</h1>
+<blockquote>
+<p><strong>AI Agent 的平台抽象正在进一步分层：开放式工作走 Responses/Agents，多分支判断可以走 Decisions；模型请求应由 Capability 而不是 Model Name 驱动；权限必须约束 Canonical Resource 和真实副作用；Session 状态必须把 Permission、OAuth、Webhook、Subagent 和 Remote Executor 都当成可持久、可恢复的一等状态。</strong></p>
+</blockquote>
+</main></div><footer class="footer">生成于 2026-10-07。所有外链均指向 OpenAI / Anthropic / 官方 GitHub 仓库或官方文档；页面不依赖外部 CDN，可离线阅读。</footer></div></body></html>
