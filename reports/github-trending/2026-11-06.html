@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>GitHub 热榜日报｜2026-11-06</title><meta name="description" content="2026 年 11 月 6 日 GitHub 热榜日报，12 个仓库完整逐项分析，Top 3，行动计划和官方来源。"><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f5f0e4;color:#20202c;font:16px/1.75 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",Arial,sans-serif}a{color:#244fbe;text-decoration-color:#93ade1;text-underline-offset:3px;overflow-wrap:anywhere}a:hover{color:#0d2b83}button,input{font:inherit}::selection{background:#ffe082;color:#161825}.topbar{background:#22243a;color:#f7f0e5;border-bottom:6px solid #f0b24b;padding:15px clamp(16px,3vw,48px);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.wordmark{font-weight:900;letter-spacing:.12em;font-size:.9rem}.topbar small{color:#d1d2de;letter-spacing:.08em}.hero{padding:48px clamp(16px,5vw,70px) 42px;background:repeating-linear-gradient(-45deg,rgba(255,255,255,.28) 0 5px,transparent 5px 16px),#f4b14f;border-bottom:6px solid #22243a;position:relative;overflow:hidden}.hero:after{content:'06';position:absolute;right:-10px;top:-85px;font-size:min(23vw,300px);font-weight:1000;color:#1f2440;opacity:.1;pointer-events:none}.eyebrow{font-size:.8rem;font-weight:900;letter-spacing:.2em;color:#31334e}.hero h1{font-size:clamp(2.2rem,5.5vw,5.1rem);line-height:1.12;letter-spacing:-.05em;max-width:1100px;margin:.3em 0}.hero p{max-width:900px;font-weight:570;font-size:clamp(1rem,1.7vw,1.2rem)}.hero-chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.chip{display:inline-block;border:2px solid #20202c;border-radius:40px;background:#f8f5ea;padding:5px 14px;font-weight:800;font-size:.82rem}.shell{max-width:1550px;margin:auto;display:grid;grid-template-columns:280px minmax(0,1fr);gap:28px;padding:28px clamp(14px,3vw,45px) 80px}.sidebar{position:sticky;top:18px;align-self:start;max-height:calc(100vh - 30px);overflow:auto;border:3px solid #20202c;box-shadow:6px 6px 0 #20202c;background:#fdfbf4;border-radius:2px;padding:18px 14px}.sidebar-heading{font-weight:900;letter-spacing:.12em;font-size:.85rem;margin-bottom:10px}.nav-link{display:block;color:#20202c;text-decoration:none;border-radius:3px;padding:6px 8px;line-height:1.35}.nav-link:hover{background:#ffe8b8;color:#22243a}.nav-link.chapter{margin-top:9px;font-weight:900;border-top:1px dashed #cdc5b6}.nav-link.repo-link{font-size:.79rem;padding-left:15px;color:#565669}.paper{min-width:0;background:#fffdfa;border:3px solid #20202c;box-shadow:9px 9px 0 #20202c;padding:clamp(19px,3.8vw,58px);overflow:hidden}.content h1{font-size:clamp(1.9rem,4vw,3.3rem);line-height:1.15;letter-spacing:-.035em}.content h2{font-size:clamp(1.5rem,2.8vw,2.4rem);margin:2.15em 0 .8em;padding-bottom:.25em;border-bottom:5px solid #22243a;letter-spacing:-.03em}.content h3{font-size:clamp(1.15rem,2vw,1.5rem);margin:1.8em 0 .7em}.content p{margin:.7em 0 1.1em}.content strong{font-weight:800}.content blockquote{margin:24px 0;background:#fdf1d8;border-left:6px solid #d58d28;padding:15px 20px}.content blockquote p{margin:0}.content table{width:100%;border-collapse:collapse;min-width:690px;font-size:.92rem;margin:1.2em 0}.content table th{text-align:left;background:#242844;color:#fff;padding:11px 12px;font-size:.85rem}.content table td{vertical-align:top;padding:9px 12px;border-bottom:1px solid #dcd7cd}.content table tbody tr:nth-child(even){background:#f5f3ed}.content table tbody tr:hover{background:#fff1cd}.table-wrap{overflow-x:auto;border:2px solid #2b2b37;margin:17px 0}.table-wrap table{margin:0}.repo-card{border:3px solid #242844;box-shadow:6px 6px 0 #9eb6dd;background:white;margin:25px 2px 28px 0;scroll-margin-top:22px}.repo-card:nth-of-type(even){box-shadow:6px 6px 0 #eed3a1}.repo-card summary{list-style:none;cursor:pointer;background:#f8d784;padding:15px 20px;display:flex;align-items:center;gap:15px;font-weight:850;line-height:1.28;position:relative}.repo-card summary::-webkit-details-marker{display:none}.repo-index{background:#262940;color:white;display:grid;place-items:center;min-width:39px;height:39px;font-size:.88rem}.repo-heading{font-size:clamp(1rem,1.8vw,1.22rem);flex:1}.repo-caret{display:grid;place-items:center;background:#fff9e7;border:2px solid #242844;width:30px;height:30px;font-size:1.3rem;font-weight:900}.repo-card[open] .repo-caret{transform:rotate(45deg)}.repo-content{padding:13px clamp(16px,2.8vw,29px) 23px}.repo-content p strong:first-child{color:#1f3e82}.repo-content p{border-bottom:1px dashed #e8e4db;padding-bottom:8px}.repo-content p:last-child{border-bottom:0}.searchbar{display:flex;gap:10px;flex-wrap:wrap;padding:15px;background:#ecedea;border:2px solid #242844;align-items:center;margin-bottom:16px}.searchbar input{flex:1;min-width:180px;border:2px solid #242844;padding:9px 12px;background:#fffdfa;border-radius:2px}.searchbar button,.actions button{border:2px solid #242844;background:#f7bb4f;padding:8px 13px;font-size:.85rem;cursor:pointer;font-weight:800;box-shadow:2px 2px 0 #242844}.searchbar button:hover,.actions button:hover{background:#fee2ac}.search-meta{font-weight:850;font-size:.86rem}.foot{font-size:.8rem;max-width:1550px;margin:0 auto;padding:4px 30px 24px;color:#555}pre,code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}code{background:#f0edeb;padding:2px 5px;border-radius:2px;font-size:.9em;overflow-wrap:anywhere}pre{overflow:auto;background:#242844;color:#f8f2df;padding:16px;border-radius:3px}pre code{background:none;color:inherit}ul{padding-left:1.3em}.pill-row{display:flex;flex-wrap:wrap;gap:10px}.pill-link{display:inline-block;text-decoration:none;border:2px solid #242844;background:#fff7e9;color:#22243a;font-weight:800;padding:7px 14px}.pill-link:hover{background:#fff}.mobile-toc{display:none}hr{border:0;border-top:3px solid #25243b;margin:33px 0}.hidden{display:none!important}@media(max-width:980px){.shell{grid-template-columns:minmax(0,1fr);padding:15px 12px 55px}.sidebar{display:none}.mobile-toc{display:block;border:2px solid #242844;background:#fdf9ec;margin:0 0 17px;padding:10px}.mobile-toc summary{font-weight:900;cursor:pointer}.mobile-toc .nav-link{padding:8px 5px}.paper{box-shadow:4px 4px 0 #242844}}@media(max-width:600px){body{font-size:14px}.hero{padding:28px 16px}.hero h1{font-size:2.05rem}.paper{padding:15px}.repo-card{margin:17px 0;box-shadow:3px 3px 0 #9eb6dd}.repo-card summary{padding:12px 10px;gap:8px}.repo-index{min-width:31px;height:31px}.repo-caret{width:26px;height:26px}.content h2{margin-top:1.7em}.table-wrap{margin-left:-10px;margin-right:-10px}.repo-content{padding:10px 12px 15px}.content blockquote{margin:14px 0;padding:12px}}@media print{body{background:white;color:black}.hero{background:white;border:0;padding:12px}.sidebar,.topbar,.mobile-toc,.searchbar,.actions{display:none!important}.shell{display:block;padding:0}.paper{border:0;box-shadow:none;padding:0}.repo-card{box-shadow:none;page-break-inside:avoid}.repo-card:not([open]) .repo-content{display:block}.repo-card summary{background:#eee}.repo-caret{display:none}.table-wrap{overflow:visible}a{color:inherit}body{font-size:11pt}}</style></head><body>
+<header class="topbar"><span class="wordmark">✦ GITHUB / DAILY RADAR</span><small>06 NOV 2026 · 北京时间 · SELF-CONTAINED HTML</small></header>
+<section class="hero"><div class="eyebrow">OPEN SOURCE INTELLIGENCE / EDITION 11.06</div><h1>GitHub<br>热榜日报</h1><p>当天热度 × 官方证据 × 真实工程价值：覆盖 AI Agent、Java、云原生、基础设施、语音与 AI 创作。</p><div class="hero-chips"><span class="chip">12 个完整仓库分析</span><span class="chip">Top 3 与实验方案</span><span class="chip">100% 离线可阅读</span></div></section>
+<div class="shell"><aside class="sidebar"><div class="sidebar-heading">CONTENTS / 目录</div><a class="nav-link chapter" href="#section-1">一、今日仓库与热度总览</a>
+<a class="nav-link chapter" href="#section-2">二、逐仓库完整分析</a>
+<a class="nav-link repo-link" href="#repo-1">01｜NVIDIA/auto-ontology：让 Agent 的数据回答有确定的业务含义</a>
+<a class="nav-link repo-link" href="#repo-2">02｜vercel-labs/agent-desktop：让 Agent 通过可访问性树操作桌面</a>
+<a class="nav-link repo-link" href="#repo-3">03｜max-sixty/worktrunk：多 Coding Agent 的轻量并行分支管理</a>
+<a class="nav-link repo-link" href="#repo-4">04｜D4Vinci/Scrapling：网页采集从解析器扩展到完整采集流水线</a>
+<a class="nav-link repo-link" href="#repo-5">05｜floci-io/floci：Java 项目可复现的 AWS 本地集成测试</a>
+<a class="nav-link repo-link" href="#repo-6">06｜scenario-labs/skills：为 AI 创作引入模型选择、预算和一致性检查</a>
+<a class="nav-link repo-link" href="#repo-7">07｜google/skills：来自产品团队的 Google Cloud 专项 Agent 知识</a>
+<a class="nav-link repo-link" href="#repo-8">08｜microsoft/VibeVoice：语音识别与多说话人内容生产</a>
+<a class="nav-link repo-link" href="#repo-9">09｜mattpocock/skills：小型可组合的软件工程 Skills</a>
+<a class="nav-link repo-link" href="#repo-10">10｜spring-projects/spring-ai：Java 业务系统的稳定接入基线</a>
+<a class="nav-link repo-link" href="#repo-11">11｜cilium/cilium：让云原生 Agent 沙箱具备可观测网络边界</a>
+<a class="nav-link repo-link" href="#repo-12">12｜lz4/lz4：高性能压缩依然是值得关注的基础设施</a>
+<a class="nav-link chapter" href="#section-3">三、今日最值得重点看的 Top 3</a>
+<a class="nav-link chapter" href="#section-4">四、今日五项趋势与技术取舍</a>
+<a class="nav-link chapter" href="#section-5">五、今日行动计划（按产出优先）</a>
+<a class="nav-link chapter" href="#section-6">六、来源与准确性说明</a></aside><main class="paper"><details class="mobile-toc"><summary>目录 / 展开导航</summary><nav><a class="nav-link chapter" href="#section-1">一、今日仓库与热度总览</a>
+<a class="nav-link chapter" href="#section-2">二、逐仓库完整分析</a>
+<a class="nav-link repo-link" href="#repo-1">01｜NVIDIA/auto-ontology：让 Agent 的数据回答有确定的业务含义</a>
+<a class="nav-link repo-link" href="#repo-2">02｜vercel-labs/agent-desktop：让 Agent 通过可访问性树操作桌面</a>
+<a class="nav-link repo-link" href="#repo-3">03｜max-sixty/worktrunk：多 Coding Agent 的轻量并行分支管理</a>
+<a class="nav-link repo-link" href="#repo-4">04｜D4Vinci/Scrapling：网页采集从解析器扩展到完整采集流水线</a>
+<a class="nav-link repo-link" href="#repo-5">05｜floci-io/floci：Java 项目可复现的 AWS 本地集成测试</a>
+<a class="nav-link repo-link" href="#repo-6">06｜scenario-labs/skills：为 AI 创作引入模型选择、预算和一致性检查</a>
+<a class="nav-link repo-link" href="#repo-7">07｜google/skills：来自产品团队的 Google Cloud 专项 Agent 知识</a>
+<a class="nav-link repo-link" href="#repo-8">08｜microsoft/VibeVoice：语音识别与多说话人内容生产</a>
+<a class="nav-link repo-link" href="#repo-9">09｜mattpocock/skills：小型可组合的软件工程 Skills</a>
+<a class="nav-link repo-link" href="#repo-10">10｜spring-projects/spring-ai：Java 业务系统的稳定接入基线</a>
+<a class="nav-link repo-link" href="#repo-11">11｜cilium/cilium：让云原生 Agent 沙箱具备可观测网络边界</a>
+<a class="nav-link repo-link" href="#repo-12">12｜lz4/lz4：高性能压缩依然是值得关注的基础设施</a>
+<a class="nav-link chapter" href="#section-3">三、今日最值得重点看的 Top 3</a>
+<a class="nav-link chapter" href="#section-4">四、今日五项趋势与技术取舍</a>
+<a class="nav-link chapter" href="#section-5">五、今日行动计划（按产出优先）</a>
+<a class="nav-link chapter" href="#section-6">六、来源与准确性说明</a></nav></details><article class="content" id="report"><h1 id="title">GitHub 热榜日报｜2026 年 11 月 6 日</h1>
+<p><strong>观察时间：</strong> 2026-11-06，北京时间上午；<strong>范围：</strong> GitHub Trending 当日榜单、项目官方 README/维护资料，并以部分长期基础设施项目补齐工程覆盖面。<strong>本期精选：12 个仓库。</strong></p>
+<p><strong>今日核心判断：</strong> GitHub 的热点集中在三条可落地路线：<strong>NVIDIA Auto Ontology 为企业 Agent 提供可验证的数据语义层</strong>；<strong>Vercel Agent Desktop 把 Computer Use 从网页延伸到 Windows 等系统桌面</strong>；<strong>Worktrunk 把 Git Worktree 变成多 Coding Agent 的并行工作区</strong>。此外，Floci 的 Java/AWS 集成测试与 Scenario 的多媒体 Skills 值得按实际场景验证。</p>
+<blockquote>
+<p><strong>数据口径：</strong> 当日累计 Star 与 <code>stars today</code> 取自 11 月 6 日可访问的 GitHub Trending 当日榜单快照。<code>stars today</code> 是 GitHub 页面显示的滚动热度，<strong>不是北京时间自然日净增量</strong>；排名随刷新变化。Spring AI 与 Cilium 是<strong>工程补充观察项，不声称登上今日 Trending</strong>，也不虚构当日涨幅。项目 README 的性能、安全和兼容宣称未做独立实测；过去发布的功能不写成“今天新发版”。</p>
+</blockquote>
+<h2 id="section-1">一、今日仓库与热度总览</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align:right">#</th>
+<th>官方仓库</th>
+<th style="text-align:right">Star 快照</th>
+<th style="text-align:right">当日滚动热度</th>
+<th>方向</th>
+<th>是否值得关注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td><a href="https://github.com/NVIDIA/auto-ontology" rel="noopener noreferrer" target="_blank">NVIDIA/auto-ontology</a></td>
+<td style="text-align:right">7,093</td>
+<td style="text-align:right">+2,707</td>
+<td>企业数据语义 / Agent GraphRAG</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td><a href="https://github.com/vercel-labs/agent-desktop" rel="noopener noreferrer" target="_blank">vercel-labs/agent-desktop</a></td>
+<td style="text-align:right">16,669</td>
+<td style="text-align:right">+2,173</td>
+<td>Windows/macOS/Linux Computer Use</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td><a href="https://github.com/max-sixty/worktrunk" rel="noopener noreferrer" target="_blank">max-sixty/worktrunk</a></td>
+<td style="text-align:right">11,448</td>
+<td style="text-align:right">+546</td>
+<td>Git Worktree / 多 Agent 并行</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td style="text-align:right">4</td>
+<td><a href="https://github.com/D4Vinci/Scrapling" rel="noopener noreferrer" target="_blank">D4Vinci/Scrapling</a></td>
+<td style="text-align:right">97,823</td>
+<td style="text-align:right">+1,661</td>
+<td>网页采集 / MCP</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td><a href="https://github.com/floci-io/floci" rel="noopener noreferrer" target="_blank">floci-io/floci</a></td>
+<td style="text-align:right">30,312</td>
+<td style="text-align:right">+784</td>
+<td>Java / AWS 本地模拟</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td style="text-align:right">6</td>
+<td><a href="https://github.com/scenario-labs/skills" rel="noopener noreferrer" target="_blank">scenario-labs/skills</a></td>
+<td style="text-align:right">2,965</td>
+<td style="text-align:right">+674</td>
+<td>AI 视频、音频、图像与 3D</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td style="text-align:right">7</td>
+<td><a href="https://github.com/google/skills" rel="noopener noreferrer" target="_blank">google/skills</a></td>
+<td style="text-align:right">22,298</td>
+<td style="text-align:right">+199</td>
+<td>Google Cloud / Agent Skills</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td style="text-align:right">8</td>
+<td><a href="https://github.com/microsoft/VibeVoice" rel="noopener noreferrer" target="_blank">microsoft/VibeVoice</a></td>
+<td style="text-align:right">55,761</td>
+<td style="text-align:right">+214</td>
+<td>ASR / 语音合成研究</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td style="text-align:right">9</td>
+<td><a href="https://github.com/mattpocock/skills" rel="noopener noreferrer" target="_blank">mattpocock/skills</a></td>
+<td style="text-align:right">314,992</td>
+<td style="text-align:right">+2,053</td>
+<td>软件工程 Skills</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td style="text-align:right">10</td>
+<td><a href="https://github.com/spring-projects/spring-ai" rel="noopener noreferrer" target="_blank">spring-projects/spring-ai</a></td>
+<td style="text-align:right">未取得今日快照</td>
+<td style="text-align:right">非今日榜单统计</td>
+<td>Java / Spring AI 应用</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td style="text-align:right">11</td>
+<td><a href="https://github.com/cilium/cilium" rel="noopener noreferrer" target="_blank">cilium/cilium</a></td>
+<td style="text-align:right">未取得今日快照</td>
+<td style="text-align:right">非今日榜单统计</td>
+<td>Kubernetes / eBPF 安全</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td style="text-align:right">12</td>
+<td><a href="https://github.com/lz4/lz4" rel="noopener noreferrer" target="_blank">lz4/lz4</a></td>
+<td style="text-align:right">12,336</td>
+<td style="text-align:right">+16</td>
+<td>压缩算法 / 基础设施</td>
+<td>★★★★☆</td>
+</tr>
+</tbody>
+</table></div>
+<p>数据源：<a href="https://github.com/trending" rel="noopener noreferrer" target="_blank">GitHub Trending 当日榜单</a>、<a href="https://github.com/trending?since=daily" rel="noopener noreferrer" target="_blank">今日榜单检索快照</a>、<a href="https://whatstrending.ai/repos" rel="noopener noreferrer" target="_blank">可比较的 7 日 Star 历史</a>。周增长数据与今日 <code>stars today</code> 口径不同，不混用。<strong>本次入选并不等于项目通过生产安全审查。</strong></p>
+<h2 id="section-2">二、逐仓库完整分析</h2><div class="searchbar"><label for="search">查找仓库</label><input autocomplete="off" id="search" placeholder="按技术、项目、优缺点、场景搜索 12 个仓库" type="search"/><button id="expand" type="button">全部展开</button><button id="collapse" type="button">全部折叠</button><span class="search-meta" id="count">12/12</span></div>
+<details class="repo-card" id="repo-1" open=""><summary><span class="repo-index">01</span><span class="repo-heading">NVIDIA/auto-ontology：让 Agent 的数据回答有确定的业务含义</span><span class="repo-caret">＋</span></summary><div class="repo-content">
+<p><strong>官方地址：</strong> <a href="https://github.com/NVIDIA/auto-ontology" rel="noopener noreferrer" target="_blank">NVIDIA/auto-ontology</a>；<strong>技术栈/语言：</strong> Python 3.12+、FastAPI、LangChain、Next.js/TypeScript、PostgreSQL/pgvector、NVIDIA NIM、MCP/API、Docker Compose/Helm；Apache-2.0。</p>
+<p><strong>主要用途：</strong> 从数据库元数据构建企业语义目录/知识本体，统一指标、实体、关系与数据血缘，并为 Agent 的自然语言转 SQL 提供可核查的上下文。不是“换一种向量数据库”，而是把“营业额、用户、订单”这些词的业务定义显式化。</p>
+<p><strong>近期热度与活跃：</strong> 今日榜单约 <strong>7,093 Star、+2,707 stars today</strong>，是本期高增长项目之一；官方有代码、Issues/PR、安全政策和部署文档。热度上涨很快，但大规模长期生产维护证据还需观察，不能把增长等同成熟。</p>
+<p><strong>核心优点：</strong> 可以统一多个数据源的指标定义；生成 SQL 前校验来源与语义；把答案关联到数据血缘；以 MCP/CLI/API 供不同 Agent 使用。对企业数据问答与 Agentic Analytics 很有借鉴价值。</p>
+<p><strong>主要缺点/局限：</strong> 语义目录的质量受元数据和人工治理影响；NIM 推理、Embedding 和重排需计算资源或外部调用；多组件部署、数据库账号和 RBAC 带来运维与隐私风险；自动生成本体不保证财务指标天然正确。</p>
+<p><strong>成熟度/维护：</strong> 早中期，近期关注和开发活跃；<strong>适用场景：</strong> 企业数据平台、BI、GraphRAG、受控 NL-to-SQL。<strong>关注建议：★★★★★，先用模拟数据评测。</strong></p>
+<p><strong>可执行实验：</strong> 创建“订单/客户/退款”三张测试表，刻意放入两个不同口径的“销售额”，比较 Agent 无本体与有本体时的 SQL、引用证据和正确率；全程使用只读数据库账户。<a href="https://github.com/NVIDIA/auto-ontology#readme" rel="noopener noreferrer" target="_blank">官方技术说明</a>。</p>
+</div></details><details class="repo-card" id="repo-2" open=""><summary><span class="repo-index">02</span><span class="repo-heading">vercel-labs/agent-desktop：让 Agent 通过可访问性树操作桌面</span><span class="repo-caret">＋</span></summary><div class="repo-content">
+<p><strong>官方地址：</strong> <a href="https://github.com/vercel-labs/agent-desktop" rel="noopener noreferrer" target="_blank">vercel-labs/agent-desktop</a>；<strong>技术栈/语言：</strong> Rust CLI、操作系统 Accessibility API、JSON 结构化输出、C FFI、MCP/Agent Skills；Apache-2.0。</p>
+<p><strong>主要用途：</strong> 读取应用窗口中可交互元素的可访问性树，给每个元素生成引用，再执行点击、输入、滚动与窗口控制；不是依赖屏幕坐标盲点。官方列出 macOS、Windows、Linux 平台支持。</p>
+<p><strong>近期热度与活跃：</strong> 今日 <strong>16,669 Star、+2,173 stars today</strong>，且官方有 Windows 专项文档、测试、Issues、PR 和权限说明；仍处于跨平台快速迭代期。</p>
+<p><strong>核心优点：</strong> Windows 可用；“观察→操作引用→再次观察”的模式便于 Agent 验证结果；CLI 可由现有 Codex/Pi/Claude Code 调用；也提供 FFI 便于程序直接集成。对非网页软件的可重复自动化有现实价值。</p>
+<p><strong>主要缺点/局限：</strong> Accessibility Tree 不覆盖所有自绘 UI；凭据框、通知、剪贴板和桌面截图可能泄露敏感内容；它是电脑操作能力而<strong>不是权限隔离沙箱</strong>，不应默认授予任意 Shell/桌面权限。不同完整性等级的 Windows 应用还要专项验证。</p>
+<p><strong>成熟度/维护：</strong> 早中期至中等，近期活跃；<strong>适用场景：</strong> Windows 桌面自动化、人工辅助测试、办公软件操作。<strong>关注建议：★★★★★，只在测试用户/VM 里先试。</strong></p>
+<p><strong>可执行实验：</strong> 在不含个人数据的 Windows 用户下，打开记事本或测试程序，进行 <code>snapshot → click/type → snapshot</code>，验证元素引用稳定性、焦点错误、撤销与审计，不连接银行、浏览器真实登录态。<a href="https://github.com/vercel-labs/agent-desktop#platform-support" rel="noopener noreferrer" target="_blank">官方平台说明</a>。</p>
+</div></details><details class="repo-card" id="repo-3" open=""><summary><span class="repo-index">03</span><span class="repo-heading">max-sixty/worktrunk：多 Coding Agent 的轻量并行分支管理</span><span class="repo-caret">＋</span></summary><div class="repo-content">
+<p><strong>官方地址：</strong> <a href="https://github.com/max-sixty/worktrunk" rel="noopener noreferrer" target="_blank">max-sixty/worktrunk</a>；<strong>技术栈/语言：</strong> Rust、Git Worktree、CLI、Shell 集成，提供 Windows winget 安装方式。</p>
+<p><strong>主要用途：</strong> 管理一个仓库中的多个独立 Worktree，让不同 Codex/Claude/Pi 会话在不同目录工作，查看分支状态并减少互相覆盖。</p>
+<p><strong>近期热度与活跃：</strong> 今日约 <strong>11,448 Star、+546 stars today</strong>；官方有更新日志、测试和跨平台安装文档，属于有真实工程工具链与持续迭代的项目。</p>
+<p><strong>核心优点：</strong> 不必克隆多个完整仓库；并行任务的文件改动天然分目录；方便 Review 每条分支的 Diff；可配合现有 AI CLI，不强制迁移编辑器。</p>
+<p><strong>主要缺点/局限：</strong> Worktree 仅隔离工作目录，<strong>不是容器沙箱</strong>；共享 Git 对象、端口、数据库和构建缓存仍可能冲突。Windows 上 <code>wt</code> 常被 Windows Terminal 占用，官方提供 <code>git-wt</code> 名称，需要留意 Shell 集成和路径兼容。</p>
+<p><strong>成熟度/维护：</strong> 中高的 CLI 工程成熟度、近期活跃；<strong>适用场景：</strong> Windows/Java 多任务开发、并行 Agent 分支。<strong>关注建议：★★★★★，成本低、可优先验证。</strong></p>
+<p><strong>可执行实验：</strong> 在测试 Maven 项目创建“接口改动”和“单元测试”两个 Worktree，分别运行 Agent；验证分支 Diff、<code>target/</code> 缓存、端口冲突和合并冲突处理。<a href="https://github.com/max-sixty/worktrunk#install" rel="noopener noreferrer" target="_blank">Windows 安装与命令</a>。</p>
+</div></details><details class="repo-card" id="repo-4"><summary><span class="repo-index">04</span><span class="repo-heading">D4Vinci/Scrapling：网页采集从解析器扩展到完整采集流水线</span><span class="repo-caret">＋</span></summary><div class="repo-content">
+<p><strong>官方地址：</strong> <a href="https://github.com/D4Vinci/Scrapling" rel="noopener noreferrer" target="_blank">D4Vinci/Scrapling</a>；<strong>技术栈/语言：</strong> Python 3.10+、HTTP Fetcher、浏览器渲染、CSS/XPath、异步 Spider、MCP/CLI。</p>
+<p><strong>主要用途：</strong> 把页面抓取、结构解析、数据导出、任务重试、并发和动态网页处理集成起来，也可作为 Agent 的受控网页资料采集工具。</p>
+<p><strong>近期热度与活跃：</strong> 今日 <strong>97,823 Star、+1,661 stars today</strong>，仓库有文档、测试、讨论和公开维护记录。作者给出的速度 Benchmark 只是特定环境测试，不代表所有网站都能获得相同收益。</p>
+<p><strong>核心优点：</strong> 提供 CSS/XPath、相似元素适配、JSON/CSV 等导出与 MCP 能力；可把公开信息采集作为 AI 研究或每日内容工作流的标准步骤。</p>
+<p><strong>主要缺点/局限：</strong> 网站反自动化、登录态与页面结构可能变化；采集要遵守授权、robots、服务条款和频率限制。浏览器访问的页面也可能包含 Prompt Injection。基础 <code>pip install scrapling</code> 并不自动包含所有浏览器/Spider 依赖。</p>
+<p><strong>成熟度/维护：</strong> 中高、近期活跃；<strong>适用场景：</strong> 合法公开数据收集、文档分析、测试站点采集。<strong>关注建议：★★★★★，先验证数据质量与成本。</strong></p>
+<p><strong>可执行实验：</strong> 用 20 个自建或明确允许抓取的页面测试字段抽取、重复抓取去重、错页识别、响应时间和错误重试，保留来源 URL 与抓取时间。<a href="https://github.com/D4Vinci/Scrapling#readme" rel="noopener noreferrer" target="_blank">官方 README</a>。</p>
+</div></details><details class="repo-card" id="repo-5"><summary><span class="repo-index">05</span><span class="repo-heading">floci-io/floci：Java 项目可复现的 AWS 本地集成测试</span><span class="repo-caret">＋</span></summary><div class="repo-content">
+<p><strong>官方地址：</strong> <a href="https://github.com/floci-io/floci" rel="noopener noreferrer" target="_blank">floci-io/floci</a>；<strong>技术栈/语言：</strong> Java、Docker、AWS SDK、Testcontainers、Maven，支持多语言 SDK 测试。</p>
+<p><strong>主要用途：</strong> 在本地模拟 AWS 服务并提供容器化测试实例，减少开发和 CI 对真实 AWS 账号的依赖。适合从 Spring Boot 的对象存储、队列或事件集成开始评测。</p>
+<p><strong>近期热度与活跃：</strong> 今日 <strong>30,312 Star、+784 stars today</strong>，近期持续上榜；官方维护 SDK 兼容性测试和 Testcontainers 模块。文档中的 Java Testcontainers 1.x 与 2.x/Boot 4.x 对应不同依赖系列，必须按工程版本核对。</p>
+<p><strong>核心优点：</strong> 每个测试可启动隔离实例，避免共享测试环境；便于重现异常和降低云服务试验成本；适配 Java Testcontainers。官方提供跨 SDK 的兼容测试清单。</p>
+<p><strong>主要缺点/局限：</strong> 模拟成功不保证真实 AWS 的权限、配额、事件一致性、失败语义和全部 API 行为相同；仍需 Docker 资源，服务兼容程度应逐项核验。</p>
+<p><strong>成熟度/维护：</strong> 中高、持续维护；<strong>适用场景：</strong> Java 微服务、AWS SDK、CI 集成测试。<strong>关注建议：★★★★★，工程收益明确。</strong></p>
+<p><strong>可执行实验：</strong> 使用独立的 Spring Boot 测试模块，在 Floci 中执行 S3 上传/下载、权限拒绝、超时重试，与真实 AWS 测试账号做一次关键差异比对。<a href="https://github.com/floci-io/floci#testcontainers" rel="noopener noreferrer" target="_blank">官方 Testcontainers 文档</a>。</p>
+</div></details><details class="repo-card" id="repo-6"><summary><span class="repo-index">06</span><span class="repo-heading">scenario-labs/skills：为 AI 创作引入模型选择、预算和一致性检查</span><span class="repo-caret">＋</span></summary><div class="repo-content">
+<p><strong>官方地址：</strong> <a href="https://github.com/scenario-labs/skills" rel="noopener noreferrer" target="_blank">scenario-labs/skills</a>；<strong>技术栈/语言：</strong> Python/Markdown Agent Skills、Scenario MCP、DCC/游戏引擎工具链、视频/图像/音频/3D 模型调用。</p>
+<p><strong>主要用途：</strong> 为 Claude Code、Codex、Cursor 等 Agent 提供生成图片、视频、配音、角色资产、3D 模型与剪辑的工作指引，包括先选择模型、估算价格、保留角色/品牌一致性、再交付成品。</p>
+<p><strong>近期热度与活跃：</strong> 今日 <strong>2,965 Star、+674 stars today</strong>，处于快速吸引创作者关注的阶段；官方仓库已有多种制作流程和针对 Blender/Unity 等软件的专门 Skills，但部分深度工具的完整实测覆盖仍待观察。</p>
+<p><strong>核心优点：</strong> 把创作从“一句话出图”变为可核算的素材生产链；有多模型选择、风格一致性和预算约束；对 AI 短视频、产品展示和游戏资产有参考价值。</p>
+<p><strong>主要缺点/局限：</strong> Skills 不是本地免费生成模型，实际操作常依赖 Scenario 服务、外部 API、软件和付费额度；不同模型的版权、商用范围、身份一致性和水印规则需分别审查；技能数量不能替代成片质量。</p>
+<p><strong>成熟度/维护：</strong> 早中期、近期热度上升；<strong>适用场景：</strong> AI 自媒体与内容产品 PoC。<strong>关注建议：★★★★★，先做小预算实测。</strong></p>
+<p><strong>可执行实验：</strong> 用 1 个虚构角色制作 3 条 15 秒连续短视频，核验人物一致性、字幕准确率、模型费用、人工返工和可商用授权；不要一次性批量生成。<a href="https://github.com/scenario-labs/skills" rel="noopener noreferrer" target="_blank">官方 Skills 目录</a>。</p>
+</div></details><details class="repo-card" id="repo-7"><summary><span class="repo-index">07</span><span class="repo-heading">google/skills：来自产品团队的 Google Cloud 专项 Agent 知识</span><span class="repo-caret">＋</span></summary><div class="repo-content">
+<p><strong>官方地址：</strong> <a href="https://github.com/google/skills" rel="noopener noreferrer" target="_blank">google/skills</a>；<strong>技术栈/语言：</strong> Python/Markdown Agent Skills、Google Cloud/GKE/BigQuery/Agent Platform 操作知识、CLI；Apache-2.0。</p>
+<p><strong>主要用途：</strong> 为 Agent 提供 Google Cloud 认证、GKE、数据服务、推理部署、RAG、云平台故障排查等流程化参考，避免每次从泛化 Prompt 猜测云产品细节。</p>
+<p><strong>近期热度与活跃：</strong> 今日 <strong>22,298 Star、+199 stars today</strong>；官方 README 标注仓库仍在积极开发，有面向不同云产品的 Skill 目录。</p>
+<p><strong>核心优点：</strong> 由产品生态来源维护，指向更具体的操作路径；按需安装单个 Skill；<strong>适用场景：</strong> 比较 GKE AI 推理、云架构与传统自建服务的职责。</p>
+<p><strong>主要缺点/局限：</strong> Skill 文本不是云 API 的保证，随产品版本变化仍需核对官方文档；安装或使用过程中可能涉及本地 <code>gcloud</code> 凭据与真实云资源；不能因为是官方仓库就自动授予写权限。</p>
+<p><strong>成熟度/维护：</strong> Skill 内容持续更新中，单条技能成熟度不一；<strong>适用场景：</strong> 云架构、GKE 运维、Google AI Agent。<strong>关注建议：★★★★☆，按具体项目引入。</strong></p>
+<p><strong>可执行实验：</strong> 选一条 GKE 部署排障 Skill，只让 Agent 在本地测试 YAML 上给建议，核查其命令与现用版本文档，禁止自动修改真实云账号。<a href="https://github.com/google/skills#available-skills" rel="noopener noreferrer" target="_blank">官方 Skills 列表</a>。</p>
+</div></details><details class="repo-card" id="repo-8"><summary><span class="repo-index">08</span><span class="repo-heading">microsoft/VibeVoice：语音识别与多说话人内容生产</span><span class="repo-caret">＋</span></summary><div class="repo-content">
+<p><strong>官方地址：</strong> <a href="https://github.com/microsoft/VibeVoice" rel="noopener noreferrer" target="_blank">microsoft/VibeVoice</a>；<strong>技术栈/语言：</strong> Python、PyTorch/Transformers、ASR、TTS、vLLM 相关推理组件；MIT 代码许可，模型权重另核。</p>
+<p><strong>主要用途：</strong> 长音频语音识别、说话人区分与时间戳输出；项目亦包含语音合成研究路线。官方文档提出 ASR 一次处理最长约 60 分钟并给出“谁在何时说了什么”的结构化结果。</p>
+<p><strong>近期热度与活跃：</strong> 今日 <strong>55,761 Star、+214 stars today</strong>。注意官方明确写出的 <strong>2026-07-23 ASR BitNet CPU 推理发布是历史进展，不是今天发布</strong>；这期入选原因是当日榜单关注，而非新版本。</p>
+<p><strong>核心优点：</strong> 长音频上下文与说话人标注适合访谈、教学和录音整理；自定义热词可能改善专有名词；有 CPU 推理方向可研究本地数据处理。</p>
+<p><strong>主要缺点/局限：</strong> 语音合成能力、代码与权重可用性必须分别核实，官方曾因滥用而移除部分 TTS 代码；多人重叠说话、技术术语和噪声会影响准确率；真实模型大小、GPU/CPU 延迟及许可需验证。</p>
+<p><strong>成熟度/维护：</strong> 研究工程中高，相关功能发布较早，近期持续被关注；<strong>适用场景：</strong> 中文技术录音转写和教学音频处理。<strong>关注建议：★★★★☆。</strong></p>
+<p><strong>可执行实验：</strong> 用自录 10 分钟脱敏技术对话比较 VibeVoice-ASR 与现有 Whisper/转录流程的字错率、说话人错误率、时间戳和实时处理成本。<a href="https://github.com/microsoft/VibeVoice#models" rel="noopener noreferrer" target="_blank">官方模型说明</a>。</p>
+</div></details><details class="repo-card" id="repo-9"><summary><span class="repo-index">09</span><span class="repo-heading">mattpocock/skills：小型可组合的软件工程 Skills</span><span class="repo-caret">＋</span></summary><div class="repo-content">
+<p><strong>官方地址：</strong> <a href="https://github.com/mattpocock/skills" rel="noopener noreferrer" target="_blank">mattpocock/skills</a>；<strong>技术栈/语言：</strong> Shell/Markdown Skills、Claude Code/Codex/Gemini/Copilot/Pi 等插件或 Skill 安装流程；MIT。</p>
+<p><strong>主要用途：</strong> 把需求澄清、文档对齐、技术沟通、工程 Review 等经验做成小型可组合的 Agent 指令，而不是让一套大型框架接管全部开发流程。</p>
+<p><strong>近期热度与活跃：</strong> 今日 <strong>314,992 Star、+2,053 stars today</strong>；另有第三方按相同日期快照记录的 <strong>近 7 日约 +8,167 Star</strong>。README 有安装和更新路径，热度非常高，但传播热度不能代替提效实测。</p>
+<p><strong>核心优点：</strong> 技能职责小，容易逐个采用；跨 Codex/Claude/Pi 使用；关注“先对齐需求再修改代码”这种可复用工程方法。</p>
+<p><strong>主要缺点/局限：</strong> 多插件安装路径可能重复导入同一 Skill；自动更新可能改变行为；Hook、Prompt 和配置写入需要审核；“名师经验”不等于对每个业务团队都有效。</p>
+<p><strong>成熟度/维护：</strong> 内容集合中等至中高、近期活跃；<strong>适用场景：</strong> Coding Agent 工程协作。<strong>关注建议：★★★★☆，借鉴具体技能而非整包安装。</strong></p>
+<p><strong>可执行实验：</strong> 选一个微服务需求，让原生 Agent 与加一个需求澄清 Skill 的 Agent 完成同任务；比较遗漏、单测覆盖、总 Token、审核成本。<a href="https://github.com/mattpocock/skills#readme" rel="noopener noreferrer" target="_blank">官方 README</a>。</p>
+</div></details><details class="repo-card" id="repo-10"><summary><span class="repo-index">10</span><span class="repo-heading">spring-projects/spring-ai：Java 业务系统的稳定接入基线</span><span class="repo-caret">＋</span></summary><div class="repo-content">
+<p><strong>官方地址：</strong> <a href="https://github.com/spring-projects/spring-ai" rel="noopener noreferrer" target="_blank">spring-projects/spring-ai</a>；<strong>技术栈/语言：</strong> Java、Spring Boot、Maven、Chat/Embedding、结构化输出、Tool Calling、向量数据库、RAG 与 MCP 生态；Apache-2.0。</p>
+<p><strong>主要用途：</strong> 用 Spring 风格的 API 将企业数据和业务接口接入模型，重点是强类型工具与业务服务集成，而不是包办所有长任务编排。</p>
+<p><strong>近期热度与活跃：</strong> <strong>本期为工程补充项目，不在已取得的今日 Trending 榜单中；没有可靠的 11 月 6 日 Star 增量，故不编造数字。</strong> 仓库有持续维护的 Starter、多模型适配、参考文档和升级说明。</p>
+<p><strong>核心优点：</strong> 适配现有 Java/Spring 团队；抽象 Chat、Embedding、向量数据库和结构化返回；利于按领域 API 构建 Tool Calling，保留业务层的强类型校验。</p>
+<p><strong>主要缺点/局限：</strong> 统一 API 无法保证各模型的 Thinking、流式和工具协议完全一致；Agent 任务恢复、授权和事务仍需其他组件。README 的兼容矩阵为 <strong>Spring AI 2.x 对 Spring Boot 4.x，Spring AI 1.1.x 对 Boot 3.5.x</strong>，不能任意混用。</p>
+<p><strong>成熟度/维护：</strong> 高，Spring 官方工程生态持续维护；<strong>适用场景：</strong> 企业 AI API、内部助手和 RAG。<strong>关注建议：★★★★★，作为 Java 基线持续关注。</strong></p>
+<p><strong>可执行实验：</strong> 以 Boot 3.5 或 Boot 4 的正确 BOM 创建只读订单 Tool，验证权限、Schema、超时和模型切换，与 Copilot SDK/AgentScope 的职责对照。<a href="https://github.com/spring-projects/spring-ai#readme" rel="noopener noreferrer" target="_blank">官方兼容说明</a>。</p>
+</div></details><details class="repo-card" id="repo-11"><summary><span class="repo-index">11</span><span class="repo-heading">cilium/cilium：让云原生 Agent 沙箱具备可观测网络边界</span><span class="repo-caret">＋</span></summary><div class="repo-content">
+<p><strong>官方地址：</strong> <a href="https://github.com/cilium/cilium" rel="noopener noreferrer" target="_blank">cilium/cilium</a>；<strong>技术栈/语言：</strong> Go、C/eBPF、Linux 内核、Kubernetes CNI、Hubble、网络策略；用户态 Apache-2.0，BPF 部分有单独许可说明。</p>
+<p><strong>主要用途：</strong> Kubernetes 网络、服务连接、身份驱动的 L3–L7 网络策略和流量观测，能帮助限定 Agent Sandbox 可以访问哪些服务与外网目的地。</p>
+<p><strong>近期热度与活跃：</strong> <strong>作为长期基础设施观察项纳入，不声称它在今日 Trending 上榜。</strong> 官方仓库有数万次提交、维护分支、文档与社区活动；未取得可靠的今日 Star 增量。</p>
+<p><strong>核心优点：</strong> 网络策略可依据工作负载身份而非不稳定的 Pod IP；Hubble 可观察允许/拒绝流量；可对多集群微服务和 Sandbox 进行东西向网络治理。</p>
+<p><strong>主要缺点/局限：</strong> CNI 变更可能影响全局连通性，学习和排障成本高；网络允许不等于业务鉴权通过；单机 Docker 场景采用整套 Cilium 往往过度设计。</p>
+<p><strong>成熟度/维护：</strong> 高，长期维护；<strong>适用场景：</strong> Kubernetes 微服务、多租户 Agent 执行环境和网络安全。<strong>关注建议：★★★★★，按平台需要落地。</strong></p>
+<p><strong>可执行实验：</strong> 在测试 K8s 集群默认拒绝 Agent Pod 出站，仅开放指定只读服务，验证 Hubble 拒绝日志、DNS 和策略回滚。<a href="https://github.com/cilium/cilium#network-policy" rel="noopener noreferrer" target="_blank">官方网络策略说明</a>。</p>
+</div></details><details class="repo-card" id="repo-12"><summary><span class="repo-index">12</span><span class="repo-heading">lz4/lz4：高性能压缩依然是值得关注的基础设施</span><span class="repo-caret">＋</span></summary><div class="repo-content">
+<p><strong>官方地址：</strong> <a href="https://github.com/lz4/lz4" rel="noopener noreferrer" target="_blank">lz4/lz4</a>；<strong>技术栈/语言：</strong> C、LZ4/LZ4_HC、命令行工具与跨语言库；BSD-2-Clause。</p>
+<p><strong>主要用途：</strong> 用高解压速度和较低 CPU 开销压缩日志、缓存、消息或存储数据。它不是新出现的 AI 项目，而是本期用于提醒“技术价值不等于热榜新增 Star”的基础设施项目。</p>
+<p><strong>近期热度与活跃：</strong> 今日 Trending 显示 <strong>12,336 Star、+16 stars today</strong>；属于经过长期使用的成熟算法库。README 的 Benchmark 使用老旧特定机器和数据集，不能当成 2026 年机器上的通用性能结论。</p>
+<p><strong>核心优点：</strong> 压缩/解压开销低、实现成熟、跨语言生态广；对日志和消息系统的 P95/吞吐有现实研究价值。</p>
+<p><strong>主要缺点/局限：</strong> 压缩比可能低于 Zstd 等算法；高压缩模式牺牲 CPU；小消息、已压缩图片和加密数据可能收益很差；消息体压缩仍需考虑兼容与安全限制。</p>
+<p><strong>成熟度/维护：</strong> 高，长期成熟；<strong>适用场景：</strong> 基础设施性能优化、消息与日志存储。<strong>关注建议：★★★★☆，按性能基准决定。</strong></p>
+<p><strong>可执行实验：</strong> 用真实但已脱敏的日志 JSON 和消息载荷，对比 LZ4、Zstd、无压缩时的压缩比、P95、CPU、吞吐与网络流量。<a href="https://github.com/lz4/lz4#benchmarks" rel="noopener noreferrer" target="_blank">官方 Benchmark 口径</a>。</p>
+</div></details><h2 id="section-3">三、今日最值得重点看的 Top 3</h2>
+<h3 id="repo-or-sub-16">TOP 1 — <a href="https://github.com/NVIDIA/auto-ontology" rel="noopener noreferrer" target="_blank">NVIDIA/auto-ontology</a></h3>
+<p><strong>推荐理由：</strong> 今日 <strong>+2,707 stars today</strong>，并且不只是另一个“让模型回答数据库问题”的聊天层。它强调语义定义、SQL 可验证性和数据血缘；对于企业 Agent 能否输出可信业务数字，这是比 Prompt 调优更关键的环节。</p>
+<p><strong>优先行动：</strong> 用三张模拟业务表和两个冲突口径做 NL-to-SQL 对照评测，要求每条结果能追溯原始表与指标定义。</p>
+<p><strong>主要风险：</strong> 本体质量受元数据治理制约，多服务与 NIM 推理成本需核算；高热度不代表已经完成大规模生产验证。</p>
+<h3 id="repo-or-sub-17">TOP 2 — <a href="https://github.com/vercel-labs/agent-desktop" rel="noopener noreferrer" target="_blank">vercel-labs/agent-desktop</a></h3>
+<p><strong>推荐理由：</strong> 今日 <strong>+2,173 stars today</strong>。它把电脑操作从“看图猜坐标”推进到“读取系统可访问性树→按引用操作→再次观察”，且提供 Windows 支持，对实际桌面软件的 Agent 操作很有研究价值。</p>
+<p><strong>优先行动：</strong> 在隔离 Windows 用户/VM，用测试应用验证一次完整的观察—操作—复查流程，并记录错误恢复与权限边界。</p>
+<p><strong>主要风险：</strong> 可读屏幕、剪贴板和窗口内容形成高敏感权限，不要直接连接真实账号与支付应用；可访问性树也不是无条件稳定。</p>
+<h3 id="repo-or-sub-18">TOP 3 — <a href="https://github.com/max-sixty/worktrunk" rel="noopener noreferrer" target="_blank">max-sixty/worktrunk</a></h3>
+<p><strong>推荐理由：</strong> 虽然今日增长 <strong>+546</strong> 不及前两者，但它非常贴近长期开发效率：让多个 Coding Agent 分目录并行修改，降低相互覆盖，保留清晰的 Git Diff。相比搭建完整多 Agent 平台，验证成本更低。</p>
+<p><strong>优先行动：</strong> 在 Windows Maven Demo 上用 <code>git-wt</code> 创建两个功能分支，执行并行测试与冲突处理。</p>
+<p><strong>主要风险：</strong> Worktree 不是安全沙箱，数据库/端口/构建缓存仍共享，Windows Terminal 与 <code>wt</code> 命令名冲突需处理。</p>
+<h2 id="section-4">四、今日五项趋势与技术取舍</h2>
+<p><strong>趋势一｜企业 AI 的瓶颈从模型调用走向可信语义层。</strong> Auto Ontology 与 Spring AI 在架构中位置不同：前者统一指标和数据语义，后者方便 Java 业务系统调用模型与领域 Tool。不能把“RAG 召回准确”当成“业务指标定义正确”。</p>
+<p><strong>趋势二｜Computer Use 正跨越网页边界，但权限治理必须先行。</strong> Agent Desktop 能操作系统桌面，Scrapling 擅长网页资料采集；前者处理本地 UI，后者处理合法网页抓取，两者都会遇到敏感信息和不可信输入，不能只靠 Prompt 进行权限限制。</p>
+<p><strong>趋势三｜多 Coding Agent 的最小可行协作依然是良好的 Git 工程流程。</strong> Worktrunk 让并行分支更轻量，mattpocock/skills 提供需求沟通与 Review 的可组合方法。真正的验收应是测试通过、可审查 Diff、冲突可控，而不是启动多少个 Agent。</p>
+<p><strong>趋势四｜AI 内容创业需要从“可生成”走向“可交付、可核算”。</strong> Scenario Skills 与 VibeVoice 分别覆盖可复用多媒体生产和语音处理。要测角色一致性、说话人准确率、字幕、素材许可、一次成功率及单位成本，而不是把 Skill 数量当成生产力。</p>
+<p><strong>趋势五｜成熟基础设施应有独立于热门 Star 的观察位。</strong> Floci 改善云 SDK 的 CI 可重复性；Cilium 管网络边界；LZ4 管消息与日志的 CPU/传输成本。它们的技术价值来自可验证的故障模型和运行指标，不来自当天涨幅。</p>
+<h2 id="section-5">五、今日行动计划（按产出优先）</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>建议实验</th>
+<th style="text-align:right">时间预算</th>
+<th>核心验收指标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0</td>
+<td>Worktrunk + Windows Java 项目两 Worktree</td>
+<td style="text-align:right">35–50 分钟</td>
+<td>两 Agent 改动互不覆盖，Diff 可审，端口/缓存冲突清晰</td>
+</tr>
+<tr>
+<td>P0</td>
+<td>Agent Desktop 的测试桌面操作</td>
+<td style="text-align:right">30–45 分钟</td>
+<td>snapshot、定位、执行、复查、失败可恢复，无真实凭据</td>
+</tr>
+<tr>
+<td>P0</td>
+<td>NVIDIA Auto Ontology 模拟数据评测</td>
+<td style="text-align:right">60–90 分钟</td>
+<td>两种指标口径、生成 SQL 正确率、来源与权限</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Floci + Testcontainers Java S3 集成测试</td>
+<td style="text-align:right">45–60 分钟</td>
+<td>上传/下载、异常/重试、SDK/Boot 版本兼容</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Scenario 短视频素材流水线</td>
+<td style="text-align:right">45–60 分钟</td>
+<td>角色一致、字幕、授权、成本、返工时长</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Scrapling 合法网页采集 PoC</td>
+<td style="text-align:right">30–45 分钟</td>
+<td>20 页成功率、字段质量、限速、可追溯来源</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>VibeVoice 技术对话 ASR</td>
+<td style="text-align:right">40 分钟</td>
+<td>字错率、说话人、时间戳、资源成本</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>Google Cloud 单个 Skill 的只读审查</td>
+<td style="text-align:right">20 分钟</td>
+<td>命令正确性、云权限与版本兼容</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>mattpocock 单项需求澄清 Skill</td>
+<td style="text-align:right">30 分钟</td>
+<td>需求遗漏、测试、Token、人工 Review</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>Spring AI Tool 调用 / Cilium 出站策略</td>
+<td style="text-align:right">60 分钟</td>
+<td>Schema、权限拒绝、审计、故障复现</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>LZ4 vs Zstd 压缩对照</td>
+<td style="text-align:right">30 分钟</td>
+<td>压缩比、CPU、P95、网络总成本</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>如果今天只有约 90 分钟：</strong> 优先做 <strong>Worktrunk（40 分钟）＋ Agent Desktop（40 分钟）＋ 记录结论（10 分钟）</strong>。它们对现有 Windows/AI 编程环境改动较小、结果容易量化。Auto Ontology 则安排为单独的数据架构 PoC，不宜仓促接入真实业务数据库。</p>
+<h2 id="section-6">六、来源与准确性说明</h2>
+<p><strong>当日热榜：</strong> <a href="https://github.com/trending" rel="noopener noreferrer" target="_blank">GitHub Trending</a>；<a href="https://github.com/trending?since=daily" rel="noopener noreferrer" target="_blank">按天查询入口</a>。<strong>近期增长对照：</strong> <a href="https://whatstrending.ai/repos" rel="noopener noreferrer" target="_blank">whatstrending.ai 2026-11-06 星标日快照</a>（用于识别七日热度，统计口径不同）。</p>
+<p><strong>主要官方技术来源：</strong> <a href="https://github.com/NVIDIA/auto-ontology" rel="noopener noreferrer" target="_blank">NVIDIA Auto Ontology</a>、<a href="https://github.com/vercel-labs/agent-desktop#platform-support" rel="noopener noreferrer" target="_blank">Agent Desktop/平台支持</a>、<a href="https://github.com/max-sixty/worktrunk#install" rel="noopener noreferrer" target="_blank">Worktrunk/Windows 安装</a>、<a href="https://github.com/D4Vinci/Scrapling" rel="noopener noreferrer" target="_blank">Scrapling</a>、<a href="https://github.com/floci-io/floci#testcontainers" rel="noopener noreferrer" target="_blank">Floci/Testcontainers</a>、<a href="https://github.com/scenario-labs/skills" rel="noopener noreferrer" target="_blank">Scenario Skills</a>、<a href="https://github.com/google/skills" rel="noopener noreferrer" target="_blank">Google Skills</a>、<a href="https://github.com/microsoft/VibeVoice" rel="noopener noreferrer" target="_blank">VibeVoice</a>、<a href="https://github.com/mattpocock/skills" rel="noopener noreferrer" target="_blank">Engineering Skills</a>、<a href="https://github.com/spring-projects/spring-ai" rel="noopener noreferrer" target="_blank">Spring AI</a>、<a href="https://github.com/cilium/cilium" rel="noopener noreferrer" target="_blank">Cilium</a>、<a href="https://github.com/lz4/lz4" rel="noopener noreferrer" target="_blank">LZ4</a>。</p>
+<p><strong>核验边界：</strong> 今日热度来自可访问的 Trending 快照；README、平台兼容和历史更新来源于官方仓库。各项目“更快、更安全、降低成本”等效果未独立验证。部分官方仓库的抓取页面比今天更早，故不把其中的旧 Star 作为今日值；未查到今日数据的项目明确记为“未取得今日快照”。所有入选仓库官方地址均已确认。</p>
+<p><strong>最终结论：</strong> 今天最值得投入的是<strong>可信企业数据语义、受控桌面 Agent 和可靠的 Git 并行工作区</strong>。同时用 Floci 打牢 Java 集成测试，用 Scenario/VibeVoice 验证能否真正形成低返工、有授权、成本清晰的内容生产链。</p>
+<p><strong>2026 年 11 月 6 日 GitHub 热榜日报完整文字正文结束。</strong></p>
+</article></main></div><footer class="foot">报告基于 2026-11-06 可访问的榜单及官方文档。所有外链仅在点击时联网；报告本身无需网络。未生成或嵌入任何图片。</footer>
+<script>(function(){const input=document.getElementById('search'),cards=[...document.querySelectorAll('.repo-card')],counter=document.getElementById('count');function filter(){const q=input.value.trim().toLocaleLowerCase();let n=0;for(const card of cards){const ok=card.textContent.toLocaleLowerCase().includes(q);card.classList.toggle('hidden',!ok);if(ok){n++;if(q)card.open=true;}}counter.textContent=n+'/'+cards.length;}input.addEventListener('input',filter);document.getElementById('expand').addEventListener('click',()=>cards.filter(e=>!e.classList.contains('hidden')).forEach(e=>e.open=true));document.getElementById('collapse').addEventListener('click',()=>cards.forEach(e=>e.open=false));document.querySelectorAll('a[href^="#repo-"]').forEach(a=>a.addEventListener('click',()=>{const target=document.querySelector(a.getAttribute('href'));if(target)target.open=true;}));})();</script>
+<!-- Source markdown for full content verification (HTML-escaped; not rendered twice):
+# GitHub 热榜日报｜2026 年 11 月 6 日
+
+**观察时间：** 2026-11-06，北京时间上午；**范围：** GitHub Trending 当日榜单、项目官方 README/维护资料，并以部分长期基础设施项目补齐工程覆盖面。**本期精选：12 个仓库。**
+
+**今日核心判断：** GitHub 的热点集中在三条可落地路线：**NVIDIA Auto Ontology 为企业 Agent 提供可验证的数据语义层**；**Vercel Agent Desktop 把 Computer Use 从网页延伸到 Windows 等系统桌面**；**Worktrunk 把 Git Worktree 变成多 Coding Agent 的并行工作区**。此外，Floci 的 Java/AWS 集成测试与 Scenario 的多媒体 Skills 值得按实际场景验证。
+
+&gt; **数据口径：** 当日累计 Star 与 `stars today` 取自 11 月 6 日可访问的 GitHub Trending 当日榜单快照。`stars today` 是 GitHub 页面显示的滚动热度，**不是北京时间自然日净增量**；排名随刷新变化。Spring AI 与 Cilium 是**工程补充观察项，不声称登上今日 Trending**，也不虚构当日涨幅。项目 README 的性能、安全和兼容宣称未做独立实测；过去发布的功能不写成“今天新发版”。
+
+## 一、今日仓库与热度总览
+
+| # | 官方仓库 | Star 快照 | 当日滚动热度 | 方向 | 是否值得关注 |
+|---:|---|---:|---:|---|---|
+| 1 | [NVIDIA/auto-ontology](https://github.com/NVIDIA/auto-ontology) | 7,093 | +2,707 | 企业数据语义 / Agent GraphRAG | ★★★★★ |
+| 2 | [vercel-labs/agent-desktop](https://github.com/vercel-labs/agent-desktop) | 16,669 | +2,173 | Windows/macOS/Linux Computer Use | ★★★★★ |
+| 3 | [max-sixty/worktrunk](https://github.com/max-sixty/worktrunk) | 11,448 | +546 | Git Worktree / 多 Agent 并行 | ★★★★★ |
+| 4 | [D4Vinci/Scrapling](https://github.com/D4Vinci/Scrapling) | 97,823 | +1,661 | 网页采集 / MCP | ★★★★★ |
+| 5 | [floci-io/floci](https://github.com/floci-io/floci) | 30,312 | +784 | Java / AWS 本地模拟 | ★★★★★ |
+| 6 | [scenario-labs/skills](https://github.com/scenario-labs/skills) | 2,965 | +674 | AI 视频、音频、图像与 3D | ★★★★★ |
+| 7 | [google/skills](https://github.com/google/skills) | 22,298 | +199 | Google Cloud / Agent Skills | ★★★★☆ |
+| 8 | [microsoft/VibeVoice](https://github.com/microsoft/VibeVoice) | 55,761 | +214 | ASR / 语音合成研究 | ★★★★☆ |
+| 9 | [mattpocock/skills](https://github.com/mattpocock/skills) | 314,992 | +2,053 | 软件工程 Skills | ★★★★☆ |
+| 10 | [spring-projects/spring-ai](https://github.com/spring-projects/spring-ai) | 未取得今日快照 | 非今日榜单统计 | Java / Spring AI 应用 | ★★★★★ |
+| 11 | [cilium/cilium](https://github.com/cilium/cilium) | 未取得今日快照 | 非今日榜单统计 | Kubernetes / eBPF 安全 | ★★★★★ |
+| 12 | [lz4/lz4](https://github.com/lz4/lz4) | 12,336 | +16 | 压缩算法 / 基础设施 | ★★★★☆ |
+
+数据源：[GitHub Trending 当日榜单](https://github.com/trending)、[今日榜单检索快照](https://github.com/trending?since=daily)、[可比较的 7 日 Star 历史](https://whatstrending.ai/repos)。周增长数据与今日 `stars today` 口径不同，不混用。**本次入选并不等于项目通过生产安全审查。**
+
+## 二、逐仓库完整分析
+
+### 01｜NVIDIA/auto-ontology：让 Agent 的数据回答有确定的业务含义
+
+**官方地址：** [NVIDIA/auto-ontology](https://github.com/NVIDIA/auto-ontology)；**技术栈/语言：** Python 3.12+、FastAPI、LangChain、Next.js/TypeScript、PostgreSQL/pgvector、NVIDIA NIM、MCP/API、Docker Compose/Helm；Apache-2.0。
+
+**主要用途：** 从数据库元数据构建企业语义目录/知识本体，统一指标、实体、关系与数据血缘，并为 Agent 的自然语言转 SQL 提供可核查的上下文。不是“换一种向量数据库”，而是把“营业额、用户、订单”这些词的业务定义显式化。
+
+**近期热度与活跃：** 今日榜单约 **7,093 Star、+2,707 stars today**，是本期高增长项目之一；官方有代码、Issues/PR、安全政策和部署文档。热度上涨很快，但大规模长期生产维护证据还需观察，不能把增长等同成熟。
+
+**核心优点：** 可以统一多个数据源的指标定义；生成 SQL 前校验来源与语义；把答案关联到数据血缘；以 MCP/CLI/API 供不同 Agent 使用。对企业数据问答与 Agentic Analytics 很有借鉴价值。
+
+**主要缺点/局限：** 语义目录的质量受元数据和人工治理影响；NIM 推理、Embedding 和重排需计算资源或外部调用；多组件部署、数据库账号和 RBAC 带来运维与隐私风险；自动生成本体不保证财务指标天然正确。
+
+**成熟度/维护：** 早中期，近期关注和开发活跃；**适用场景：** 企业数据平台、BI、GraphRAG、受控 NL-to-SQL。**关注建议：★★★★★，先用模拟数据评测。**
+
+**可执行实验：** 创建“订单/客户/退款”三张测试表，刻意放入两个不同口径的“销售额”，比较 Agent 无本体与有本体时的 SQL、引用证据和正确率；全程使用只读数据库账户。[官方技术说明](https://github.com/NVIDIA/auto-ontology#readme)。
+
+### 02｜vercel-labs/agent-desktop：让 Agent 通过可访问性树操作桌面
+
+**官方地址：** [vercel-labs/agent-desktop](https://github.com/vercel-labs/agent-desktop)；**技术栈/语言：** Rust CLI、操作系统 Accessibility API、JSON 结构化输出、C FFI、MCP/Agent Skills；Apache-2.0。
+
+**主要用途：** 读取应用窗口中可交互元素的可访问性树，给每个元素生成引用，再执行点击、输入、滚动与窗口控制；不是依赖屏幕坐标盲点。官方列出 macOS、Windows、Linux 平台支持。
+
+**近期热度与活跃：** 今日 **16,669 Star、+2,173 stars today**，且官方有 Windows 专项文档、测试、Issues、PR 和权限说明；仍处于跨平台快速迭代期。
+
+**核心优点：** Windows 可用；“观察→操作引用→再次观察”的模式便于 Agent 验证结果；CLI 可由现有 Codex/Pi/Claude Code 调用；也提供 FFI 便于程序直接集成。对非网页软件的可重复自动化有现实价值。
+
+**主要缺点/局限：** Accessibility Tree 不覆盖所有自绘 UI；凭据框、通知、剪贴板和桌面截图可能泄露敏感内容；它是电脑操作能力而**不是权限隔离沙箱**，不应默认授予任意 Shell/桌面权限。不同完整性等级的 Windows 应用还要专项验证。
+
+**成熟度/维护：** 早中期至中等，近期活跃；**适用场景：** Windows 桌面自动化、人工辅助测试、办公软件操作。**关注建议：★★★★★，只在测试用户/VM 里先试。**
+
+**可执行实验：** 在不含个人数据的 Windows 用户下，打开记事本或测试程序，进行 `snapshot → click/type → snapshot`，验证元素引用稳定性、焦点错误、撤销与审计，不连接银行、浏览器真实登录态。[官方平台说明](https://github.com/vercel-labs/agent-desktop#platform-support)。
+
+### 03｜max-sixty/worktrunk：多 Coding Agent 的轻量并行分支管理
+
+**官方地址：** [max-sixty/worktrunk](https://github.com/max-sixty/worktrunk)；**技术栈/语言：** Rust、Git Worktree、CLI、Shell 集成，提供 Windows winget 安装方式。
+
+**主要用途：** 管理一个仓库中的多个独立 Worktree，让不同 Codex/Claude/Pi 会话在不同目录工作，查看分支状态并减少互相覆盖。
+
+**近期热度与活跃：** 今日约 **11,448 Star、+546 stars today**；官方有更新日志、测试和跨平台安装文档，属于有真实工程工具链与持续迭代的项目。
+
+**核心优点：** 不必克隆多个完整仓库；并行任务的文件改动天然分目录；方便 Review 每条分支的 Diff；可配合现有 AI CLI，不强制迁移编辑器。
+
+**主要缺点/局限：** Worktree 仅隔离工作目录，**不是容器沙箱**；共享 Git 对象、端口、数据库和构建缓存仍可能冲突。Windows 上 `wt` 常被 Windows Terminal 占用，官方提供 `git-wt` 名称，需要留意 Shell 集成和路径兼容。
+
+**成熟度/维护：** 中高的 CLI 工程成熟度、近期活跃；**适用场景：** Windows/Java 多任务开发、并行 Agent 分支。**关注建议：★★★★★，成本低、可优先验证。**
+
+**可执行实验：** 在测试 Maven 项目创建“接口改动”和“单元测试”两个 Worktree，分别运行 Agent；验证分支 Diff、`target/` 缓存、端口冲突和合并冲突处理。[Windows 安装与命令](https://github.com/max-sixty/worktrunk#install)。
+
+### 04｜D4Vinci/Scrapling：网页采集从解析器扩展到完整采集流水线
+
+**官方地址：** [D4Vinci/Scrapling](https://github.com/D4Vinci/Scrapling)；**技术栈/语言：** Python 3.10+、HTTP Fetcher、浏览器渲染、CSS/XPath、异步 Spider、MCP/CLI。
+
+**主要用途：** 把页面抓取、结构解析、数据导出、任务重试、并发和动态网页处理集成起来，也可作为 Agent 的受控网页资料采集工具。
+
+**近期热度与活跃：** 今日 **97,823 Star、+1,661 stars today**，仓库有文档、测试、讨论和公开维护记录。作者给出的速度 Benchmark 只是特定环境测试，不代表所有网站都能获得相同收益。
+
+**核心优点：** 提供 CSS/XPath、相似元素适配、JSON/CSV 等导出与 MCP 能力；可把公开信息采集作为 AI 研究或每日内容工作流的标准步骤。
+
+**主要缺点/局限：** 网站反自动化、登录态与页面结构可能变化；采集要遵守授权、robots、服务条款和频率限制。浏览器访问的页面也可能包含 Prompt Injection。基础 `pip install scrapling` 并不自动包含所有浏览器/Spider 依赖。
+
+**成熟度/维护：** 中高、近期活跃；**适用场景：** 合法公开数据收集、文档分析、测试站点采集。**关注建议：★★★★★，先验证数据质量与成本。**
+
+**可执行实验：** 用 20 个自建或明确允许抓取的页面测试字段抽取、重复抓取去重、错页识别、响应时间和错误重试，保留来源 URL 与抓取时间。[官方 README](https://github.com/D4Vinci/Scrapling#readme)。
+
+### 05｜floci-io/floci：Java 项目可复现的 AWS 本地集成测试
+
+**官方地址：** [floci-io/floci](https://github.com/floci-io/floci)；**技术栈/语言：** Java、Docker、AWS SDK、Testcontainers、Maven，支持多语言 SDK 测试。
+
+**主要用途：** 在本地模拟 AWS 服务并提供容器化测试实例，减少开发和 CI 对真实 AWS 账号的依赖。适合从 Spring Boot 的对象存储、队列或事件集成开始评测。
+
+**近期热度与活跃：** 今日 **30,312 Star、+784 stars today**，近期持续上榜；官方维护 SDK 兼容性测试和 Testcontainers 模块。文档中的 Java Testcontainers 1.x 与 2.x/Boot 4.x 对应不同依赖系列，必须按工程版本核对。
+
+**核心优点：** 每个测试可启动隔离实例，避免共享测试环境；便于重现异常和降低云服务试验成本；适配 Java Testcontainers。官方提供跨 SDK 的兼容测试清单。
+
+**主要缺点/局限：** 模拟成功不保证真实 AWS 的权限、配额、事件一致性、失败语义和全部 API 行为相同；仍需 Docker 资源，服务兼容程度应逐项核验。
+
+**成熟度/维护：** 中高、持续维护；**适用场景：** Java 微服务、AWS SDK、CI 集成测试。**关注建议：★★★★★，工程收益明确。**
+
+**可执行实验：** 使用独立的 Spring Boot 测试模块，在 Floci 中执行 S3 上传/下载、权限拒绝、超时重试，与真实 AWS 测试账号做一次关键差异比对。[官方 Testcontainers 文档](https://github.com/floci-io/floci#testcontainers)。
+
+### 06｜scenario-labs/skills：为 AI 创作引入模型选择、预算和一致性检查
+
+**官方地址：** [scenario-labs/skills](https://github.com/scenario-labs/skills)；**技术栈/语言：** Python/Markdown Agent Skills、Scenario MCP、DCC/游戏引擎工具链、视频/图像/音频/3D 模型调用。
+
+**主要用途：** 为 Claude Code、Codex、Cursor 等 Agent 提供生成图片、视频、配音、角色资产、3D 模型与剪辑的工作指引，包括先选择模型、估算价格、保留角色/品牌一致性、再交付成品。
+
+**近期热度与活跃：** 今日 **2,965 Star、+674 stars today**，处于快速吸引创作者关注的阶段；官方仓库已有多种制作流程和针对 Blender/Unity 等软件的专门 Skills，但部分深度工具的完整实测覆盖仍待观察。
+
+**核心优点：** 把创作从“一句话出图”变为可核算的素材生产链；有多模型选择、风格一致性和预算约束；对 AI 短视频、产品展示和游戏资产有参考价值。
+
+**主要缺点/局限：** Skills 不是本地免费生成模型，实际操作常依赖 Scenario 服务、外部 API、软件和付费额度；不同模型的版权、商用范围、身份一致性和水印规则需分别审查；技能数量不能替代成片质量。
+
+**成熟度/维护：** 早中期、近期热度上升；**适用场景：** AI 自媒体与内容产品 PoC。**关注建议：★★★★★，先做小预算实测。**
+
+**可执行实验：** 用 1 个虚构角色制作 3 条 15 秒连续短视频，核验人物一致性、字幕准确率、模型费用、人工返工和可商用授权；不要一次性批量生成。[官方 Skills 目录](https://github.com/scenario-labs/skills)。
+
+### 07｜google/skills：来自产品团队的 Google Cloud 专项 Agent 知识
+
+**官方地址：** [google/skills](https://github.com/google/skills)；**技术栈/语言：** Python/Markdown Agent Skills、Google Cloud/GKE/BigQuery/Agent Platform 操作知识、CLI；Apache-2.0。
+
+**主要用途：** 为 Agent 提供 Google Cloud 认证、GKE、数据服务、推理部署、RAG、云平台故障排查等流程化参考，避免每次从泛化 Prompt 猜测云产品细节。
+
+**近期热度与活跃：** 今日 **22,298 Star、+199 stars today**；官方 README 标注仓库仍在积极开发，有面向不同云产品的 Skill 目录。
+
+**核心优点：** 由产品生态来源维护，指向更具体的操作路径；按需安装单个 Skill；**适用场景：** 比较 GKE AI 推理、云架构与传统自建服务的职责。
+
+**主要缺点/局限：** Skill 文本不是云 API 的保证，随产品版本变化仍需核对官方文档；安装或使用过程中可能涉及本地 `gcloud` 凭据与真实云资源；不能因为是官方仓库就自动授予写权限。
+
+**成熟度/维护：** Skill 内容持续更新中，单条技能成熟度不一；**适用场景：** 云架构、GKE 运维、Google AI Agent。**关注建议：★★★★☆，按具体项目引入。**
+
+**可执行实验：** 选一条 GKE 部署排障 Skill，只让 Agent 在本地测试 YAML 上给建议，核查其命令与现用版本文档，禁止自动修改真实云账号。[官方 Skills 列表](https://github.com/google/skills#available-skills)。
+
+### 08｜microsoft/VibeVoice：语音识别与多说话人内容生产
+
+**官方地址：** [microsoft/VibeVoice](https://github.com/microsoft/VibeVoice)；**技术栈/语言：** Python、PyTorch/Transformers、ASR、TTS、vLLM 相关推理组件；MIT 代码许可，模型权重另核。
+
+**主要用途：** 长音频语音识别、说话人区分与时间戳输出；项目亦包含语音合成研究路线。官方文档提出 ASR 一次处理最长约 60 分钟并给出“谁在何时说了什么”的结构化结果。
+
+**近期热度与活跃：** 今日 **55,761 Star、+214 stars today**。注意官方明确写出的 **2026-07-23 ASR BitNet CPU 推理发布是历史进展，不是今天发布**；这期入选原因是当日榜单关注，而非新版本。
+
+**核心优点：** 长音频上下文与说话人标注适合访谈、教学和录音整理；自定义热词可能改善专有名词；有 CPU 推理方向可研究本地数据处理。
+
+**主要缺点/局限：** 语音合成能力、代码与权重可用性必须分别核实，官方曾因滥用而移除部分 TTS 代码；多人重叠说话、技术术语和噪声会影响准确率；真实模型大小、GPU/CPU 延迟及许可需验证。
+
+**成熟度/维护：** 研究工程中高，相关功能发布较早，近期持续被关注；**适用场景：** 中文技术录音转写和教学音频处理。**关注建议：★★★★☆。**
+
+**可执行实验：** 用自录 10 分钟脱敏技术对话比较 VibeVoice-ASR 与现有 Whisper/转录流程的字错率、说话人错误率、时间戳和实时处理成本。[官方模型说明](https://github.com/microsoft/VibeVoice#models)。
+
+### 09｜mattpocock/skills：小型可组合的软件工程 Skills
+
+**官方地址：** [mattpocock/skills](https://github.com/mattpocock/skills)；**技术栈/语言：** Shell/Markdown Skills、Claude Code/Codex/Gemini/Copilot/Pi 等插件或 Skill 安装流程；MIT。
+
+**主要用途：** 把需求澄清、文档对齐、技术沟通、工程 Review 等经验做成小型可组合的 Agent 指令，而不是让一套大型框架接管全部开发流程。
+
+**近期热度与活跃：** 今日 **314,992 Star、+2,053 stars today**；另有第三方按相同日期快照记录的 **近 7 日约 +8,167 Star**。README 有安装和更新路径，热度非常高，但传播热度不能代替提效实测。
+
+**核心优点：** 技能职责小，容易逐个采用；跨 Codex/Claude/Pi 使用；关注“先对齐需求再修改代码”这种可复用工程方法。
+
+**主要缺点/局限：** 多插件安装路径可能重复导入同一 Skill；自动更新可能改变行为；Hook、Prompt 和配置写入需要审核；“名师经验”不等于对每个业务团队都有效。
+
+**成熟度/维护：** 内容集合中等至中高、近期活跃；**适用场景：** Coding Agent 工程协作。**关注建议：★★★★☆，借鉴具体技能而非整包安装。**
+
+**可执行实验：** 选一个微服务需求，让原生 Agent 与加一个需求澄清 Skill 的 Agent 完成同任务；比较遗漏、单测覆盖、总 Token、审核成本。[官方 README](https://github.com/mattpocock/skills#readme)。
+
+### 10｜spring-projects/spring-ai：Java 业务系统的稳定接入基线
+
+**官方地址：** [spring-projects/spring-ai](https://github.com/spring-projects/spring-ai)；**技术栈/语言：** Java、Spring Boot、Maven、Chat/Embedding、结构化输出、Tool Calling、向量数据库、RAG 与 MCP 生态；Apache-2.0。
+
+**主要用途：** 用 Spring 风格的 API 将企业数据和业务接口接入模型，重点是强类型工具与业务服务集成，而不是包办所有长任务编排。
+
+**近期热度与活跃：** **本期为工程补充项目，不在已取得的今日 Trending 榜单中；没有可靠的 11 月 6 日 Star 增量，故不编造数字。** 仓库有持续维护的 Starter、多模型适配、参考文档和升级说明。
+
+**核心优点：** 适配现有 Java/Spring 团队；抽象 Chat、Embedding、向量数据库和结构化返回；利于按领域 API 构建 Tool Calling，保留业务层的强类型校验。
+
+**主要缺点/局限：** 统一 API 无法保证各模型的 Thinking、流式和工具协议完全一致；Agent 任务恢复、授权和事务仍需其他组件。README 的兼容矩阵为 **Spring AI 2.x 对 Spring Boot 4.x，Spring AI 1.1.x 对 Boot 3.5.x**，不能任意混用。
+
+**成熟度/维护：** 高，Spring 官方工程生态持续维护；**适用场景：** 企业 AI API、内部助手和 RAG。**关注建议：★★★★★，作为 Java 基线持续关注。**
+
+**可执行实验：** 以 Boot 3.5 或 Boot 4 的正确 BOM 创建只读订单 Tool，验证权限、Schema、超时和模型切换，与 Copilot SDK/AgentScope 的职责对照。[官方兼容说明](https://github.com/spring-projects/spring-ai#readme)。
+
+### 11｜cilium/cilium：让云原生 Agent 沙箱具备可观测网络边界
+
+**官方地址：** [cilium/cilium](https://github.com/cilium/cilium)；**技术栈/语言：** Go、C/eBPF、Linux 内核、Kubernetes CNI、Hubble、网络策略；用户态 Apache-2.0，BPF 部分有单独许可说明。
+
+**主要用途：** Kubernetes 网络、服务连接、身份驱动的 L3–L7 网络策略和流量观测，能帮助限定 Agent Sandbox 可以访问哪些服务与外网目的地。
+
+**近期热度与活跃：** **作为长期基础设施观察项纳入，不声称它在今日 Trending 上榜。** 官方仓库有数万次提交、维护分支、文档与社区活动；未取得可靠的今日 Star 增量。
+
+**核心优点：** 网络策略可依据工作负载身份而非不稳定的 Pod IP；Hubble 可观察允许/拒绝流量；可对多集群微服务和 Sandbox 进行东西向网络治理。
+
+**主要缺点/局限：** CNI 变更可能影响全局连通性，学习和排障成本高；网络允许不等于业务鉴权通过；单机 Docker 场景采用整套 Cilium 往往过度设计。
+
+**成熟度/维护：** 高，长期维护；**适用场景：** Kubernetes 微服务、多租户 Agent 执行环境和网络安全。**关注建议：★★★★★，按平台需要落地。**
+
+**可执行实验：** 在测试 K8s 集群默认拒绝 Agent Pod 出站，仅开放指定只读服务，验证 Hubble 拒绝日志、DNS 和策略回滚。[官方网络策略说明](https://github.com/cilium/cilium#network-policy)。
+
+### 12｜lz4/lz4：高性能压缩依然是值得关注的基础设施
+
+**官方地址：** [lz4/lz4](https://github.com/lz4/lz4)；**技术栈/语言：** C、LZ4/LZ4_HC、命令行工具与跨语言库；BSD-2-Clause。
+
+**主要用途：** 用高解压速度和较低 CPU 开销压缩日志、缓存、消息或存储数据。它不是新出现的 AI 项目，而是本期用于提醒“技术价值不等于热榜新增 Star”的基础设施项目。
+
+**近期热度与活跃：** 今日 Trending 显示 **12,336 Star、+16 stars today**；属于经过长期使用的成熟算法库。README 的 Benchmark 使用老旧特定机器和数据集，不能当成 2026 年机器上的通用性能结论。
+
+**核心优点：** 压缩/解压开销低、实现成熟、跨语言生态广；对日志和消息系统的 P95/吞吐有现实研究价值。
+
+**主要缺点/局限：** 压缩比可能低于 Zstd 等算法；高压缩模式牺牲 CPU；小消息、已压缩图片和加密数据可能收益很差；消息体压缩仍需考虑兼容与安全限制。
+
+**成熟度/维护：** 高，长期成熟；**适用场景：** 基础设施性能优化、消息与日志存储。**关注建议：★★★★☆，按性能基准决定。**
+
+**可执行实验：** 用真实但已脱敏的日志 JSON 和消息载荷，对比 LZ4、Zstd、无压缩时的压缩比、P95、CPU、吞吐与网络流量。[官方 Benchmark 口径](https://github.com/lz4/lz4#benchmarks)。
+
+## 三、今日最值得重点看的 Top 3
+
+### TOP 1 — [NVIDIA/auto-ontology](https://github.com/NVIDIA/auto-ontology)
+
+**推荐理由：** 今日 **+2,707 stars today**，并且不只是另一个“让模型回答数据库问题”的聊天层。它强调语义定义、SQL 可验证性和数据血缘；对于企业 Agent 能否输出可信业务数字，这是比 Prompt 调优更关键的环节。
+
+**优先行动：** 用三张模拟业务表和两个冲突口径做 NL-to-SQL 对照评测，要求每条结果能追溯原始表与指标定义。
+
+**主要风险：** 本体质量受元数据治理制约，多服务与 NIM 推理成本需核算；高热度不代表已经完成大规模生产验证。
+
+### TOP 2 — [vercel-labs/agent-desktop](https://github.com/vercel-labs/agent-desktop)
+
+**推荐理由：** 今日 **+2,173 stars today**。它把电脑操作从“看图猜坐标”推进到“读取系统可访问性树→按引用操作→再次观察”，且提供 Windows 支持，对实际桌面软件的 Agent 操作很有研究价值。
+
+**优先行动：** 在隔离 Windows 用户/VM，用测试应用验证一次完整的观察—操作—复查流程，并记录错误恢复与权限边界。
+
+**主要风险：** 可读屏幕、剪贴板和窗口内容形成高敏感权限，不要直接连接真实账号与支付应用；可访问性树也不是无条件稳定。
+
+### TOP 3 — [max-sixty/worktrunk](https://github.com/max-sixty/worktrunk)
+
+**推荐理由：** 虽然今日增长 **+546** 不及前两者，但它非常贴近长期开发效率：让多个 Coding Agent 分目录并行修改，降低相互覆盖，保留清晰的 Git Diff。相比搭建完整多 Agent 平台，验证成本更低。
+
+**优先行动：** 在 Windows Maven Demo 上用 `git-wt` 创建两个功能分支，执行并行测试与冲突处理。
+
+**主要风险：** Worktree 不是安全沙箱，数据库/端口/构建缓存仍共享，Windows Terminal 与 `wt` 命令名冲突需处理。
+
+## 四、今日五项趋势与技术取舍
+
+**趋势一｜企业 AI 的瓶颈从模型调用走向可信语义层。** Auto Ontology 与 Spring AI 在架构中位置不同：前者统一指标和数据语义，后者方便 Java 业务系统调用模型与领域 Tool。不能把“RAG 召回准确”当成“业务指标定义正确”。
+
+**趋势二｜Computer Use 正跨越网页边界，但权限治理必须先行。** Agent Desktop 能操作系统桌面，Scrapling 擅长网页资料采集；前者处理本地 UI，后者处理合法网页抓取，两者都会遇到敏感信息和不可信输入，不能只靠 Prompt 进行权限限制。
+
+**趋势三｜多 Coding Agent 的最小可行协作依然是良好的 Git 工程流程。** Worktrunk 让并行分支更轻量，mattpocock/skills 提供需求沟通与 Review 的可组合方法。真正的验收应是测试通过、可审查 Diff、冲突可控，而不是启动多少个 Agent。
+
+**趋势四｜AI 内容创业需要从“可生成”走向“可交付、可核算”。** Scenario Skills 与 VibeVoice 分别覆盖可复用多媒体生产和语音处理。要测角色一致性、说话人准确率、字幕、素材许可、一次成功率及单位成本，而不是把 Skill 数量当成生产力。
+
+**趋势五｜成熟基础设施应有独立于热门 Star 的观察位。** Floci 改善云 SDK 的 CI 可重复性；Cilium 管网络边界；LZ4 管消息与日志的 CPU/传输成本。它们的技术价值来自可验证的故障模型和运行指标，不来自当天涨幅。
+
+## 五、今日行动计划（按产出优先）
+
+| 优先级 | 建议实验 | 时间预算 | 核心验收指标 |
+|---|---|---:|---|
+| P0 | Worktrunk + Windows Java 项目两 Worktree | 35–50 分钟 | 两 Agent 改动互不覆盖，Diff 可审，端口/缓存冲突清晰 |
+| P0 | Agent Desktop 的测试桌面操作 | 30–45 分钟 | snapshot、定位、执行、复查、失败可恢复，无真实凭据 |
+| P0 | NVIDIA Auto Ontology 模拟数据评测 | 60–90 分钟 | 两种指标口径、生成 SQL 正确率、来源与权限 |
+| P1 | Floci + Testcontainers Java S3 集成测试 | 45–60 分钟 | 上传/下载、异常/重试、SDK/Boot 版本兼容 |
+| P1 | Scenario 短视频素材流水线 | 45–60 分钟 | 角色一致、字幕、授权、成本、返工时长 |
+| P1 | Scrapling 合法网页采集 PoC | 30–45 分钟 | 20 页成功率、字段质量、限速、可追溯来源 |
+| P1 | VibeVoice 技术对话 ASR | 40 分钟 | 字错率、说话人、时间戳、资源成本 |
+| P2 | Google Cloud 单个 Skill 的只读审查 | 20 分钟 | 命令正确性、云权限与版本兼容 |
+| P2 | mattpocock 单项需求澄清 Skill | 30 分钟 | 需求遗漏、测试、Token、人工 Review |
+| P2 | Spring AI Tool 调用 / Cilium 出站策略 | 60 分钟 | Schema、权限拒绝、审计、故障复现 |
+| P2 | LZ4 vs Zstd 压缩对照 | 30 分钟 | 压缩比、CPU、P95、网络总成本 |
+
+**如果今天只有约 90 分钟：** 优先做 **Worktrunk（40 分钟）＋ Agent Desktop（40 分钟）＋ 记录结论（10 分钟）**。它们对现有 Windows/AI 编程环境改动较小、结果容易量化。Auto Ontology 则安排为单独的数据架构 PoC，不宜仓促接入真实业务数据库。
+
+## 六、来源与准确性说明
+
+**当日热榜：** [GitHub Trending](https://github.com/trending)；[按天查询入口](https://github.com/trending?since=daily)。**近期增长对照：** [whatstrending.ai 2026-11-06 星标日快照](https://whatstrending.ai/repos)（用于识别七日热度，统计口径不同）。
+
+**主要官方技术来源：** [NVIDIA Auto Ontology](https://github.com/NVIDIA/auto-ontology)、[Agent Desktop/平台支持](https://github.com/vercel-labs/agent-desktop#platform-support)、[Worktrunk/Windows 安装](https://github.com/max-sixty/worktrunk#install)、[Scrapling](https://github.com/D4Vinci/Scrapling)、[Floci/Testcontainers](https://github.com/floci-io/floci#testcontainers)、[Scenario Skills](https://github.com/scenario-labs/skills)、[Google Skills](https://github.com/google/skills)、[VibeVoice](https://github.com/microsoft/VibeVoice)、[Engineering Skills](https://github.com/mattpocock/skills)、[Spring AI](https://github.com/spring-projects/spring-ai)、[Cilium](https://github.com/cilium/cilium)、[LZ4](https://github.com/lz4/lz4)。
+
+**核验边界：** 今日热度来自可访问的 Trending 快照；README、平台兼容和历史更新来源于官方仓库。各项目“更快、更安全、降低成本”等效果未独立验证。部分官方仓库的抓取页面比今天更早，故不把其中的旧 Star 作为今日值；未查到今日数据的项目明确记为“未取得今日快照”。所有入选仓库官方地址均已确认。
+
+**最终结论：** 今天最值得投入的是**可信企业数据语义、受控桌面 Agent 和可靠的 Git 并行工作区**。同时用 Floci 打牢 Java 集成测试，用 Scenario/VibeVoice 验证能否真正形成低返工、有授权、成本清晰的内容生产链。
+
+**2026 年 11 月 6 日 GitHub 热榜日报完整文字正文结束。**
+
+-->
+</body></html>
