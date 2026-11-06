@@ -1,0 +1,668 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>全球 AI 大模型与 Agent 技术官方日报 | 2026-11-01</title><style>
+:root{--paper:#fffaf0;--ink:#1a1a1a;--red:#e74a37;--blue:#1857dc;--yellow:#ffdc58;--muted:#606060;--line:#202020}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f2efe6;color:var(--ink);font-family:system-ui,-apple-system,'Segoe UI','Noto Sans CJK SC','Microsoft YaHei',sans-serif;line-height:1.85}
+.shell{max-width:980px;margin:0 auto;background:var(--paper);min-height:100vh;box-shadow:0 8px 40px #0002}
+.masthead{background:var(--yellow);padding:26px clamp(16px,5vw,52px);border-bottom:5px solid var(--line);display:grid;grid-template-columns:1fr auto;align-items:end;gap:10px}.masthead .tag{background:var(--blue);color:white;padding:4px 12px;font-weight:800;letter-spacing:.1em;transform:rotate(2deg);font-size:13px}.masthead h1{font-size:clamp(1.7rem,4vw,3rem);margin:0;line-height:1.18;letter-spacing:-.06em}
+.masthead small{display:block;font-size:.85rem;letter-spacing:.1em;font-weight:700;margin-bottom:8px}
+main{padding:26px clamp(16px,5vw,52px) 64px;min-width:0;overflow-wrap:anywhere}
+main>h1:first-child{display:none}
+h2{font-size:clamp(1.25rem,3.4vw,1.8rem);line-height:1.4;border-top:4px solid var(--line);padding-top:19px;margin:44px 0 18px;letter-spacing:-.03em;scroll-margin-top:18px}
+h3{font-size:1.05rem;margin:29px 0 8px;background:var(--yellow);display:table;padding:2px 10px;box-decoration-break:clone;scroll-margin-top:18px}
+p{margin:12px 0}a{color:var(--blue);text-underline-offset:3px;text-decoration-thickness:1px;overflow-wrap:anywhere}strong{font-weight:780}
+pre{background:#192236;color:#f4f5fb;padding:17px 19px;border:3px solid #0d1421;overflow-x:auto;max-width:100%;border-radius:0;font-size:.81rem;line-height:1.55;tab-size:2}
+code{font-family:ui-monospace,Consolas,Monaco,monospace;font-size:.9em;overflow-wrap:anywhere}p code,li code,td code{background:#ece5d1;padding:1px 4px;border-radius:2px}
+.table-scroller{max-width:100%;overflow-x:auto;border:2px solid var(--line);margin:18px 0;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:550px;font-size:.91rem;line-height:1.55}th{background:var(--blue);color:#fff;text-align:left}th,td{border-right:1px solid #c6c3bd;border-bottom:1px solid #c6c3bd;padding:10px 11px;vertical-align:top}tr:nth-child(even) td{background:#f2efe6}
+ul,ol{padding-left:1.4rem}li{margin-bottom:8px}li::marker{color:var(--red)}
+hr{border:0;border-top:3px dashed var(--red);margin:38px 0}
+nav{padding:18px clamp(16px,5vw,52px);background:#ece7db;border-bottom:2px solid #1a1a1a}nav summary{font-weight:800;cursor:pointer}nav .items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 18px;margin-top:10px}nav a{font-size:.82rem;display:block}
+footer{padding:18px clamp(16px,5vw,52px);font-size:12px;background:#1a1a1a;color:white}
+@media(max-width:600px){.masthead{grid-template-columns:1fr}.masthead .tag{justify-self:start}.shell{box-shadow:none}body{background:var(--paper)}nav .items{grid-template-columns:1fr}main{padding-top:12px}h2{margin-top:34px}table{min-width:480px}}
+@media print{.shell{box-shadow:none}nav{display:none}body{background:white}main{padding:10px}a{color:inherit}pre{white-space:pre-wrap}}
+</style></head><body><div class="shell"><header class="masthead"><div><small>GLOBAL AI × AGENT / OFFICIAL DAILY</small><h1>全球 AI 大模型与 Agent 技术官方日报</h1><small>2026.11.01 · 北京时间 · 13 家厂商</small></div><div class="tag">OFFLINE / FULL TEXT</div></header><nav><details><summary>内容目录｜点击展开</summary><div class="items"><a href="#section-1">今日必看摘要</a>
+<a href="#section-2">一、Anthropic｜Claude Code v2.1.316：安全、群组治理和子 Agent 配置</a>
+<a href="#section-10">二、OpenAI｜Evals 10 月 31 日计划进入只读阶段，11 月 30 日关闭</a>
+<a href="#section-18">三、Google｜Gemini Computer Use GA（10 月 30 日遗漏补录）</a>
+<a href="#section-26">四、Google｜Gemini CLI 0.67.0 Nightly（10 月 31 日）</a>
+<a href="#section-34">五、xAI｜Imagine 图像旧别名于 11 月 2 日计划改变映射</a>
+<a href="#section-42">六、13 家厂商官方巡检状态表</a>
+<a href="#section-43">七、正式版本与 Model ID 基线</a>
+<a href="#section-44">八、跨厂商兼容性与迁移矩阵</a>
+<a href="#section-45">九、今日工程行动 Checklist</a>
+<a href="#section-48">十、综合判断</a></div></details></nav><main><h1>全球 AI 大模型与 Agent 技术官方日报</h1>
+<p><strong>2026 年 11 月 1 日（星期日）｜北京时间｜13 家厂商官方增量巡检</strong></p>
+<p>**核验基线：**2026 年 10 月 31 日上一期日报。重点检查 10 月 31 日上午 8:00 之后至 11 月 1 日早间可核实的官方发布，并补录上一期遗漏的重要更新。</p>
+<p>本期的重点不是新的基础模型性能排行榜，而是 <strong>Claude Code 企业安全与成本治理、OpenAI 旧评测平台生命周期，以及 Google Computer Use 正式开放</strong>。</p>
+<p>以下严格区分新发布、历史补录、既定退役日期和待核验内容。所有性能、成本、权限与可用范围都以官方公开证据为限。</p>
+<h2 id="section-1">今日必看摘要</h2>
+<p><strong>① Anthropic｜Claude Code v2.1.316 正式发布。</strong> 2026 年 10 月 31 日发布。新增子 Agent 独立 Effort 设置、企业群组共享预算、多层策略合并、Bedrock Guardrail 输入标记，并修复 PowerShell Hooks、受限工作目录文件上传和模型白名单验证等问题。<strong>优先级：必看。</strong> <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.316">官方 Release</a>。</p>
+<p><strong>② OpenAI｜旧 Evals 平台于 10 月 31 日进入计划只读阶段。</strong> 这是 2026 年 6 月 3 日已公布的退役安排，不是今天新宣布的政策。官方计划 10 月 31 日将已有 Evals 设为只读，并于 <strong>11 月 30 日关闭相关 Dashboard 和 API</strong>。Agent Builder 也计划于 11 月 30 日关闭。<strong>优先级：必看（存量系统）。</strong> <a href="https://developers.openai.com/api/docs/deprecations">官方退役时间表</a>。</p>
+<p><strong>③ Google｜Gemini Computer Use GA（历史遗漏补录）。</strong> 官方 Gemini API Changelog 记载于 <strong>2026 年 10 月 30 日</strong>，覆盖 Interactions API 和 GenerateContent API，支持浏览器、移动端与桌面 Agent，并提供 Java、Python、JavaScript 接入示例。<strong>优先级：必看（Agent Runtime）。</strong> <a href="https://ai.google.dev/gemini-api/docs/changelog">官方更新日志</a> · <a href="https://ai.google.dev/gemini-api/docs/computer-use">Computer Use 文档</a>。</p>
+<hr/>
+<h2 id="section-2">一、Anthropic｜Claude Code v2.1.316：安全、群组治理和子 Agent 配置</h2>
+<p><strong>官方标题：</strong> Release v2.1.316。**日期：**2026-10-31（GitHub 显示 01:01；是否为 UTC 按 GitHub 页面解释）。**类型：**正式 Latest Release。<strong>优先级：必看。</strong> <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.316">官方直接来源</a>。</p>
+<h3 id="section-3">1）内容、版本与发布范围</h3>
+<p>Claude Code <code>v2.1.316</code> 主要新增和修复：</p>
+<div class="table-scroller"><table>
+<thead>
+<tr>
+<th>能力</th>
+<th>官方配置或变化</th>
+<th>业务与工程意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>子 Agent Effort</td>
+<td><code>CLAUDE_CODE_SUBAGENT_EFFORT</code></td>
+<td>子任务默认 Effort 可独立于主会话</td>
+</tr>
+<tr>
+<td>UltraThink</td>
+<td><code>CLAUDE_CODE_DISABLE_ULTRATHINK</code></td>
+<td>可关闭 <code>ultrathink</code> 关键字触发</td>
+</tr>
+<tr>
+<td>群组预算</td>
+<td><code>pooled_budget</code></td>
+<td>企业用户群组共享月度额度，成员限制仍存在</td>
+</tr>
+<tr>
+<td>多层策略</td>
+<td><code>managed.policy_mode: layered</code></td>
+<td>多个匹配策略按顺序合并</td>
+</tr>
+<tr>
+<td>Bedrock Guardrail</td>
+<td><code>guardrail.input_tagging</code></td>
+<td>为 Prompt Attack Filter 提供输入标签</td>
+</tr>
+<tr>
+<td>PowerShell Hook</td>
+<td>修复若命令以类型转换、<code>param</code>、<code>using</code>、属性开头时退出码 2 未阻断的问题</td>
+<td>Windows 安全审批可按约定拒绝</td>
+</tr>
+<tr>
+<td>限定工作目录</td>
+<td>修复 <code>--restricted</code> 会话利用 Read Allow Rule 上传目录外文件</td>
+<td>降低资料外泄风险</td>
+</tr>
+<tr>
+<td>Gateway Model Allow/Deny</td>
+<td>对请求中的所有模型字段检查 <code>availableModels</code>、<code>deniedModels</code>、<code>models</code></td>
+<td>防止复合请求绕过限制</td>
+</tr>
+<tr>
+<td>Agent 恢复</td>
+<td>修复子 Agent 唤醒时模型回退及未获安全裁决时云任务未标失败</td>
+<td>加强任务状态与权限一致性</td>
+</tr>
+</tbody>
+</table></div>
+<p>还修复了部分压缩响应损坏导致的网络挂起、私有 CA 交叉证书循环，以及 Bedrock/Vertex 区域模型不可用时的回退问题。Release 同时重复提醒 Opus 4.8 Fast Mode 将于 11 月 30 日移除，<strong>这是先前已公布的退役提醒，不计入新公告。</strong></p>
+<h3 id="section-4">2）核心技术机制与知识点</h3>
+<p><strong>子 Agent 的默认推理档位不再必须跟随主会话。</strong> 例如主 Agent 需要较高推理预算规划任务，但只读子 Agent 负责检索与校验时，可以独立配置默认 Effort。具体可用档位和费用由选定模型及 Provider 决定，环境变量不是新的模型档位。</p>
+<p><strong>多层策略</strong>意味着企业授权必须考虑多条同时匹配的规则，而不只是第一条命中的策略。顺序、覆盖与拒绝优先级应在真实环境测试，不能根据 <code>layered</code> 一词自行假定合并算法。</p>
+<p><strong>PowerShell Hooks 的拒绝退出码与工作区文件边界</strong>影响 Agent 是否真的能够安全执行。Prompt 写“不要上传敏感文件”不能替代文件系统层、工具权限层与服务器端业务授权。</p>
+<pre><code class="language-text">Developer / Enterprise IdP
+           |
+           v
+   Claude Apps Gateway
+   Group Budget + Layered Policy
+           |
+           v
+   Model / Effort Selection
+           |
+           v
+      Agent Runtime
+       /        \
+ Main Agent   Subagents
+       \        /
+           v
+ Hook / Sandbox / Tool Authorization
+           |
+           v
+ Execution Ledger + Audit
+</code></pre>
+<h3 id="section-5">3）为什么有价值，证据边界</h3>
+<p>对企业多租户 AI Coding 和远程执行环境，群组预算、模型白名单与文件访问保护直接影响合规和成本上限；PowerShell Hook 的修复则影响 Windows 用户安全策略是否实际生效。</p>
+<p>这不是新 Claude 基础模型，不应将 CLI 修复推导为统一模型 Benchmark、上下文、Token 单价或 P95 性能提升。官方没有给出普适的延迟收益。</p>
+<h3 id="section-6">4）适用业务与产品</h3>
+<p>Windows 11/PowerShell 5.1、Git Bash、企业 Apps Gateway、Bedrock、Vertex AI、第三方 Anthropic Base URL、MCP、Skills、Hooks、长上下文 Compaction、多 Agent、CI 自动修复，以及多项目预算治理。</p>
+<h3 id="section-7">5）对 Java/Spring Boot、企业 Gateway 和 Agent Runtime 的帮助</h3>
+<p>企业服务端可将权限决策拆为：</p>
+<pre><code class="language-text">Authenticated User
+    -&gt; Tenant / Group Policy
+    -&gt; Allowed Model / Max Spend / Effort
+    -&gt; Agent Tool Permission
+    -&gt; Domain Gateway Authorization
+    -&gt; Business Idempotency
+    -&gt; Audit Log
+</code></pre>
+<p>建议保留 <code>taskId</code>、<code>tenantId</code>、<code>groupId</code>、<code>requestedModel</code>、<code>resolvedModel</code>、<code>effectiveEffort</code>、<code>toolCallId</code>、<code>permissionDecision</code>、<code>cost</code>、<code>executionStatus</code>。Nacos 适合管理业务配置和可审计模型路由，但每次对客户数据的授权必须由业务服务最终判断。</p>
+<h3 id="section-8">6）升级步骤、示例与验收</h3>
+<p>在隔离仓库运行 PowerShell 5.1：</p>
+<pre><code class="language-powershell">claude --version
+where.exe claude
+
+# 仅用于诊断设置是否存在，不输出真实密钥
+$env:ANTHROPIC_BASE_URL
+$env:CLAUDE_CODE_SUBAGENT_EFFORT
+$env:CLAUDE_CODE_DISABLE_ULTRATHINK
+</code></pre>
+<p>升级前备份 Settings、Hooks、MCP 配置。测试以下边界：拒绝 Hook 返回退出码 2；受限会话不能向外上传测试工作目录之外的文件；双群组策略的合并结果与文档一致；不允许的 Model ID 被拒绝；子 Agent 恢复后仍使用获准模型；发生网络中断后可解释状态。</p>
+<p><strong>验收标准：</strong> 未授权执行与文件外传为零、成本限制可验证、请求错误和权限决策可定位、Resume 不触发重复的业务写入。与企业审批相关的行为必须在测试环境复现，不能只检查 CLI 版本。</p>
+<h3 id="section-9">7）优先级、兼容性、成本和迁移判断</h3>
+<p><strong>必看；安全敏感环境优先测试后升级。</strong> <code>v2.1.314</code> 用户应特别回归 Hooks、文件上传、子 Agent Effort、Gateway 模型白名单。新的企业功能不保证普通第三方中转站支持；不披露未经核实的模型价格、Context Window 或 Thinking 档位。</p>
+<hr/>
+<h2 id="section-10">二、OpenAI｜Evals 10 月 31 日计划进入只读阶段，11 月 30 日关闭</h2>
+<p><strong>官方标题：</strong> OpenAI API Deprecations — Evals platform / Agent Builder。**最初公告日期：2026-06-03。**本期涉及的既定节点：2026-10-31。**类型：生命周期到期提醒，非新发布。<strong>优先级：必看（旧平台在用者）。</strong> <a href="https://developers.openai.com/api/docs/deprecations">官方退役时间表</a>。</p>
+<h3 id="section-11">1）内容是什么？</h3>
+<p>官方已公布：</p>
+<div class="table-scroller"><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>原公告 / 里程碑日期</th>
+<th>影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Evals 平台</td>
+<td>2026-06-03</td>
+<td>发布弃用公告</td>
+</tr>
+<tr>
+<td>既有 Evals</td>
+<td><strong>2026-10-31</strong></td>
+<td>计划变为只读</td>
+</tr>
+<tr>
+<td>Evals Dashboard/API</td>
+<td><strong>2026-11-30</strong></td>
+<td>计划关闭</td>
+</tr>
+<tr>
+<td>Agent Builder</td>
+<td><strong>2026-11-30</strong></td>
+<td>计划关闭；ChatKit 继续可用</td>
+</tr>
+<tr>
+<td>可复用 Prompt 对象 <code>v1/prompts</code></td>
+<td><strong>2026-11-30</strong></td>
+<td>计划关闭</td>
+</tr>
+</tbody>
+</table></div>
+<p>OpenAI 官方给出的 Evals 迁移方向是 Promptfoo；Agent Builder 则可参考 Agents SDK 或 ChatGPT Workspace Agents 的迁移资料。<strong>已核实官方计划日期，尚未在用户账号中实测只读或关停状态。</strong></p>
+<h3 id="section-12">2）核心技术机制</h3>
+<p>这些是<strong>产品级接口生命周期事件</strong>，不是 GPT 模型退役。即使相同 Model ID 继续可调用，基于旧 Dashboard/API 构建的定时评测或可视化编排仍可能中断。</p>
+<pre><code class="language-text">Existing Evals / Agent Builder
+          |
+          v
+ Asset Inventory + Export
+          |
+          v
+ Data / Grader / Workflow Mapping
+          |
+          v
+ Promptfoo or Agents SDK
+          |
+          v
+ Regression + Audit + Cutover
+</code></pre>
+<p>需要区分评测数据集、评分器、执行任务和报告。不能只导出少量平均分后宣布迁移成功。</p>
+<h3 id="section-13">3）为什么有价值？</h3>
+<p>Evals 是模型上线质量门槛的一部分。一旦旧平台不可写或者关闭，团队可能失去历史评测、自动化门禁和可追溯性。此次既定节点与<strong>企业 AI Gateway 的回归评测治理</strong>直接相关。</p>
+<p>但平台退役本身没有证明迁移后的工具更准确或更便宜，实际表现应按业务任务验证。</p>
+<h3 id="section-14">4）适用业务场景</h3>
+<p>持续评测、Prompt 优化、编码 Agent 质量门禁、MCP/Tool Calling 回归、RAG 检索正确率和多模型路由决策。没有使用旧 Evals/Agent Builder 的项目不需要迁移。</p>
+<h3 id="section-15">5）对企业架构的帮助</h3>
+<p>将评测执行从特定模型厂商控制台抽象出来，以便替换工具。建议评测资产包含：</p>
+<pre><code class="language-text">evalCaseId | datasetVersion | expectedBehavior
+provider | modelSnapshot | promptVersion
+toolPolicy | graderVersion | traceId
+passed | failureReason | grossCost
+</code></pre>
+<p>业务写入、权限和高风险操作的门禁必须依赖确定性规则；模型评分可辅助判断，但不能直接替代授权。</p>
+<h3 id="section-16">6）迁移步骤、代码与验收</h3>
+<p>首先清点旧项目和 CI 脚本，判断是否调用 Evals API、是否还在创建 Eval Run，以及是否依赖 Agent Builder 节点定义。随后导出有权限的测试数据、评分规则和历史结果，做新旧评分器对照，最后迁移定时任务及 Dashboard 链接。</p>
+<p>Windows PowerShell 5.1 可扫描当前仓库的候选引用：</p>
+<pre><code class="language-powershell">$patterns = @('/v1/evals', 'agent-builder', '/v1/prompts', 'eval_id')
+Get-ChildItem . -Recurse -File -ErrorAction SilentlyContinue |
+    Where-Object { $_.Extension -in '.java','.py','.js','.ts','.json','.yml','.yaml','.properties' } |
+    Select-String -Pattern $patterns -SimpleMatch
+</code></pre>
+<p><strong>验收标准：</strong> 旧评测数据已备份；新运行器能够复现代表性 Golden Tasks；评分差异可解释；CI 不再依赖即将关闭的 Endpoint；有一条可回退且不依赖旧 Dashboard 的审计路径。该脚本只扫描本地目录，不会读取远程 Nacos 或云端历史数据。</p>
+<h3 id="section-17">7）优先级和兼容性成本</h3>
+<p><strong>必看（在用者），优先完成资产清点与迁移。</strong> 无旧接口依赖者仅需关注。Promptfoo 等新工具的许可证、部署成本、Grader 兼容性需要独立评估；没有可靠的统一迁移成本或新旧价格对比，故不杜撰金额。</p>
+<hr/>
+<h2 id="section-18">三、Google｜Gemini Computer Use GA（10 月 30 日遗漏补录）</h2>
+<p><strong>官方标题：</strong> Gemini API Release Notes — Computer Use generally available。**原发布日期：2026-10-30。**状态：GA（工具能力；须按模型与账号核实）。**类型：正式 API 更新的历史补录。<strong>优先级：必看。</strong> <a href="https://ai.google.dev/gemini-api/docs/changelog">官方 Changelog</a> · <a href="https://ai.google.dev/gemini-api/docs/computer-use">Computer Use 文档</a>。</p>
+<h3 id="section-19">1）内容是什么、Model ID 与范围</h3>
+<p>Google 将 Computer Use 工具正式开放到 <strong>Interactions API 和 GenerateContent API</strong>。其文档介绍浏览器、移动端和桌面的交互式 Agent，模型通过屏幕观察输出操作建议，真实点击与键盘执行则由开发者实现。</p>
+<p>官方最小示例使用 <code>gemini-3.8-flash</code>。这说明官方文档列出了一个示例模型，但不等于全部模型、账号和区域均支持全部 Computer Use 能力；必须查询实际支持列表。</p>
+<h3 id="section-20">2）核心机制、输入输出 Schema 与 Thinking</h3>
+<p>关键循环是：</p>
+<pre><code class="language-text">User Intent
+    -&gt; Computer Use API
+    -&gt; Function Call: click/type/navigate + intent
+    -&gt; Policy / Safety Decision
+    -&gt; Sandbox UI Executor
+    -&gt; Screenshot / Action Result
+    -&gt; Continue Model Loop
+</code></pre>
+<p>官方响应示例中，<code>steps[].type="function_call"</code>，例如 <code>name="click"</code>，<code>arguments</code> 包括归一化的 <code>x</code>、<code>y</code> 以及 <code>intent</code>。坐标需要按当前屏幕尺寸换算；不是直接使用原始物理像素。</p>
+<p>支持的 Gemini 4 / 3.x 模型还包含安全策略类别，例如 <code>FINANCIAL_TRANSACTIONS</code>、<code>SENSITIVE_DATA_MODIFICATION</code>、<code>COMMUNICATION_TOOL</code>、<code>ACCOUNT_CREATION</code>、<code>DATA_MODIFICATION</code>、<code>USER_CONSENT_MANAGEMENT</code> 和 <code>LEGAL_TERMS_AND_AGREEMENTS</code>。即使设置某些策略覆盖，模型仍可能要求确认；客户端必须处理 <code>safety_decision</code>。</p>
+<p>官方还讨论不同 Thinking Level 如何平衡操作质量和延迟，但<strong>本期不虚构统一参数枚举或默认值</strong>。GA 指的是工具能力，不意味着特定模型推理价格、Context Window 或许可证自动变更。</p>
+<h3 id="section-21">3）价值及证据边界</h3>
+<p>此前大量企业 GUI 自动化需要自研视觉解析、鼠标和键盘指令适配。正式工具协议可以减少部分集成工作，但模型执行仍可能误点击、忽略状态、遭遇 Prompt Injection 或遇到需要人工接管的页面。</p>
+<p>没有经过独立同场景验证的数据，不能宣称它已经可靠替代 Playwright、RPA 或结构化 REST API。</p>
+<h3 id="section-22">4）适用场景</h3>
+<p>浏览器回归测试、手机应用 UI 测试、无需正式 API 的内部旧系统、桌面文档流程、非敏感信息检索，以及需要复核的 Agent 操作。对于支付、实名身份、医疗资料和合同签署等高后果动作，应保持人工批准与确定性控制。</p>
+<h3 id="section-23">5）对 Java / Spring Boot / Agent Gateway 的帮助</h3>
+<p>Google 官方 Java SDK 文档提供 <code>Client</code>、<code>CreateModelInteraction</code>、<code>ComputerUse</code> 和 <code>EnvironmentEnum</code> 示例。建议将<strong>模型规划</strong>与<strong>实际 UI 执行</strong>分离，后者必须运行在隔离浏览器/虚拟机中。</p>
+<p>以下 Java 片段按官方文档最小示例摘写，主要用于说明 SDK 形状；必须与实际 Java SDK 版本匹配：</p>
+<pre><code class="language-java">Client client = new Client();
+CreateModelInteraction req = CreateModelInteraction.builder()
+    .model("gemini-3.8-flash")
+    .input(InteractionsInput.of("Search for Gemini API on Google."))
+    .tools(Arrays.asList(
+        ComputerUse.builder()
+            .environment(EnvironmentEnum.BROWSER)
+            .build()))
+    .build();
+
+Interaction interaction =
+    client.interactions
+          .create(CreateInteractionRequestBody.of(req))
+          .interaction()
+          .get();
+</code></pre>
+<p>真实系统还需要实现后续操作循环、屏幕反馈、超时、权限和审计。Spring Boot 可以负责业务 API；Browser Runner 可选 Playwright 或其他隔离执行器，不应让模型直接获得本机管理员权限。</p>
+<h3 id="section-24">6）可实践步骤与验收标准</h3>
+<p>首先准备隔离浏览器和一个自己控制的测试页面（不连接真实支付、邮件或企业敏感系统）。再按官方文档选用支持的模型与 SDK，运行一条只读任务，例如搜索并读取本地测试站点标题。</p>
+<p>完整处理步骤：</p>
+<ol>
+<li>记录初始屏幕尺寸和截图；只暴露已允许的网页。</li>
+<li>接收 <code>function_call</code>，验证动作类型、坐标、目标域名及安全决策。</li>
+<li>如果要求 <code>require_confirmation</code>，立即停止自动执行并交给人类批准。</li>
+<li>在隔离环境执行动作，回传结果与最新屏幕状态。</li>
+<li>限制操作步数、Token、最长执行时长和重试次数；保留审计日志。</li>
+</ol>
+<p><strong>验收标准：</strong> 无未经授权点击/提交、工具输出结构稳定、操作失败可定位、人工接管有效、重复请求不会产生重复写入。验证码与服务条款不能由 Agent 擅自绕过或接受。</p>
+<h3 id="section-25">7）优先级、兼容性与成本风险</h3>
+<p><strong>必看，建议从只读 UI 测试 PoC 开始，不立即迁移关键业务。</strong> 需要单独核实正式 Model ID、认证、地区、配额、截屏隐私、Prompt Injection 防护、Think 配置和 API 定价；此次 GA 公告不提供所有组合的统一成本数字。</p>
+<hr/>
+<h2 id="section-26">四、Google｜Gemini CLI 0.67.0 Nightly（10 月 31 日）</h2>
+<p><strong>官方标题：</strong> Release v0.67.0-nightly.20261031.g6814e00d6。**发布时间：2026-10-31（GitHub 显示 01:19）。**状态：Pre-release，非 Stable。<strong>优先级：建议看（特定故障用户）。</strong> <a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.67.0-nightly.20261031.g6814e00d6">官方 Release</a>。</p>
+<h3 id="section-27">1）内容是什么</h3>
+<p>主要修复 <code>.git/info/exclude</code> 和 <code>core.excludesFile</code> 在影子仓库中的处理、SSE 流结束时待处理事件 Buffer、Windows libuv 零设备统计、扩展并发安装锁、GlobTool 符号链接路径解析，以及取消/回退后模型选择保持。</p>
+<h3 id="section-28">2）技术机制</h3>
+<p>最值得注意的是<strong>流式响应的结束处理</strong>：流已 EOF 不表示缓存中的最后一段事件可以被丢弃。并发安装扩展需要串行化，避免相同插件被同时写入；符号链接必须按规范路径解释，避免扫描范围错误。</p>
+<h3 id="section-29">3）价值与证据</h3>
+<p>这些修复改善的是 CLI 可靠性和文件处理，不是 Gemini 模型的新 Benchmark。没有可泛化的延迟和成本提升数字。</p>
+<h3 id="section-30">4）适用场景</h3>
+<p>Windows Terminal、PowerShell、Git、Gemini CLI、扩展插件、流式 Agent、需要取消与恢复的长任务。</p>
+<h3 id="section-31">5）企业架构帮助</h3>
+<p>可在统一 Streaming Adapter 中区分 <code>stream_completed</code>、<code>stream_interrupted</code> 和 <code>buffer_flushed</code>；插件更新采用锁和原子切换；后台工具状态不应仅依赖终端展示。</p>
+<h3 id="section-32">6）操作与验收</h3>
+<pre><code class="language-powershell">gemini --version
+</code></pre>
+<p>隔离仓库中验证跨平台忽略规则、Windows 特殊文件行为、并发扩展安装、SSE 最后一帧，以及中断/回退后 Model ID 不变。</p>
+<p>**验收标准：**最后一个流事件不丢失，配置不被覆盖，模型选择一致，失败可回滚。</p>
+<h3 id="section-33">7）优先级与迁移风险</h3>
+<p><strong>建议看；仍建议生产优先使用已核验 Stable <code>0.66.0</code>。</strong> Nightly 不应写成正式版，也不能从 CLI 小修复推断底层模型、Thinking 或价格更新。</p>
+<hr/>
+<h2 id="section-34">五、xAI｜Imagine 图像旧别名于 11 月 2 日计划改变映射</h2>
+<p><strong>原公告日期：2026-09-02｜切换日期：2026-11-02（明天）｜状态：既定未来迁移提醒，不是今天新发布｜优先级：建议看（图像业务必看）。</strong> <a href="https://docs.x.ai/developers/release-notes">官方 Release Notes</a> · <a href="https://docs.x.ai/developers/migration/imagine-image-quality-nov-2">官方迁移指南</a>。</p>
+<h3 id="section-35">1）内容是什么</h3>
+<p>xAI 宣布 <code>grok-imagine-image-quality</code> 将于 11 月 2 日退休；对旧 Slug 的请求会转由 <code>grok-imagine-image-2.0</code>，并指定 <code>quality=low</code> 处理。官方称请求和响应结构不变、单图费用降低。<code>grok-imagine-image</code>（1.0）不受此变更影响。</p>
+<h3 id="section-36">2）技术机制</h3>
+<p><strong>兼容别名仍能返回结果，不代表模型质量与费用语义没有改变。</strong> 因此，API HTTP 200 不能证明迁移后生成结果符合质量标准。企业应该固定新 Model ID 和 Quality，以免自动重定向隐藏变化。</p>
+<h3 id="section-37">3）为什么有价值</h3>
+<p>对于批量图片制作与 AI 短剧素材，图片质量差异会影响返工率，单图价格下降也可能被更多返工抵消。官方价格方向不是独立质量评测证据。</p>
+<h3 id="section-38">4）适用场景</h3>
+<p>海报、封面、人物素材、内容创作、图像生成及编辑流水线。</p>
+<h3 id="section-39">5）对企业 Gateway 的帮助</h3>
+<p>记录 <code>requestedModel</code>、<code>resolvedModel</code>、<code>requestedQuality</code>、<code>actualQuality</code>、<code>costPerAcceptedImage</code>，按最终合格素材的费用做决策。</p>
+<h3 id="section-40">6）实际步骤与验收</h3>
+<p>使用固定的 10 条非敏感 Prompt，在旧与新模型可同时使用的条件下对照质量、输出尺寸、实际计费及最终合格率。生产配置检查：</p>
+<pre><code class="language-powershell">$oldId = 'grok-imagine-image-quality'
+Get-ChildItem . -Recurse -File -ErrorAction SilentlyContinue |
+  Where-Object { $_.Extension -in '.java','.json','.yml','.yaml','.properties','.toml' } |
+  Select-String -Pattern $oldId -SimpleMatch
+</code></pre>
+<p>**验收标准：**不依赖未审查的别名回退；质量和成本变化可以量化；实际模型路由可观测。</p>
+<h3 id="section-41">7）优先级与风险</h3>
+<p><strong>图像业务建议立即检查，普通后端业务可跳过。</strong> 旧别名与新模型的行为不完全同义，不能把更低价格自动理解为业务总成本降低。</p>
+<hr/>
+<h2 id="section-42">六、13 家厂商官方巡检状态表</h2>
+<div class="table-scroller"><table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>本期官方证据与时间边界</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OpenAI</strong></td>
+<td>API Changelog 未见 10/31 新模型或正式 SDK；Codex Releases 最新 Stable 仍 <code>0.166.0</code>（10/29）；10/31 是 Evals 既定只读里程碑</td>
+<td><strong>生命周期里程碑；新模型/CLI 经核验无新增</strong></td>
+</tr>
+<tr>
+<td><strong>Anthropic</strong></td>
+<td>Claude Code <code>v2.1.316</code>（10/31）正式发布；Platform Release Notes 最近为 10/30 Opus 4.8 Fast 退役公告</td>
+<td><strong>重要正式更新</strong></td>
+</tr>
+<tr>
+<td><strong>Google / DeepMind</strong></td>
+<td>Gemini CLI 10/31 Nightly；Gemini API 主日志最近 10/30 Computer Use GA（历史补录）</td>
+<td><strong>小更新＋重要历史补录</strong></td>
+</tr>
+<tr>
+<td><strong>xAI</strong></td>
+<td>原厂 API Release Notes 最近新功能仍是 10/27 <code>guidelines</code>；11/2 Imagine 迁移将至</td>
+<td><strong>主日志经核验无重要新增；退役提醒</strong></td>
+</tr>
+<tr>
+<td><strong>智谱 / Z.ai</strong></td>
+<td>New Released 页面最新可见 8/26 <code>GLM-5.3-Flash</code>；Coding Plan/区域控制台未能穷尽</td>
+<td><strong>主公告无新增；其他待核验</strong></td>
+</tr>
+<tr>
+<td><strong>DeepSeek</strong></td>
+<td>原厂 Change Log 最近 10/17 Search API、Flash-1017；未核实到本窗口新快照</td>
+<td><strong>经核验主日志无新增</strong></td>
+</tr>
+<tr>
+<td><strong>腾讯</strong></td>
+<td>已核查混元官方产品及 API 导航；TokenHub 各区域 Changelog 和私有账户不可完整读取</td>
+<td><strong>未能充分核实</strong></td>
+</tr>
+<tr>
+<td><strong>阿里巴巴 / Qwen</strong></td>
+<td>百炼模型上架表最近明确为 10/29 <code>antdigital/Ling-3.1-flash</code>；Qwen Code Stable <code>0.26.4</code>；CUA Driver 0.27.0 为前期已报 Pre-release</td>
+<td><strong>已查主渠道无本期正式新增；其他待核验</strong></td>
+</tr>
+<tr>
+<td><strong>Moonshot / Kimi</strong></td>
+<td>Kimi Code 官方 Release 最新 Stable <code>2.4.1</code>（10/30）；本窗口未见新 Stable</td>
+<td><strong>经核验 Releases 无新增；模型 API 待核验</strong></td>
+</tr>
+<tr>
+<td><strong>字节跳动</strong></td>
+<td>Seed Latest Updates 最近明确为 10/14；方舟、Trae、即梦动态控制台未能完整核实</td>
+<td><strong>Seed 主渠道无新增；其他待核验</strong></td>
+</tr>
+<tr>
+<td><strong>TypeSafe AI</strong></td>
+<td>Blog 当前仍突出 Jev <code>1.14.0</code>；开发文档可读，但 API ReDoc 需要 JavaScript，实时价格、模型别名及 Danger Zone 未全面核实</td>
+<td><strong>博客无新增；API/实验功能待核验</strong></td>
+</tr>
+<tr>
+<td><strong>Meta AI</strong></td>
+<td>Engineering 最新已核实为 10/29 JiTTesting 等此前已报内容；AI Research Blog 公开列表未见本窗口新 Llama/SAM 权重</td>
+<td><strong>已查主渠道无重要新增；权重/许可待全面核验</strong></td>
+</tr>
+<tr>
+<td><strong>百度</strong></td>
+<td>千帆模型更新页日期仍为 10/18；PaddleOCR Releases 最新 <code>v3.7.0</code>（6/11）；ERNIE 等其他服务渠道未完全穷尽</td>
+<td><strong>已查模型记录无新增；其他待核验</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>核验口径：</strong>“无新增”仅针对列出的公开主渠道；不能推断各厂商全部区域、私有 Preview、账号后台和官方仓库都已经完整核实。对于 TypeSafe 的 Jev、System One、Choice、Score、Noul、Box、RLCD、长上下文与置信度校准，本期未获得新的正式版本证据，不以旧博客重新包装为今日新闻。</p>
+<p>官方巡检入口：<a href="https://developers.openai.com/api/docs/changelog">OpenAI Changelog</a> · <a href="https://platform.claude.com/docs/en/release-notes/overview">Anthropic Release Notes</a> · <a href="https://ai.google.dev/gemini-api/docs/changelog">Gemini API</a> · <a href="https://docs.x.ai/developers/release-notes">xAI</a> · <a href="https://docs.z.ai/release-notes/new-released">Z.ai</a> · <a href="https://api-docs.deepseek.com/updates/">DeepSeek</a> · <a href="https://cloud.tencent.com/document/product/1729">腾讯混元</a> · <a href="https://help.aliyun.com/zh/model-studio/newly-released-models">阿里云百炼</a> · <a href="https://github.com/MoonshotAI/kimi-code/releases">Kimi Code</a> · <a href="https://seed.bytedance.com/en/">ByteDance Seed</a> · <a href="https://typesafe.ai/blog">TypeSafe</a> · <a href="https://ai.meta.com/blog/">Meta AI</a> · <a href="https://cloud.baidu.com/doc/qianfan/s/Kmh4stnjp">百度千帆</a>。</p>
+<hr/>
+<h2 id="section-43">七、正式版本与 Model ID 基线</h2>
+<p>以下仅为本次能通过官方资料确认的版本与生命周期基线，<strong>不是全行业模型全量目录</strong>。</p>
+<div class="table-scroller"><table>
+<thead>
+<tr>
+<th>产品/接口</th>
+<th>基线版本或 Model ID</th>
+<th>性质与时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude Code</td>
+<td><strong><code>v2.1.316</code></strong></td>
+<td><strong>Latest 正式版，10/31</strong></td>
+</tr>
+<tr>
+<td>Claude Platform API</td>
+<td><code>2026-10-21</code></td>
+<td>已有正式 API 版本，非本期新增</td>
+</tr>
+<tr>
+<td>Anthropic Java SDK</td>
+<td><code>3.0.0</code></td>
+<td>历史主版本，需按具体集成回归</td>
+</tr>
+<tr>
+<td>Claude Opus 4.8 Fast</td>
+<td><code>claude-opus-4-8</code> + <code>speed:"fast"</code></td>
+<td>11/30 计划移除特定组合，非整个模型</td>
+</tr>
+<tr>
+<td>OpenAI Codex CLI</td>
+<td><strong><code>0.166.0</code></strong></td>
+<td>已核实 Stable，10/29</td>
+</tr>
+<tr>
+<td>OpenAI Evals</td>
+<td>原 Evals 平台</td>
+<td>10/31 计划只读；11/30 计划关闭</td>
+</tr>
+<tr>
+<td>Google Computer Use</td>
+<td>Tool <code>computer_use</code></td>
+<td><strong>10/30 GA，历史补录</strong></td>
+</tr>
+<tr>
+<td>Google Computer Use 示例模型</td>
+<td><code>gemini-3.8-flash</code></td>
+<td>官方文档示例，不代表所有区域均可用</td>
+</tr>
+<tr>
+<td>Gemini CLI</td>
+<td><strong><code>0.66.0</code></strong></td>
+<td>已核实 Stable</td>
+</tr>
+<tr>
+<td>Gemini CLI Nightly</td>
+<td><code>v0.67.0-nightly.20261031.g6814e00d6</code></td>
+<td>Pre-release</td>
+</tr>
+<tr>
+<td>xAI 图像旧别名</td>
+<td><code>grok-imagine-image-quality</code></td>
+<td>11/2 计划指向新模型 <code>quality=low</code></td>
+</tr>
+<tr>
+<td>xAI 新图像模型</td>
+<td><code>grok-imagine-image-2.0</code></td>
+<td>既有模型，非今日新发布</td>
+</tr>
+<tr>
+<td>Z.ai</td>
+<td><code>GLM-5.3-Flash</code></td>
+<td>8/26 历史发布</td>
+</tr>
+<tr>
+<td>DeepSeek API</td>
+<td><code>deepseek-flash</code>，当前历史快照 <code>DeepSeek-V4.1-Flash-1017</code></td>
+<td>10/17 已有发布</td>
+</tr>
+<tr>
+<td>Qwen Code</td>
+<td><code>0.26.4</code></td>
+<td>已核实 Stable</td>
+</tr>
+<tr>
+<td>Qwen CUA Driver</td>
+<td><code>0.27.0</code></td>
+<td>Pre-release，非 Qwen CLI Stable</td>
+</tr>
+<tr>
+<td>Kimi Code</td>
+<td><code>2.4.1</code></td>
+<td>10/30 正式版</td>
+</tr>
+<tr>
+<td>阿里云百炼</td>
+<td><code>antdigital/Ling-3.1-flash</code></td>
+<td>10/29 北京地域第三方模型上架</td>
+</tr>
+<tr>
+<td>TypeSafe AI</td>
+<td>Jev <code>1.14.0</code></td>
+<td>官方博客旧版本；实验能力需另核验</td>
+</tr>
+<tr>
+<td>PaddleOCR</td>
+<td><code>v3.7.0</code></td>
+<td>6/11 历史 Release</td>
+</tr>
+<tr>
+<td>百度千帆</td>
+<td><code>DeepSeek-V4.1-Flash-1017</code></td>
+<td>10/18 第三方模型上架</td>
+</tr>
+</tbody>
+</table></div>
+<p>**口径说明：**模型名称相同不等于 Provider、上下文、Thinking、Tool Calling、Schema、地区、计费、开源许可或数据留存相同。Meta Llama 的具体权重与许可证需要逐模型检查；本期没有证据支持新的 Llama 权重正式发布。</p>
+<p>不提供未经相同任务集、相同地区、模型快照和并发条件实测的 P95、价格或 Benchmark 横向排行榜。</p>
+<hr/>
+<h2 id="section-44">八、跨厂商兼容性与迁移矩阵</h2>
+<div class="table-scroller"><table>
+<thead>
+<tr>
+<th>事件</th>
+<th>Breaking / 成本 / 安全风险</th>
+<th>推荐动作</th>
+<th>生产结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude Code <code>2.1.316</code></td>
+<td>Hooks 拒绝未生效、模型白名单绕过、受限文件外传、群组策略和预算</td>
+<td>隔离环境回归权限与预算</td>
+<td><strong>验证后升级</strong></td>
+</tr>
+<tr>
+<td>OpenAI Evals 10/31 里程碑</td>
+<td>历史评测不可写、11/30 API/看板关闭</td>
+<td>导出数据、双轨评测迁移</td>
+<td><strong>在用者立即安排</strong></td>
+</tr>
+<tr>
+<td>Gemini Computer Use GA</td>
+<td>错误点击、Prompt Injection、截图隐私、误执行高风险动作</td>
+<td>隔离 UI Runner、强制人工批准</td>
+<td><strong>先只读 PoC</strong></td>
+</tr>
+<tr>
+<td>Gemini CLI 10/31 Nightly</td>
+<td>SSE EOF 事件丢失、扩展竞态与符号链接路径问题</td>
+<td>对应故障环境测试</td>
+<td><strong>保留 Stable</strong></td>
+</tr>
+<tr>
+<td>xAI Imagine 11/2 别名切换</td>
+<td>自动降到新模型低质量模式，画质与费用变化</td>
+<td>固定新 Model ID/Quality，实际评测</td>
+<td><strong>受影响者优先</strong></td>
+</tr>
+<tr>
+<td>Claude Opus 4.8 Fast 11/30</td>
+<td><code>speed=fast</code> 组合报错</td>
+<td>迁移支持的模型与速度模式</td>
+<td><strong>按时完成兼容回归</strong></td>
+</tr>
+<tr>
+<td>Qwen/Kimi 既有 Coding Agent</td>
+<td>文件读取上限、工具恢复、审批与插件兼容</td>
+<td>继续使用可复测的 Golden Tasks</td>
+<td><strong>按真实需求升级</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>跨语言企业 Gateway 推荐将 <code>provider/region/modelSnapshot/apiVersion/SDKVersion/contextWindow/reasoning/speed/toolSchema/retention/pricing/lifecycle</code> 分开管理；所有有副作用的动作应经过服务端权限与幂等。</p>
+<hr/>
+<h2 id="section-45">九、今日工程行动 Checklist</h2>
+<ul>
+<li>[ ] <strong>P0｜升级评测平台资产清单。</strong> 检查是否使用 OpenAI 旧 Evals、Agent Builder 或可复用 Prompt API，保留历史数据与评分器，按官方 11/30 日期安排迁移。</li>
+<li>[ ] <strong>P0｜Claude Code 权限回归。</strong> 检查 <code>v2.1.316</code> 的 PowerShell Hook 退出码、<code>--restricted</code> 文件上传、企业模型白名单、子 Agent Effort 和多层群组策略。</li>
+<li>[ ] <strong>P1｜Google Computer Use 最小实验。</strong> 在隔离浏览器执行只读任务，记录 function_call、截图、用户确认与最终状态。先不使用真实账号和敏感资料。</li>
+<li>[ ] <strong>P1｜Gemini CLI Stable/Nightly 分流。</strong> 仅因遇到 SSE、Windows 读取、扩展安装或 Glob 符号链接问题才考虑 Nightly 测试。</li>
+<li>[ ] <strong>P1｜xAI 图像别名迁移。</strong> 搜索 <code>grok-imagine-image-quality</code>，核查 11 月 2 日前后的质量档和单个合格素材的真实成本。</li>
+<li>[ ] <strong>P2｜补齐主渠道之外的核验盲区。</strong> 腾讯 TokenHub、字节方舟、智谱 Coding Plan、Meta Llama 具体许可证、TypeSafe ReDoc、百度千帆账号级地域及计费条件继续标记待核验，不强行凑新闻。</li>
+</ul>
+<h3 id="section-46">PowerShell 5.1 检查命令</h3>
+<pre><code class="language-powershell">codex --version
+claude --version
+gemini --version
+kimi --version
+qwen --version
+
+where.exe codex
+where.exe claude
+where.exe gemini
+
+$patterns = @(
+    '/v1/evals',
+    'agent-builder',
+    '/v1/prompts',
+    'grok-imagine-image-quality',
+    'claude-opus-4-8',
+    'CLAUDE_CODE_SUBAGENT_EFFORT'
+)
+
+Get-ChildItem . -Recurse -File -ErrorAction SilentlyContinue |
+  Where-Object {
+    $_.Extension -in '.java','.json','.yml','.yaml','.properties','.toml','.ps1'
+  } |
+  Select-String -Pattern $patterns -SimpleMatch
+</code></pre>
+<p>该脚本只扫描当前目录，不访问 Nacos、数据库、Cloud Secrets 或云账户。含密钥的配置搜索结果需脱敏，不能仅凭命中字符串判定受影响。</p>
+<h3 id="section-47">45 分钟小练习：从 UI Agent 到业务授权的完整链路</h3>
+<p>自建一个含三个按钮的测试网页：“查询订单”“导出测试报告”“模拟提交”。先让 Gemini Computer Use 只读查询，再触发“模拟提交”，检查 <code>require_confirmation</code> 能否把控制权交回人类；禁止 Agent 真正访问外部生产接口。</p>
+<p>建议记录：</p>
+<pre><code class="language-text">traceId | taskId | agentSessionId
+provider | modelSnapshot | sdkVersion
+toolCallId | actionIntent | screenshotHash
+permissionDecision | confirmationResult
+retryAttempt | idempotencyKey | finalState
+inputTokens | outputTokens | grossCost
+</code></pre>
+<p>**验收标准：**未批准的操作为零；状态可恢复；相同业务请求不会重复写入；失败可解释；截图中不包含真实敏感资料。若无法满足，不应生产接入。</p>
+<hr/>
+<h2 id="section-48">十、综合判断</h2>
+<p>本期真正重要的是<strong>Agent 执行控制面与基础设施治理</strong>：Anthropic 正在加强 CLI 的权限、群组策略、子 Agent Effort 和错误处理；Google Computer Use 从预览迈向正式工具接口，但真正的安全取决于隔离执行器、用户批准和服务端授权；OpenAI 旧 Evals 的只读里程碑则提醒团队，评测能力本身也需要可迁移、可追踪，不能完全绑定单家平台。</p>
+<p>对于 Java/Spring Boot/Nacos 或跨语言分布式系统，推荐：</p>
+<pre><code class="language-text">Business Applications
+       |
+       v
+Domain Gateway (Auth / Tenant / Idempotency)
+       |
+       v
+AI Gateway (Model / Provider / Region / Cost)
+       |
+       v
+Agent Runtime (MCP / Skills / Hooks / UI Tools)
+       |
+       v
+Execution Ledger (Retry / Resume / Approval)
+       |
+       v
+Evaluation + Security + Observability
+</code></pre>
+<p>**今天值得优先执行的三件事：**核查旧 Evals 平台迁移计划、对 Claude Code <code>v2.1.316</code> 做权限回归、为 Gemini Computer Use 建立隔离的只读 PoC。价格、Context Window 和模型性能不能凭客户端版本或厂商宣传推断，必须以官方接口与业务任务验证。</p>
+</main><footer>本报告正文完全离线可读；所有官方来源均为外部链接，打开需要联网。资料日期、版本与限制以所引用官方渠道为准。</footer></div></body></html>
