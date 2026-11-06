@@ -1,87 +1,66 @@
-# AI Daily Hub · 多栏目技术日报中心
+# AI Daily Hub · 多栏目技术日报归档
 
-**GitHub Pages（需 Pages 部署成功）**：https://aisuperteacher.github.io/ai-daily-hub/
+**网站**：[AI Daily Hub](https://aisuperteacher.github.io/ai-daily-hub/)  
+**栏目总览**：[查看全部归档栏目](https://aisuperteacher.github.io/ai-daily-hub/tasks.html)
 
-本仓库展示可核对来源的**完整原始技术日报与周报**。保留已有首页、栏目切换、日期筛选和搜索功能。历史补档按报告实际日期展示，绝不以摘要或一段运行通知冒充完整原文。
+本仓库保存和展示已经提交的公开技术日报、资讯周报与学习报告（完整 HTML）。网站支持栏目切换、历史日期选择、全文搜索及独立打开原始报告。
 
-## 2026-11-06 新增：政策、法规、顶会与政经趋势日报
+## 仓库当前内容
 
-- 新增第 10 个公开栏目：**全球 AI、科技与机器人政策趋势日报**，北京时间每日 09:00 独立生成。
-- 报告目录：`reports/ai-policy/YYYY-MM-DD.html`；通过 GitHub connector 归档完整 HTML，合并更新 `manifest.json`，由既有 GitHub Actions 自动发布到 Pages。
-- 当前 ChatGPT 自动化共 13 项：12 项已启用，`Business 48月优惠` 现已暂停。独立 ChatGPT Page 控制器与官方 AI 厂商日报仍保持分离。
-- **自动推送能力需以首次无人值守实际执行为准**：只有运行环境拥有 GitHub 权限、完整 HTML 写入且 Pages 工作流部署成功后才可声称该期已上线。当前设置不会对 GitHub Pages 主动抓取 ChatGPT 会话施加额外权限。
+根据 `manifest.json`，当前共 **10 个栏目、19 份完整 HTML 报告**。
 
-[打开政策日报栏目](https://aisuperteacher.github.io/ai-daily-hub/?topic=ai-policy)
+| 栏目 | 栏目 ID | 已归档报告 |
+|---|---|---:|
+| [全球 AI 大模型与 Agent 官方日报](https://aisuperteacher.github.io/ai-daily-hub/?topic=official-ai) | `official-ai` | 10 |
+| [全球 AI、科技与机器人政策趋势日报](https://aisuperteacher.github.io/ai-daily-hub/?topic=ai-policy) | `ai-policy` | 1 |
+| [AI Coding 工具日报](https://aisuperteacher.github.io/ai-daily-hub/?topic=ai-coding) | `ai-coding` | 1 |
+| [GitHub 热榜日报](https://aisuperteacher.github.io/ai-daily-hub/?topic=github-trending) | `github-trending` | 1 |
+| [AI 短剧制作技术雷达](https://aisuperteacher.github.io/ai-daily-hub/?topic=ai-video) | `ai-video` | 1 |
+| [企业架构与 AI-native 精选](https://aisuperteacher.github.io/ai-daily-hub/?topic=architecture) | `architecture` | 1 |
+| [自媒体平台政策周报](https://aisuperteacher.github.io/ai-daily-hub/?topic=creator-policy) | `creator-policy` | 1 |
+| [每日科技工作简报](https://aisuperteacher.github.io/ai-daily-hub/?topic=tech-brief) | `tech-brief` | 1 |
+| [AI / Cloud 活动与奖励](https://aisuperteacher.github.io/ai-daily-hub/?topic=offers) | `offers` | 1 |
+| [每日 AI 五词精讲](https://aisuperteacher.github.io/ai-daily-hub/?topic=learning) | `learning` | 1 |
 
-## 2026-11-06 早前任务核查（新增前快照）
+上述数字只统计仓库已经收录的完整 HTML，**不代表所有历史日期均已归档**。栏目、路径及每期报告均可在 [manifest.json](./manifest.json) 核对。
 
-ChatGPT 自动化管理接口本次返回 **12 项已启用、0 项暂停**。其中 9 项属于适合公开的内容发布栏目，另外 3 项不全部属于日报：
-
-| 自动化任务 | 状态 | 执行计划（北京时间） | 完整 HTML 入库 |
-|---|---|---|---:|
-| 全球 AI 大模型与 Agent 技术官方日报 | 已启用 | 每日 08:00 | 10 |
-| AI Dev Tools Daily Brief | 已启用 | 每日 07:00 | 1 |
-| GitHub 热榜日报 | 已启用 | 每日 07:00 | 0 |
-| AI 短剧技术日报 | 已启用 | 每日 07:00 | 1 |
-| Distributed & AI Architecture Weekly - Monday | 已启用 | 每周一 08:00 | 1 |
-| 自媒体政策周报 | 已启用 | 每周日 08:00 | 1 |
-| 每日科技工作简报 | 已启用 | 每日 08:00 | 0 |
-| AI/Cloud 活动奖励巡检 | 已启用 | 每日 08:00 | 0 |
-| 每日 AI 五词精讲 | 已启用 | 每日 08:00 | 0 |
-| Business 48月优惠 | 已启用 | 每日巡检 | 不公开：可能涉及账号及地区专属优惠 |
-| 知识库日期自测 + Dropbox 增量备份 | 已启用 | 每日 05:00 | 不公开：私人备份 |
-| 全球 AI 大模型与 Agent 技术官方日报｜日期归档 — Auto update | 已启用 | 每小时（独立的 ChatGPT Page 控制器） | 不属于日报 |
-
-> **说明**：状态以本次接口查询为准，而非以过去的任务运行成功与否推断。表中计划时间按任务定义展示；定时任务可能延迟运行。既有文档中“暂停”状态已据此纠正。页面栏目数与自动化任务数不同，因为后 3 项不进入公开的日报分类。
-
-## GitHub 自动归档和部署（2026-11-06 已配置）
-
-- 9 项公开日报/周报的**独立 ChatGPT 自动化提示词**均增加了完整 HTML 的 GitHub 提交、manifest 合并、并发冲突重试及回读验证规则，且原有执行计划、启用状态和全文交付要求不变。
-- **绝对分离**：`全球 AI 大模型与 Agent 技术官方日报`（任务 ID `6aa07a92a9fc8191ae71ba51b32a7075`）独立生成和归档官方 AI 日报；`全球 AI 大模型与 Agent 技术官方日报｜日期归档 — Auto update`（任务 ID `Automation_da61d44543e08191b799f1b239903674`）是 ChatGPT Page 的独立控制器，未被更改，不参与 GitHub 写入。
-- [查看 12 项任务独立清单](./tasks.html)；公开网页可从首页顶部访问。
-- [GitHub Pages 部署工作流](./.github/workflows/publish-pages.yml) 在 `main` 分支相应文件变更时自动运行，另每天 03:17 UTC（北京时间 11:17）对归档索引进行核验和补齐。仅构建并上传公开文件。
-- [归档校验与补齐脚本](./scripts/reconcile_archive.py) 检查已入库 HTML 的完整性、路径、索引统计；检查并收录符合要求且未入索引的完整 HTML，不以摘要造假。
-- **首次部署实测成功**：GitHub Actions `Publish AI Daily Hub` run [42154234855](https://github.com/aisuperteacher/ai-daily-hub/actions/runs/42154234855)，9 个栏目、11 份完整 HTML 均通过校验，Pages 部署步骤成功。
-- **尚未端到端验证的部分**：新提示词在 ChatGPT 定时执行时能否访问 GitHub connector 并提交完整文件，需要下一次实际运行后检查该期报告是否进入仓库。提示词不授予新的 GitHub 权限，且 GitHub Pages 不会自动拉取 ChatGPT 的私有历史对话。
-- **历史缺失**：已检查当前可访问的 ChatGPT 文件库及 Dropbox 历史备份，无法找回其他栏目原始完整 HTML；旧的截断运行结果或失效 sandbox 链接不可当作完整报告导入。
-
-## 现有历史报告
-
-当前已入库 **14 份完整 HTML**：
-
-- 全球 AI 官方日报：2026-10-30 至 2026-11-06，共 8 份；加上 **2026-10-15 13 家厂商完整报告**、**2026-10-03 至 10-07 OpenAI / Anthropic 补档**，共 10 份。
-- AI 短剧技术雷达：2026-10-03 至 10-06 的一份合集报告。
-- 自媒体政策周报：新恢复 2026-11-02—06 周中报告 1 份。
-- 企业架构：新恢复 2026-11-06 增补刊 1 份。
-- 其他尚空的栏目：已有自动化执行记录，但在本次可访问的文件库中仍未找到对应完整原始报告。**不将自动化最后消息、截断文字、失效的 sandbox 链接上传为完整日报。**
-
-- AI Dev Tools：2026-11-06 的 AI Dev Tools Daily Brief 已通过手动即时运行、GitHub 写入、Actions 索引和 Pages 部署链路验证。**这是当前会话的即时执行，不等于无人值守定时运行的插件权限已验证**。
-
-## 重要说明：历史并未全部找回
-
-ChatGPT 定时任务查询通常仅提供最新一次的运行记录和最新输出，并非可遍历的全部历史运行日志；部分最新输出还是 12,000 字截断文本，或仅包含到期的临时 HTML 文件链接。仓库当前没有这些旧文件的可验证完整副本，**因此不能宣称所有历史日报已全部迁移**。
-
-若之后从原会话、文件库或备份中取回完整 HTML，可使用 `scripts/add_report.py` 安全导入；添加后应核查完整性、原始日期、来源与敏感信息，再更新 `manifest.json`。
-
-## 静态网站和自动化的区别
-
-- **GitHub Pages** 只负责发布 `main` 分支的网页、搜索和按日期浏览；GitHub 文件存在不等于 Pages 网页已经部署。
-- **ChatGPT 12 个原自动化**：本次没有改动启停、提醒、频率或执行提示词；也未将其迁到 GitHub Actions。
-- **GitHub Actions 未来自动归档**：还需要单独配置经过授权的日报产出/文件同步机制。无法通过 Pages 单独直接获取 ChatGPT 私有会话和临时文件。
-- **公开边界**：不上传 Dropbox 备份、个人账号优惠结算、API Key、Cookie、Token、私有工作数据、内部项目材料或未脱敏工作空间内容。
-
-## 路径
+## 目录结构
 
 ```text
 /
-├── index.html
-├── manifest.json
-├── channels/
-├── reports/YYYY-MM-DD.html
-├── reports/official-ai/2026-10-15_13_providers.html
-├── reports/official-ai/2026-10-07_catchup.html
-├── reports/ai-video/
-└── scripts/add_report.py
+├── index.html                       # 日报首页：栏目、日期与全文搜索
+├── tasks.html                       # 仓库已有栏目总览
+├── manifest.json                    # 栏目及归档报告索引
+├── channels/                        # 栏目入口
+├── reports/                         # 归档的独立完整 HTML
+│   ├── YYYY-MM-DD.html              # 官方 AI 日报旧路径
+│   ├── official-ai/
+│   ├── ai-policy/
+│   ├── ai-coding/
+│   ├── github-trending/
+│   ├── ai-video/
+│   ├── architecture/
+│   ├── creator-policy/
+│   ├── tech-brief/
+│   ├── offers/
+│   ├── learning/
+├── scripts/
+│   ├── add_report.py                # 导入 HTML 与更新索引
+│   └── reconcile_archive.py         # 检查完整性与核对索引
+└── .github/workflows/
+    └── publish-pages.yml           # GitHub Pages 发布工作流
 ```
 
-[查看首页](https://aisuperteacher.github.io/ai-daily-hub/) · [GitHub 仓库](https://github.com/aisuperteacher/ai-daily-hub)
+## 发布与校验
+
+向 `main` 分支提交 HTML、索引或站点页面的相关改动时，仓库中的 [Publish AI Daily Hub](./.github/workflows/publish-pages.yml) 工作流负责校验报告、整理索引、构建静态站点并部署 GitHub Pages；此外设有每日一次的索引检查。
+
+- [查看 GitHub Actions 执行记录](https://github.com/aisuperteacher/ai-daily-hub/actions)
+- [归档校验脚本](./scripts/reconcile_archive.py)
+- [手动导入报告脚本](./scripts/add_report.py)
+
+**边界**：GitHub Pages 展示的是仓库中已经提交的文件，工作流不会凭空生成未提交的日报内容。
+
+## 查看历史报告
+
+在 [日报首页](https://aisuperteacher.github.io/ai-daily-hub/) 按栏目与日期浏览；每期报告都有独立 HTML 路径。历史文件缺失时不以摘要、运行通知或过期链接冒充完整原文。
