@@ -5,7 +5,7 @@
   "readme": "仅归档实际可取得的完整公开报告，历史缺失不以摘要补造；当前 12 项 ChatGPT 自动化均启用，其中 9 个公开内容栏目。私密备份及账号专属监测不公开。",
   "counts": {
     "topic_count": 9,
-    "verified_full_reports": 13
+    "verified_full_reports": 14
   },
   "categories": [
     {
@@ -102,8 +102,16 @@
       "task_status": "running",
       "cadence": "北京时间每日 07:00",
       "last_run": "2026-11-06",
-      "source_status": "missing_original",
-      "reports": []
+      "source_status": "partial_archive",
+      "reports": [
+        {
+          "date": "2026-11-06",
+          "title": "AI Dev Tools Daily Brief｜2026-11-06｜完整测试刊",
+          "label": "2026-11-06",
+          "path": "reports/ai-coding/2026-11-06.html",
+          "kind": "full"
+        }
+      ]
     },
     {
       "id": "github-trending",
