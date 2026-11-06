@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>自媒体政策与机会周报｜2026.11.02—11.06｜完整版</title>
+<meta name="description" content="2026年11月2日至6日自媒体创作者政策、平台功能及激励机会周中报告，完整离线HTML版本，含16平台扫描及官方来源。">
+<style>
+:root{--ink:#182531;--paper:#f7f1e5;--cream:#fffaf1;--rose:#ff857d;--blue:#489ab7;--yellow:#f9cd56;--green:#2c8a75;--line:#202d38;--muted:#51616b;--light:#e9dfcd;--shadow:6px 6px 0 var(--line)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:68px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:15px;line-height:1.82}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;background-image:radial-gradient(#8a7e6f 0.5px,transparent 0.7px);background-size:8px 8px;z-index:-1}
+a{color:#095a7b;text-decoration-color:var(--blue);text-decoration-thickness:1.5px;text-underline-offset:3px;overflow-wrap:anywhere}
+a:hover{color:#b44835}
+header{border-bottom:4px solid var(--line);background:var(--yellow);overflow:hidden}
+header .inner{max-width:1400px;margin:auto;padding:24px clamp(20px,4vw,55px) 30px;position:relative}
+header .inner::after{content:"✳";position:absolute;right:22px;top:0;color:var(--rose);font-size:150px;line-height:1;opacity:.45;transform:rotate(18deg);pointer-events:none}
+.kicker{display:flex;gap:8px;flex-wrap:wrap;position:relative;z-index:1}
+.stamp{display:inline-block;padding:2px 12px;background:var(--ink);color:#fff;font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;border:2px solid var(--ink)}
+.stamp.alt{color:var(--ink);background:var(--cream)}
+.display{font-size:clamp(2.1rem,5.5vw,4.4rem);line-height:1.15;max-width:900px;margin:19px 0 12px;letter-spacing:-.04em;font-weight:1000;position:relative;z-index:1}
+.deck{font-size:clamp(1rem,1.5vw,1.18rem);max-width:900px;position:relative;z-index:1;margin:0}
+.quickstats{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;position:relative;z-index:1}
+.stat{background:#fff8ea;border:2px solid var(--ink);padding:8px 14px;min-width:125px;box-shadow:3px 3px 0 var(--ink)}
+.stat b{font-weight:900;font-size:1.5rem;display:block;line-height:1.15}
+.stat small{font-size:11px;font-weight:700}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px;position:relative;z-index:1}
+button{cursor:pointer;background:var(--cream);border:2px solid var(--line);color:var(--ink);font:700 13px inherit;padding:8px 14px;box-shadow:3px 3px 0 var(--line);border-radius:0}
+button:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--line)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--rose);outline-offset:3px}
+.shell{display:grid;grid-template-columns:255px minmax(0,1fr);gap:clamp(22px,3.1vw,48px);max-width:1400px;margin:0 auto;padding:30px clamp(15px,3vw,42px) 100px}
+.sidebar{min-width:0}
+.side-inner{position:sticky;top:18px;border:3px solid var(--ink);background:var(--cream);padding:18px 14px 20px;box-shadow:var(--shadow);max-height:calc(100vh - 36px);overflow:auto}
+.side-title{font-size:12px;letter-spacing:.15em;font-weight:900;border-bottom:3px solid var(--ink);padding-bottom:11px;margin-bottom:10px}
+.side-inner nav a{display:block;padding:9px 8px;border-bottom:1px dashed #c7bfaf;color:var(--ink);font-size:13px;line-height:1.5;text-decoration:none}
+.side-inner nav a:hover{background:var(--yellow)}
+.side-note{font-size:12px;color:var(--muted);border-top:2px solid var(--ink);padding-top:12px;margin-top:10px}
+.main{min-width:0}
+.topline{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:9px}
+.overline{font-size:12px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.warning{background:#ffe1da;border:2px solid #c45e52;padding:12px 17px;margin:22px 0;font-size:13px}
+.timeline-panel{background:var(--cream);border:3px solid var(--ink);box-shadow:var(--shadow);padding:20px;margin:0 0 28px}
+.timeline-panel h2{font-size:1.2rem;margin:0 0 16px;background:none;border:0;padding:0}
+.timeline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.date-chip{padding:10px;background:#fff;border-left:5px solid var(--blue);min-width:0}
+.date-chip.future{border-left-color:var(--rose)}
+.date-chip span{font:900 20px/1.25 ui-monospace,Consolas,monospace;display:block}
+.date-chip small{font-size:11px;line-height:1.4;display:block;color:var(--muted)}
+article{background:var(--cream);border:3px solid var(--ink);padding:clamp(16px,3.5vw,48px);box-shadow:var(--shadow);overflow:hidden}
+article h1{font-size:clamp(1.75rem,3.8vw,2.8rem);letter-spacing:-.04em;line-height:1.2;margin:0 0 12px}
+article h2{scroll-margin-top:20px;font-size:clamp(1.35rem,2.7vw,2rem);line-height:1.35;margin:52px -8px 18px;padding:12px 15px;background:var(--yellow);border:2px solid var(--line);box-shadow:3px 3px 0 var(--line)}
+article h3{scroll-margin-top:20px;font-size:clamp(1.1rem,2vw,1.48rem);line-height:1.4;margin:34px 0 15px;padding-bottom:8px;border-bottom:3px solid var(--rose)}
+article h4{font-size:1.05rem;margin:24px 0 8px}
+article p{margin:12px 0 15px}
+article strong{font-weight:850}
+article h3 + p strong:first-child{background:#f9e6b3;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:1px 4px}
+article ul,article ol{padding-left:1.4em}
+article li{margin:6px 0}
+article hr{margin:30px 0;border:0;border-top:2px solid var(--line)}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;margin:16px 0 23px;border:2px solid var(--ink);background:#fff;}
+table.report-table{border-collapse:collapse;width:100%;min-width:570px;font-size:13px;line-height:1.65}
+table th{position:sticky;top:0;text-align:left;background:var(--ink);color:#fff;font-weight:800;padding:10px 11px;border-right:1px solid #6c7780;vertical-align:top}
+table td{padding:9px 11px;border-top:1px solid #c9c9c1;border-right:1px solid #e3dcd0;vertical-align:top}
+table tr:nth-child(even) td{background:#f8f1e2}
+code{background:#e9e2d6;padding:1px 5px;white-space:break-spaces;overflow-wrap:anywhere;border-radius:3px;font-size:.9em}
+pre{white-space:pre-wrap;background:#182531;color:#fff;padding:16px;overflow-x:auto}
+pre code{background:none;color:inherit}
+li.task-list-item{list-style:none;margin-left:-1.55em;padding:7px 9px;border-bottom:1px dashed #d1c7b5;display:flex;gap:10px;align-items:flex-start}
+.todo-checkbox{margin:8px 0 0;accent-color:#2c8a75;width:17px;height:17px;flex:0 0 17px;cursor:pointer}
+li.task-list-item.done{color:#53615e;background:#edf2eb}
+li.task-list-item.done > *:not(input){text-decoration:line-through;text-decoration-color:#9aa69f}
+.external::after{content:" ↗";font-weight:bold;font-size:12px;display:inline-block}
+footer{max-width:1300px;margin:0 auto 35px;padding:15px 25px;color:var(--muted);font-size:12px;display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between}
+.float-top{position:fixed;bottom:22px;right:22px;background:var(--yellow);border:2px solid var(--ink);padding:6px 12px;font-weight:900;box-shadow:3px 3px 0 var(--ink);z-index:8;text-decoration:none;color:var(--ink)}
+@media(max-width:1050px){.shell{grid-template-columns:205px minmax(0,1fr);gap:24px}.timeline{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:780px){header .inner{padding:20px 18px 26px}.shell{display:block;padding:16px 13px 70px}.sidebar{margin-bottom:22px}.side-inner{position:static;max-height:none;box-shadow:3px 3px 0 var(--ink)}.side-inner nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.side-inner nav a{padding:6px 4px;font-size:12px}article{padding:17px 15px 24px}article h2{margin-left:-3px;margin-right:-3px}.timeline{grid-template-columns:repeat(2,minmax(0,1fr))}.date-chip span{font-size:18px}header .inner::after{font-size:100px;right:-30px;opacity:.25}}
+@media(max-width:410px){.timeline{grid-template-columns:1fr}.quickstats{gap:6px}.stat{min-width:0;flex:1}.stat b{font-size:1.2rem}.side-inner nav{grid-template-columns:1fr}.display{font-size:2.15rem}}
+@media print{body{background:#fff;font-size:11pt}body::before,header .inner::after,.sidebar,.toolbar,.float-top{display:none!important}.shell{display:block;padding:0}article{border:0;box-shadow:none;padding:0;overflow:visible}header{background:#fff;border-bottom:2px solid black}.display{font-size:25pt}.timeline-panel{box-shadow:none;border:1px solid black}h2,h3{break-after:avoid}table{break-inside:auto}tr{break-inside:avoid}a{color:#000}.table-scroll{overflow:visible;border:0}table.report-table{min-width:0;font-size:9pt}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}button:hover{transform:none}}
+</style></head><body>
+<header><div class="inner">
+  <div class="kicker"><span class="stamp">CREATOR POLICY / ISSUE 09</span><span class="stamp alt">WEEK-TO-DATE · 2026</span></div>
+  <div class="display">自媒体政策<br>与机会周报</div>
+  <p class="deck">2026.11.02—11.06｜国内外主流平台政策、流量、工具、商业化与活动｜完整详细版</p>
+  <div class="quickstats"><div class="stat"><b>16</b><small>主流平台扫描</small></div><div class="stat"><b>8</b><small>重要动态</small></div><div class="stat"><b>9</b><small>有效激励机会</small></div><div class="stat"><b>11/13</b><small>Reddit RSS 期限</small></div></div>
+  <div class="toolbar"><button id="print" type="button">打印 / 保存 PDF</button><button id="copy-link" type="button">复制报告标题</button><button id="clear-tasks" type="button">重置行动清单</button></div>
+</div></header>
+<div class="shell"><aside class="sidebar"><div class="side-inner"><div class="side-title">CONTENTS / 报告目录</div><nav aria-label="报告目录">
+<a href="#section-01">一、本周重要变化速览</a>
+<a href="#section-02">二、国内平台：规则和账号治理</a>
+<a href="#section-03">三、海外平台：流量、广告与社群工具</a>
+<a href="#section-04">四、本周仍有效的创作者激励</a>
+<a href="#section-05">五、16 个主要平台的本周扫描结果</a>
+<a href="#section-06">六、近期执行节点与风险警示</a>
+<a href="#section-07">七、本周四类常见误读</a>
+<a href="#section-08">八、本周行动清单</a>
+<a href="#section-09">九、本周趋势判断与结论</a>
+</nav><div class="side-note">本版完整保留文字周报所有重要事实、地区/资格、生效时间、奖励规则、风险边界、行动和可点击官方来源。所有主体内容离线可阅读，外部来源链接需联网访问。</div></div></aside>
+<main class="main"><div class="topline"><span class="overline">POLICY WATCH · CREATOR ECONOMY</span><span class="overline">AS OF 2026-11-06 · GMT+8</span></div>
+<div class="warning"><strong>统计口径：</strong>周中版，仅覆盖 11 月 2—6 日。地区限定、灰度测试、奖金资格和“本周新变化/旧活动仍有效”已分别说明；不以未发生的周末事件补全。</div>
+<section class="timeline-panel" aria-label="关键时间线"><h2>关键政策与活动时间线</h2><div class="timeline"><div class="date-chip done"><span>11/04</span><small>小红书企业号/KOS治理生效</small></div>
+<div class="date-chip done"><span>11/05</span><small>TikTok英国创作者大奖开放投票</small></div>
+<div class="date-chip future"><span>11/11</span><small>TikTok Shop美国黑五活动开始</small></div>
+<div class="date-chip future"><span>11/13</span><small>Reddit RSS停止支持</small></div>
+<div class="date-chip future"><span>11/18</span><small>B站AiShorts投稿截止、TikTok英国投票截止</small></div>
+<div class="date-chip future"><span>11/20</span><small>AI Film Award 2027截止</small></div>
+<div class="date-chip future"><span>11/30</span><small>Reddit迁移奖金登记及国际短视频大赛截止</small></div>
+<div class="date-chip future"><span>12/03</span><small>爱奇艺互动小应用征集截止</small></div>
+<div class="date-chip future"><span>12/31</span><small>Reddit应用迁移和若干激励项目截止</small></div></div></section>
+<article id="report" aria-label="自媒体政策与机会周报完整正文"><h1 id="top">自媒体政策与机会周报｜2026.11.02—11.06</h1>
+<p><strong>第 9 期 · 周中更新 · 统计截至 2026 年 11 月 6 日（北京时间）</strong></p>
+<p><strong>结论：本周有重大政策变化。</strong> 最重要的是小红书针对企业号和 KOS 员工矩阵账号的新治理规则于 11 月 4 日正式生效。与此同时，微信小店发布两类新激励；Reddit 测试搜索广告；TikTok 英国创作者大奖启动投票；爱奇艺推出新的 AI 互动小应用征集赛。</p>
+<p><strong>本期覆盖窗口</strong>：2026 年 11 月 2—6 日。今天是周五，属于周中版，不把 11 月 7—8 日尚未发生的事件写进来。区分“本周新发布”“此前发布、本周生效”“持续开放的机会”。未经验证的地区或账号资格不会被假定为全面开放。</p>
+<h2 id="section-01">一、本周重要变化速览</h2>
+<div aria-label="左右滚动查看完整表格" class="table-scroll" role="region" tabindex="0"><table aria-label="报告数据表格" class="report-table">
+<thead>
+<tr>
+<th>重要性</th>
+<th>平台</th>
+<th>变化</th>
+<th>日期</th>
+<th>核心影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>★★★★★</td>
+<td>小红书</td>
+<td>企业号/KOS 违规营销、AI 欺骗和矩阵虚假推广关联治理正式生效</td>
+<td>11 月 4 日</td>
+<td>品牌主体与员工号可受到关联处理</td>
+</tr>
+<tr>
+<td>★★★★☆</td>
+<td>微信小店</td>
+<td>公众人物「星朋友来了」带货激励</td>
+<td>11 月 3 日—12 月 31 日</td>
+<td>指定公众人物、严资格，高额成长卡不等于现金</td>
+</tr>
+<tr>
+<td>★★★★☆</td>
+<td>微信小店</td>
+<td>11 月品牌代运营服务商 GMV 激励</td>
+<td>11 月 1—30 日</td>
+<td>机构型服务商奖励、非普通博主普惠</td>
+</tr>
+<tr>
+<td>★★★★☆</td>
+<td>抖音电商</td>
+<td>品牌混淆宣传及部分商家/创作者规则更新</td>
+<td>11 月 2—5 日核查</td>
+<td>带货品牌信息、口播和商品链接一致性</td>
+</tr>
+<tr>
+<td>★★★★☆</td>
+<td>Reddit</td>
+<td>搜索结果页测试广告展示位置</td>
+<td>11 月 3 日</td>
+<td>部分广告主开放，不是普通创作者分成</td>
+</tr>
+<tr>
+<td>★★★☆☆</td>
+<td>TikTok</td>
+<td>英国 TikTok Awards 公布候选并开放投票</td>
+<td>11 月 5 日</td>
+<td>英国地区荣誉和品牌曝光</td>
+</tr>
+<tr>
+<td>★★★☆☆</td>
+<td>WhatsApp</td>
+<td>Events 功能升级</td>
+<td>11 月 5 日</td>
+<td>群组外活动邀请、活动管理</td>
+</tr>
+<tr>
+<td>★★★☆☆</td>
+<td>微博</td>
+<td>游戏领域金橙 V 热点创作激励</td>
+<td>11 月</td>
+<td>合资格垂类作者，奖金公式待查</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="section-02">二、国内平台：规则和账号治理</h2>
+<h3 id="section-02-01">1. 小红书｜企业号和 KOS 违规营销治理正式生效</h3>
+<p><strong>级别：★★★★★｜公告 10 月 30 日；生效 11 月 4 日｜适用：中国大陆小红书认证企业号、品牌专业号、KOS 员工账号、品牌机构与代运营团队。</strong></p>
+<p><strong>发生了什么？</strong> 小红书官方聚光帮助中心发布的《专业号违规营销及AI类违规行为治理说明》，本周正式生效。平台明确处理四类问题：①违规营销，包括虚假营销、低质营销、水军/众包营销和违法禁售业务推广；②虚假包装或身份仿冒，例如伪造履历、专业资格或品牌关系；③矩阵化虚假推广，利用多个员工账号统一虚假话术或人设，制造并不存在的口碑与热度；④AI 欺骗，包含未经授权仿冒公众人物的肖像声音，以及伪造真实消费经历、聊天记录或评价来误导用户。</p>
+<p><strong>为什么重要？</strong> 新规特别强调企业对所管理 KOS 账号的责任。多个 KOS 账号集中违规，经核实后可联动处理关联蓝 V 账号及其他 KOS 账号。违规不再必然局限于发布内容的单个员工号，还可能影响品牌主体与矩阵其他成员。</p>
+<p><strong>处罚及申诉。</strong> 视程度可给予警告、取消专业号认证、封禁 KOS 身份、永久取消专业号认证、永久冻结 KOS 身份、限制违规企业再次入驻等；涉嫌违法行为可移送举报。对处罚有异议可按站内程序提交申诉材料复核。</p>
+<p><strong>重要边界。</strong> 正常使用 AI 辅助编辑真实内容，并不等于 AI 欺骗。合规经营多个真实员工账号也不是自动违规。高风险行为是用 AI 编造第一人称消费证据、假聊天记录或虚假人设，同时通过矩阵制造不真实的商业推荐。</p>
+<p><strong>创作者行动。</strong> 建立企业号/KOS 账号清单，核对真实管理关系与账号身份；对商品体验、消费者评价、聊天截图、素材和声音肖像授权存证；停止模板化虚假口碑、批量刷评和未经授权的 AI 仿冒。美妆、数码、汽车、家居、MCN 和代运营团队应优先排查。</p>
+<p><strong>来源：</strong> <a class="external" href="https://ad.xiaohongshu.com/next_help/docs/69c1a398db68750fe77e40c026386649" rel="noopener noreferrer" target="_blank">小红书聚光帮助中心官方规则</a>。</p>
+<h3 id="section-02-02">2. 抖音电商｜品牌混淆宣传与处置规则更新</h3>
+<p><strong>级别：★★★★☆（带货）｜本周规则中心核查：11 月 2—5 日｜适用：抖音电商商家、直播带货者、短视频商品推广账号。</strong></p>
+<p><strong>发生了什么？</strong> 抖音电商规则中心展示《发布/分享混淆品牌信息处置细则》等规则更新。即使不挂商品链接，达人也不应在直播口播、视频字幕、商品背景、评论和账号信息中制造消费者对品牌归属或授权关系的错误认识。例如实际销售 B 品牌却有意暗示为 A 品牌，或以突出配件商标、遮挡真实商标等手段误导用户。</p>
+<p><strong>为什么重要？</strong> 一条视频的口播、商品卡和真实商品商标不一致，可能成为品牌混淆行为。对科技数码、美妆、服装、家居等测评与带货账号尤为相关。</p>
+<p><strong>处罚与申诉。</strong> 规则列出的处置可涉及商品下架、视频仅自己可见、限制商品分享、直播中断、订单结算和佣金冻结等。遭遇平台处置时，商家/创作者应在收到通知后 7 个自然日内通过对应入口申诉。创作者参考路径：百应后台 → 体验 → 违规账号管理 → 申诉。保留商标、品牌授权、发票及正规进货证明。</p>
+<p><strong>重要边界。</strong> 品牌混淆在更早期已有相关规则；本周属于规则中心展示的修订与合规核查，不能把全部违规条款都称为 11 月首次生效，更不是所有非带货视频的新禁令。</p>
+<p><strong>创作者行动。</strong> 增加“实际品牌—商品链接—口播文案—字幕—品牌授权”的一致性检查；不要暗示未经授权的联名、代言或官方关联。</p>
+<p><strong>来源：</strong> <a class="external" href="https://school.jinritemai.com/doudian/web/articlev0/aJ8Z3L3r3qNg" rel="noopener noreferrer" target="_blank">抖音电商官方处置细则</a>。</p>
+<h3 id="section-02-03">3. 微信小店｜「星朋友来了」公众人物带货激励</h3>
+<p><strong>级别：★★★★☆（资格严格）｜活动 2026 年 11 月 3 日—12 月 31 日｜适用：符合平台条件的歌手、演员、艺术家、运动员、作家、主持人、企业家等公众人物及经营团队。</strong></p>
+<p><strong>发生了什么？</strong> 微信小店推出「星朋友来了」计划，按公众影响力及此前微信小店直播带货 GMV 区分新晋与成熟带货者。新晋的参考标准包括此前未入驻或过去六个自然月直播带货 GMV 低于 10 万元；成熟者的相关既有 GMV 达到或超过 10 万元。</p>
+<p><strong>奖励分档。</strong> 新晋 S 档最高 40 万点电商成长卡前置激励、额外 20 万点冷启动激励、最高 8% 技术服务费返还；成熟 A 档最高 24 万点前置成长卡、10 万点冲刺激励、最高 7% 技术服务费返还。各档位和发放均取决于平台审核。</p>
+<p><strong>参与要求。</strong> 公开报道列出的关键条件包括活动期总支付 GMV 目标至少 100 万元；新晋带货者商业化投入不低于相应平台成长卡补贴的 20%，成熟带货者不低于 40%；直播每场超过 4 小时，报名的主要个人 IP 本人出镜比例至少 50%；需满足前置短视频或直播预热任务，且主要成交店铺不能是本人自营/关联店铺。</p>
+<p><strong>为什么重要？</strong> 平台愿意用投流资源支持有一定外部影响力的带货者，但这不是普通账号登录即可获取现金的活动。成长卡是用于站内流量投放的权益而非可提现人民币，报道列出的有效期为发放后 30 个自然日。</p>
+<p><strong>创作者行动。</strong> 仅当满足公众人物资格、经营目标、真实出镜和商业投入条件时才值得核算投入产出。尚未积累成熟粉丝的个人创作者不应为此预支高额制作或投放成本。</p>
+<p><strong>证据等级：</strong> 微信小店成长中心公告摘要与亿邦动力报道转述，最终资格和金额以商家/带货者后台显示为准。</p>
+<p><strong>来源：</strong> <a class="external" href="https://m.ebrun.com/718201.html" rel="noopener noreferrer" target="_blank">亿邦动力关于「星朋友来了」的详细报道</a>。</p>
+<h3 id="section-02-04">4. 微信小店｜11 月品牌代运营服务商 GMV 激励</h3>
+<p><strong>级别：★★★☆☆（机构专属）｜活动 11 月 1—30 日｜适用：与微信小店符合条件的热招品牌建立正式代运营关系的服务商。</strong></p>
+<p><strong>发生了什么？</strong> 微信小店品牌代运营服务商激励包括活跃激励与跃迁激励。公开摘要列出某些直播/短视频经营场景的活跃激励可按相应结算 GMV 的 10% 计算，部分跃迁激励按超越历史峰值的结算 GMV 部分的 3% 计算。不同任务各有门槛与上限，不是可以无条件叠加的统一结算比例。</p>
+<p><strong>奖励及期限。</strong> 单服务商本月相关奖励最高可达 100 万点电商成长卡，报道/摘要列出的成长卡有效期为发放后 60 个自然日；成长卡不能视为现金，价值取决于投放表现和实际经营成本。</p>
+<p><strong>为什么重要？</strong> 服务商可利用营销权益支持品牌 GMV 增长，但这是一项服务商激励，不是面向普通创作者的普惠扶持。</p>
+<p><strong>创作者行动。</strong> 确认品牌绑定、GMV 计算口径、活跃/跃迁任务达标规则与奖励上限；在投流预算中单独核算成长卡有效期。</p>
+<p><strong>证据等级：</strong> 微信小店成长中心公开摘要，完整资格须以服务商后台核实。</p>
+<p><strong>来源：</strong> <a class="external" href="https://dianshanghot.com/news/ecommerce/items/cotdz7tdg50wy08731qtb2jao" rel="noopener noreferrer" target="_blank">微信小店品牌代运营激励政策摘要</a>。</p>
+<h3 id="section-02-05">5. 微博｜游戏领域金橙 V 热点创作激励</h3>
+<p><strong>级别：★★★☆☆｜公告 11 月 4 日；截止 11 月 30 日｜适用：中国大陆微博游戏领域金橙 V 创作者。</strong></p>
+<p><strong>发生了什么？</strong> 微博创作者中心发布游戏领域热点创作激励计划，鼓励合资格游戏博主围绕热搜、趋势榜中的游戏话题创作原创观点、测评、攻略、行业人物与热点二创。</p>
+<p><strong>为什么重要？</strong> 相比单纯重复热点新闻，平台鼓励提供专业观点和真实内容增量。活动提到多重专项奖励，但本期公开可访问内容没有提供完整个人奖金公式，因此不预测单篇收益。</p>
+<p><strong>创作者行动。</strong> 已获得游戏领域金橙 V 的作者可查阅创作者中心活动详情；未获得该资格的账号不能假定可报名。涉及游戏厂商合作时仍应履行广告披露与版权义务。</p>
+<p><strong>来源：</strong> <a class="external" href="https://sina.cn/media/2892492275" rel="noopener noreferrer" target="_blank">微博创作者中心官方账号</a>。</p>
+<h2 id="section-03">三、海外平台：流量、广告与社群工具</h2>
+<h3 id="section-03-01">6. Reddit｜搜索结果页开始测试广告位</h3>
+<p><strong>级别：★★★★☆｜官方公告 11 月 3 日｜适用：部分符合资格的广告主，Reddit 搜索场景。</strong></p>
+<p><strong>发生了什么？</strong> Reddit 开始在搜索结果页面测试广告位置，使广告可以与用户查询内容、搜索意图及其他定向因素相关联。部分搜索设备和广告主将先参与测试，平台根据反馈再评估后续扩展。</p>
+<p><strong>为什么重要？</strong> Reddit 用户会主动搜索真实经验、产品评价与问题解决方案。搜索广告让这类意图更直接地转向付费推广，对品牌营销和电商广告具有潜在价值。</p>
+<p><strong>不应误解：</strong> 搜索广告位不等于自然帖子搜索排名规则已全面改变，也不是 Reddit 宣布向普通内容创作者分配搜索广告收入。</p>
+<p><strong>创作者行动。</strong> 经营产品社区的作者应继续提供可验证的使用经验、问题解答与真实讨论。广告团队在测试功能向其账号开放后再衡量转化成本，不要批量堆积关键词垃圾帖。</p>
+<p><strong>来源：</strong> <a class="external" href="https://redditinc.com/news/we-are-testing-ad-placements-in-reddit-search-pages" rel="noopener noreferrer" target="_blank">Reddit 官方：Testing Ad Placements in Reddit Search Pages</a>。</p>
+<h3 id="section-03-02">7. TikTok｜英国创作者大奖启动投票</h3>
+<p><strong>级别：★★★☆☆｜公告 11 月 5 日；投票至 11 月 18 日；颁奖 12 月 1 日｜地区：英国。</strong></p>
+<p><strong>发生了什么？</strong> TikTok Awards UK 2026 公布候选类别与名单，并在 TikTok App 内开放官方投票入口。奖项包括年度创作者、新星、社会影响、运动、娱乐、时尚美妆、美食、旅行、汽车、生活方式、BookTok、Learning Creator 与 TikTok Shop 创作者等。</p>
+<p><strong>为什么重要？</strong> Learning Creator 类别展示 TikTok 对知识型内容、科学、历史与实用技巧的认可；TikTok Shop 类别展示商业化创作者生态。已公布的候选人可借投票增加曝光与品牌合作机会。</p>
+<p><strong>参与条件与截止。</strong> 用户可在 TikTok 搜索 TikTok Awards 进入官方投票入口，或通过 #TikTokAwardsUK 参与话题讨论。投票 11 月 18 日结束，12 月 1 日伦敦举行颁奖。并非面向全球普通用户的新开放投稿奖金计划，官方也未列出统一现金奖金。</p>
+<p><strong>创作者行动。</strong> 英国地区已入围者可以按官方规则组织粉丝投票；其他地区和普通新号可以观察优质知识内容案例，但不能把本活动宣传成普惠变现机会。</p>
+<p><strong>来源：</strong> <a class="external" href="https://newsroom.tiktok.com/tiktok-awards-uk-2026?lang=en-GB" rel="noopener noreferrer" target="_blank">TikTok Awards UK 2026 官方公告</a>。</p>
+<h3 id="section-03-03">8. WhatsApp｜Events Home 及群组外邀请更新</h3>
+<p><strong>级别：★★★☆☆｜官方发布 11 月 5 日，未来数周逐步开放｜适用：WhatsApp 社群及活动组织场景。</strong></p>
+<p><strong>发生了什么？</strong> WhatsApp Events 更新支持封面、群组外分享的活动邀请链接、个性化提醒，以及集中查看活动的 Events Home。没有 WhatsApp 账号的人也可以查看活动信息并回复 RSVP，功能按阶段逐步开放。平台提供携带额外参与者、回看历史活动等选项，并强调非联系人不能仅因活动邀请就看到电话号码等隐私信息。</p>
+<p><strong>为什么重要？</strong> 经营学习群、专业课程、会员社群、线上工作坊或线下活动的创作者，可以减少报名、提醒和协调流程的手工工作。</p>
+<p><strong>不应误解：</strong> 这不是 WhatsApp 新推出内容广告分成，也不允许不经同意批量推送营销垃圾信息。</p>
+<p><strong>创作者行动。</strong> 已有真实海外社群的运营者可检查 Events 更新，用它组织交流会或培训活动；当前不运营社群的创作者无须为此迁移平台。</p>
+<p><strong>来源：</strong> <a class="external" href="https://about.fb.com/news/2026/11/whatsapp-events-brings-people-together-beyond-the-group-chat/" rel="noopener noreferrer" target="_blank">Meta 官方：WhatsApp Events Brings People Together Beyond the Group Chat</a>。</p>
+<h2 id="section-04">四、本周仍有效的创作者激励</h2>
+<p><strong>重要区分：</strong> 下列“现金”“平台积分”“电商成长卡”“共享奖池”“优秀作品荣誉”不是同一类权益。截止时间按官方活动公布日或后台实际规则为准；持续有效的旧活动不会伪称本周新发布。</p>
+<div aria-label="左右滚动查看完整表格" class="table-scroll" role="region" tabindex="0"><table aria-label="报告数据表格" class="report-table">
+<thead>
+<tr>
+<th>活动</th>
+<th>截止时间</th>
+<th>奖励/性质</th>
+<th>价值判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>爱奇艺 AI 互动小应用征集赛</td>
+<td>12 月 3 日</td>
+<td>单项最高 5,000 元现金＋积分，另有流量</td>
+<td>★★★★★（AI 工具创作者）</td>
+</tr>
+<tr>
+<td>AI Film Award 2027</td>
+<td>11 月 20 日</td>
+<td>唯一总冠军 100 万美元</td>
+<td>★★★★☆（高奖金高难度）</td>
+</tr>
+<tr>
+<td>B站 HiShorts! × updream</td>
+<td>11 月 18 日</td>
+<td>工具积分、线下展映、人才机会</td>
+<td>★★★★☆（AI 短片）</td>
+</tr>
+<tr>
+<td>B站 不普通影视计划</td>
+<td>11 月 30 日</td>
+<td>部分周奖 600 元、共享奖池</td>
+<td>★★★☆☆（影视原创）</td>
+</tr>
+<tr>
+<td>抖音小游戏任务金</td>
+<td>12 月 31 日</td>
+<td>合条件的广告或内购任务收益</td>
+<td>★★★★☆（开发者）</td>
+</tr>
+<tr>
+<td>TikTok Shop 美国黑五</td>
+<td>11 月 11—30 日</td>
+<td>商品佣金和品牌任务，金额不统一</td>
+<td>★★★★☆（美国店铺）</td>
+</tr>
+<tr>
+<td>Facebook Creator Fast Track</td>
+<td>无统一公开截止日</td>
+<td>符合资格后 3 个月保证收入</td>
+<td>★★★★☆（成熟创作者）</td>
+</tr>
+<tr>
+<td>Reddit 现有 API 应用迁移</td>
+<td>11 月 30 日登记节点，12 月 31 日迁移</td>
+<td>符合审核者一次性 1,000 美元</td>
+<td>★★★★☆（既有开发者）</td>
+</tr>
+<tr>
+<td>2026 国际短视频大赛</td>
+<td>11 月 30 日</td>
+<td>优秀作品评选、表彰，未核实现金</td>
+<td>★★★☆☆（原创视频）</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="section-04-01">1. 爱奇艺｜玩点新花样——AI 互动小应用征集赛</h3>
+<p><strong>本周新活动｜11 月 4 日 00:00—12 月 3 日 23:59；12 月 7 日 18:00 公布结果｜面向爱奇艺创作者。</strong></p>
+<p><strong>活动内容。</strong> 使用纳逗 Pro 等 AI 工具辅助制作可在爱奇艺站内使用的互动网页小应用，方向包括 IP 互动、小游戏、趣味测试和实用工具。</p>
+<p><strong>作品技术要求。</strong> 必须是纯前端 HTML 小应用，ZIP 代码包不超过 20 MB，根目录包含 index.html；纯离线运行、不请求外部网络、不含外部链接，适配手机竖屏，核心功能流畅。通过爱奇艺号创作者后台上传，必须勾选“玩点新花样—AI互动小应用征集赛”。</p>
+<p><strong>奖项具体金额。</strong> 一等奖 1 名，现金 5,000 元＋纳逗 Pro 3,000 积分及奖杯；二等奖 2 名，每人 2,000 元＋1,000 积分；三等奖 2 名，每人 500 元＋1,000 积分；四等奖 5 名，每人 500 元＋500 积分；优秀奖 25 名，每人 100 元。创作参与奖为合资格创作者共同瓜分 5,000 元现金奖池，不是人均金额。另有 20 个灵感潜力奖，提供爱奇艺会员月卡和站内推荐位，可按规则与其他奖励叠加。</p>
+<p><strong>必须注意的参评门槛。</strong> 创意佳作奖与创作参与奖要求活动期间至少 4 款原创应用审核通过并上线。创意佳作奖各档位不叠加，获奖者不再参与创作参与奖瓜分；重复换皮不算独立原创作品。</p>
+<p><strong>IP 权利及独家。</strong> 使用平台授权剧集等 IP 创作时，只能在允许范围内使用剧名、剧情与场景等元素，不得仿造演员肖像，不能使用未经授权的第三方音乐、图片或字体；使用活动授权 IP 的小应用必须爱奇艺端内独家上线，未经许可不得移植其他平台或超范围商业化。</p>
+<p><strong>为什么有价值？</strong> AI 编程让创作者有机会生产可直接体验的小工具、游戏和互动内容，形成作品集。若此前没有成熟的 HTML 开发经验，建议先做简单但功能完整的原创作品，避免因复杂度导致四款作品无法审核上线。</p>
+<p><strong>来源：</strong> <a class="external" href="https://aic.iqiyi.com/activity/ai-contest-2026" rel="noopener noreferrer" target="_blank">爱奇艺活动官方全文</a>。</p>
+<h3 id="section-04-02">2. AI Film Award 2027｜100 万美元 AI 电影大奖</h3>
+<p><strong>旧活动仍开放｜截止 11 月 20 日｜全球合资格成年创作者。</strong></p>
+<p>主办方 1 Billion Followers Summit 提供唯一总冠军 1,000,000 美元现金大奖。作品须原创、具有完整叙事，长度 5—7 分钟，16:9 横屏、最低 1080p、MOV/MP4；任意语言但附英语字幕；至少 70% 作品内容以 Seedance 作为主要视频生成工具完成，符合主办方公布的五个主题之一及指定片头与权利说明。应遵守该赛事对此前公开发布/参赛经历的限制。</p>
+<p><strong>赛程。</strong> 11 月 20 日投稿截止；12 月 15 日前十名和公众投票；12 月 25 日前五名；2027 年 1 月 8—10 日迪拜峰会展映与最终获奖公布。</p>
+<p><strong>风险和价值判断。</strong> 一名总冠军、高奖金意味着高竞争度；作品制作成本、版权、AI 使用记录、内容质量及税费均需评估。不能将参赛视为固定收入来源。</p>
+<p><strong>来源：</strong> <a class="external" href="https://www.1billionsummit.com/ai-award-2027" rel="noopener noreferrer" target="_blank">官方活动页</a>；<a class="external" href="https://www.1billionsummit.com/ai-award-2027/submit" rel="noopener noreferrer" target="_blank">官方投稿</a>；<a class="external" href="https://www.1billionsummit.com/ai-award-2027/terms-and-conditions" rel="noopener noreferrer" target="_blank">官方条款</a>。</p>
+<h3 id="section-04-03">3. B站 HiShorts! × updream AI 短片赛</h3>
+<p><strong>旧活动仍开放｜11 月 18 日投稿截止｜B站影视分区原创 AI 短片。</strong></p>
+<p>需为 2026 年 3 月 20 日后创作的原创作品，以 updream 为主要 AI 创作工具；时长超过 2 分钟、少于 30 分钟，横版 1080p H.264，MOV/MP4。四个单元：剧情、动画、实验、MV。投稿至影视分区，按规定添加 updream、HiShorts 标签和标题后缀及置顶评论。</p>
+<p><strong>奖项。</strong> 70 部入围作品每部价值 500 元 updream 积分；20 部提名作品额外价值 2,000 元积分，并可参加线下展映；5 部最终获奖作品额外价值 5,000 元积分。相关积分可按规则叠加，属于工具积分、不能折现。还可能有优先进入人才库、签约机会。</p>
+<p><strong>最关键的独家限制。</strong> 若入选并领取积分，必须下架其他平台上同一作品，并保证作品永久仅在 B站独家展示。可能影响未来在 TikTok、YouTube、Instagram 的跨平台发行计划。官方同一规则页对积分有效期出现 180 天与 183 天两种表述，应以最终发奖通知为准。官方还要求保留 AI 生成流程、后台截图、源素材等原创性证明。</p>
+<p><strong>来源：</strong> <a class="external" href="https://www.bilibili.com/opus/1248700439276290085" rel="noopener noreferrer" target="_blank">B站官方详细规则</a>。</p>
+<h3 id="section-04-04">4. B站「不普通影视计划」</h3>
+<p><strong>旧活动仍开放｜11 月 30 日截止｜中国大陆 B站影视原创账号。</strong></p>
+<p>面向原创影视解读、观点和创意内容，须在影视分区按指定活动话题投稿并满足各周项目的原创与有效播放要求。部分每周评奖类别入选者获得 600 元，另设多人共享的参与奖池；满足基础播放门槛不等于保证现金奖励。商业推广、搬运或仅简单剪辑的作品不符合相应评选要求。部分作品需要在活动结束后保持公开可见较长时间，并同意活动宣传使用授权。</p>
+<p><strong>建议。</strong> 正在持续做影视分析的作者可顺带参与；初学者不要把活动奖池当成拍摄预算来源。</p>
+<p><strong>来源：</strong> <a class="external" href="https://www.bilibili.com/opus/1248206857356443648" rel="noopener noreferrer" target="_blank">B站官方活动规则</a>。</p>
+<h3 id="section-04-05">5. 抖音小游戏任务金限时激励</h3>
+<p><strong>旧活动本月执行｜11 月 1 日—12 月 31 日｜符合条件的小游戏开发者。</strong></p>
+<p>抖音开放平台的小游戏任务金激励适用于部分巨量星图、发行人计划和广告/内购经营任务。公开规则列出部分任务基于广告收入 20%、基于符合要求内购收入 10% 的任务金计算方式，但各自有资格门槛、基数和核算口径，不能简单叠加成所有开发者固定 30% 奖金。部分广告任务还涉及此前半个月达到指定广告收入的门槛。</p>
+<p><strong>建议。</strong> 开发者应逐条检查任务资格、实际收入计算基数、是否需要报名及结算周期；普通发视频博主不具备自动领取资格。</p>
+<p><strong>来源：</strong> <a class="external" href="https://partner.open-douyin.com/docs/resource/zh-CN/mini-game/guide/business-guide/revenue/sharingclause/game-task-reward-rules" rel="noopener noreferrer" target="_blank">抖音开放平台官方任务奖励说明</a>。</p>
+<h3 id="section-04-06">6. TikTok Shop 美国黑五与网一</h3>
+<p><strong>旧活动即将开始｜11 月 11—30 日｜美国 TikTok Shop 合资格商家和带货创作者。</strong></p>
+<p>可围绕节日礼品、数码、家居、美妆、服饰等商品制作购物短视频和直播，参与具体商品推广佣金或品牌合作任务。官方没有向全部创作者承诺一个统一现金奖金数额，佣金、补贴与品牌任务应以账号后台条款为准。美国活动不能外推到英国和其他国家的 TikTok Shop。</p>
+<p><strong>建议。</strong> 提前完成选品、素材、直播排期、运费/退货/库存和广告投放核算。</p>
+<p><strong>来源：</strong> <a class="external" href="https://newsroom.tiktok.com/whats-shaping-the-holiday-season-on-tiktok-shop?lang=en" rel="noopener noreferrer" target="_blank">TikTok 官方购物季公告</a>。</p>
+<h3 id="section-04-07">7. Facebook Creator Fast Track</h3>
+<p><strong>既有持续项目｜官方没有统一截止日｜已在 Instagram/TikTok/YouTube 具有一定粉丝基础的合资格创作者。</strong></p>
+<p>符合其他计划要求时，任一指定平台粉丝至少 10 万可获得最高每月 1,000 美元保证收入 × 3 个月；超过 100 万可获得最高每月 3,000 美元 × 3 个月。还可能获得符合条件的 Reels 额外触达及 Facebook Content Monetization 访问资格。并非所有国家、账号和粉丝量达到要求者自动入选。</p>
+<p><strong>建议。</strong> 有成熟外部粉丝的创作者查看后台资格；新账号不应为了这个门槛购买虚假流量。</p>
+<p><strong>来源：</strong> <a class="external" href="https://about.fb.com/news/2026/03/creator-fast-track-grow-your-audience-earn-money-on-facebook/" rel="noopener noreferrer" target="_blank">Meta 官方 Creator Fast Track</a>。</p>
+<h3 id="section-04-08">8. Reddit｜现有 Data API 应用迁移奖金</h3>
+<p><strong>既有项目｜11 月 30 日奖金登记节点、12 月 31 日迁移完成期限｜符合 Reddit Earn 资格的既有应用开发者。</strong></p>
+<p>原创 Data API 应用须早于 2026 年 3 月 25 日存在，真正服务 Reddit 社区，例如支持至少 1,000 周活跃用户的社区的核心工具、审核应用，或其他具有显著最终用户价值的应用。开发者需登记、获得 Reddit 邀请或批准、完成迁移并通过审核后，方可能领取一次性 1,000 美元；名额有限，平台保留最终决定权。</p>
+<p><strong>建议。</strong> 已经维护社区 Bot 或自动化工具的开发者核查注册及迁移要求，普通新建应用不能通过伪造创建日期获得资格。注意奖金的地区及身份审核要求。</p>
+<p><strong>来源：</strong> <a class="external" href="https://developers.reddit.com/app-registration" rel="noopener noreferrer" target="_blank">登记入口</a>；<a class="external" href="https://support.reddithelp.com/hc/en-us/articles/47822311698452-Reddit-Developer-Platform-App-Migration-Program-2026-Terms" rel="noopener noreferrer" target="_blank">Reddit 迁移计划官方条款</a>。</p>
+<h3 id="section-04-09">9. 2026 国际短视频大赛</h3>
+<p><strong>既有开放赛事｜11 月 30 日截止｜全球个人及机构原创短视频。</strong></p>
+<p>作品需要在 2026 年以来完成、原创并拥有清晰版权，单集 ≤10 分钟、最低 1280×720。接受动画、Vlog、访谈、微纪录片等形式。AI 生成合成内容依适用规定标注；中文作品配置外文字幕，非中文作品配置中文字幕；音乐、图片、字体及肖像授权应完整。参赛作品需满足赛事宣传和非独占使用授权要求。官方确认优秀作品评选与表彰，但未核实到可对所有入选者承诺的固定现金奖励。</p>
+<p><strong>建议。</strong> 适合展示作品和积累创作履历，不能视为确定性赚钱方式。报名不收取费用。</p>
+<p><strong>来源：</strong> <a class="external" href="https://www.nrta.gov.cn/art/2026/9/30/art_113_74163.html" rel="noopener noreferrer" target="_blank">国家广播电视总局官方通知</a>。</p>
+<h2 id="section-05">五、16 个主要平台的本周扫描结果</h2>
+<div aria-label="左右滚动查看完整表格" class="table-scroll" role="region" tabindex="0"><table aria-label="报告数据表格" class="report-table">
+<thead>
+<tr>
+<th>平台</th>
+<th>状态</th>
+<th>本周关注点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>抖音</td>
+<td>电商规则核查</td>
+<td>品牌混淆、商品推广一致性和申诉期限</td>
+</tr>
+<tr>
+<td>快手</td>
+<td>未确认重大全局新规</td>
+<td>继续关注虚假人设、AI 合成及直播电商治理</td>
+</tr>
+<tr>
+<td>小红书</td>
+<td>重要规则生效</td>
+<td>企业号/KOS、AI 欺骗和关联处罚</td>
+</tr>
+<tr>
+<td>微信视频号</td>
+<td>微信电商生态激励更新</td>
+<td>小店带货与服务商计划，未确认全局新内容规则</td>
+</tr>
+<tr>
+<td>微信公众号</td>
+<td>未确认重大全局新规</td>
+<td>专业身份、版权、金融营销及 AI 内容合规</td>
+</tr>
+<tr>
+<td>B站</td>
+<td>多项有效活动</td>
+<td>AI 短片、影视原创及专项扶持</td>
+</tr>
+<tr>
+<td>微博</td>
+<td>垂类激励更新</td>
+<td>游戏领域金橙 V 热点创作</td>
+</tr>
+<tr>
+<td>知乎</td>
+<td>未确认重大全局新规</td>
+<td>真实性、专业身份和知识付费推广</td>
+</tr>
+<tr>
+<td>TikTok</td>
+<td>地区活动更新</td>
+<td>英国 TikTok Awards、美国 TikTok Shop 黑五</td>
+</tr>
+<tr>
+<td>YouTube</td>
+<td>未确认重大全局新规</td>
+<td>继续观察 Shorts series 和 AI 标识</td>
+</tr>
+<tr>
+<td>Instagram</td>
+<td>未确认本周重要新规</td>
+<td>Features 长视频有限测试及品牌合作</td>
+</tr>
+<tr>
+<td>Facebook</td>
+<td>未确认本周重要新规</td>
+<td>Creator Fast Track 与社区工具持续更新</td>
+</tr>
+<tr>
+<td>Threads</td>
+<td>未确认重大全局新规</td>
+<td>内容发现及社区工具</td>
+</tr>
+<tr>
+<td>X/Twitter</td>
+<td>未确认原创收益资格再次重大调整</td>
+<td>Original Content Rewards 继续适用</td>
+</tr>
+<tr>
+<td>LinkedIn</td>
+<td>未确认新增全局政策</td>
+<td>之前的咨询与视频广告收益功能分阶段推出</td>
+</tr>
+<tr>
+<td>Reddit</td>
+<td>搜索广告测试</td>
+<td>广告位测试、API 迁移及 RSS 结束支持</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>额外生态：</strong> WhatsApp 本周升级 Events；爱奇艺本周启动 AI 互动小应用征集赛。这两项没有被伪称为 16 平台中的全局内容审核变更。</p>
+<p>“未确认重大新增”只表示本期未取得足够证据，不代表没有内部测试、定向通知或细分活动。</p>
+<h2 id="section-06">六、近期执行节点与风险警示</h2>
+<h3 id="section-06-01">1. Reddit RSS 将于 11 月 13 日停止支持</h3>
+<p>这是此前正式公告的期限，本周属于提前预警，不是新公布规则。依赖 reddit.com/r/.../.rss 的订阅阅读器、定时监控、社区自动化流可能在 11 月 13 日之后失效。对管理员自己的社区提醒，Reddit 推荐 Developer Platform 上的 Discord Relay 等支持方案；对社区管理以外的 RSS 用途，官方未提供直接等价的替代服务。</p>
+<p><strong>行动：</strong> 11 月 13 日前列出所有使用 Reddit RSS 的订阅器和自动化流程，核对替代方案；不要利用未授权抓取规避服务条款。</p>
+<p><strong>来源：</strong> <a class="external" href="https://support.reddithelp.com/hc/en-us/articles/54353370049684-Changelog-October-8-2026" rel="noopener noreferrer" target="_blank">Reddit 官方 Changelog：2026 年 10 月 8 日</a>。</p>
+<h3 id="section-06-02">2. Reddit 公共 Data API 后续日期</h3>
+<p>10 月 31 日停止接受新申请已经过去。<strong>2027 年 1 月 12 日</strong>将开始移除尚未登记或未响应迁移要求的应用/用户的 API 访问；<strong>2027 年 3 月</strong>计划结束剩余公共 API 访问。这针对开发者与自动化工具，不是普通创作者发帖规则。</p>
+<h3 id="section-06-03">3. 奖励形式不可混淆</h3>
+<ul>
+<li><strong>现金奖金：</strong> 需入选、审核并可能涉及税费。</li>
+<li><strong>工具积分／电商成长卡：</strong> 用于产品功能或推广，不等于人民币现金。</li>
+<li><strong>共享奖池：</strong> 由多位符合条件的创作者瓜分，不是每人得到全部金额。</li>
+<li><strong>平台总预算：</strong> 不等于单账号有固定领取资格。</li>
+<li><strong>品牌合作机会：</strong> 实际利润取决于佣金、履约和流量投入。</li>
+</ul>
+<h2 id="section-07">七、本周四类常见误读</h2>
+<p><strong>误读一：小红书 11 月 4 日开始禁止全部企业矩阵账号。</strong> 不准确。重点是虚假营销、AI 欺骗、身份仿冒及违规矩阵关联处理，合法多账号经营并非自动违规。</p>
+<p><strong>误读二：微信小店给普通新创作者发放 40 万元现金。</strong> 错误。40 万是最高档电商成长卡点数，还有公众人物资格、GMV、投流投入与本人出镜要求。</p>
+<p><strong>误读三：Reddit 搜索广告推出后，所有普通发帖者可以获得广告分成。</strong> 没有官方依据。这是部分广告主测试，不是自然帖子收益计划。</p>
+<p><strong>误读四：AI Film Award 使用任意 AI 视频工具生成五分钟视频即可参加。</strong> 不准确。本届要求作品原创、主题适配、英语字幕、16:9/1080p，以及至少 70% 使用 Seedance 等完整资格要求。</p>
+<h2 id="section-08">八、本周行动清单</h2>
+<ul>
+<li class="task-list-item"><input aria-label="标记行动任务完成" class="todo-checkbox" data-task="1" type="checkbox"/>核对小红书企业号、KOS 和矩阵账号，排查 AI 欺骗、虚假体验与关联处罚风险。</li>
+<li class="task-list-item"><input aria-label="标记行动任务完成" class="todo-checkbox" data-task="1" type="checkbox"/>检查抖音带货的品牌名称、口播、字幕、商品链接及授权文件一致性。</li>
+<li class="task-list-item"><input aria-label="标记行动任务完成" class="todo-checkbox" data-task="1" type="checkbox"/>研究爱奇艺互动小应用征集赛，评估能否在 12 月 3 日前完成 4 款原创上线作品。</li>
+<li class="task-list-item"><input aria-label="标记行动任务完成" class="todo-checkbox" data-task="1" type="checkbox"/>有 AI 短片的团队评估 B站 11 月 18 日、国际 AI 电影大奖 11 月 20 日截止要求。</li>
+<li class="task-list-item"><input aria-label="标记行动任务完成" class="todo-checkbox" data-task="1" type="checkbox"/>检查 B站 AI 短片赛事独家条款，避免与跨平台分发计划冲突。</li>
+<li class="task-list-item"><input aria-label="标记行动任务完成" class="todo-checkbox" data-task="1" type="checkbox"/>使用 Reddit RSS 的工作流在 11 月 13 日前完成替代方案核查。</li>
+<li class="task-list-item"><input aria-label="标记行动任务完成" class="todo-checkbox" data-task="1" type="checkbox"/>已有 Reddit API 应用的开发者检查 11 月 30 日迁移奖金登记要求。</li>
+<li class="task-list-item"><input aria-label="标记行动任务完成" class="todo-checkbox" data-task="1" type="checkbox"/>美国 TikTok Shop 合资格账号完成 11 月 11 日黑五活动备货和直播排期。</li>
+</ul>
+<h2 id="section-09">九、本周趋势判断与结论</h2>
+<p><strong>第一，AI 创作者正在从生成效率竞争走向可信创作竞争。</strong> 小红书已生效的企业号/KOS 治理表明，平台不仅关注作品是否由 AI 辅助，还关注是否伪造身份、消费记录、聊天证据和品牌口碑。正确使用 AI 应提高原创表达效率，而不是制造虚假可信度。</p>
+<p><strong>第二，内容创业正在扩展为“内容＋工具＋互动产品”。</strong> 爱奇艺互动小应用赛事和抖音小游戏任务激励体现出短视频之外的可能路径。但能否持续赚钱取决于真实用户需求、作品质量、分发与运营，而不是单次活动奖金。</p>
+<p><strong>第三，海外商业化趋向具体场景。</strong> Reddit 测试搜索广告、TikTok 经营特定地区的创作者与购物活动、WhatsApp 改进社群活动管理，说明不能把所有平台都用同一套“发视频—涨粉—广告分成”公式理解。</p>
+<p><strong>最终判断：</strong> 最值得做的是选定具体受众，持续提供真实、有原创价值的内容，再围绕真实需求测试产品、专业服务、品牌合作或社区收入。早期不宜为了流量批量运营没有差异化的 AI 账号。</p>
+<p><strong>统计边界提醒：</strong> 本期截至 2026 年 11 月 6 日（周五），不是 11 月 8 日周末完整报告。后续两天的变化须待事实发生并核实后再收录。</p>
+</article>
+</main></div>
+<footer><span>第 9 期 · 2026.11.02—11.06 · 单文件完整版 · 无外部依赖</span><span>活动与规则以官方最新页面/账号后台为准。此报告不构成法律或投资意见。</span></footer>
+<a class="float-top" href="#top" aria-label="返回报告顶部">↑ TOP</a>
+<script>
+(function(){
+  'use strict';
+  document.getElementById('print').addEventListener('click',function(){window.print();});
+  document.getElementById('copy-link').addEventListener('click',async function(){
+    var t='自媒体政策与机会周报｜2026.11.02—11.06';
+    try{await navigator.clipboard.writeText(t);this.textContent='已复制标题';}catch(e){window.prompt('复制标题：',t);}
+  });
+  var items=Array.prototype.slice.call(document.querySelectorAll('.todo-checkbox'));
+  var key='creator-report-2026-11-02-06-tasks';
+  function paint(){items.forEach(function(item,i){item.closest('li').classList.toggle('done',item.checked);});}
+  try{var v=JSON.parse(localStorage.getItem(key)||'[]');items.forEach(function(x,i){x.checked=!!v[i];});}catch(e){}
+  items.forEach(function(el){el.addEventListener('change',function(){paint();try{localStorage.setItem(key,JSON.stringify(items.map(x=>x.checked)));}catch(e){}});});
+  document.getElementById('clear-tasks').addEventListener('click',function(){items.forEach(x=>x.checked=false);paint();try{localStorage.removeItem(key);}catch(e){}});
+  paint();
+})();
+</script>
+</body></html>
