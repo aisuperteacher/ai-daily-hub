@@ -2,9 +2,9 @@
   "version": 3,
   "updated_at": "2026-11-06",
   "scope": "public_briefings_only",
-  "readme": "仅归档实际可取得的完整公开报告，历史缺失不以摘要补造；当前 12 项 ChatGPT 自动化均启用，其中 9 个公开内容栏目。私密备份及账号专属监测不公开。",
+  "readme": "仅归档完整且适合公开的日报；2026-11-06 新增政策趋势日报独立栏目（待首次执行），Business 48月优惠任务已暂停且不公开。",
   "counts": {
-    "topic_count": 9,
+    "topic_count": 10,
     "verified_full_reports": 14
   },
   "categories": [
@@ -91,6 +91,18 @@
           "kind": "full"
         }
       ]
+    },
+    {
+      "id": "ai-policy",
+      "slug": "ai-policy",
+      "name": "全球 AI、科技与机器人政策趋势日报",
+      "short": "法律法规 · 核心政策 · 顶尖会议 · 政经趋势",
+      "icon": "⚖",
+      "description": "聚焦中国、美国、欧盟、英国、日韩及全球重要地区的 AI、科技、机器人政策与监管、法律法规、顶尖行业会议及政治经济趋势；保留官方来源、实际影响与行动建议。",
+      "task_status": "running",
+      "cadence": "北京时间每日 09:00",
+      "source_status": "missing_original",
+      "reports": []
     },
     {
       "id": "ai-coding",
