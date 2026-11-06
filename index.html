@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Daily Hub · 研究与技术日报</title>
+<meta name="description" content="汇总 AI 大模型、Agent、AI Coding、企业级架构和开源情报的完整中文日报。">
+<style>
+:root{--ink:#18231f;--paper:#f5f2e9;--card:#fffdf7;--line:#2d3933;--mint:#dbefdf;--yellow:#f9de77;--orange:#f66e4f;--blue:#315bb8;--muted:#64726c}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Noto Sans SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--paper)}
+button,input,select{font:inherit}button{cursor:pointer}a{color:inherit}
+.site-head{border-bottom:2px solid var(--line);background:var(--yellow);padding:18px clamp(16px,3vw,48px);display:flex;justify-content:space-between;gap:20px;align-items:center}
+.brand{font-weight:950;font-size:clamp(25px,3vw,44px);letter-spacing:-1.6px}.brand span{color:#ba3a2a}
+.smallcaps{font-weight:800;letter-spacing:.12em;font-size:11px;text-transform:uppercase}
+.head-side{text-align:right;font-size:13px;font-weight:700}
+.shell{max-width:1600px;margin:auto;display:grid;grid-template-columns:280px minmax(0,1fr);gap:0;min-height:calc(100vh - 90px)}
+aside{border-right:2px solid var(--line);padding:26px 20px;background:#e9eadf}
+.kicker{font-size:11px;font-weight:900;letter-spacing:.12em;color:var(--muted);margin-bottom:10px}
+.topic{display:flex;width:100%;border:1.5px solid var(--line);border-radius:10px;background:var(--card);margin-bottom:9px;padding:12px;gap:12px;text-align:left;align-items:center}
+.topic.active{background:var(--mint);box-shadow:3px 3px 0 var(--ink)}.topic[disabled]{opacity:.52;cursor:not-allowed}
+.topic strong{font-size:13px;display:block}.topic small{font-size:11px;color:var(--muted);display:block;margin-top:4px}
+main{min-width:0;padding:24px clamp(15px,3vw,42px)}
+.page-title{font-weight:950;font-size:clamp(25px,4vw,51px);letter-spacing:-.07em;line-height:1.12;margin:5px 0 13px}
+.lead{color:#526059;max-width:800px;line-height:1.75;font-size:14px;margin:0 0 24px}
+.toolbar{display:flex;align-items:end;flex-wrap:wrap;gap:12px;margin-bottom:16px}
+.picker{flex:0 1 270px}.search{flex:1 1 260px;min-width:0}
+label{font-size:12px;font-weight:850;display:block;margin-bottom:7px}
+select,input{width:100%;background:#fff;border:1.5px solid var(--line);border-radius:9px;padding:11px;font-size:14px;outline-offset:3px}
+.actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.action{border:1.5px solid var(--line);background:var(--white,#fff);padding:10px 12px;border-radius:9px;font-weight:780;font-size:13px;text-decoration:none}
+.action.primary{background:var(--orange);color:white}.action:disabled{opacity:.45;cursor:not-allowed}
+.panel{border:2px solid var(--line);background:#fff;border-radius:12px;overflow:hidden;box-shadow:5px 6px 0 #18231f15}
+.panel-head{background:var(--mint);padding:12px 16px;border-bottom:2px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:center}
+.panel-head strong{font-size:14px}.panel-head small{font-size:12px;color:var(--muted)}
+.report-frame{display:block;width:100%;height:80vh;min-height:530px;border:0;background:white}
+.date-strip{display:flex;overflow:auto;gap:7px;padding:6px 0 17px}
+.date-chip{border:1.5px solid var(--line);border-radius:9px;padding:8px 12px;background:#fff;white-space:nowrap;font-weight:750;font-size:12px}
+.date-chip.active{background:var(--yellow)}
+.search-results{display:none;border:2px solid var(--line);border-radius:12px;background:white;padding:14px;margin:12px 0 20px}
+.search-results.show{display:block}.result{display:block;width:100%;text-align:left;padding:12px;border:1px solid #d8ded8;border-radius:9px;background:#fcfdf9;margin-top:8px}
+.result strong{font-size:13px}.result small{display:block;color:var(--muted);line-height:1.5;margin-top:5px;white-space:normal;overflow-wrap:anywhere}
+.notice{font-size:12px;color:var(--muted);line-height:1.6;margin:12px 0 0}.foot{margin:34px 0;color:var(--muted);font-size:12px;border-top:1px solid #adb6ad;padding-top:18px;line-height:1.8}
+@media(max-width:900px){.shell{grid-template-columns:1fr}aside{border-right:0;border-bottom:2px solid var(--line);padding:12px 16px}.topic-list{display:flex;overflow-x:auto;gap:9px}.topic{min-width:185px;max-width:230px;margin:0}.site-head{padding:13px 16px}.head-side{font-size:11px}.report-frame{height:76vh}main{padding:18px 14px}.page-title{font-size:30px}}
+@media(max-width:460px){.head-side{display:none}.action{font-size:12px}.panel-head{align-items:flex-start;flex-direction:column}.report-frame{min-height:470px}.brand{font-size:30px}}
+</style></head><body>
+<header class="site-head"><div><div class="smallcaps">RESEARCH / ENGINEERING / DAILY INTELLIGENCE</div><div class="brand">AI <span>DAILY</span> HUB<span style="color:var(--ink)">.</span></div></div><div class="head-side">独立档案 / 一日一刊<br>OFFICIAL SOURCES FIRST</div></header>
+<div class="shell"><aside><div class="kicker">TOPIC CHANNELS / 专题栏目</div><nav class="topic-list" id="topics" aria-label="日报栏目"></nav><p class="notice">仅已归档的完整日报可打开。其他栏目将在迁移后逐步上线。</p></aside>
+<main><div class="kicker">ARCHIVE / 全文历史</div><h1 class="page-title" id="title">全球 AI 大模型与 Agent 官方日报</h1><p class="lead">从官方更新日志、模型版本、SDK 与研究文章提取有工程价值的增量信息。完整保留七维分析、13 家巡检、版本基线、兼容迁移和实践步骤。</p>
+<div class="toolbar"><div class="picker"><label for="date">选择日报日期</label><select id="date" aria-label="选择日期"></select></div><div class="search"><label for="search">跨日期全文搜索</label><input id="search" placeholder="例如：Claude、MCP、Thinking、价格" type="search" autocomplete="off"></div>
+<div class="actions"><button class="action" id="prev">上一期</button><button class="action" id="next">下一期</button><a class="action primary" id="open" target="_blank" rel="noopener">单独打开完整日报 ↗</a></div></div>
+<div class="date-strip" id="dates" aria-label="日期快捷切换"></div><section class="search-results" id="results" aria-live="polite"></section>
+<section class="panel"><div class="panel-head"><strong id="selected">完整日报正文</strong><small>原文独立 HTML · 保留官方链接与代码</small></div>
+<iframe class="report-frame" id="frame" title="当前日期完整日报" loading="eager" referrerpolicy="no-referrer"></iframe></section>
+<p class="notice">内容遵循官方来源优先原则；历史日报中“最新”仅指原报告写作时点。已归档正文不等于当前仍有效的模型或价格。联网阅读 GitHub Pages 时，点击官方来源会跳转至原站。</p>
+<footer class="foot">AI Daily Hub · GitHub Pages 静态站点。每篇日报独立存储于 reports/YYYY-MM-DD.html；首页通过 manifest.json 加载日期索引，便于未来增加其它专题和自动化工作流。项目仓库：<a href="https://github.com/aisuperteacher/ai-daily-hub">aisuperteacher/ai-daily-hub</a>。</footer></main></div>
+<script>
+(function(){
+'use strict';
+var meta, active, current, cache={};
+var el=function(id){return document.getElementById(id)};
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function archive(){return (active&&active.reports)||[]}
+function path(d){return 'reports/'+d+'.html'}
+function renderTopics(){el('topics').innerHTML=meta.categories.map(function(c){return '<button class="topic'+(c.id===active.id?' active':'')+'" '+(c.status==='active'?'':'disabled')+' data-id="'+esc(c.id)+'"><span style="font-size:20px">'+(c.status==='active'?'▣':'▫')+'</span><span><strong>'+esc(c.name)+'</strong><small>'+(c.status==='active'?c.reports.length+' 份完整日报':'即将迁入')+'</small></span></button>'}).join('')}
+function renderDates(){var ds=archive();el('date').innerHTML=ds.map(function(d){return '<option value="'+d+'">'+d+'</option>'}).join('');el('dates').innerHTML=ds.map(function(d){return '<button class="date-chip'+(current===d?' active':'')+'" data-date="'+d+'">'+d+'</button>'}).join('');el('prev').disabled=ds.indexOf(current)>=ds.length-1;el('next').disabled=ds.indexOf(current)<=0}
+function choose(d){if(!archive().includes(d))return;current=d;el('date').value=d;el('selected').textContent=d+' · 全球 AI 大模型与 Agent 技术官方日报';el('frame').src=path(d);el('open').href=path(d);renderDates();var u=new URL(location.href);u.searchParams.set('date',d);history.replaceState(null,'',u.pathname+u.search)}
+function textOf(doc){['script','style','nav','footer'].forEach(function(t){doc.querySelectorAll(t).forEach(function(n){n.remove()})});return (doc.body?doc.body.textContent:doc.documentElement.textContent).replace(/\s+/g,' ').trim()}
+async function search(q){var pane=el('results');q=q.trim().toLowerCase();if(!q){pane.classList.remove('show');pane.innerHTML='';return}pane.classList.add('show');pane.innerHTML='<strong>正在检索 '+archive().length+' 份完整日报…</strong>';var result=[];for(var i=0;i<archive().length;i++){var d=archive()[i];try{if(!cache[d]){var r=await fetch(path(d));if(!r.ok)throw Error(r.status);cache[d]=textOf(new DOMParser().parseFromString(await r.text(),'text/html'))}var t=cache[d],index=t.toLowerCase().indexOf(q);if(index>=0)result.push({date:d,context:t.slice(Math.max(0,index-55),Math.min(t.length,index+125))})}catch(e){console.warn('Search unavailable',d,e)}}if(el('search').value.trim().toLowerCase()!==q)return;pane.innerHTML='<strong>检索结果：'+result.length+' 个日期命中</strong>'+(result.length?result.map(function(x){return '<button class="result" data-date="'+x.date+'"><strong>'+x.date+'</strong><small>'+esc(x.context)+'</small></button>'}).join(''):'<p>没有匹配的日报内容。试试较短的关键词。</p>')}
+function init(d){meta=d;active=d.categories.find(function(c){return c.status==='active'})||d.categories[0];renderTopics();var u=new URL(location.href),specified=u.searchParams.get('date');current=archive().includes(specified)?specified:archive()[0];choose(current);el('topics').addEventListener('click',function(e){var b=e.target.closest('[data-id]');if(!b)return;var c=meta.categories.find(function(t){return t.id===b.dataset.id});if(c&&c.status==='active'){active=c;renderTopics();current=archive()[0];choose(current)}});el('dates').addEventListener('click',function(e){var b=e.target.closest('[data-date]');if(b)choose(b.dataset.date)});el('date').addEventListener('change',function(){choose(this.value)});el('prev').addEventListener('click',function(){choose(archive()[archive().indexOf(current)+1])});el('next').addEventListener('click',function(){choose(archive()[archive().indexOf(current)-1])});var timer;el('search').addEventListener('input',function(){clearTimeout(timer);timer=setTimeout(function(){search(el('search').value)},250)});}
+fetch('manifest.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw Error('Manifest '+r.status);return r.json()}).then(init).catch(function(e){el('title').textContent='归档索引加载失败';el('date').innerHTML='';el('selected').textContent='请刷新页面或检查 manifest.json';console.error(e)});
+})();
+</script></body></html>
