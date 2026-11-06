@@ -1,11 +1,11 @@
 {
-  "version": 2,
+  "version": 3,
   "updated_at": "2026-11-06",
   "scope": "public_briefings_only",
-  "readme": "仅公开技术和新闻类内容。个人备份、私人监测及保密凭据不发布到公开 GitHub Pages。",
+  "readme": "仅归档实际可取得的完整公开报告，历史缺失不以摘要补造；当前 12 项 ChatGPT 自动化均启用，其中 9 个公开内容栏目。私密备份及账号专属监测不公开。",
   "counts": {
     "topic_count": 9,
-    "verified_full_reports": 9
+    "verified_full_reports": 11
   },
   "categories": [
     {
@@ -18,7 +18,7 @@
       "task_status": "running",
       "cadence": "北京时间每日 08:00",
       "last_run": "2026-11-06",
-      "source_status": "full",
+      "source_status": "partial_archive",
       "reports": [
         {
           "date": "2026-11-06",
@@ -75,6 +75,20 @@
           "label": "2026-10-30",
           "path": "reports/2026-10-30.html",
           "kind": "full"
+        },
+        {
+          "date": "2026-10-15",
+          "title": "2026-10-15 · 13 家厂商官方技术日报（历史完整报告）",
+          "label": "2026-10-15",
+          "path": "reports/official-ai/2026-10-15_13_providers.html",
+          "kind": "full"
+        },
+        {
+          "date": "2026-10-07",
+          "title": "2026-10-03—07 · OpenAI / Anthropic 历史补档",
+          "label": "2026-10-03—07 补档",
+          "path": "reports/official-ai/2026-10-07_catchup.html",
+          "kind": "full"
         }
       ]
     },
@@ -85,8 +99,8 @@
       "short": "Codex / Claude Code / Cursor / Pi",
       "icon": "⌘",
       "description": "跟踪 AI 编码工具官方版本、模型配置、CLI、Windows/PowerShell、MCP、Skills、Hooks 与 Breaking Changes。",
-      "task_status": "paused",
-      "cadence": "原计划：每日 07:00（北京时间）",
+      "task_status": "running",
+      "cadence": "北京时间每日 07:00",
       "last_run": "2026-11-06",
       "source_status": "missing_original",
       "reports": []
@@ -98,8 +112,8 @@
       "short": "开源仓库 · 优劣评估 · 趋势",
       "icon": "★",
       "description": "结合 GitHub Trending、Star 增长与仓库更新，分析开源项目用途、成熟度、优劣、风险和场景。",
-      "task_status": "paused",
-      "cadence": "原计划：每日 07:00（北京时间）",
+      "task_status": "running",
+      "cadence": "北京时间每日 07:00",
       "last_run": "2026-11-03",
       "source_status": "missing_original",
       "reports": []
@@ -111,8 +125,8 @@
       "short": "视频生成 · 配音 · 数字人 · 练习",
       "icon": "▣",
       "description": "视频生成/编辑、角色一致性、语音、口型驱动、人脸、3D、制作工作流与实战练习。",
-      "task_status": "paused",
-      "cadence": "原计划：每日 07:00（北京时间）",
+      "task_status": "running",
+      "cadence": "北京时间每日 07:00",
       "last_run": "2026-10-31",
       "source_status": "partial_archive",
       "reports": [
@@ -133,8 +147,8 @@
       "short": "分布式 · AI Gateway · 数据治理",
       "icon": "◇",
       "description": "以业务场景和技术取舍为中心，横向研究可恢复 Agent、分布式系统、数据治理、云原生和跨语言企业级架构。",
-      "task_status": "mixed",
-      "cadence": "周一运行中 · 周四已暂停",
+      "task_status": "running",
+      "cadence": "北京时间每周一 08:00",
       "last_run": "2026-11-02",
       "source_status": "missing_original",
       "reports": []
@@ -147,7 +161,7 @@
       "icon": "☷",
       "description": "追踪抖音、小红书、视频号、B 站、YouTube、TikTok 等平台创作规则、政策和激励机会。",
       "task_status": "running",
-      "cadence": "每周日（北京时间）",
+      "cadence": "北京时间每周日 08:00",
       "last_run": "2026-11-01",
       "source_status": "missing_original",
       "reports": []
@@ -159,8 +173,8 @@
       "short": "AI / 开源 / 云计算 / 金融科技",
       "icon": "◉",
       "description": "每日精选有业务与工程价值的 AI、云计算、GitHub、数字银行和全球科技新闻。",
-      "task_status": "paused",
-      "cadence": "原计划：每日 08:00（北京时间）",
+      "task_status": "running",
+      "cadence": "北京时间每日 08:00",
       "last_run": "2026-10-31",
       "source_status": "missing_original",
       "reports": []
@@ -172,8 +186,8 @@
       "short": "权益 · 价格 · 截止时间",
       "icon": "✦",
       "description": "跟踪官方 AI、开发工具、云服务、GitHub 学生权益和其他公开优惠活动的资格、期限与风险。",
-      "task_status": "paused",
-      "cadence": "原计划：每日巡检（北京时间）",
+      "task_status": "running",
+      "cadence": "北京时间每日 08:00",
       "last_run": "2026-10-30",
       "source_status": "missing_original",
       "reports": []
@@ -185,8 +199,8 @@
       "short": "术语 · 原理 · 练习 · 发音",
       "icon": "✳",
       "description": "零基础理解 AI 术语与技术机制，包含 IPA 发音、业务案例、对比和实践练习。",
-      "task_status": "paused",
-      "cadence": "原计划：每日 08:00（北京时间）",
+      "task_status": "running",
+      "cadence": "北京时间每日 08:00",
       "last_run": "2026-10-28",
       "source_status": "missing_original",
       "reports": []
