@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#ffdc45"><meta name="color-scheme" content="light"><title>全球 AI 大模型与 Agent 技术官方日报 · 2026-11-02</title><style>
+:root { color-scheme: light; --ink:#17202b; --paper:#fffaf0; --line:#1d2631; --accent:#ffdc45; --warm:#ff7c58; --cool:#84dfe7; --muted:#5d6570; }
+* {box-sizing:border-box}
+html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body {margin:0; background:var(--paper); color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","Microsoft Yahei","PingFang SC",sans-serif;font-size:16px;line-height:1.75; overflow-x:hidden}
+a {color:#0058af; overflow-wrap:anywhere;text-underline-offset:3px}
+a:focus-visible {outline:3px solid #f56b38;outline-offset:2px}
+.site-head {background:var(--accent);border-bottom:5px solid var(--line); padding:1.8rem max(20px,calc((100vw - 1140px)/2)) 1.3rem}
+.kicker {display:inline-block;font-size:12px;font-weight:850;letter-spacing:.12em;padding:.25rem .55rem;background:var(--ink);color:#fff}
+.site-head h1 {font-size:clamp(1.85rem,5vw,3.5rem);line-height:1.18;letter-spacing:-.055em;max-width:1050px;margin:.8rem 0}
+.site-head p {margin:.4rem 0;font-weight:650}
+.subhead {color:#37434a;font-size:.94rem}
+.shell {max-width:1220px;margin:0 auto;padding:20px 26px 80px;display:grid;grid-template-columns:225px minmax(0,1fr);gap:26px}
+.toc {align-self:start;position:sticky;top:16px;max-height:calc(100vh - 32px);overflow-y:auto;background:#fff;border:2px solid var(--line);box-shadow:5px 5px 0 var(--line);padding:12px}
+.toc-title {font-weight:900;font-size:.88rem;letter-spacing:.06em;padding:.35rem .4rem;margin-bottom:8px;background:var(--cool)}
+.toc a {display:block;text-decoration:none;color:var(--ink);padding:.43rem .4rem;border-bottom:1px solid #e3e3df;font-size:.79rem;line-height:1.35;font-weight:650}
+.toc a:hover {background:var(--accent)}
+.paper {min-width:0;max-width:100%;}
+.paper h1 {display:none}
+.paper h2 {background:var(--cool);padding:.8rem 1rem;border:3px solid var(--line);box-shadow:6px 6px 0 var(--line);font-size:clamp(1.13rem,2.7vw,1.55rem);line-height:1.35;margin:3rem 0 1.3rem;scroll-margin-top:24px}
+.paper h3 {font-size:1.09rem;margin:1.9rem 0 .7rem;padding-left:.65rem;border-left:6px solid var(--warm);line-height:1.45}
+.paper p {margin:.7em 0 1em;overflow-wrap:anywhere}
+.paper strong {font-weight:850}
+.paper em {color:#344552}
+.paper h2:first-of-type {margin-top:1.5rem}
+.paper blockquote {margin:1.25em 0;padding:12px 16px;background:#fff0c8;border-left:5px solid var(--warm)}
+.paper hr {margin:2.5rem 0;border:0;border-top:3px solid var(--ink)}
+.table-scroll {max-width:100%; overflow-x:auto; overscroll-behavior-x:contain;margin:1.1rem 0 1.8rem;border:2px solid var(--line);border-radius:2px;background:white;-webkit-overflow-scrolling:touch}
+table {width:100%;min-width:580px;border-collapse:collapse;text-align:left;font-size:.86rem;line-height:1.58}
+th,td {border-bottom:1px solid #d4d3cc;padding:.7rem .8rem;vertical-align:top;overflow-wrap:anywhere}
+th {background:#ffde6b;color:#142029;font-weight:850;white-space:normal}
+tr:nth-child(even) td {background:#f9faf8}
+pre {margin:1.1rem 0 1.4rem;max-width:100%;overflow:auto;background:#1c2630;color:#f3f6f7;padding:15px 18px;border-left:5px solid var(--warm);font-size:.82rem;line-height:1.52;border-radius:0 4px 4px 0;tab-size:2;-webkit-overflow-scrolling:touch}
+pre code {color:inherit;white-space:pre;overflow-wrap:normal;font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace}
+code {font-family:ui-monospace,Consolas,monospace;font-size:.9em;background:#f0eee4;padding:.14rem .3rem;overflow-wrap:anywhere}
+pre code {background:none;padding:0}
+ul,ol {padding-left:1.45em}
+li {margin:.38em 0}
+input[type=checkbox] {accent-color:#202b33; vertical-align:middle}
+.site-footer {max-width:1140px;margin:0 auto 30px;padding:1rem 20px;border-top:3px solid var(--line);font-size:.82rem;color:var(--muted)}
+.skip {position:absolute;left:-9999px;top:0;background:#fff;padding:12px}
+.skip:focus {left:12px;z-index:9}
+@media(max-width:850px){.shell{display:block;padding:16px 16px 70px}.toc{position:static;max-height:none;margin:0 0 1.6rem;box-shadow:4px 4px 0 var(--line)}.toc-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 9px}.site-head{padding:1.4rem 16px}.paper h2{box-shadow:4px 4px 0 var(--line)}}
+@media(max-width:460px){body{font-size:15px}.toc-links{display:block}.shell{padding:12px 12px 52px}.site-head{padding:1.2rem 14px}.paper h2{font-size:1.18rem;padding:.7rem .65rem;box-shadow:3px 3px 0 var(--line)}.paper h3{font-size:1rem}.paper p{line-height:1.76} pre{font-size:.72rem;padding:11px 10px}th,td{padding:.5rem .6rem}table{font-size:.79rem}.table-scroll{margin-left:0;margin-right:0}}
+@media print {.site-head{background:#fff}.shell{display:block}.toc{display:none}.paper h2{box-shadow:none;break-after:avoid}table{min-width:0}pre{white-space:pre-wrap;overflow-wrap:anywhere}.table-scroll{overflow:visible}a{text-decoration:underline;color:#000}}
+</style></head>
+<body><a class="skip" href="#content">跳转正文</a><header class="site-head"><span class="kicker">GLOBAL AI / AGENT OFFICIAL DAILY</span><h1>全球 AI 大模型与 Agent<br>技术官方日报</h1><p>2026.11.02 · 北京时间 · 十三家厂商</p><div class="subhead">完整中文核验报告 · 单文件离线阅读 · 公开官方来源可点击</div></header>
+<div class="shell"><nav class="toc" aria-label="报告目录"><div class="toc-title">INDEX / 目录</div><div class="toc-links"><a href="#s1">今日必看摘要</a><a href="#s2">一、OpenAI｜Java SDK 4.96.0 与 Responses WebSocket 预热</a><a href="#s3">二、阿里巴巴 / Qwen｜Qwen Code v0.26.5 正式发布</a><a href="#s4">三、xAI｜Imagine 旧别名 11 月 2 日达到计划退役日期</a><a href="#s5">四、Google｜Java GenAI SDK 1.80.0：Agent 续跑与视频理解</a><a href="#s6">五、OpenAI｜GPT-6 Rosalind Research（历史重要补录）</a><a href="#s7">六、腾讯云｜语音合成 LaTeX 复杂文本播报（历史补录）</a><a href="#s8">七、OpenAI Codex Alpha 与 Gemini CLI Nightly</a><a href="#s9">八、13 家厂商官方巡检状态表</a><a href="#s10">九、经核验的版本、Model ID 与生命周期基线</a><a href="#s11">十、跨厂商兼容性与迁移矩阵</a><a href="#s12">十一、今日工程行动 Checklist</a><a href="#s13">十二、综合工程判断</a></div></nav><main id="content" class="paper"><h1>全球 AI 大模型与 Agent 技术官方日报</h1>
+<p><strong>2026 年 11 月 2 日（星期一）｜北京时间｜13 家厂商官方增量核验版</strong></p>
+<p><strong>核验窗口：</strong>2026 年 11 月 1 日 08:00 至 11 月 2 日早间，按北京时间统计。海外 GitHub Releases 同时保留官方 UTC 日期。上一期遗漏但具有实际价值的正式更新单独标注，不混入今日新发布。</p>
+<p>本期确认了 OpenAI Java SDK <code>4.96.0</code>、Qwen Code <code>0.26.5</code> 两项正式版本变化，以及 xAI 图像模型旧别名在今天达到既定退役日期。还核实到 Codex Alpha、Gemini CLI Nightly，并补录 Google Java SDK 的 Agent 续跑能力和 OpenAI 的 GPT-6 Rosalind Research。</p>
+<p>所有官方数值、Model ID、正式/预发布状态和适用范围，均以能够读取的一手发布说明为依据；未确认的 API 能力、地区、价格和客户端行为明确保留待核验。</p>
+<h2 id="s1">今日必看摘要</h2>
+<div aria-label="可横向滚动的表格 1" class="table-scroll" role="region"><table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>更新</th>
+<th>价值及状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>必看 ①</strong></td>
+<td><strong>OpenAI Java SDK 4.96.0：Responses WebSocket Warmup</strong></td>
+<td>11 月 1 日 UTC 发布，11 月 2 日北京时间可见。新版本支持 Responses WebSocket 预热；结合上一版 <code>4.95.0</code> 的 Agent Compaction、Session Review、Tool Settings 和 WebSocket 修复，对 Java 企业 Agent Runtime 有直接价值。<a href="https://github.com/openai/openai-java/releases/tag/v4.96.0" rel="noopener noreferrer" target="_blank">官方 Release</a></td>
+</tr>
+<tr>
+<td><strong>必看 ②</strong></td>
+<td><strong>Qwen Code 0.26.5：Managed Agent、交互界面与执行可靠性</strong></td>
+<td>11 月 1 日正式版。增加受限范围的历史 SQL 查询、默认开启 Generated UI、实验性 Helm 部署、PR 自动修复和后台 Agent 状态展示。<a href="https://github.com/QwenLM/qwen-code/releases/tag/v0.26.5" rel="noopener noreferrer" target="_blank">官方 Release</a></td>
+</tr>
+<tr>
+<td><strong>必看 ③（图像业务）</strong></td>
+<td><strong>xAI Imagine 旧模型别名今天到达退役日期</strong></td>
+<td>原始公告 9 月 2 日，计划生效 11 月 2 日。<code>grok-imagine-image-quality</code> 转由 <code>grok-imagine-image-2.0</code> 的 <code>quality: "low"</code> 提供服务；每张图片按官方说明比旧模型低 0.01 美元。<a href="https://docs.x.ai/developers/migration/imagine-image-quality-nov-2" rel="noopener noreferrer" target="_blank">迁移原文</a></td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="s2">一、OpenAI｜Java SDK 4.96.0 与 Responses WebSocket 预热</h2>
+<p><strong>2026-11-01 UTC｜<code>com.openai:openai-java:4.96.0</code>｜正式 Release｜必看</strong></p>
+<p>官方原文：<a href="https://github.com/openai/openai-java/releases/tag/v4.96.0" rel="noopener noreferrer" target="_blank">OpenAI Java SDK v4.96.0</a> · <a href="https://developers.openai.com/api/docs/guides/websocket-mode" rel="noopener noreferrer" target="_blank">Responses WebSocket Mode</a> · <a href="https://github.com/openai/openai-java/releases/tag/v4.95.0" rel="noopener noreferrer" target="_blank">v4.95.0</a></p>
+<h3>1）内容是什么？版本、日期与来源</h3>
+<p>OpenAI Java SDK <code>4.96.0</code> 新增 <strong>Responses WebSocket Warmup</strong> 支持，并补充 Realtime Translation 的 Client Secret 示例。前一版 <code>4.95.0</code> 于 10 月 31 日发布，包含 Agent Context Compaction、Session Review 与 Tool Settings、Hosted Tool Usage、WebSocket 授权处理、错误响应头保留等更新。这些属于历史补录，不算今日首次发布。</p>
+<div aria-label="可横向滚动的表格 2" class="table-scroll" role="region"><table>
+<thead>
+<tr>
+<th>SDK</th>
+<th>官方日期</th>
+<th>主要能力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>4.95.0</code></td>
+<td>2026-10-31</td>
+<td>Agent 配置、会话审核、工具设置、WebSocket 及错误处理</td>
+</tr>
+<tr>
+<td><code>4.96.0</code></td>
+<td>2026-11-01</td>
+<td>Responses WebSocket Warmup、Realtime Translation 文档</td>
+</tr>
+</tbody>
+</table></div>
+<p>两者均是正式 SDK Release，不是新的 GPT 基础模型。</p>
+<h3>2）核心变化与技术机制</h3>
+<p>Responses WebSocket Mode 允许复用一个持久连接开展多轮模型和工具交互，并使用 <code>previous_response_id</code> 延续上下文。新支持的 Warmup 机制，可以提前准备下一轮请求所需的指令、工具或其他输入状态。</p>
+<p>官方协议支持使用 <code>generate: false</code>：</p>
+<pre><code class="language-json">{
+  "type": "response.create",
+  "response": {
+    "model": "gpt-6.1-sol",
+    "input": "Prepare the next evaluation task.",
+    "generate": false
+  }
+}
+</code></pre>
+<p>这是解释预热字段的协议示意，生产代码应按官方 WebSocket 请求 Schema 和当前账户能力构造。<code>generate: false</code> 不产生模型生成结果，而是准备可供后续调用的请求状态。客户端可以使用返回的 Response ID 继续下一轮。</p>
+<pre><code class="language-text">Java / Spring Boot
+       |
+       v
+Responses WebSocket
+       |
+       +-- Warmup (generate: false)
+       +-- Actual Response
+       +-- Tool Execution
+       +-- Continuation (previous_response_id)
+</code></pre>
+<p>官方支持多条 <code>stream_id</code> 逻辑通道，互不相同的通道可以并发处理。文档列出一个连接最多 16 个在途 Response、32 个命名 Stream ID，连接最多持续 60 分钟。</p>
+<p><strong>WebSocket 连接、Response 状态和业务任务状态不是同一层次。</strong> 连接断开时，连接内缓存可能消失，特别是使用 <code>store=false</code> 或 Zero Data Retention 时，不能保证旧 Response ID 可以继续使用。</p>
+<h3>3）为什么有价值？性能证据边界</h3>
+<p>持久连接减少频繁建立请求和重复传输上下文的开销，尤其适合具有多轮 Tool Calling 的 Agent。OpenAI 官方在特定 20 次以上工具调用场景中观察到约 40% 的端到端时间改善，但这不是对所有 Java 应用的 P95 承诺。Warmup 也不是无成本万能加速开关，预热请求会增加状态管理复杂度，真实收益应在同样任务和费用口径下测试。</p>
+<h3>4）适用产品与业务场景</h3>
+<p>长时间运行的 Coding Agent、企业多工具工作流、连续模型判断、并发 Agent 子任务、具有数据保留限制的业务，以及 Java/Spring Boot 服务端应用。普通单次文本分类无需迁移。</p>
+<h3>5）对 Java、Nacos、企业 Gateway 与 Agent Runtime 的帮助</h3>
+<p>建议区分 Transport Session（<code>connectionId/streamId</code>）、Model Conversation（<code>responseId/previousResponseId</code>）和 Business Execution（<code>taskId/toolCallId/idempotencyKey/finalBusinessStatus</code>）。Gateway 应保留上游原始错误与请求头，避免把 WebSocket 错误误归类为 Context Overflow。Nacos 中将 WebSocket Endpoint、超时、并发和数据保留策略单独配置。即使模型重试或连接恢复，也不能自动重复执行付款、订单更新和通知。</p>
+<h3>6）是否值得升级？操作步骤与验收标准</h3>
+<p>在测试 Maven 项目中固定依赖版本：</p>
+<pre><code class="language-xml">&lt;dependency&gt;
+    &lt;groupId&gt;com.openai&lt;/groupId&gt;
+    &lt;artifactId&gt;openai-java&lt;/artifactId&gt;
+    &lt;version&gt;4.96.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>执行：</p>
+<pre><code class="language-powershell">mvn dependency:tree
+mvn test
+</code></pre>
+<p>回归普通 Responses、WebSocket、Warmup、工具结果续跑、多个 Stream、断线恢复，以及 <code>store=false</code> 下旧 Response 消失时的上下文重建。官方 WebSocket 示例要求 <strong>Java 17+</strong>；不能把 SDK 其他功能的较低 Java 要求推广到 WebSocket。</p>
+<p><strong>验收标准：</strong>输出完整，连接中断可恢复，业务写入不重复，Token/费用可核对。</p>
+<h3>7）优先级、兼容性与迁移风险</h3>
+<p><strong>必看，Java Agent 平台先 PoC 再升级。</strong> 主要风险是 SDK 网络传输差异、WebSocket 代理兼容、连接状态失效和多 Stream 事件路由。第三方 Base URL 即使支持普通 <code>/v1/responses</code>，也未必支持 WebSocket Warmup。SDK 变更不意味着模型 Context Window、Thinking 或定价改变。</p>
+<hr/>
+<h2 id="s3">二、阿里巴巴 / Qwen｜Qwen Code v0.26.5 正式发布</h2>
+<p><strong>2026-11-01 UTC｜<code>v0.26.5</code>｜正式 Release / Latest｜必看</strong></p>
+<p>官方原文：<a href="https://github.com/QwenLM/qwen-code/releases/tag/v0.26.5" rel="noopener noreferrer" target="_blank">Qwen Code v0.26.5</a> · <a href="https://github.com/QwenLM/qwen-code/releases/tag/desktop-v0.26.5" rel="noopener noreferrer" target="_blank">Desktop v0.26.5</a> · <a href="https://github.com/QwenLM/qwen-code/blob/main/README.md" rel="noopener noreferrer" target="_blank">安装说明</a></p>
+<h3>1）内容是什么？版本与功能</h3>
+<p>Qwen Code 正式发布 <code>v0.26.5</code>，同日发布 Desktop 对应版本。官方明确标记 <strong>No known breaking changes</strong>，但不意味着插件和工作流都无需回归。</p>
+<div aria-label="可横向滚动的表格 3" class="table-scroll" role="region"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th>变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agent 历史</td>
+<td>Managed 本地 H2 与托管 MySQL 的有界 SQL 历史查询</td>
+</tr>
+<tr>
+<td>Generated UI</td>
+<td>默认开启，交互卡片输入值可以作为会话上下文继续使用</td>
+</tr>
+<tr>
+<td>Web Shell</td>
+<td>Session Overview、Split View 快捷键</td>
+</tr>
+<tr>
+<td>后台 Agent</td>
+<td>状态栏显示正在运行的 Agent 数量</td>
+</tr>
+<tr>
+<td>Managed Agent 部署</td>
+<td>实验性 Helm 一键部署路径</td>
+</tr>
+<tr>
+<td>PR 验证</td>
+<td>仅干净且匹配 PR Head 的工作树可复用</td>
+</tr>
+<tr>
+<td>PR 自动修复</td>
+<td>阻塞时提供评论和人工处理说明</td>
+</tr>
+<tr>
+<td>CUA</td>
+<td>改善窗口选择、输入和会话清理</td>
+</tr>
+</tbody>
+</table></div>
+<p>还包括历史消息分页、插件状态和 GitHub PR Review 流程修复。</p>
+<h3>2）核心技术机制</h3>
+<p>Managed Agent 的历史记录不只是聊天文本，还包括执行操作、工具结果、状态转移和审核证据。有界查询通过分页避免一次性读取全部历史数据。</p>
+<pre><code class="language-text">Qwen Code Managed Agent
+      +-- Session State
+      +-- Execution Journal
+      +-- Local H2 / Hosted MySQL
+      +-- Bounded Queries
+      --&gt; Agent Resume / Review
+</code></pre>
+<p><strong>Generated UI 默认开启</strong>意味着交互卡片输入可能进入后续 Agent 上下文，必须校验类型、长度和权限。PR 自动修复通过工作树清洁度及 PR Head 约束减少误操作。</p>
+<h3>3）为什么有价值？性能证据边界</h3>
+<p>增强任务可审计性、状态恢复和人机协作。Agent 能说明改了什么、测试为何失败、什么时候人工接管；并非模型生成更快。官方没有提供可泛化的 Token 降本或 P95 指标。</p>
+<h3>4）适用业务场景</h3>
+<p>AI Coding、PR 自动修复、企业 Managed Agent、Web Shell、Desktop、MCP、Skills、Computer Use 和多 Agent。简单代码问答无需立即使用实验性 Managed 部署。</p>
+<h3>5）对 Java / Spring Boot / 分布式架构的帮助</h3>
+<p>维护 <code>Task/Session/EventJournal/ToolExecution/Approval/Checkpoint/Result</code>。MySQL 写入应使用事务与业务幂等键，多租户历史查询需要限制 <code>tenantId/subjectId</code>，分页不能绕过授权。实验 Helm 部署需核查 Chart、Secrets、镜像、持久化卷和网络策略，不可直接默认生产级可用。</p>
+<h3>6）实际试用步骤与验收</h3>
+<p>使用 npm 的测试环境：</p>
+<pre><code class="language-powershell">node --version
+npm install -g @qwen-code/qwen-code@0.26.5
+qwen --version
+</code></pre>
+<p>npm 安装要求 Node.js 22+，独立发行包另按相应要求操作。准备脱敏 Git 仓库，测试干净/不干净工作树、PR 验证、历史分页、Generated UI 与后台任务状态。</p>
+<p><strong>验收标准：</strong>不覆盖未提交修改，历史查询不越权，自动修复失败能停止，交互输入不能绕过授权，日志可追溯。</p>
+<h3>7）优先级、Breaking Change 与迁移风险</h3>
+<p><strong>必看，在用用户测试后升级。</strong> 官方没有已知 Breaking Changes，但默认 UI 和 Managed Agent 状态需要回归。这是客户端版本，不是 Qwen 模型发布，不能推断 Context、Thinking、API 定价或权重许可变化。</p>
+<hr/>
+<h2 id="s4">三、xAI｜Imagine 旧别名 11 月 2 日达到计划退役日期</h2>
+<p><strong>原公告 2026-09-02｜计划生效 2026-11-02｜生命周期提醒｜必看（图像业务）</strong></p>
+<p>官方原文：<a href="https://docs.x.ai/developers/migration/imagine-image-quality-nov-2" rel="noopener noreferrer" target="_blank">xAI Imagine Image Quality Retirement</a> · <a href="https://docs.x.ai/developers/release-notes" rel="noopener noreferrer" target="_blank">xAI Release Notes</a></p>
+<h3>1）内容是什么？准确 Model ID 与日期</h3>
+<p>xAI 先前宣布：<code>grok-imagine-image-quality</code> 从 11 月 2 日开始计划由 <code>grok-imagine-image-2.0</code> 的 <code>quality:"low"</code> 路径处理。旧别名仍可解析，生成/编辑接口结构不变。<code>grok-imagine-image</code> 1.0 不受影响。今天是既定迁移日而非新公告；本期没有用户账户 API 实测，因此不声称所有地域已经切换。</p>
+<h3>2）核心变化与技术机制</h3>
+<p>这是 Model Alias 重定向，不是 404。请求旧 Model ID，实际由新模型执行。新的 <code>quality</code> 有 <code>low</code>（旧别名迁移目标）、<code>medium</code>（更高计算与细节）、<code>auto</code>（当前生成时 Low，编辑时 Medium）等选项。官方说新模型支持最多五张来源图片编辑与 <code>21:9</code>、<code>5:2</code> 画幅。响应的 <code>model</code> 可以确认实际模型。</p>
+<h3>3）为什么有价值？价格与证据</h3>
+<p>官方公布新模型 Low 档每张比旧模型低 <strong>0.01 美元</strong>。这是供应商标价差异，不代表合格素材总体成本一定下降。生成质量、角色一致性与重做率仍可能变化；排行榜位置不是生产质量保证。</p>
+<h3>4）适用业务场景</h3>
+<p>AI 短剧、视频封面、角色素材、图片编辑、海报与营销素材批量生成。普通文本 Agent 不直接受影响。</p>
+<h3>5）对企业 Gateway 的帮助</h3>
+<p>保留 <code>requestedModel/resolvedModel/requestedQuality/effectiveQuality/imageResolution/providerRequestId/grossCost/acceptedImage</code>。不能只记录旧名称，否则无法解释实际模型及账单变化。角色素材需保留可追溯的生成配置。</p>
+<h3>6）迁移操作与验收标准</h3>
+<p>官方提供 OpenAI 兼容格式的 Python 示例：</p>
+<pre><code class="language-python">from openai import OpenAI
+client = OpenAI(base_url="https://api.x.ai/v1", api_key="YOUR_API_KEY")
+response = client.images.generate(
+    model="grok-imagine-image-2.0",
+    prompt="A watercolor lighthouse at dawn",
+    extra_body={"quality": "low"},
+)
+print(response.data[0].url)
+</code></pre>
+<p>实际密钥应从环境变量或秘密管理读取。固定至少 10 组 Prompt 比较 Low/Medium，检查实际模型、画质、图片尺寸、接受率和账单。</p>
+<p><strong>验收标准：</strong>不依赖隐式别名，质量/成本可核对，图片流水线不异常。</p>
+<h3>7）优先级与迁移风险</h3>
+<p><strong>图像业务必看，其他业务可跳过。</strong> 主要风险是 HTTP 仍成功但实际质量和计费变化。建议显式使用新 Model ID 和 <code>quality</code>。</p>
+<hr/>
+<h2 id="s5">四、Google｜Java GenAI SDK 1.80.0：Agent 续跑与视频理解</h2>
+<p><strong>2026-10-29｜<code>com.google.genai:google-genai:1.80.0</code>｜正式版｜历史遗漏补录｜建议看</strong></p>
+<p>官方原文：<a href="https://github.com/googleapis/java-genai/releases/tag/v1.80.0" rel="noopener noreferrer" target="_blank">Google Java GenAI SDK v1.80.0</a></p>
+<h3>1）内容是什么？版本与来源</h3>
+<p>Google Java SDK <code>v1.80.0</code> 于 10 月 29 日发布，并非今天的新版本。此前日报未完整展开，故本期补录。更新包括 Interactions API 的 <code>continuation_token</code>、<code>requires_continuation</code>、Java SDK 的自动继续执行、<code>continuation_ids</code>、视频理解相关支持、视频 Upscale 参数和 User-Agent 相关修复。</p>
+<h3>2）核心技术机制</h3>
+<p>长时间 Agent 不能假定一次 API 调用就给出最终答案，可能根据服务器返回的续跑状态继续执行。</p>
+<pre><code class="language-text">Interaction Create
+       |
+       v
+  Agent Running
+       |
+       v
+requires_continuation?
+       |
+       +-- Yes -&gt; Continue
+       +-- No  -&gt; Final Result
+</code></pre>
+<p><code>continuation_token</code> 是平台续跑状态，不应当作支付或订单的业务幂等键。视频理解还需正确传递媒体引用、时长、内容类型及调用状态。</p>
+<h3>3）为什么有价值</h3>
+<p>SDK 对状态续跑提供直接支持，减少自行拼装底层协议的工作。但自动续跑可能增加请求次数、费用、超时和取消管理；不能据此认为不再需要持久化业务状态。</p>
+<h3>4）适用场景</h3>
+<p>Spring Boot Agent、后台研究、视频分析、AI 短剧素材理解、跨语言工作流和长时间托管 Agent。</p>
+<h3>5）对企业架构的帮助</h3>
+<p>业务状态机建议包含 <code>CREATED/RUNNING/WAITING_CONTINUATION/WAITING_APPROVAL/FAILED/COMPLETED</code>。续跑 Token 关联到 <code>taskId</code>，但不能让模型任意重试外部副作用。AI Gateway 设置最大续跑次数、总费用预算和终止策略。</p>
+<h3>6）试用与验收</h3>
+<p>在 Maven 项目核对 <code>1.80.0</code> 依赖并执行 <code>mvn dependency:tree</code>。以只读长任务模拟继续执行、取消、上游临时错误和费用上限。</p>
+<p><strong>验收标准：</strong>状态可追踪、预算超限能停止、任务恢复不重复执行写入型工具。</p>
+<h3>7）优先级与风险</h3>
+<p><strong>建议看；在用 Google Interactions API 的 Java 团队可以安排回归。</strong> 不是 Gemini 模型发布，也不代表所有模型支持相同视频输入、Thinking 或费用；实际 Endpoint 权限需独立核验。</p>
+<hr/>
+<h2 id="s6">五、OpenAI｜GPT-6 Rosalind Research（历史重要补录）</h2>
+<p><strong>2026-10-30｜API Model ID：<code>gpt-6-rosalind</code>｜受控访问｜历史补录｜建议看（生命科学）</strong></p>
+<p>官方来源：<a href="https://help.openai.com/en/articles/9624314-model-release-notes" rel="noopener noreferrer" target="_blank">Model Release Notes</a> · <a href="https://help.openai.com/en/articles/20001193-gpt-rosalind-for-life-sciences-research" rel="noopener noreferrer" target="_blank">研究访问说明</a> · <a href="https://deploymentsafety.openai.com/gpt-rosalind-6" rel="noopener noreferrer" target="_blank">System Card</a></p>
+<h3>1）内容是什么？</h3>
+<p>OpenAI 于 10 月 30 日宣布 GPT-6 Rosalind Research 面向获得批准的组织和用户逐步开放，支持生命科学、药物发现、转化医学多步骤研究。可在 Work、Codex 和 API 使用，<strong>不在普通 Chat 标签页开放</strong>。API Model ID 为 <code>gpt-6-rosalind</code>。Enterprise 首先进入两周 Admin Preview，默认关闭，Research 权限单独审批；Discovery 权限不能直接使用 Research。</p>
+<h3>2）核心技术机制</h3>
+<p>官方系统卡说明它使用与 GPT-6 Astra 相同的模型权重，此次发布没有额外加入训练数据或后训练。主要是研究环境、安全评估、授权与部署条件的不同，不能描述为新的独立基础权重训练。</p>
+<h3>3）为什么有价值</h3>
+<p>多步科学研究需要文献、实验数据、专业工具和证据追踪。专用访问体系适配更严格研究治理，但模型建议不能替代实验结果、独立专家复核或监管要求。</p>
+<h3>4）业务场景</h3>
+<p>获准的生命科学、药物发现和研究机构。普通金融或 Java 后端项目没有直接迁移必要。</p>
+<h3>5）企业 Gateway 价值</h3>
+<p>Model ID 不等于访问资格。Registry 中还需组织准入、用户权限、用途限制、状态和审计；API Key 可以连接平台也不证明拥有 Research 授权。</p>
+<h3>6）试用与验收</h3>
+<p>只有确实需要合法生命科学研究且符合审批条件的组织才考虑申请。获批后用合规、非敏感研究评测，验证证据可追溯性、研究输出、访问日志和数据处理条款。</p>
+<p><strong>验收标准：</strong>组织与用户均有授权、用途符合限制，专家独立复核模型建议。</p>
+<h3>7）优先级与风险</h3>
+<p><strong>生命科学研究者建议看，其他业务可跳过。</strong> 这是 10 月 30 日补录，价格和可用性以官方合同及获批后的价目为准，不推断其通用 Context Window 或 Thinking 参数。</p>
+<hr/>
+<h2 id="s7">六、腾讯云｜语音合成 LaTeX 复杂文本播报（历史补录）</h2>
+<p><strong>2026-10-30｜产品功能更新｜历史补录｜建议看（AI 教育与内容创作）</strong></p>
+<p>官方原文：<a href="https://cloud.tencent.com/document/product/1073/49616" rel="noopener noreferrer" target="_blank">腾讯云语音合成产品动态</a></p>
+<h3>1）内容是什么？</h3>
+<p>腾讯云语音合成于 10 月 30 日增加部分音色的复杂文本播报能力。通过 <code>EnableLaTeX=true</code>，可以将部分 LaTeX 格式的数学、物理和化学公式与符号转换为自然语音。还新增粤语女声音色“云佳妍（广）”。</p>
+<h3>2）核心技术机制</h3>
+<p>普通 TTS 直接读 LaTeX 可能把反斜杠、括号、命令名读出来。复杂播报需要先解析公式结构、生成口语表达，再进行语音合成。能力仅限官方支持音色，开启后可能增加时延。</p>
+<pre><code class="language-text">LaTeX -&gt; Formula Parsing -&gt; Spoken Expression -&gt; TTS Model -&gt; Audio
+</code></pre>
+<h3>3）为什么有价值</h3>
+<p>适合把 AI 教学资料、数学公式、科技科普转成音频。尚无可靠的公式识别准确率、P95 增幅或新旧价格对照，不杜撰。</p>
+<h3>4）适用场景</h3>
+<p>AI 教育、数理化知识视频、科技播客、无障碍朗读和自动课程配音。</p>
+<h3>5）企业工程帮助</h3>
+<p>内容解析与 TTS Provider 分离。不支持 LaTeX 的音色，可以先转换公式为口语文本，再传普通 TTS，避免所有请求强制进入 LaTeX 模式。</p>
+<h3>6）实践与验收</h3>
+<p>准备平方、分数、求和、化学式、英文缩写和普通中文共 10 条样本。按支持音色测试开启/关闭 <code>EnableLaTeX</code>，对比准确性、延迟与账单。</p>
+<p><strong>验收标准：</strong>公式可正确朗读，普通文本不回归，费用与时延符合业务要求。</p>
+<h3>7）优先级与风险</h3>
+<p><strong>教育内容与短视频用户建议看，普通后端可跳过。</strong> 这是 10 月 30 日补录，不是新混元文本模型发布，不能推断 TokenHub 全部 TTS 均支持此参数。</p>
+<hr/>
+<h2 id="s8">七、OpenAI Codex Alpha 与 Gemini CLI Nightly</h2>
+<h3>7.1 OpenAI Codex <code>0.167.0-alpha.3</code></h3>
+<p><strong>1）版本与来源：</strong> <code>rust-v0.167.0-alpha.3</code> 于 2026-11-01 22:26 UTC 发布，北京时间 11 月 2 日早间可见。官方：<a href="https://github.com/openai/codex/releases/tag/rust-v0.167.0-alpha.3" rel="noopener noreferrer" target="_blank">Alpha Release</a>。</p>
+<p><strong>2）核心机制：</strong> 属于 Codex 预发布通道；本次 Release 只明确版本与构建信息，没有详细逐项功能说明，因此不能猜测新增功能。</p>
+<p><strong>3）价值：</strong>可提前观察下一版本兼容性，但不是生产级稳定性证据。</p>
+<p><strong>4）场景：</strong>Codex CLI、第三方 Base URL、MCP、Windows Terminal、PowerShell、长期 Agent。</p>
+<p><strong>5）企业工程：</strong>用 Golden Tasks 对比 Stable 和 Alpha 的模型路由、工具权限、任务恢复，不要直接在生产工作区替换。</p>
+<p><strong>6）操作与验收：</strong>保留 Stable <code>0.166.0</code>，隔离测试 <code>codex --version</code>、MCP、代理与 Resume；不得对生产仓库做破坏性操作。验收是关键工作流无回归、日志和权限可追溯。</p>
+<p><strong>7）优先级：可跳过。</strong>暂不迁移生产，不能根据 Alpha 版本号推断模型、Thinking、费用或 Schema。</p>
+<h3>7.2 Google Gemini CLI <code>0.67.0-nightly.20261101.g6814e00d6</code></h3>
+<p><strong>1）版本与来源：</strong>GitHub 显示于 2026-11-01 01:14 UTC 发布 Nightly。官方：<a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.67.0-nightly.20261101.g6814e00d6" rel="noopener noreferrer" target="_blank">Nightly Release</a>。</p>
+<p><strong>2）核心机制：</strong>为 Nightly 发布包，页面缺乏完整逐项变更，不推断新模型协议功能。</p>
+<p><strong>3）价值：</strong>可跟踪下一 Stable 的回归状态，不是性能证据。</p>
+<p><strong>4）场景：</strong>Gemini CLI、Windows、MCP、Skills、Hooks、Git、TUI。</p>
+<p><strong>5）企业工程：</strong>依赖不稳定 CLI 行为的脚本需要隔离回归，区分 Stable 与 Nightly 运行日志。</p>
+<p><strong>6）操作与验收：</strong><code>gemini --version</code> 检查版本，只有排查特定兼容问题才在隔离环境启用 Nightly；回归插件和任务取消恢复。</p>
+<p><strong>7）优先级：可跳过。</strong>已核实 Stable 仍为 <code>0.66.0</code>，Nightly 不是正式版，不推断 Context、Thinking 或价格变化。</p>
+<hr/>
+<h2 id="s9">八、13 家厂商官方巡检状态表</h2>
+<p>本期逐一检查了能够访问的官方公告、开发文档、模型生命周期页面及相关 GitHub Releases。“经核验无重要新增”仅针对已检查的公开渠道；对于动态控制台、地域目录或未能读取的资料，明确记录待核验，不把部分核查当作全量覆盖。</p>
+<div aria-label="可横向滚动的表格 4" class="table-scroll" role="region"><table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>本期官方核验结果</th>
+<th>巡检状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① OpenAI</strong></td>
+<td>Java SDK <code>4.96.0</code> 正式发布；Codex <code>0.167.0-alpha.3</code> 预发布；补录 GPT-6 Rosalind Research</td>
+<td><strong>重要 SDK 更新＋Alpha＋历史补录</strong></td>
+</tr>
+<tr>
+<td><strong>② Anthropic</strong></td>
+<td>Claude Platform 最新可见重要条目仍为 10/30 Opus 4.8 Fast 退役公告；Claude Code 最新正式版 <code>2.1.316</code>；Java SDK <code>3.3.0</code></td>
+<td><strong>已核验主日志和 Releases 无本窗口重要新增</strong></td>
+</tr>
+<tr>
+<td><strong>③ Google / DeepMind</strong></td>
+<td>Gemini CLI 11/1 Nightly；Gemini API Changelog 最近仍为 10/30 Computer Use GA；补录 Java SDK <code>1.80.0</code></td>
+<td><strong>预发布小更新＋Java 历史补录</strong></td>
+</tr>
+<tr>
+<td><strong>④ xAI</strong></td>
+<td>11/2 <code>grok-imagine-image-quality</code> 达到既定退役日期；Release Notes 最近新增仍为 10/27 <code>guidelines</code></td>
+<td><strong>重要生命周期节点，非新发布</strong></td>
+</tr>
+<tr>
+<td><strong>⑤ 智谱 / Z.ai</strong></td>
+<td>官方 New Released 最近可见 GLM-5.3-Flash；Coding Plan 与账号级服务目录未完全核实</td>
+<td><strong>主公告无新增；其他待核验</strong></td>
+</tr>
+<tr>
+<td><strong>⑥ DeepSeek</strong></td>
+<td>原厂 Change Log 最近仍为 10/17 Search API / Flash-1017；Harness 最新可见预发布 <code>0.2.1-rc.5</code>，非正式版</td>
+<td><strong>主日志无新增；部分生态待核验</strong></td>
+</tr>
+<tr>
+<td><strong>⑦ 腾讯</strong></td>
+<td>混元主文档无本窗口新模型证据；补录 10/30 LaTeX TTS；TokenHub 分地域目录未完全比对</td>
+<td><strong>历史小更新；其他待核验</strong></td>
+</tr>
+<tr>
+<td><strong>⑧ 阿里巴巴 / Qwen</strong></td>
+<td>Qwen Code <code>0.26.5</code> 和 Desktop <code>0.26.5</code> 正式发布；百炼公开上架表最近记录仍为 10/29 Ling-3.1-Flash</td>
+<td><strong>重要 Coding Agent 更新</strong></td>
+</tr>
+<tr>
+<td><strong>⑨ Moonshot / Kimi</strong></td>
+<td>Kimi Code 正式版 <code>2.4.1</code>；Canary <code>2.5.0</code> 为此前预发布；基础模型 API 无本窗口可信新条目</td>
+<td><strong>Releases 无正式新增；其他待核验</strong></td>
+</tr>
+<tr>
+<td><strong>⑩ 字节跳动</strong></td>
+<td>Seed 公开动态最近为 10/14；方舟产品与模型公告最近修改时间在 10 月下旬，未显示 11/1 新条目</td>
+<td><strong>已查渠道无新增；其他待核验</strong></td>
+</tr>
+<tr>
+<td><strong>⑪ TypeSafe AI</strong></td>
+<td>Blog 仍展示 Jev <code>1.14.0</code>；Docs 可读；API ReDoc 依赖 JavaScript，别名、RLCD、Danger Zone 与实际定价未全量核实</td>
+<td><strong>博客无新增；API / 实验能力待核验</strong></td>
+</tr>
+<tr>
+<td><strong>⑫ Meta AI</strong></td>
+<td>Engineering 最新显著文章为 10/29 JiTTesting；AI Research Blog 无本窗口新权重公告；Llama Stack 旧仓库链接重定向</td>
+<td><strong>工程主渠道无新增；模型许可待核验</strong></td>
+</tr>
+<tr>
+<td><strong>⑬ 百度</strong></td>
+<td>PaddleOCR Latest 仍为 <code>3.7.0</code>；千帆模型更新页本轮访问超时</td>
+<td><strong>PaddleOCR 无新 Release；千帆待核验</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>一手巡检入口：</strong> <a href="https://developers.openai.com/api/docs/changelog" rel="noopener noreferrer" target="_blank">OpenAI API Changelog</a> · <a href="https://platform.claude.com/docs/en/release-notes/overview" rel="noopener noreferrer" target="_blank">Anthropic Release Notes</a> · <a href="https://ai.google.dev/gemini-api/docs/changelog" rel="noopener noreferrer" target="_blank">Gemini API Changelog</a> · <a href="https://docs.x.ai/developers/release-notes" rel="noopener noreferrer" target="_blank">xAI Release Notes</a> · <a href="https://docs.z.ai/release-notes/new-released" rel="noopener noreferrer" target="_blank">Z.ai New Released</a> · <a href="https://api-docs.deepseek.com/updates/" rel="noopener noreferrer" target="_blank">DeepSeek Change Log</a> · <a href="https://cloud.tencent.com/document/product/1729" rel="noopener noreferrer" target="_blank">腾讯混元</a> · <a href="https://help.aliyun.com/zh/model-studio/newly-released-models" rel="noopener noreferrer" target="_blank">阿里云百炼</a> · <a href="https://github.com/MoonshotAI/kimi-code/releases" rel="noopener noreferrer" target="_blank">Kimi Code Releases</a> · <a href="https://docs.volcengine.com/docs/ark/model-release-announcement" rel="noopener noreferrer" target="_blank">火山方舟模型公告</a> · <a href="https://typesafe.ai/blog" rel="noopener noreferrer" target="_blank">TypeSafe Blog</a> · <a href="https://engineering.fb.com/" rel="noopener noreferrer" target="_blank">Meta Engineering</a> · <a href="https://github.com/PaddlePaddle/PaddleOCR/releases" rel="noopener noreferrer" target="_blank">PaddleOCR Releases</a>。</p>
+<p>已核查 GitHub 正式版、预发布标签、主要模型更新、退役日期和文档。无法读取的原文保留“待核验”，不无根据声称无变化。</p>
+<hr/>
+<h2 id="s10">九、经核验的版本、Model ID 与生命周期基线</h2>
+<p>本表不是 13 家所有模型/账号/地区的完整目录。</p>
+<div aria-label="可横向滚动的表格 5" class="table-scroll" role="region"><table>
+<thead>
+<tr>
+<th>产品 / 接口</th>
+<th>官方标识</th>
+<th>本期状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI Java SDK</td>
+<td><code>4.96.0</code></td>
+<td><strong>正式版，11/1 UTC</strong></td>
+</tr>
+<tr>
+<td>OpenAI Java SDK</td>
+<td><code>4.95.0</code></td>
+<td>10/31，历史补录</td>
+</tr>
+<tr>
+<td>OpenAI Codex CLI</td>
+<td><code>0.166.0</code></td>
+<td>Stable</td>
+</tr>
+<tr>
+<td>OpenAI Codex CLI</td>
+<td><code>0.167.0-alpha.3</code></td>
+<td>11/1 UTC，Alpha</td>
+</tr>
+<tr>
+<td>OpenAI Rosalind Research</td>
+<td><code>gpt-6-rosalind</code></td>
+<td>10/30，获批研究组织访问</td>
+</tr>
+<tr>
+<td>Anthropic Claude Code</td>
+<td><code>2.1.316</code></td>
+<td>正式版</td>
+</tr>
+<tr>
+<td>Anthropic API</td>
+<td><code>2026-10-21</code></td>
+<td>正式 API 版本</td>
+</tr>
+<tr>
+<td>Anthropic Java SDK</td>
+<td><code>3.3.0</code></td>
+<td>已核实正式版</td>
+</tr>
+<tr>
+<td>Claude Opus 4.8 Fast</td>
+<td><code>claude-opus-4-8</code> + <code>speed: fast</code></td>
+<td><strong>11/30 计划移除这个组合</strong></td>
+</tr>
+<tr>
+<td>Google Java SDK</td>
+<td><code>1.80.0</code></td>
+<td>10/29 正式版，历史补录</td>
+</tr>
+<tr>
+<td>Gemini API</td>
+<td><code>gemini-4-argon</code></td>
+<td>已有 GA，非今天新发</td>
+</tr>
+<tr>
+<td>Gemini CLI</td>
+<td><code>0.66.0</code></td>
+<td>Stable</td>
+</tr>
+<tr>
+<td>Gemini CLI</td>
+<td><code>0.67.0-nightly.20261101.g6814e00d6</code></td>
+<td>11/1 Nightly</td>
+</tr>
+<tr>
+<td>xAI 旧图片别名</td>
+<td><code>grok-imagine-image-quality</code></td>
+<td>11/2 计划切换</td>
+</tr>
+<tr>
+<td>xAI 新图片模型</td>
+<td><code>grok-imagine-image-2.0</code></td>
+<td>已有模型，支持质量档</td>
+</tr>
+<tr>
+<td>xAI Grok</td>
+<td><code>grok-4.7</code></td>
+<td>历史正式 API 模型</td>
+</tr>
+<tr>
+<td>Qwen Code</td>
+<td><code>0.26.5</code></td>
+<td>11/1 正式版</td>
+</tr>
+<tr>
+<td>Qwen Desktop</td>
+<td><code>0.26.5</code></td>
+<td>11/1 正式版</td>
+</tr>
+<tr>
+<td>Kimi Code</td>
+<td><code>2.4.1</code></td>
+<td>正式版</td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td><code>deepseek-flash</code> → <code>DeepSeek-V4.1-Flash-1017</code></td>
+<td>10/17 原厂更新，非当日新增</td>
+</tr>
+<tr>
+<td>Z.ai</td>
+<td><code>GLM-5.3-Flash</code></td>
+<td>历史公告</td>
+</tr>
+<tr>
+<td>TypeSafe AI</td>
+<td>Jev <code>1.14.0</code></td>
+<td>博客版本，实验功能另核</td>
+</tr>
+<tr>
+<td>百度 PaddleOCR</td>
+<td><code>v3.7.0</code></td>
+<td>历史正式版</td>
+</tr>
+</tbody>
+</table></div>
+<h3>模型能力、价格及许可边界</h3>
+<p><strong>Context / Thinking：</strong>不能凭 CLI 或 Java SDK 版本判断模型新增上下文长度、推理档位、工具能力；必须核对实际 Model ID。</p>
+<p><strong>价格：</strong>本期明确的新旧价差是 xAI 图片别名迁移后 Low 档每张低 0.01 美元。其他没有完整的同条件新旧报价，不编造。</p>
+<p><strong>TypeSafe：</strong>System One、Jev、Choice、Score、Noul、Box、RLCD、置信度校准和 Danger Zone 需按具体官方版本及账户状态确认；博客实验功能不自动等于 GA。</p>
+<p><strong>Meta / Llama：</strong>消费端产品、开放权重、研究与开发者 API 分属不同交付形态。自部署前需检查对应版本商用许可、权重分发和生产约束。</p>
+<p><strong>云平台第三方上架：</strong>百炼、TokenHub、千帆引入第三方模型，不等于该模型原厂在上架日首次发布。</p>
+<hr/>
+<h2 id="s11">十、跨厂商兼容性与迁移矩阵</h2>
+<div aria-label="可横向滚动的表格 6" class="table-scroll" role="region"><table>
+<thead>
+<tr>
+<th>更新</th>
+<th>核心风险</th>
+<th>工程建议</th>
+<th>生产判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI Java SDK 4.96</td>
+<td>WS Warmup、缓存、恢复、第三方 Gateway 差异</td>
+<td>Java 17 环境测试；幂等与状态机回归</td>
+<td><strong>测试后升级</strong></td>
+</tr>
+<tr>
+<td>Qwen Code 0.26.5</td>
+<td>Generated UI 默认开启、历史 SQL 授权、Managed 部署、PR 变化</td>
+<td>隔离仓库、权限和审计回归</td>
+<td><strong>在用者测试后升级</strong></td>
+</tr>
+<tr>
+<td>xAI 旧图像别名</td>
+<td>隐式路由、Low 质量、计费变化</td>
+<td>显式 Model ID 与 Quality，固定 Prompt 评测</td>
+<td><strong>受影响业务应处理</strong></td>
+</tr>
+<tr>
+<td>Google Java SDK 1.80</td>
+<td>自动续跑额外调用和费用</td>
+<td>最大续跑次数、费用上限和取消</td>
+<td><strong>先 PoC</strong></td>
+</tr>
+<tr>
+<td>GPT-6 Rosalind Research</td>
+<td>组织准入与用户授权</td>
+<td>获批科研组织评测</td>
+<td>普通业务不迁移</td>
+</tr>
+<tr>
+<td>腾讯 LaTeX TTS</td>
+<td>仅部分音色支持、时延、公式准确性</td>
+<td>小规模配音测试</td>
+<td>按需要采用</td>
+</tr>
+<tr>
+<td>Codex 0.167 Alpha</td>
+<td>客户端与第三方协议不确定性</td>
+<td>与 Stable 隔离测试</td>
+<td><strong>不生产</strong></td>
+</tr>
+<tr>
+<td>Gemini Nightly</td>
+<td>预发布行为与插件风险</td>
+<td>对应故障时才测试</td>
+<td><strong>保持 Stable</strong></td>
+</tr>
+<tr>
+<td>Claude Opus 4.8 Fast</td>
+<td>11/30 速度组合退役</td>
+<td>替代模型及服务档位回归</td>
+<td>提前迁移</td>
+</tr>
+<tr>
+<td>火山方舟旧模型</td>
+<td>11/24 EOS；图片/视频模型不自动迁移</td>
+<td>扫描旧 ID；embedding 需验证重建</td>
+<td>提前安排</td>
+</tr>
+</tbody>
+</table></div>
+<p>火山方舟既有退役文档注明部分 Doubao/Seedance 于 11 月 24 日 EOS；Embedding 变更涉及向量兼容，可能需要重建知识库；生图/视频不自动迁移。<a href="https://docs.volcengine.com/docs/ark/model-deprecation-notice" rel="noopener noreferrer" target="_blank">官方退役公告</a>。不是今天新公告。</p>
+<hr/>
+<h2 id="s12">十一、今日工程行动 Checklist</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P0｜更新 OpenAI Java SDK 测试基线。</strong> 核实 4.96.0，验证 Responses WebSocket Warmup、连接恢复、Proxy、ZDR 与业务幂等。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P0｜验证 Qwen Code 0.26.5。</strong> 备份环境后检查 Generated UI、PR 自动修复、历史查询权限、后台 Agent 和中断恢复。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P0｜检查 xAI 图像旧别名。</strong> 扫描 <code>grok-imagine-image-quality</code>，显式设置新 Model ID / <code>quality</code>，核对响应 model 与账单。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P1｜验证 Google Java SDK 1.80.0。</strong> 测试 Interactions 自动续跑、取消、超时、费用与工具调用；区分业务幂等键与续跑 Token。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P1｜检查模型生命周期。</strong> Claude Opus 4.8 Fast 的 11/30 退役、火山方舟 11/24 EOS，输出受影响业务清单。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P2｜腾讯 LaTeX TTS 实验。</strong> 固定数理化公式和台词，比较开启后的发音准确性、延迟和费用。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>P2｜补齐待核验渠道。</strong> 腾讯 TokenHub、千帆控制台、字节方舟地域、Z.ai Coding Plan、TypeSafe API 和 Meta 权重许可。</li>
+</ul>
+<h3>PowerShell 5.1 检查命令</h3>
+<pre><code class="language-powershell">codex --version
+claude --version
+qwen --version
+kimi --version
+gemini --version
+where.exe codex
+where.exe claude
+where.exe qwen
+mvn dependency:tree
+
+$patterns = @(
+    'grok-imagine-image-quality',
+    'claude-opus-4-8',
+    'doubao-seedance-1-0-pro-250528',
+    'openai-java',
+    'google-genai',
+    'continuation_token',
+    'previous_response_id'
+)
+Get-ChildItem . -Recurse -File -ErrorAction SilentlyContinue |
+    Where-Object {
+        $_.Extension -in '.java','.xml','.json',
+            '.yaml','.yml','.properties','.toml','.ps1'
+    } |
+    Select-String -Pattern $patterns -SimpleMatch
+</code></pre>
+<p>此脚本仅检查当前目录，不会读取远程 Nacos、数据库、容器环境变量或云控制台；输出可能有敏感配置，分享前脱敏。</p>
+<h3>45 分钟小练习：Java Agent 连续调用与安全恢复</h3>
+<p>创建脱敏 Spring Boot 服务，提供 <code>getOrderStatus</code>（只读）和 <code>updateTestOrderStatus</code>（模拟写入）。用同一任务对比 Responses HTTP 与 WebSocket：</p>
+<pre><code class="language-text">User Request
+      |
+      v
+Agent Planning
+      |
+      v
+Tool Call
+      |
+      +-- Read-only
+      +-- Write with Idempotency Key
+      |
+      v
+Tool Result
+      |
+      v
+Agent Continuation
+      |
+      v
+Final Business Result
+</code></pre>
+<p>WebSocket 方案额外测试 Warmup、断线、<code>previous_response_id</code> 失效和上下文重建。记录字段：</p>
+<pre><code class="language-text">taskId
+traceId
+provider
+modelSnapshot
+apiVersion
+sdkVersion
+streamId
+responseId
+previousResponseId
+toolCallId
+idempotencyKey
+approvalDecision
+retryCount
+inputTokens
+outputTokens
+grossCost
+finalBusinessStatus
+</code></pre>
+<p><strong>验收标准：</strong>任务执行完整，WebSocket 断线不会导致未经授权或重复写入；错误可定位；Token/费用可对账；能比较实际端到端 P95。</p>
+<hr/>
+<h2 id="s13">十二、综合工程判断</h2>
+<p><strong>第一，模型调用正从单轮请求进一步走向有状态的长时间交互。</strong> OpenAI Java SDK Responses WebSocket Warmup 和 Google Java SDK Interactions 续跑要求任务状态、连接生命周期与失败恢复。</p>
+<p><strong>第二，Coding Agent 将部署、历史审计和交互业务整合到同一运行平台。</strong> Qwen Code <code>0.26.5</code> 的 Managed Agent 历史查询、Generated UI 强化了趋势，但也增加数据库授权、输入验证和部署治理责任。</p>
+<p><strong>第三，模型别名与生命周期不一定体现为报错。</strong> xAI 旧图片别名迁移说明 HTTP 成功并不保证模型、质量和账单不变。</p>
+<p>推荐企业语言中立分层设计：</p>
+<pre><code class="language-text">Business Applications
+          |
+          v
+Domain Gateway (Auth / Tenant / Idempotency)
+          |
+          v
+AI Gateway (Provider / Region / Model / Cost)
+          |
+          v
+Provider Adapters (API / SDK / Schema / Thinking)
+          |
+          v
+Agent Runtime (Tool / MCP / Skills / Workflow)
+          |
+          v
+Execution Ledger (Resume / Retry / Approval)
+          |
+          v
+Security / Evals / Observability
+</code></pre>
+<p>对于 Java/Spring Boot、Nacos 和企业领域网关，当前最值得建设的不是无限增加模型，而是<strong>Provider 能力清单、协议兼容层、持久化执行账本、业务授权、幂等恢复与实际任务成本体系</strong>。</p>
+<p><strong>本期优先三件事：</strong>验证 OpenAI Java SDK 4.96.0 WebSocket 续跑安全性；回归 Qwen Code 0.26.5 的 Managed Agent 行为；核实 xAI 旧图片别名今日实际路由和计费。</p>
+<hr/>
+<p><em>正文可离线阅读；官方链接需要联网。核验日期、来源与限制已在各节注明。</em></p>
+</main></div><footer class="site-footer">仅供技术跟踪与工程评估。所有可用性、价格、许可与模型版本以所列官方来源及实际账户为准；在线来源链接需要联网。</footer></body></html>
