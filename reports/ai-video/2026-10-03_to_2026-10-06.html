@@ -1,0 +1,134 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI 短剧技术雷达补档｜10/03-10/06</title><style>
+:root{--bg:#F5F0E6;--ink:#000;--salmon:#ff8f7d;--blue:#8fd3ff;--yellow:#e8bd42;--mint:#9ee0bd}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Arial,'Microsoft YaHei',sans-serif;color:var(--ink);line-height:1.7}
+.wrap{max-width:1180px;margin:auto;padding:20px}.hero{border:5px solid #000;background:var(--yellow);padding:24px;box-shadow:8px 8px #000}
+h1{font-size:clamp(36px,6vw,72px);line-height:.95;margin:0 0 14px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+.card{border:4px solid #000;background:#fffdf7;padding:16px}.date{display:inline-block;border:3px solid #000;background:var(--salmon);font-weight:900;padding:3px 8px}
+.card h2{font-size:22px;line-height:1.2}.label{font-weight:900;background:var(--mint);border:2px solid #000;padding:1px 5px}
+.section{grid-column:1/-1;border:5px solid #000;background:var(--blue);padding:18px}.warn{background:#000;color:#fff}.warn .label{background:#fff;color:#000}
+table{width:100%;border-collapse:collapse;background:#fff}th,td{border:3px solid #000;padding:8px;vertical-align:top}th{background:var(--blue)}
+a{color:#000}.warn a{color:#fff}code{background:#fff;border:2px solid #000;padding:1px 4px}
+@media(max-width:800px){.grid{grid-template-columns:1fr}.section{grid-column:auto}}
+</style></head>
+<body><div class="wrap"><header class="hero"><h1>AI 短剧技术雷达<br>补档 10/03–10/06</h1>
+<p>补齐暂停期间缺失内容。为避免四天重复同一新闻，本文件按“当日新增 / 当日最值得看的变化”整理，跨日持续影响只保留一次，并优先使用官方文档、官方博客和高可信行业/论文来源。</p></header>
+<div class="grid">
+
+<article class="card">
+<span class="date">10/03</span>
+<h2>Runway Dev 上线 Grok Imagine Video 1.5 Lite</h2>
+<p><span class="label">核心变化</span> 1–15 秒，480p/720p/1080p；Runway Dev 计费 2/3/14 credits/秒，I2V 起始帧另加 1 credit。Lite 不支持 image/audio references，完整版 1.5 才适合 reference-heavy 镜头。</p>
+<p><span class="label">短剧价值</span> 适合作为 Preview/Candidate Provider：低成本批量生成多个 take，再把 hero shot 路由到更强模型。</p>
+<p><span class="label">可用性 / 限制</span> 已上线 Runway Dev。1080p 实际由 720p 生成后上采样，不能等同原生 1080p。</p>
+<p><b>测试建议：★★★★★</b></p>
+<p><a href="https://docs.dev.runwayml.com/api-details/api_changelog/" target="_blank">来源链接</a></p>
+</article>
+<article class="card">
+<span class="date">10/03</span>
+<h2>xAI Grok Imagine Video 1.5 Lite 公开价格</h2>
+<p><span class="label">核心变化</span> xAI 官方文档显示 Lite 输出价：480p $0.02/s、720p $0.03/s、1080p $0.14/s；支持文本/图像输入，不支持完整版那样的音频/参考视频能力。</p>
+<p><span class="label">短剧价值</span> 给 Shot Router 增加低成本分支。尤其 B-roll、环境镜头、Previz 不应默认使用高价模型。</p>
+<p><span class="label">可用性 / 限制</span> API 已可用；不同入口/聚合平台计费不同，不能直接混用 Runway credits 与 xAI 美元价格。</p>
+<p><b>测试建议：★★★★★</b></p>
+<p><a href="https://docs.x.ai/developers/models/grok-imagine-video-1.5-lite" target="_blank">来源链接</a></p>
+</article>
+<article class="card">
+<span class="date">10/03</span>
+<h2>Runway 模型目录形成 40+ 模型统一 API</h2>
+<p><span class="label">核心变化</span> Runway Dev 当前模型页显示 44 个模型，覆盖视频、图像、音频、实时、Upscale/HDR，并支持 Model Router 自动按 cost/latency/quality 选择模型。</p>
+<p><span class="label">短剧价值</span> 对短剧来说，Provider 层正在商品化；真正要积累的是 Shot 类型、通过率、返工率和成本历史。</p>
+<p><span class="label">可用性 / 限制</span> Router 本身无额外费用，但依赖各底层模型价格和能力。</p>
+<p><b>测试建议：★★★★★</b></p>
+<p><a href="https://docs.dev.runwayml.com/guides/models/" target="_blank">来源链接</a></p>
+</article>
+<article class="card">
+<span class="date">10/04</span>
+<h2>Artificial Analysis 重建 Text-to-Video 榜单，Wan 3.0 / Seedance 2.5 / H3 进入同一新标尺</h2>
+<p><span class="label">核心变化</span> 第三方 RCTV 汇总 Artificial Analysis 9/30 重建的 T2V v2.0：带音频榜单 Wan 3.0、Utopai X、Seedance 2.5、MiniMax H3 等位于前列。</p>
+<p><span class="label">短剧价值</span> 说明模型排名在频繁重标尺；不要把单次 Elo 当生产决策。应使用自己的 Shot-level benchmark。</p>
+<p><span class="label">可用性 / 限制</span> 这是第三方汇总，不是官方产品公告；适合趋势参考，不应替代内部 A/B。</p>
+<p><b>测试建议：★★★★☆</b></p>
+<p><a href="https://rctv.com/posts/ai-video-stack-2026/" target="_blank">来源链接</a></p>
+</article>
+<article class="card">
+<span class="date">10/04</span>
+<h2>ElevenLabs Image/Video/Templates API 在 10/5 前后更新文档</h2>
+<p><span class="label">核心变化</span> ElevenLabs 9/26 发布的 Image/Video/Templates API 在 10/5 更新：可通过 API 运行在 Flows 中设计好的模板，并可通过 MCP 调用；模型来自 Google、OpenAI、ByteDance、Creatify 等。</p>
+<p><span class="label">短剧价值</span> 适合把 Episode Flow 固化成模板：角色/场景输入变化，但生产结构不必每次重新设计。</p>
+<p><span class="label">可用性 / 限制</span> Pro 及以上开放；底层模型价格/限制各异，模板也不能替代 Character/Scene State。</p>
+<p><b>测试建议：★★★★★</b></p>
+<p><a href="https://elevenlabs.io/blog/introducing-the-image-video-and-templates-apis" target="_blank">来源链接</a></p>
+</article>
+<article class="card">
+<span class="date">10/04</span>
+<h2>Wan 3.0 在 ElevenLabs 创作栈中明确支持大 reference budget</h2>
+<p><span class="label">核心变化</span> ElevenLabs 文档列出 Wan 3.0：最多 10 张图、5 个视频参考（总 15 秒）、5 个音频参考（总 15 秒），5/10/15/20/30 秒，480p/720p/1080p，可开关原生音频。</p>
+<p><span class="label">短剧价值</span> 多参考镜头可把角色、场景、动作、声音拆成独立 Reference，而不是全塞进 prompt。</p>
+<p><span class="label">可用性 / 限制</span> Wan 3.0 在美国不可用；帧输入与 reference 输入存在组合限制。</p>
+<p><b>测试建议：★★★★★</b></p>
+<p><a href="https://elevenlabs.io/docs/zh/overview/capabilities/image-video" target="_blank">来源链接</a></p>
+</article>
+<article class="card">
+<span class="date">10/05</span>
+<h2>ElevenLabs 强化带时间戳与事件标签的转写</h2>
+<p><span class="label">核心变化</span> ElevenLabs 10/5 发布资源文档，重点是 transcription timestamps 和 event tagging 的工程使用方式。</p>
+<p><span class="label">短剧价值</span> 短剧生产可以把 ASR 从“字幕生成器”升级成 Timeline 数据源：对白边界、事件、停顿、非语音声音可用于剪辑、SFX 和 Lip Sync QC。</p>
+<p><span class="label">可用性 / 限制</span> 属于能力指导而非全新基础模型发布；实际精度仍依赖具体 STT 模型、语言和噪声条件。</p>
+<p><b>测试建议：★★★★☆</b></p>
+<p><a href="https://elevenlabs.io/blog/page/2" target="_blank">来源链接</a></p>
+</article>
+<article class="card">
+<span class="date">10/05</span>
+<h2>Dubbing v2 文档 10/5 更新：Segment-level regeneration 继续强化</h2>
+<p><span class="label">核心变化</span> Dubbing v2 继续强调 90+ 语言、保留原表演、sync-aware translation，并可只重新生成修改过的 segment。</p>
+<p><span class="label">短剧价值</span> 多语言短剧的返工粒度可以从“整集配音”降到句子/segment。</p>
+<p><span class="label">可用性 / 限制</span> 真人声音必须有授权；复杂多人重叠对白仍应做人工抽检。</p>
+<p><b>测试建议：★★★★☆</b></p>
+<p><a href="https://elevenlabs.io/blog/dubbing-api" target="_blank">来源链接</a></p>
+</article>
+<article class="card">
+<span class="date">10/05</span>
+<h2>AI Video Weekly Roundup 暴露 H3 衍生模型和地区许可风险</h2>
+<p><span class="label">核心变化</span> RCTV 10/5 周报指出多家公司发布基于 MiniMax H3 的视频模型，同时提醒 H3 license 在部分地区（包括美国）存在限制。</p>
+<p><span class="label">短剧价值</span> 短剧平台的 Model Registry 不能只记录质量和价格，还必须记录地域/许可证/商用可用性。</p>
+<p><span class="label">可用性 / 限制</span> 第三方行业汇总，具体许可应回到模型官方 License 核对。</p>
+<p><b>测试建议：★★★★☆</b></p>
+<p><a href="https://rctv.com/" target="_blank">来源链接</a></p>
+</article>
+<article class="card">
+<span class="date">10/06</span>
+<h2>ElevenAgents Architect：Agent 生产系统开始自我诊断、自我提出修改，并先跑模拟再让人批准</h2>
+<p><span class="label">核心变化</span> ElevenLabs 10/6 发布 Architect。它可以分析 transcript、测试失败、升级率等信号，提出配置变更，自动写 simulation，所有改动先落到 versioned draft，需人批准后才上线。</p>
+<p><span class="label">短剧价值</span> 这个模式非常适合短剧 Production Agent：分析失败 Shot/QC → 提出 Router/Prompt/Repair 规则变更 → 在测试集模拟 → 人工批准。</p>
+<p><span class="label">可用性 / 限制</span> 当前 Alpha，主要面向 ElevenAgents，而不是影视专用产品；价值在“自改配置 + 模拟 + 版本化审批”的控制面设计。</p>
+<p><b>测试建议：★★★★★（架构级）</b></p>
+<p><a href="https://elevenlabs.io/blog/elevenagents-architect" target="_blank">来源链接</a></p>
+</article>
+<article class="card">
+<span class="date">10/06</span>
+<h2>HeyGen Avatar V + Video Agent 的公开教学开始转向完整工作流</h2>
+<p><span class="label">核心变化</span> HeyGen 10/6 上线 Avatar V + Video Agent beginner workshop 回放，说明其产品重心已经从单个 avatar 生成转向 Avatar V、Video Agent、AI Studio 的完整制作流程。</p>
+<p><span class="label">短剧价值</span> 对短剧团队应重点测试：角色身份资产能否跨 Video Agent 生成、编辑、再生成保持一致，而不是只看单镜头 realism。</p>
+<p><span class="label">可用性 / 限制</span> 这是官方 workshop，不是新模型发布；适合作为实操材料。</p>
+<p><b>测试建议：★★★★☆</b></p>
+<p><a href="https://www.heygen.com/events" target="_blank">来源链接</a></p>
+</article>
+<article class="card">
+<span class="date">10/06</span>
+<h2>Runway Summit 仍未把所有 keynote 内容变成正式产品文档</h2>
+<p><span class="label">核心变化</span> Runway AI Summit 官方页显示 9/30 已举行，主题聚焦 real-time video、Runway Dev、world models，但截至补档检索时仍写着 full talks coming soon。</p>
+<p><span class="label">短剧价值</span> 短剧技术雷达应坚持“官方落地文档优先”，避免把舞台演示当已可用 API。</p>
+<p><span class="label">可用性 / 限制</span> 适合持续追踪，不应把未形成 changelog/guide 的能力写成已上线。</p>
+<p><b>测试建议：★★★★☆</b></p>
+<p><a href="https://summit.runwayml.com/" target="_blank">来源链接</a></p>
+</article>
+<section class="section"><h2>补档期间的共同结论</h2>
+<p><b>1.</b> Preview 与 Final Render 开始明显分层：Lite / Draft / Fast 模型适合批量候选，高价模型留给 Hero Shot。</p>
+<p><b>2.</b> Model Registry 需要新增 <code>license_region</code>、<code>reference_capability</code>、<code>native_audio</code>、<code>expected_attempts</code>。</p>
+<p><b>3.</b> Creative Flow 正在从 UI 变成 API / Template / MCP / Agent capability。</p>
+<p><b>4.</b> 自动化系统应该像 ElevenAgents Architect 一样：从失败数据提出改动 → 先模拟 → 生成 versioned draft → 人批准后上线。</p>
+</section>
+<section class="section" style="background:var(--yellow)"><h2>今日补档小练习：20 分钟做一个 Preview→Final 两级 Router</h2>
+<p>选 3 类 Shot：建立镜头、角色对白、动作镜头。每类各指定一个低成本 Preview Provider 和一个高质量 Final Provider。定义晋级条件：Identity、Motion、Composition、Audio、Cost。Preview 只负责结构通过，Final 才负责成片质量。最后计算“直接全用 Final”与“两级 Router”的预期成本差。</p>
+</section>
+</div></div></body></html>
