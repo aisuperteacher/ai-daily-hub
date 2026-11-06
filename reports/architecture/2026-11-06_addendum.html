@@ -1,0 +1,555 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="2026-11-06 Distributed & AI Architecture Weekly 周内增补刊，完整 5 项技术分析与风险、架构取舍及工程实践。"><title>Distributed & AI Architecture Weekly｜2026-11-06 增补刊</title><style>
+:root{--paper:#F5F0E6;--ink:#111;--white:#fff;--pink:#F6A49D;--blue:#9DCCF0;--mustard:#E8C351;--mint:#ABDEC0;--muted:#555b60;--line:#111}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;line-height:1.8}
+a{color:inherit;text-decoration-color:#333;text-underline-offset:3px;overflow-wrap:anywhere}main{max-width:1060px;padding:28px 23px 80px;margin:auto}header{border:4px solid #111;background:var(--pink);padding:28px 30px;margin-bottom:26px}header .tag{font-size:12px;letter-spacing:0.16em;font-weight:900}header h1{font-size:clamp(34px,6vw,68px);margin:10px 0;line-height:1.04;letter-spacing:-.04em}header p{font-weight:700;margin:4px 0}.summary{border:3px solid #111;padding:19px 22px;background:var(--mint);margin-bottom:24px}.meta{font-size:13px;opacity:.8;font-weight:700}.toc{border:3px solid #111;background:var(--blue);margin-bottom:25px;padding:16px}.toc-head{font-weight:900;font-size:19px;margin:0 0 12px}.tocgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.tocgrid a{display:block;border:2px solid #111;text-decoration:none;background:#fff;padding:8px 10px;font-weight:750;font-size:13px}.tocgrid a:hover{background:var(--mustard)}article{background:#fff;border:3px solid #111;padding:25px 30px}h1,h2,h3{line-height:1.28;scroll-margin-top:25px}article h1{display:none}h2{font-size:clamp(22px,3vw,32px);border-top:5px solid #111;padding-top:25px;margin-top:46px}h2:first-of-type{margin-top:0;border-top:none;padding-top:0}h3{font-size:19px;border-left:6px solid var(--blue);padding-left:12px;margin-top:28px}p{margin:12px 0}strong{font-weight:850}code{background:#f5f0e6;border:1px solid #b1ada5;border-radius:3px;padding:2px 4px;font-size:.91em}pre{background:#181818;color:#fff;border:2px solid #111;padding:18px;overflow-x:auto;white-space:pre;font-size:13px;line-height:1.5}pre code{background:transparent;color:inherit;border:0;padding:0}ul,ol{padding-left:25px}li{margin:6px 0}.table-scroll{max-width:100%;overflow:auto;border:2px solid #111;margin:20px 0}table{border-collapse:collapse;width:100%;min-width:620px;font-size:14px}th,td{text-align:left;vertical-align:top;padding:11px 13px;border:1px solid #111}th{background:var(--mustard);font-weight:900}tr:nth-child(even) td{background:#f8f5ef}article h2:nth-of-type(2n){background:linear-gradient(90deg,var(--mint),transparent)}article h2:nth-of-type(2n+1){background:linear-gradient(90deg,var(--blue),transparent)}.footer{font-size:12px;color:var(--muted);padding:18px 0} .toplink{float:right;font-size:12px}input[type=checkbox]{accent-color:#111}body:has(.toc) .summary{display:block}
+@media(max-width:720px){main{padding:12px 10px 50px}header{padding:17px}.tocgrid{grid-template-columns:1fr}article{padding:16px 14px}article h2{margin-top:35px;padding-top:16px}table{min-width:500px}pre{font-size:12px}}@media print{body{background:white}main{max-width:none;padding:0}.toc{display:none}article,header{border:0;padding:0;break-inside:auto}h2,h3{break-after:avoid}table,pre{break-inside:avoid}.summary{border:1px solid #111}a{color:#111}}
+</style></head><body><main><header><div class="tag">ENTERPRISE ARCHITECTURE / DISTRIBUTED SYSTEMS / AI-NATIVE</div><h1>Distributed & AI<br>Architecture Weekly</h1><p>11 月 6 日 · 深度增补刊</p><div class="meta">研究窗口：2026 年 10 月 31 日—11 月 6 日｜完整五项技术材料</div></header><section class="summary"><strong>本期架构判断</strong><p>跨组件的可靠执行、可信委托、业务级灾备与可验证的增量更新，正在成为企业平台需要明确治理的共性能力。本文不是摘要卡片：下方完整保留五项技术分析、实际参数、风险、选择依据与全部来源。</p></section><nav class="toc" aria-label="文章目录"><div class="toc-head">全文目录 / CONTENTS</div><div class="tocgrid"><a href="#section-1">一、本周 Top 5 架构雷达</a>
+<a href="#section-2">二、Top 1：Cloudflare DNS 架构优化——不要把每一次变更都变成全量重建</a>
+<a href="#section-10">三、Top 2：Temporal Standalone Nexus Operations——统一接口调用开始具有持久化操作语义</a>
+<a href="#section-18">四、Top 3：可信 Agent 委托——不仅识别 Agent，还要知道它代表谁、被允许做什么</a>
+<a href="#section-26">五、Top 4：企业级灾备设计——RTO 不应从单个应用开始计算</a>
+<a href="#section-34">六、Top 5：OpenTelemetry JavaScript SDK 3.0——三大信号统一，但升级要注意依赖断层</a>
+<a href="#section-41">七、本周跨技术栈架构决策矩阵</a>
+<a href="#section-42">八、推荐的企业级应用架构演进方式</a>
+<a href="#section-43">九、本周最值得完成的工程练习</a>
+<a href="#section-44">十、未来 1—3 年的四个趋势判断</a>
+<a href="#section-45">十一、本期结论</a>
+<a href="#section-46">十二、官方资料入口</a></div></nav><article><h1>Distributed &amp; AI Architecture Weekly</h1>
+<p><strong>企业级应用架构 · 分布式系统 · AI-native 架构</strong></p>
+<p><strong>2026 年 11 月 6 日增补刊｜研究窗口：2026 年 10 月 31 日—11 月 6 日</strong></p>
+<p>本次继续 11 月 2 日的周报，不重复上一期已覆盖的内容。由于本次是星期五，属于<strong>本周新增技术深度增补刊</strong>，原有每周一推送安排不变。</p>
+<p>本期围绕五个问题展开：超大规模分布式系统如何安全地增量更新、跨领域服务调用如何具备持久化执行语义、AI Agent 如何证明自己在代表哪个用户、容灾恢复目标如何真正落到业务全链路，以及多语言可观测性升级怎样避免破坏生产监控。</p>
+<h2 id="section-1">一、本周 Top 5 架构雷达</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>新材料</th>
+<th>发布日期</th>
+<th>关键架构价值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td>Cloudflare DNS 增量构建与统一调度</td>
+<td>11 月 2 日</td>
+<td>峰值内存降低 85%，减少不必要的全量计算</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Temporal Standalone Nexus Operations</td>
+<td>11 月 1 日进入预览</td>
+<td>将可靠跨服务调用变成可复用的平台能力</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>AI Agent 的可信身份与用户委托</td>
+<td>11 月 5 日</td>
+<td>从 Agent 身份扩展到用户身份、权限和责任追踪</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>AWS 企业级灾备验证框架</td>
+<td>11 月 2 日</td>
+<td>从应用恢复转向端到端业务功能恢复</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>OpenTelemetry JavaScript SDK 3.0</td>
+<td>11 月 5 日</td>
+<td>三大信号稳定化及跨版本迁移风险</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>核心判断：企业架构下一阶段的重点，不是引入更多服务或 Agent，而是让跨组件操作具有明确的状态、授权、完成语义和可验证结果。</strong></p>
+<h2 id="section-2">二、Top 1：Cloudflare DNS 架构优化——不要把每一次变更都变成全量重建</h2>
+<p><strong>发布时间：2026 年 11 月 2 日｜Cloudflare 官方工程复盘</strong></p>
+<p><strong>官方来源：<a href="https://blog.cloudflare.com/dns-targeted-zone-builds/">How we halved DNS build delay and cut memory use by 85%</a></strong></p>
+<h3 id="section-3">1. 解决的真实业务问题</h3>
+<p>Cloudflare 的 DNS 系统将用户修改的 DNS Record 与 Zone Settings 转换为全球边缘节点可用的数据。这一链路面临多个约束：变更量大，来源涉及不同业务系统；同一个 Zone 可能包含数千万条 DNS 记录；部分设置变化只影响少量记录，另一些影响整个 Zone；Kafka 事件和数据库副本更新并非完全同步。</p>
+<p>2022 年系统约每秒收到 250 次 DNS 记录变更；到本次改造时增长到约每秒 700 次，另有约每秒 100 个其他事件。部分 Zone 超过 2,000 万条记录。</p>
+<p>原先全量构建需要读取 Zone 数据，转换为边缘 KV 存储格式，比较并写入差异。即使最终只改变少量记录，读取、编码和比较仍可能遍历整个 Zone。这一模式的内存、延迟及 Kafka 队列阻塞风险随 Zone 规模迅速增加。</p>
+<h3 id="section-4">2. 新架构：Targeted Build Planner</h3>
+<pre class="diagram"><code class="language-text">Database / Kafka Change Events
+            |
+            v
+   Targeted Build Planner
+            |
+  +---------+----------+
+  |         |          |
+Resources  Resources  Apex +
+only       + Metadata Metadata
+  |         |          |
+  +---------+----------+---- Purge / Full Build
+            |
+            v
+      Unified Scheduler
+            |
+            v
+         Quicksilver
+</code></pre>
+<p>Planner 根据事件内容选择五种构建方式：Resources only、Resources and Metadata、Apex and Metadata、Purge、Full Zone。统一 Scheduler 合并同一 Zone 的待执行变更，向 Quicksilver 写入最终状态。</p>
+<p><strong>核心正确性约束：Targeted Build 写入的每一个 KV Key，都必须与基于同一数据状态执行 Full Build 的结果逐字节一致。</strong> 无法证明增量构建安全时就退回全量构建。</p>
+<p>这不是普通缓存优化，而是把变更影响分析与增量计算正确性提升为调度系统核心能力。</p>
+<h3 id="section-5">3. 实际工程效果</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>本次工程结果</th>
+<th>解释边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>峰值工作集内存</td>
+<td>79 GiB → 12 GiB（约 -85%）</td>
+<td>Zone Builder 部署层的内存，不是整个 Cloudflare 平台</td>
+</tr>
+<tr>
+<td>平均工作集内存</td>
+<td>49 GiB → 7 GiB（约 -86%）</td>
+<td>改造前后对比</td>
+</tr>
+<tr>
+<td>中位构建完成延迟</td>
+<td>7.7 秒 → 3.3 秒</td>
+<td>写入 Quicksilver 前的构建完成时间</td>
+</tr>
+<tr>
+<td>避免全量构建的任务占比</td>
+<td>92.95%</td>
+<td>24 小时样本</td>
+</tr>
+<tr>
+<td>最大 p99 延迟尖峰</td>
+<td>14.6 分钟 → 1.21 分钟</td>
+<td>该样本的尾部尖峰对比，不是 SLA</td>
+</tr>
+</tbody>
+</table></div>
+<p>这些指标不包括 Quicksilver 将数据分发到全球节点的时间，也不代表每个 Zone 都会获得相同收益。<a href="https://blog.cloudflare.com/dns-targeted-zone-builds/">官方工程分析</a>给出了测量边界。</p>
+<h3 id="section-6">4. 最值得借鉴的三个技术设计</h3>
+<p><strong>第一，增量计算必须明确影响边界。</strong> 企业定价规则、客户权限重算、产品目录发布和索引更新都常出现全量刷新。若能够准确描述每个事件影响哪些资源，就可减少不必要计算；但必须通过等价性测试、镜像执行和逐项对比确认正确性。</p>
+<p><strong>第二，事件消费顺序与任务完成顺序应分开。</strong> Kafka 的已提交 Offset 不能越过尚未完成的早期消息而不承担丢失风险。Cloudflare 允许后续构建先完成，但仅当所有更早消息完成后推进提交位置。崩溃后部分已处理消息会重放；系统选择重复工作而不是丢失变更。这是 At-least-once 的明确取舍。</p>
+<p><strong>第三，事件与数据库副本具有时序差异。</strong> Kafka 事件可能先于数据库 Replica 更新抵达。系统通过等待缓冲、读取新鲜状态、检查副本进度避免依赖过期数据。CDC、缓存刷新和物化投影也需要解决同类问题。</p>
+<h3 id="section-7">5. 不同技术栈怎样采用</h3>
+<p>Java 体系可以使用 Kafka + Spring Boot/Quarkus Consumer + 变更依赖规划器 + Redis 或数据库物化视图。Go/Rust 可以将 Planner 和 Scheduler 设计为独立高吞吐服务。若已有数据库原生增量视图或专业流处理引擎，应先评估复用，避免重复建造复杂控制面。</p>
+<p>真正决定是否引入的条件是：变更依赖是否可描述、全量重建代价是否显著、增量错误影响有多高、是否拥有安全回退机制。</p>
+<h3 id="section-8">6. 迁移、兼容和运维风险</h3>
+<p>最严重风险是错误低估变更影响，从而使部分业务状态永远不更新。应使用双轨验证：旧全量构建作为基准，新增量构建写入独立环境，逐 Key 比较。还应覆盖删除、重复事件、乱序、合并、Kafka Consumer 重启、多个实体共享元数据 Key 等情况。</p>
+<p>Cloudflare 使用 Mirror Zone Builder 消费真实生产 Kafka 事件，却写入不对客户提供服务的独立 Quicksilver，然后对比两个环境输出。这样的 Shadow/Mirror 方式比只做离线样例测试可靠。</p>
+<h3 id="section-9">7. 最值得阅读与落地建议</h3>
+<p>推荐阅读官方原文中的 <em>How DNS changes reach the edge</em>、<em>Why full builds stopped scaling</em>、<em>Combining changes in one scheduler</em>、<em>Keeping Kafka moving</em> 和 <em>Releasing safely</em>。</p>
+<p><strong>行动建议：</strong> 对存在配置分发、权限缓存、产品定价或搜索索引全量重建的企业值得试验。<strong>未来 1—3 年研判：</strong> 带有正确性证明、镜像验证与回退路径的增量计算，将成为更多控制面和数据同步平台的重要能力。</p>
+<h2 id="section-10">三、Top 2：Temporal Standalone Nexus Operations——统一接口调用开始具有持久化操作语义</h2>
+<p><strong>发布时间：2026 年 11 月 1 日进入 Public Preview｜Temporal 官方</strong></p>
+<p><strong>官方来源：<a href="https://temporal.io/blog/standalone-nexus-operations">Introducing Standalone Nexus Operations</a></strong></p>
+<h3 id="section-11">1. 业务问题：跨领域调用为什么不总是普通 RPC？</h3>
+<p>企业订单、支付、账务领域之间的支付操作，可能需要第三方验证、欺诈检查或等待外部网络恢复。普通 RPC 的生命周期通常围绕一次有时限的请求。若订单服务收到 Timeout，并不知道外部扣款究竟有没有成功；重新提交有重复扣款风险，不提交又可能丢失结果。</p>
+<p>因此需要回答：<strong>跨服务操作能否在调用方断线后继续执行，并允许通过稳定标识恢复查询最终结果？</strong></p>
+<h3 id="section-12">2. 新机制：将业务能力暴露为 Durable Operation</h3>
+<p>Temporal Nexus 原本支持 Workflow 之间的服务调用。Standalone Nexus Operations 允许普通应用和 Agent 通过 Temporal SDK 直接调用共享的 Nexus Service。</p>
+<p>例如，定义 <code>collectPayment(orderId)</code>。调用方指定稳定 Operation ID 启动操作，随后即使服务重启，也可按 ID 获取对应操作句柄并查询最终结果。</p>
+<pre class="diagram"><code class="language-text">Checkout Service
+      |
+      | startOperation(orderId, operationId)
+      v
+Temporal Nexus Endpoint
+      |
+      | durable tracking / reliable delivery
+      v
+Payment Operation
+      |
+      +--- payment provider
+      +--- risk checks
+      +--- async result
+      |
+      v
+Operation Result
+      |
+      v
+Checkout queries by Operation ID
+</code></pre>
+<p>Temporal 处理投递重试与执行结果跟踪，业务团队继续维护支付规则。功能在 11 月 1 日进入 Public Preview；Go、Java、.NET、Python 和 TypeScript 均有 SDK 指导或示例。</p>
+<h3 id="section-13">3. 与传统统一接口调用的根本区别</h3>
+<p>普通 API Gateway 主要解决服务发现、转发、协议、身份认证、限流、超时和单次请求结果。Durable Operation 进一步管理是否已接受操作、操作唯一标识、执行状态、断线后继续执行、暂时失败重投，以及最终结果查询。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>调用方式</th>
+<th>生命周期</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTP/gRPC</td>
+<td>一次请求为主要边界</td>
+<td>快速查询、确定性接口</td>
+</tr>
+<tr>
+<td>MQ + 自建状态机</td>
+<td>异步消息，业务状态自管</td>
+<td>业务事件、长期任务</td>
+</tr>
+<tr>
+<td>Durable Operation</td>
+<td>操作生命周期独立于请求连接</td>
+<td>支付、审批、长时间跨服务动作</td>
+</tr>
+</tbody>
+</table></div>
+<p>Durable Operation 不是 REST/gRPC 的通用替代品。</p>
+<h3 id="section-14">4. 对领域网关和统一能力调用的影响</h3>
+<p>对于 <code>InterfaceClient.invoke(interfaceCode, version, request)</code> 风格的企业平台，可以继续以服务目录描述能力，但把具体执行方式根据业务语义分开：查询余额、查询客户资料使用同步 RPC；提交跨境支付、发起人工审核可以采用 Durable Operation / Durable Workflow，返回 Operation ID 并通过状态查询或事件通知获取结果。能力目录可以统一，但执行层不需要强行同构。</p>
+<h3 id="section-15">5. 技术取舍</h3>
+<p>优势是跨服务长任务无需每个项目重复实现重试、状态追踪和断线恢复；代价是需要维护 Temporal 控制面、Worker、状态存储、权限和运维。对极高频、短时、无状态查询，额外持久化开销通常不合算；对于低频高价值的支付与审批，持久化执行则可能更有经济合理性。</p>
+<h3 id="section-16">6. 迁移、兼容与运维风险</h3>
+<p><strong>可靠投递不代表外部副作用自动 Exactly-once。</strong> 支付已经扣款，但 Worker 未记录完成即崩溃，仍可能触发再次执行。目标领域服务必须使用稳定幂等键，并支持流水号查询、审计与补偿机制。</p>
+<p>还需要检查 Operation ID 唯一性、跨租户隔离、超时与取消语义、结果保留期限和权限传播。目前仍是 Public Preview，正式承载生产核心资金操作前要核查实际 SDK 与兼容承诺。</p>
+<h3 id="section-17">7. 最值得读与落地建议</h3>
+<p>重点阅读 <em>Call services built on Temporal directly from your existing application</em>、<em>Fire and forget with guaranteed reliability</em> 与 Operation ID 示例。</p>
+<p>建议用两套实现做支付模拟：HTTP + MQ + 自定义状态表，对比 Standalone Nexus。注入网络断开、Worker 崩溃、重复提交和调用方重启，比较恢复语义、审计、成本及实现复杂度。</p>
+<p><strong>行动建议：</strong> 极值得做 PoC，但不应未经评估直接承载生产核心资金操作。<strong>未来 1—3 年研判：</strong> 企业服务目录可能从单纯描述 HTTP Schema 演进为描述同步调用、异步消息和持久化业务操作的统一能力目录。</p>
+<h2 id="section-18">四、Top 3：可信 Agent 委托——不仅识别 Agent，还要知道它代表谁、被允许做什么</h2>
+<p><strong>发布时间：2026 年 11 月 5 日｜Cloudflare 官方架构讨论</strong></p>
+<p><strong>官方来源：<a href="https://blog.cloudflare.com/trusted-agent-delegation/">Agents aren’t humans (but they kinda are)</a></strong></p>
+<p><strong>配套工程实践（11 月 3 日）：<a href="https://aws.amazon.com/blogs/machine-learning/servicenow-on-behalf-of-token-exchange-with-bedrock-agentcore-gateway/">ServiceNow on-behalf-of token exchange with Bedrock AgentCore Gateway</a></strong></p>
+<h3 id="section-19">1. 业务问题：Agent 代表用户访问企业系统，谁承担责任？</h3>
+<p>设想同一 AI Agent 平台帮助不同企业员工操作 ServiceNow：员工 A 只能查看自己的工单，员工 B 是管理员，可修改工单分配。如果下游系统只能看到统一 Agent 服务账号，就无法辨别实际操作人。风险包括 Agent 以高权限服务账号绕过用户级授权，以及无法追溯谁授权、谁执行、调用了什么工具、修改了什么内容。</p>
+<p>Cloudflare 这次讨论的范围更广：托管 Agent 代表用户访问网站时，站点往往只能看到 Agent 运营商或中介平台，而看不到背后的用户。这引发账户共享、欺诈争议、用户归属、访问限制和责任认定问题。</p>
+<h3 id="section-20">2. 核心思想：Identity / Reputation / Accountability</h3>
+<ul>
+<li><strong>Identity（身份）：</strong> 是哪个 Agent、哪个 Operator，在必要时又是哪位用户发起访问？</li>
+<li><strong>Reputation（信誉）：</strong> Agent、用户或访问会话是否可信，是否存在滥用风险？</li>
+<li><strong>Accountability（责任）：</strong> Agent 执行错误动作后，能否追溯授权来源和责任主体？</li>
+</ul>
+<p>Cloudflare 讨论 Web Bot Auth（WBA）、OAuth、Privacy Pass、MOLE 等机制可能承担的角色，并宣布 Trusted Agent Delegation（TAD）合作倡议。但 <strong>TAD 是协议协作与标准推动方向，并非已经形成统一成熟的全球委托规范</strong>。</p>
+<p>Cloudflare 本周推出的可用能力包括识别 Personal Agent 流量、为不同 Agent 设置访问策略，以及在部分登录场景关联 Agent 与用户；更完整的跨站身份、信誉和责任传递仍在发展。站点可根据业务选择不同披露程度：匿名、会话、账号或唯一用户标识，并遵守数据最小化原则。</p>
+<h3 id="section-21">3. AWS 提供了可操作的企业 OBO 实现</h3>
+<p>11 月 3 日的工程实践展示了 Microsoft Entra ID、AgentCore Gateway 与 ServiceNow 的 On-Behalf-Of（OBO）Token Exchange。</p>
+<pre class="diagram"><code class="language-text">企业用户
+  | 用户身份 Token
+  v
+AI Agent
+  | 面向 Agent 应用的 JWT
+  v
+AgentCore Gateway
+  | OBO Token Exchange
+  v
+Microsoft Entra ID
+  | 面向 ServiceNow 的新 Token
+  v
+ServiceNow REST API
+  | 按原用户角色进行授权
+  v
+业务操作结果
+</code></pre>
+<p>关键概念是 OAuth Token 的 <code>audience</code>：签发给 Agent 应用的 Token 不应直接提交给 ServiceNow。Gateway 通过 OBO 向 Entra ID 换取目标为 ServiceNow 的令牌，保留原用户身份，下游再按其权限授权。</p>
+<p>Microsoft Entra OBO 使用 <code>requested_token_use=on_behalf_of</code>。相关 AWS 文档明确区分 RFC 8693 通用 Token Exchange 与 Microsoft 基于 JWT Bearer Grant 的 OBO 实现，二者不能简单认为完全相同。</p>
+<h3 id="section-22">4. 企业架构需要管理哪些身份与权限？</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>应明确的问题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User Identity</td>
+<td>谁要求执行此动作？</td>
+</tr>
+<tr>
+<td>Agent Identity</td>
+<td>哪个 Agent 在执行任务？</td>
+</tr>
+<tr>
+<td>Delegated Authority</td>
+<td>授权允许执行哪些操作，期限和范围是什么？</td>
+</tr>
+<tr>
+<td>Tool Identity</td>
+<td>调用了哪个 Tool 或服务？</td>
+</tr>
+<tr>
+<td>Resource Policy</td>
+<td>对应资源、租户和业务状态是否允许本次动作？</td>
+</tr>
+<tr>
+<td>Audit Context</td>
+<td>如何追溯身份、权限、工具与执行结果？</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>委托 Token 有效不意味着操作参数合法。</strong> 即便允许修改工单，下游仍必须验证工单 Tenant ID、Resource ID、业务状态和用户权限。Gateway 负责身份委托，领域服务负责最终资源授权，两层不能互相替代。</p>
+<h3 id="section-23">5. 技术选型和实施成本</h3>
+<p>已有 Entra ID、Keycloak 或其他 IdP 的企业，可首先使用 OAuth/OIDC、Token Exchange、短生命周期令牌与资源级授权，避免重新创建 Agent 用户体系。</p>
+<p>公开只读任务通常只需受限的 Workload Identity，无需强制传递所有个人身份。支付、工单修改和数据删除等高风险操作，应额外考虑 Transaction-level Confirmation 和 HITL。收益与代价需要同时考虑：令牌交换延迟、IdP 依赖、权限维护、审计成本、数据最小化和隐私要求。</p>
+<h3 id="section-24">6. 迁移与安全风险</h3>
+<p>重点防范 Audience 错误、Scope 扩张、跨租户身份混淆、未经授权将用户令牌转发给 Tool。日志不应记录原始 Access Token。IdP 不可用时不能自动降级为管理员服务账号。多 Agent 链路中也要限制子 Agent 获得的权限范围，不得突破原用户授权边界。</p>
+<h3 id="section-25">7. 最值得读与落地建议</h3>
+<p>Cloudflare 原文重点阅读 <em>The intermediary problem</em>、<em>Identities</em>、<em>Site Agent access policy</em> 和 <em>What you can do today</em>；AWS 文章重点阅读 <em>Solution overview</em>、<em>How OBO token exchange works</em>。</p>
+<p>搭建不同权限的两名用户共用一个 Agent 的测试环境，验证正常访问、跨用户访问、错误 Audience、Scope 扩大、用户权限撤销、下游领域授权和审计关联。</p>
+<p><strong>行动建议：</strong> 若 Agent 要操作真实企业系统，优先建立身份委托和最终授权链。<strong>未来 1—3 年研判：</strong> 企业 Agent 可能由“一个机器人服务账号”演进为用户、Agent、工具与资源共同参与的多主体授权模型。</p>
+<h2 id="section-26">五、Top 4：企业级灾备设计——RTO 不应从单个应用开始计算</h2>
+<p><strong>发布时间：2026 年 11 月 2 日｜AWS Architecture Blog，三篇系列材料</strong></p>
+<ol>
+<li><a href="https://aws.amazon.com/blogs/architecture/three-business-decisions-that-define-your-dr-success/">Three business decisions that define your DR success</a></li>
+<li><a href="https://aws.amazon.com/blogs/architecture/validating-your-dr-commitment-from-controlled-test-to-real-world-readiness/">Validating your DR commitment: From controlled test to real-world readiness</a></li>
+<li><a href="https://aws.amazon.com/blogs/architecture/how-to-run-a-dr-readiness-engagement/">How to run a DR readiness engagement</a></li>
+</ol>
+<p>三篇应作为一项完整技术材料阅读，不能只看容灾架构图。</p>
+<h3 id="section-27">1. 业务场景：应用恢复了，业务却没有恢复</h3>
+<p>支付系统可能由 API Gateway、订单/支付服务、身份平台、风控、支付渠道、数据库与消息队列组成。若支付服务可在一小时内完成跨地域切换，但共享身份服务需要四小时，用户仍然无法完成交易。</p>
+<p><strong>恢复边界应按端到端业务功能定义，而不是按应用部署单元定义。</strong> 这对任何云厂商和编程语言都适用。</p>
+<h3 id="section-28">2. AWS 提出的三个业务决策</h3>
+<p><strong>决策一：Recovery Boundary。</strong> 明确用户必须实际完成什么：登录、查询账户、提交支付、收到确认。不能只把若干 Pod/VM 显示 Healthy 当作恢复。</p>
+<p><strong>决策二：业务能容忍多少中断与数据丢失。</strong> RTO 是恢复时间目标；RPO 是可容忍的数据丢失窗口。只读报表可能接受短时间滞后，资金交易可能不允许丢失无法重建的记录。恢复目标应由业务方根据后果确认，不能仅由工程部门凭架构理论值设定。</p>
+<p><strong>决策三：依赖链能否满足承诺。</strong> 必须检查身份、DNS、网络、共享服务、外部渠道、云资源配额和跨团队依赖。案例中的应用承诺一小时恢复，但共享身份服务恢复目标为四小时，导致实际端到端功能不可能满足原承诺。</p>
+<h3 id="section-29">3. 四级渐进式灾备验证</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>等级</th>
+<th>目标</th>
+<th>主要发现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tabletop Exercise</td>
+<td>不影响生产，检查演练流程、职责和沟通</td>
+<td>关键步骤无人负责</td>
+</tr>
+<tr>
+<td>Planned Failover</td>
+<td>预先安排的实际切换</td>
+<td>DNS、数据库、网络配置问题</td>
+</tr>
+<tr>
+<td>Surprise Drill</td>
+<td>未提前通知响应团队</td>
+<td>单点人员知识依赖、升级与协调失败</td>
+</tr>
+<tr>
+<td>Game Day / Fault Injection</td>
+<td>注入特定依赖故障</td>
+<td>未建模依赖和级联失效</td>
+</tr>
+</tbody>
+</table></div>
+<p>一个预先通知的演练只能证明部分机制在准备充分的条件下有效，不能自动证明真实事件中的组织协同能力。</p>
+<p>在 AWS 报告的企业案例中，首次演练没有达到五小时的合同恢复承诺；通过重新定义边界、补齐依赖、预置灾备资源并改进路由切换，四个月后的演练取得成功。这是具体案例，不能作为其他企业的固定恢复耗时基准。</p>
+<h3 id="section-30">4. 故障时应尽量依赖 Data Plane 而非 Control Plane</h3>
+<p>灾备发生时最好不要依赖临时新建 VM、IAM 角色、数据库副本或网络资源。若备用 Region 没有足够容量或账号配额，即使自动化脚本正确也可能无法恢复。</p>
+<p>因此重要基础设施应提前预置并验证，通过可用的数据面切换手段执行恢复，尽量减少故障过程中依赖配置变更或创建资源。这对应 Static Stability 原则。</p>
+<p>但预置资源需要日常成本投入；冷备、温备、热备和 Active-Active 应根据业务价值、RTO/RPO 与资源费用取舍。</p>
+<h3 id="section-31">5. 不同技术栈的实施方式</h3>
+<p>Kubernetes 场景应评估跨集群运行、Global Traffic Manager、数据库/MQ、身份平台与外部依赖；多云架构需验证云间网络、授权、DNS、数据复制和故障切换；传统数据中心则可使用双机房部署和业务主备机制。最终验收以真实用户旅程及数据状态为准，而不是技术组件是否存活。</p>
+<h3 id="section-32">6. 主要风险与误区</h3>
+<p>不能把多个组件 RTO 简单相加，也不能仅取最大值当作最终端到端 RTO。串行/并行依赖、人工步骤、数据恢复、外部业务渠道和切换动作决定真正关键路径。</p>
+<p>跨区域异步复制不保证零数据丢失；高价值交易需要独立设计 RPO 和恢复后对账。灾备演练可能影响生产，必须审批、隔离、定义回滚条件。Runbook 也要持续治理，因为新增服务依赖会使原来成功的演练结果失效。</p>
+<h3 id="section-33">7. 最值得读与落地建议</h3>
+<p>先读第一篇的 <em>Define the recovery boundary</em>、<em>Anchor the target to business consequence</em>、<em>Account for the dependency chain</em>；再读第二篇的 <em>Four levels of progressive validation</em>；最后按第三篇五步计划实施：<strong>Kickoff → Assessment → Validation Plan → Execute &amp; Learn → Ongoing Review</strong>。</p>
+<p>选择一条用户可见的支付或订单业务链，模拟共享身份服务不可用、数据库复制延迟和局部网络中断，记录真实恢复时间与最终业务结果。</p>
+<p><strong>行动建议：</strong> 立即用于架构评审与 DR Runbook 复核。<strong>未来 1—3 年研判：</strong> 灾备治理将更强调业务功能连续性、跨团队依赖、静态稳定性及持续故障演练，而不只是拥有备用机房。</p>
+<h2 id="section-34">六、Top 5：OpenTelemetry JavaScript SDK 3.0——三大信号统一，但升级要注意依赖断层</h2>
+<p><strong>发布时间：2026 年 11 月 5 日｜OpenTelemetry 官方</strong></p>
+<p><strong>发布公告：<a href="https://opentelemetry.io/blog/2026/otel-js-sdk-3-0/">Announcing the OpenTelemetry JavaScript SDK 3.0</a></strong></p>
+<p><strong>迁移文档：<a href="https://github.com/open-telemetry/opentelemetry-js/blob/main/doc/3.x/migration-guide.md">Upgrade to OpenTelemetry JS SDK 3.x</a></strong></p>
+<h3 id="section-35">1. 业务问题：多语言企业的监控兼容性</h3>
+<p>企业平台同时运行 Java、Go、Python、.NET 和 Node.js。虽然都采用 OpenTelemetry Trace、Metrics 和 Logs，但不同语言 SDK 的升级并不同步，也不保证完全向后兼容。Node.js API Gateway 升级 OTel SDK 后可能遇到模块加载、初始化和 Trace Propagation 错误；如果业务依赖已部署的 Trace/告警/日志关联，观测 SDK 也属于需要独立回归的生产依赖。</p>
+<h3 id="section-36">2. 本周的核心版本与变化</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>版本或要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stable SDK</td>
+<td><code>3.0.0</code></td>
+</tr>
+<tr>
+<td>Experimental Packages</td>
+<td><code>0.300.0</code></td>
+</tr>
+<tr>
+<td>OpenTelemetry API</td>
+<td><code>1.10.0</code></td>
+</tr>
+<tr>
+<td>最低 Node.js</td>
+<td><code>22.15.0</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>主要变化：</p>
+<ul>
+<li><strong>Node.js 基线提升：</strong> 不再支持 Node.js 18 和 20。</li>
+<li><strong>ESM / CommonJS：</strong> 提供更规范的双模块导出，提高现代 Node.js 项目和 Bundler 的兼容性。</li>
+<li><strong>Logs 稳定化：</strong> <code>@opentelemetry/api-logs</code> 合并进 <code>@opentelemetry/api</code>，使 JS 的 Traces、Metrics、Logs 三大信号具有稳定 API。</li>
+<li><strong>Tracing SDK 合并：</strong> 多个包合并到 <code>@opentelemetry/sdk-trace</code>。</li>
+<li><strong>移除历史兼容组件：</strong> 包括部分 Jaeger Exporter/Propagator、OpenTracing 和 OpenCensus Shim。</li>
+<li><strong>复杂 Attribute：</strong> Span、Log Record 等部分 API 支持更复杂的属性值，但并非所有 Metric 和 Resource 属性均可接受任意复杂对象。</li>
+</ul>
+<h3 id="section-37">3. 关键兼容性断层</h3>
+<p>官方迁移指南说明，SDK 2.x 的 Peer Dependency 对 <code>@opentelemetry/api</code> 存在版本限制，不能假定 API 1.10.0 可以与旧 SDK 2.x 自由混用。应检查整个 <code>@opentelemetry/*</code> 依赖树、相关 contrib 插件与运行版本。</p>
+<p>旧代码若直接使用 <code>BasicTracerProvider</code>、<code>WebTracerProvider</code>、<code>sdk-trace-base</code>，可能需要迁移到新的 <code>TracerProvider</code>、<code>sdk-trace</code> API。部分过去自动读取环境变量的行为已变更，不能只替换包名。使用 <code>@opentelemetry/auto-instrumentations-node</code> 零代码集成的用户通常无需修改埋点代码，但仍必须验证依赖版本与运行行为。</p>
+<h3 id="section-38">4. 架构价值：统一语义契约，不必统一 SDK 升级节奏</h3>
+<p>企业可以统一 OTel Semantic Conventions、Trace Context、OTLP 和 Collector Pipeline，但不同语言的 SDK、Auto-Instrumentation、Exporter 和运行时仍应各自维护版本与兼容矩阵。这能避免某个应用升级 SDK 后，意外破坏跨语言 Trace 与指标。</p>
+<p>对于 Node.js API Gateway、BFF、Web 服务和 Agent Runtime 这次升级直接相关；仅使用 Java/Go 的团队可借鉴兼容治理方式，而不必为升级 Node.js SDK 立即行动。Collector 有助于统一处理，但不能自动消除指标语义或 Attribute 变更带来的兼容问题。</p>
+<h3 id="section-39">5. 迁移风险与验证</h3>
+<p>先扫描 Node.js Runtime Version，再检查 npm/pnpm/yarn 的 OTel 依赖关系。验证 API 与 SDK Peer Dependency、TracerProvider 导入、ESM/CommonJS 加载、跨服务 Trace Context、Log/Span 关联、指标名称、Dashboard、性能与部署回滚。</p>
+<p>OpenTelemetry 表示稳定 SDK 2.x 从 3.0 发布起仍将支持约一年，因此可先完成测试和升级方案，不必立即全量切换生产。</p>
+<h3 id="section-40">6. 最值得阅读与实践建议</h3>
+<p>重点读发布公告的 <em>What has changed?</em>，以及迁移指南中 SDK Trace、API 版本、Package Removal、Context Manager、环境变量和模块加载变更章节。选一个 Node.js 服务做灰度测试，对比升级前后的 Trace 数量、错误率、日志关联、性能和部署成功率。</p>
+<p><strong>行动建议：</strong> Node.js + OTel 用户应开始升级评估，其他语言团队关注跨语言契约即可。<strong>未来 1—3 年研判：</strong> 企业可观测性将进一步分离统一 Telemetry Contract 与语言 SDK 的各自发布周期。</p>
+<hr/>
+<h2 id="section-41">七、本周跨技术栈架构决策矩阵</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>企业业务问题</th>
+<th>优先研究的模式</th>
+<th>候选技术</th>
+<th>不宜采用的情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>大规模配置/索引更新成本过高</td>
+<td>变更依赖分析、增量计算、状态差异验证</td>
+<td>Kafka + Planner、流处理、数据库增量视图</td>
+<td>变更影响不能可靠推导，增量错误风险过高</td>
+</tr>
+<tr>
+<td>跨领域调用持续数分钟或数小时</td>
+<td>Durable Operation、业务幂等、结果追踪</td>
+<td>Temporal Nexus、MQ + 状态机、Workflow Engine</td>
+<td>简单低延迟查询或无状态调用</td>
+</tr>
+<tr>
+<td>Agent 代表用户执行业务动作</td>
+<td>身份委托、最小权限、资源级授权</td>
+<td>OAuth/OIDC、Entra、Keycloak、Agent Gateway</td>
+<td>公开只读任务、不需要用户身份</td>
+</tr>
+<tr>
+<td>跨地域业务连续性</td>
+<td>端到端恢复边界、预置资源、分级演练</td>
+<td>DNS/GTM、K8s、多地域数据库、DR 编排</td>
+<td>单地域恢复且成熟备份已满足要求</td>
+</tr>
+<tr>
+<td>多语言监控升级</td>
+<td>SDK 版本矩阵、统一语义、兼容性验证</td>
+<td>OTel SDK、Auto-Instrumentation、Collector</td>
+<td>仅因 SDK 新版发布就强制全量升级</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>架构选择应根据执行语义、一致性、延迟预算、故障模型、成本和团队能力；不要先决定技术再寻找可使用它的业务问题。</strong></p>
+<h2 id="section-42">八、推荐的企业级应用架构演进方式</h2>
+<pre class="diagram"><code class="language-text">                   用户 / 业务渠道
+                          |
+                  API / Domain Gateway
+                          |
+              +-----------+-----------+
+              |                       |
+              v                       v
+          同步业务能力          Durable Operations
+              |                       |
+              |                 Workflow / Agent
+              |                       |
+              +-----------+-----------+
+                          |
+                  统一领域能力目录
+                          |
+              +-----------+-----------+
+              |                       |
+              v                       v
+          领域服务             MCP / Tool Adapter
+              |                       |
+              +-----------+-----------+
+                          |
+                  DB / MQ / 外部系统
+
+横向治理：Identity / Delegation / Authorization / Audit
+运行治理：OpenTelemetry / Resilience / DR Validation
+数据治理：Change Impact / Incremental Build / Reconciliation
+</code></pre>
+<p>这不是要求所有业务接口变成 Durable Operation：查余额适合同步调用；复杂支付、人工审批才需要长期执行模型。Agent 可以发现和选择能力，但最终授权与业务状态修改应由确定性领域服务管理。配置与索引同步可复用增量计算思路，必须保留正确性验证。容灾以真实业务动作作为验收标准，不只验证服务或 Pod Running。</p>
+<h2 id="section-43">九、本周最值得完成的工程练习</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>Cloudflare 增量构建实验：</strong> 实现 Full Build 与 Incremental Build，注入重复、删除、乱序事件，对比输出一致性、内存和耗时。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>跨领域 Durable Operation：</strong> 模拟订单提交支付，执行时断开调用方，再按 Operation ID 查询结果，验证业务幂等。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>Agent OBO 权限验证：</strong> 配置两名不同权限用户和同一 Agent，确认下游 API 依据原始用户身份执行授权。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>业务级 DR 演练：</strong> 选一条真实用户可见业务链，模拟共享身份服务或数据库不可用，测量实际端到端恢复时间。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>OTel JS 3.0 兼容性实验：</strong> 核查 Node.js、SDK/API 依赖和 ESM 兼容，验证 Trace、Metrics、Logs 与跨服务上下文传播。</li>
+</ul>
+<p>如果只做一个实验，优先考虑<strong>跨领域 Durable Operation</strong>：它连接传统 RPC、网关、注册、MQ、幂等、超时问题和 AI Agent 的长期执行业务模式，是跨越传统分布式与 AI-native 架构的高价值实践。</p>
+<h2 id="section-44">十、未来 1—3 年的四个趋势判断</h2>
+<p><strong>趋势一：企业服务接口可能从统一调用协议，向统一执行语义演进。</strong> 服务目录除了接口 Schema/版本，还可能描述同步/异步调用、幂等、结果查询和执行时限。Nexus 是具体探索，并不意味着 HTTP/gRPC 将被取代。</p>
+<p><strong>趋势二：AI Agent 身份治理可能成为独立的平台责任。</strong> 企业难以长期接受所有 Agent 共用一个高权限服务账号；用户、Agent、工具、委托范围和操作审计需要关联治理。跨组织互联网 Agent 的委托规范仍在演进，但企业内部可以先使用成熟 OAuth/OIDC 体系。</p>
+<p><strong>趋势三：增量处理将越来越强调可验证正确性。</strong> 仅减少计算量不能证明架构成功；大型配置分发、物化视图、缓存与索引系统更需要 Shadow Execution、Mirror Comparison 和可回退的全量路径。</p>
+<p><strong>趋势四：业务级可靠性将超越单组件健康指标。</strong> 数据库正常、网关正常、Agent Runtime 正常并不等于用户业务已完成；需要端到端恢复、交易最终状态、授权结果与观测数据共同证明业务连续性。</p>
+<p>以上属于基于已发表工程实践的前瞻性判断，不是已经完成的统一行业标准。</p>
+<h2 id="section-45">十一、本期结论</h2>
+<p>Cloudflare 的 DNS 改造提供扎实的大规模分布式系统增量优化经验；Temporal Nexus 对跨领域调用与企业统一能力抽象具有高研究价值；Cloudflare 与 AWS 的 Agent 身份方案直接涉及 AI 应用安全边界。AWS DR 系列提醒架构可靠性必须在完整业务链验证；OpenTelemetry JS 3.0 则说明技术标准统一不等于不同语言实现能无风险同步升级。</p>
+<p><strong>本期最值得优先研究的能力是：如何把普通跨服务接口调用演进为具有稳定标识、可靠投递、可恢复执行、明确授权和最终结果查询能力的企业级业务操作。</strong></p>
+<p>这项能力适用于支付、审批、订单、跨系统集成和 AI Agent，比单纯学习某个新框架更值得长期积累。</p>
+<h2 id="section-46">十二、官方资料入口</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>材料</th>
+<th>官方链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cloudflare DNS</td>
+<td><a href="https://blog.cloudflare.com/dns-targeted-zone-builds/">How we halved DNS build delay and cut memory use by 85%</a></td>
+</tr>
+<tr>
+<td>Temporal Nexus</td>
+<td><a href="https://temporal.io/blog/standalone-nexus-operations">Introducing Standalone Nexus Operations</a></td>
+</tr>
+<tr>
+<td>Cloudflare Trusted Agent</td>
+<td><a href="https://blog.cloudflare.com/trusted-agent-delegation/">Agents aren’t humans (but they kinda are)</a></td>
+</tr>
+<tr>
+<td>AWS OBO 实践</td>
+<td><a href="https://aws.amazon.com/blogs/machine-learning/servicenow-on-behalf-of-token-exchange-with-bedrock-agentcore-gateway/">ServiceNow on-behalf-of token exchange</a></td>
+</tr>
+<tr>
+<td>AWS DR 1/3</td>
+<td><a href="https://aws.amazon.com/blogs/architecture/three-business-decisions-that-define-your-dr-success/">Three business decisions that define your DR success</a></td>
+</tr>
+<tr>
+<td>AWS DR 2/3</td>
+<td><a href="https://aws.amazon.com/blogs/architecture/validating-your-dr-commitment-from-controlled-test-to-real-world-readiness/">Validating your DR commitment</a></td>
+</tr>
+<tr>
+<td>AWS DR 3/3</td>
+<td><a href="https://aws.amazon.com/blogs/architecture/how-to-run-a-dr-readiness-engagement/">How to run a DR readiness engagement</a></td>
+</tr>
+<tr>
+<td>OTel JavaScript 3.0</td>
+<td><a href="https://opentelemetry.io/blog/2026/otel-js-sdk-3-0/">SDK 3.0 Release</a></td>
+</tr>
+<tr>
+<td>OTel JS 3.x Migration</td>
+<td><a href="https://github.com/open-telemetry/opentelemetry-js/blob/main/doc/3.x/migration-guide.md">Official migration guide</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>编辑日期：2026-11-06。</strong> 本刊为周内增补；事实、数据和版本来自上述官方资料，趋势判断明确标示为研判，所有链接需联网查看但报告正文可离线阅读。</p>
+</article><div class="footer">离线自包含 HTML · 无外部 CDN · 官方资料链接需联网访问 · 生成日 2026-11-06</div></main></body></html>
