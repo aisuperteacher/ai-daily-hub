@@ -5,7 +5,7 @@
   "readme": "本仓库仅展示已经提交的完整 HTML 报告；页面内容由 categories[].reports 索引。",
   "counts": {
     "topic_count": 10,
-    "verified_full_reports": 24
+    "verified_full_reports": 25
   },
   "categories": [
     {
@@ -281,13 +281,21 @@
       "source_status": "partial_archive",
       "reports": [
         {
+          "date": "2026-11-07",
+          "title": "2026-11-07 · AI Coding Agent 并行工程：Worktree、Sandbox、Patch、协作与集成验证",
+          "label": "2026-11-07",
+          "path": "reports/learning/2026-11-07.html",
+          "kind": "full"
+        },
+        {
           "date": "2026-11-06",
           "title": "2026-11-06 · AI Coding Agent 工程实战：Harness、规则、上下文、Hooks 与验收",
           "label": "2026-11-06",
           "path": "reports/learning/2026-11-06.html",
           "kind": "full"
         }
-      ]
+      ],
+      "last_run": "2026-11-07"
     }
   ]
 }
