@@ -50,9 +50,20 @@
             "eli5-performance-load-testing(1).html",
             "eli5-performance-load-testing.html"
           ]
+        },
+        {
+          "id": "3d1cd01429c2fe81",
+          "label": "学以致用 · 完整知识体系",
+          "file": "study/lessons/performance-load-testing/3d1cd01429c2fe81.html",
+          "date": "2026-11-07",
+          "sha256": "3d1cd01429c2fe8197c179688bbfcbc762300b2149abedd53715e180a4471a96",
+          "source_names": [
+            "system_load_testing_knowledge(1).html",
+            "system_load_testing_knowledge.html"
+          ]
         }
       ],
-      "recommended": "3892da3c5299c278",
+      "recommended": "3d1cd01429c2fe81",
       "updated_at": "2026-11-07",
       "search_text": "压测入门：从请求到瓶颈 · ELI5 图解 ELI5 · 系统性能 压测：从请求到瓶颈 请求增多，何时变慢？ 发压器 网关 服务 数据库 ↑ 请求 · ↓ 响应 01 先定合格线 P95 < 300ms 错误率 < 1% RPS ≥ 100 目标 02 用户多 ≠ 请求多 VU RPS 并发请求 处理 排队 在途请求 03 逐步加压 负载 时间 → 预热 爬坡 恒压 突刺 恢复 04 盯住三类指标 吞吐量 RPS / TPS 响应时间 P95 / P99 尾部 错误率 失败 / 总数 超时也要算 05 沿调用链找堵点 网关 应用服务 数据库 连接池满 网络 / 限流 CPU / GC / 线程 IO / 慢 SQL 06 识别性能拐点 稳定区 过载区 吞吐 延迟 负载增加 → 指标 五种常见测试 基准测试 负载测试 压力测试 峰值测试 耐久测试 数字仅为示例。"
     },
@@ -393,7 +404,7 @@
   ],
   "stats": {
     "topic_count": 12,
-    "document_count": 17,
+    "document_count": 18,
     "category_count": 6
   }
 }
