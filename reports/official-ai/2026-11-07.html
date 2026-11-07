@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="light"><title>全球 AI 大模型与 Agent 技术官方日报｜2026-11-07</title><style>
+:root{--ink:#18202c;--paper:#f7f5f1;--card:#fff;--line:#c8cdd1;--accent:#d9ee87;--blue:#144d7b;--teal:#85d7d3;--muted:#566275}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--paper);font-family:system-ui,-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;font-size:16px;line-height:1.8;overflow-wrap:anywhere}
+header{background:var(--accent);border-bottom:4px solid var(--ink);padding:26px 6vw}header .eyebrow{font-size:12px;font-weight:800;letter-spacing:.15em}header h1{max-width:1100px;margin:8px auto;font-size:clamp(28px,4vw,50px);line-height:1.25}header p{max-width:1100px;margin:0 auto}
+.layout{display:grid;grid-template-columns:minmax(185px,235px) minmax(0,1fr);gap:26px;max-width:1450px;margin:0 auto;padding:22px 28px 85px}
+nav{position:sticky;top:20px;align-self:start;border:1px solid var(--line);background:#fff;padding:20px;border-radius:14px;max-height:92vh;overflow:auto}nav strong{font-size:14px}nav a{display:block;font-size:13px;line-height:1.5;padding:7px 0;color:#174e73;text-decoration:none;border-bottom:1px solid #eceeed}nav a:hover{text-decoration:underline}
+main{min-width:0;background:#fff;border:1px solid var(--line);box-shadow:5px 5px 0 #dae0df;border-radius:15px;padding:clamp(20px,3.5vw,52px)}main h1{display:none}main h2{margin:54px 0 20px;padding:12px 15px;border-left:7px solid #2b6689;background:#eef5f8;font-size:clamp(22px,2.5vw,29px);line-height:1.4}main h3{margin:34px 0 12px;padding-bottom:10px;border-bottom:2px solid var(--teal);font-size:clamp(20px,2vw,24px)}main p{margin:13px 0}main strong{font-weight:750}main li{margin:6px 0}main ul,main ol{padding-left:24px}
+a{color:var(--blue);text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:#a52b4e}
+.table-wrap{overflow-x:auto;max-width:100%;margin:24px 0;border:1px solid var(--line);border-radius:10px}table{border-collapse:collapse;width:100%;min-width:550px;font-size:14px}th,td{padding:12px 13px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}th{background:#e6f2e0;position:sticky;top:0}tr:nth-child(even) td{background:#f8f9f9}
+pre{max-width:100%;overflow-x:auto;background:#152230;color:#eaf5ff;padding:18px;border-radius:11px;font-size:13px;line-height:1.7;white-space:pre;tab-size:2}code{font-family:ui-monospace,Consolas,monospace;font-size:.89em;background:#f2f4f6;border-radius:4px;padding:.08em .3em}pre code{background:none;padding:0;color:inherit}
+hr{border:0;border-top:1px solid var(--line);margin:25px 0}.note{padding:11px 14px;background:#f5f9e8;border:1px solid #b9cc93;border-radius:8px}
+footer{font-size:13px;color:var(--muted);margin-top:65px;padding-top:20px;border-top:1px solid var(--line)}
+@media(max-width:850px){.layout{display:block;padding:0 0 48px}nav{position:static;max-height:none;margin:14px;border-radius:12px}main{border:0;border-radius:0;box-shadow:none;padding:20px 18px 55px}main h2{margin-top:38px}header{padding:24px 18px}table{min-width:520px}}@media print{nav{display:none}.layout{display:block}main{border:none;box-shadow:none;padding:0}body{background:#fff}a{color:#222}}
+</style></head>
+<body><header><div class="eyebrow">OFFICIAL AI · VERIFIED REPORT · 2026 / 11 / 07</div><h1>全球 AI 大模型与 Agent 技术官方日报</h1><p>2026 年 11 月 7 日 · 北京时间 · 完整补发版 · 13 家厂商巡检</p></header><div class="layout"><nav aria-label="目录"><strong>报告目录</strong><a href="#sec-1">一、今日必看摘要</a><a href="#sec-2">二、重要更新详解</a><a href="#sec-3">三、历史补录：发布较早，但值得关注</a><a href="#sec-4">四、13 家厂商巡检状态</a><a href="#sec-5">五、经核验的版本和 Model ID 基线</a><a href="#sec-6">六、跨厂商兼容性与迁移矩阵</a><a href="#sec-7">七、工程行动 Checklist</a><a href="#sec-8">八、综合判断</a></nav><main><h1>全球 AI 大模型与 Agent 技术官方日报</h1>
+<p><strong>2026 年 11 月 7 日 · 北京时间 · 重新执行与补发版</strong></p>
+<p><strong>本期核查范围：13 家厂商。</strong> 重点检查 11 月 6 日至 7 日的官方变化，同时补录此前未完整交付、仍有工程价值的 11 月 3—5 日更新。</p>
+<p>这次特别区分三个日期概念：<strong>官方原始发布日期、北京时间对应日期、日报补发日期</strong>。文档的最近编辑日期也不等于功能正式上线日期。</p>
+<h2 id="sec-1">一、今日必看摘要</h2>
+<ol>
+<li><strong>Claude Code 2.1.319：自动模式安全判断、MCP 异步任务和无人值守执行行为发生变化。</strong> 对第三方 LLM Gateway、MCP、Hooks 和 CI 自动化尤其重要。来源：<a href="https://github.com/anthropics/claude-code/blob/main/feed.xml">官方更新 Feed</a>。</li>
+<li><strong>Codex CLI 0.167.0：加入 Agent Command Center、跨后端会话切换，并修复上下文压缩与审批交互问题。</strong> 对 Windows 上的 AI Coding 工作流具有直接价值。来源：<a href="https://github.com/openai/codex/releases/tag/rust-v0.167.0">官方 Release</a>。</li>
+<li><strong>Meta Muse 发布 Spaces：用自然语言创建并持续维护个人工作空间。</strong> 它是值得研究的 AI 产品形态，但不是向开发者发布了新的 Llama API。来源：<a href="https://about.fb.com/news/2026/11/introducing-spaces-customize-muse-app/">Meta 官方</a>。</li>
+</ol>
+<h2 id="sec-2">二、重要更新详解</h2>
+<h3>1. Anthropic：Claude Code v2.1.319</h3>
+<p><strong>优先级：必看 · 本期新增</strong></p>
+<p><strong>① 官方信息与日期</strong></p>
+<ul>
+<li>官方版本：<code>v2.1.319</code></li>
+<li>官方更新源时间：2026-11-06 17:03 UTC，即北京时间 <strong>11 月 7 日 01:03</strong></li>
+<li>官方来源：<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.319">Claude Code v2.1.319 Release</a>、<a href="https://github.com/anthropics/claude-code/blob/main/feed.xml">官方更新 Feed</a></li>
+</ul>
+<p><strong>② 核心变化与机制</strong></p>
+<p>本次升级最重要的不是模型能力，而是 Agent 执行控制。</p>
+<p>自动模式在遥测或特性开关关闭、以及经过部分 LLM Gateway 时，改变了安全检查无法完成时的处理方式：相关操作改为请求用户确认或拒绝，不再静默依赖内置分类器回退。官方还新增了 MCP Task 的后台执行支持——当 MCP 服务端把工具调用作为任务运行时，Claude Code 可先继续处理其他工作，等待任务完成后再接收结果。</p>
+<p>新增配置包括：</p>
+<ul>
+<li><code>CLAUDE_CODE_AUTO_MODE_SERVER</code>：控制部分网关场景的服务端检查行为。</li>
+<li><code>CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND</code>：允许改回同步等待 MCP Task。</li>
+<li><code>permissions.denyInsteadOfPrompting</code>：遇到需要授权的工具调用时直接拒绝，而非等待确认。</li>
+<li><code>CLAUDE_CODE_DISABLE_FEATURE_FLAGS</code>：停止获取动态特性开关，不等同于关闭遥测。</li>
+</ul>
+<p>另外，<code>claude -p</code> 在某些自动模式安全检查失败的情况下，会正确返回非零退出码；旧版 MCP 协商与长任务恢复也得到修复。</p>
+<p><strong>③ 为什么有价值</strong></p>
+<p>它直接改变了三个生产行为：<strong>能否执行、何时结束、如何判断成功</strong>。对于自动生成报告、修改文件、部署服务的 Agent，最危险的不是运行慢，而是权限判断缺失后继续执行，或者实际上失败却返回退出码 <code>0</code>。</p>
+<p><strong>④ 适用场景</strong></p>
+<p>适合无人值守的编码任务、定时分析、远程 MCP 数据工具、企业内部代理网关、CI/CD Agent，以及长时间执行的异步工具任务。</p>
+<p><strong>⑤ 对现有工程架构的帮助</strong></p>
+<p>在 Spring Boot + Nacos + 企业 AI Gateway 场景中，应把 Agent 的执行策略与模型路由配置分开管理。MCP Task 需要明确 <code>task_id</code>、状态查询、超时、结果回调、幂等键及取消语义；不要把发起调用成功误认为业务完成。</p>
+<p>自动模式还必须考虑企业网关关闭遥测、阻断某些网络连接或不支持检查端点的情况。权限失败时，应当遵循 <em>fail closed</em> 原则，而非自动提升权限。</p>
+<p><strong>⑥ 是否值得立即升级？操作步骤与验收</strong></p>
+<p><strong>值得立即检查，建议先测试后升级。</strong> 先检查当前版本、网关配置、MCP Server 行为和无人值守退出码，再在测试环境升级。</p>
+<p>Windows PowerShell 检查：</p>
+<pre><code class="language-powershell">claude --version
+claude auth status
+claude mcp list
+</code></pre>
+<p>如需测试 MCP Task 的同步行为，可仅在当前测试终端配置：</p>
+<pre><code class="language-powershell">$env:CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND = &quot;1&quot;
+</code></pre>
+<p>验收标准：权限被拒绝时不得执行操作；长任务恢复后不重复执行已完成动作；MCP 返回错误时 CI 不得报告成功；任务取消后不继续发起新的有副作用调用。</p>
+<p><strong>⑦ 优先级：必看。</strong></p>
+<h3>2. OpenAI：Codex CLI 0.167.0</h3>
+<p><strong>优先级：必看 · 本期新增</strong></p>
+<p><strong>① 官方信息与日期</strong></p>
+<ul>
+<li>稳定版：<code>0.167.0</code>；Release Tag：<code>rust-v0.167.0</code></li>
+<li>GitHub Release 页面显示日期：2026 年 11 月 6 日</li>
+<li>官方来源：<a href="https://github.com/openai/codex/releases/tag/rust-v0.167.0">openai/codex Releases</a></li>
+</ul>
+<p><strong>② 核心变化与机制</strong></p>
+<p>主要变化如下：</p>
+<ul>
+<li>新增 <code>codex agents --no-daemon</code>，进入 Agent Command Center，并提示未读结果。</li>
+<li>终端会话选择器允许切换已连接后端，保留尚未发送的输入草稿。</li>
+<li>支持在兼容终端中预览本地图片附件。</li>
+<li>可选择启用 Windows/macOS 系统代理设置的实验性集成。</li>
+<li>提供 Google Cloud Vertex AI 接入向导的实验性开关 <code>gcp_setup_wizard</code>。</li>
+<li>修复切换模型提供方后聊天记录消失、网络审批重复弹窗，以及自动 Compaction 对失败响应保留输出计算不完整等问题。</li>
+</ul>
+<p><strong>③ 为什么有价值</strong></p>
+<p>Codex 已不再只是调用单一模型的命令行工具，而在向多后端、多任务、可恢复工作流演进。会话与模型提供方解耦尤其重要：你可以在不同执行后端之间切换，但必须区分<strong>查看已有会话</strong>与<strong>真正能够恢复原会话执行</strong>。</p>
+<p><strong>④ 适用场景</strong></p>
+<p>适合 Windows 开发机、远程开发、多个 AI 模型供应商切换、代码审查、持续编码任务、Agent 任务管理，以及需要人工审批的自动化。</p>
+<p><strong>⑤ 对企业 AI Gateway 的影响</strong></p>
+<p>建议把 <code>provider</code>、<code>base_url</code>、<code>model_id</code>、认证、上下文上限、Thinking 参数和工具能力做成独立配置。跨后端迁移时，不仅要检查 Chat Completion/Responses 请求是否兼容，还要核对上下文恢复、工具调用状态、附件及审批机制。</p>
+<p><strong>⑥ 操作与验收</strong></p>
+<pre><code class="language-powershell">codex --version
+npm view @openai/codex version
+
+# 在测试环境安装经核验的版本
+npm install -g @openai/codex@0.167.0
+
+codex --version
+codex agents --no-daemon
+</code></pre>
+<p>升级前备份配置；分别测试单会话继续、切换后端、取消工具调用、压缩长上下文、Windows 代理以及断网恢复。不要在未验证的情况下将实验性系统代理或 Vertex AI 向导推广到所有环境。</p>
+<p>验收标准：会话可浏览、输入草稿不丢失、失败的网络审批不会残留、取消任务后无额外写操作、压缩后仍保留关键约束。</p>
+<p><strong>⑦ 优先级：必看。</strong></p>
+<h3>3. Meta AI：Muse Spaces 工作空间</h3>
+<p><strong>优先级：建议看 · 11 月 6 日官方产品更新</strong></p>
+<p><strong>① 官方信息与日期</strong></p>
+<ul>
+<li>标题：<em>Design the Muse App, Just for You</em></li>
+<li>日期：2026 年 11 月 6 日</li>
+<li>来源：<a href="https://about.fb.com/news/2026/11/introducing-spaces-customize-muse-app/">Meta 官方公告</a></li>
+</ul>
+<p><strong>② 核心变化</strong></p>
+<p>Muse 用户可以用自然语言描述一个想法，让应用生成可持续使用的 Space，例如任务看板、购物清单、个人内容创作工作台或客户项目中心。Space 可以放到侧边栏、持续修改、连接应用获取更新，并随使用场景调整显示位置。</p>
+<p>这说明产品开始把 AI 生成能力从一次性对话，扩展为<strong>可维护、有状态、可持续更新的小型工作空间</strong>。</p>
+<p><strong>③ 为什么有价值</strong></p>
+<p>价值主要在产品设计和商业模式，而不是新模型参数。用户不一定希望反复编写 Prompt；更有价值的形态是让 AI 维护一个每天能打开、能操作、有持久数据的界面。</p>
+<p><strong>④ 应用方向</strong></p>
+<p>适合个人 AI 工作台、学习中心、内容创作管理、轻量 CRM、AI 日报聚合，以及一人公司的客户项目管理。</p>
+<p><strong>⑤ 工程启示</strong></p>
+<p>如果自己实现类似系统，需要分别考虑：用户描述转结构化页面配置、数据连接授权、页面持久化、增量更新、定时触发、权限边界和组件版本迁移。不能只生成一段 HTML 就认为拥有完整的持久化应用。</p>
+<p><strong>⑥ 是否立即试用？</strong></p>
+<p>可以研究产品交互与用户体验。<strong>不能据此断言 Meta 新开放了 Muse Spaces 开发 API、Llama 模型权重或 SDK。</strong> 应区分消费产品和可供开发者调用的能力。</p>
+<p><strong>⑦ 优先级：建议看。</strong></p>
+<h2 id="sec-3">三、历史补录：发布较早，但值得关注</h2>
+<p>以下信息均保留<strong>原始发布日期</strong>，不算作 11 月 7 日新发布。</p>
+<h3>4. OpenAI：GPT-6-Cyber 专业安全模型</h3>
+<p><strong>① 来源与版本：</strong> 2026 年 11 月 5 日发布；Model ID 为 <code>gpt-6-cyber</code>。来源：<a href="https://developers.openai.com/api/docs/changelog">OpenAI API Changelog</a>、<a href="https://developers.openai.com/api/docs/models/gpt-6-cyber">模型规格</a>。</p>
+<p><strong>② 核心机制：</strong> 面向经授权的漏洞研究、在许可测试环境中复现问题、验证安全修复。官方列出 1,050,000 Token 上下文窗口、128,000 最大输出，以及工具、结构化输出和推理支持。</p>
+<p><strong>③ 价值：</strong> 把模型能力用于有明确边界、可审计和可回归的防御性安全任务，而不是直接替代人工安全审查。</p>
+<p><strong>④ 场景：</strong> 自有代码审计、修复验证、内部测试环境安全分析。</p>
+<p><strong>⑤ 工程影响：</strong> 必须控制目标范围、工具权限、测试环境隔离和审计记录。不能把拥有普通 OpenAI API Key 等同于有权调用该模型。</p>
+<p><strong>⑥ 接入与成本：</strong> 官方要求组织具备 Daybreak Red 访问及批准。模型页列出的标准短上下文价格为输入 <strong>20 美元/百万 Token</strong>、输出 <strong>100 美元/百万 Token</strong>；这是特定模型的官方价格，不可套用普通 GPT-6 计费。</p>
+<p>验收标准：先确认组织权限，再检查模型列表、配额、工具授权、费用预算和数据处理条件。无权限则不要将它放入自动路由的默认候选集。</p>
+<p><strong>⑦ 优先级：建议看；未获得准入的个人开发者暂不需要迁移。</strong></p>
+<h3>5. Anthropic：Claude Platform IP Allowlisting Beta</h3>
+<p><strong>① 来源与日期：</strong> 2026 年 11 月 5 日的官方平台更新；功能处于 Beta。来源：<a href="https://platform.claude.com/docs/en/release-notes/overview">平台 Release Notes</a>、<a href="https://platform.claude.com/docs/en/manage-claude/ip-allowlist">IP Allowlisting 文档</a>。</p>
+<p><strong>② 核心机制：</strong> 允许组织设置公网 IP/CIDR 白名单，阻止来自未授权源地址的相关 API 请求。官方说明每个组织最多可配置 1,000 条地址或网段。</p>
+<p><strong>③ 价值：</strong> 降低泄露 API Key 被异地滥用的风险，但它不能替代短期凭据、密钥轮换及业务身份校验。</p>
+<p><strong>④ 场景：</strong> 企业 AI Gateway、固定出口 NAT、云端服务、CI Runner、开发团队受控网络。</p>
+<p><strong>⑤ 工程影响：</strong> 如果多个服务通过 Nacos 动态发现，却共用同一个外部供应商出口，应统一管理网关公网 egress IP。开发人员家庭宽带、VPN、弹性云出口和灾备网络可能导致白名单误拦截。</p>
+<p><strong>⑥ 试用步骤：</strong> 先清点生产/测试公网出口；保留管理员应急入口；在 Console 配置白名单；保存后监控官方说明的最多约 15 分钟生效窗口，重点观察 HTTP <code>403 permission_error</code>；最后安排密钥轮换与回滚演练。</p>
+<p>验收标准：授权出口调用成功、非授权出口被拒绝、灾备出口可以在切换前恢复准入。</p>
+<p><strong>⑦ 优先级：建议看，企业环境优先。</strong></p>
+<h3>6. Moonshot AI：Kimi K3.1 Pro 开放权重</h3>
+<p><strong>① 来源与日期：</strong> Kimi K3.1 Pro 的托管模型发布早于本期；<strong>模型权重于 2026 年 11 月 4 日公开</strong>。官方来源：<a href="https://huggingface.co/moonshotai/Kimi-K3.1-Pro">Moonshot AI 的 Hugging Face 模型仓库</a>。</p>
+<p><strong>② 核心机制：</strong> 2.8T 总参数、约 104B 激活参数的 MoE 架构；模型卡列出 1,048,576 Token 理论上下文、原生图像理解，以及 KDA 与稀疏注意力组合。开放权重不等于免费推理，也不等于所有第三方部署都提供完整 1M 上下文。</p>
+<p><strong>③ 价值：</strong> 提供更灵活的部署和供应商选择，有利于模型质量、延迟、成本和数据治理的独立评测。</p>
+<p><strong>④ 场景：</strong> 长代码库分析、企业知识处理、复杂 Agent、文档与图像理解、私有推理实验。</p>
+<p><strong>⑤ 工程影响：</strong> 应把 Kimi 官方 API、阿里云等第三方托管服务、自己部署的权重视为不同服务实现，分别验证 API 协议、模型能力、上下文上限和实际吞吐。阿里云模型生命周期页面还记录了 11 月 5 日北京地域的 <code>kimi-k3.1-pro</code> 接入条目。来源：<a href="https://help.aliyun.com/en/model-studio/newly-released-models">阿里云 Model Studio 官方模型更新</a>。</p>
+<p><strong>⑥ 迁移与验证：</strong> 官方 API 模型名称包括 <code>kimi-k3.1-pro</code>；如使用 Highspeed 变体应单独核实供应商支持、限流与价格。模型仓库标示专属 <code>kimi-k3.1-pro</code> 许可证，商用、自托管、再分发条件必须逐项检查，<strong>不能将开放权重直接解释为无条件开源许可</strong>。</p>
+<p>建议用同一组 30—50 个自有业务测试样本评估工具调用、长上下文检索、JSON Schema、错误率、P95 延迟和实际成本。仅在结果达标后灰度。</p>
+<p><strong>⑦ 优先级：建议看，作为历史重要补录。</strong></p>
+<h3>7. 腾讯：混元 Hy4 正式版</h3>
+<p><strong>① 来源与日期：</strong> 腾讯于 <strong>2026 年 11 月 4 日</strong>发布 Hy4 正式版。来源：<a href="https://www.tencent.com/zh-cn/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/">腾讯官方公告</a>。</p>
+<p><strong>② 核心变化：</strong> 相比 Hy4 Preview，重点提升视觉理解、复杂文档分析、长程任务，并加入 Computer Use 能力。它不只是文字模型升级，而是向能够识别界面、规划动作和调用工具的 Agent 模型演进。</p>
+<p><strong>③ 价值：</strong> 中文业务应用可直接评估视觉与工具执行能力。腾讯公布的性能和行业评测属于官方披露结果，尚不能替代你的真实业务回归测试。</p>
+<p><strong>④ 场景：</strong> 企业桌面自动化、报表分析、客服多模态输入、办公软件操作、AI Coding 和复杂工作流。</p>
+<p><strong>⑤ 工程影响：</strong> Computer Use 要与业务身份、权限、审批、审计、沙箱隔离一起设计，尤其不能让模型未经确认执行不可逆操作。通过 TokenHub 等渠道调用还需要核对准确模型 ID 和 API 协议。</p>
+<p><strong>⑥ 接入与价格：</strong> 腾讯公告给出的刊例价格为输入 6 元、输出 18 元、缓存命中 0.3 元，单位均为<strong>人民币/百万 Token</strong>。公告称 TokenHub 在截至 2026 年 12 月 31 日的活动期内按刊例价五折计费，具体账户资格以实际控制台为准。官方 11 月 4 日公告中模型权重仍描述为“近期开源”，不要在尚未确认实际发布时宣称权重已经可下载。</p>
+<p>验收标准：验证图像输入、工具权限、长上下文、超时取消、中文指令遵循及真实业务成本。</p>
+<p><strong>⑦ 优先级：建议看，历史补录。</strong></p>
+<h3>8. Google：Gemini CLI 0.67.0 稳定版</h3>
+<p><strong>① 来源与日期：</strong> 2026 年 11 月 4 日，稳定版 <code>v0.67.0</code>。来源：<a href="https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/latest.md">Gemini CLI 官方最新稳定版说明</a>。</p>
+<p><strong>② 核心变化：</strong> 增加模型发现命令、改善容器内 IDE Companion 桥接、强化取消及信号处理、文件写入安全校验，并为 MCP 权限提示增加服务器和工具信息。</p>
+<p><strong>③ 价值：</strong> 改善“Agent 收到停止指令后仍继续调用工具”和“不知道模型实际能做什么”这两类工程问题。</p>
+<p><strong>④ 场景：</strong> 代码生成、容器开发、跨 IDE 调试、自动化脚本和 MCP 工具接入。</p>
+<p><strong>⑤ 工程影响：</strong> 应把模型发现结果与 Gateway 的模型注册表、工具能力声明进行对齐；取消行为须传递到每层工具调用，而不是仅停止终端打印。</p>
+<p><strong>⑥ 操作方法：</strong></p>
+<pre><code class="language-powershell">npm install -g @google/gemini-cli
+gemini --version
+gemini --list-models
+</code></pre>
+<p>测试模型发现、容器内路径解析、只读文件保护、停止后是否继续调用工具。<code>0.68.0-preview.0</code> 是预发布版本，不应未经验证替代稳定版。来源：<a href="https://github.com/google-gemini/gemini-cli/releases">Gemini CLI Releases</a>。</p>
+<p><strong>⑦ 优先级：建议看，历史补录。</strong></p>
+<h3>9. 百度千帆：工作流流式数据处理文档更新</h3>
+<p><strong>① 来源与日期：</strong> 百度千帆官方文档标注 <strong>2026 年 11 月 6 日更新</strong>；但仅凭这个编辑日期不能确定功能首次上线就是 11 月 6 日。来源：<a href="https://cloud.baidu.com/doc/qianfan/s/wmh4stwwr">流式数据处理</a>。</p>
+<p><strong>② 核心机制：</strong> 文档介绍工作流中的流式数据处理节点，可对前序 API 或函数计算节点的流式输出执行字符串拼接、提取首帧和提取末帧。</p>
+<p><strong>③ 价值：</strong> 对需要将上游 SSE/流式模型输出转化为下游结构化输入的 Agent 工作流很实用。</p>
+<p><strong>④ 场景：</strong> 百度千帆 Agent、企业工作流编排、流式文本生成、最终 Token 用量提取。</p>
+<p><strong>⑤ 工程影响：</strong> Java 网关处理流式调用时，应区分“数据片段”“完整响应”“最终 Usage 帧”。若依赖最后一帧获取 Token 统计，网络中断时要有缺失标记，不能将缺失计费数据记为零。</p>
+<p><strong>⑥ 实践验证：</strong> 构建一个三节点测试流程：上游流式模型 → 流处理节点 → 下游记录节点；分别测试正常完成、中途断连、空帧和末帧含 Usage 的情况。验收标准是拼接内容完整、无重复，Usage 缺失状态可识别。</p>
+<p><strong>⑦ 优先级：建议看；属于文档更新，不冒充模型发布。</strong></p>
+<h2 id="sec-4">四、13 家厂商巡检状态</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>厂商</th>
+  <th>本期核查结论</th>
+  <th>日期及说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>OpenAI</td>
+  <td>重要更新及补录</td>
+  <td>Codex 0.167.0（11/6）；GPT-6-Cyber（11/5）</td>
+</tr>
+<tr>
+  <td>Anthropic</td>
+  <td>重要更新及补录</td>
+  <td>Claude Code 2.1.319（11/6 UTC）；IP 白名单 Beta（11/5）</td>
+</tr>
+<tr>
+  <td>Google</td>
+  <td>历史补录</td>
+  <td>Gemini CLI 0.67.0（11/4）；未核实到 11/6–7 更重要的官方发布</td>
+</tr>
+<tr>
+  <td>xAI</td>
+  <td>已核验无本期重要新增</td>
+  <td>API Release Notes 最近可核对条目为 11/2 的图像模型路由变更</td>
+</tr>
+<tr>
+  <td>智谱 / Z.ai</td>
+  <td>未能完整核实</td>
+  <td>本次官方更新日志页面读取受限，不能断言无新增</td>
+</tr>
+<tr>
+  <td>DeepSeek</td>
+  <td>已核验无本期重要新增</td>
+  <td>官方 API Changelog 可核对的较近条目为 10/17</td>
+</tr>
+<tr>
+  <td>腾讯</td>
+  <td>历史补录</td>
+  <td>Hy4 正式版发布于 11/4</td>
+</tr>
+<tr>
+  <td>阿里巴巴</td>
+  <td>小更新</td>
+  <td>Model Studio 北京地域 11/5 列出 <code>kimi-k3.1-pro</code></td>
+</tr>
+<tr>
+  <td>Moonshot / Kimi</td>
+  <td>历史补录</td>
+  <td>K3.1 Pro 权重于 11/4 公开</td>
+</tr>
+<tr>
+  <td>字节跳动</td>
+  <td>未能完整核实</td>
+  <td>Seed/火山引擎部分动态文档读取不完整</td>
+</tr>
+<tr>
+  <td>TypeSafe AI</td>
+  <td>历史资料核验</td>
+  <td>11/3 发布 Jev 定位说明及定价说明，未确认 11/6–7 重大新增</td>
+</tr>
+<tr>
+  <td>Meta AI</td>
+  <td>本期产品更新</td>
+  <td>Muse Spaces（11/6），另有 Muse Voice（11/5）</td>
+</tr>
+<tr>
+  <td>百度</td>
+  <td>文档更新</td>
+  <td>千帆流处理文档标注 11/6 更新，功能首次上线日未确认</td>
+</tr>
+</tbody>
+</table></div>
+<p>官方补充来源：<a href="https://docs.x.ai/developers/release-notes">xAI Release Notes</a>；<a href="https://api-docs.deepseek.com/updates/">DeepSeek API Changelog</a>；<a href="https://typesafe.ai/blog/dont-call-it-a-decision-model">TypeSafe 原文</a>、<a href="https://help.typesafe.ai/articles/5187202169-how-much-does-jev-cost">Jev Pricing</a>；<a href="https://about.fb.com/news/2026/11/introducing-muse-ai-voice-expressive-avatars/">Meta Voice</a>。</p>
+<p><strong>关于 TypeSafe 的工程判断：</strong> Jev 的 <code>Choice</code>、<code>Score</code>、<code>Noul</code> 等原语适合将判断任务与业务决策代码解耦。官方在 11 月 3 日强调“Jev 负责判断，代码负责决策”。可以把它作为 Gateway 下游的类型化判断服务评估，但其置信度仍需业务数据校准，不能把类型安全等同于业务预测永远正确。来源：<a href="https://docs.typesafe.ai/introduction">TypeSafe Docs</a>。</p>
+<h2 id="sec-5">五、经核验的版本和 Model ID 基线</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>厂商 / 工具</th>
+  <th>当前核验项</th>
+  <th>关键约束</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>OpenAI Codex</td>
+  <td>CLI <code>0.167.0</code></td>
+  <td>稳定版，不与 0.168 alpha 混用</td>
+</tr>
+<tr>
+  <td>OpenAI API</td>
+  <td><code>gpt-6-cyber</code></td>
+  <td>Daybreak Red 准入审批</td>
+</tr>
+<tr>
+  <td>Anthropic Claude Code</td>
+  <td>CLI <code>2.1.319</code></td>
+  <td>自动模式、MCP 异步任务语义变化</td>
+</tr>
+<tr>
+  <td>Google Gemini CLI</td>
+  <td>稳定版 <code>0.67.0</code></td>
+  <td><code>0.68.0-preview.0</code> 为预览版</td>
+</tr>
+<tr>
+  <td>xAI</td>
+  <td><code>grok-4.7</code></td>
+  <td>500K 上下文为官方规格；检查区域与提供渠道</td>
+</tr>
+<tr>
+  <td>DeepSeek</td>
+  <td>API 别名 <code>deepseek-flash</code></td>
+  <td>官方说明 10/17 已指向 V4.1-Flash-1017；别名会迁移</td>
+</tr>
+<tr>
+  <td>Moonshot AI</td>
+  <td><code>kimi-k3.1-pro</code></td>
+  <td>官方 API 与第三方托管的上下文/配置可能不同</td>
+</tr>
+<tr>
+  <td>阿里云 Model Studio</td>
+  <td><code>kimi-k3.1-pro</code></td>
+  <td>北京地域目录条目，须核对服务区域</td>
+</tr>
+<tr>
+  <td>腾讯混元</td>
+  <td>Hy4 正式版</td>
+  <td>具体 API Model ID 应以调用渠道控制台为准</td>
+</tr>
+<tr>
+  <td>TypeSafe</td>
+  <td><code>jev-1.14.0</code></td>
+  <td>10/14 发布；实验功能需要额外确认</td>
+</tr>
+<tr>
+  <td>Meta Muse</td>
+  <td>Spaces、Voice 产品功能</td>
+  <td>不等于开放开发者 API</td>
+</tr>
+<tr>
+  <td>百度千帆</td>
+  <td>流式处理工作流节点</td>
+  <td>这是工作流功能，非新模型 ID</td>
+</tr>
+</tbody>
+</table></div>
+<p>其中，模型别名、上下文窗口和价格是<strong>不同维度</strong>：不能从某家官网的模型规格推导出第三方托管服务的真实上下文或计费方式。</p>
+<h2 id="sec-6">六、跨厂商兼容性与迁移矩阵</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>迁移或集成场景</th>
+  <th>主要风险</th>
+  <th>验证要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Claude Code + 自建 LLM Gateway</td>
+  <td>Auto Mode 检查不支持或被阻断</td>
+  <td>权限拒绝、回退规则、退出码</td>
+</tr>
+<tr>
+  <td>Claude MCP Task 改为后台执行</td>
+  <td>调用返回不代表任务完成</td>
+  <td>Task ID、轮询/回调、幂等、恢复</td>
+</tr>
+<tr>
+  <td>Codex 跨后端切换</td>
+  <td>会话格式、附件、工具状态不一致</td>
+  <td>会话继续、模型切换、审批恢复</td>
+</tr>
+<tr>
+  <td>Gemini CLI + MCP</td>
+  <td>工具能力及安全策略不同</td>
+  <td>权限提示、取消后无副作用</td>
+</tr>
+<tr>
+  <td>Kimi / 腾讯 / DeepSeek 经统一 Gateway</td>
+  <td>API 形似但 Thinking、Schema、长上下文不同</td>
+  <td>参数校验、工具调用、错误映射</td>
+</tr>
+<tr>
+  <td>Meta Muse 类持久工作空间</td>
+  <td>数据权限、长期状态和定时更新</td>
+  <td>用户授权、审计、生命周期管理</td>
+</tr>
+<tr>
+  <td>百度千帆流处理接入 Java</td>
+  <td>SSE 帧合并、异常截断、Usage 丢失</td>
+  <td>正常/中断/超时用例</td>
+</tr>
+<tr>
+  <td>TypeSafe 作为判断服务</td>
+  <td>判断概率与实际业务成本不一致</td>
+  <td>校准、阈值、灰度、人工兜底</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-7">七、工程行动 Checklist</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>在 Windows 上记录 <code>codex --version</code>、<code>claude --version</code>、<code>gemini --version</code>，不要仅凭自动更新提示判断版本。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>为 Claude Code 2.1.319 建立三类自动模式回归：正常授权、检查服务不可用、管理员禁止操作。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>为 MCP 长任务建立“已接收—执行中—已完成—失败—未知结果”的状态机，并测试断点恢复与幂等。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>为 Codex 建立跨后端切换及 Compaction 测试，确保长会话的关键业务规则不丢。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>为企业 AI Gateway 增加供应商模型能力表：准确 Model ID、别名、上下文、Thinking、JSON Schema、Tools、图像、价格、区域、退役日期。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>把敏感工具执行、模型调用和外部联网请求纳入统一审计，不把 Prompt 当作权限控制。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>单独建立 Kimi、Hy4 与当前模型在 30—50 个真实样本上的效果和成本基线。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>对流式生成记录 <code>request_id</code>、供应商、模型、Usage、首 Token 延迟、P95、完成状态和错误类别。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/>在日报自动发布流程中添加<strong>正文非空、HTML 内容完整、GitHub 提交与回读成功</strong>三项验收，不再以任务执行状态 <code>completed</code> 代替交付成功。</li>
+</ul>
+<h2 id="sec-8">八、综合判断</h2>
+<p><strong>本期优先级最高的是 Agent Runtime 的可靠性与安全性，而不是盲目追逐新模型。</strong></p>
+<p>Claude Code 2.1.319 和 Codex 0.167.0 表明，AI Coding 工具正在持续完善权限治理、跨后端使用、长任务恢复和执行结果可信度。对企业 AI 应用来说，这些能力直接决定 Agent 能否从演示环境进入生产环境。</p>
+<p>Kimi K3.1 Pro、混元 Hy4 等模型值得纳入下一轮对比，但不应仅凭厂商 Benchmark 替换现有模型。需要在相同样本、相同任务、相同工具权限和实际调用条件下评测。</p>
+<p>Meta Muse Spaces 则提供了另一条值得关注的产品路线：<strong>从“AI 回答一次问题”，走向“AI 持续维护一个用户真正会使用的工作空间”。</strong> 这对 AI 学习中心、日报聚合站和一人公司产品都有实际启发。</p>
+<p><em>核验说明：本期遵循原始发布日期优先的原则；对 Z.ai、字节跳动等未能完整读取的官方资料明确保留“待核验”，不虚构无更新结论。</em></p>
+<footer>本文件可完全离线阅读；官方链接需要联网时才可打开。来源为厂商原文，文中评价与工程行动建议属于分析，不代表厂商承诺。报告发布日期：2026-11-07。</footer></main></div></body></html>
