@@ -5,7 +5,7 @@
   "readme": "本仓库仅展示已经提交的完整 HTML 报告；页面内容由 categories[].reports 索引。",
   "counts": {
     "topic_count": 10,
-    "verified_full_reports": 22
+    "verified_full_reports": 23
   },
   "categories": [
     {
@@ -247,6 +247,13 @@
       "description": "跟踪官方 AI、开发工具、云服务、GitHub 学生权益和其他公开优惠活动的资格、期限与风险。",
       "source_status": "partial_archive",
       "reports": [
+        {
+          "date": "2026-11-07",
+          "title": "AI/Cloud 活动奖励巡检｜2026-11-07",
+          "label": "2026-11-07",
+          "path": "reports/offers/2026-11-07.html",
+          "kind": "full"
+        },
         {
           "date": "2026-11-06",
           "title": "2026-11-06 AI/Cloud 活动奖励巡检｜官方政策·福利·领取条件完整版",
