@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="2026-11-09 GitHub 热榜日报：13个仓库完整分析、优缺点、Top3及行动建议"><title>GitHub 热榜日报｜2026-11-09</title><style>
+:root{--bg:#f7f1e4;--ink:#171717;--paper:#fffaf0;--yellow:#ffd13f;--red:#ef583f;--cyan:#c8f7f1;--blue:#1f4c69;--border:2px solid #1b1b1b;--muted:#565452}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--bg);font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.75}
+a{color:#10475e;overflow-wrap:anywhere;text-decoration-thickness:1px;text-underline-offset:3px}
+.hero{padding:42px max(22px,calc((100vw - 1160px)/2));background:var(--yellow);border-bottom:5px solid var(--ink);position:relative;overflow:hidden}
+.hero:after{content:"★";position:absolute;right:5%;top:-56px;font-size:240px;opacity:.14;transform:rotate(16deg);pointer-events:none}
+.stamp{font:800 12px/1.2 ui-monospace,monospace;letter-spacing:.16em;text-transform:uppercase;background:var(--ink);color:white;display:inline-block;padding:9px 12px;transform:rotate(-1.5deg)}
+.hero h1{font-weight:950;font-size:clamp(32px,5vw,64px);line-height:1.11;letter-spacing:-.045em;margin:24px 0 12px;max-width:960px}
+.hero p{max-width:850px;font-weight:600;font-size:16px}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.stat{border:var(--border);box-shadow:5px 5px 0 var(--ink);background:var(--paper);padding:12px 18px;font-size:12px;font-weight:800}.stat b{display:block;font-size:26px;line-height:1.2}
+.shell{display:grid;grid-template-columns:245px minmax(0,1fr);gap:28px;max-width:1250px;margin:26px auto;padding:0 20px}.sidebar{align-self:start;position:sticky;top:16px;background:var(--paper);border:var(--border);box-shadow:6px 6px 0 var(--ink);padding:16px;max-height:calc(100vh - 32px);overflow:auto}.sidebar h2{font-size:17px;margin:0 0 12px}.sidebar a{display:block;padding:7px 2px;color:var(--ink);text-decoration:none;border-bottom:1px solid #ddd;font-size:13px}.sidebar a:hover{color:#ba3223}.sidebar input{width:100%;border:var(--border);border-radius:0;padding:10px;font:inherit;font-size:14px;margin:0 0 12px;background:#fff}.actions{display:flex;gap:6px;flex-wrap:wrap}.actions button{border:var(--border);background:var(--cyan);padding:7px 9px;cursor:pointer;font-weight:800;font-size:12px}
+.content{min-width:0}.prose{background:var(--paper);border:var(--border);box-shadow:7px 7px 0 var(--ink);padding:clamp(16px,3.6vw,36px);overflow-wrap:anywhere}.prose>h1{display:none}.prose h2{margin:36px 0 16px;padding:10px 14px;border:var(--border);background:var(--yellow);font-size:22px;line-height:1.4;box-shadow:4px 4px 0 var(--ink)}.prose h3{font-size:18px;margin-top:28px}.prose p{margin:12px 0;max-width:98ch}.prose strong{font-weight:830}.prose hr{border:0;border-top:1px solid #c6c0b4;margin:22px 0}.prose table{border-collapse:collapse;width:100%;font-size:13px;min-width:620px}.prose th,.prose td{border:1px solid var(--ink);padding:9px 10px;vertical-align:top}.prose th{background:#1b1b1b;color:#fff;text-align:left}.prose tr:nth-child(2n){background:#f4edde}.table-scroll{max-width:100%;overflow-x:auto;border:1px solid #333}
+.repo-detail{margin:17px 0;border:var(--border);background:#fffdf6;box-shadow:4px 4px 0 #333}.repo-detail summary{list-style:none;cursor:pointer;padding:13px 16px;font-size:16px;font-weight:850;background:var(--cyan);line-height:1.55}.repo-detail summary::-webkit-details-marker{display:none}.repo-detail summary:after{content:'＋';float:right;margin-left:8px}.repo-detail[open] summary:after{content:'－'}.repo-detail[open] summary{border-bottom:var(--border)}.detail-body{padding:14px 18px}.detail-body p{margin:11px 0}.detail-body p:has(strong){margin:10px 0}
+footer{padding:40px 20px;text-align:center;color:var(--muted);font-size:13px}code{white-space:break-spaces;overflow-wrap:anywhere;background:#eae5df;padding:1px 3px}
+@media(max-width:850px){.shell{grid-template-columns:1fr;gap:14px;padding:0 12px}.sidebar{position:static;max-height:none;box-shadow:3px 3px 0 #222}.sidebar nav{display:flex;overflow-x:auto;gap:9px;scrollbar-width:thin}.sidebar a{white-space:nowrap;border:1px solid #aaa;padding:5px 8px}.prose{box-shadow:4px 4px 0 #222;padding:17px}.hero{padding:25px 18px}.hero:after{font-size:120px;top:0;right:-15px}.prose h2{font-size:18px}.stat b{font-size:21px}.repo-detail summary{font-size:14px}}
+@media print{.sidebar,.actions{display:none}.shell{display:block}.hero{padding:20px}.prose,.repo-detail{box-shadow:none}.repo-detail{break-inside:avoid}a{color:inherit}}
+</style></head>
+<body><header class="hero"><span class="stamp">OPEN SOURCE RADAR / 09 NOV 2026</span><h1>GITHUB 热榜<br>日报 / 2026.11.09</h1><p>完整 13 个仓库深度分析 · 官方链接 · 热度与维护 · 优缺点 · Top 3 · 来源与行动计划</p><div class="stats"><div class="stat"><b>13</b>精选仓库</div><div class="stat"><b>3</b>重点推荐</div><div class="stat"><b>10</b>落地实验</div></div></header>
+<div class="shell"><aside class="sidebar"><h2>INDEX / 内容目录</h2><label for="search" style="font-size:12px">搜索仓库或正文</label><input id="search" type="search" placeholder="搜索 Java / Agent / GPU..."><div class="actions"><button id="expand" type="button">展开全部</button><button id="collapse" type="button">折叠全部</button></div><nav><a href="#sec-1">一、今日仓库总览</a><a href="#sec-2">二、逐仓库完整分析</a><a href="#sec-16">三、今日最值得重点看的 Top 3</a><a href="#sec-20">四、六项技术趋势与架构取舍</a><a href="#sec-21">五、今日可执行行动清单</a><a href="#sec-22">六、来源与风险提示</a></nav><p style="font-size:11px;color:#666">离线可读。官方 GitHub 链接需要联网访问。</p></aside><main class="content"><article class="prose"><h1>GitHub 热榜日报｜2026-11-09</h1>
+<p><strong>领域：</strong> AI Agent / AI 编程 / Java / 云原生 / 分布式 / DevTools / 视频创作。</p>
+<p><strong>今日核心判断：</strong> 本期综合 GitHub 全站及 Java/Go/Rust 日榜、可核验的 Star 变化、仓库 README 和代码推送活动，精选 13 个项目。最值得新研究的是 GPU Kubernetes 管理面 NVKE、带电脑与定期任务的 OpenMausBot，以及 Java AgentScope 的长期任务执行；持续关注安全审核、测试和分布式一致性基础设施。</p>
+<p><strong>数据与时效边界：</strong> 报告日期为北京时间 2026-11-09。GitHub Trending 日增量采用最近可核验且有明确采集时间的 <strong>2026-11-08 06:58 UTC（北京时间 11-08 14:58）</strong>快照；累计 Star 和最近代码推送日期取 2026-11-09 北京时间约 07:00 的 GitHub 仓库 API 回读。两种时间截面不同，不能将“stars today”解读为北京时间 11 月 9 日 00:00 至今的净增；没有独立测算 Benchmark，也不据此猜测当天新发布了什么版本。</p>
+<h2 id="sec-1">一、今日仓库总览</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th style="text-align:right">#</th>
+<th>官方 GitHub 地址</th>
+<th style="text-align:right">当前 Star（近似）</th>
+<th style="text-align:right">上次 Trending 日增量</th>
+<th>方向</th>
+<th>是否值得关注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td><a href="https://github.com/dsx-ai-factory/nvke">dsx-ai-factory/nvke</a></td>
+<td style="text-align:right">824</td>
+<td style="text-align:right">+123</td>
+<td>GPU 云原生</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td><a href="https://github.com/milind-soni/OpenMausBot">milind-soni/OpenMausBot</a></td>
+<td style="text-align:right">18,179</td>
+<td style="text-align:right">+1,955</td>
+<td>个人 Agent</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td><a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a></td>
+<td style="text-align:right">66,779</td>
+<td style="text-align:right">+2,085</td>
+<td>Agent 安全</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td style="text-align:right">4</td>
+<td><a href="https://github.com/agentscope-ai/agentscope-java">agentscope-ai/agentscope-java</a></td>
+<td style="text-align:right">6,294</td>
+<td style="text-align:right">+10</td>
+<td>Java Agent</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td><a href="https://github.com/floci-io/floci">floci-io/floci</a></td>
+<td style="text-align:right">31,098</td>
+<td style="text-align:right">+187</td>
+<td>云服务测试</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td style="text-align:right">6</td>
+<td><a href="https://github.com/opendataloader-project/opendataloader-pdf">opendataloader-project/opendataloader-pdf</a></td>
+<td style="text-align:right">30,246</td>
+<td style="text-align:right">+21</td>
+<td>RAG 文档</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td style="text-align:right">7</td>
+<td><a href="https://github.com/max-sixty/worktrunk">max-sixty/worktrunk</a></td>
+<td style="text-align:right">12,109</td>
+<td style="text-align:right">+147</td>
+<td>AI 并行编码</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td style="text-align:right">8</td>
+<td><a href="https://github.com/vercel-labs/agent-browser">vercel-labs/agent-browser</a></td>
+<td style="text-align:right">47,541</td>
+<td style="text-align:right">+190</td>
+<td>浏览器 Agent</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td style="text-align:right">9</td>
+<td><a href="https://github.com/prometheus/prometheus">prometheus/prometheus</a></td>
+<td style="text-align:right">67,565</td>
+<td style="text-align:right">+322</td>
+<td>可观测性</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td style="text-align:right">10</td>
+<td><a href="https://github.com/etcd-io/etcd">etcd-io/etcd</a></td>
+<td style="text-align:right">52,673</td>
+<td style="text-align:right">+159</td>
+<td>分布式一致性</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td style="text-align:right">11</td>
+<td><a href="https://github.com/zed-industries/zed">zed-industries/zed</a></td>
+<td style="text-align:right">94,472</td>
+<td style="text-align:right">+1,114</td>
+<td>开发工具</td>
+<td>★★★★☆</td>
+</tr>
+<tr>
+<td style="text-align:right">12</td>
+<td><a href="https://github.com/astral-sh/ruff">astral-sh/ruff</a></td>
+<td style="text-align:right">51,115</td>
+<td style="text-align:right">+350</td>
+<td>代码质量</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td style="text-align:right">13</td>
+<td><a href="https://github.com/CapSoftware/Cap">CapSoftware/Cap</a></td>
+<td style="text-align:right">24,667</td>
+<td style="text-align:right">+77</td>
+<td>视频与创作</td>
+<td>★★★★☆</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>热度口径：</strong> 表中增量是 2026-11-08 06:58 UTC 的公开 Trending 采集值；表中 Star 总数是 11 月 9 日北京时间约 07:00 的 GitHub 仓库 API 快照（约数意义）。如想计算两个时点间净增长，需要在相同时间间隔分别抓取 Star 总数。</p>
+<p><strong>榜单来源：</strong> <a href="https://github.com/trending">官方 GitHub Trending</a> · <a href="https://githubtrending.today/">带时戳全站存档</a> · <a href="https://githubtrending.today/language/java/">Java</a> · <a href="https://githubtrending.today/language/go/">Go</a> · <a href="https://githubtrending.today/language/rust/">Rust</a>。</p>
+<h2 id="sec-2">二、逐仓库完整分析</h2>
+<details class="repo-detail" open="open"><summary>01｜ dsx-ai-factory/nvke — GPU 云原生</summary><div class="detail-body">
+<p><strong>用途：</strong> NVKE 是用于裸金属 GPU 环境的 Kubernetes 管理平面：负责创建多租户工作负载集群、维护节点池和集群生命周期；它不是简单的 GPU Operator，也不是普通 Kubernetes 发行版。</p>
+<p><strong>技术栈/语言：</strong> Go / Kubernetes / Cluster API / SPIFFE。</p>
+<p><strong>热度与近期活动：</strong> 截至本次 GitHub API 回读约 <strong>824 Star</strong>；11 月 8 日 06:58 UTC Trending 样本为 <strong>+123 stars today</strong>。最近代码推送日期：<strong>2026-11-07 UTC</strong>（不能仅据该日期推断发版）。</p>
+<p><strong>核心优点：</strong> 管理集群与租户集群分离；包含节点身份认证与集群生命周期机制；提供可不依赖真实 GPU 的本地评估入口，适合研究自建 AI 推理平台。</p>
+<p><strong>主要缺点/局限：</strong> 官方明确标记 Preview、不建议生产。真实安装依赖 NICo；管理平面自升级与备份恢复尚不完整，示例部署的 API 认证和明文 HTTP 必须另行保护。本地 quickstart 需要约 6 CPU、12 GiB 空闲内存、100 GiB 磁盘。</p>
+<p><strong>成熟度与维护活跃度：</strong> 早期 Preview；公开仓库有大量工程提交与文档，最近代码推送为 11 月 7 日 UTC，但缺少长期生产验证。</p>
+<p><strong>适合人群/场景：</strong> 有 GPU 裸金属集群的 AI 平台团队、Kubernetes 平台架构师；单 VPS/个人 AI 内容项目暂不需要。</p>
+<p><strong>是否值得关注：</strong> ★★★★★：架构研究优先，生产采用暂缓。</p>
+<p><strong>行动建议：</strong> 先阅读 Preview 限制和隔离拓扑，在独立 Linux VM 评估模拟集群创建、节点身份、节点池变更、回滚；不要在生产 GPU 集群直接安装。</p>
+<p><strong>来源：</strong> <a href="https://github.com/dsx-ai-factory/nvke">官方 GitHub 仓库</a> · <a href="https://github.com/dsx-ai-factory/nvke#readme">README/源码</a> · <a href="https://api.github.com/repos/dsx-ai-factory/nvke">仓库元数据</a>。</p>
+<hr/>
+</div></details><details class="repo-detail" open="open"><summary>02｜ milind-soni/OpenMausBot — 个人 Agent</summary><div class="detail-body">
+<p><strong>用途：</strong> 把 Codex、Claude Code 等已有 CLI 组织为多个可交谈的 Bot，各自拥有会话、任务、电脑或虚拟机能力，支持定期执行及应用事件触发。</p>
+<p><strong>技术栈/语言：</strong> TypeScript / 桌面应用 / CLI Harness / VM / MCP。</p>
+<p><strong>热度与近期活动：</strong> 截至本次 GitHub API 回读约 <strong>18,179 Star</strong>；11 月 8 日 06:58 UTC Trending 样本为 <strong>+1,955 stars today</strong>。最近代码推送日期：<strong>2026-11-08 UTC</strong>（不能仅据该日期推断发版）。</p>
+<p><strong>核心优点：</strong> 本地优先，Harness 默认绑定回环地址；可使用既有 CLI 登录与订阅；Bot 任务、权限审批和工作区相对完整，适合评估一人公司研究与内容生产流水线。</p>
+<p><strong>主要缺点/局限：</strong> “本地优先”不代表模型调用全离线。CLI 仍以本机用户权限运行，部分 VM/云桌面和外部连接器有费用及隐私边界；宿主机控制的平台能力受限制。</p>
+<p><strong>成熟度与维护活跃度：</strong> 早中期、迭代频繁；11 月 8 日 UTC 仍有代码推送，Issue 较多，安全策略明确权限代理的职责。</p>
+<p><strong>适合人群/场景：</strong> 个人自动化、跨 Agent 协作、公开资料整理、Windows/桌面工具研究。</p>
+<p><strong>是否值得关注：</strong> ★★★★★：可做受控 PoC，不直接连接高价值生产账户。</p>
+<p><strong>行动建议：</strong> 在隔离测试用户创建“资料研究”和“脚本审校”两个 Bot，完成一次交接，记录审批、失败恢复、每次任务成本与真实节省时间。</p>
+<p><strong>来源：</strong> <a href="https://github.com/milind-soni/OpenMausBot">官方 GitHub 仓库</a> · <a href="https://github.com/milind-soni/OpenMausBot#readme">README/源码</a> · <a href="https://api.github.com/repos/milind-soni/OpenMausBot">仓库元数据</a>。</p>
+<hr/>
+</div></details><details class="repo-detail" open="open"><summary>03｜ cloudflare/security-audit-skill — Agent 安全</summary><div class="detail-body">
+<p><strong>用途：</strong> 为 Coding Agent 提供分阶段安全审核：覆盖台账、候选漏洞发现、独立验证、结构化 findings 与最终证据校验。</p>
+<p><strong>技术栈/语言：</strong> JavaScript / Node.js / Agent Skills / JSON Schema。</p>
+<p><strong>热度与近期活动：</strong> 截至本次 GitHub API 回读约 <strong>66,779 Star</strong>；11 月 8 日 06:58 UTC Trending 样本为 <strong>+2,085 stars today</strong>。最近代码推送日期：<strong>2026-09-14 UTC</strong>（不能仅据该日期推断发版）。</p>
+<p><strong>核心优点：</strong> 将 confirmed、needs_validation、rejected 明确分层；覆盖台账和 JSON 验证脚本方便与 CI/人工审计结合；强调独立验证而非模型自评。</p>
+<p><strong>主要缺点/局限：</strong> 不等于安全扫描器保证零漏报；大量子 Agent 可能增加 Token 与权限风险。仓库 Star 在继续上涨，但主分支最后代码推送记录为 9 月 14 日 UTC，不能说“今天代码快速更新”。</p>
+<p><strong>成熟度与维护活跃度：</strong> 流程方法相对完整、长期维护证据尚少；高热度，但当前代码活跃信号弱于用户关注度。</p>
+<p><strong>适合人群/场景：</strong> 企业 Coding Agent 代码审核、安全团队、公开授权的测试仓库。</p>
+<p><strong>是否值得关注：</strong> ★★★★★：方法与证据格式值得复用，落地必须配人工验收。</p>
+<p><strong>行动建议：</strong> 在隔离 Java 示例仓库植入两个已知问题和一个正常路径，检验覆盖率、证据来源、误报及最小权限。</p>
+<p><strong>来源：</strong> <a href="https://github.com/cloudflare/security-audit-skill">官方 GitHub 仓库</a> · <a href="https://github.com/cloudflare/security-audit-skill#readme">README/源码</a> · <a href="https://api.github.com/repos/cloudflare/security-audit-skill">仓库元数据</a>。</p>
+<hr/>
+</div></details><details class="repo-detail" open="open"><summary>04｜ agentscope-ai/agentscope-java — Java Agent</summary><div class="detail-body">
+<p><strong>用途：</strong> Java 企业级长任务 Agent 框架，提供事件流、工具权限、会话/状态管理、人工介入、沙箱与多 Agent 组织能力。</p>
+<p><strong>技术栈/语言：</strong> Java 17+ / Maven / Agent Runtime / 事件流。</p>
+<p><strong>热度与近期活动：</strong> 截至本次 GitHub API 回读约 <strong>6,294 Star</strong>；11 月 8 日 06:58 UTC Trending 样本为 <strong>+10 stars today</strong>。最近代码推送日期：<strong>2026-11-08 UTC</strong>（不能仅据该日期推断发版）。</p>
+<p><strong>核心优点：</strong> 与 Spring/Java 业务接口匹配；工具授权与长任务执行有明确抽象，便于把 Agent Runtime 和领域事务解耦；文档和示例覆盖多模型接入。</p>
+<p><strong>主要缺点/局限：</strong> “状态可恢复”不等于外部写操作 Exactly-once；需要自行治理 Tool Gateway、租户隔离、模型兼容、事务与幂等。实验性/快照功能不能当作稳定正式版保证。</p>
+<p><strong>成熟度与维护活跃度：</strong> 中高、持续开发；11 月 8 日 UTC 有代码推送，提交和模块较丰富，仍需自己的故障注入测试。</p>
+<p><strong>适合人群/场景：</strong> Java/Spring 企业系统、需 HITL 的内部 AI 助手、跨语言领域接口。</p>
+<p><strong>是否值得关注：</strong> ★★★★★：对 Java 企业 AI 架构研究优先级高。</p>
+<p><strong>行动建议：</strong> 建立只读订单 Tool，运行一次批准→暂停→重启→恢复流程，验证工具权限拒绝和重复事件时的幂等。</p>
+<p><strong>来源：</strong> <a href="https://github.com/agentscope-ai/agentscope-java">官方 GitHub 仓库</a> · <a href="https://github.com/agentscope-ai/agentscope-java#readme">README/源码</a> · <a href="https://api.github.com/repos/agentscope-ai/agentscope-java">仓库元数据</a>。</p>
+<hr/>
+</div></details><details class="repo-detail" open="open"><summary>05｜ floci-io/floci — 云服务测试</summary><div class="detail-body">
+<p><strong>用途：</strong> 本地模拟部分 AWS 云服务，让 Java/微服务在 CI 中复现 S3 等 SDK 操作，而不需反复请求真实云资源。</p>
+<p><strong>技术栈/语言：</strong> Java / Docker / Maven / AWS SDK / Testcontainers。</p>
+<p><strong>热度与近期活动：</strong> 截至本次 GitHub API 回读约 <strong>31,098 Star</strong>；11 月 8 日 06:58 UTC Trending 样本为 <strong>+187 stars today</strong>。最近代码推送日期：<strong>2026-11-08 UTC</strong>（不能仅据该日期推断发版）。</p>
+<p><strong>核心优点：</strong> 便于创建测试隔离实例、控制异常和减少共享测试环境污染；可与 Java Testcontainers 组合，并有多语言相关生态。</p>
+<p><strong>主要缺点/局限：</strong> 模拟器不是 AWS 完整替代品；IAM、配额、异步事件与真实故障时序仍需云端最终验证。模块版本要匹配 Testcontainers 大版本，避免使用漂移的 latest 镜像。</p>
+<p><strong>成熟度与维护活跃度：</strong> 中高；11 月 8 日 UTC 仍有代码推送，具有模块说明、兼容性测试和持续维护。</p>
+<p><strong>适合人群/场景：</strong> Spring Boot、AWS SDK、CI/CD、企业集成测试。</p>
+<p><strong>是否值得关注：</strong> ★★★★★：近期工程收益最容易量化的项目之一。</p>
+<p><strong>行动建议：</strong> 用 Testcontainers 运行 S3 上传、下载、无权限请求和超时重试，记录与真实 AWS 测试账户的差异。</p>
+<p><strong>来源：</strong> <a href="https://github.com/floci-io/floci">官方 GitHub 仓库</a> · <a href="https://github.com/floci-io/floci#readme">README/源码</a> · <a href="https://api.github.com/repos/floci-io/floci">仓库元数据</a>。</p>
+<hr/>
+</div></details><details class="repo-detail" open="open"><summary>06｜ opendataloader-project/opendataloader-pdf — RAG 文档</summary><div class="detail-body">
+<p><strong>用途：</strong> 将 PDF 解析为带层级、页码和边界框的文本、表格、Markdown/JSON，混合模式处理扫描件与复杂版式，服务于 RAG 和可访问性。</p>
+<p><strong>技术栈/语言：</strong> Java 内核 / Python / OCR / Markdown / JSON。</p>
+<p><strong>热度与近期活动：</strong> 截至本次 GitHub API 回读约 <strong>30,246 Star</strong>；11 月 8 日 06:58 UTC Trending 样本为 <strong>+21 stars today</strong>。最近代码推送日期：<strong>2026-11-06 UTC</strong>（不能仅据该日期推断发版）。</p>
+<p><strong>核心优点：</strong> 可本地运行，输出能指回 PDF 原始位置；Java 与 Python 集成路径并存；支持中文 OCR 的可选混合处理。</p>
+<p><strong>主要缺点/局限：</strong> 表格、公式、跨栏阅读顺序仍可能出错；OCR 引擎质量、资源开销及语言模型要求因模式而异；官方基准分数并非对任意中文合同的质量保证。</p>
+<p><strong>成熟度与维护活跃度：</strong> 中高；11 月 6 日 UTC 有代码推送，提供文档、测试和多种模式，复杂版式表现需独立量化。</p>
+<p><strong>适合人群/场景：</strong> 企业知识库、合同/报表解析、Java 数据接入与 RAG。</p>
+<p><strong>是否值得关注：</strong> ★★★★★：适合建立带原文证据的文档解析基线。</p>
+<p><strong>行动建议：</strong> 用十份脱敏中文 PDF 测试段落顺序、表格、页码和边界框，比较无 OCR 与混合 OCR 的成本和正确率。</p>
+<p><strong>来源：</strong> <a href="https://github.com/opendataloader-project/opendataloader-pdf">官方 GitHub 仓库</a> · <a href="https://github.com/opendataloader-project/opendataloader-pdf#readme">README/源码</a> · <a href="https://api.github.com/repos/opendataloader-project/opendataloader-pdf">仓库元数据</a>。</p>
+<hr/>
+</div></details><details class="repo-detail" open="open"><summary>07｜ max-sixty/worktrunk — AI 并行编码</summary><div class="detail-body">
+<p><strong>用途：</strong> 使用 Git Worktree 管理多个独立开发目录，为多个 Coding Agent 并行任务提供分支创建、状态查看与合并清理流程。</p>
+<p><strong>技术栈/语言：</strong> Rust / Git Worktree / Windows CLI。</p>
+<p><strong>热度与近期活动：</strong> 截至本次 GitHub API 回读约 <strong>12,109 Star</strong>；11 月 8 日 06:58 UTC Trending 样本为 <strong>+147 stars today</strong>。最近代码推送日期：<strong>2026-11-08 UTC</strong>（不能仅据该日期推断发版）。</p>
+<p><strong>核心优点：</strong> 不必引入大型 Agent 平台；沿用原有 IDE 和 Git 工具；不同任务的 Diff 与 Review 较清楚；支持 Windows winget 安装。</p>
+<p><strong>主要缺点/局限：</strong> Worktree 不是容器沙箱；不同目录仍可能共享数据库、端口、构建缓存和密钥。Windows 的 wt 名称与 Windows Terminal 冲突，建议按官方使用 git-wt。</p>
+<p><strong>成熟度与维护活跃度：</strong> 中高；11 月 8 日 UTC 有代码推送，文档、跨平台构建和发行版持续更新。</p>
+<p><strong>适合人群/场景：</strong> Windows Java 开发、多 Agent 并行修改、跨分支 Code Review。</p>
+<p><strong>是否值得关注：</strong> ★★★★★：低成本直接试验，优先于构建复杂多 Agent 调度器。</p>
+<p><strong>行动建议：</strong> 在同一 Maven Repo 创建两条 Worktree，分别修业务接口与补测试，比较代码冲突、构建缓存冲突与合并耗时。</p>
+<p><strong>来源：</strong> <a href="https://github.com/max-sixty/worktrunk">官方 GitHub 仓库</a> · <a href="https://github.com/max-sixty/worktrunk#readme">README/源码</a> · <a href="https://api.github.com/repos/max-sixty/worktrunk">仓库元数据</a>。</p>
+<hr/>
+</div></details><details class="repo-detail" open="open"><summary>08｜ vercel-labs/agent-browser — 浏览器 Agent</summary><div class="detail-body">
+<p><strong>用途：</strong> 为 Coding Agent 提供浏览器 CLI：读取可访问性快照、按元素引用点击/输入/验证，从网页观察形成可复查的操作链。</p>
+<p><strong>技术栈/语言：</strong> Rust CLI / Chromium / Accessibility Tree / npm。</p>
+<p><strong>热度与近期活动：</strong> 截至本次 GitHub API 回读约 <strong>47,541 Star</strong>；11 月 8 日 06:58 UTC Trending 样本为 <strong>+190 stars today</strong>。最近代码推送日期：<strong>2026-11-08 UTC</strong>（不能仅据该日期推断发版）。</p>
+<p><strong>核心优点：</strong> 适合 Web 自动化和回归测试；相比纯坐标点击更容易定位与失败分析；可将页面操作加入已有 Harness。</p>
+<p><strong>主要缺点/局限：</strong> 页面可含 Prompt Injection；Cookie、登录态、下载文件与私有页面内容容易泄露；动态页面会令引用失效。需要限制访问域名与敏感操作。</p>
+<p><strong>成熟度与维护活跃度：</strong> 中高、近期活跃；11 月 8 日 UTC 仍有代码推送，命令、安全选项和测试文档较完整。</p>
+<p><strong>适合人群/场景：</strong> AI Web 操作、前端 QA、表单与发布流程测试。</p>
+<p><strong>是否值得关注：</strong> ★★★★★：用测试站点验证，不连接真实资金/客户账户。</p>
+<p><strong>行动建议：</strong> 在自建表单执行 snapshot→填入→提交→核验，并故意禁用按钮，检查错误报告、域名白名单及日志脱敏。</p>
+<p><strong>来源：</strong> <a href="https://github.com/vercel-labs/agent-browser">官方 GitHub 仓库</a> · <a href="https://github.com/vercel-labs/agent-browser#readme">README/源码</a> · <a href="https://api.github.com/repos/vercel-labs/agent-browser">仓库元数据</a>。</p>
+<hr/>
+</div></details><details class="repo-detail" open="open"><summary>09｜ prometheus/prometheus — 可观测性</summary><div class="detail-body">
+<p><strong>用途：</strong> 采集时序指标、运行 PromQL 和告警规则，用于跟踪微服务以及 Agent/Tool 的延迟、失败率与资源用量。</p>
+<p><strong>技术栈/语言：</strong> Go / PromQL / 时间序列 / Exporter。</p>
+<p><strong>热度与近期活动：</strong> 截至本次 GitHub API 回读约 <strong>67,565 Star</strong>；11 月 8 日 06:58 UTC Trending 样本为 <strong>+322 stars today</strong>。最近代码推送日期：<strong>2026-11-08 UTC</strong>（不能仅据该日期推断发版）。</p>
+<p><strong>核心优点：</strong> 生产生态成熟，易与 JVM、Kubernetes 和自建服务连接；可为 AI 工具调用建立统一的 SLI/SLO 度量。</p>
+<p><strong>主要缺点/局限：</strong> 高基数标签会造成存储与查询负担；不能把用户 ID、Prompt 或密钥当指标标签；指标也不替代 Trace 与业务审计。</p>
+<p><strong>成熟度与维护活跃度：</strong> 高、长期维护；11 月 8 日 UTC 有代码推送，稳定版本与广泛生态支持。</p>
+<p><strong>适合人群/场景：</strong> SRE、企业微服务、AgentOps 和推理服务监控。</p>
+<p><strong>是否值得关注：</strong> ★★★★★：长期基础设施价值高于单日热度。</p>
+<p><strong>行动建议：</strong> 给模拟 Tool Gateway 加成功率、P95 延迟和错误分类指标，控制标签基数，添加阈值告警。</p>
+<p><strong>来源：</strong> <a href="https://github.com/prometheus/prometheus">官方 GitHub 仓库</a> · <a href="https://github.com/prometheus/prometheus#readme">README/源码</a> · <a href="https://api.github.com/repos/prometheus/prometheus">仓库元数据</a>。</p>
+<hr/>
+</div></details><details class="repo-detail" open="open"><summary>10｜ etcd-io/etcd — 分布式一致性</summary><div class="detail-body">
+<p><strong>用途：</strong> 为关键分布式状态提供强一致的 KV 存储，应用于 Kubernetes 控制面、租约、Watch 和服务协调。</p>
+<p><strong>技术栈/语言：</strong> Go / Raft / gRPC / TLS。</p>
+<p><strong>热度与近期活动：</strong> 截至本次 GitHub API 回读约 <strong>52,673 Star</strong>；11 月 8 日 06:58 UTC Trending 样本为 <strong>+159 stars today</strong>。最近代码推送日期：<strong>2026-11-06 UTC</strong>（不能仅据该日期推断发版）。</p>
+<p><strong>核心优点：</strong> Raft 复制和多数派机制经过长期实践；API、TLS、快照与备份等治理能力较成熟，适合理解控制面为什么必须有可靠共识。</p>
+<p><strong>主要缺点/局限：</strong> 失去多数派时写入无法继续；并不适合作为通用分析数据库，磁盘 I/O、证书、备份与碎片整理都有成本。主分支代码不一定稳定。</p>
+<p><strong>成熟度与维护活跃度：</strong> 高、长期维护；最近代码推送 11 月 6 日 UTC，稳定部署应选择 Releases 而非 main。</p>
+<p><strong>适合人群/场景：</strong> Kubernetes、分布式架构学习、需要一致状态的基础设施。</p>
+<p><strong>是否值得关注：</strong> ★★★★★：架构基础设施必学，现有 Nacos/数据库选型仍要看场景。</p>
+<p><strong>行动建议：</strong> 在三节点测试集群中模拟 Leader 故障和多数派丢失，记录读写、Watch 和恢复行为。</p>
+<p><strong>来源：</strong> <a href="https://github.com/etcd-io/etcd">官方 GitHub 仓库</a> · <a href="https://github.com/etcd-io/etcd#readme">README/源码</a> · <a href="https://api.github.com/repos/etcd-io/etcd">仓库元数据</a>。</p>
+<hr/>
+</div></details><details class="repo-detail" open="open"><summary>11｜ zed-industries/zed — 开发工具</summary><div class="detail-body">
+<p><strong>用途：</strong> 高性能代码编辑器，强调快速响应、实时协作和开发工具集成；目前支持 macOS、Linux、Windows。</p>
+<p><strong>技术栈/语言：</strong> Rust / GPUI / Tree-sitter / 编辑器。</p>
+<p><strong>热度与近期活动：</strong> 截至本次 GitHub API 回读约 <strong>94,472 Star</strong>；11 月 8 日 06:58 UTC Trending 样本为 <strong>+1,114 stars today</strong>。最近代码推送日期：<strong>2026-11-08 UTC</strong>（不能仅据该日期推断发版）。</p>
+<p><strong>核心优点：</strong> Rust 原生桌面架构和 GPUI 具备性能研究价值；跨平台应用和团队协作符合现代 AI 编程场景。</p>
+<p><strong>主要缺点/局限：</strong> 编辑器替换有插件、远程调试、Java 调试和工程迁移成本；主要代码采用 GPL-3.0-or-later；快不等于适合替代 IntelliJ 的成熟 Java 工具链。</p>
+<p><strong>成熟度与维护活跃度：</strong> 中高到高；11 月 8 日 UTC 仍有代码推送，维护与社区活跃。</p>
+<p><strong>适合人群/场景：</strong> Rust/前端/多语言开发者、需要快速编辑与团队协作的人。</p>
+<p><strong>是否值得关注：</strong> ★★★★☆：值得观察，Java 主力 IDE 暂不必切换。</p>
+<p><strong>行动建议：</strong> 使用脱敏中型 Repo 比较启动、文件搜索、并行编辑与 Agent 集成体验，并核实 Windows 功能与 Java 调试缺口。</p>
+<p><strong>来源：</strong> <a href="https://github.com/zed-industries/zed">官方 GitHub 仓库</a> · <a href="https://github.com/zed-industries/zed#readme">README/源码</a> · <a href="https://api.github.com/repos/zed-industries/zed">仓库元数据</a>。</p>
+<hr/>
+</div></details><details class="repo-detail" open="open"><summary>12｜ astral-sh/ruff — 代码质量</summary><div class="detail-body">
+<p><strong>用途：</strong> 将 Python 代码静态检查、风格规范与格式化整合为高速工具，可接入 pre-commit 和 CI。</p>
+<p><strong>技术栈/语言：</strong> Rust 核心 / Python Lint / Format。</p>
+<p><strong>热度与近期活动：</strong> 截至本次 GitHub API 回读约 <strong>51,115 Star</strong>；11 月 8 日 06:58 UTC Trending 样本为 <strong>+350 stars today</strong>。最近代码推送日期：<strong>2026-11-08 UTC</strong>（不能仅据该日期推断发版）。</p>
+<p><strong>核心优点：</strong> Rust 实现、配置清晰、规则覆盖广，适合 Python 辅助脚本和 AI 生成代码的快速质量门禁；官方文档列出 Python 3.15 兼容。</p>
+<p><strong>主要缺点/局限：</strong> 自动修复可能改变代码行为，规则集与现有 Black/Flake8 并非所有细节完全一致；应锁定版本并审查差异。</p>
+<p><strong>成熟度与维护活跃度：</strong> 高、持续维护；11 月 8 日 UTC 有代码推送，IDE/CI 集成和发行文档完整。</p>
+<p><strong>适合人群/场景：</strong> Python 工具开发、Agent 自动生成的脚本、数据处理与自动化。</p>
+<p><strong>是否值得关注：</strong> ★★★★★：可直接纳入测试仓库质量门禁。</p>
+<p><strong>行动建议：</strong> 在十份 AI 生成的 Python 脚本上运行 ruff check/format，保存 Diff，比较 P95 和误修复情况。</p>
+<p><strong>来源：</strong> <a href="https://github.com/astral-sh/ruff">官方 GitHub 仓库</a> · <a href="https://github.com/astral-sh/ruff#readme">README/源码</a> · <a href="https://api.github.com/repos/astral-sh/ruff">仓库元数据</a>。</p>
+<hr/>
+</div></details><details class="repo-detail" open="open"><summary>13｜ CapSoftware/Cap — 视频与创作</summary><div class="detail-body">
+<p><strong>用途：</strong> 开源屏幕录制、局部剪辑和异步视频分享工具，包含即时分享、Studio 编辑、转录及自托管存储选择。</p>
+<p><strong>技术栈/语言：</strong> Rust/GPUI / TypeScript/Next.js / MySQL / S3。</p>
+<p><strong>热度与近期活动：</strong> 截至本次 GitHub API 回读约 <strong>24,667 Star</strong>；11 月 8 日 06:58 UTC Trending 样本为 <strong>+77 stars today</strong>。最近代码推送日期：<strong>2026-11-08 UTC</strong>（不能仅据该日期推断发版）。</p>
+<p><strong>核心优点：</strong> 适合技术教程、Bug 复现、AI 工具演示和一人公司内容素材采集；可用 S3 兼容存储或自托管，数据可控性较好。</p>
+<p><strong>主要缺点/局限：</strong> 完整自托管涉及数据库、对象存储和 Web 服务；上传与公开分享需确认敏感窗口；仓库多数代码采用 AGPLv3，部分捕获组件 MIT，商用集成须核对许可证。</p>
+<p><strong>成熟度与维护活跃度：</strong> 中高、持续维护；11 月 8 日 UTC 有代码推送，桌面与 Web 应用结构完整。</p>
+<p><strong>适合人群/场景：</strong> 技术自媒体、产品 Demo、异步团队沟通、视频课程。</p>
+<p><strong>是否值得关注：</strong> ★★★★☆：对内容创业实际有用，先试录屏再考虑自建。</p>
+<p><strong>行动建议：</strong> 制作 60 秒 Java Agent Demo 屏幕讲解，比较剪辑、字幕修改、发布权限和单条素材生产成本。</p>
+<p><strong>来源：</strong> <a href="https://github.com/CapSoftware/Cap">官方 GitHub 仓库</a> · <a href="https://github.com/CapSoftware/Cap#readme">README/源码</a> · <a href="https://api.github.com/repos/CapSoftware/Cap">仓库元数据</a>。</p>
+<hr/>
+</div></details><h2 id="sec-16">三、今日最值得重点看的 Top 3</h2>
+<p>排序综合近期热度、架构新意、可操作性与个人工程/产品价值，不是简单按 Star 增量降序。</p>
+<h3 id="sec-17">TOP 1 — <a href="https://github.com/dsx-ai-factory/nvke">dsx-ai-factory/nvke</a></h3>
+<p><strong>推荐原因：</strong> GPU/Kubernetes 的新架构选择：当前 Preview 明确写明生产限制和缺失的管理平面恢复能力，正适合学习“GPU 推理集群为何需要独立管理面”，而不是急于部署。</p>
+<p><strong>下一步：</strong> 在测试 Linux VM 完成本地模拟集群启动、身份认证和节点池变更的纸面/实测对照。</p>
+<h3 id="sec-18">TOP 2 — <a href="https://github.com/milind-soni/OpenMausBot">milind-soni/OpenMausBot</a></h3>
+<p><strong>推荐原因：</strong> Bot 角色、个人任务、CLI Harness、VM 和审批可以构成真正的周期性工作台，直接对应个人 AI 自动化与内容交付；但必须把计算机权限边界置于体验之前。</p>
+<p><strong>下一步：</strong> 用两个测试 Bot 做公开资料研究→讲稿审核，量化人工返工与模型成本。</p>
+<h3 id="sec-19">TOP 3 — <a href="https://github.com/agentscope-ai/agentscope-java">agentscope-ai/agentscope-java</a></h3>
+<p><strong>推荐原因：</strong> 当 Java 微服务逐步接入 AI Agent 时，持续会话、事件、审批和领域 Tool 的职责分离，比单纯调用一个模型 API 更影响长期架构。</p>
+<p><strong>下一步：</strong> 实现 Spring Boot 只读 Tool + Agent 恢复 PoC，验证审批、超时和外部幂等。</p>
+<h2 id="sec-20">四、六项技术趋势与架构取舍</h2>
+<p><strong>1. GPU 资源池需要单独的控制面。</strong> NVKE 与 etcd 体现控制面生命周期、身份、可靠状态和工作负载隔离的不同职责；Preview 限制提醒我们不能把架构演示当成熟平台。</p>
+<p><strong>2. 个人 Agent 从聊天走向可审核的任务执行。</strong> OpenMausBot 的定时任务与 VM、Agent Browser 的可观察操作、Cloudflare 的审计证据互相补充。权限审批和实际日志比“Agent 数量”更重要。</p>
+<p><strong>3. Java AI 应用需要两层可靠性。</strong> AgentScope 管会话与工具过程，原有 Spring/领域服务管认证、事务与幂等；Floci 和 PDF 解析工具则提供可复现的依赖环境与数据入口测试。</p>
+<p><strong>4. 多 Agent 开发先改善工程隔离和质量门禁。</strong> Worktrunk 解决工作区冲突，Ruff 解决 Python 脚本静态质量，Prometheus 对执行效果给出实际指标。三个工具的价值可分别量化。</p>
+<p><strong>5. 成熟基础设施和新兴工具都要看维护证据。</strong> 云平台新项目增长快，但安全策略、备份能力和许可证比 Star 更重要；etcd、Prometheus 这类长期项目即便增长较慢仍不可忽略。</p>
+<p><strong>6. 内容创作可以直接嫁接工程成果。</strong> Cap 把开发过程变成可复用的视频素材，Zed 等编辑器提供新的人机协作体验；但用户反馈和可量化完成率决定是否值得迁移。</p>
+<h2 id="sec-21">五、今日可执行行动清单</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>任务</th>
+<th style="text-align:right">建议投入</th>
+<th>验收指标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0</td>
+<td>NVKE Preview 架构审查与模拟集群</td>
+<td style="text-align:right">60–90 分钟</td>
+<td>管理/工作集群分界、认证、回滚、资源开销</td>
+</tr>
+<tr>
+<td>P0</td>
+<td>OpenMausBot 双 Bot 交接</td>
+<td style="text-align:right">45 分钟</td>
+<td>授权、日志、交付质量、费用和失败恢复</td>
+</tr>
+<tr>
+<td>P0</td>
+<td>AgentScope Java 只读订单 Tool</td>
+<td style="text-align:right">60 分钟</td>
+<td>会话恢复、事件、超时、审批、幂等</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Worktrunk 双 Worktree 开发</td>
+<td style="text-align:right">40 分钟</td>
+<td>Diff、并发冲突、端口/缓存隔离</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Floci + Testcontainers</td>
+<td style="text-align:right">45 分钟</td>
+<td>SDK 行为、拒绝权限、异常重试</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>OpenDataLoader 中文 PDF 解析</td>
+<td style="text-align:right">40 分钟</td>
+<td>页码、表格、引用位置、OCR 成本</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Cloudflare 代码安全审核</td>
+<td style="text-align:right">45 分钟</td>
+<td>误报、结构化 findings、独立复核</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Agent Browser 表单操作</td>
+<td style="text-align:right">30 分钟</td>
+<td>快照与状态一致、失败回报、域名控制</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Prometheus 指标与 etcd 故障试验</td>
+<td style="text-align:right">60 分钟</td>
+<td>P95、错误率、Quorum、恢复</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>Zed/Ruff/Cap 工具体验比较</td>
+<td style="text-align:right">60 分钟</td>
+<td>IDE 迁移成本、脚本质量和视频交付</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>若今天只有 90 分钟：</strong> 先花 45 分钟用 Worktrunk 做 Windows Java 双工作区实验，再用 45 分钟把 AgentScope 的只读 Tool 与重启恢复流程搭建成可重复的测试；NVKE 的完整安装需要另行留出环境准备时间。</p>
+<h2 id="sec-22">六、来源与风险提示</h2>
+<p><strong>主要资料：</strong> GitHub 官方 Trending 及 <a href="https://githubtrending.today/">最近存档</a>；各仓库已逐项附官方地址与 GitHub API 元数据。特别参考 <a href="https://github.com/dsx-ai-factory/nvke">NVKE Preview 限制</a>、<a href="https://github.com/milind-soni/OpenMausBot/security">OpenMausBot 运行权限</a>、<a href="https://github.com/cloudflare/security-audit-skill/tree/main/skills/security-audit">Cloudflare 安全审计流程</a>、<a href="https://github.com/max-sixty/worktrunk#install">Worktrunk Windows 安装</a>、<a href="https://github.com/opendataloader-project/opendataloader-pdf">OpenDataLoader PDF OCR 文档</a>。</p>
+<p><strong>真实性边界：</strong> Star、代码推送记录和仓库路径来自公开页面/API；优缺点、成熟度、关注等级为工程分析。性能提升、准确率、云资源节省、安全效果和实际商业价值没有在本报告中独立复现。真正采用时先核对许可证、稳定版本、测试覆盖和安全边界。</p>
+<p><strong>今日结论：</strong> 关注 GPU Kubernetes 管理面与个人 Agent 工作台的近期变化，但执行优先级仍应落在 Java Agent 的授权与恢复、并行开发工作区、可复现集成测试、安全审计与可观测性上。</p>
+<p><strong>2026 年 11 月 9 日《GitHub 热榜日报》完整文字正文结束。</strong></p>
+</article></main></div><footer>2026-11-09 · HTML SINGLE FILE · NO CDN · REPORT GENERATED FROM COMPLETE CANONICAL TEXT</footer><script>const q=document.getElementById('search');function filter(){const term=q.value.trim().toLowerCase();document.querySelectorAll('.repo-detail').forEach(e=>{e.hidden=Boolean(term&&!e.textContent.toLowerCase().includes(term));});}q.addEventListener('input',filter);document.getElementById('expand').addEventListener('click',()=>document.querySelectorAll('.repo-detail:not([hidden])').forEach(e=>e.open=true));document.getElementById('collapse').addEventListener('click',()=>document.querySelectorAll('.repo-detail:not([hidden])').forEach(e=>e.open=false));</script></body></html>
