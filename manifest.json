@@ -5,7 +5,7 @@
   "readme": "本仓库仅展示已经提交的完整 HTML 报告；页面内容由 categories[].reports 索引。",
   "counts": {
     "topic_count": 10,
-    "verified_full_reports": 32
+    "verified_full_reports": 33
   },
   "categories": [
     {
@@ -247,6 +247,13 @@
       "description": "追踪抖音、小红书、视频号、B 站、YouTube、TikTok 等平台创作规则、政策和激励机会。",
       "source_status": "partial_archive",
       "reports": [
+        {
+          "date": "2026-11-08",
+          "title": "自媒体政策与机会周报｜2026.11.02—11.08",
+          "label": "2026-11-08",
+          "path": "reports/creator-policy/2026-11-08.html",
+          "kind": "full"
+        },
         {
           "date": "2026-11-06",
           "title": "自媒体政策与机会周报｜2026.11.02—11.06｜周中报告",
