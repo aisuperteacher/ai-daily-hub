@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="color-scheme" content="light"/><title>企业级应用架构与 AI 原生技术周报 · 2026-11-09</title><style>
+:root{--ink:#172324;--paper:#f4f1e7;--card:#fffcf3;--accent:#e76d47;--lime:#d9e787;--line:#273333;--blue:#244957}
+*{box-sizing:border-box} html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--paper);font-family:system-ui,-apple-system,"Segoe UI","Noto Sans SC","PingFang SC",sans-serif;line-height:1.86}
+.header{padding:34px max(4vw,20px);background:var(--lime);border-bottom:4px solid var(--line)} .kicker{letter-spacing:.14em;font-weight:800;font-size:12px;text-transform:uppercase} .brand{font-size:clamp(25px,4vw,52px);font-weight:900;line-height:1.18;max-width:1000px;margin:8px 0 12px}.sub{font-size:14px;color:#344;max-width:900px}.layout{display:grid;grid-template-columns:248px minmax(0,850px);justify-content:center;gap:28px;margin:0 auto;max-width:1260px;padding:26px 22px 90px}
+nav{position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow-y:auto;border:2px solid var(--line);background:var(--card);padding:16px;box-shadow:5px 5px 0 #273333}nav b{display:block;border-bottom:1px solid #aaa;margin-bottom:8px;padding-bottom:8px}.nav-item{display:block;text-decoration:none;color:var(--ink);font-size:12px;line-height:1.45;padding:7px 5px;border-bottom:1px solid #e6e1d5}.nav-item:hover{background:var(--lime)}.nav-item.level-1{font-weight:800}
+main{min-width:0;background:var(--card);border:2px solid var(--line);padding:clamp(18px,3.6vw,48px);box-shadow:8px 8px 0 #273333}main h1{font-size:clamp(23px,3.2vw,37px);line-height:1.3;margin:0 0 22px}main h2{font-size:clamp(20px,2.5vw,29px);line-height:1.38;margin:64px 0 20px;padding:14px 13px;background:var(--lime);border-left:8px solid var(--line)}main h3{font-size:17px;line-height:1.5;margin-top:29px;border-bottom:2px solid #ddd6c7;padding-bottom:7px}
+main p{margin:13px 0 20px}main strong{font-weight:780}main a{color:#165f7e;text-decoration-thickness:1px;text-underline-offset:3px;overflow-wrap:anywhere}main a:hover{color:#c25330}main blockquote{border-left:5px solid var(--accent);padding:7px 20px;margin:22px 0;background:#fff2e6}
+table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.6;margin:23px 0 30px;display:block;overflow-x:auto;white-space:normal}th,td{border:1px solid #85918e;padding:10px 12px;text-align:left;min-width:90px;vertical-align:top}th{background:var(--blue);color:white}tr:nth-child(even) td{background:#f1f1e7}
+pre{overflow-x:auto;padding:20px;background:#17292c;color:#eff3e8;border-radius:4px;font:12px/1.7 "SFMono-Regular",Consolas,monospace}code{overflow-wrap:anywhere;background:#e9e6dc;border-radius:2px;padding:.1em .28em;font-size:.9em}pre code{background:none;color:inherit;padding:0}ul,ol{padding-left:24px}li{margin-bottom:9px}input[type=checkbox]{accent-color:var(--blue)}.footer{border-top:2px solid;margin-top:56px;padding-top:20px;color:#556;font-size:12px}.print{display:block;border:2px solid;background:var(--accent);padding:8px 16px;font-weight:700;cursor:pointer;margin:14px 0 0}.small{font-size:12px}
+@media(max-width:870px){.layout{grid-template-columns:1fr;padding:12px;gap:16px}nav{position:static;max-height:220px;box-shadow:none}.header{padding:23px 16px}main{box-shadow:none;padding:18px}main h2{margin-top:42px}table{font-size:12px}th,td{padding:8px}}@media print{body{background:white}.layout{display:block;padding:0}nav,.print{display:none}main{border:0;box-shadow:none;padding:0}h2{break-after:avoid;background:#eee!important}a{color:#222}table{display:table}pre{white-space:pre-wrap}}
+</style></head><body><header class="header"><div class="kicker">DISTRIBUTED & AI ARCHITECTURE WEEKLY / 2026 · ISSUE 46</div><div class="brand">企业级应用架构与<br>AI 原生技术周报</div><div class="sub">2026-11-09 · 研究窗口 11 月 2—9 日 · 场景驱动，跨语言技术架构深度解读 · 全文离线版</div></header><div class="layout"><nav><b>目录 / CONTENTS</b><a class="nav-item level-1" href="#section-1">企业级应用架构与 AI 原生技术周报</a><a class="nav-item level-2" href="#section-2">一、本周架构雷达</a><a class="nav-item level-2" href="#section-3">二、Top 1：Istio 最新安全公告——声明了 STRICT mTLS，不代表数据面一定执行了 STRICT</a><a class="nav-item level-2" href="#section-11">三、Top 2：GitHub 新一代 Git 存储架构——数千个 Agent 并发写入，如何避免整个仓库成为全局锁？</a><a class="nav-item level-2" href="#section-19">四、Top 3：DynamoDB Bulk Put Items——在线业务不能因为百万级数据回填而被抢走资源</a><a class="nav-item level-2" href="#section-27">五、Top 4：Lambda Durable Functions 扩容——长期运行的 AI Agent，不只是 API 并发问题</a><a class="nav-item level-2" href="#section-34">六、Top 5：TUI 企业级 AI 威胁建模——把安全专家的流程变成可验证 Agent 系统</a><a class="nav-item level-2" href="#section-43">七、跨场景架构决策矩阵</a><a class="nav-item level-2" href="#section-44">八、结合现有企业微服务系统的演进方式</a><a class="nav-item level-2" href="#section-45">九、本周可执行工程清单</a><a class="nav-item level-2" href="#section-46">十、未来 1—3 年最值得关注的四个方向</a><a class="nav-item level-2" href="#section-47">十一、本期最终架构判断</a></nav><main><h1 id="section-1">企业级应用架构与 AI 原生技术周报</h1>
+<p><strong>Distributed &amp; AI Architecture Weekly · 第 46 周 · 2026 年 11 月 9 日</strong><br />
+研究窗口：2026 年 11 月 2 日—11 月 9 日（北京时间）</p>
+<p><strong>本期主题：Agent 规模化带来的存储架构重构、Service Mesh 安全边界、在线数据库批量写入，以及 AI 工作流的可靠性与治理。</strong></p>
+<p>本期从过去一周的官方工程文章、安全公告和产品发布中选出五项有明确企业架构价值的内容。已排除 11 月 6 日增补刊介绍过的 Cloudflare DNS、Temporal Nexus、Agent 委托身份、灾备演练和 OpenTelemetry JavaScript SDK 3.0，避免重复报道。</p>
+<h2 id="section-2">一、本周架构雷达</h2>
+<table>
+<thead>
+<tr>
+  <th>优先级</th>
+  <th>入选材料</th>
+  <th>官方发布日期</th>
+  <th>核心价值</th>
+  <th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>P0</td>
+  <td>Istio 1.31.4 / 1.30.8 安全修复</td>
+  <td>11 月 6 日</td>
+  <td>mTLS、授权策略和 Mesh 隔离边界</td>
+  <td>立即排查</td>
+</tr>
+<tr>
+  <td>P1</td>
+  <td>GitHub 新一代 Git 存储架构</td>
+  <td>11 月 5 日</td>
+  <td>让数千个 Agent 并发修改同一代码仓库</td>
+  <td>深度必读</td>
+</tr>
+<tr>
+  <td>P1</td>
+  <td>DynamoDB Bulk Put Items GA</td>
+  <td>11 月 5 日</td>
+  <td>不争抢在线请求容量的大规模数据回填</td>
+  <td>优先试验</td>
+</tr>
+<tr>
+  <td>P1</td>
+  <td>Lambda Durable Functions 配额扩容</td>
+  <td>11 月 5 日</td>
+  <td>大规模长期任务、Agent 和异步工作流</td>
+  <td>按场景评估</td>
+</tr>
+<tr>
+  <td>P1</td>
+  <td>TUI 企业 AI 威胁建模系统</td>
+  <td>11 月 5 日</td>
+  <td>将 Agent、企业标准、人工审核结合为生产级安全流程</td>
+  <td>优先实践</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本周最重要的判断：未来企业架构的扩展瓶颈，越来越多地出现在共享状态更新、跨组件执行语义、权限执行结果以及业务数据与后台批处理争抢资源的边界上。</strong></p>
+<p>与其为每个场景增加一个更强的框架，不如先找到真正需要协调的状态、必须保持的业务约束，以及可以独立扩展的计算部分。</p>
+<h2 id="section-3">二、Top 1：Istio 最新安全公告——声明了 STRICT mTLS，不代表数据面一定执行了 STRICT</h2>
+<p><strong>2026-11-06 · Istio 官方 · P0</strong></p>
+<p><strong>官方资料：</strong> <a href="https://istio.io/latest/news/security/istio-security-2026-009/">ISTIO-SECURITY-2026-009</a>；<a href="https://istio.io/latest/news/releases/1.31.x/announcing-1.31.4/">Istio 1.31.4 Release Notes</a>。</p>
+<h3 id="section-4">1. 什么业务场景会受到影响？</h3>
+<p>假设企业的支付、订单、风控和客户信息服务运行在 Kubernetes 中，通过 Istio 控制服务之间的身份验证和访问权限。安全团队规定敏感端口必须通过 mTLS 访问，且部分服务只允许特定来源 IP、Host 或工作负载身份访问。</p>
+<p>正常预期是调用方进入 Istio 数据面后，按顺序受到 mTLS 身份检查和 AuthorizationPolicy 约束，才允许访问目标业务端口。但受影响版本中的复杂配置和连接场景可能绕过本应执行的安全检查。</p>
+<p>这不是单纯的运维功能缺陷，而是<strong>声明式安全策略与实际数据面执行行为出现偏差</strong>。</p>
+<h3 id="section-5">2. 本周发生了什么？</h3>
+<p>Istio 于 11 月 6 日发布安全公告，涵盖多项漏洞和修复：</p>
+<table>
+<thead>
+<tr>
+  <th>安全问题</th>
+  <th>严重性</th>
+  <th>实际影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Ambient 模式下端口级 STRICT mTLS 可能被绕过</td>
+  <td>CVSS 8.2</td>
+  <td>原本要求加密与身份验证的端口可能接受明文流量</td>
+</tr>
+<tr>
+  <td>Host / <code>:authority</code> 条件大小写匹配不一致</td>
+  <td>CVSS 6.5</td>
+  <td>特定 AuthorizationPolicy 条件可能被绕过</td>
+</tr>
+<tr>
+  <td>Sidecar 连接跟踪状态复用</td>
+  <td>CVSS 7.4</td>
+  <td>新连接可能绕过 Sidecar 流量拦截</td>
+</tr>
+<tr>
+  <td>异常 xDS 调试请求</td>
+  <td>CVSS 7.7</td>
+  <td>拥有 Mesh 身份的工作负载可能导致 istiod 持续崩溃</td>
+</tr>
+<tr>
+  <td>Multicluster <code>CLUSTER_ID</code> 验证问题</td>
+  <td>CVSS 6.3</td>
+  <td>可能错误获取其他集群的 SDS Secret</td>
+</tr>
+<tr>
+  <td>客户端 IP 识别错误</td>
+  <td>CVSS 5.6</td>
+  <td>部分基于源 IP 的拒绝规则可能失效</td>
+</tr>
+</tbody>
+</table>
+<p>公告还涉及畸形 <code>traceparent</code> 头导致 ztunnel 异常，以及不合法 AuthorizationPolicy 导致控制面崩溃等问题。来源同上。</p>
+<h3 id="section-6">3. 受影响版本与修复版本</h3>
+<table>
+<thead>
+<tr>
+  <th>分支</th>
+  <th>受影响版本</th>
+  <th>官方修复要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Istio 1.31</td>
+  <td>1.31.0—1.31.3</td>
+  <td>升级至 <strong>1.31.4 或更高</strong></td>
+</tr>
+<tr>
+  <td>Istio 1.30</td>
+  <td>1.30.0—1.30.7</td>
+  <td>升级至 <strong>1.30.8 或更高</strong></td>
+</tr>
+</tbody>
+</table>
+<p>这些范围是本次官方公告明确列出的版本范围，不应在未经核实的情况下推断其他分支一定受影响或不受影响。</p>
+<h3 id="section-7">4. 为什么值得关注？</h3>
+<p>传统微服务安全设计经常把“已经配置安全策略”与“安全控制真实生效”当作同一件事。但 Istio 的策略需要经过配置解析、控制面处理、xDS 分发，再由 Envoy、ztunnel 或内核网络规则执行；任一环节都可能存在安全语义偏差。本次同时涉及应用层授权、流量拦截、连接跟踪、控制面稳定性和跨集群身份校验。因此 Mesh 的安全测试不仅要验证正常请求成功，还要验证<strong>本应被拒绝的请求确实无法通过</strong>。</p>
+<h3 id="section-8">5. 技术选型与升级影响</h3>
+<p>已使用 Istio Ambient 或 Sidecar 的企业应根据现有模式分别审计。Ambient 模式重点检查 PeerAuthentication、Waypoint、ztunnel 与基于客户端 IP 的规则；Sidecar 模式检查流量拦截、iptables/nftables 和 Host 条件授权；Multicluster 审查身份凭证和 SDS Secret 的信任边界。</p>
+<p>如果企业尚未使用 Service Mesh，不必为了公告引入 Istio，但应把它作为反面测试案例，检查现有 API Gateway、Nginx、Envoy 或其他服务治理层的授权执行一致性。</p>
+<h3 id="section-9">6. 迁移、兼容和运维风险</h3>
+<p>升级涉及控制面与数据面兼容性，以及安全策略行为可能更加严格。应先在测试环境验证安全拒绝场景，再逐批升级控制面和代理，观察请求拒绝率、TLS 握手、服务发现、xDS 分发和关键业务流量。</p>
+<p>使用 <code>ipBlocks</code>、<code>notIpBlocks</code> 或 <code>source.ip</code> 的特定 HBONE/Waypoint 场景，官方提供采用 <code>remoteIpBlocks</code>、<code>notRemoteIpBlocks</code> 和 <code>remote.ip</code> 的缓解思路；具体适用范围仍须按公告和部署拓扑核对。不建议在生产环境复现 DoS 漏洞，应通过版本、配置审计和隔离测试确认。</p>
+<h3 id="section-10">7. 最值得读、行动建议和未来趋势</h3>
+<p>优先阅读公告的 <em>Am I Impacted?</em>、<em>Mitigation</em>，以及 Release Notes 中各漏洞的修复说明。本周应完成版本盘点、策略扫描、隔离环境拒绝用例验证和升级计划；支付、身份认证或客户信息服务优先。<strong>采用判断：立即排查，按官方建议升级。</strong></p>
+<p><strong>未来 1—3 年研判：</strong> 企业 Service Mesh、API Gateway 和 Agent Gateway 会更重视策略执行的持续验证，而非仅依赖声明式配置正确性。</p>
+<h2 id="section-11">三、Top 2：GitHub 新一代 Git 存储架构——数千个 Agent 并发写入，如何避免整个仓库成为全局锁？</h2>
+<p><strong>2026-11-05 · GitHub Engineering · P1</strong></p>
+<p><strong>官方原文：</strong> <a href="https://github.blog/engineering/architecture-optimization/inside-githubs-new-git-storage-architecture/">Inside GitHub's new Git storage architecture</a></p>
+<h3 id="section-12">1. 为什么属于分布式架构的重大变化？</h3>
+<p>传统仓库写入者主要是人类开发者。随着 Coding Agent 普及，同一代码仓库可能出现大量 Agent 持续创建分支、提交代码、更新引用，触发 CI/CD 和其他 Agent 读取。GitHub 内部测试展示新架构支持<strong>同一个仓库内 5,000 个并发 Agent、每秒 7,200 次 Push</strong>，同时保持读请求较低延迟。这是内部测试，不是所有仓库现有的性能承诺。文章发布时处于 Limited Private Preview，计划下一年更广泛推出。</p>
+<h3 id="section-13">2. 真正需要同步协调的是什么？</h3>
+<p>Git 的大部分对象不可变，通过内容 Hash 标识。两个 Agent 写入不同 Commit/Blob，不必为了存储对象互相等待。需要协调的是多个写入者同时更新同一 Branch/Reference 时，哪个合法、哪个应拒绝或重试。</p>
+<table>
+<thead>
+<tr>
+  <th>数据类型</th>
+  <th>特征</th>
+  <th>推荐协调方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Commit、Tree、Blob、Pack</td>
+  <td>不可变、内容寻址、体量大</td>
+  <td>对象存储，并行写入</td>
+</tr>
+<tr>
+  <td>Branch / Tag 等 Reference</td>
+  <td>可变、需要顺序一致性</td>
+  <td>Compare-and-Swap、Quorum</td>
+</tr>
+<tr>
+  <td>Pack Compaction 与 GC</td>
+  <td>后台资源密集型维护</td>
+  <td>独立 Worker、分片、租约</td>
+</tr>
+</tbody>
+</table>
+<p>GitHub 将此原则落实为 <strong>Project Rubicon</strong>。</p>
+<h3 id="section-14">3. 新架构的核心机制</h3>
+<pre><code class="language-text">Git Clients / Agents / CI
+       ↓
+Spokes 路由与租户调度
+       ↓
+Virtual Replicas（读写、缓存、索引）
+       ├─ Azure Blob Storage：Git Packs、Index、不可变对象、Checkpoint
+       └─ Ref-CAS：Reference 更新、Quorum、LSN、Pack Manifest
+独立 Compaction / GC Workers 进行后台维护
+</code></pre>
+<p>Ref-CAS 是独立复制日志服务，负责 Reference 的 Compare-and-Swap。写入先把 Pack 上传对象存储确保持久化，再提交 Reference 与 Pack Manifest 事务。Ref-CAS 只对需要变更的 Reference 加锁，多数副本确认提交；同一 Reference 的竞争更新序列化，不同 Reference 可并行。每次提交获得 LSN（Log Sequence Number），Virtual Replica 通过版本比对决定是否拉取必要更新。Compaction 与 GC 移出前台 Virtual Replica，由独立 Worker 维护。</p>
+<h3 id="section-15">4. 关键架构取舍</h3>
+<p>GitHub 曾尝试将 Reference 放进对象存储：单 Blob 条件写正确，但吞吐受到单对象协调限制；把 Reference 分割多个 Blob 虽提高写吞吐，却使读取检查多个分段，增加读延迟。专用 Ref-CAS 将少量需要强一致的元数据抽出，避免大对象数据也参与同一协调路径。<strong>原则是只让真正需要顺序一致性的状态参与协调，让不可变的大块数据独立扩展。</strong></p>
+<h3 id="section-16">5. 企业业务映射</h3>
+<p>可用于文档与对象存储（大文件独立存储，版本指针 CAS）、AI Agent 工作空间（任务产物不可变，当前任务引用可控更新）、配置发布（快照不可变，当前发布版本原子切换）、数据处理平台（分片数据在对象存储，元数据单独提交）。不能直接用于替换金融账务事务：资金系统可能需要跨账户原子性及更强业务不变量。</p>
+<h3 id="section-17">6. 可选技术路线与风险</h3>
+<p>Go、Rust、Java 均能实现类似架构。对象可存 S3/Blob/MinIO，可变引用可用 PostgreSQL 条件更新、etcd、FoundationDB 或专用复制日志。选型依据吞吐、事务范围、故障恢复、延迟和团队运维能力。</p>
+<p>风险包括对象写成功但 Reference 提交失败产生孤儿对象，后台 Compaction 与新写入竞争，GC 误删被引用对象，版本缓存失效以及错误租约和并发控制破坏一致性。须设计发布前完整性验证、GC 安全窗口、幂等恢复、版本追踪和故障注入。</p>
+<h3 id="section-18">7. 最值得读、行动建议与未来趋势</h3>
+<p>重点阅读 <em>Building for agent scale</em>、<em>Minimizing coordination</em>、<em>Decoupling storage from compute</em>、<em>What comes next</em>。实践：让多个 Agent 同时生成不可变版本，仅更新相同文档当前引用时执行 CAS，对比全局锁和按资源锁的吞吐、冲突率、尾延迟及恢复复杂度。<strong>采用判断：思想值得立即学习；产品本身仍在限制预览。</strong></p>
+<p><strong>未来 1—3 年研判：</strong> 多 Agent 协作推动不可变对象、精细化协调、独立元数据服务和分离式后台维护架构。</p>
+<h2 id="section-19">四、Top 3：DynamoDB Bulk Put Items——在线业务不能因为百万级数据回填而被抢走资源</h2>
+<p><strong>2026-11-05 · AWS Database Blog · P1</strong></p>
+<p><strong>官方原文：</strong> <a href="https://aws.amazon.com/blogs/database/introducing-bulk-put-items-for-amazon-dynamodb-load-data-from-amazon-s3-into-existing-tables-at-scale/">Introducing bulk put items for Amazon DynamoDB</a></p>
+<h3 id="section-20">1. 实际业务场景</h3>
+<p>电商每天根据推荐模型更新商品特征和用户推荐数据。模型结果保存在对象存储，需批量写入正在服务订单、商品与用户查询的数据库。普通写入 API 的后台流量可能与在线交易争抢容量。关键问题是<strong>大批量后台更新与在线交易如何隔离，同时不覆盖更新后的业务数据？</strong></p>
+<h3 id="section-21">2. 本周发布了什么？</h3>
+<p>11 月 5 日 DynamoDB Bulk Put Items GA，可从 S3 读取 Line-delimited DynamoDB JSON 或 Amazon Ion，支持 gzip/zstd，由服务端异步完成批量写入、条件检查及结果报告。AWS 表示使用专用容量，不消耗在线表常规读写请求的容量及相关指标，避免直接容量竞争。属于在线负载与后台数据处理负载的资源隔离。</p>
+<h3 id="section-22">3. 每条记录独立携带条件</h3>
+<p>支持无条件 Put，也支持每条输入记录携带 <code>ConditionExpression</code>，例如 <code>attribute_not_exists(PK)</code> 实现插入时不存在约束，或 <code>Version &lt; incomingVersion</code> 仅允许新版本覆盖旧版本。导出文件若较旧、在线用户已经更新资料，版本条件可防止过期数据覆盖。Bulk Put 写入完整 Item，不是任意字段 Patch；字段级更新仍应使用 <code>UpdateItem</code> 等方案。</p>
+<h3 id="section-23">4. 性能、费用与限制</h3>
+<p>Standard 适合时间宽松的回填，Accelerated 适合有迁移窗口或恢复时限的批次。官方在高基数分区键、预热表容量、无 GSI 复制等假设下给出的 Accelerated 参考量级：</p>
+<table>
+<thead>
+<tr>
+  <th>数据量</th>
+  <th>估计完成时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1,000 万条 1 KB Item</td>
+  <td>少于 10 分钟</td>
+</tr>
+<tr>
+  <td>1 亿条 1 KB Item</td>
+  <td>少于 1 小时</td>
+</tr>
+<tr>
+  <td>10 亿条 1 KB Item</td>
+  <td>约 2—4 小时</td>
+</tr>
+</tbody>
+</table>
+<p>这是示例估计，不是 SLA，实际受 Item 大小、分区分布、GSI、预热和输入分片影响。</p>
+<p>美国东部弗吉尼亚北部公告示例：Standard 每 GB $0.10，Accelerated 每 GB $0.20，至少 1 KB/Item 计费；GSI 写入另行计量，S3 报告有费用。并非所有区域固定报价。</p>
+<h3 id="section-24">5. 为什么不等于一次数据库事务？</h3>
+<p>异步批量操作允许部分记录未写入。状态包括 <code>COMPLETED</code>、<code>COMPLETED_WITH_ERRORS</code>、<code>FAILED</code>、<code>CANCELLED</code>。取消不自动回滚已成功写入的 Item。<code>COMPLETED</code> 可包含条件不满足被有意跳过的记录，不等于所有输入都更新。结果报告可以区分错误与条件失败，定位源 S3 文件和记录位置。必须设计结果对账与部分失败重试。</p>
+<h3 id="section-25">6. 不同技术栈选择</h3>
+<p>DynamoDB 场景可使用 Bulk Put Items 并通过 IAM、KMS、S3 报告及 CloudTrail 治理。PostgreSQL、MySQL、ClickHouse 等应优先研究原生批量导入、阶段表、分区交换或 Online Backfill。自建通用平台可用 Kafka/Flink、Spark、Go Worker 或 Java 批处理，但必须设计资源限额、版本条件、分片重试及结果对账。</p>
+<h3 id="section-26">7. 迁移风险、行动建议与趋势</h3>
+<p>风险是无条件写入覆盖在线新数据、条件失败费用、GSI 成本、输入分区偏斜、报告权限错误，以及取消后部分更新。Bulk Put Client Token 仅保证启动操作幂等，不保证业务数据天然满足版本一致性。适合商品目录、推荐特征、用户画像、非关键属性迁移，用影子表或小范围实验验证；核心资金流水不建议直接使用覆盖式 Put。</p>
+<p>最值得读 <em>Conflict handling</em>、<em>Choosing a performance tier</em>、<em>Reconciling your bulk operation with the report</em>、<em>Pricing and availability</em>。</p>
+<p><strong>未来 1—3 年研判：</strong> 在线交易与批量数据更新会更多使用隔离资源池、版本冲突管理及可对账执行结果，降低应用自建限速导入器的负担。</p>
+<h2 id="section-27">五、Top 4：Lambda Durable Functions 扩容——长期运行的 AI Agent，不只是 API 并发问题</h2>
+<p><strong>2026-11-05 · AWS 官方发布 · P1</strong></p>
+<p><strong>官方原文：</strong> <a href="https://aws.amazon.com/about-aws/whats-new/2026/11/lambda-durable-functions-default-quotas/">AWS Lambda durable functions increases default execution and API quotas</a></p>
+<h3 id="section-28">1. 企业业务为什么需要？</h3>
+<p>企业异步任务需要等待银行回调、人工审核、批处理或其他 Agent 的结果。普通长期运行 Worker 可能等待时占计算资源；简单消息队列又需要自行维护执行进度、重试、超时和恢复状态。Lambda Durable Functions 将 Checkpoint、Wait 与 Retry 放进 Lambda 编程模型，任务等待时可挂起，官方支持最长一年执行生命周期。</p>
+<h3 id="section-29">2. 11 月 5 日究竟改变了什么？</h3>
+<p>本周主要是<strong>默认服务配额扩大</strong>，并非新发明 Durable Execution：</p>
+<table>
+<thead>
+<tr>
+  <th>默认配额</th>
+  <th style="text-align:right">原配额</th>
+  <th style="text-align:right">新配额</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>同时运行 Durable Executions / Account</td>
+  <td style="text-align:right">100 万</td>
+  <td style="text-align:right">500 万</td>
+</tr>
+<tr>
+  <td>启动 Durable Execution</td>
+  <td style="text-align:right">300/s</td>
+  <td style="text-align:right">3,000/s</td>
+</tr>
+<tr>
+  <td>Checkpoint / Get State</td>
+  <td style="text-align:right">1,000/s</td>
+  <td style="text-align:right">10,000/s</td>
+</tr>
+<tr>
+  <td>Callback Success / Failure / Heartbeat</td>
+  <td style="text-align:right">300/s</td>
+  <td style="text-align:right">3,000/s</td>
+</tr>
+<tr>
+  <td>Get / Stop Execution</td>
+  <td style="text-align:right">30/s</td>
+  <td style="text-align:right">300/s</td>
+</tr>
+<tr>
+  <td>History / List Execution</td>
+  <td style="text-align:right">15/s</td>
+  <td style="text-align:right">150/s</td>
+</tr>
+</tbody>
+</table>
+<p>表中是常规区域新默认值；美国东部弗吉尼亚北部、美国西部俄勒冈、欧洲爱尔兰为新配额两倍。具体以实际账户与区域为准。</p>
+<h3 id="section-30">3. 架构意义</h3>
+<p>必须区分<strong>计算并发</strong>（正执行步骤消耗 CPU/内存的实例数）与<strong>持久化执行并发</strong>（等待回调或挂起的任务总数）。企业可能有数百万条等待审批任务，只有少数正在运行计算。等待与计算强绑定造成浪费；配额提升有助于托管更多长期实例及更高频状态更新，但不代表模型 API、支付渠道或数据库吞吐同步扩展。瓶颈可能转移到下游 API、Token 费用和审批处理能力。</p>
+<h3 id="section-31">4. 与其他方案如何比较？</h3>
+<table>
+<thead>
+<tr>
+  <th>技术</th>
+  <th>优势</th>
+  <th>代价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Lambda Durable Functions</td>
+  <td>Lambda 开发方式管理 Checkpoint、Wait 与 Retry</td>
+  <td>AWS 依赖、配额和执行模型约束</td>
+</tr>
+<tr>
+  <td>Temporal</td>
+  <td>多语言、跨环境持久执行</td>
+  <td>Worker、历史存储和平台治理成本</td>
+</tr>
+<tr>
+  <td>Step Functions</td>
+  <td>声明式托管 Workflow、状态可视化</td>
+  <td>状态转换、服务集成和成本模型</td>
+</tr>
+<tr>
+  <td>MQ + 状态机</td>
+  <td>自主控制语义、少量平台依赖</td>
+  <td>自建恢复、幂等、审计和版本管理</td>
+</tr>
+</tbody>
+</table>
+<h3 id="section-32">5. 迁移、安全和可靠性风险</h3>
+<p>应核查 Region/Account/Function 真实配额，规范执行状态持久化与敏感信息保存，避免长期保存无关用户数据或全部模型上下文。管理模型调用费、Callback 重复、过期任务清理、长期运行代码版本变化和业务幂等。支付确认、退款、库存扣减仍须领域服务保证重复执行无害。</p>
+<h3 id="section-33">6. 最值得读、行动建议与趋势</h3>
+<p>阅读本周公告的完整配额对照，并参考 <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html">Lambda 并发文档</a> 与 Durable Functions 文档。使用模拟长期等待回调业务，测试启动、Checkpoint、Callback、恢复、查询接口不同吞吐上限。<strong>已有 AWS Serverless 体系值得评估；跨云企业不应仅因配额提高迁移 Workflow 平台。</strong></p>
+<p><strong>未来 1—3 年研判：</strong> Durable Execution 逐渐成为 Serverless 基础能力，但平台之间的执行语义、成本和可移植性差异仍存在。</p>
+<h2 id="section-34">六、Top 5：TUI 企业级 AI 威胁建模——把安全专家的流程变成可验证 Agent 系统</h2>
+<p><strong>2026-11-05 · AWS Architecture Blog · P1</strong></p>
+<p><strong>官方原文：</strong> <a href="https://aws.amazon.com/blogs/architecture/how-tui-scales-threat-modeling-for-100-teams-with-amazon-bedrock/">How TUI scales threat modeling for 100+ teams with Amazon Bedrock</a></p>
+<h3 id="section-35">1. 企业安全团队规模跟不上产品团队</h3>
+<p>TUI 有超过 100 个数字产品团队，但安全工程师只有四人。传统威胁建模要人工读架构图、识别 STRIDE 威胁、匹配内部标准、判定风险等级、出报告与整改事项。每次约 4—6 小时，每月仅完成 3—4 次，形成积压。目标是从稀缺专家服务转向产品团队自助触发、专家验证的标准流程。</p>
+<h3 id="section-36">2. 实际架构</h3>
+<p>TUI 用 LangGraph 多节点 Agent Workflow、Amazon Bedrock 调用 Claude Sonnet 4.5，AgentCore Runtime 运行长会话；Lambda、DynamoDB、S3、Amplify、Cognito 承担计算、状态、文件、前端与身份能力。</p>
+<pre><code class="language-text">工程师上传架构图
+  ↓
+识别组件、接口、数据流
+  ↓
+按元数据选取企业安全标准
+  ↓
+STRIDE 威胁生成
+  ↓
+自检和 Gap Analysis
+  ↓
+专家比对（可选 HITL）
+  ↓
+威胁模型与整改建议（PDF/JSON/Confluence）
+</code></pre>
+<h3 id="section-37">3. 最重要的 Context Engineering 决策</h3>
+<p>初版直接把 192 份安全标准、约 338 KB 内容加载进 Prompt，导致上下文过大、批准工具清单被忽略、标准相互干扰。之后为标准预生成关键词、组件、STRIDE 类别及相关性元数据，运行时选择 16 份相关标准加上始终强制的安全规则。传入规范从 338 KB 降至 21 KB，约减少 94%。也评估过 RAG，但有限知识库且有必选规则，元数据选择更易解释和调试。</p>
+<p><strong>企业 AI 知识检索不一定都应使用向量相似度</strong>；有限规范集、必须覆盖的规则及版本条件，更适合结构化元数据和确定性选择。</p>
+<h3 id="section-38">4. Agent 如何受控迭代？</h3>
+<p>LangGraph Subgraph 让 Agent 可添加威胁、删除威胁、读取目录、执行 Gap Analysis。设定 Tool Budget；连续三次威胁生成后强制 Gap Analysis。验证节点检查威胁目录非空、覆盖六类 STRIDE、至少执行一次 Gap Analysis。这些只是流程完整性检查，<strong>不是安全结论正确性的证明</strong>。</p>
+<p>SME 领域专家比对可上传人工评估，让 AI 风险等级与专家意见对照，标记差异供人工审核。</p>
+<h3 id="section-39">5. 生产结果与成本</h3>
+<table>
+<thead>
+<tr>
+  <th>指标</th>
+  <th>改造前</th>
+  <th>改造后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>单次评估</td>
+  <td>4—6 小时</td>
+  <td>最高减少约 70%</td>
+</tr>
+<tr>
+  <td>每月评估场次</td>
+  <td>3—4 次</td>
+  <td>10—12 次</td>
+</tr>
+<tr>
+  <td>每架构威胁条目</td>
+  <td>30—40 项</td>
+  <td>40—60 项</td>
+</tr>
+<tr>
+  <td>规范应用</td>
+  <td>依赖工程师判断</td>
+  <td>执行更一致</td>
+</tr>
+</tbody>
+</table>
+<p>还使用七天 TTL 的安全搜索缓存，命中率约 70%—80%，减少重复请求及费用。这些数据来自 TUI 内部实践，不可泛化；更多威胁条目不必然意味着更高准确率，须验证漏报、误报和整改质量。</p>
+<h3 id="section-40">6. 架构取舍与不同技术路线</h3>
+<p>应分离五层责任：企业标准/知识治理（版本和强制规则）、Agent 推理（生成候选威胁）、确定性验证（Schema、覆盖范围、Tool Budget）、专家审核（HITL）、治理流程（工单与整改）。可以用 LangGraph + AgentCore，或 Python/TypeScript Agent + Temporal、Camunda 等实现，关键是责任边界而非供应商。</p>
+<h3 id="section-41">7. 迁移与安全风险</h3>
+<p>架构图可能包含私有地址、账号关系和内部安全边界，不应发送到未经批准的模型或搜索服务。TUI 只把技术组件名称用于外部搜索，不把完整架构图和客户数据放进查询。这体现数据最小化原则。</p>
+<p>同时防范 Prompt Injection、引用失真、规范过期、把建议误当批准结论、过度信任 AI 风险评分。应建立人工 Gold Set，用 Recall、Precision、风险严重等级一致性、人工修改率、整改采纳率等评价质量。</p>
+<h3 id="section-42">8. 最值得读、行动建议与趋势</h3>
+<p>阅读 <em>The iteration journey: from brute force to intelligent selection</em>、<em>Agentic threat generation</em>、<em>SME comparison</em>、<em>Results</em>。使用脱敏微服务架构图和 20—30 条安全规范，比对一次性 Prompt、RAG、元数据选择三种方案，并验证 Agent 自检和人工复核。<strong>值得用于架构评审自动化，高风险结论继续由专业人员审核。</strong></p>
+<p><strong>未来 1—3 年研判：</strong> 企业 Agent 更可能以可控的专业评审工作流普及，而不是完全替代安全、合规或架构专家。</p>
+<h2 id="section-43">七、跨场景架构决策矩阵</h2>
+<table>
+<thead>
+<tr>
+  <th>业务问题</th>
+  <th>应先明确的约束</th>
+  <th>候选架构</th>
+  <th>核心取舍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>微服务访问策略绕过</td>
+  <td>安全边界、拒绝行为、运行模式</td>
+  <td>Istio、Envoy、Gateway、零信任</td>
+  <td>声明策略与实际执行一致性</td>
+</tr>
+<tr>
+  <td>数千 Agent 更新同一资源</td>
+  <td>必须串行与可并行状态的边界</td>
+  <td>不可变对象 + CAS、复制日志</td>
+  <td>写吞吐、协调成本、读延迟</td>
+</tr>
+<tr>
+  <td>在线库大量回填</td>
+  <td>版本、p99、资源隔离、恢复</td>
+  <td>Bulk Load、阶段表、流式导入</td>
+  <td>导入速度、冲突、成本</td>
+</tr>
+<tr>
+  <td>大规模长期任务</td>
+  <td>挂起并发、计算并发、恢复语义</td>
+  <td>Lambda Durable、Temporal、Step Functions、状态机</td>
+  <td>可移植性、配额、运维</td>
+</tr>
+<tr>
+  <td>企业 AI 安全评审</td>
+  <td>规则完整、人工审核、可解释性</td>
+  <td>LangGraph、AgentCore、Workflow + Agent</td>
+  <td>质量、成本、数据安全、治理</td>
+</tr>
+</tbody>
+</table>
+<p>不建议合并成企业超级平台：五类技术分别解决数据一致性、安全策略执行、后台容量隔离、持久化执行和 AI 治理问题，应保留责任边界。</p>
+<h2 id="section-44">八、结合现有企业微服务系统的演进方式</h2>
+<p>已有 API Gateway、领域网关、注册中心、消息队列和数据库的系统，应继续保持同步调用和确定性领域事务作为稳定基础。在此按需加入：长执行任务的持久化状态与幂等；大规模数据更新的独立容量、版本条件和对账；共享不可变数据的按资源协调；服务治理规则的拒绝路径验证；Agent 的规范选择、流程验证、专家审核和评测。</p>
+<p>一笔支付由支付领域服务保持最终资金状态，Agent 只辅助解释异常、整理材料或提出建议，不能绕过权限修改账务。Nacos 可以继续做配置发现，Kafka/RocketMQ 继续做事件传递。只有当明确涉及增量重建、强一致元数据、持久化执行或 AI 评测时，才引入相应机制。<strong>框架不需要统一，真正需要统一的是业务契约、身份授权、执行语义与可观测性。</strong></p>
+<h2 id="section-45">九、本周可执行工程清单</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>Service Mesh 安全检查</strong>：盘点 Istio 分支、模式和授权规则，在隔离环境验证拒绝流量确实被拒绝。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>不可变数据 + CAS 实验</strong>：对象存储不可变版本，数据库 CAS 更新当前引用，注入并发冲突和 Worker 崩溃。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>数据回填一致性实验</strong>：在线更新与后台导入并行，比较无条件覆盖与版本条件写入。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>Durable Workflow 容量实验</strong>：区分等待任务、运行计算和状态 API 请求速率，评估下游限流及重复回调。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" type="checkbox" disabled/><strong>AI 威胁建模 PoC</strong>：建立规范元数据目录，测试 Agent 自检、人工复核、风险等级一致性。</li>
+</ul>
+<p>若只能安排一个深入实验，推荐 GitHub 架构体现的“不可变对象 + 最小协调范围 + CAS”。它能够联系分布式存储、乐观并发、版本管理、AI Agent 协作、配置发布和故障恢复，而非局限在 GitHub 产品。</p>
+<h2 id="section-46">十、未来 1—3 年最值得关注的四个方向</h2>
+<p>以下为架构研判，不是已完成标准化的事实。</p>
+<p><strong>第一：多 Agent 时代推动共享工作空间与存储重构。</strong> 随着并发写入者增长，全局锁和单实例存储越来越难满足需求，不可变数据、细粒度协调、独立 Compaction/GC、按需缓存和分片计算更重要。</p>
+<p><strong>第二：安全系统从检查配置逐步走向验证行为。</strong> Service Mesh、API Gateway、Agent Tool Gateway 必须实际拒绝非法访问、正确处理身份并抵御控制面异常。声明策略不代表可靠执行。</p>
+<p><strong>第三：在线业务与后台数据处理进一步分离资源。</strong> 数据库回填、索引构建、模型特征更新、报表处理更依赖独立容量、版本冲突控制与结果对账，降低在线交易影响。</p>
+<p><strong>第四：企业 Agent 走向正式的软件交付与治理。</strong> Agent 参与架构评审、安全分析、测试生成和诊断，但高风险决定保留校验、审计、授权与人工审批。衡量指标从回答流畅度转向错误率、业务效果和成本。</p>
+<h2 id="section-47">十一、本期最终架构判断</h2>
+<p><strong>一、减少协调范围比单纯提高协调组件性能更根本。</strong> GitHub 分离不可变对象与可变引用，让写入并行。</p>
+<p><strong>二、可靠性不仅是操作成功，还包括错误操作被正确拒绝。</strong> Istio 保障访问边界，DynamoDB 条件写入保障数据版本更新约束。</p>
+<p><strong>三、AI-native 应用应把 Agent 推理与业务执行、规则治理和人工审批分离。</strong> Durable Execution 管理长期任务，受控 Agent Workflow 做分析，但业务正确性与安全责任保留确定性控制。</p>
+<p>建议阅读顺序：先处理 Istio 风险，再深读 GitHub 存储架构，随后按实际业务需要选择 DynamoDB、Durable Functions 或 TUI 进行实验。</p>
+<p><strong>总体方法：明确业务不变量 → 缩小协调范围 → 隔离不同工作负载 → 保留故障恢复能力 → 验证实际执行结果。</strong></p>
+<div class="footer">官方资料链接需要联网访问，报告正文、目录和排版均可离线使用。本报告为公开技术资料整理与架构研判，不包含个人资料、内部项目或访问凭据。<button class="print" onclick="window.print()">打印 / 保存 PDF</button></div></main></div></body></html>
