@@ -5,7 +5,7 @@
   "readme": "本仓库仅展示已经提交的完整 HTML 报告；页面内容由 categories[].reports 索引。",
   "counts": {
     "topic_count": 10,
-    "verified_full_reports": 37
+    "verified_full_reports": 38
   },
   "categories": [
     {
@@ -113,6 +113,13 @@
       "source_status": "partial_archive",
       "reports": [
         {
+          "date": "2026-11-09",
+          "title": "全球 AI、科技与机器人政策、法规、会议及政经趋势日报｜2026-11-09（12项完整核验）",
+          "label": "2026-11-09",
+          "path": "reports/ai-policy/2026-11-09.html",
+          "kind": "full"
+        },
+        {
           "date": "2026-11-08",
           "title": "全球 AI、科技与机器人政策趋势日报｜2026-11-08（12项完整报告）",
           "label": "2026-11-08",
@@ -134,7 +141,7 @@
           "kind": "full"
         }
       ],
-      "last_run": "2026-11-08"
+      "last_run": "2026-11-09"
     },
     {
       "id": "ai-coding",
