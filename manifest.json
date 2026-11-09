@@ -5,7 +5,7 @@
   "readme": "本仓库仅展示已经提交的完整 HTML 报告；页面内容由 categories[].reports 索引。",
   "counts": {
     "topic_count": 10,
-    "verified_full_reports": 39
+    "verified_full_reports": 40
   },
   "categories": [
     {
@@ -257,6 +257,13 @@
       "description": "以业务场景和技术取舍为中心，横向研究可恢复 Agent、分布式系统、数据治理、云原生和跨语言企业级架构。",
       "source_status": "partial_archive",
       "reports": [
+        {
+          "date": "2026-11-09",
+          "title": "企业级应用架构与 AI 原生技术周报｜2026-11-09（11/02—11/09）",
+          "label": "11/02—11/09 周报",
+          "path": "reports/architecture/2026-11-09.html",
+          "kind": "full"
+        },
         {
           "date": "2026-11-06",
           "title": "Distributed & AI Architecture Weekly｜2026-11-06 增补刊",
