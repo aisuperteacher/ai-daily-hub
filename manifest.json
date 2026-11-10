@@ -5,7 +5,7 @@
   "readme": "本仓库仅展示已经提交的完整 HTML 报告；页面内容由 categories[].reports 索引。",
   "counts": {
     "topic_count": 10,
-    "verified_full_reports": 46
+    "verified_full_reports": 47
   },
   "categories": [
     {
@@ -415,6 +415,13 @@
       "source_status": "partial_archive",
       "reports": [
         {
+          "date": "2026-11-10",
+          "title": "2026-11-10 · 实时语音 AI Agent：VAD、流式转写、轮次判断、Barge-in 与延迟观测",
+          "label": "2026-11-10",
+          "path": "reports/learning/2026-11-10.html",
+          "kind": "full"
+        },
+        {
           "date": "2026-11-09",
           "title": "2026-11-09 · AI Coding Agent 可靠执行：工具契约、幂等、重试、检查点与轨迹评测",
           "label": "2026-11-09",
@@ -443,7 +450,7 @@
           "kind": "full"
         }
       ],
-      "last_run": "2026-11-09"
+      "last_run": "2026-11-10"
     }
   ]
 }
