@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><meta name="description" content="每日科技工作简报 2026-11-10：Anthropic Claude、Google TPU、加拿大实时支付、DeepSeek Harness 和 GitHub Copilot Code Review 的完整技术报道。"><title>每日科技工作简报｜2026 年 11 月 10 日</title><style>
+:root{--ink:#161d24;--paper:#f5f1e8;--card:#fffefa;--line:#17212b;--accent:#df473b;--sun:#f5d74d;--sky:#b5d8f0;--pink:#f4b1b6;--mint:#cbe8d8;--sub:#555c60}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:14px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.8 system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;overflow-wrap:break-word}
+a{color:#a32122;text-decoration-thickness:1.5px;text-underline-offset:3px}a:hover{color:#431b21}a:focus-visible{outline:3px solid #0074d9;outline-offset:4px}
+.hero{border-bottom:4px solid var(--line);padding:48px max(24px,calc((100vw - 1170px)/2)) 44px;background-color:var(--sun);background-image:radial-gradient(#0002 1px,transparent 1px);background-size:16px 16px}
+.hero .series{display:inline-block;background:var(--ink);color:white;padding:5px 12px;text-transform:uppercase;letter-spacing:.17em;font-size:12px;font-weight:800;transform:rotate(-1.5deg)}
+.hero h1{font-size:clamp(33px,5vw,60px);max-width:1000px;line-height:1.22;letter-spacing:-.045em;margin:20px 0}.hero p{margin:9px 0;font-weight:650;max-width:980px}
+.eyebrow{display:inline-block;background:#fffefa;border:2px solid var(--line);padding:7px 11px;margin-top:12px;box-shadow:4px 4px 0 var(--ink);font-weight:850}
+.layout{width:min(1170px,calc(100% - 36px));margin:33px auto 85px;display:grid;grid-template-columns:245px minmax(0,1fr);align-items:start;gap:27px}
+aside{position:sticky;top:14px;border:3px solid var(--line);background:var(--card);padding:17px 14px;box-shadow:5px 5px 0 var(--ink);max-height:calc(100vh - 30px);overflow:auto}
+aside .nav-title{letter-spacing:.15em;font-weight:900;font-size:12px;text-transform:uppercase;border-bottom:2px solid;padding-bottom:10px}
+aside a{display:block;padding:12px 0;font-size:13px;line-height:1.55;text-decoration:none;color:var(--ink);font-weight:650;border-bottom:1px solid #ddd}
+aside a span{color:var(--accent);font-family:monospace;font-weight:900;margin-right:8px}
+aside .hint{font-size:12px;color:var(--sub);line-height:1.55}
+main{min-width:0;background:var(--card);border:3px solid var(--line);padding:clamp(17px,3vw,38px);box-shadow:5px 5px 0 var(--ink)}
+main>h1{display:none} main>p:first-of-type{color:var(--sub)}
+main h2{font-size:clamp(24px,3.4vw,33px);line-height:1.35;margin:46px 0 22px;padding:20px 16px;background:var(--sky);border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);scroll-margin-top:10px}
+main h2#overview{background:var(--sun);margin-top:30px}main h2#analysis{background:var(--pink)}
+main h3{font-size:19px;line-height:1.35;margin:30px 0 15px;padding-left:12px;border-left:6px solid var(--sun)}main h3.risk-title{border-left-color:var(--accent)}main h3.action-title{border-left-color:#309a80}
+main p{margin:13px 0 17px}main strong{font-weight:800}main blockquote{background:#eaf4ec;border-left:5px solid #2b7c5f;padding:6px 14px;margin:16px 0}
+.table-scroll{overflow-x:auto;border:2px solid var(--ink);margin:18px 0 24px;background:white}table{border-collapse:collapse;width:100%;min-width:585px;font-size:14px;line-height:1.55}td,th{padding:10px 12px;border-right:1px solid #deded4;border-bottom:1px solid #dad8cc;vertical-align:top}th{background:var(--sun);font-weight:800;text-align:left}tr:nth-child(even) td{background:#fbf8ef}td:last-child,th:last-child{border-right:0}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#f0e9dd;padding:2px 5px;border-radius:3px;overflow-wrap:anywhere}.tech-flow{overflow:auto;background:#18232a;color:#e4f1f6;border:3px solid #0c1b24;padding:18px;font-size:14px;line-height:1.7}.tech-flow code{padding:0;background:transparent;white-space:pre;color:inherit}
+hr{border:0;border-top:3px solid #222;margin:40px 0}.backtop{text-align:right}.backtop a{display:inline-block;border:2px solid var(--line);background:var(--sun);padding:5px 13px;text-decoration:none;font-size:13px;font-weight:800}
+footer{text-align:center;font-size:13px;color:var(--sub);margin:12px 14px 50px}.print{cursor:pointer;border:2px solid var(--ink);background:var(--sky);padding:7px 9px;font-weight:800;margin-top:12px}
+@media(max-width:850px){.layout{display:block;width:min(740px,calc(100% - 24px))}aside{position:static;max-height:none;margin-bottom:25px}aside a{display:inline-block;width:48%;vertical-align:top;margin-right:1%}.hero{padding:34px 22px 38px}main{padding:22px 18px}}
+@media(max-width:500px){.hero h1{font-size:32px}aside a{display:block;width:100%}.layout{width:calc(100% - 20px)}main{padding:14px 11px}main h2{padding:14px 10px;font-size:22px}.table-scroll{margin-left:-2px;margin-right:-2px}table{min-width:500px;font-size:13px}td,th{padding:8px 9px}}
+@media print{body{background:white}.hero{background:white;padding:24px 0;border-bottom:2px solid}.layout{display:block;width:100%;margin:0}aside,.print,.backtop{display:none}main{border:0;box-shadow:none;padding:0}main h2{box-shadow:none;background:#eee!important;break-after:avoid}table{font-size:11px;min-width:0}p,pre{break-inside:avoid}}
+</style></head>
+<body id="top"><header class="hero"><span class="series">TECH WORK BRIEF · DAILY ISSUE 2026.11.10</span><h1>每日科技工作简报<br>2026 年 11 月 10 日</h1><p>五条完整深度报道 · 工程价值优先 · 来源核实与风险标注</p><span class="eyebrow">2026 / 11 / 10 · 星期二 · 北京时间</span></header>
+<div class="layout"><aside aria-label="章节目录"><div class="nav-title">INDEX / 目录</div><a href="#overview"><span>00</span> 今日五条速览</a><a href="#news-01"><span>01</span> Anthropic Fable 5.2 / Mythos 5.2</a><a href="#news-02"><span>02</span> Google TPU 8tx / 8i Max</a><a href="#news-03"><span>03</span> 加拿大实时支付 RTR 上线</a><a href="#news-04"><span>04</span> DeepSeek Harness 插件生态</a><a href="#news-05"><span>05</span> GitHub AI Review 管理 API</a><a href="#analysis"><span>06</span> 趋势分析与今日行动</a><button class="print" onclick="window.print()">打印 / 存为 PDF</button><p class="hint">正文与样式完整内嵌，无字体、图片或脚本 CDN；官方来源链接需联网访问。</p></aside><main><h1>每日科技工作简报｜2026 年 11 月 10 日</h1>
+<p><strong>星期二 · 北京时间 · AI 编程 / 云计算 / GitHub / 中国开源生态 / 数字支付</strong></p>
+<p><strong>今日核心判断：</strong> AI Agent 的工程竞争，正在同时向三个方向推进：更强的长任务模型、更适合多 Agent 的算力架构，以及能够控制实际业务操作的安全与审计机制。</p>
+<p>本期筛选了 <strong>11 月 9 日的三项重要发布</strong>、11 月 8 日公布的一组中国 Agent 生态数据，以及 11 月 6 日尚未覆盖的 GitHub 工程更新。已经对照上一期归档，避免重复报道 GitHub 新一代 Git 存储、Copilot 使用统计、AWS S3 Tables 和法国银行第三方系统安全事件。</p>
+<h2 id="overview">今日五条速览</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>新闻</th>
+<th>核心变化</th>
+<th>对工作的价值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0</td>
+<td>Anthropic 发布 Claude Fable 5.2 / Mythos 5.2</td>
+<td>FrontierCode 最高 49.1%；安全模型限量开放</td>
+<td>AI Coding 模型选型与评测</td>
+</tr>
+<tr>
+<td>P0</td>
+<td>Google 发布 TPU 8tx / 8i Max</td>
+<td>面向机密计算与长上下文，计算和内存带宽协同扩展</td>
+<td>Agent 基础设施成本与安全架构</td>
+</tr>
+<tr>
+<td>P0</td>
+<td>加拿大实时支付系统 RTR 正式上线</td>
+<td>24×7 实时清算结算，首批 8 家机构</td>
+<td>银行支付架构、反欺诈和 ISO 20022</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>DeepSeek Harness 披露 Agent 生态规模</td>
+<td>154 万日活、约 92 万亿 Token/日、约 3.5 万插件</td>
+<td>国产 Agent 平台与插件生态</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>GitHub Copilot 代码审查开放更多管理 API</td>
+<td>企业到仓库级策略控制；审查过程可追溯</td>
+<td>DevSecOps、Skills/MCP 治理</td>
+</tr>
+</tbody>
+</table></div>
+<hr/>
+<h2 id="news-01">01｜Claude Fable 5.2 与 Mythos 5.2 发布：长程软件工程能力与安全能力进一步分层</h2>
+<p><strong>发布日期：2026-11-09｜领域：大模型、AI Coding、Agent、软件安全</strong></p>
+<h3>新闻摘要</h3>
+<p>Anthropic 于 11 月 9 日发布 Claude Fable 5.2 和 Claude Mythos 5.2，称两者采用相同的基础模型，但面向不同的安全访问策略。Fable 5.2 重点服务通用软件工程、推理、视觉和长程 Agent 任务，而 Mythos 5.2 面向经过审核的网络安全专业机构。</p>
+<p>官方公布 Fable 5.2 在 FrontierCode 2.0 的最高成绩为 <strong>49.1%</strong>；在 High 推理档位取得 45.3%，接近 Opus 5.5 的 45.5%，且在该评测条件下每项任务成本约为其一半。模型现已提供 <code>claude-fable-5-2</code> API 标识，并覆盖 Claude 平台及 AWS、Google Cloud、Azure 等渠道。</p>
+<h3>关键事实</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>已核实数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>发布日期</td>
+<td>2026-11-09</td>
+</tr>
+<tr>
+<td>通用模型</td>
+<td>Claude Fable 5.2</td>
+</tr>
+<tr>
+<td>安全研究模型</td>
+<td>Claude Mythos 5.2</td>
+</tr>
+<tr>
+<td>API 模型标识</td>
+<td><code>claude-fable-5-2</code></td>
+</tr>
+<tr>
+<td>FrontierCode 2.0，High</td>
+<td>45.3%；Opus 5.5 为 45.5%</td>
+</tr>
+<tr>
+<td>FrontierCode 2.0，Xhigh</td>
+<td><strong>49.1%</strong></td>
+</tr>
+<tr>
+<td>High 档位成本比较</td>
+<td>官方特定评测中约为 Opus 5.5 的一半</td>
+</tr>
+<tr>
+<td>BenchCAD 2.1</td>
+<td>Fable 5.2：83.5；Opus 5.5：65.3</td>
+</tr>
+<tr>
+<td>生产服务迁移案例</td>
+<td>Anthropic 称一个 Python→Rust 服务启动速度提升约 26 倍</td>
+</tr>
+<tr>
+<td>Mythos 开放范围</td>
+<td>通过 Cyber Verification Program 审核的组织</td>
+</tr>
+</tbody>
+</table></div>
+<h3>为什么值得关注</h3>
+<p>这次最值得注意的不是单一 Benchmark 排名，而是 <strong>模型性能、推理档位、任务成本和授权范围被更明确地分开</strong>。</p>
+<p>例如，一个需要分析多个 Java 微服务、生成修复补丁并运行 Maven 测试的任务，不能只看模型回答是否合理，还应该衡量任务最终能否通过编译、单元测试和回归验证。</p>
+<p>Anthropic 展示了一个早期版本 Fable 5.2 协调超过 1,000 个子 Agent、历时 8 天创建实验性操作系统的案例，但这属于特定演示，不意味着普通单次会话具备同等自主性和资源条件。</p>
+<h3>对 AI 工程的实际影响</h3>
+<p>采用模型路由时，建议按任务性质决定档位：代码解释或文档可以从低成本档位开始；跨模块复杂 Bug、数据库一致性和分布式事务问题可升级；涉及漏洞利用验证的安全任务必须经过独立授权，并不能假定普通 Fable API 能执行 Mythos 的专业安全能力。</p>
+<h3 class="action-title">今日行动建议</h3>
+<p>选择现有项目中的三个标准任务进行对照：跨模块 Java Bug 修复、RocketMQ 消费异常分析、复杂 Docker/Nginx 故障定位。分别记录正确完成率、单任务费用、总耗时、人工复核时间和重新运行的一致性。只有经相同输入、环境和验证程序测得的结果，才适合用作模型切换依据。</p>
+<h3 class="risk-title">风险判断</h3>
+<p>49.1% 是特定 FrontierCode 评测的官方成绩，不能推广成所有代码任务 49.1% 的成功率；成本优势也依赖所用推理档位及测试条件。Fable 与 Mythos 虽共享基础模型，但安全限制不同，不能将两者视为相同权限的 API。</p>
+<p><strong>关键来源：</strong> <a href="https://www.anthropic.com/claude-fable-and-mythos-5-2" rel="noopener noreferrer" target="_blank">Anthropic 官方发布与完整评测</a>。</p>
+<hr/>
+<p class="backtop"><a href="#top">↑ 返回顶部</a></p><h2 id="news-02">02｜Google 推出 TPU 8tx 与 TPU 8i Max：AI 算力开始为 Agent 的机密数据和长上下文专门设计</h2>
+<p><strong>发布日期：2026-11-09｜领域：云计算、AI 基础设施、机密计算、推理性能</strong></p>
+<h3>新闻摘要</h3>
+<p>Google 发布第八代 TPU 产品线的两个新成员：<strong>TPU 8tx</strong> 面向敏感数据、专有模型和机密推理，<strong>TPU 8i Max</strong> 面向长上下文与多 Agent 并行工作负载。这使第八代 TPU 形成 8t、8i、8tx、8i Max 四种不同的定位。</p>
+<p>8tx 基于 8t 相关芯片和第五代 AMD EPYC 主机，Google 称采用 Boardfly 网络后相较 8t 最多可实现约两倍的延迟改善；8i Max 则将两枚 8i 芯片集成在同一封装内，使计算能力、片上 SRAM 和 HBM 带宽均达到单枚 8i 的约两倍。</p>
+<h3>关键事实</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>型号</th>
+<th>主要定位</th>
+<th>官方披露的特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TPU 8t</td>
+<td>大规模模型训练</td>
+<td>2026 年 4 月公布</td>
+</tr>
+<tr>
+<td>TPU 8i</td>
+<td>低延迟实时推理</td>
+<td>2026 年 4 月公布</td>
+</tr>
+<tr>
+<td><strong>TPU 8tx</strong></td>
+<td>机密推理、敏感数据和小规模训练</td>
+<td>硬件级机密计算；相对 8t 最多约 2× 延迟改善</td>
+</tr>
+<tr>
+<td><strong>TPU 8i Max</strong></td>
+<td>长上下文、多 Agent、高密度推理</td>
+<td>两枚 8i；约 2× 计算、SRAM 和 HBM 带宽</td>
+</tr>
+<tr>
+<td>产品线规模</td>
+<td>第八代 TPU</td>
+<td>同一年公布四种系统</td>
+</tr>
+<tr>
+<td>商用价格及具体上线时间</td>
+<td>新型号</td>
+<td>官方公告未披露统一报价和明确开通日期</td>
+</tr>
+</tbody>
+</table></div>
+<h3>为什么值得关注</h3>
+<p>AI Agent 的成本并非只由每秒能生成多少 Token 决定。在长上下文、多工具调用和多 Agent 协同场景中，<strong>KV Cache、内存带宽、网络延迟、空闲等待和执行环境隔离</strong>同样可能成为瓶颈。</p>
+<p>8i Max 对应的是长上下文吞吐问题；8tx 则聚焦机密模型和敏感数据在计算过程中的保护。这两类需求在金融企业 Agent、私有知识库和复杂代码库分析中都具有现实意义。</p>
+<h3>对云基础设施的实际影响</h3>
+<p>对于自建 Agent 网关，不需要立即迁移至 TPU，但值得完善监控体系：</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>为什么需要监控</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TTFT（首 Token 延迟）</td>
+<td>用户何时开始看到结果</td>
+</tr>
+<tr>
+<td>Tokens/s</td>
+<td>生成过程的吞吐能力</td>
+</tr>
+<tr>
+<td>KV Cache 与内存占用</td>
+<td>长上下文的资源成本</td>
+</tr>
+<tr>
+<td>Tool Wait Time</td>
+<td>模型等待工具返回造成的空转</td>
+</tr>
+<tr>
+<td>每个成功任务的总成本</td>
+<td>比单次推理价格更接近业务价值</td>
+</tr>
+<tr>
+<td>数据驻留和访问边界</td>
+<td>金融与受监管数据能否安全处理</td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="action-title">今日行动建议</h3>
+<p>先在现有 API 模型上，对 8K、32K、128K 三种上下文规模开展测试，记录 TTFT、总耗时、费用和任务准确率。对长期运行的 Agent，把工具等待时间与模型计算时间分开计量，以判断是否值得采用异步工具执行、上下文压缩或模型分级路由。</p>
+<h3 class="risk-title">风险判断</h3>
+<p>Google 的约两倍改善并不是所有生产场景都能得到两倍加速；新型号的具体定价、区域和可用性尚需后续核实。硬件级机密计算也不能替代应用层身份认证、最小权限和审计策略。</p>
+<p><strong>关键来源：</strong> <a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/" rel="noopener noreferrer" target="_blank">Google 官方 TPU 8tx / 8i Max 发布</a>。</p>
+<hr/>
+<p class="backtop"><a href="#top">↑ 返回顶部</a></p><h2 id="news-03">03｜加拿大 Real-Time Rail 正式上线：实时支付必须让清算、结算和反欺诈一起升级</h2>
+<p><strong>发布日期：2026-11-09｜领域：数字银行、支付清算、ISO 20022、金融基础设施</strong></p>
+<h3>新闻摘要</h3>
+<p>Payments Canada 于 11 月 9 日宣布，全国实时支付基础设施 <strong>Real-Time Rail（RTR）正式上线</strong>，支持参与机构全年不间断交换、清算和结算支付指令。首批上线的机构共有八家，包括 Wealthsimple、KOHO、Bank of America、Peoples Trust Company 等。</p>
+<p>RTR 采用 ISO 20022 消息标准，并在上线阶段要求提供集中式反欺诈服务，包括收款人姓名核验、交易风险评分、风险名单和欺诈情报共享。加拿大央行同时确认将对该系统实施正式监督，以确保其安全性和运营韧性。</p>
+<h3>关键事实与数据</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>官方披露</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正式上线</td>
+<td><strong>2026-11-09</strong></td>
+</tr>
+<tr>
+<td>可运行时间</td>
+<td>24 小时 × 7 天 × 365 天</td>
+</tr>
+<tr>
+<td>首批参与机构</td>
+<td>8 家</td>
+</tr>
+<tr>
+<td>支付消息标准</td>
+<td>ISO 20022</td>
+</tr>
+<tr>
+<td>反欺诈机制</td>
+<td>收款人核验、风险评分、风险清单、情报平台</td>
+</tr>
+<tr>
+<td>技术运营方</td>
+<td>Interac</td>
+</tr>
+<tr>
+<td>监管机构</td>
+<td>Bank of Canada</td>
+</tr>
+<tr>
+<td>覆盖规划</td>
+<td>官方预计上线一年内可覆盖九成以上加拿大居民</td>
+</tr>
+<tr>
+<td>经济影响预测</td>
+<td>研究估计未来十年最高节省约 145 亿加元成本；不是已实现收益</td>
+</tr>
+<tr>
+<td>推广方式</td>
+<td>分阶段扩容，不能视为所有加拿大银行已同时上线</td>
+</tr>
+</tbody>
+</table></div>
+<h3>为什么值得关注</h3>
+<p>实时支付最重要的变化不是简单地把银行转账从数小时缩短到数秒，而是业务系统失去了传统批处理的缓冲时间。</p>
+<p>收款人识别、资金检查、反欺诈决策、额度控制、交易幂等、异常补偿和清结算对账，都需要在更严格的延迟预算下完成。</p>
+<p>尤其值得注意的是：RTR 把<strong>集中式反欺诈</strong>纳入基础设施设计，而不是仅要求各参与银行自行处理全部风险。</p>
+<h3>对金融业务架构的实际影响</h3>
+<p>推荐将实时支付处理逻辑分成以下阶段：</p>
+<pre class="tech-flow"><code class="language-text">付款请求
+   ↓
+身份与收款人校验
+   ↓
+额度与余额检查
+   ↓
+欺诈风险评分
+   ↓
+幂等校验 / 交易授权
+   ↓
+实时清算与结算
+   ↓
+最终状态记录 / 通知 / 对账
+</code></pre>
+<p>这里需要明确区分三种状态：支付指令已经受理、清算结算成功、客户资金最终可用。不能因为某个 API 返回 HTTP 200，就直接将业务订单标记为不可逆的成功状态。</p>
+<h3 class="action-title">今日行动建议</h3>
+<p>以模拟资金转账服务为例，测试重复请求、收款人信息不一致、风险系统超时、结算回执丢失、网络重试和参与机构暂时不可用等情况。建议为每一笔交易引入唯一业务幂等键、清晰的状态机和独立对账机制，并分别记录 P95/P99 延迟及拒绝交易的原因。</p>
+<h3 class="risk-title">风险判断</h3>
+<p>RTR 的基础设施上线不代表所有消费者已经可以立即通过原有银行账户使用新功能；机构接入和已有支付业务迁移仍将分阶段进行。经济收益是研究预测，不能当作已经实现的成本节约；实时到账也不代表欺诈风险已经消除。</p>
+<p><strong>关键来源：</strong> <a href="https://www.payments.ca/canada-launches-real-time-rail-bringing-247-payment-infrastructure-national-economy" rel="noopener noreferrer" target="_blank">Payments Canada 官方上线公告</a>；<a href="https://www.bankofcanada.ca/2026/11/bank-of-canada-designates-rtr-as-a-prominent-payment-system/" rel="noopener noreferrer" target="_blank">加拿大央行监督公告</a>；<a href="https://www.interac.ca/en/content/business/interac-statement-on-the-launch-of-canadas-real-time-rail/" rel="noopener noreferrer" target="_blank">Interac 技术运营方声明</a>。</p>
+<hr/>
+<p class="backtop"><a href="#top">↑ 返回顶部</a></p><h2 id="news-04">04｜DeepSeek Harness 披露 154 万日活：国产开源 Agent 竞争重点转向插件与执行框架</h2>
+<p><strong>最新公开进展：2026-11-08 至 11-09；数据截至 2026-11-04｜领域：中国科技、开源 Agent、插件生态</strong></p>
+<h3>新闻摘要</h3>
+<p>DeepSeek Harness 团队最新披露，该开源 Agent 框架在 11 月 4 日达到约 <strong>154 万日活跃用户</strong>，每天处理约 <strong>92 万亿 Token</strong>，并形成大约 <strong>3.5 万个第三方插件</strong>的生态。该框架采用“Everything is a Plugin”的设计，将模型能力与可插拔工具、工作流和执行环境组合。</p>
+<p>团队同时透露正在筹备官方插件市场和开发者扶持计划。需要注意，以上统计来自 DeepSeek 自行披露，主要覆盖使用其官方 API 的 Harness 用户，不是 DeepSeek 全部产品的用户量，也没有独立审计结果。</p>
+<h3>关键事实与数据</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>指标</th>
+<th>披露值与口径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Harness 初始版本</td>
+<td>2026-08-13</td>
+</tr>
+<tr>
+<td>桌面版本发布</td>
+<td>2026-09-29</td>
+</tr>
+<tr>
+<td>当前数据统计截至</td>
+<td>2026-11-04</td>
+</tr>
+<tr>
+<td>日活跃用户</td>
+<td>约 <strong>154 万</strong></td>
+</tr>
+<tr>
+<td>月活跃用户</td>
+<td>约 <strong>548 万</strong></td>
+</tr>
+<tr>
+<td>每日 Token 量</td>
+<td>约 <strong>92 万亿</strong></td>
+</tr>
+<tr>
+<td>第三方插件</td>
+<td>约 <strong>3.5 万个</strong></td>
+</tr>
+<tr>
+<td>插件使用或开发参与度</td>
+<td>约六成活跃用户</td>
+</tr>
+<tr>
+<td>Marketplace</td>
+<td>筹备中，非已经全面上线</td>
+</tr>
+<tr>
+<td>项目成熟度</td>
+<td>开发者预览阶段，仍可能存在不兼容变更</td>
+</tr>
+</tbody>
+</table></div>
+<h3>为什么值得关注</h3>
+<p>这组数据提示，Agent 生态的价值可能越来越多地集中在 <strong>Harness、工具接口、插件分发、运行权限和持续执行机制</strong> 上，而不是只有基础模型性能。</p>
+<p>对于已有 Pi、Claude Code、Codex、OpenCode 使用经验的开发者，一个值得研究的问题是：哪些能力应该放在模型中，哪些应该由 Harness 实现，哪些应封装为可移植的 Skills 或 Plugins？</p>
+<p>DeepSeek Harness 采用插件优先的架构有利于扩展，但插件数增长同时会提高版本冲突、供应链安全、权限管理和质量评估的难度。</p>
+<h3>对 AI 应用工程的实际影响</h3>
+<p>推荐把 Agent 能力拆成四层：</p>
+<pre class="tech-flow"><code class="language-text">业务任务 / 用户指令
+        ↓
+Agent Harness（状态、上下文、流程）
+        ↓
+模型路由与推理
+        ↓
+Plugins / MCP / Skills / Tools
+        ↓
+受控执行环境与审计
+</code></pre>
+<p>这套结构适用于自建 AI 应用平台，但不同框架的插件规范、生命周期和授权模型不能假设天然兼容。</p>
+<h3 class="action-title">今日行动建议</h3>
+<p>在隔离测试环境中选择一个无敏感数据的任务，例如“解析 Maven 构建失败日志并生成问题报告”，对比 DeepSeek Harness 与现有 Agent 工具的任务成功率、插件隔离、权限配置、失败恢复和 Token 消耗。</p>
+<p>不建议直接从不明来源安装大量插件，也不要将生产密钥、宿主机文件系统或 Docker Socket 暴露给未经审查的插件。</p>
+<h3 class="risk-title">风险判断</h3>
+<p>154 万日活和 92 万亿 Token 为公司自报数据，部分报道对增长百分比和统计窗口存在不同口径，因此不据此计算确定性的增长率或平均用户实际成本。3.5 万插件代表生态规模，<strong>不等于有 3.5 万个经过安全审计、可以直接用于生产的插件</strong>。</p>
+<p><strong>关键来源：</strong> <a href="https://www.businesstimes.com.sg/companies-markets/deepseeks-ai-agent-platform-hits-1-54-million-daily-users" rel="noopener noreferrer" target="_blank">Bloomberg 经 The Business Times 发布的 11 月 9 日报道</a>；<a href="https://pandaily.com/deepseek-harness-1-54-million-daily-active-users-official-plugin-marketplace" rel="noopener noreferrer" target="_blank">11 月 6 日中国科技生态数据整理</a>；<a href="https://github.com/deepseek-ai/deepseek-harness" rel="noopener noreferrer" target="_blank">DeepSeek Harness 源码仓库</a>。</p>
+<hr/>
+<p class="backtop"><a href="#top">↑ 返回顶部</a></p><h2 id="news-05">05｜GitHub Copilot Code Review 增强管理 API：Skills、MCP 和审查费用开始具备可追溯性</h2>
+<p><strong>发布日期：2026-11-06（重要工程更新回溯）｜领域：GitHub、AI Coding、DevSecOps、权限治理</strong></p>
+<h3>新闻摘要</h3>
+<p>GitHub 于 11 月 6 日更新 Copilot Code Review，允许管理员通过 REST 和 GraphQL API 配置企业、组织及仓库级代码审查策略。新接口与审查元数据支持标识 Copilot 生成的评论、使用的推理档位，以及相关评论引用的 Skills、MCP Server 和自定义指令。</p>
+<p>此外，Balanced 档位现在采用 <strong>三个审查模型加一个汇总模型</strong> 的结构，审查会话增加 AI Credits 消耗展示，并对失败、超时和底层模型不可用增加自动恢复机制。这项更新与 11 月 5 日的评论采纳率统计不同，重点是<strong>可配置性、过程追踪和运行可靠性</strong>。</p>
+<h3>关键事实</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>GitHub 公告</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>发布时间</td>
+<td>2026-11-06</td>
+</tr>
+<tr>
+<td>管理接口</td>
+<td>REST + GraphQL</td>
+</tr>
+<tr>
+<td>管理层级</td>
+<td>Enterprise / Organization / Repository</td>
+</tr>
+<tr>
+<td>审查来源元数据</td>
+<td>Skills、MCP、Custom Instructions</td>
+</tr>
+<tr>
+<td>审查模型结构</td>
+<td>Balanced：3 个审查模型 + 1 个汇总模型</td>
+</tr>
+<tr>
+<td>成本可见性</td>
+<td>审查 Agent 会话显示 AI Credits</td>
+</tr>
+<tr>
+<td>失败处理</td>
+<td>失败或超时自动重试一次，可切换合格备用模型</td>
+</tr>
+<tr>
+<td>Repository API 权限</td>
+<td>GitHub App / Fine-grained PAT 可用，需 Administration read/write</td>
+</tr>
+<tr>
+<td>Enterprise/Organization API 限制</td>
+<td>不支持 GitHub App 和 Fine-grained PAT</td>
+</tr>
+<tr>
+<td>适用计划</td>
+<td>Copilot Pro、Pro+、Max、Business、Enterprise</td>
+</tr>
+</tbody>
+</table></div>
+<h3>为什么值得关注</h3>
+<p>在企业实际工程中，AI Review 不只是“发现了几个 Bug”，还涉及 <strong>谁启用了审查、使用什么策略、引用哪些工具、产生多少费用、某次审查为什么失败，以及是否可以审计</strong>。</p>
+<p>这次更新支持将仓库审查策略逐渐纳入 Configuration as Code：仓库初始化时配置审查档位和允许使用的工具，后续通过审计流程检查实际执行是否符合策略。</p>
+<h3>对 DevSecOps 的实际影响</h3>
+<p>建议建立一张 AI Review 证据记录，至少关联：</p>
+<p><code>repository + pull_request + commit_sha + model/review_tier + skills + mcp + cost + finding + human_resolution</code></p>
+<p>其中，GitHub 官方已经提供一部分原始数据；其余字段需要根据不同 API 的实际能力与现有 CI、审计和缺陷系统整合，不能假定一个 API 返回全部信息。</p>
+<h3 class="action-title">今日行动建议</h3>
+<p>选择一个公开测试仓库，试验读取当前 Copilot Review 设置，并在不涉及生产代码的情况下比较 Balanced 与其他审查档位。检查 API 凭据的最小权限，特别注意组织/企业级端点不能直接沿用仓库级 Fine-grained PAT 或 GitHub App 的授权方式。</p>
+<h3 class="risk-title">风险判断</h3>
+<p>多个模型参与审查并不保证结果一定比单模型准确，其费用和运行时延也可能变化。能够追踪 Skills/MCP 来源不代表这些外部工具天然安全；涉及外部网络和仓库读取权限时，仍需独立审批与审计。</p>
+<p><strong>关键来源：</strong> <a href="https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates" rel="noopener noreferrer" target="_blank">GitHub 官方 Changelog</a>；<a href="https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review" rel="noopener noreferrer" target="_blank">GitHub Copilot Code Review 配置文档</a>。</p>
+<hr/>
+<p class="backtop"><a href="#top">↑ 返回顶部</a></p><h2 id="analysis">今日综合分析与行动建议</h2>
+<p>这五条新闻共同说明：<strong>下一阶段的企业 AI 竞争，不只在模型能力，而在模型、执行框架、计算基础设施、业务数据和治理机制能否形成完整系统。</strong></p>
+<h3>工程链路</h3>
+<pre class="tech-flow"><code class="language-text">模型与推理：Claude Fable 5.2（复杂任务质量、推理成本）
+    ↓
+计算资源：Google TPU（延迟、机密计算、长上下文）
+    ↓
+Agent 执行：DeepSeek Harness（插件与工作流）
+    ↓
+治理和验证：GitHub（审查策略、MCP、成本、证据）
+    ↓
+业务最终执行：加拿大 RTR（授权、风控、幂等与结算）
+</code></pre>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>工作事项</th>
+<th>建议验收标准</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0</td>
+<td>对新的 Claude Fable 5.2 进行真实工程任务评测</td>
+<td>有相同测试集、实际成功率、成本和耗时</td>
+</tr>
+<tr>
+<td>P0</td>
+<td>为支付类 Agent 明确授权、幂等与异常状态处理</td>
+<td>重试不重复付款，异常状态可追踪</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>对 Agent 执行链拆分 Token、工具等待与模型运行成本</td>
+<td>能定位主要延迟与费用瓶颈</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>审核插件、Skills、MCP 的权限与来源</td>
+<td>未经授权不能读取敏感数据或执行写操作</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>尝试用 GitHub API 读取 AI Review 策略与成本信息</td>
+<td>审查记录可以关联 PR、配置及人工处理结果</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>今日实践项目：</strong> 用 Java/Spring Boot 搭建一个仅使用模拟数据的“支付异常分析 Agent”。模型负责分析当前支付指令和历史行为，Harness 负责组织工具调用，安全策略限制数据与工具权限；最终是否允许付款，由后端确定性规则、幂等控制和人工审批决定。以 20 条固定测试数据验证越权阻断、重复请求、工具超时和错误恢复。</p>
+<p><strong>最终结论：</strong> 对软件工程师来说，值得持续积累的核心能力正从“怎样写更好的 Prompt”扩展为“怎样构建一个安全、可靠、成本可控、可以真实交付业务结果的 AI 系统”。</p>
+</main></div>
+<footer>完整文字简报的镜像版本 · 5 则新闻详解 · 来源、数据、行动建议与风险判断完整保留 · 单文件离线阅读</footer></body></html>
