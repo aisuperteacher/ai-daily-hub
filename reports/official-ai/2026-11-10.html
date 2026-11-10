@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="light"><title>全球 AI 大模型与 Agent 技术官方日报 | 2026-11-10</title><style>
+:root{--ink:#162534;--paper:#f6f4ed;--panel:#fffefa;--edge:#c3c9cb;--yellow:#f5db69;--mint:#c1e9de;--pink:#f0b7b1;--blue:#2d6782;--gray:#657482}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15.5px/1.79 system-ui,-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;overflow-wrap:anywhere}a{color:#175879;text-underline-offset:3px}a:hover{text-decoration-thickness:2px}a:focus-visible{outline:2px solid #006a93;outline-offset:3px}
+header{background:var(--yellow);border-bottom:4px solid var(--ink);padding:32px max(18px,calc((100vw - 1170px)/2));}header .mini{font-size:11px;font-weight:850;letter-spacing:.18em;text-transform:uppercase}header h1{font-size:clamp(27px,4vw,45px);letter-spacing:-.035em;line-height:1.22;max-width:950px;margin:11px 0}header p{margin:8px 0;max-width:900px}.pill{display:inline-block;background:white;border:1px solid #333;border-radius:30px;padding:3px 9px;font-size:11px;font-weight:750;margin:8px 6px 0 0}
+.layout{max-width:1210px;margin:24px auto 70px;display:grid;grid-template-columns:205px minmax(0,1fr);gap:18px;padding:0 14px}.nav{position:sticky;top:12px;align-self:start;background:var(--panel);padding:14px 10px;border:1px solid var(--edge);border-top:4px solid var(--ink);border-radius:8px}.nav strong{font-size:12px;letter-spacing:.06em;display:block;margin:0 9px 10px}.nav a{display:block;padding:7px 9px;font-size:12px;text-decoration:none;line-height:1.44;border-radius:5px}.nav a:hover{background:#f4efdc}
+main{min-width:0;background:var(--panel);border:1px solid var(--edge);border-radius:10px;padding:22px clamp(15px,3.4vw,36px);box-shadow:0 9px 27px #1926300c}main>h1:first-child{display:none}h2{font-size:clamp(19px,2vw,25px);line-height:1.44;letter-spacing:-.02em;border-bottom:3px solid var(--ink);margin:35px 0 17px;padding-bottom:10px;scroll-margin-top:10px}h3{font-size:18px;line-height:1.46;margin:27px 0 10px;scroll-margin-top:10px}p{margin:10px 0 15px}strong{font-weight:770}ol,ul{padding-left:23px}li{margin:8px 0}li::marker{color:var(--blue)}hr{border:0;border-top:1px solid var(--edge);margin:26px 0}
+.table-wrap{overflow-x:auto;max-width:100%;margin:15px 0 22px;border-radius:8px;border:1px solid var(--edge);-webkit-overflow-scrolling:touch}.table-wrap table{border-collapse:collapse;width:100%;min-width:710px;line-height:1.55;font-size:12.5px}.table-wrap th,.table-wrap td{padding:9px 10px;vertical-align:top;border:1px solid #d4dcdd;text-align:left}.table-wrap th{background:var(--mint);border-top:0;font-weight:800}.table-wrap tr:nth-child(even){background:#f7faf8}.table-wrap tr>*:first-child{border-left:0}.table-wrap tr>*:last-child{border-right:0}
+code{background:#e9eef0;border-radius:4px;padding:1px 4px;font:.91em Consolas,"Cascadia Code",ui-monospace,monospace}pre{overflow-x:auto;max-width:100%;padding:15px 17px;background:#1c2939;color:#e6f0fa;font:12px/1.58 Consolas,"Cascadia Code",ui-monospace,monospace;border-radius:8px;margin:15px 0 20px}pre code{color:inherit;background:transparent;padding:0;white-space:pre;font:inherit}blockquote{padding:12px 15px;margin:16px 0;border-left:4px solid var(--blue);background:#f0f7f6}input[type=checkbox]{accent-color:var(--blue)}main li.task-list-item{list-style:none;margin-left:-18px}
+footer{font-size:12px;color:var(--gray);padding:24px 0 0;border-top:1px solid var(--edge);margin-top:27px}.top{display:inline-block;padding:6px 11px;border:1px solid var(--ink);background:var(--yellow);border-radius:5px;text-decoration:none;color:var(--ink);font-weight:800}
+@media(max-width:820px){body{font-size:14px}.layout{display:block;margin:10px 0 36px;padding:0 9px}.nav{position:static;display:flex;gap:6px;overflow-x:auto;white-space:nowrap;padding:8px;margin:0 0 10px;scrollbar-width:thin}.nav strong{display:none}.nav a{flex-shrink:0;border:1px solid #c9d0d3;padding:5px 8px}main{padding:16px 14px}.table-wrap table{min-width:650px;font-size:12px}h2{font-size:20px}h3{font-size:17px}header{padding:24px 17px}}@media(max-width:390px){main{padding:13px 11px}.table-wrap table{min-width:610px}pre{font-size:11px;padding:12px 11px}header h1{font-size:26px}}
+@media print{header{padding:16px;background:white}.nav{display:none}.layout{display:block;margin:0;padding:0}main{border:0;box-shadow:none}.table-wrap{overflow:visible}table{min-width:unset!important}h2,h3{break-after:avoid}a{text-decoration:underline}body{background:white}}
+</style></head><body>
+<header id="top"><div class="mini">GLOBAL AI OFFICIAL DAILY / VERIFIED RELEASES</div><h1>全球 AI 大模型与 Agent 技术官方日报</h1><p>2026 年 11 月 10 日 · 北京时间 · 13 家官方巡检 · 长文完整版</p><span class="pill">Fable / Mythos 5.2</span><span class="pill">Claude Code 2.1.321</span><span class="pill">Qwen Code 0.27.1</span></header>
+<div class="layout"><nav class="nav" aria-label="报告目录"><strong>本期完整目录</strong><a href="#section-1">一、今日必看摘要</a><a href="#section-2">二、重要更新：逐条七维分析</a><a href="#section-3">三、官方小变更与历史背景（不当作今日重大新闻）</a><a href="#section-4">四、13 家厂商官方巡检状态表</a><a href="#section-5">五、已核验正式版本、Model ID 与计费基线</a><a href="#section-6">六、跨厂商兼容性与迁移矩阵</a><a href="#section-7">七、具体工程行动 Checklist（优先按可交付价值）</a><a href="#section-8">八、综合判断</a></nav><main><h1>全球 AI 大模型与 Agent 技术官方日报</h1>
+<p><strong>2026 年 11 月 10 日（星期二）｜北京时间｜核查截至 08:45｜13 家厂商</strong></p>
+<p><strong>窗口与去重规则：</strong> 对照已经归档的 2026-11-09 期，以 11 月 9 日之后出现且能确认原始日期的官方实质更新为主；对 11 月 9 日发布但昨日尚未纳入的内容按“前期遗漏补录”处理。本文引用的“最新”只表示本轮实际可核查的官方页面，不等于所有地区、所有账户的部署版本。外部报道、用户提交的 Issue、尚未证实的营销数字不当作官方产品公告。</p>
+<h2 id="section-1">一、今日必看摘要</h2>
+<ol>
+<li><strong>【必看】Anthropic 正式发布 Claude Fable 5.2 / Mythos 5.2（2026-11-09）</strong>：可公开调用的 <code>claude-fable-5-2</code> 与仅限验证组织的 <code>claude-mythos-5-2</code>，均为 <strong>1M Context、128K 最大输出、始终开启的 Adaptive Thinking</strong>。Fable 5.2 官方定价每百万输入 / 输出 Token 为 <strong>8 / 40 美元</strong>，相比上一代 10 / 50 美元降低 20%；但历史 Thinking、Computer Use、Advisor 以及 <strong>30 天数据保留</strong>要求造成实质迁移风险。官方：<a href="https://www.anthropic.com/claude-fable-and-mythos-5-2" rel="noopener noreferrer" target="_blank">发布公告</a>、<a href="https://platform.claude.com/docs/en/models/fable-5-2/overview" rel="noopener noreferrer" target="_blank">规格与价格</a>、<a href="https://platform.claude.com/docs/en/models/fable-5-2/migration-guide" rel="noopener noreferrer" target="_blank">迁移指南</a>。</li>
+<li><strong>【必看】Claude Code <code>v2.1.321</code>（11 月 9 日 19:22 UTC＝北京时间 11 月 10 日 03:22）</strong>：不仅接入 Fable 5.2，更修复 <strong>MCP OAuth 重定向泄露 Token</strong>、Bash 沙箱与审批绕过、受保护文件写入、Windows <code>FileChanged</code> Hooks、Compaction/后台 Agent 报告丢失等问题。涉及安全边界，建议阅读并优先开展隔离测试。官方：<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.321" rel="noopener noreferrer" target="_blank">v2.1.321 Release</a>。</li>
+<li><strong>【建议看】Qwen Code <code>v0.27.1</code>（11 月 9 日 13:30 UTC＝北京时间 21:30）</strong>：新增可配置后台 Agent、用户级 LSP、Managed Agent 的 Session 诊断与模型统计、Archive/MCP 自助安装、GitHub PR 监听基础；修复缓存记账、执行恢复与部分 Web Shell/MCP 行为。配套 TypeScript SDK <code>v0.1.31</code>。官方：<a href="https://github.com/QwenLM/qwen-code/releases/tag/v0.27.1" rel="noopener noreferrer" target="_blank">CLI Release</a>、<a href="https://github.com/QwenLM/qwen-code/releases/tag/sdk-typescript-v0.1.31" rel="noopener noreferrer" target="_blank">SDK Release</a>。</li>
+</ol>
+<p><strong>判读：</strong> 三项均有官方原文且有实际工程意义。Fable/Mythos 官方 Benchmark、输出速度“最高提高 30%”、Fast 模式“最高 2.5 倍”属于厂商披露，不代表本报告已完成独立对照实验。没有足够的统一负载与环境数据可计算跨厂商真实 P95 延迟或成功任务成本。</p>
+<h2 id="section-2">二、重要更新：逐条七维分析</h2>
+<h3>1. Anthropic — Claude Fable 5.2 与 Claude Mythos 5.2（优先级：必看）</h3>
+<p><strong>① 官方信息、版本、日期、范围与直接来源</strong></p>
+<p>Anthropic 2026-11-09 发布《Claude Fable 5.2 and Mythos 5.2》并在 Claude Platform Changelog 同日登记。<code>claude-fable-5-2</code> 为 Claude API 客户可用的模型；<code>claude-mythos-5-2</code> 功能规格相同，但仅向 Cyber Verification 等验证计划批准的组织开放，不能假设普通 API Key 可调用。官网模型页还列出 Bedrock ID <code>anthropic.claude-fable-5-2</code>，其余 Google Cloud/Anthropic 托管入口、Microsoft Foundry 使用各自部署与权限。Fable 5.2 模型页标注不早于 <strong>2027-11-09</strong> 退役，这不是无条件一年免费或固定容量承诺。官方：<a href="https://www.anthropic.com/claude-fable-and-mythos-5-2" rel="noopener noreferrer" target="_blank">新闻</a>、<a href="https://platform.claude.com/docs/en/models/fable-5-2/overview" rel="noopener noreferrer" target="_blank">Model Overview</a>、<a href="https://platform.claude.com/docs/en/models/fable-5-2/whats-new-fable-5-2" rel="noopener noreferrer" target="_blank">What’s new</a>、<a href="https://platform.claude.com/docs/en/models/fable-5-2/migration-guide" rel="noopener noreferrer" target="_blank">Migration Guide</a>、<a href="https://platform.claude.com/docs/en/release-notes/overview" rel="noopener noreferrer" target="_blank">Changelog</a>。</p>
+<p><strong>② 核心机制、Context、Thinking、协议与四类 Breaking Change</strong></p>
+<p>两模型 <strong>1,000,000 Token 上下文，最大 128,000 输出 Token</strong>；输入为文本/图像，输出为文本；Thinking 只能 Adaptive，<strong>始终开启</strong>，默认 <code>output_config.effort="high"</code>，可在 <code>low/medium/high/xhigh/max</code> 之间配置；不能发送 <code>thinking:{"type":"disabled"}</code> 或旧式手动 <code>budget_tokens</code>。工具选择允许 <code>auto/none</code>，强制 <code>any</code> 或指定 <code>tool</code> 返回 400。应省略自定义 <code>temperature/top_p/top_k</code>；Assistant Prefill 不支持。对具有 CMEK（客户管理加密密钥）的组织，严格 Schema/JSON 结构化输出支持受到额外限制，须查看官方适配条件。具体兼容情况不能从“支持 Claude API”四个字推断。</p>
+<p>四类需要逐一回归的变化：<strong>A. Prefix binding</strong>：如果自建 Gateway 在后续请求篡改旧的 <code>system</code>、<code>tools</code> 或历史消息，却又回传下游已经产生的 Thinking Block，会收到 HTTP 400：<code>The block is bound to a different conversation</code>。临时兼容可使用 beta header <code>thinking-binding-controls-2026-08-01</code> 与 <code>thinking.block_binding.prefix_mismatch_behavior="drop_block"</code>，返回 <code>input_transformations</code> 报告丢弃块；但丢弃可能增加输出 Token，根本修复仍是保持历史前缀不可变。<strong>B. 跨模型切换</strong>：Fable/Mythos 5.2 可读取部分旧模型推理块，但其他模型不能读取 Fable 5.2 的 Thinking Block；路由降级时会丢弃相应块，不能承诺无损恢复推理状态。<strong>C. Computer Use</strong>：除 Bedrock 例外，旧 <code>computer_20251124</code> 工具声明返回 400，应迁移 <code>computer_toolset_20260801</code>。<strong>D. Advisor</strong>：当 Fable 5.2 为 Executor，Advisor 模型必须是 Fable 5.2 或 Mythos 5.2。官方：<a href="https://platform.claude.com/docs/en/models/fable-5-2/whats-new-fable-5-2" rel="noopener noreferrer" target="_blank">详细变更</a>。</p>
+<p><strong>③ 价值与证据边界</strong></p>
+<p>Anthropic 宣称新一代在编程、长期任务、视觉、技术研究方面改进，新闻稿还公布自家评测基准以及生成速度提高数据。这些是<strong>厂商自测与厂商报告</strong>，未在本期独立复现，尤其不同 Harness、工具权限、推理强度、预算与数据集的对比不能直接视为实际业务排名。可以独立确认的硬事实是<strong>官方 Model ID、Context、可用范围、输出上限、参数约束与公开价格</strong>。官方建议多数日常工作优先从 <strong>Opus 5.5</strong> 起步，仅当更高 effort 的业务 Eval 不达标时才用 Fable 5.2。这样可以避免“越贵越好”的错误采购方式。</p>
+<p><strong>④ 产品、业务与工程用途</strong></p>
+<p>适合复杂代码库迁移、长时运行 Agent、跨文档技术研究、大型业务规则重构、难题复核和面向已批准组织的安全/生命科学研究。对普通在线客服、高并发分类/路由、简单摘要等任务，Fable 往往不是优先的成本选择。Mythos 的受限能力不能通过给第三方代理随意改模型名绕过资格限制。</p>
+<p><strong>⑤ 对 Java/Spring Boot、Nacos、多模型 Gateway 与业务治理的帮助</strong></p>
+<p>企业 Gateway 不应仅有一列 <code>model_name</code>。新增能力清单至少区分：<code>provider</code>、<code>provider_model_id</code>、<code>region</code>、<code>account_access</code>、<code>context_limit</code>、<code>max_output</code>、<code>adaptive_thinking</code>、<code>effort_options</code>、<code>tool_choice_modes</code>、<code>computer_toolset_version</code>、<code>schema_restrictions</code>、<code>retention_days</code>、<code>price_revision</code> 与 <code>lifecycle</code>。多服务共享会话应实行<strong>不可变历史 + 独立逻辑摘要</strong>，不能在旧 Thinking Block 前面悄悄替换 System Prompt。Nacos 可分发路由配置，但历史记录、幂等状态和成本计量应持久化于独立系统。Agent Runtime 必须监视模型在低 effort 下可能提前结束回合、并发子 Agent 产生额外成本，以及安全拒绝 <code>HTTP 200 + stop_reason="refusal"</code> 不等于任务成功。<a href="https://platform.claude.com/docs/en/models/fable-5-2/whats-new-fable-5-2" rel="noopener noreferrer" target="_blank">https://platform.claude.com/docs/en/models/fable-5-2/whats-new-fable-5-2</a></p>
+<p><strong>⑥ 价格、隐私、试用与迁移验收</strong></p>
+<p>公开 USD 价格每 <strong>100 万 Token</strong>：普通输入 <strong>$8</strong>、输出 <strong>$40</strong>、5 分钟缓存写入 <strong>$10</strong>、1 小时缓存写入 <strong>$16</strong>、缓存读取 <strong>$0.20</strong>；Batch 输入/输出 <strong>5 折</strong>（即 $4/$20）；官方 Fast 模式 <strong>$16/$80</strong>，不是所有云区域/账户都承诺同样可用。与 Fable 5.1 的 $10/$50 比较，基础输入输出单价下降 20%，<strong>不意味着整体任务费用下降 20%</strong>：Adaptive Thinking、子 Agent、工具请求和缓存命中率均影响账单。最关键的合规条件：<strong>默认要求 30 天数据保留，ZDR 组织除非 Anthropic 明确授权不得使用</strong>；不满足条件的请求可能返回 <code>400 invalid_request_error</code>。对 GDPR/企业敏感代码或需要零保留的任务，先做数据分类和法务/安全评估。官方：<a href="https://platform.claude.com/docs/en/models/fable-5-2/overview" rel="noopener noreferrer" target="_blank">价格/范围</a>、<a href="https://platform.claude.com/docs/en/models/fable-5-2/migration-guide" rel="noopener noreferrer" target="_blank">迁移风险</a>。</p>
+<p>Windows PowerShell 7 <strong>最小接口烟雾测试</strong>（仅在你已拥有有效 Claude API Key 且确认数据保留条件后执行；以下无真实凭据）：</p>
+<pre tabindex="0"><code class="language-powershell">if (-not $env:ANTHROPIC_API_KEY) { throw 'Set ANTHROPIC_API_KEY in the current shell first' }
+$headers = @{ 'x-api-key' = $env:ANTHROPIC_API_KEY; 'anthropic-version' = '2023-06-01' }
+$body = @{
+  model = 'claude-fable-5-2'; max_tokens = 512
+  output_config = @{ effort = 'medium' }
+  messages = @(@{ role = 'user'; content = '用两句话说明业务幂等的重要性。' })
+} | ConvertTo-Json -Depth 8
+try {
+  $resp = Invoke-RestMethod -Uri 'https://api.anthropic.com/v1/messages' -Method Post -Headers $headers -ContentType 'application/json' -Body ([Text.Encoding]::UTF8.GetBytes($body))
+  $resp | Select-Object model, stop_reason, usage
+} catch {
+  Write-Warning ('Request failed; inspect status, access and retention policy: ' + $_.Exception.Message)
+}
+</code></pre>
+<p><strong>验收测试：</strong>（a）普通请求可以访问、返回实际 Model ID 和 Usage；（b）在沙箱故意修改历史前缀后观察 400，再验证“保持前缀不可变”的修复；（c）手动测试 <code>any</code> 工具选择、旧 Computer Use 是否按官方说明失败；（d）Agent 故障恢复时模型降级不丢失关键外部业务状态；（e）比较同任务 Opus 5.5 与 Fable 5.2 在 <code>medium/high</code> 的成功率、总 Token、缓存、工具调用数、P50/P95 延迟和每次成功任务成本；（f）验证数据保留、密钥管理、敏感信息审计。不要把失败的 400 自动无条件重试。</p>
+<p><strong>⑦ 优先级与决策：必看；先阅读并进行 5% 灰度/沙箱试验，暂不对全局 Gateway 默认模型做迁移。</strong> 只有实际 Eval 证明净收益时，才在获准账户及符合数据保留条件的业务中升级。对应迁移指令可参考官方 Claude Code：<code>/claude-api migrate this project to claude-fable-5-2</code>；执行前仍应建立 Git 变更检查和回滚点。</p>
+<h3>2. Anthropic — Claude Code v2.1.321（优先级：必看）</h3>
+<p><strong>① 来源与准确版本日期</strong>：官方 GitHub Release <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.321" rel="noopener noreferrer" target="_blank">v2.1.321</a> 发布于 <strong>2026-11-09 19:22 UTC＝北京时间 11 月 10 日 03:22</strong>，标记 Latest，属于稳定版，不是 Preview。与上一期记录的 2.1.319 相比有明确增量。</p>
+<p><strong>② 核心变化</strong>：支持 Fable 5.2 作为默认 Fable；<code>claude remote-control --settings &lt;file&gt;</code> 将同一配置应用于新开的所有远控会话（文件修改后须重启 remote-control 才会加载）；修复 OAuth 重定向到另一个主机时 MCP 凭据暴露风险；修复只读 Bash 误在沙箱外执行、命令写入位置计算错误导致审批缺失、<code>cp/mv</code> 目标保护规则失效；Windows 在小写盘符工作目录下的 <code>watchPaths</code> FileChanged Hook 不再第一次 Shell 执行后停止；修复 UNC/WSL 目录编辑可能覆盖错误目标，以及 Remote Control 的 <code>/compact</code> 重复显示、Hooks 的 <code>ask/defer</code> 决策竞态、后台 Agent 汇报在压缩后丢失。<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.321" rel="noopener noreferrer" target="_blank">https://github.com/anthropics/claude-code/releases/tag/v2.1.321</a></p>
+<p><strong>③ 为什么有价值</strong>：这是<strong>安全边界与可靠性修复</strong>，比单纯的 UI 改版重要。MCP OAuth Redirect 处理与沙箱逃逸路径触及凭据完整性和本地文件访问；该官方修复说明并不代表存在已被广泛利用的漏洞、CVE 或特定攻击成功率，不能夸大。对通过代理或远控执行工具的用户更需优先评估。</p>
+<p><strong>④ 场景</strong>：Windows 11 AI 编程、企业共享代理、Claude Code Agent SDK、MCP 远程服务、文件级 Hooks、Git 工作区/UNC 路径、移动端 Remote Control。特别是对代理、受限工具、编程工作区有权限要求的团队。</p>
+<p><strong>⑤ 架构影响</strong>：Gateway 的 OAuth/Callback 不应把 <code>Authorization</code>、Refresh Token 或 Cookie 随任意 302/307 跨域转发；HTTP 重定向要明确允许的主机、协议、身份与证书，禁止凭据跨域传播。文件执行和审批应以操作的<strong>最终解析路径与目标文件</strong>判定，而不是只看命令文字中出现的路径。Hooks、MCP 服务器、Skills 和 Agent 的权限分别设置；Compaction 之前必须持久化工具执行结果、人工审批和任务幂等键。对 Java 后端，可把这些规则落实在 Gateway 的 OAuth Client、工具执行策略、审计事件与独立沙箱 Worker。</p>
+<p><strong>⑥ 试用升级与生产回归</strong>：在 PowerShell 中先 <code>claude --version</code>、备份非敏感配置和项目变更；再按照 <a href="https://code.claude.com/docs/en/setup" rel="noopener noreferrer" target="_blank">官方安装/升级说明</a> 进行升级，避免未经验证的安装来源。隔离环境中验证：（1）MCP OAuth 服务器用测试凭据向不同主机重定向，凭据绝不能被转发；（2）Bash 对只读与写操作的审批/沙箱决策正确；（3）<code>cp/mv</code> 到受保护目录被拦截；（4）Windows <code>watchPaths</code> 经过一条 Shell 命令仍能触发；（5）UNC 文件批量编辑不会覆盖其他文件；（6）多 Hooks <code>ask/defer</code> 竞争按预期处理；（7）压缩后后台 Agent 的交付结果不丢。<code>--settings</code> 只影响新开启会话，不等同热更新。模型价格、上下文与保留条件沿用上一条 Fable 5.2 官方资料；CLI 本身版本不代表 API 组织已经有权限。</p>
+<p><strong>⑦ 决策：必看，优先完成安全回归后升级。</strong> 生产集群先单台或单团队 Canary，保留上版安装方式和审计日志；不建议为了单一功能而放开 <code>--dangerously-skip-permissions</code>。</p>
+<h3>3. 阿里巴巴 / Qwen — Qwen Code v0.27.1 与 SDK v0.1.31（优先级：建议看）</h3>
+<p><strong>① 来源与版本日期</strong>：官方 <a href="https://github.com/QwenLM/qwen-code/releases/tag/v0.27.1" rel="noopener noreferrer" target="_blank">Qwen Code v0.27.1</a> 于 <strong>2026-11-09 13:30 UTC（北京时间 21:30）</strong>发布，非预发布，说明为 <em>No known breaking changes</em>；官方 <a href="https://github.com/QwenLM/qwen-code/releases/tag/sdk-typescript-v0.1.31" rel="noopener noreferrer" target="_blank">TypeScript SDK 0.1.31</a> 于 <strong>11 月 9 日 14:50 UTC（北京时间 22:50）</strong>发布，Release 中显示打包 CLI 0.27.1（页面同时存在历史构建说明，应以最上方对应版本与实际 npm 包校验）。此前已经报道的 0.27.0 不再当作新消息。</p>
+<p><strong>② 核心变化</strong>：可配置后台 Agent 默认运行行为；LSP 可由用户级设置/环境参数启用（具体键和值必须以仓库文档为准，不推测）；Managed Agent Session 增加资源、模型统计、请求上下文和执行诊断；Archive/MCP 自助安装；GitHub 关联 PR 的观察与状态过渡基础（部分隐藏在 off-switch 后，<strong>不应当作默认已经开放的功能</strong>）；Web Shell 的 Scheduled Task 可显示 Channel 投递目标；CI 临时 Runner 支持 HTTP 代理。修复 OpenAI <code>cache_write_tokens</code> 的遥测归类、Headless 输出时机、部分托管任务恢复、MCP 读取超时提示、Node 24/25 Wasm 内存峰值提醒等。<a href="https://github.com/QwenLM/qwen-code/releases/tag/v0.27.1" rel="noopener noreferrer" target="_blank">https://github.com/QwenLM/qwen-code/releases/tag/v0.27.1</a></p>
+<p><strong>③ 为什么有价值</strong>：对多 Agent 的可观测性和费用归因有直接帮助。可保存模型调用统计与执行上下文，才能回答“某次任务为何花费异常、哪一步失败、重跑是否重复扣费/写数据”。<code>cache_write_tokens</code> 分类修正是指标口径修复，不能据此断言 Token 消耗实际下降。</p>
+<p><strong>④ 业务与产品场景</strong>：企业 Skill/MCP 市场、长期在线 Coding Agent、GitHub PR 自动化、AI Gateway 成本治理、流水线/定时任务消息投递、Windows/Node.js 开发环境。</p>
+<p><strong>⑤ 企业架构帮助</strong>：建议统一 <code>session_id</code>、<code>run_id</code>、<code>tool_call_id</code>、<code>provider_model_id</code>、<code>cache_read_tokens</code>、<code>cache_write_tokens</code>、<code>output_tokens</code>、<code>request_cost</code>、<code>result_delivery_status</code>。从 Hook/CI/Agent 中采集不同语义的执行与交付状态；将定时报告“生成成功”和 GitHub“提交/回读成功”分开，按幂等键防止重放。Java/Spring Boot 服务可消费统一 OpenTelemetry/事件 Schema，不必依赖 TypeScript 作为唯一实现语言。Node/SDK、CLI、Daemon 的版本也应分开管理。</p>
+<p><strong>⑥ 操作与验收</strong>：在 Windows PowerShell 7 的测试环境先检查 <code>node --version</code>、<code>qwen --version</code>、<code>npm view @qwen-code/qwen-code version</code>；如需固定测试目标可运行：</p>
+<pre tabindex="0"><code class="language-powershell">node --version
+qwen --version
+npm view @qwen-code/qwen-code version
+npm install -g @qwen-code/qwen-code@0.27.1
+qwen --version
+</code></pre>
+<p>准备一个虚构仓库的 GitHub PR、一个没有权限的 MCP Server、一个能返回 Token Usage 的自定义 Base URL（使用测试 Key），模拟 Tool Call 中断与 Agent 恢复；检查每个 Session 的运行日志、缓存读取/写入分类、Web Shell 预定投递目标、禁止越权触发的仓库事件，以及同一作业重复启动不发生重复提交。<strong>验收：</strong> 统计字段可追踪且不误分类、运行状态和投递状态能区分、MCP 安装受审批保护、PR 事件过滤准确、失败能恢复。切忌根据 Release 摘要猜测 LSP 配置键或后台 Agent 参数。</p>
+<p><strong>Context/Thinking/Schema/许可及成本</strong>：该版本是 CLI/SDK/管理能力发布，<strong>并未证明底层 Qwen 模型 Context、Thinking、API 价格、开源许可发生变动</strong>。第三方 <code>base_url</code> 的 Tool Calling、JSON Schema、错误码、Token 计费及权限，需分别核对真实 Provider；代码仓库许可与底层模型权重许可不得混为一谈。Node 24/25 Wasm 内存异常提醒不等于所有环境不可使用。</p>
+<p><strong>⑦ 决策：建议看，先测试 0.27.1；无需仅因该版本迁移生产 AI Gateway。</strong> 对已有 Qwen Code 0.27.0 的 Managed Agent 用户，观察与恢复功能值得做增量升级；未使用该生态可以只关注设计方法。</p>
+<h2 id="section-3">三、官方小变更与历史背景（不当作今日重大新闻）</h2>
+<p><strong>OpenAI/Codex：</strong> <a href="https://developers.openai.com/api/docs/changelog" rel="noopener noreferrer" target="_blank">API Changelog</a> 最新明确列出的 11 月大项仍是 <strong>11 月 5 日 <code>gpt-6-cyber</code></strong>；<a href="https://github.com/openai/codex/releases" rel="noopener noreferrer" target="_blank">Codex Releases</a> 出现 <code>0.169.0-alpha.7</code>（页面显示 11 月 9 日 21:55，<strong>预发布</strong>），正式版最新仍可确认 <code>0.167.0</code>。Alpha 版没有足够正式产品行为说明，不建议直接覆盖生产 CLI。</p>
+<p><strong>Moonshot/Kimi：</strong> <a href="https://github.com/MoonshotAI/kimi-code/releases" rel="noopener noreferrer" target="_blank">Kimi Code Releases</a> 可见 <code>2.6.0-canary.20261109040420-9c1a9c3</code> 于 11 月 9 日 04:19 发布，主要是 Web 分发产物同步，<strong>Canary、非稳定新功能</strong>；<code>2.5.2</code> 仍是官方 Latest 稳定版。本期未发现足以单列七维分析的新模型/API 信息。</p>
+<p><strong>字节跳动/火山引擎：</strong> <a href="https://developer.volcengine.com/evaluation-set" rel="noopener noreferrer" target="_blank">Agent 评测集</a> 的 DABench 行当前显示 <strong>2026-11-09</strong>，昨天日报引用的列表日期为 11 月 8 日，说明动态列表展示时间可能变化。无法证明数据集在今天首次发布或真正修订，<strong>本期仅列为待核实观察，不当新发布</strong>；使用前必须核实“其它”许可证。</p>
+<h2 id="section-4">四、13 家厂商官方巡检状态表</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>结果</th>
+<th>本轮核验及证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>① OpenAI</td>
+<td>已核验，无重要正式新增；有预发布</td>
+<td><a href="https://developers.openai.com/api/docs/changelog" rel="noopener noreferrer" target="_blank">API 更新日志</a> 最近重大记录 11/5；<a href="https://github.com/openai/codex/releases" rel="noopener noreferrer" target="_blank">Codex Releases</a> 有 0.169.0-alpha.7，稳定版 0.167.0。Java SDK/Responses/Agents 文档未找到能确定在本窗口首发的正式更改。</td>
+</tr>
+<tr>
+<td>② Anthropic</td>
+<td><strong>重要更新</strong></td>
+<td><a href="https://www.anthropic.com/claude-fable-and-mythos-5-2" rel="noopener noreferrer" target="_blank">Fable 5.2/Mythos 5.2 官方公告</a>、<a href="https://platform.claude.com/docs/en/release-notes/overview" rel="noopener noreferrer" target="_blank">Claude Platform Changelog</a> 11/9、<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.321" rel="noopener noreferrer" target="_blank">Claude Code v2.1.321</a> 11/9 UTC。</td>
+</tr>
+<tr>
+<td>③ Google / DeepMind</td>
+<td>已核验，无重要新增</td>
+<td><a href="https://github.com/google-gemini/gemini-cli/releases" rel="noopener noreferrer" target="_blank">Gemini CLI Releases</a> 最新明确稳定版 0.67.0、0.68.0-preview.0 为预览；<a href="https://ai.google.dev/gemini-api/docs" rel="noopener noreferrer" target="_blank">Gemini API Docs</a> 有访问格式限制，Gemini API/Vertex 全量公告未能穷尽。</td>
+</tr>
+<tr>
+<td>④ xAI</td>
+<td>已核验，无重要新增</td>
+<td><a href="https://docs.x.ai/developers/release-notes" rel="noopener noreferrer" target="_blank">API Release Notes</a> 本轮仍未见 11/9–10 的正式记录；11/2 Imagine 图像路由调整属历史记录。</td>
+</tr>
+<tr>
+<td>⑤ 智谱 / Z.ai</td>
+<td>部分核验，新增待核实</td>
+<td><a href="https://docs.z.ai/release-notes/new-released" rel="noopener noreferrer" target="_blank">Z.ai New Released</a> 最新可见 8/26 GLM-5.3-Flash，动态 Coding Plan/API 及 SDK Release 不能穷尽。</td>
+</tr>
+<tr>
+<td>⑥ DeepSeek</td>
+<td>已核验，无重要新增</td>
+<td><a href="https://api-docs.deepseek.com/updates/" rel="noopener noreferrer" target="_blank">API Changelog</a> 最近可见 10/17 Search API、V4.1-Flash-1017；<code>deepseek-flash</code> 别名不是本期新品。</td>
+</tr>
+<tr>
+<td>⑦ 腾讯</td>
+<td>部分核验，无已确认新增</td>
+<td><a href="https://www.tencent.com/en-us/" rel="noopener noreferrer" target="_blank">腾讯官方新闻</a> 最近大模型新闻仍为 11/4 Hy4；TokenHub、腾讯云模型接口的全部细分日志未能完整查证。</td>
+</tr>
+<tr>
+<td>⑧ 阿里巴巴 / Qwen</td>
+<td><strong>重要/小更新</strong></td>
+<td><a href="https://github.com/QwenLM/qwen-code/releases/tag/v0.27.1" rel="noopener noreferrer" target="_blank">Qwen Code 0.27.1</a> 与 <a href="https://github.com/QwenLM/qwen-code/releases/tag/sdk-typescript-v0.1.31" rel="noopener noreferrer" target="_blank">SDK 0.1.31</a>，均为 11/9 UTC。百炼/通义万相所有动态公告无法完全穷尽。</td>
+</tr>
+<tr>
+<td>⑨ Moonshot / Kimi</td>
+<td>仅 Canary 小更新</td>
+<td><a href="https://github.com/MoonshotAI/kimi-code/releases" rel="noopener noreferrer" target="_blank">Kimi Code Releases</a> 2.6.0 Canary 非稳定版，稳定 2.5.2；<a href="https://www.moonshot.ai/" rel="noopener noreferrer" target="_blank">Moonshot 官网</a> 最近可见 K3.1 Pro（10/24）。</td>
+</tr>
+<tr>
+<td>⑩ 字节跳动</td>
+<td>部分核验，待核实</td>
+<td><a href="https://developer.volcengine.com/evaluation-set" rel="noopener noreferrer" target="_blank">火山 Agent 评测页</a> 动态 DABench 日期不稳定；Seed/Seedream/Seedance、方舟、Trae 无法完成全量变更核验。</td>
+</tr>
+<tr>
+<td>⑪ TypeSafe AI</td>
+<td>部分核验，无重要新增</td>
+<td><a href="https://typesafe.ai/blog" rel="noopener noreferrer" target="_blank">官方博客</a> 仍为 10/14 Jev 1.14.0；<a href="https://docs.typesafe.ai/" rel="noopener noreferrer" target="_blank">开发文档</a> 可读；<a href="https://api.typesafe.ai/redoc" rel="noopener noreferrer" target="_blank">API ReDoc</a> 需客户端 JS，本轮不能完整获取变化。Choice/Score/Noul/Box 与 RLCD 的旧内容不冒充新品。</td>
+</tr>
+<tr>
+<td>⑫ Meta AI</td>
+<td>已核验，无开发者重要新增</td>
+<td><a href="https://about.fb.com/news/" rel="noopener noreferrer" target="_blank">Meta Newsroom</a> 11/9 有 Teen Account 保护相关消息，属平台消费产品/治理信息而非 Llama API、模型权重、SAM 技术发布；<a href="https://ai.meta.com/" rel="noopener noreferrer" target="_blank">Meta AI 技术站</a> 动态研究全量未穷尽。</td>
+</tr>
+<tr>
+<td>⑬ 百度</td>
+<td>部分核验，无已确认新增</td>
+<td><a href="https://cloud.baidu.com/doc/qianfan/s/Jmh4sttph" rel="noopener noreferrer" target="_blank">千帆官方文档</a> 最近页面更新标注 11/6；<a href="https://github.com/PaddlePaddle/PaddleOCR/releases" rel="noopener noreferrer" target="_blank">PaddleOCR Releases</a> 3.7.0（6/11）。千帆模型上下架、地域计费和 Java 接入条件未能完整核对。</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>状态原则：</strong> “已核验无新增”不是证明厂商绝对没有更新；“部分核验”也不能偷换为“无新增”。尤其百度/火山/腾讯的云服务定价及后台控制台条件、TypeSafe 的 JS API Reference，保留待核验，不填造版本号或单价。</p>
+<h2 id="section-5">五、已核验正式版本、Model ID 与计费基线</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>标识/阶段</th>
+<th>本期官方可确认的关键条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anthropic 新模型</td>
+<td><code>claude-fable-5-2</code>，正式，2026-11-09</td>
+<td>1M Context、128K 最大输出、Adaptive Thinking、默认 high、$8/$40 每 MTok、30 天保留；ZDR 另需批准。</td>
+</tr>
+<tr>
+<td>Anthropic 受限模型</td>
+<td><code>claude-mythos-5-2</code>，正式但需组织验证</td>
+<td>与 Fable 5.2 规格和基础价格相同，非所有普通账户可用。</td>
+</tr>
+<tr>
+<td>Anthropic 云平台 ID</td>
+<td>Bedrock <code>anthropic.claude-fable-5-2</code>；其他平台 ID 须逐项核对</td>
+<td>数据区域、配额、认证、托管归属与快慢模式因平台不同而不同。</td>
+</tr>
+<tr>
+<td>Claude Code</td>
+<td><code>v2.1.321</code>，正式，2026-11-09 UTC</td>
+<td>修复 MCP OAuth / Sandbox / Permissions / Windows Hooks。</td>
+</tr>
+<tr>
+<td>Qwen Code CLI</td>
+<td><code>v0.27.1</code>，正式，2026-11-09 UTC</td>
+<td>Agent Session 诊断、LSP 开关、后台行为等；无已知 Breaking Changes。</td>
+</tr>
+<tr>
+<td>Qwen TypeScript SDK</td>
+<td><code>v0.1.31</code>，正式，2026-11-09 UTC</td>
+<td>发布记录最上方注明打包 CLI 0.27.1。</td>
+</tr>
+<tr>
+<td>OpenAI Codex</td>
+<td><code>0.167.0</code> 正式；<code>0.169.0-alpha.7</code> 预发布</td>
+<td>不混淆 alpha 与正式部署基线。</td>
+</tr>
+<tr>
+<td>OpenAI API</td>
+<td><code>gpt-6-cyber</code>（11/5 历史）</td>
+<td>受限安全研究用途，不作为普通可用模型推断。</td>
+</tr>
+<tr>
+<td>Gemini CLI</td>
+<td><code>0.67.0</code> 正式；<code>0.68.0-preview.0</code></td>
+<td>本轮没有可确认 11/10 新稳定版。</td>
+</tr>
+<tr>
+<td>xAI</td>
+<td><code>grok-4.7</code>（已有基线）</td>
+<td>原厂 API/代理入口和上下文规格须按接入点核验。</td>
+</tr>
+<tr>
+<td>Z.ai</td>
+<td>GLM-5.3、GLM-5.3-Flash（历史基线）</td>
+<td>未证实本期 API 别名或计费调整。</td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td><code>deepseek-flash</code> → V4.1-Flash-1017（历史）</td>
+<td>10/17 官方变更页所列映射；别名可能随运营更新。</td>
+</tr>
+<tr>
+<td>腾讯</td>
+<td>Hy4（11/4 历史）</td>
+<td>是否提供可直接用的 Model ID/权重/许可，必须按渠道确认。</td>
+</tr>
+<tr>
+<td>Kimi Code</td>
+<td><code>2.5.2</code> 正式；<code>2.6.0-canary.20261109040420-9c1a9c3</code></td>
+<td>Canary 非稳定，不能据此推断生产模型变更。</td>
+</tr>
+<tr>
+<td>TypeSafe</td>
+<td>Jev 1.14.0（10/14 历史）</td>
+<td>Danger Zone 实验能力不应默认纳入生产 SLA。</td>
+</tr>
+<tr>
+<td>Meta</td>
+<td>Muse 产品功能（历史）</td>
+<td>不等于 Meta Llama 新模型权重或生产 API 已开放。</td>
+</tr>
+<tr>
+<td>百度 PaddleOCR</td>
+<td>3.7.0（6/11 历史）</td>
+<td>OCR 项目版本不等于千帆 ERNIE Model ID。</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>可比成本的正确口径：</strong> 本期只对 Anthropic <strong>同平台同单位</strong>公布官方可核验的价格。Fable 5.2 相对 Fable 5.1 基础输入/输出单价均为 0.8 倍；Opus 5.5 官方模型表为 $4/$20 每 MTok，Fable 5.2 基础单价为 Opus 的 2 倍，但成功率、思考 Token、缓存、Fast、Batch、工具成本决定最终任务成本。未取得其他厂商同期同口径的新价格、吞吐、许可、P95 数据，故不制造“全网最便宜/最强”的横向榜单。<a href="https://platform.claude.com/docs/en/models/fable-5-2/overview" rel="noopener noreferrer" target="_blank">https://platform.claude.com/docs/en/models/fable-5-2/overview</a></p>
+<h2 id="section-6">六、跨厂商兼容性与迁移矩阵</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>场景 / 迁移路径</th>
+<th>核心风险</th>
+<th>回归方法、上线门槛</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fable 5.1 → Fable 5.2</td>
+<td>Prefix Binding 400；旧工具/Advisor 无效</td>
+<td>历史 append-only；验证 <code>thinking</code> Block；Computer Use Toolset 更新；Advisor 相同代；留回退开关。</td>
+</tr>
+<tr>
+<td>Fable 5.2 ↔ Opus/Sonnet/其他模型</td>
+<td>新 Thinking Block 可能在路由降级时丢弃</td>
+<td>业务状态外置，记录 model-switch，校验任务继续性；不要用 Thinking 当业务数据库。</td>
+</tr>
+<tr>
+<td>Fable / Mythos 5.2 → ZDR/受管制数据</td>
+<td>30 天保留与组织批准不符</td>
+<td>业务数据分类、审批、合同/平台约束校验，不合规则禁止流量。</td>
+</tr>
+<tr>
+<td>Claude Code 2.1.319 → 2.1.321</td>
+<td>OAuth Redirect、Bash Sandbox、<code>cp/mv</code> 权限</td>
+<td>测试跨域重定向、目标路径解析、最小授权、Windows Hooks，安全测试通过再滚动升级。</td>
+</tr>
+<tr>
+<td>Qwen Code 0.27.0 → 0.27.1</td>
+<td>Agent 状态追踪、缓存指标归类、MCP 自助安装</td>
+<td>观测链路对账、MCP 权限审批、恢复幂等、CI 失败分类、SDK/CLI 版本一致。</td>
+</tr>
+<tr>
+<td>OpenAI/xAI/DeepSeek/Z.ai/Kimi/Claude 的第三方 <code>base_url</code></td>
+<td>伪“OpenAI 兼容”并不等于相同 Thinking/Tool/Schema</td>
+<td>每个 Provider 做模型 ID、Header、错误码、SSE、JSON Schema、Tool Call、Usage 的契约测试。</td>
+</tr>
+<tr>
+<td>Managed Agents / MCP / Skills / Hooks</td>
+<td>凭据透传、任意文件访问、自动重试副作用</td>
+<td>Sandbox、least privilege、凭据脱敏、审计、run-id+幂等键、独立工具执行器。</td>
+</tr>
+<tr>
+<td>Long Context / Compaction</td>
+<td>历史不兼容、系统前缀变化、上下文成本激增</td>
+<td>固定摘要检查点、Prompt Cache 命中率、Token Usage 及任务完成率；确认模型特有 Compaction 语义。</td>
+</tr>
+<tr>
+<td>GitHub Pages 归档</td>
+<td>生成成功≠提交成功≠页面上线</td>
+<td>先正文、再全量 HTML、再提交、再回读 HTML 与 manifest；检查 GitHub Pages URL。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="section-7">七、具体工程行动 Checklist（优先按可交付价值）</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>今天先处理：</strong> 在隔离的测试分支比对 Claude Code 2.1.321 的 OAuth、Bash/沙箱、<code>cp/mv</code>、Windows FileChanged Hooks；记录失败样例与是否有敏感信息泄漏。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>今天先处理：</strong> 在模型能力注册表增加 Fable 5.2 / Mythos 5.2 的 Model ID、账户准入、1M Context、128K Output、<code>output_config.effort</code>、Thinking/Tool 限制、30 天保留与定价版本。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>今天先处理：</strong> 在实验环境用 PowerShell 的最小 Messages API 示例验证普通请求，遇到 400 时准确区分权限、Thinking Prefix、工具协议、保留政策，而不是盲目无限重试。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>为 Java/Spring Boot + Nacos 企业 AI Gateway 增加不可变会话前缀、Compaction 独立摘要、Provider Adapter、契约测试与可追溯 Usage。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>对 Opus 5.5 与 Fable 5.2 用同一批 20 道授权业务题做 Eval：业务完成率、P95、缓存、Token/成本、拒绝率、工具调用次数，能回退才升级。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>在 Qwen Code 0.27.1 测试 Managed Agent Session 诊断、MCP 安装权限、计费指标与失败恢复；不直接将实验 PR Watch 视为正式可用功能。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>将 Node/CLI、SDK、模型 ID、模型别名、版本生命周期分别管理，严禁一个“version”字段混用。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>对未完成核验的腾讯云/百炼/火山引擎/百度千帆/TypeSafe API 逐项补查地域、实名、定价、数据保留和 SDK 接入；不以博客发布日期代替 API 能力落地日期。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>公开日报仅提交已完整核查的中文文字及离线 HTML，不上传 Token、账户信息或私有记录；GitHub 写入后回读 <code>reports/official-ai/2026-11-10.html</code> 与 <code>manifest.json</code>。</li>
+</ul>
+<h2 id="section-8">八、综合判断</h2>
+<p><strong>今天确实有重大的官方新增，不是“今日无重要变化”。</strong> 其中 Anthropic 11 月 9 日的 <strong>Fable/Mythos 5.2</strong> 是模型能力、价格、上下文和协议兼容性层面的实质发布；Claude Code <strong>2.1.321</strong> 的凭据/沙箱修复是工程安全优先事项；Qwen Code <strong>0.27.1</strong> 则继续推进 Agent 的诊断、MCP 与费用观测。</p>
+<p>对企业级 Agent 系统，<strong>选模型必须同时选“隐私约束 + API 语义 + 工具边界 + 可恢复性 + 业务成本”</strong>。Fable 5.2 的 1M Context 和更低官方单价非常值得关注，但 30 天保留约束、不可关闭的 Adaptive Thinking、历史推理块绑定与 Computer Use 工具迁移，意味着<strong>不能只改一个 Model ID 就发布</strong>。建议按“验证需求与数据准入 → 兼容性测试 → 小流量业务 Eval → 可回滚部署”的顺序执行。</p>
+<p><strong>官方原文索引：</strong> <a href="https://www.anthropic.com/claude-fable-and-mythos-5-2" rel="noopener noreferrer" target="_blank">Anthropic 发布</a>｜<a href="https://platform.claude.com/docs/en/models/fable-5-2/overview" rel="noopener noreferrer" target="_blank">Fable 5.2 模型页</a>｜<a href="https://platform.claude.com/docs/en/models/fable-5-2/whats-new-fable-5-2" rel="noopener noreferrer" target="_blank">破坏性变更</a>｜<a href="https://platform.claude.com/docs/en/models/fable-5-2/migration-guide" rel="noopener noreferrer" target="_blank">迁移指南</a>｜<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.321" rel="noopener noreferrer" target="_blank">Claude Code 2.1.321</a>｜<a href="https://github.com/QwenLM/qwen-code/releases/tag/v0.27.1" rel="noopener noreferrer" target="_blank">Qwen Code 0.27.1</a>｜<a href="https://github.com/QwenLM/qwen-code/releases/tag/sdk-typescript-v0.1.31" rel="noopener noreferrer" target="_blank">TypeScript SDK 0.1.31</a>。</p>
+<footer><a class="top" href="#top">返回顶部</a><p>本报告为 2026-11-10 中文正文的逐义完整镜像。所有官方外链直接指向原始资料。无 CDN、无外部脚本、无外部字体、无图片。发布日期与补录日期严格区分。</p></footer></main></div></body></html>
