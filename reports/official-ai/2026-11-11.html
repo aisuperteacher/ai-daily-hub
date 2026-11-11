@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="light"><title>全球 AI 大模型与 Agent 技术官方日报｜2026-11-11</title><style>
+:root{--cream:#f5f3ea;--paper:#fffdfa;--ink:#1a2831;--yellow:#f9d76a;--mint:#a5dfcd;--pink:#f2b9ac;--border:#8f9897;--blue:#125d74}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.85 system-ui,-apple-system,'Segoe UI','Microsoft YaHei','PingFang SC',sans-serif;overflow-wrap:anywhere}a{color:var(--blue);text-decoration-thickness:1px;text-underline-offset:3px}a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}.hero{padding:34px max(20px,calc((100% - 1120px)/2));background:var(--yellow);border-bottom:4px solid var(--ink)}.hero .eyebrow{font-size:12px;font-weight:800;letter-spacing:.16em}.hero h1{margin:9px 0 8px;font-size:clamp(28px,4.5vw,47px);line-height:1.25;letter-spacing:-.035em;max-width:1020px}.hero p{margin:6px 0;font-weight:550;font-size:14px}.layout{max-width:1200px;margin:24px auto 64px;display:grid;grid-template-columns:210px minmax(0,1fr);gap:20px;padding:0 15px}.nav{background:var(--paper);border:1px solid var(--border);border-top:4px solid var(--ink);padding:14px;position:sticky;top:14px;align-self:start;border-radius:5px}.nav b{font-size:12px;letter-spacing:.07em}.nav a{display:block;padding:7px 2px;font-size:12.5px;line-height:1.45;text-decoration:none}.nav a:hover{text-decoration:underline}.sheet{min-width:0;background:var(--paper);border:1px solid #d6d7d0;border-radius:9px;padding:22px clamp(16px,4vw,38px);box-shadow:0 10px 22px #17242b0a}h1{font-size:clamp(27px,4vw,39px);line-height:1.35}h2{font-size:clamp(21px,2.6vw,27px);margin:38px 0 17px;line-height:1.42;border-bottom:3px solid var(--ink);padding-bottom:9px;scroll-margin-top:15px}h3{font-size:20px;line-height:1.45;margin:30px 0 12px}p{margin:11px 0 16px}li{margin:7px 0}ul,ol{padding-left:24px}blockquote{margin:15px 0;padding:10px 16px;background:#eff8f4;border-left:4px solid var(--blue)}strong{font-weight:750}.table-scroll{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:6px;border:1px solid #ccd4d2;margin:18px 0 23px}table{width:100%;border-collapse:collapse;min-width:660px;font-size:13px;line-height:1.6}th,td{text-align:left;vertical-align:top;padding:10px 11px;border:1px solid #d9dfdc}th{background:var(--mint);font-weight:750}tr:nth-child(even){background:#f6f9f7}code{font:.89em Consolas,'Cascadia Code',monospace;background:#edf0ed;padding:1px 4px;border-radius:3px}pre{background:#1d2d38;color:#e8f5f4;font:13px/1.65 Consolas,'Cascadia Code',monospace;padding:15px 17px;border-radius:6px;max-width:100%;overflow-x:auto;white-space:pre;-webkit-overflow-scrolling:touch}pre code{padding:0;background:none;color:inherit;font:inherit}.foot{margin-top:40px;border-top:2px solid var(--ink);padding:17px 0;font-size:12px;color:#5a6868}.back{display:inline-block;border:1px solid var(--ink);border-radius:4px;background:var(--yellow);padding:5px 12px;text-decoration:none;color:var(--ink);font-weight:750}
+@media(max-width:800px){.layout{display:block;margin:0;padding:0 0 28px}.nav{position:relative;top:0;border:0;border-bottom:1px solid var(--border);padding:8px 12px;border-radius:0;white-space:nowrap;overflow-x:auto}.nav b{display:block}.nav-links{display:flex;gap:12px}.nav a{flex:none}.sheet{padding:16px 15px 30px;border:0;border-radius:0;box-shadow:none}.hero{padding:24px 17px}.hero h1{font-size:30px}body{font-size:15px}table{min-width:590px;font-size:12px}h2{margin-top:31px;font-size:22px}h3{font-size:18px}}
+@media(max-width:420px){.sheet{padding:12px 13px 22px}.hero h1{font-size:27px}.hero{padding:18px 13px}pre{font-size:11px;padding:12px}table{min-width:550px}}
+@media print{.nav{display:none}.layout{display:block;margin:0;padding:0}.sheet{box-shadow:none;border:0}.hero{background:white}.table-scroll{overflow:visible}table{min-width:0}a{text-decoration:underline}h2,h3{break-after:avoid}}
+</style></head><body>
+<header class="hero" id="top"><div class="eyebrow">OFFICIAL AI DAILY · ENGINEERING INTELLIGENCE</div><h1>全球 AI 大模型与 Agent 技术官方日报</h1><p>2026-11-11 · 北京时间 · 13 家官方巡检 · 原文完整版</p></header><div class="layout"><nav class="nav" aria-label="目录"><b>本期目录 / CONTENTS</b><div class="nav-links"><a href="#section-1">一、今日必看摘要</a><a href="#section-2">二、重要更新的七维技术分析</a><a href="#section-3">三、补充工程观察：不计入今日新发布</a><a href="#section-4">四、13 家厂商官方巡检状态表</a><a href="#section-5">五、经官方核验的版本与 Model ID 基线</a><a href="#section-6">六、跨厂商兼容性和迁移矩阵</a><a href="#section-7">七、今日工程行动 Checklist</a><a href="#section-8">八、综合判断</a></div></nav><main class="sheet"><h1>全球 AI 大模型与 Agent 技术官方日报</h1>
+<p><strong>2026 年 11 月 11 日（星期三）｜北京时间｜13 家厂商巡检</strong></p>
+<p>本期以 11 月 10 日已归档日报为去重基线，重点核查北京时间 <strong>11 月 10 日上午至 11 月 11 日 08:08</strong> 的官方发布。所有时间以官方 Release/Changelog 标记为依据；GitHub 页面通常显示 UTC 时间，下文同时换算北京时间。由于部分官方网站采用动态目录，不能完整检索的项目明确标记&ldquo;未能完整核实&rdquo;，不以没有搜索结果推断没有发布。</p>
+<h2 id="section-1">一、今日必看摘要</h2>
+<p><strong>今日有重要官方新增，值得优先阅读以下三项。</strong></p>
+<ol>
+<li><strong>必看｜Qwen Code v0.27.2 正式版</strong>：11 月 11 日 03:22 北京时间发布。新增企业 IM/邮件 Channel 管理、Mods 模型调用与持久化、Skill 跨工作空间导入、Agent 交付回执、Token 与缓存指标；<strong>官方明确列出依赖升级的 Breaking Change</strong>。对于 Skills、Hooks、插件、Agent Runtime、自动化交付和可观测性最有价值。<a href="https://github.com/QwenLM/qwen-code/releases/tag/v0.27.2">官方 Release</a>。</li>
+<li><strong>必看｜Kimi Code v2.5.3 正式版</strong>：11 月 10 日 21:06 北京时间发布。修复 Windows 上使用 <code>npx</code> 等脚本命令启动 stdio MCP Server 失败的问题，同时增加会中打断模型生成、在同一轮继续执行的 Steering API。对 Windows/PowerShell、MCP 和长任务交互有直接价值。<a href="https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%402.5.3">官方 Release</a>。</li>
+<li><strong>建议看｜Google Gen AI Java SDK v2.0.0（明确标记历史遗漏补录）</strong>：实际发布于 <strong>11 月 6 日 10:35 北京时间</strong>，不是今天的新版本。该版本把 Gemini Developer API 默认版本从 <code>v1beta</code> 改成 <code>v1</code>，使部分 <code>-latest</code> 模型别名不再可用，并修改一个 Java 返回值类型。对于 Java/Spring Boot 应用是必须检查的真实 Breaking Change。<a href="https://github.com/googleapis/java-genai/releases/tag/v2.0.0">官方 Release</a>。</li>
+</ol>
+<p>另有两项较小但值得记录的更新：<strong>Claude Code v2.1.322</strong> 增加 Vertex AI 的 Fast Mode 支持；<strong>Codex CLI v0.167.1</strong> 发布了正式维护版本。两者不与重大模型发布混淆。</p>
+<h2 id="section-2">二、重要更新的七维技术分析</h2>
+<h3>1. 阿里巴巴 / Qwen：Qwen Code v0.27.2</h3>
+<p><strong>① 厂商、标题、版本、日期、官方来源</strong></p>
+<p>官方标题为 <em>Release v0.27.2</em>；正式版 <code>v0.27.2</code>，2026 年 11 月 10 日 19:22 UTC，即北京时间 <strong>11 月 11 日 03:22</strong>。前一个正式版为 <code>v0.27.1</code>；<code>v0.27.2-preview.0</code> 是预发布，不能代替正式版计数。配套 TypeScript SDK <code>v0.1.32</code> 于 11 月 10 日 20:18 UTC 发布，声明打包 CLI <code>0.27.2</code>。</p>
+<p>原文：<a href="https://github.com/QwenLM/qwen-code/releases/tag/v0.27.2">Qwen Code v0.27.2</a>、<a href="https://github.com/QwenLM/qwen-code/releases/tag/sdk-typescript-v0.1.32">TypeScript SDK v0.1.32</a>。</p>
+<p><strong>② 核心变化、技术机制和关键概念</strong></p>
+<ul>
+<li><strong>Channel 管理</strong>：Web Shell 增加微信、QQ 和 Email Channel 配置；支持部分渠道的二维码登录、扫码进度、身份信息与退出。意味着 Agent 的任务入口从终端扩展到消息渠道；具体渠道能否使用仍取决于服务环境、账号、网络和权限。</li>
+<li><strong>Mods 能力</strong>：<code>$.model.complete(request, {signal})</code> 可以执行一次性文本模型调用，不继承完整会话历史、工具或额外系统指令；<code>ui.render</code> 可改变终端中显示的 AssistantMessage 文本，但不改变原始存储和复制内容；<code>$.store</code> 用于跨会话保存插件自身的数据。</li>
+<li><strong>会话记忆和管理</strong>：<code>/btw</code> 已回答的旁路问题可纳入会话上下文，最近最多回放 20 条；Managed Agent 增加私有追问与手动或可选自动 Recap。自动 Recap 默认关闭，不能把它宣传为默认开启的长期记忆。</li>
+<li><strong>Skill 导入</strong>：支持从选定会话的原始 Runtime 工作空间导入 Skill，并显式安装，不需要重新上传。这里&ldquo;导入&rdquo;不是自动信任：来源目录、文件内容、能力和版本仍需审批。</li>
+<li><strong>交付与观测</strong>：多段 Channel 发送保留每段回执；Web Shell 展示轮数、输出速度、总 Token、缓存命中率；Managed 活动诊断增加工具耗时、有效样本和代码行变更数据。</li>
+<li><strong>可靠性与权限</strong>：Agent Host Enrollment/Replace 在回复丢失后允许安全重试；PR Watch 可限定活跃监控绑定；挂起的审批可以触发终端铃声或桌面通知。</li>
+</ul>
+<p><strong>明确的兼容性风险：</strong> Release 的 Breaking Changes 一节列出 <code>fix(deps)!</code>，涉及 SDK 和 Web Shell 所带依赖升级。虽然官方没有在这段摘要中列明所有可能受影响的下游接口，但<strong>不能将本次版本标为&ldquo;无破坏性变更&rdquo;</strong>。</p>
+<p><strong>③ 为什么有价值</strong></p>
+<p>企业 Agent 的长期可靠性不仅取决于基础模型。任务可能经由多个 Channel 进入，调用多个 Skill、工具与子 Agent，最终分多段输出。任一环节丢失确认信息，系统便可能把&ldquo;已发送请求&rdquo;错判为&ldquo;已交付结果&rdquo;。</p>
+<p>本次增加的逐段回执、审批展示、工具执行诊断和安全重试，恰好覆盖这些工程问题。Token 和缓存命中率可用来建立成本分析，但并不代表 Qwen 已经公开证明延迟或成本下降了某个百分比；没有独立基准，本期不引用此类推测。</p>
+<p><strong>④ 适用产品和场景</strong></p>
+<p>适用于企业智能客服、内部 Coding Agent、消息驱动业务助手、自动化 PR 审核、企业 Skill 平台、多个业务渠道共用的 Agent Runtime，以及需要长期可恢复运行的工作流。</p>
+<p><strong>⑤ 对软件开发、企业 Gateway 和分布式架构的帮助</strong></p>
+<p>建议把系统分成三个逻辑层次：<strong>入口适配层（Channel）&rarr; Agent Runtime 与 Skill Registry &rarr; 工具/模型 Gateway</strong>。入口层负责身份与授权，Runtime 负责任务状态、审批和回执，Gateway 负责模型能力选择、认证、速率限制、成本及日志。</p>
+<p>在 Spring Boot + Nacos 或任意其他企业技术栈里，可以保存：</p>
+<pre><code class="language-text">run_id
+channel_id
+message_id
+tool_call_id
+idempotency_key
+delivery_segment_id
+delivery_status
+skill_id + skill_version
+provider + model_id
+input_tokens / output_tokens / cached_tokens
+</code></pre>
+<p>不要把&ldquo;插件可调用模型&rdquo;理解为&ldquo;插件可绕开审批&rdquo;。<code>$.model.complete</code> 应受 Token 预算、模型白名单、超时、取消信号和敏感信息策略限制。<code>ui.render</code> 修改的是展示，不应覆写审计日志中的原始模型响应。<code>$.store</code> 也应有配额、隔离和清理策略。</p>
+<p><strong>⑥ 阅读、试用、迁移与生产回归</strong></p>
+<p>先在隔离的 Windows PowerShell 测试环境核验版本：</p>
+<pre><code class="language-powershell">node --version
+qwen --version
+npm view @qwen-code/qwen-code version
+
+npm install -g @qwen-code/qwen-code@0.27.2
+qwen --version
+</code></pre>
+<p>之后依次实施：记录 SDK 和 CLI 版本；建立只使用合成数据的测试 Skill；测试 Mods 单次调用与取消；测试 <code>ui.render</code> 是否仅修改展示；重启会话后核对 <code>$.store</code>；用两段测试消息验证每段交付回执；模拟审批等待、客户端断线和 Host Enrollment 重试；最后检查令牌、日志和 Token 统计。</p>
+<p><strong>验收标准：</strong> 状态可回读，重复请求不产生重复业务副作用，显示内容与存储内容可区分，审批不越权，取消可生效，日志不泄漏凭据，回滚旧版本后主要流程仍能运行。</p>
+<p>本版本是 <strong>Coding Harness/SDK</strong> 更新，不意味着 Qwen 基础模型的 Context、Thinking、Model ID、模型许可、Token 单价或部署区域发生变化。API 自定义 Base URL 和第三方供应商的能力须单独核实。</p>
+<p><strong>⑦ 结论及优先级：必看。</strong> 如果使用 Qwen Code、Managed Agent、Web Shell、Mods 或 Skill 管理，应先读完整 Release 并在测试环境验收；存在明确 Breaking Change，暂不建议无回归测试地生产升级。其他工具链用户可以借鉴其架构，不必迁移。</p>
+<h3>2. Moonshot AI / Kimi：Kimi Code v2.5.3</h3>
+<p><strong>① 官方信息</strong></p>
+<p>官方标题 <code>@moonshot-ai/kimi-code@2.5.3</code>，正式 Release，2026 年 11 月 10 日 13:06 UTC，即北京时间 <strong>11 月 10 日 21:06</strong>。前一个稳定版本为 <code>2.5.2</code>；<code>2.6.0-canary...</code> 是 Canary 预发布而非稳定版本。</p>
+<p>原文：<a href="https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%402.5.3">Kimi Code v2.5.3</a>。</p>
+<p><strong>② 核心变化与技术机制</strong></p>
+<p>第一，Windows 上通过脚本命令（例如 <code>npx</code>）启动的 stdio MCP Server 曾可能无法启动，新版修复了这一问题。MCP stdio 的典型机制是：Agent Host 启动子进程，通过标准输入/输出发送 JSON-RPC 消息，并把工具定义加载到会话。</p>
+<p>第二，Steering 可以中断当前活跃的模型请求，并在<strong>同一个 Turn 内继续</strong>。官方增加了：</p>
+<pre><code class="language-http">POST /api/v1/sessions/{session_id}/steer
+</code></pre>
+<p>这与新开一个普通用户消息不同。Steering 是对运行中任务的纠偏能力：例如 Agent 正在扫描巨大代码库时，用户要求&ldquo;不要继续改代码，只分析原因&rdquo;。</p>
+<p>第三，Web UI 改进交互并修复了一些已知问题，但 Release 没有逐项给出细节，不额外推断。</p>
+<p><strong>③ 为什么有价值</strong></p>
+<p>Windows MCP 是实际工程常见问题。一个 Agent 在 Linux/macOS 可以启动工具，不代表在 Windows 上的 Node/npm、<code>.cmd</code> 包装层和进程调用方式也能一致工作。Steering 则减少用户为纠正路线而反复取消、重建整个 Agent 任务的需求。</p>
+<p>这不意味着工具调用会被自动撤销；已经提交到数据库或外部 API 的副作用，仍须依靠业务幂等和补偿策略处理。</p>
+<p><strong>④ 适用场景</strong></p>
+<p>适用于 Windows 11 + PowerShell、Node MCP Server、代码审查 Agent、长时间检索或重构、在线人机协作、企业远程 Agent 控制台。</p>
+<p><strong>⑤ 对 Java、Gateway 和 Agent Runtime 的帮助</strong></p>
+<p>企业可将 <code>steer</code> 视为一个显式控制事件，和 <code>cancel</code>、<code>resume</code>、<code>approve</code>、<code>reject</code> 分开。控制请求应绑定 <code>session_id</code> 和操作者身份，记录事件版本，防止过期纠偏影响新一轮任务。</p>
+<p>在 Spring Boot 侧可以将该类控制命令路由到 Agent Orchestrator，但不能假定所有供应商都有同名端点；跨厂商 Gateway 应暴露统一业务命令，再由适配器转换为各平台协议。</p>
+<p><strong>⑥ 实践步骤和验收</strong></p>
+<p>在 Windows 上准备一个你有权限启动的、仅返回测试文本的 stdio MCP Server。先检查 Node/npm，然后通过 Kimi Code 的官方配置方法注册该 MCP Server，确认其工具能够列出和调用。尤其验证指向 <code>npx</code> 或 <code>.cmd</code> 的启动命令，标准输出不得夹杂非 MCP 协议日志。</p>
+<p>再使用测试环境运行一个可长时间生成但没有外部副作用的任务，在运行中发送 Steering 指令，确认本轮任务改变执行方向，并记录原任务的中断/继续状态。</p>
+<pre><code class="language-powershell">node --version
+npm --version
+# 配合官方安装与 MCP 配置，先核对实际版本
+</code></pre>
+<p>Steering REST 路径是官方提供的接口定义；具体鉴权、请求 Body、会话服务启用条件必须依据 Kimi Code 对应 API 文档，不应猜测请求参数或直接访问生产会话。</p>
+<p><strong>验收标准：</strong> Windows stdio MCP 能成功启动和关闭；不会出现重复工具声明；Steering 对正确会话生效；权限隔离和审计完整；执行中断不被记作业务事务回滚。</p>
+<p><strong>兼容性/成本：</strong> 本次没有宣布 Kimi 基础模型 Context、Thinking、API 定价、Token 计数规则或模型许可的新变化。用户必须区分 Kimi Code CLI、自建服务、Moonshot API 及第三方代理的实际能力。</p>
+<p><strong>⑦ 结论及优先级：必看。</strong> 对 Windows + MCP 用户建议优先试用；没有相关故障和 Steering 需求的用户可在正常升级窗口处理。</p>
+<h3>3. Google：Gen AI Java SDK v2.0.0（历史遗漏补录）</h3>
+<p><strong>① 官方信息</strong></p>
+<p>官方版本 <code>googleapis/java-genai</code> <strong>v2.0.0</strong>，发布于 2026 年 11 月 6 日 02:35 UTC，即北京时间 <strong>11 月 6 日 10:35</strong>。这不是 11 月 11 日的新发布，而是对 Java 企业应用影响较大的历史遗漏，单独标注以避免误导。</p>
+<p>官方原文：<a href="https://github.com/googleapis/java-genai/releases/tag/v2.0.0">Google Gen AI Java SDK v2.0.0 Release</a>。</p>
+<p><strong>② 核心变化与机制</strong></p>
+<p>最关键的 Breaking Change：<strong>Gemini Developer API 默认 <code>apiVersion</code> 由 <code>v1beta</code> 变为 <code>v1</code></strong>。之前依赖默认版本的 Java 项目，即使业务代码没有改变，升级 SDK 后也可能得到不同的接口能力或错误。</p>
+<p>具体地，<code>gemini-flash-latest</code>、<code>gemini-flash-lite-latest</code>、<code>gemini-pro-latest</code> 等别名只在 <code>v1beta</code> 中可用；迁移到默认 <code>v1</code> 后，必须改用可用的固定模型 ID，或者明确指定 <code>v1beta</code>。对于 <code>.enterprise(true)</code> 的 Gemini Enterprise/Vertex 客户端，官方说明默认仍为 <code>v1beta1</code>，不受这次 Developer API 默认变更影响。</p>
+<p>此外，Interactions 的 <code>CodeExecutionResultStep.result</code> Java 类型从 <code>String</code> 改为 <code>CodeExecutionResultStepResult</code> 联合类型，支持多模态结果。使用这一字段的代码需要调整构造、读取和类型判断。</p>
+<p><strong>③ 为什么有价值</strong></p>
+<p>这是真正可能在升级时导致生产服务异常的 SDK 兼容性变更，而非模型能力宣传。尤其在多个微服务通过统一 Gateway 使用 Gemini 时，如果某些服务用原厂 Java SDK、另一些服务直接调用 HTTP API，默认版本可能出现隐蔽分叉。</p>
+<p><strong>④ 适用业务场景</strong></p>
+<p>Java/Spring Boot 调用 Gemini、Vertex AI、Interactions API；对模型别名敏感的企业模型路由；多模态代码执行结果读取；异步调用和 Token 刷新管理。</p>
+<p><strong>⑤ 企业架构的具体帮助</strong></p>
+<p>建议在模型能力注册表里不仅记录 <code>provider + model_id</code>，还要记录：</p>
+<pre><code class="language-text">endpoint
+api_version
+sdk_name
+sdk_version
+region
+supported_modalities
+thinking_schema
+tool_schema
+authentication_mode
+</code></pre>
+<p>生产服务不能单靠 SDK 默认配置来确定协议版本。Nacos 配置中心可以发布明确的 API 版本与模型路由，但版本变更应先经过验证和灰度发布。对多语言服务同样如此：Python、Node.js、Java 的 SDK 默认值必须分别核对。</p>
+<p><strong>⑥ Java/PowerShell 实践步骤</strong></p>
+<p>先执行 Maven 依赖审计，确认当前项目实际引入版本：</p>
+<pre><code class="language-powershell">mvn dependency:tree "-Dincludes=com.google.genai:google-genai"
+</code></pre>
+<p>在升级至 2.0.0 后，若暂时需要旧版 Developer API 行为，可按官方文档在 Java 代码中明确设置：</p>
+<pre><code class="language-java">import com.google.genai.Client;
+import com.google.genai.types.HttpOptions;
+
+Client client = Client.builder()
+    .httpOptions(
+        HttpOptions.builder().apiVersion("v1beta").build()
+    )
+    .build();
+</code></pre>
+<p>或通过环境变量配置（此处是 PowerShell 语法）：</p>
+<pre><code class="language-powershell">$env:GOOGLE_GENAI_API_VERSION = "v1beta"
+</code></pre>
+<p>官方说明代码中 <code>HttpOptions</code> 的配置优先于环境变量。<strong>这只是兼容措施，不代表建议长期停留在 Beta。</strong> 应逐一检查固定模型 ID 在目标 API 版本、账号和区域是否真实可用，再迁移到 <code>v1</code>。</p>
+<p>如果代码使用 Interactions 中的 <code>CodeExecutionResultStep.result()</code>，还要按照官方 Release 改成新联合类型处理字符串或多模态内容，避免编译错误与运行时错误。</p>
+<p>验收至少覆盖：启动及认证、模型发现、别名、结构化输出、Thinking、Function Calling、文件上传、长请求、流式输出、429/5xx 重试、响应 Schema、Token Usage；Vertex 和 Developer API 分开测试。</p>
+<p><strong>⑦ 结论及优先级：建议看（Java 用户实际为必看）。</strong> 如果计划从 1.x 升级到 2.0.0，应按重大版本迁移处理；没有使用 Google Java SDK 的用户无需迁移。</p>
+<h3>4. Anthropic：Claude Code v2.1.322</h3>
+<p><strong>① 官方信息</strong></p>
+<p>正式版 <code>v2.1.322</code>，GitHub Release 记录为 2026 年 11 月 10 日 02:29 UTC，即北京时间 <strong>11 月 10 日 10:29</strong>。前一已报道版本为 <code>2.1.321</code>。</p>
+<p>原文：<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.322">Claude Code v2.1.322</a>。</p>
+<p><strong>② 核心变化</strong></p>
+<p>官方本次只列出一项：<strong>在 Google Vertex AI 的 global、us、eu 区域支持 Fast Mode</strong>。当 Vertex 拒绝该模式时，客户端会回退到标准速度。不能据此认定其他区域、其他模型、其他供应商或所有账号都已支持。</p>
+<p><strong>③ 为什么有价值</strong></p>
+<p>更快的交互对 AI Coding、长循环工具任务和多人并行 Agent 可能有价值，但&ldquo;支持 Fast Mode&rdquo;不等于已经证明用户侧 P95 延迟下降。尤其需要注意<strong>降级回退会改变性能预期</strong>：请求成功不一定意味着仍以 Fast Mode 服务。</p>
+<p><strong>④ 场景</strong></p>
+<p>企业使用 Vertex AI 托管 Claude、Claude Code 进行编程或 Agent 执行，以及对低延迟有要求的内部研发助手。</p>
+<p><strong>⑤ 工程帮助</strong></p>
+<p>企业 AI Gateway 应将&ldquo;请求的速度档位&rdquo;和&ldquo;实际服务的速度档位&rdquo;区分记录，连同区域、模型、延迟、Token 和费用一起写入指标。不能以 <code>fast=true</code> 简单判定最终调用必然获得快速服务。</p>
+<p><strong>⑥ 操作和回归</strong></p>
+<p>在 Windows PowerShell 中：</p>
+<pre><code class="language-powershell">claude --version
+claude doctor
+</code></pre>
+<p>使用官方支持的安装或升级方式，在 Vertex 测试项目中对支持的模型验证快速/标准模式。记录 TTFT、总时长、P50/P95、错误码、实际服务等级和费用，再故意模拟&ldquo;不支持 Fast Mode&rdquo;或被拒绝的情况，确认正常回退且无无限重试。</p>
+<p><strong>费用与模型限制：</strong> v2.1.322 Release 未提供新的统一 Fast Mode 单价；具体计费与支持模型应以所使用的 Vertex/Anthropic 官方报价和权限为准，不能套用其他供应商价格。</p>
+<p><strong>⑦ 结论及优先级：建议看。</strong> Vertex Claude Code 用户可以测试；不走 Vertex 的用户本期可跳过。无理由仅为此变更迁移多云部署。</p>
+<h3>5. OpenAI：Codex CLI v0.167.1</h3>
+<p><strong>① 官方信息</strong></p>
+<p>正式 Release <code>rust-v0.167.1</code>，发布于 2026 年 11 月 10 日 21:32 UTC，北京时间 <strong>11 月 11 日 05:32</strong>。在当前官方 Releases 页面属于最新正式版本；另有 <code>0.169.0-alpha.9</code>，属于 Alpha 而非稳定版。</p>
+<p>原文：<a href="https://github.com/openai/codex/releases/tag/rust-v0.167.1">Codex 0.167.1</a>。</p>
+<p><strong>② 核心变化</strong></p>
+<p>官方该条 Release 只提供从 <code>rust-v0.167.0</code> 到 <code>rust-v0.167.1</code> 的完整变更对比入口和构建产物，<strong>没有逐项解释用户可见的主要功能变化</strong>。因此可以确定正式版本发布，但不能凭补丁号猜测具体修复了哪些权限、MCP、Windows 或模型问题。</p>
+<p><strong>③ 为什么有价值</strong></p>
+<p>这是 Codex 稳定版基线发生变化的信号，适合纳入工具版本治理与可复现构建；目前不具备足够证据列为重大新功能。</p>
+<p><strong>④ 场景</strong></p>
+<p>Codex CLI 的日常编程、Windows 环境、CI/CD 和自动化代码修改。</p>
+<p><strong>⑤ 对工程架构的帮助</strong></p>
+<p>将工具版本与模型版本分别锁定。例如 <code>codex_cli_version=0.167.1</code> 不代表 OpenAI 模型 ID 或 Responses API 发生改变；第三方 Base URL、权限策略、MCP 和 Skill 加载行为都应独立测试。</p>
+<p><strong>⑥ 实践和验收</strong></p>
+<p>在 PowerShell 中先记录当前版本：</p>
+<pre><code class="language-powershell">codex --version
+npm view @openai/codex version
+</code></pre>
+<p>建议通过官方安装渠道升级，并使用既有测试项目验证：只读访问、代码编辑、Diff、Git 工作区隔离、Shell 权限拒绝、MCP 服务加载、代理网络、长会话 Compaction 和 CLI 退出码。</p>
+<p><strong>验收标准：</strong> 同一固定测试集没有明显回归；文件权限、模型选择、Token 用量及错误日志符合预期；出现问题能回退到上一个已验证版本。</p>
+<p><strong>⑦ 结论及优先级：建议看，常规维护升级。</strong> 无具体修复需求时不必抢先覆盖生产 CLI。官网 <a href="https://developers.openai.com/api/docs/changelog">API Changelog</a> 最近明确列出的重大条目仍为 11 月 5 日的 <code>gpt-6-cyber</code>，不把该历史模型公告包装成今日新闻。</p>
+<h2 id="section-3">三、补充工程观察：不计入今日新发布</h2>
+<p><strong>OpenAI API：</strong> <a href="https://developers.openai.com/api/docs/changelog">API Changelog</a> 的最新可见条目为 11 月 5 日。Responses API、Agents API、Compaction 与模型退役仍按官方生命周期管理，未在本期发现可以确认为新发布的通用 API 破坏性变更。</p>
+<p><strong>Anthropic Platform：</strong> <a href="https://platform.claude.com/docs/en/release-notes/overview">Platform Release Notes</a> 最近重大发布仍是 11 月 9 日的 <code>claude-fable-5-2</code> / <code>claude-mythos-5-2</code>，昨日已报道，不重复占用今日名额。尤其注意这些模型对 Thinking Prefix、旧 Computer Tool 协议以及跨模型思考块的兼容性约束。</p>
+<p><strong>xAI：</strong> <a href="https://docs.x.ai/developers/release-notes">Release Notes</a> 最近明确记录为 11 月 2 日的 Imagine 图像模型别名迁移。官方已提供 <code>grok-4.7</code>、Responses、工具与语音文档，但没有证据将现存文档误认为 11 月 11 日新发布。</p>
+<p><strong>TypeSafe AI：</strong> <a href="https://typesafe.ai/blog">官方博客</a>、<a href="https://docs.typesafe.ai/">开发文档</a>、<a href="https://api.typesafe.ai/redoc">API ReDoc</a> 已检查。当前可见 Jev 1.14.0 的历史说明、Choice/Score/Noul/Box 原语及实验能力。ReDoc 要求 JavaScript，无法可靠核对完整 API Schema，因此不能断言今天没有任何字段级修改；博客中关于延迟、校准和性能的厂商描述也不能直接等同独立验证。</p>
+<h2 id="section-4">四、13 家厂商官方巡检状态表</h2>
+<div class="table-scroll" tabindex="0"><table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>本期状态</th>
+<th>证据与限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI</td>
+<td><strong>小更新</strong></td>
+<td><a href="https://github.com/openai/codex/releases/tag/rust-v0.167.1">Codex CLI <code>0.167.1</code></a>，11/11 北京时间发布；<a href="https://developers.openai.com/api/docs/changelog">API Changelog</a> 无新的明确条目。</td>
+</tr>
+<tr>
+<td>Anthropic</td>
+<td><strong>小更新</strong></td>
+<td><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.322">Claude Code <code>2.1.322</code></a>，Vertex Fast Mode；Fable/Mythos 5.2 为昨天已报道的历史发布。</td>
+</tr>
+<tr>
+<td>Google / DeepMind</td>
+<td><strong>历史重要遗漏补录</strong></td>
+<td><a href="https://github.com/googleapis/java-genai/releases/tag/v2.0.0">Java Gen AI SDK <code>2.0.0</code></a> 发布于 11/6；<a href="https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/latest.md">Gemini CLI 最新可核实稳定版</a> 仍为 <code>0.67.0</code>；未发现新稳定版。</td>
+</tr>
+<tr>
+<td>xAI</td>
+<td><strong>经核验无重要新增</strong></td>
+<td><a href="https://docs.x.ai/developers/release-notes">API Release Notes</a> 最近为 11/2，Grok/Imagine/Voice 文档可检索。</td>
+</tr>
+<tr>
+<td>智谱 / Z.ai</td>
+<td><strong>部分核验，待补充</strong></td>
+<td><a href="https://docs.z.ai/release-notes/new-released">官方模型发布时间列表</a> 最新可见 8/26 GLM-5.3-Flash；Coding Plan/API 动态与官方模型仓库无法完整穷尽。</td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td><strong>经核验无重要新增</strong></td>
+<td><a href="https://api-docs.deepseek.com/updates/">官方 API Changelog</a> 最新明确日期 10/17，<code>deepseek-flash</code> 指向 V4.1-Flash-1017；无可靠本期新记录。</td>
+</tr>
+<tr>
+<td>腾讯</td>
+<td><strong>部分核验，未见重要新增</strong></td>
+<td>已核验<a href="https://cloud.tencent.com/document/product/1729">混元服务文档</a>与<a href="https://www.tencent.com/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/">11/4 Hy4 公告</a>；TokenHub 与全量模型服务动态无法彻底验证。</td>
+</tr>
+<tr>
+<td>阿里巴巴 / Qwen</td>
+<td><strong>重要更新</strong></td>
+<td><a href="https://github.com/QwenLM/qwen-code/releases/tag/v0.27.2">Qwen Code <code>0.27.2</code></a>、<a href="https://github.com/QwenLM/qwen-code/releases/tag/sdk-typescript-v0.1.32">配套 SDK <code>0.1.32</code></a>；<a href="https://help.aliyun.com/zh/model-studio/model-release-notes">百炼平台更新页</a>可查，未确认额外新模型公告。</td>
+</tr>
+<tr>
+<td>Moonshot AI / Kimi</td>
+<td><strong>重要更新</strong></td>
+<td><a href="https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%402.5.3">Kimi Code <code>2.5.3</code></a>；<a href="https://www.moonshot.ai/">官网最新研究</a>仍为 10/24 Kimi K3.1 Pro。</td>
+</tr>
+<tr>
+<td>字节跳动</td>
+<td><strong>部分核验，待补充</strong></td>
+<td><a href="https://www.bytedance.com/newsroom">公司新闻页</a>可查，Seed/方舟/Trae/即梦多产品动态不完整；不把旧 Seedance 公告作今日发布。</td>
+</tr>
+<tr>
+<td>TypeSafe AI</td>
+<td><strong>部分核验，未见重要新增</strong></td>
+<td><a href="https://typesafe.ai/blog">Jev 1.14.0、类型化原语</a>可查；动态 API Schema、实验能力与最新价格不能完整验证。</td>
+</tr>
+<tr>
+<td>Meta AI</td>
+<td><strong>经核验无重要开发者新增</strong></td>
+<td><a href="https://about.fb.com/news/2026/11/">新闻室</a>与<a href="https://ai.meta.com/blog/">AI 研究博客</a>已查；近期 Muse 相关内容属消费产品。未证实本期新 Llama 权重/许可/SDK 发布。</td>
+</tr>
+<tr>
+<td>百度</td>
+<td><strong>部分核验，待补充</strong></td>
+<td><a href="https://cloud.baidu.com/doc/qianfan/s/wmh4stwwr">千帆文档</a>及<a href="https://github.com/PaddlePaddle/PaddleOCR/releases">PaddleOCR Releases</a>可查；全量千帆模型上下架、实名/地域/计费变动不能穷尽。</td>
+</tr>
+</tbody>
+</table></div>
+<p>&ldquo;经核验无重要新增&rdquo;仅限本轮实际核查的官方来源，不是整个厂商所有产品绝对没有更新的保证。<strong>尤其对智谱、腾讯、字节、TypeSafe 和百度保留未完整核实状态。</strong></p>
+<h2 id="section-5">五、经官方核验的版本与 Model ID 基线</h2>
+<div class="table-scroll" tabindex="0"><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>当前核验标识</th>
+<th>正式性或限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Codex CLI</td>
+<td><code>0.167.1</code></td>
+<td>正式版；<code>0.169.0-alpha.9</code> 为 Alpha</td>
+</tr>
+<tr>
+<td>OpenAI API</td>
+<td><code>gpt-6-cyber</code></td>
+<td>11/5 既有特殊访问模型，非通用默认</td>
+</tr>
+<tr>
+<td>Claude Code</td>
+<td><code>2.1.322</code></td>
+<td>正式版</td>
+</tr>
+<tr>
+<td>Claude API</td>
+<td><code>claude-fable-5-2</code> / <code>claude-mythos-5-2</code></td>
+<td>11/9 历史基线；Mythos 需验证准入</td>
+</tr>
+<tr>
+<td>Gemini CLI</td>
+<td><code>0.67.0</code></td>
+<td>最新可确认稳定版</td>
+</tr>
+<tr>
+<td>Google Java Gen AI SDK</td>
+<td><code>2.0.0</code></td>
+<td>11/6 发布，存在明确 Breaking Changes</td>
+</tr>
+<tr>
+<td>xAI</td>
+<td><code>grok-4.7</code></td>
+<td>已知模型，实际 Context 与渠道须分开验证</td>
+</tr>
+<tr>
+<td>Z.ai</td>
+<td>GLM-5.3 / GLM-5.3-Flash</td>
+<td>历史模型基线，价格和 Model ID 需按渠道核实</td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td><code>deepseek-flash</code></td>
+<td>官方当前映射 DeepSeek-V4.1-Flash-1017</td>
+</tr>
+<tr>
+<td>腾讯混元</td>
+<td>Hy4</td>
+<td>11/4 已知模型，API ID 与权重许可需分别核对</td>
+</tr>
+<tr>
+<td>Qwen Code</td>
+<td>CLI <code>0.27.2</code></td>
+<td>正式版，含依赖 Breaking Change</td>
+</tr>
+<tr>
+<td>Qwen Code SDK</td>
+<td>TypeScript <code>0.1.32</code></td>
+<td>官方声明打包 CLI 0.27.2</td>
+</tr>
+<tr>
+<td>Kimi Code</td>
+<td><code>2.5.3</code></td>
+<td>正式版；2.6.0 Canary 不属于稳定版</td>
+</tr>
+<tr>
+<td>Kimi 模型</td>
+<td>K3.1 Pro</td>
+<td>历史模型基线，第三方渠道参数不作假定</td>
+</tr>
+<tr>
+<td>字节跳动</td>
+<td>Seedance 2.5 / Seedream 5.0 Pro</td>
+<td>已有产品基线，非今日新发布</td>
+</tr>
+<tr>
+<td>TypeSafe AI</td>
+<td>Jev <code>1.14.0</code></td>
+<td>实验能力及正式接口须分别校验</td>
+</tr>
+<tr>
+<td>Meta AI</td>
+<td>Muse 产品；Llama 开源生态</td>
+<td>消费产品标识不等于 API Model ID 或开放权重</td>
+</tr>
+<tr>
+<td>百度 PaddleOCR</td>
+<td><code>3.7.0</code></td>
+<td>6/11 发布，非千帆模型 ID</td>
+</tr>
+</tbody>
+</table></div>
+<p>本期没有新确认的、可以按统一口径比较的跨厂商 <strong>价格、P95 延迟、Benchmark 或 Token 成本</strong>。Claude、Qwen、Kimi、GLM、Gemini 等的模型服务与 Coding Agent 订阅、SDK 版本及第三方代理报价不允许混为一谈。</p>
+<h2 id="section-6">六、跨厂商兼容性和迁移矩阵</h2>
+<div class="table-scroll" tabindex="0"><table>
+<thead>
+<tr>
+<th>场景</th>
+<th>关键差异或风险</th>
+<th>迁移与回归要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Qwen Code <code>0.27.1 &rarr; 0.27.2</code></td>
+<td>SDK/Web Shell 依赖升级，Mods 和 Channel 扩展</td>
+<td>锁定版本、插件兼容、权限、消息交付回读</td>
+</tr>
+<tr>
+<td>Kimi Code <code>2.5.2 &rarr; 2.5.3</code></td>
+<td>Windows stdio MCP 与 Steering 控制语义</td>
+<td><code>npx</code> 启动、JSON-RPC、取消及重入测试</td>
+</tr>
+<tr>
+<td>Google Java SDK <code>1.x &rarr; 2.0</code></td>
+<td>默认 <code>v1beta &rarr; v1</code>、模型别名不兼容、Java 类型变化</td>
+<td>固定 <code>apiVersion</code>、模型发现、编译与协议回归</td>
+</tr>
+<tr>
+<td>Claude Code <code>2.1.321 &rarr; 2.1.322</code></td>
+<td>Vertex Fast Mode 可能回退</td>
+<td>区域、模型、服务档位、延迟与计费记录</td>
+</tr>
+<tr>
+<td>Codex CLI <code>0.167.0 &rarr; 0.167.1</code></td>
+<td>补丁内容缺少详细说明</td>
+<td>文件写入、权限、MCP、沙箱和 CLI 退出码</td>
+</tr>
+<tr>
+<td>多模型 API Gateway</td>
+<td>兼容 OpenAI 风格不代表 Thinking/Schema 相同</td>
+<td>能力注册表、参数校验、响应规范化</td>
+</tr>
+<tr>
+<td>长上下文和 Compaction</td>
+<td>SDK、模型、第三方渠道的限制不同</td>
+<td>真实窗口、缓存命中、摘要质量、截断与成本</td>
+</tr>
+<tr>
+<td>Agent Runtime 恢复</td>
+<td>执行成功、回执成功、业务提交成功不同</td>
+<td>Task ID、幂等键、回执、重试、补偿</td>
+</tr>
+<tr>
+<td>Agent Skills/Hooks/插件</td>
+<td>供应链污染、任意工具执行、会话数据泄漏</td>
+<td>签名/来源、审批、最小权限、审计</td>
+</tr>
+<tr>
+<td>多模态及开源部署</td>
+<td>模型权重许可、消费产品与服务 API 不一致</td>
+<td>许可证、数据地域、硬件、授权和合规审查</td>
+</tr>
+<tr>
+<td>Java/Spring Boot/Nacos</td>
+<td>配置发布与实际请求行为可能不一致</td>
+<td>配置版本、网关灰度、连接池/超时、回滚</td>
+</tr>
+<tr>
+<td>GitHub 日报交付</td>
+<td>生成 HTML 不代表 Pages 上线</td>
+<td>文件完整性、提交回读、索引回读、线上核验</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="section-7">七、今日工程行动 Checklist</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>优先阅读 Qwen Code v0.27.2 Breaking Changes，明确 SDK、Mods、Skill 和 Web Shell 的升级影响。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>在 Windows PowerShell 7 中检查 Kimi Code 的 stdio MCP 启动，尤其测试 <code>npx</code> 和 <code>.cmd</code>。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>设计一个安全 Steering 试验：长任务运行中修改方向，验证同一轮继续与审计。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>扫描 Java 项目是否使用 <code>com.google.genai:google-genai</code>，避免 2.0.0 默认 API 版本变化引发故障。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>如果升级 Google Java SDK，先固定 <code>apiVersion</code>，检查模型别名与 Interactions 新类型。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>在 Vertex 环境测试 Claude Code Fast Mode，区分请求档位与实际回退档位。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>对 Codex <code>0.167.1</code> 运行稳定版回归测试，勿把 Alpha 当作正式版。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>在 Agent Runtime 中建立分段交付、审批、工具执行和模型 Usage 的独立审计记录。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>检查多模型 Gateway 对 <code>base_url</code>、认证、Thinking 参数、工具 Schema、超时和 Usage 的适配。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>GitHub 自动归档继续坚持完整正文、HTML 完整性检查、原文一致性、提交及索引回读。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>对未完整核实的厂商继续标记待核验，绝不为了凑数量推测新发布。</li>
+</ul>
+<h2 id="section-8">八、综合判断</h2>
+<p><strong>本期最大的工程价值不是新的基础模型，而是 Agent Runtime 的可靠性、插件生态和多语言 SDK 兼容性。</strong></p>
+<p>Qwen Code 0.27.2 把消息渠道、插件能力、Skill 来源、交付回执及 Token 可观测性进一步联结起来，但同时出现明确 Breaking Change；Kimi Code 2.5.3 解决了 Windows MCP 实际接入障碍，并增加同一轮任务纠偏机制；Google Java SDK 2.0.0 虽是历史补录，却可能在 Java 生产系统升级时造成真实的 API 不兼容。</p>
+<p>对于企业 AI Gateway 和一人公司 AI 工具产品建设，建议今天优先完成两项小型可交付实验：<strong>Windows MCP 兼容性测试</strong>及<strong>Java Gemini API 版本迁移检查</strong>。这比单纯追逐新模型榜单更能形成可复用的工程能力。</p>
+<p>本日报均以可点击官方原文为依据；未验证的模型开放范围、商业价格、独立测评结果和所有厂商动态均如实标注，不虚构。</p>
+<div class="foot"><a class="back" href="#top">返回顶部</a><p>本报告为完整独立离线版，不包含外部脚本、字体或网络依赖；历史发布与本期新增区分，未经证实的信息如实标注。</p></div></main></div></body></html>
