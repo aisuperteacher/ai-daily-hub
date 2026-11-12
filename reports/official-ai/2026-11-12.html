@@ -1,0 +1,325 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>全球 AI 大模型与 Agent 技术官方日报｜2026-11-12</title><style>
+:root{--ink:#1d2633;--paper:#fffdfa;--bg:#f5f3ec;--edge:#b1bdc1;--yellow:#f3d86b;--mint:#b6e6d8;--accent:#0b5976}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:15.5px/1.78 system-ui,-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;overflow-wrap:anywhere}
+a{color:var(--accent);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}
+header{background:var(--yellow);padding:36px max(20px,calc((100vw - 1130px)/2));border-bottom:4px solid var(--ink)}
+header .eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:12px;font-weight:800}
+header h1{font-size:clamp(27px,4vw,48px);line-height:1.2;letter-spacing:-.04em;max-width:900px;margin:10px 0}
+header p{margin:0;font-weight:600}.layout{max-width:1200px;padding:24px 16px 70px;margin:auto;display:grid;grid-template-columns:208px minmax(0,1fr);gap:20px}
+aside{position:sticky;top:14px;align-self:start;background:var(--paper);border:1px solid var(--edge);border-radius:8px;padding:12px}aside a{display:block;text-decoration:none;padding:7px 8px;font-size:12px;border-radius:5px}aside a:hover{background:#f4e9bc}
+article{background:var(--paper);border:1px solid var(--edge);border-radius:10px;padding:26px 32px;min-width:0}article h1{display:none}h2{font-size:clamp(21px,2.4vw,27px);line-height:1.4;margin:37px 0 15px;border-bottom:3px solid var(--ink);padding-bottom:9px;scroll-margin-top:16px}h3{font-size:19px;margin:28px 0 12px;line-height:1.5}p{margin:11px 0 16px}li{margin:7px 0}ol,ul{padding-left:23px}
+table{border-collapse:collapse;width:100%;min-width:670px;font-size:12.6px;line-height:1.58}th,td{text-align:left;vertical-align:top;padding:9px;border:1px solid var(--edge)}th{background:var(--mint)}tr:nth-child(even){background:#f4f8f6}.tablewrap{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:16px 0 22px}
+pre{max-width:100%;overflow-x:auto;padding:16px;background:#172535;color:#e4eff6;border-radius:7px;font:13px/1.6 ui-monospace,Consolas,monospace}code{font:.91em ui-monospace,Consolas,monospace;background:#e8eced;padding:2px 4px;border-radius:4px}pre code{font:inherit;color:inherit;background:none;padding:0;white-space:pre}
+strong{font-weight:750}blockquote{border-left:4px solid var(--accent);background:#e9f5f2;margin:16px 0;padding:8px 15px}
+footer{color:#65717a;border-top:1px solid var(--edge);margin-top:40px;padding-top:12px;font-size:12px}
+@media(max-width:800px){.layout{display:block;margin:0;padding:0 0 40px}aside{position:static;display:flex;overflow:auto;white-space:nowrap;margin:10px 10px 0;padding:6px;gap:5px}aside a{flex:0 0 auto;border:1px solid var(--edge)}article{border:0;border-radius:0;padding:16px 14px}header{padding:24px 16px}header h1{font-size:29px}body{font-size:14px}h3{font-size:17px}table{min-width:590px}pre{font-size:12px}}
+@media print{aside{display:none}.layout{display:block}article{border:none}header{background:none}table{min-width:0}}
+</style></head><body><header><div class="eyebrow">OFFICIAL AI DAILY · 13 PROVIDERS</div><h1>全球 AI 大模型与 Agent 技术官方日报</h1><p>2026-11-12 · 北京时间 · 官方增量核验</p></header><div class="layout"><aside aria-label="报告目录"><a href="#sec-1">一、今日必看摘要</a><a href="#sec-2">二、逐条更新：七维详细分析</a><a href="#sec-3">三、13 家厂商官方巡检状态表</a><a href="#sec-4">四、正式版本与 Model ID 基线（仅经可靠核验的标识）</a><a href="#sec-5">五、跨厂商兼容性与迁移矩阵</a><a href="#sec-6">六、今天可直接操作的工程 Checklist</a><a href="#sec-7">七、综合判断</a></aside><article><h1>全球 AI 大模型与 Agent 技术官方日报</h1>
+<p><strong>日期：2026 年 11 月 12 日（星期四）｜北京时间 08:46 核查截点｜独立完整日报</strong></p>
+<p><strong>增量口径：</strong> 与 2026-11-11 的 <code>official-ai</code> 归档逐项去重，主要检查上期完成后至本期核查截点的厂商官方公告、Release、API 文档及研究更新。涉及较早发布但昨天未收录的内容，一律明确写为“历史遗漏补录”。截至目前未发现需要立即全线替换生产基础模型的新消息；有新的 Agent 工程工具变化值得关注。</p>
+<h2 id="sec-1">一、今日必看摘要</h2>
+<ol>
+<li><strong>必看｜阿里巴巴 Qwen Code <code>v1.0.0-preview</code>。</strong> GitHub 官方于 <strong>11 月 11 日 03:55 UTC（北京时间 11:55）</strong>发布，属 <strong>Preview 预发布而非 1.0 正式版</strong>。融合 Qoder 与 Qwen Code 的编码 Agent 能力，提供无需单独安装 Node.js 的 Windows/macOS/Linux 原生安装包、第三方模型兼容端点、会话恢复、非交互执行。迁移风险高于普通补丁更新。官方：<a href="https://github.com/QwenLM/qwen-code/releases/tag/v1.0.0-preview">Qwen Code 1.0 Preview</a>。</li>
+<li><strong>建议看｜Google Gemini CLI <code>v0.68.0</code> 稳定版，附 <code>v0.69.0-preview.0</code>。</strong> 官方两项 GitHub Release 发布于 <strong>11 月 10 日 21:17 / 21:05 UTC（北京时间 11 月 11 日 05:17 / 05:05）</strong>；昨天日报未收录，因此是<strong>历史遗漏补录</strong>。稳定版改善扩展验证、Hooks、Windows 文件安全、模型状态与 429 可观测性；Preview 新增网络请求超时设置和进程取消保护。官方：<a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.68.0">稳定版</a>、<a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.69.0-preview.0">预览版</a>、<a href="https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/latest.md">稳定版更新摘要</a>。</li>
+<li><strong>建议看｜Moonshot Kimi Code 2.6 Canary 修复。</strong> 11 月 11 日 10:08 UTC（北京时间 18:08）的 <strong><code>2.6.0-canary.20261111095258-5518d54</code></strong> 预发布涉及长路径 Windows 启动、Compaction 中途提醒造成取消、跨轮 Gemini 上下文丢失。属于小更新/实验构建，<strong>不能当作稳定版 2.6.0</strong>。官方：<a href="https://github.com/MoonshotAI/kimi-code/releases">Kimi Code Releases</a>。</li>
+</ol>
+<p><strong>重要辨析：</strong> 上述是 AI Coding Agent/Harness 的工程发布，不是基础模型能力提升。它们不能用来推断 Qwen/Gemini/Kimi 的新 Context Window、Thinking 档位、Token 价格或 API Model ID。</p>
+<h2 id="sec-2">二、逐条更新：七维详细分析</h2>
+<h3>1. 阿里巴巴／Qwen — Qwen Code 1.0 Preview（必看）</h3>
+<p><strong>① 官方信息、原始日期、版本和出处。</strong> 官方标题 <em>Release v1.0.0-preview</em>，版本标识 <code>v1.0.0-preview</code>，GitHub 将其明确标记为 <strong>Pre-release</strong>；原始发布 2026-11-11 03:55 UTC，换算北京时间 11 月 11 日 11:55。对应 Commit <code>587e342</code>。直接来源：<a href="https://github.com/QwenLM/qwen-code/releases/tag/v1.0.0-preview">官方 GitHub Release</a>、<a href="https://github.com/QwenLM/qwen-code">项目 README</a>。其声明“配置项、接口与行为可能在 Preview 中改变”，不能理解成正式 GA 或稳定兼容承诺。</p>
+<p><strong>② 核心变化与技术机制。</strong> 官方强调将 Qoder 和 Qwen Code 的 Agent 能力整合至代码理解、实现、调试、测试工作流；可使用 Qwen/Qoder 帐号，支持多模型提供商和自定义兼容端点；针对 Windows、Linux、macOS 提供原生打包文件，用户不必预先安装独立 Node.js；支持恢复会话和非交互式执行。这里的“原生包”是<strong>发布和安装形态</strong>，不代表任何接入模型已支持新的推理接口。其能力架构仍需区别“Agent Harness（工具、状态、权限、执行）”与“Model Provider（生成、推理、计费）”。</p>
+<p><strong>③ 为什么有价值。</strong> 企业内部开发工具经常受 Node.js 环境漂移、全局 npm 版本冲突和机器权限限制影响。固定原生包可降低客户端分发复杂度；可恢复会话与 Headless 模式使 CI 任务中断后的持续执行更可控。但这是设计层面的收益推断，<strong>不是经过独立复现的稳定性/性能数据</strong>；官方 Release 未给出 P95、成功率或降本比例，不能自行补数。</p>
+<p><strong>④ 业务和产品场景。</strong> 对 Windows 开发者工作站、IDE 插件、企业代码审查机器人、自动化补丁生成、测试代码生成、多模型编程终端有意义。自定义 <code>base_url</code> 的企业可将模型选择和运行器分离；是否符合安全/审计需求仍要评审。</p>
+<p><strong>⑤ 企业架构、Java/Spring Boot/Nacos、Gateway 与 Agent Runtime 取舍。</strong> 在内部 Gateway 中，建议将 <code>agent_runtime_version</code> 与 <code>provider/model_id</code> 分开登记；通过 provider adapter 规范认证头、模型别名、Tool Calling、JSON Schema、Thinking 参数、Usage、错误码。Nacos 适合托管配置与服务发现，但会话恢复状态需要数据库/事件存储持久化。Headless Agent 的任务标识、操作日志、权限审批、幂等键、工作目录和代码变更应可审计；不能因 CLI 支持自定义端点，就推断任意第三方 API 具有完全相同的工具协议。企业语言可以是 Java、Python、TypeScript，不应按语言选框架，而应按隔离、恢复、部署、权限要求取舍。</p>
+<p><strong>⑥ 试用步骤、代码和生产验收。</strong> 先在<strong>隔离的 Windows 测试环境</strong>执行：</p>
+<pre><code class="language-powershell"># 查看既有稳定版本和 npm 包信息；不改动当前安装
+qwen --version
+node --version
+npm view @qwen-code/qwen-code dist-tags --json
+
+# 从官方 Release Assets 下载与 Windows 架构匹配的 1.0 Preview 文件；
+# 查看下载文件的本地哈希；哈希值仍需同官方可信校验值比较
+Get-FileHash -Algorithm SHA256 "C:\Temp\qwen-preview-package"
+</code></pre>
+<p>接下来在独立目录或测试机中试运行原生包；在无敏感仓库里配置测试模型渠道（不在日志输出 API Key）；用同一仓库依次测试登录、询问、工具执行、文件修改、取消、重启恢复、<code>-p</code> 非交互执行、非标准 Base URL。将旧版本配置备份并逐项对比。仅当官方安装包实际文件名与执行选项确认后才照官方手册执行，<strong>不猜测安装器文件名与命令参数</strong>。</p>
+<p><strong>验收标准：</strong> 能稳定启动；回话恢复后无重复写文件；Tool 审批不被跳过；Windows Unicode/CRLF 文件保持完整；退出码与取消状态可判定；失败可回滚到旧 CLI；所有企业密钥经过最小权限存储。生产迁移还应核实软件包签名/哈希、许可证、遥测和隐私政策。该 Release 未公布新 Token 单价、Context、Thinking 或具体新模型 ID，保留原模型渠道参数。</p>
+<p><strong>⑦ 决策与优先级。</strong> <strong>必看，优先阅读与隔离试用；不建议立刻替换稳定生产版本。</strong> 已在 Qwen Code 0.27.x 上开展稳定自动化的团队应并行部署 Preview 而非覆盖安装；尚未采用 Qwen Code 的团队可以通过其发行形态学习 Agent 工程化。</p>
+<h3>2. Google／Gemini — Gemini CLI v0.68.0 正式版及 v0.69.0 Preview（建议看，历史遗漏）</h3>
+<p><strong>① 官方信息。</strong> <code>v0.68.0</code> GitHub Release 日期为 2026-11-10 21:17 UTC（北京时间 11 月 11 日 05:17），<strong>稳定版</strong>；<code>v0.69.0-preview.0</code> 为 2026-11-10 21:05 UTC（北京时间 05:05），<strong>预览版</strong>。二者在昨日完整日报中未被纳入，是今天的<strong>历史遗漏补录</strong>，不是 11 月 12 日新发布。来源：<a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.68.0">0.68.0 Release</a>、<a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.69.0-preview.0">0.69.0-preview.0 Release</a>、<a href="https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/latest.md">最新稳定日志</a>、<a href="https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/preview.md">预览日志</a>。</p>
+<p><strong>② 核心机制。</strong> 稳定版加入 Extension Validation 与评测测试、扩展并发安装锁，避免多个安装动作产生竞态；显示 429 限流冷却倒计时；在临时降级、取消、历史回退时保持用户显式选择模型；增强 <code>SubagentStop</code> Hooks 映射与配置合并；修复 Windows <code>isWithinRoot</code> 大小写判断、进程查找与文件扫描问题，改进 Podman rootless 用户命名空间。预览版额外引入 <code>/stats heatmap</code>、可配置 <code>model.requestTimeoutMs</code> / <code>GEMINI_API_HEADERS_TIMEOUT_MS</code> 的 HTTP 响应头等待超时、修复无头模式取消后子进程残留和信号退出码。<strong>扩展验证的是配置结构/安装行为，不代表扩展中任意代码安全。</strong></p>
+<p><strong>③ 为什么有价值。</strong> 在多扩展并发安装、模型调用受限与复杂工具执行场景，显式锁、超时、退出码及错误展示可以降低“不知道任务卡在哪里”的排查成本。对 Windows 而言，路径大小写与权限边界关系到工具是否越出工作区；但发布说明未提供独立 P95 性能数据，不声称“加速多少”。</p>
+<p><strong>④ 适用场景。</strong> 多人代码协作、Shell/IDE Agent、MCP/Extension 集成、企业内部代理网络、CI 无头执行、受网络限流约束的自动化。Preview 的请求超时调整特别适合网络代理或跨区域 API，但需评估超时增加会不会掩盖服务故障。</p>
+<p><strong>⑤ 对企业 AI Gateway 和跨语言系统的帮助。</strong> 在统一模型网关中区分四类时间：连接超时、响应头超时、流式空闲超时、整个任务截止时间；用同一 trace ID 串联模型 429、重试、fallback、工具调用、Compaction。Hook 引擎按事件类型处理权限与副作用，不能靠一个“执行成功”标志覆盖整个 Agent 生命周期。Windows 路径安全要做标准化后再判断真实允许目录，防止大小写、符号链接、UNC 等造成绕过。Java 的 WebClient/OkHttp、TypeScript HTTP 客户端也适用相同设计原则。</p>
+<p><strong>⑥ 实践命令与验收。</strong> 固定测试版本，不使用自动浮动的 latest：</p>
+<pre><code class="language-powershell">gemini --version
+npm view @google/gemini-cli version
+# 只在隔离测试环境执行稳定版升级
+npm install -g @google/gemini-cli@0.68.0
+gemini --version
+gemini extensions --help
+</code></pre>
+<p>另在<strong>独立环境</strong>测试 0.69.0 Preview，不用预览包覆盖稳定工作环境。将 429、网络断开、连续取消、Windows 同名大小写路径、带符号链接的工作区、两次并发安装扩展作为回归样本；用 <code>/model</code> 验证显示选择与真正发送的模型一致。预览超时项需使用官方明确参数名，先记录原值和行为再修改。</p>
+<p><strong>验收：</strong> 无头取消后不残留子进程；重试退避有限且可观测；Hooks 没有重复执行；扩展安装并发不损坏配置；权限检查拒绝工作区外访问；模型 fallback 可在日志中识别。这里的 CLI 版本变化不是 Gemini API Context、推理配置、SDK 语言兼容或定价改变的证据，服务端 Model ID 与 Token 用量需从真正调用渠道采集。</p>
+<p><strong>⑦ 建议。</strong> <strong>建议看。</strong> 稳定版可安排测试回归后升级；0.69.0 Preview 仅适合需要验证自定义超时、取消与沙箱行为的团队，不应直接上线生产。</p>
+<h3>3. Moonshot AI／Kimi — Kimi Code 2.6 Canary 工程修复（建议看，小更新）</h3>
+<p><strong>① 官方来源及发布级别。</strong> 官方 GitHub 于 2026-11-11 10:08 UTC（北京时间 11 月 11 日 18:08）发布 <code>@moonshot-ai/kimi-code@2.6.0-canary.20261111095258-5518d54</code>，明确标记 <strong>Pre-release</strong>，不是稳定版 <code>2.6.0</code>。来源：<a href="https://github.com/MoonshotAI/kimi-code/releases">Kimi Code Release 列表</a>、<a href="https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%402.6.0-canary.20261111095258-5518d54">该 Canary 版本</a>。</p>
+<p><strong>② 变化与机制。</strong> 修正 Agent Core v2 在 Compaction 进行时收到 reminders 会误取消压缩；修复 Windows 长路径造成启动崩溃或文件搜索失败；修复跨轮次 Gemini 上下文丢失；另外清理文件历史查询中 <code>turn_id</code> 兼容别名。此前同日 Canary 还涉及 Skill 工具的直接调用与不同工作区同名 Skill 处理。主要是执行层 bugfix，<strong>不是 Kimi 基础模型 K3.1 Pro 重新发布</strong>。</p>
+<p><strong>③ 价值。</strong> Compaction 应被当作一项有生命周期的状态转换。提醒事件与压缩线程并发到来时，如果没有正确的同步/取消语义，Agent 可能丢失上下文或错误重复执行。Windows 长路径与上下文保持修复能改善开发者体验，但 Canary 发布没有可独立核实的任务成功率增幅。</p>
+<p><strong>④ 适用业务。</strong> 长会话 AI Coding、跨模型 Provider、Windows 上的多层 Maven/Monorepo 项目、Skills 多工作区、远程工具执行。</p>
+<p><strong>⑤ 企业架构帮助。</strong> 在 AI Gateway 建立 <code>session_id</code>、<code>context_revision</code>、<code>compaction_revision</code> 及 <code>provider</code> 的独立记录；保证发生 Compaction 时不把旧结果错误覆盖最新消息。对跨 Provider 切换，必须测试 Thinking/工具返回/系统提示能否被保留或重放，不能只拼接旧消息字符串。长路径、文件访问范围必须在 Agent 沙箱级别验证。</p>
+<p><strong>⑥ 试用与验收。</strong> 当前稳定基线仍是昨天报道的 Kimi Code <code>2.5.3</code>；优先保持稳定版，在隔离 Canary 环境重复执行三组测试：长任务压缩期间插入提醒、Windows 深目录文件搜索、相同会话中跨轮 Gemini 交互。记录上下文 revision、工具调用数量、异常、退出状态；保证无重复写入和无丢失关键约束。官方 Release 没有新的 Thinking 参数、API 价格、上下文窗口、公开权重许可变化；不要从 Canary 版本号反推模型 ID 或计费。</p>
+<p><strong>⑦ 决策。</strong> <strong>建议看、建议在重现故障时测试，生产版本暂不迁移至 Canary</strong>。不使用 Kimi Code 的企业可跳过安装，仅借鉴 Compaction 竞争条件测试。</p>
+<h3>4. Google Cloud — Vertex AI Agent Platform Workbench 引入 Antigravity CLI（建议看，历史补录）</h3>
+<p><strong>① 官方来源和日期。</strong> Google Cloud Vertex AI <strong>2026-11-10</strong> 更新日志宣布：Antigravity CLI 在 <strong>Agent Platform Workbench v2</strong> 实例中以 <strong>Preview</strong> 提供，支持 Debian 12 <code>workbench-instances-2603</code> 或更新镜像。原始事件日期为 11 月 10 日，本期仅作<strong>历史遗漏补录</strong>，不算 11 月 12 日新发布。来源：<a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes">Google Cloud 官方 Vertex AI Release Notes</a>。</p>
+<p><strong>② 机制。</strong> 提供终端式 Agent，可创建、解释、编辑、执行 Notebook，管理 Jupyter 内核，运行 Shell、<code>gcloud</code>、<code>bq</code>，并可通过 Notebook 魔法命令 <code>%%agy</code> 操作。新实例默认开启，但修改文件或执行命令前要求批准；可以通过实例元数据 <code>enable-antigravity=false</code> 禁用。<strong>产品作用域是指定镜像的云 Workbench Preview，不代表普通 Windows 本地终端也同步 GA。</strong></p>
+<p><strong>③ 价值。</strong> 把数据分析 Agent 嵌入既有云研发环境，减少 Notebook、命令行和云控制台之间切换；其价值来自工具链一致性和审计可行性，并非官方证明模型智力更强。现无本期可独立核验 P95/成本对比。</p>
+<p><strong>④ 适用场景。</strong> Google Cloud 中的 Notebook 分析、BigQuery 查询、数据科学项目、受管云开发环境；不适合作为任何企业现有 Windows 本地 CI 的无条件替代。</p>
+<p><strong>⑤ 架构取舍。</strong> Workbench 角色/IAM、Notebook 数据权限和云账单归属独立治理。多租户 Agent 不能越权访问项目；把 <code>gcloud</code>/<code>bq</code> 操作纳入审批和可观测链路。企业 Java Gateway 可把 Antigravity 视为一个受管执行端而非另一个大语言模型 API。生产账号、地域、配额和模型支持按所用 Google Cloud 项目核查。</p>
+<p><strong>⑥ 试用。</strong> 在具有权限的测试 Google Cloud 项目使用符合要求的 Debian 12 Workbench 镜像创建临时实例，核查 Antigravity CLI 可见性，测试创建 Notebook、运行只读 <code>bq</code>、请求文件编辑审批、拒绝审批、停止实例。验收要求“拒绝后无文件/数据副作用、操作可审计、权限最小化、成本可追踪”；结束后关闭实验资源。禁用操作应按照官方 Workbench 元数据文档调整 <code>enable-antigravity</code> 为 <code>false</code>，不是本地 PowerShell 环境变量。</p>
+<p><strong>⑦ 决策。</strong> <strong>建议看、只在已有 Google Cloud Workbench 业务中试用。</strong> 已有本地 Codex/Claude Code 项目不需因此迁移。</p>
+<h2 id="sec-3">三、13 家厂商官方巡检状态表</h2>
+<p><strong>状态口径：</strong> “经核验无重要新增”仅指本次可读官方页面/Release 的本期时间窗口，不能外推为全部产品绝对没有变更；“未能完整核实”不冒充成功。以下 URL 均为官方站点或官方仓库。</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>本期状态</th>
+<th>查验依据与具体边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① OpenAI</strong></td>
+<td>经核验无重要新增</td>
+<td><a href="https://developers.openai.com/api/docs/changelog">API Changelog</a> 当前 11 月最新可见条目仍为 <strong>11/5 <code>gpt-6-cyber</code></strong>；<a href="https://github.com/openai/codex/releases">Codex Releases</a> 最新稳定 <code>0.167.1</code> 已在 11/11 日报报道，<code>0.169.0-alpha.11</code> 为预发布，不能记正式版。模型/API/Java SDK 未找到本期新日期证据。</td>
+</tr>
+<tr>
+<td><strong>② Anthropic</strong></td>
+<td>经核验无重要新增</td>
+<td><a href="https://platform.claude.com/docs/en/release-notes/overview">Claude Platform Release Notes</a> 最新可确认重要记录是 <strong>11/9 Fable/Mythos 5.2</strong>，此前已报道；<a href="https://github.com/anthropics/claude-code/releases">Claude Code Releases</a> 目前可见稳定 <code>2.1.322</code>，昨日已报道。MCP、Skills、Hooks、Java SDK 和 Managed Agents 未核实到本期重要新 Release。</td>
+</tr>
+<tr>
+<td><strong>③ Google / DeepMind</strong></td>
+<td><strong>正式更新（历史补录）</strong></td>
+<td><a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.68.0">Gemini CLI 稳定版 0.68.0</a>、<a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.69.0-preview.0">Preview 0.69.0</a>、<a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes">Vertex Agent Platform Workbench 11/10 公告</a>。并非新基础模型。</td>
+</tr>
+<tr>
+<td><strong>④ xAI</strong></td>
+<td>经核验无重要新增</td>
+<td><a href="https://docs.x.ai/developers/release-notes">xAI API Release Notes</a> 本期未核实新日期变更；现有 <a href="https://docs.x.ai/developers/models">Grok API</a> 与语音/视频文档存在但不等于当天发布。</td>
+</tr>
+<tr>
+<td><strong>⑤ 智谱 / Z.ai</strong></td>
+<td>部分核实，动态目录待核验</td>
+<td><a href="https://docs.z.ai/release-notes/new-released">官方模型发布列表</a> 最近列出 GLM-5.3、GLM-5.3-Flash 的 8 月发布；Coding Plan/定价及全部 SDK Release 无法完全穷尽，未认定本期新模型。</td>
+</tr>
+<tr>
+<td><strong>⑥ DeepSeek</strong></td>
+<td>经核验无重要新增</td>
+<td><a href="https://api-docs.deepseek.com/updates/">官方 API Changelog</a> 最新日期为 <strong>10/17</strong>，涉及 Search API 与 <code>DeepSeek-V4.1-Flash-1017</code>；API/工具调用未见 11/11–12 重大新公告。</td>
+</tr>
+<tr>
+<td><strong>⑦ 腾讯 / 混元</strong></td>
+<td>经核验无重要新增（部分服务页覆盖有限）</td>
+<td><a href="https://www.tencent.com/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/">腾讯 Hy4 官方发布</a>、<a href="https://cloud.tencent.com/announce/detail/2301">TokenHub 公告</a>。11/4 Hy4 为已有历史信息，不把媒体社区文章当新正式 API 发布。</td>
+</tr>
+<tr>
+<td><strong>⑧ 阿里巴巴 / Qwen</strong></td>
+<td><strong>重要新更新</strong></td>
+<td><a href="https://github.com/QwenLM/qwen-code/releases/tag/v1.0.0-preview">Qwen Code 1.0 Preview 官方 Release</a> 北京时间 11/11 中午发布；稳定 <code>0.27.2</code> 已在昨日报道。百炼模型/定价未见足以确认的新条目。</td>
+</tr>
+<tr>
+<td><strong>⑨ Moonshot / Kimi</strong></td>
+<td><strong>小更新（Canary）</strong></td>
+<td><a href="https://github.com/MoonshotAI/kimi-code/releases">Kimi Code 官方 Releases</a> 的 <code>2.6.0-canary.20261111095258-5518d54</code> 修复 Compaction/Windows/跨轮上下文；稳定 <code>2.5.3</code> 已在昨天报道，<a href="https://www.moonshot.ai/">Moonshot 研究</a> 最近重要内容为 10/24 K3.1 Pro。</td>
+</tr>
+<tr>
+<td><strong>⑩ 字节跳动</strong></td>
+<td>未能完整核实</td>
+<td><a href="https://developer.volcengine.com/">火山引擎开发者社区</a>、<a href="https://www.volcengine.com/product/ark">豆包 / 方舟相关服务</a> 可定位，但 Seed/Seedream/Seedance、即梦、Trae 跨站动态更新页没有完整可复查的本期版本记录，标记待核验。</td>
+</tr>
+<tr>
+<td><strong>⑪ TypeSafe AI</strong></td>
+<td>部分核实，无重要新增证据</td>
+<td><a href="https://typesafe.ai/blog">博客</a> 可见 Jev 1.14.0；<a href="https://docs.typesafe.ai/introduction">开发文档</a> 说明 Choice/Score/Noul/Box；<a href="https://api.typesafe.ai/redoc">API ReDoc</a> 依赖 JS，当前无法完整提取 OpenAPI 变更；本期新版本、定价和实验能力状态暂不推断。</td>
+</tr>
+<tr>
+<td><strong>⑫ Meta AI</strong></td>
+<td>经核验无重要新增（开发者权重未完全覆盖）</td>
+<td><a href="https://ai.meta.com/blog/">Meta AI 技术博客</a>、<a href="https://www.meta.ai/">Meta AI 产品</a>、<a href="https://github.com/facebookresearch">官方 GitHub</a>。未核实 11/11–12 新 Llama 权重、许可或 SAM Release。历史 Muse 消费产品更新不能视为开放 API。</td>
+</tr>
+<tr>
+<td><strong>⑬ 百度</strong></td>
+<td>部分核实，动态目录待核验</td>
+<td><a href="https://cloud.baidu.com/doc/qianfan/s/Kmh4stnjp">千帆模型更新记录</a> 标注页面更新 11/3，最新模型条目仍可见 10 月；<a href="https://cloud.baidu.com/doc/qianfan/s/Gmh4stncc">平台更新记录</a>、<a href="https://github.com/PaddlePaddle/PaddleOCR/releases">PaddleOCR Releases</a> 未核实本期重大新版本。地区、实名、计费、Java SDK 需按业务空间独立查。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-4">四、正式版本与 Model ID 基线（仅经可靠核验的标识）</h2>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>平台/类别</th>
+<th>版本或 Model ID 基线</th>
+<th>状态及限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Qwen Code CLI</strong></td>
+<td><code>0.27.2</code> / <code>v1.0.0-preview</code></td>
+<td>0.27.2 稳定发布；1.0 为 Preview，非 GA；CLI 版本不是模型 ID。</td>
+</tr>
+<tr>
+<td><strong>Gemini CLI</strong></td>
+<td><code>v0.68.0</code> / <code>v0.69.0-preview.0</code></td>
+<td>前者最新稳定，后者预览。并非 Gemini 基础模型 ID。</td>
+</tr>
+<tr>
+<td><strong>Kimi Code</strong></td>
+<td><code>2.5.3</code> / <code>2.6.0-canary.20261111095258-5518d54</code></td>
+<td>稳定版与 Canary 严格分开。</td>
+</tr>
+<tr>
+<td><strong>OpenAI Codex CLI</strong></td>
+<td><code>0.167.1</code>；<code>0.169.0-alpha.11</code></td>
+<td>稳定与 Alpha；<a href="https://github.com/openai/codex/releases">Releases</a>。</td>
+</tr>
+<tr>
+<td><strong>OpenAI API</strong></td>
+<td><code>gpt-6-cyber</code></td>
+<td>11/5 已有特定安全研究准入条目，不能默认所有账户可用；<a href="https://developers.openai.com/api/docs/changelog">Changelog</a>。</td>
+</tr>
+<tr>
+<td><strong>Claude Code</strong></td>
+<td><code>2.1.322</code></td>
+<td>本次可见最新正式 Release；<a href="https://github.com/anthropics/claude-code/releases">官方 Releases</a>。</td>
+</tr>
+<tr>
+<td><strong>Claude API</strong></td>
+<td><code>claude-fable-5-2</code> / <code>claude-mythos-5-2</code></td>
+<td>11/9 已报道；Mythos 需要验证资格；官方称 1M Context、128K Max Output、Adaptive Thinking。Fable 定价官方列为输入 $8/MTok、输出 $40/MTok，特殊地区/托管渠道另核。 <a href="https://platform.claude.com/docs/en/release-notes/overview">Claude Release Notes</a>。</td>
+</tr>
+<tr>
+<td><strong>xAI API</strong></td>
+<td><code>grok-4.7</code></td>
+<td>既有模型标识，具体上下文、区域与价格以 xAI API 当前模型页为准。</td>
+</tr>
+<tr>
+<td><strong>Z.ai</strong></td>
+<td><code>GLM-5.3</code>、<code>GLM-5.3-Flash</code></td>
+<td>既有型号，不将展示名自动当作 SDK 精确请求 ID。</td>
+</tr>
+<tr>
+<td><strong>DeepSeek API</strong></td>
+<td><code>deepseek-flash</code> → <code>DeepSeek-V4.1-Flash-1017</code></td>
+<td>10/17 官方别名映射；实际服务渠道须重新核对，官方当时说明 API 价格未变。</td>
+</tr>
+<tr>
+<td><strong>腾讯混元</strong></td>
+<td>Hy4</td>
+<td>已知正式产品；API Model ID、托管可用性和权重许可依实际渠道确认。</td>
+</tr>
+<tr>
+<td><strong>Kimi 基础模型</strong></td>
+<td>K3.1 Pro</td>
+<td>10/24 研究基线；具体 API Model ID 和长上下文权限不得由展示名称推导。</td>
+</tr>
+<tr>
+<td><strong>字节跳动</strong></td>
+<td>Doubao-Seed 系列</td>
+<td>本期无新精确 Model ID 可确定；调用名称以火山方舟模型列表为准。</td>
+</tr>
+<tr>
+<td><strong>TypeSafe AI</strong></td>
+<td>Jev <code>1.14.0</code></td>
+<td>既有版本；Choice/Score/Noul/Box 为类型化原语，并非传统 LLM Token 模型。</td>
+</tr>
+<tr>
+<td><strong>Meta AI</strong></td>
+<td>Muse 产品、Llama / SAM 项目</td>
+<td>消费产品、开源权重、推理 SDK、第三方托管许可需分开，未确认本期新权重标识。</td>
+</tr>
+<tr>
+<td><strong>百度 PaddleOCR</strong></td>
+<td><code>3.7.0</code>（此前已核实）</td>
+<td>OCR 库版本与千帆模型 API ID 无关。</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>比较边界：</strong> 本期没有找到同一任务集、同样硬件/地区/并发和相同 Token 计费口径下的跨厂商 P95、价格及 Benchmark 结果，因此<strong>不编造“性价比排行榜”</strong>。模型上下文上限不等于真实工作流可用窗口；多轮历史与 Compaction 需有独立容量、安全和费用测试。Meta/Llama 开源权重需要独立核对发布对应许可证、使用限制及生产部署要求。</p>
+<h2 id="sec-5">五、跨厂商兼容性与迁移矩阵</h2>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>工程变化</th>
+<th>协议/风险面</th>
+<th>推荐迁移与回归验证</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Qwen Code 0.27.x → 1.0 Preview</td>
+<td>CLI 配置、帐号、独立安装包、会话格式可能改变</td>
+<td>并行安装；保留旧配置；固定 Agent/Provider 双版本；回滚；不要覆盖稳定版。</td>
+</tr>
+<tr>
+<td>Gemini CLI 0.67 → 0.68</td>
+<td>Extensions、Hooks、模型 fallback、429、Windows 文件边界</td>
+<td>拦截 429、并发扩展、<code>SubagentStop</code>、文件许可与取消。</td>
+</tr>
+<tr>
+<td>Gemini 0.69 Preview</td>
+<td>Header 超时、终止子进程、配置项引入</td>
+<td>与稳定版隔离；注入网络故障和取消信号；严格核对参数。</td>
+</tr>
+<tr>
+<td>Kimi 2.5.3 → 2.6 Canary</td>
+<td>Compaction 并发、提醒、长路径、Gemini 上下文</td>
+<td>压缩期间插入事件、恢复一致性、避免重复工具操作。</td>
+</tr>
+<tr>
+<td>Google Workbench Antigravity Preview</td>
+<td>Debian 镜像、Notebook、IAM、审批、安全边界</td>
+<td>临时云项目、最小权限、审计、拒绝审批副作用、关闭资源。</td>
+</tr>
+<tr>
+<td>Claude Fable/Mythos 5.2（旧消息）</td>
+<td>Thinking 前缀校验、跨模型思考块、Computer Toolset、30 天保留</td>
+<td>不重放变更前缀的 Thinking；校验 400、数据合规、模型权限；不可把旧工具协议照搬。</td>
+</tr>
+<tr>
+<td>跨厂商 <code>base_url</code></td>
+<td>OpenAI 兼容不等于 Thinking、工具协议、错误码和成本一致</td>
+<td>配置能力表：Provider/Model ID/Context/Schema/Tool/Usage/License/Region；逐供应商适配。</td>
+</tr>
+<tr>
+<td>Java/Spring Boot/Nacos Gateway</td>
+<td>配置中心不是任务持久化；聚合请求与事件回放存在幂等风险</td>
+<td>任务状态入库，事件唯一键、重试隔离、调用审计、P95/费用监控、API Key 脱敏。</td>
+</tr>
+<tr>
+<td>GitHub Pages 报告流水线</td>
+<td>生成完成 != GitHub 提交 != manifest 回读 != 线上可访问</td>
+<td>HTML 内容哈希、单日去重、最新 SHA 乐观并发、文件与索引回读。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-6">六、今天可直接操作的工程 Checklist</h2>
+<ul>
+<li>[ ] <strong>先保持生产 Agent 工具版本不变</strong>，独立下载 Qwen Code <code>1.0.0-preview</code> 测试包，并记录来源和 SHA-256。</li>
+<li>[ ] 在 Windows PowerShell 检查 <code>qwen --version</code>、<code>gemini --version</code>、<code>claude --version</code>、<code>codex --version</code>，记录稳定版/预览版差异。</li>
+<li>[ ] 使用独立目录试验 Gemini CLI <code>0.68.0</code>，完成 429、Extension 安装锁、SubagentStop Hook、模型 fallback 与 Windows 文件权限回归。</li>
+<li>[ ] 若存在代理超时问题，再隔离试用 Gemini <code>0.69.0-preview.0</code> 的 <code>model.requestTimeoutMs</code>，记录超时边界及错误日志。</li>
+<li>[ ] 用 Kimi Canary 仅复现 Compaction 提醒竞态、Windows 深路径与跨轮上下文，不将 Canary 升级到生产默认。</li>
+<li>[ ] 将 <code>run_id</code>、<code>attempt_id</code>、<code>tool_call_id</code>、<code>context_revision</code>、<code>idempotency_key</code> 与 <code>provider_model_id</code> 接入统一追踪。</li>
+<li>[ ] 检查 Secrets、MCP、Skills、Hooks、Plugins、Computer Use 沙箱权限；禁止把工具事件直接提升为无审批的 Shell 权限。</li>
+<li>[ ] 将所有模型别名、Thinking 参数、输入输出 JSON Schema、Context、缓存 Token、输出 Token 和地域/计费变更写入 Provider 能力注册表，并标注核验日期。</li>
+<li>[ ] 对 TypeSafe Jev 仅在测试工作流验证类型化决策输出及置信度校准；正式采购或批量决策前独立复核精度、错误率与 API 文档，不以厂商承诺代替业务评测。</li>
+<li>[ ] 归档时确认<strong>完整文字报告、HTML 逐义一致、13 家状态齐全</strong>，并验证 GitHub 文件与 manifest 双回读；不覆盖既有同日记录。</li>
+</ul>
+<h2 id="sec-7">七、综合判断</h2>
+<p>本期值得行动的不是“又发布一个参数更大的模型”，而是<strong>Agent Harness 工程治理</strong>：Qwen Code 1.0 Preview 带来部署和运行形态变化，Gemini CLI 正式版改进扩展、Hooks、fallback 与限流可观测性，Kimi Canary 暴露 Compaction 和上下文恢复的重要并发边界。真正影响企业可靠性的是<strong>执行状态、幂等、隔离、权限和迁移回归</strong>。</p>
+<p><strong>建议顺序：</strong> 先审阅 Qwen Preview 的架构和安全边界；已有 Gemini CLI 的团队再在测试环境升级稳定版；遇到 Kimi 特定故障才试 Canary；运行 Google Workbench 的团队单独核验 Antigravity Preview。没有确认新的 API 定价、模型退役或模型 ID 就不修改生产路由。任何厂商宣称的 Benchmark、性能和降本效果都需与独立实测分开记录。</p>
+<p><strong>信息来源与限制：</strong> 逐项优先官方 Release、Changelog、开发者文档和模型仓库。11 月 10–11 日的遗漏补录保留原始发布日期；动态网页无法完整核查的厂商如实标记。本文不包含个人账户资料、私有 API Token、工作空间密钥、非公开报价或私人链接。</p>
+<footer>内容根据截至北京时间 2026-11-12 08:46 的可核验官方资料编写。未确认事项已标注；所有资料链接可点击，离线浏览不依赖外部资源（访问源站链接需要联网）。</footer></article></div></body></html>
