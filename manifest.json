@@ -5,7 +5,7 @@
   "readme": "本仓库仅展示已经提交的完整 HTML 报告；页面内容由 categories[].reports 索引。",
   "counts": {
     "topic_count": 10,
-    "verified_full_reports": 58
+    "verified_full_reports": 59
   },
   "categories": [
     {
@@ -484,6 +484,13 @@
       "description": "零基础理解 AI 术语与技术机制，包含 IPA 发音、业务案例、对比和实践练习。",
       "source_status": "partial_archive",
       "reports": [
+        {
+          "date": "2026-11-12",
+          "title": "2026-11-12｜让 AI Coding Agent 可控扩展：项目规则、技能、MCP、钩子与权限",
+          "label": "2026-11-12",
+          "path": "reports/learning/2026-11-12.html",
+          "kind": "full"
+        },
         {
           "date": "2026-11-11",
           "title": "2026-11-11 · AI 应用安全上线：黄金评测集、质量闸门、影子测试、灰度与回滚",
