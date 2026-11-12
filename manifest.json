@@ -1,11 +1,11 @@
 {
   "version": 3,
-  "updated_at": "2026-11-12",
+  "updated_at": "2026-11-13",
   "scope": "public_briefings_only",
   "readme": "本仓库仅展示已经提交的完整 HTML 报告；页面内容由 categories[].reports 索引。",
   "counts": {
     "topic_count": 10,
-    "verified_full_reports": 59
+    "verified_full_reports": 60
   },
   "categories": [
     {
@@ -227,6 +227,13 @@
       "source_status": "partial_archive",
       "reports": [
         {
+          "date": "2026-11-13",
+          "title": "GitHub 热榜日报｜2026-11-13（14 个仓库完整分析）",
+          "label": "2026-11-13",
+          "path": "reports/github-trending/2026-11-13.html",
+          "kind": "full"
+        },
+        {
           "date": "2026-11-12",
           "title": "GitHub 热榜日报｜2026-11-12（13 个仓库完整分析）",
           "label": "2026-11-12",
@@ -276,7 +283,7 @@
           "kind": "full"
         }
       ],
-      "last_run": "2026-11-12"
+      "last_run": "2026-11-13"
     },
     {
       "id": "ai-video",
