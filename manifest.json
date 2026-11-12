@@ -5,7 +5,7 @@
   "readme": "本仓库仅展示已经提交的完整 HTML 报告；页面内容由 categories[].reports 索引。",
   "counts": {
     "topic_count": 10,
-    "verified_full_reports": 56
+    "verified_full_reports": 57
   },
   "categories": [
     {
@@ -17,6 +17,13 @@
       "description": "逐日核对 OpenAI、Anthropic、Google、xAI、Z.ai、DeepSeek、腾讯、阿里、Kimi、字节、TypeSafe、Meta、百度的官方变化，附工程实践与版本迁移。",
       "source_status": "partial_archive",
       "reports": [
+        {
+          "date": "2026-11-12",
+          "title": "全球 AI 大模型与 Agent 技术官方日报｜2026-11-12",
+          "label": "2026-11-12",
+          "path": "reports/official-ai/2026-11-12.html",
+          "kind": "full"
+        },
         {
           "date": "2026-11-11",
           "title": "全球 AI 大模型与 Agent 技术官方日报｜2026-11-11",
