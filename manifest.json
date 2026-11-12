@@ -5,7 +5,7 @@
   "readme": "本仓库仅展示已经提交的完整 HTML 报告；页面内容由 categories[].reports 索引。",
   "counts": {
     "topic_count": 10,
-    "verified_full_reports": 57
+    "verified_full_reports": 58
   },
   "categories": [
     {
@@ -140,6 +140,13 @@
       "description": "聚焦中国、美国、欧盟、英国、日韩及全球重要地区的 AI、科技、机器人政策与监管、法律法规、顶尖行业会议及政治经济趋势；保留官方来源、实际影响与行动建议。",
       "source_status": "partial_archive",
       "reports": [
+        {
+          "date": "2026-11-12",
+          "title": "全球 AI、科技与机器人政策、法规、会议及政经趋势日报｜2026-11-12",
+          "label": "2026-11-12",
+          "path": "reports/ai-policy/2026-11-12.html",
+          "kind": "full"
+        },
         {
           "date": "2026-11-11",
           "title": "全球 AI、科技与机器人政策、法规、会议及政经趋势日报｜2026-11-11",
