@@ -5,7 +5,7 @@
   "readme": "本仓库仅展示已经提交的完整 HTML 报告；页面内容由 categories[].reports 索引。",
   "counts": {
     "topic_count": 10,
-    "verified_full_reports": 67
+    "verified_full_reports": 68
   },
   "categories": [
     {
@@ -215,6 +215,13 @@
       "description": "跟踪 AI 编码工具官方版本、模型配置、CLI、Windows/PowerShell、MCP、Skills、Hooks 与 Breaking Changes。",
       "source_status": "partial_archive",
       "reports": [
+        {
+          "date": "2026-11-13",
+          "title": "AI Dev Tools Daily Brief — 2026-11-13",
+          "label": "2026-11-13",
+          "path": "reports/ai-coding/2026-11-13.html",
+          "kind": "full"
+        },
         {
           "date": "2026-11-07",
           "title": "AI Dev Tools Daily Brief｜2026-11-07｜完整技术日报",
