@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="light"><title>全球 AI 大模型与 Agent 技术官方日报｜2026-11-13</title><style>
+:root{color-scheme:light;--bg:#f4f2e9;--paper:#fffefa;--ink:#142536;--muted:#5c6e72;--line:#bdd0cc;--accent:#175c75;--yellow:#ffdc70;--mint:#b7e7db;--rose:#f0bdc8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:15.5px/1.82 system-ui,-apple-system,'Segoe UI','Microsoft YaHei','PingFang SC',sans-serif;overflow-wrap:anywhere}a{color:#075b88;text-decoration-thickness:1px;text-underline-offset:3px}a:hover{text-decoration-thickness:2px}.hero{background:var(--yellow);border-bottom:4px solid var(--ink);padding:35px max(20px,calc((100vw - 1140px)/2))}.hero .eyebrow{font:750 12px/1.4 system-ui,sans-serif;letter-spacing:.16em}.hero h1{font-size:clamp(28px,4.5vw,52px);line-height:1.2;max-width:1040px;margin:12px 0}.hero p{max-width:900px;margin:6px 0;font-weight:580}.container{max-width:1230px;margin:25px auto;padding:0 16px 65px;display:grid;grid-template-columns:225px minmax(0,1fr);gap:22px;align-items:start}.toc{position:sticky;top:14px;background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--ink);border-radius:8px;padding:16px 12px}.toc strong{display:block;font-size:12px;letter-spacing:.12em;margin:0 9px 10px}.toc a{display:block;font-size:12px;line-height:1.55;text-decoration:none;padding:7px 9px;border-radius:5px;color:var(--ink)}.toc a:hover{background:var(--mint)}article{background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:24px clamp(18px,4vw,36px);min-width:0;box-shadow:0 12px 24px #253f4d0a}article>h1:first-child{display:none}h2{font-size:clamp(21px,2.5vw,27px);margin:40px 0 17px;border-bottom:3px solid var(--ink);line-height:1.38;padding:0 0 10px;scroll-margin-top:16px}h3{font-size:19px;line-height:1.42;margin:28px 0 12px;scroll-margin-top:16px}p{margin:11px 0 16px}strong{font-weight:770}ul,ol{padding-left:23px;margin:10px 0 20px}li{margin:7px 0}.table-scroll{overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:8px;margin:17px 0 24px;max-width:100%}table{border-collapse:collapse;width:100%;min-width:690px;font-size:12.7px;line-height:1.56}th,td{padding:11px 10px;border-bottom:1px solid #d4e0de;border-right:1px solid #d4e0de;text-align:left;vertical-align:top}th{background:var(--mint);font-weight:760}td:last-child,th:last-child{border-right:0}tr:last-child td{border-bottom:0}tbody tr:nth-child(even){background:#f5f9f7}code{background:#e8eff0;border-radius:4px;padding:2px 4px;font:0.91em ui-monospace,'Cascadia Code',Consolas,monospace;overflow-wrap:anywhere}pre{background:#182a3b;color:#dbeaf9;padding:17px;overflow-x:auto;max-width:100%;border-radius:7px;font:13px/1.55 ui-monospace,Consolas,monospace}pre code{background:none;padding:0;overflow-wrap:normal;white-space:pre;color:inherit}input[type=checkbox]{accent-color:#126b69}blockquote{background:#f2f7f6;border-left:4px solid #66b9a8;padding:10px 15px;margin:18px 0}.footer{border-top:2px solid #b4c8c4;margin-top:34px;padding-top:18px;color:var(--muted);font-size:13px}.back{display:inline-block;border:1px solid var(--ink);border-radius:5px;padding:4px 9px;background:var(--yellow);text-decoration:none;font-weight:750}@media(max-width:800px){.container{display:block;padding:0 10px 45px;margin:12px auto}.toc{position:static;display:flex;gap:5px;overflow-x:auto;white-space:nowrap;padding:6px 9px;margin-bottom:11px}.toc strong{display:none}.toc a{flex:0 0 auto;border:1px solid #ced5d3;padding:5px 9px}article{padding:16px 16px 30px}.hero{padding:23px 16px}body{font-size:14.5px}h2{font-size:21px;margin-top:30px}h3{font-size:18px}table{min-width:620px;font-size:12px}}@media(max-width:420px){.container{padding:0 0 30px}.toc{margin:8px 10px 10px}article{border-left:0;border-right:0;border-radius:0;padding:14px 13px}pre{font-size:11px;padding:11px}table{min-width:560px}.hero h1{font-size:27px}}@media print{.toc{display:none}.container{display:block;padding:0;margin:0}article{border:0;box-shadow:none}.hero{background:transparent}.table-scroll{overflow:visible}table{min-width:0;font-size:10px}a{color:var(--ink);text-decoration:underline}}
+</style></head><body><header class="hero" id="top"><span class="eyebrow">OFFICIAL AI DAILY / 13 PROVIDERS / 2026.11.13</span><h1>全球 AI 大模型与 Agent 技术官方日报</h1><p>北京时间 · 2026 年 11 月 13 日 · 13 家厂商官方增量核验</p><p>重要新增：Anthropic 自托管 Managed Agents；历史补录：Codex 0.167.2。</p></header><div class="container"><nav class="toc" aria-label="本期目录"><strong>CONTENTS / 本期导航</strong><a href="#sec-1">一、今日必看摘要</a><a href="#sec-2">二、重点更新逐条七维分析</a><a href="#sec-5">三、13 家厂商官方巡检状态表</a><a href="#sec-6">四、可靠核验的正式版本与 Model ID 基线</a><a href="#sec-7">五、跨厂商兼容性及迁移矩阵</a><a href="#sec-8">六、今天可执行的工程 Checklist</a><a href="#sec-9">七、综合判断</a></nav><article><h1>全球 AI 大模型与 Agent 技术官方日报</h1>
+<p><strong>2026 年 11 月 13 日（星期五）｜北京时间｜核查截至今日早间｜13 家厂商官方增量巡检</strong></p>
+<p>本期以 11 月 12 日已成功归档的完整日报为基线，核查随后出现的官方公告、版本发布和开发文档。<strong>今日确认一项重要新增：Anthropic 于 11 月 12 日发布完整自托管 Managed Agents；另补录一项昨日漏报的 Codex 稳定版更新。</strong> 11 月 12 日之前已经报道的 Qwen Code 1.0 Preview、Gemini CLI 0.68.0、Kimi Code Canary 不再算今日新消息。</p>
+<h2 id="sec-1">一、今日必看摘要</h2>
+<p><strong>1. 必看｜Anthropic：Self-hosted Claude Managed Agents，2026-11-12 正式公布。</strong> 企业现在可以在自有云/本地部署 Managed Agents <strong>服务端、PostgreSQL 与工具沙箱</strong>，而不仅是自托管沙箱；推理仍由选定的模型服务商执行，可使用 Anthropic、Bedrock、Google Cloud、Microsoft Foundry 或自有模型 Gateway。文档明确需要通过 Anthropic 客户团队申请安装包，<strong>不是所有账号均可直接下载的公开自助 GA</strong>。<a href="https://platform.claude.com/docs/en/release-notes/overview" rel="noopener noreferrer" target="_blank">官方更新日志</a>｜<a href="https://platform.claude.com/docs/en/managed-agents/self-hosted" rel="noopener noreferrer" target="_blank">架构说明</a>。</p>
+<p><strong>2. 建议看｜OpenAI Codex CLI <code>0.167.2</code>，2026-11-11 22:44 UTC（北京时间 11 月 12 日 06:44），历史遗漏补录。</strong> 在 Google Cloud Vertex AI 渠道默认增量发送工具更新；可用 <code>[features]</code> 下的 <code>incremental_tools_legacy_gcp = false</code> 关闭。新出现的 <code>0.170.0-alpha.4</code> 只是 <strong>Alpha 预发布</strong>，不得冒充最新稳定版。<a href="https://github.com/openai/codex/releases/tag/rust-v0.167.2" rel="noopener noreferrer" target="_blank">官方 Release</a>｜<a href="https://github.com/openai/codex/releases" rel="noopener noreferrer" target="_blank">Releases</a>。</p>
+<p>本轮<strong>没有可靠证据证明 13 家同时发布了新基础模型、统一降价或可比较的性能增幅</strong>。不为其余厂商凑新闻。</p>
+<h2 id="sec-2">二、重点更新逐条七维分析</h2>
+<h3 id="sec-3">1. Anthropic — Self-hosted Claude Managed Agents（必看）</h3>
+<p><strong>① 官方标题、内容、日期、级别及直接来源。</strong> Anthropic Claude Platform 官方更新日志于 <strong>2026-11-12</strong> 宣布 <em>self-hosted Claude Managed Agents</em>。官方<a href="https://platform.claude.com/docs/en/managed-agents/self-hosted" rel="noopener noreferrer" target="_blank">总览</a>、<a href="https://platform.claude.com/docs/en/managed-agents/self-hosted/quickstart" rel="noopener noreferrer" target="_blank">快速入门</a>、<a href="https://platform.claude.com/docs/en/managed-agents/self-hosted/differences" rel="noopener noreferrer" target="_blank">托管版差异</a>、<a href="https://platform.claude.com/docs/en/managed-agents/self-hosted/kubernetes" rel="noopener noreferrer" target="_blank">Kubernetes 部署</a>、<a href="https://platform.claude.com/docs/en/managed-agents/self-hosted-data-and-access" rel="noopener noreferrer" target="_blank">数据与访问</a>均可直接阅读。官方称“已推出”，<strong>但安装包须联系 Anthropic 客户团队申请</strong>；未公开统一的独立产品版本号、镜像 digest、可自助购买地区或本次功能的新 Token 价格，所以不编造。</p>
+<p><strong>② 核心技术变化和工作机制。</strong> 与“只把工具执行放进自己的沙箱”不同，此模式把 <strong>Agent API/loop、Agent/Session 历史存储、Worker 分派、执行沙箱</strong>都部署在企业基础设施上。官方组成如下：<code>cma-server</code> 处理 Agent API 与编排；<strong>PostgreSQL 16+</strong> 保存状态；<code>ant beta:worker</code> 或 SDK Worker 轮询任务并在隔离容器/VM 中执行 Shell 与文件工具；模型调用仍发给企业选定的推理提供方。官方同时给出了三种独立凭据：<strong>Server API Key</strong>（应用到 CMA 服务）、<strong>Inference Credential</strong>（CMA 服务到模型）、<strong>Environment Key</strong>（Worker 到队列）。</p>
+<p>官方说明自托管 CMA 与托管服务整体使用同一 Managed Agents API，<strong>并非完整 Claude Messages API 服务器</strong>：<code>/v1/messages</code>、<code>/v1/models</code> 在 CMA Server 上会返回 404。自托管版缺少托管 Cloud Environments、Files API、内置文档 Skills、Scheduled Deployments、Dreams、Webhooks；对 Skill ZIP、Multiagent 类型、MCP/Git 主机白名单等也存在差异，迁移前必须逐项读取<a href="https://platform.claude.com/docs/en/managed-agents/self-hosted/differences" rel="noopener noreferrer" target="_blank">差异表</a>。不是“只换 Base URL 就百分百兼容”。</p>
+<p><strong>③ 为什么有价值，及证据边界。</strong> 对数据驻留、租户隔离、企业自有模型路由、任务持久化、审计和私有网络出站控制，这是一个实质性的产品形态改变。以前自托管沙箱时，管理服务与对话历史仍由 Anthropic 托管；现在可由企业自己控制。但<strong>自托管不等于推理离线</strong>：每次请求仍向推理服务商发送会话上下文，包括 Prompt、Tool 输入与输出。官方未提供经独立复现的吞吐、P95、运维成本或比托管版更便宜的结论，不能据此宣传“性能提升 X 倍”或“数据绝不出网”。</p>
+<p><strong>④ 适用产品和业务场景。</strong> 适合企业内部 Coding Agent、受监管文档处理、金融分析 Agent、访问私有代码仓库的服务、需要 IAM/SSO 与可审计工具执行的业务流程，以及自建跨云 Agent 平台。不适合只是想简单调用模型的轻量应用：它增加数据库、容器编排、运维、备份、网络策略、凭据轮换和版本升级责任。若只需要工具在内网运行，先考虑 <strong>Self-hosted Sandboxes</strong>，而不一定部署整套 CMA。</p>
+<p><strong>⑤ 对 Java/Spring Boot、Nacos、领域 Gateway、跨语言架构和业务治理的帮助。</strong> 可以将 <code>cma-server</code> 视为<strong>有状态 Agent 控制平面</strong>，模型 Gateway 视为<strong>推理数据平面</strong>，Worker/沙箱视为<strong>不可信工具执行平面</strong>。Spring Boot 的企业服务可通过官方兼容 API 或企业适配层调用它；Nacos 可保管服务发现和非敏感配置，<strong>不负责持久化会话与日志</strong>。数据库和事件链须记录 <code>tenant_id / agent_id / session_id / tool_call_id / idempotency_key / provider / model_id / trace_id</code>。Gateway 对 <code>ANTHROPIC_BASE_URL</code> 路由应区分“应用调用 CMA Server”与“CMA Server 调用模型提供方”，避免误把地址设为自身造成回环。MCP/Git 主机采用准入白名单，Worker 只获得必要资源；不能把模型的安全提示词当成容器隔离。官方要求依信任边界隔离部署；<strong>Agent 的 Bash 实际具有 Worker 容器/VM 所赋予的 OS 与网络权限</strong>。</p>
+<p><strong>⑥ 可实践部署、命令、配置、迁移和生产验收。</strong> 前提是企业<strong>已经通过官方渠道取得对应发行包</strong>。官方给出单机 Docker Compose <strong>开发测试</strong>流程；正式部署建议使用发行包内两套 Helm Chart，并准备 <strong>Kubernetes 1.30+、PostgreSQL 16+、隔离 Sandbox、可执行 NetworkPolicy 的集群</strong>。以下示例只供<strong>隔离 Linux 测试环境</strong>操作（不是用户 Windows 本机可直接复制运行的完整生产脚本）：</p>
+<pre><code class="language-bash"># 在取得并核验官方发行包后，进入包中实际存在的 compose 目录
+cd /path/to/extracted-release/compose
+# 事先按官方 quickstart 建立 .env，放入演示专用密钥，权限 chmod 600
+# 禁止把 .env、数据库口令或 Token 上传到公开仓库
+docker compose up --build -d
+docker compose logs -f cma-server
+curl -s http://127.0.0.1:8400/cma-server/readyz
+# 完成测试后停止；默认保留数据库卷
+docker compose down --remove-orphans
+</code></pre>
+<p>官方标准快速入门要求 Docker Compose Plugin、<code>openssl</code>、<code>ant</code> CLI 和至少 2 CPU。<strong>开发栈使用明文 HTTP，仅绑定 <code>127.0.0.1:8400</code>；官方警告旧版 Docker Engine 在某些条件下仍可能被局域网访问。绝不可直接暴露公网。</strong> 获得服务器后，客户端可在专用的 PowerShell 7 测试会话中设置临时环境变量（只填自己的测试凭据，不打印真实密钥）：</p>
+<pre><code class="language-powershell">$env:ANTHROPIC_BASE_URL = 'http://127.0.0.1:8400'
+$env:ANTHROPIC_API_KEY = '&lt;TEST_CMA_SERVER_API_KEY&gt;'
+ant beta:agents list
+# 测试完成关闭这个 PowerShell 会话；切勿在同一会话启动模型后端/Compose
+</code></pre>
+<p>关键验收：A. <code>readyz</code> 为 <code>ready</code>，PostgreSQL 重启后 Agent/Session 历史仍在；B. Agent 执行 <code>hostname</code> 显示专属 Sandbox 容器名，而非宿主机；C. Worker 断连后任务状态可观测，恢复不重复执行不可逆操作；D. 无权限 Git/MCP/网络出站被拒绝；E. Server、推理与 Environment 三类凭据彼此隔离并可轮换；F. 用例验证 404/400、不支持的 Skills/Webhook/文件资源，迁移不丢关键功能；G. 通过 OTel 与 Gateway 统计请求、Token Usage、成本、P95、失败与恢复；H. 生产 IAM、加密、备份、网络策略、升级/回滚与数据删除覆盖 DB 及备份。</p>
+<p><strong>模型和兼容性专项：</strong> 这次发布<strong>不是新的 Claude 模型或 SDK Model ID</strong>；示例 Agent 使用 <code>claude-opus-5-5</code>，不等于所有账户的默认模型。具体 Context、Adaptive Thinking、<code>tool_choice</code>、消息 Schema、MCP、函数工具、Java SDK 版本、许可、隐私和 Token 价格，必须按所选推理提供方及资格单独核实。自托管 CMA 的<strong>应用客户端</strong>设置 <code>ANTHROPIC_BASE_URL</code> 指向 CMA Server；<strong>服务器推理侧</strong>应配置真实模型服务或企业 Gateway，不能误用相同 URL。官方还指出使用 Claude API 推理时，模型请求会携带会话/Agent/环境标识头，需纳入隐私审查；模型厂商的数据留存政策不会因为 CMA 自托管而自动失效。</p>
+<p><strong>⑦ 是否立即行动与优先级。</strong> <strong>必看、值得做架构评估与隔离试验；不建议未获许可就部署或直接替换生产 Agent Runtime。</strong> 只有业务明确需要会话数据自主控制、独立推理路由与长期运维时，完整自托管才可能优于托管型；否则选更轻的托管 Agent/自托管 Sandbox。</p>
+<h3 id="sec-4">2. OpenAI — Codex CLI <code>0.167.2</code> 的 Vertex AI 增量工具更新（建议看；历史遗漏补录）</h3>
+<p><strong>① 官方信息和日期。</strong> 官方标题 <strong>Release 0.167.2</strong>，正式稳定版，GitHub 原始发布于 <strong>2026-11-11 22:44 UTC（北京时间 11 月 12 日 06:44）</strong>。昨天日报基线仍记录 <code>0.167.1</code>，因此今天作为<strong>遗漏补录</strong>，不是冒充 11 月 13 日新发。<a href="https://github.com/openai/codex/releases/tag/rust-v0.167.2" rel="noopener noreferrer" target="_blank">官方 Release</a>。另外 <code>0.170.0-alpha.4</code> 于 11 月 12 日 22:59 UTC（北京时间 11 月 13 日 06:59）出现，但明确为 <strong>Pre-release</strong>，只列状态观察，不与稳定版混同。</p>
+<p><strong>② 技术机制。</strong> 发布说明明确：Codex 在 <strong>Google Cloud Vertex AI</strong> 渠道默认增量发送工具更新（incremental tool updates）。官方给出的退出开关是 <code>config.toml</code> <code>[features]</code> 下 <code>incremental_tools_legacy_gcp = false</code>。它影响的是工具相关信息在该渠道上的发送行为，而不是公开宣称增加新模型、改变 Java SDK 或提升基础模型智力。</p>
+<p><strong>③ 价值及证据边界。</strong> 对使用 Vertex AI 承载的 Codex 工作流，增量更新有机会改善工具进度事件的及时性与交互式可观测性，但官方本条<strong>未提供定量 P95/Token 节省指标</strong>；不同 Gateway 是否完整转发增量事件，需要本地回归，不应直接宣传降低成本。</p>
+<p><strong>④ 业务场景。</strong> Google Cloud Vertex AI 上的 Codex 运行、云侧编码 Agent、MCP 工具操作、CI 自动修复、需要采集工具执行事件的运维平台。如果使用原生 OpenAI API 或其他 Base URL，此改动未被官方证明会产生同样影响。</p>
+<p><strong>⑤ 企业架构具体帮助。</strong> Gateway 应区分 <code>tool_call_started / delta / completed / failed</code>，按 <code>tool_call_id</code> 聚合增量事件，并做好无序、重复、丢包、断线后的恢复。推理端的增量工具事件与 Agent 工作流完成不是同一层概念：<strong>收到最后一个 delta 不等于后续数据库写入已经成功</strong>。Java/Spring Boot 可在 SSE 订阅端维护有限状态机；请求/响应 Schema、第三方协议及埋点应随路由区分。</p>
+<p><strong>⑥ 测试命令和验收。</strong> 在 Windows PowerShell <strong>测试环境</strong>记录当前安装与版本来源，不要直接把 Alpha 覆盖稳定版：</p>
+<pre><code class="language-powershell">codex --version
+npm view @openai/codex version
+# 如使用官方 npm 渠道，在测试机固定版本：
+npm install -g @openai/codex@0.167.2
+codex --version
+</code></pre>
+<p>仅对<strong>确实使用 Google Cloud Vertex AI 的测试配置</strong>，比较默认增量模式与官方声明的退出开关；执行只读工具、长工具、失败工具、断流重连四类样本，验收 <code>tool_call_id</code> 不错乱、日志不重复计费、恢复不重放不可逆指令，并保存能回滚的原配置。<code>0.170.0-alpha.4</code> 仅适合隔离评估，不据其名称推测已经具备新功能。</p>
+<p><strong>⑦ 优先级。</strong> <strong>建议看。</strong> Vertex AI / Codex 集成团队可安排回归后升级；不用 Vertex AI 的用户可以只关注，不必为了这条改动立即迁移。</p>
+<h2 id="sec-5">三、13 家厂商官方巡检状态表</h2>
+<p>“经核验无重要新增”意为本轮<strong>已读取的官方入口</strong>中未发现本窗口值得纳入的发布，不表示所有隐藏或动态子页面绝无更新。阅读失败或动态目录不完整会明确写“未能完整核实”。</p>
+<div aria-label="可横向滚动的数据表" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>厂商</th>
+<th>本期状态</th>
+<th>官方证据、版本与核查边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>OpenAI</td>
+<td><strong>历史遗漏补录 + Alpha 小更新</strong></td>
+<td><a href="https://developers.openai.com/api/docs/changelog" rel="noopener noreferrer" target="_blank">API Changelog</a>最新可见 11/5 <code>gpt-6-cyber</code>，无 11/12–13 新 API 条目；<a href="https://github.com/openai/codex/releases" rel="noopener noreferrer" target="_blank">Codex</a> 稳定 <code>0.167.2</code> 北京 11/12 已漏报，<code>0.170.0-alpha.4</code> 为 11/13 北京时间预发布。Java SDK 未发现本窗口带日期的重要变更。</td>
+</tr>
+<tr>
+<td>②</td>
+<td>Anthropic</td>
+<td><strong>重要新增</strong></td>
+<td><a href="https://platform.claude.com/docs/en/release-notes/overview" rel="noopener noreferrer" target="_blank">Claude Platform Release Notes</a> 的 <strong>11/12 自托管 Managed Agents</strong> 是本期首要更新；<a href="https://github.com/anthropics/claude-code/releases" rel="noopener noreferrer" target="_blank">Claude Code Releases</a> 稳定 <code>2.1.322</code> 为既有基线。</td>
+</tr>
+<tr>
+<td>③</td>
+<td>Google / DeepMind</td>
+<td>经核验无重要新增</td>
+<td><a href="https://github.com/google-gemini/gemini-cli/releases" rel="noopener noreferrer" target="_blank">Gemini CLI Releases</a> 稳定 <code>0.68.0</code>、<code>0.69.0-preview.0</code> 已在昨日补录；<a href="https://ai.google.dev/gemini-api/docs/changelog" rel="noopener noreferrer" target="_blank">Gemini API</a>、<a href="https://cloud.google.com/vertex-ai/docs/release-notes" rel="noopener noreferrer" target="_blank">Vertex AI</a> 未确认本窗口新正式模型发布。</td>
+</tr>
+<tr>
+<td>④</td>
+<td>xAI</td>
+<td>经核验无重要新增</td>
+<td><a href="https://docs.x.ai/developers/release-notes" rel="noopener noreferrer" target="_blank">xAI API Release Notes</a> 最新 11 月可见条目仍是 <strong>11/2 图像路由调整</strong>；<code>grok-4.7</code> 为旧基线，语音/多模态导航“New”标签不等于新发日期。</td>
+</tr>
+<tr>
+<td>⑤</td>
+<td>智谱 / Z.ai</td>
+<td><strong>部分核验，动态目录待核实</strong></td>
+<td><a href="https://docs.z.ai/release-notes/new-released" rel="noopener noreferrer" target="_blank">模型发布目录</a>可读，最近显式日期仍为 8/26 的 <code>GLM-5.3-Flash</code>；Coding Plan、SDK 和中国平台全量更新时间无法穷尽。</td>
+</tr>
+<tr>
+<td>⑥</td>
+<td>DeepSeek</td>
+<td>经核验无重要新增</td>
+<td><a href="https://api-docs.deepseek.com/updates/" rel="noopener noreferrer" target="_blank">API Changelog</a> 最近条目为 <strong>10/17 Search API 与 V4.1-Flash-1017</strong>；11/12–13 未发现新正式模型/API 记录。</td>
+</tr>
+<tr>
+<td>⑦</td>
+<td>腾讯</td>
+<td><strong>未能完整核实</strong></td>
+<td><a href="https://www.tencent.com/" rel="noopener noreferrer" target="_blank">腾讯官网</a>与<a href="https://cloud.tencent.com/" rel="noopener noreferrer" target="_blank">腾讯云</a> 可定位，但混元、TokenHub、视频、SDK 多入口的全部发布日志无法完整读取；不把 11/4 Hy4 旧新闻算今天新发布。</td>
+</tr>
+<tr>
+<td>⑧</td>
+<td>阿里巴巴 / Qwen</td>
+<td>经核验无重要新增</td>
+<td><a href="https://github.com/QwenLM/qwen-code/releases" rel="noopener noreferrer" target="_blank">Qwen Code Releases</a> 最近重要 Preview 仍为 11/11 <code>v1.0.0-preview</code>，已于昨日详解；<a href="https://help.aliyun.com/zh/model-studio/model-release-notes" rel="noopener noreferrer" target="_blank">百炼更新记录</a> 可读但没有确认 11/12–13 新正式 Model ID。</td>
+</tr>
+<tr>
+<td>⑨</td>
+<td>Moonshot / Kimi</td>
+<td>经核验无重要新增</td>
+<td><a href="https://github.com/MoonshotAI/kimi-code/releases" rel="noopener noreferrer" target="_blank">Kimi Code Releases</a> 当前可见最新 11/11 <code>2.6.0-canary...</code> 已报道，稳定 <code>2.5.3</code> 为昨日基线；<a href="https://www.moonshot.ai/" rel="noopener noreferrer" target="_blank">Moonshot 研究</a> 最近列出的仍是 10/24 K3.1 Pro。</td>
+</tr>
+<tr>
+<td>⑩</td>
+<td>字节跳动</td>
+<td><strong>未能完整核实</strong></td>
+<td><a href="https://developer.volcengine.com/evaluation-set" rel="noopener noreferrer" target="_blank">火山引擎 Agent 评测集</a> 可读；Seed/Seedance/Seedream、方舟、Trae 及即梦的全量动态更新不能完全验证。既有 DABench 不重复算新消息。</td>
+</tr>
+<tr>
+<td>⑪</td>
+<td>TypeSafe AI</td>
+<td><strong>部分核验，API 变更待核实</strong></td>
+<td><a href="https://typesafe.ai/blog" rel="noopener noreferrer" target="_blank">博客</a>显示既有 <code>Jev 1.14.0</code>；<a href="https://docs.typesafe.ai/" rel="noopener noreferrer" target="_blank">文档</a>可读 Choice/Score/Noul/Box；<a href="https://api.typesafe.ai/redoc" rel="noopener noreferrer" target="_blank">ReDoc</a>依赖 JS，无法完整对比 API Schema、价格、Danger Zone 或模型别名更新。官方宣称的低延迟、校准效果不视为独立实测。</td>
+</tr>
+<tr>
+<td>⑫</td>
+<td>Meta AI</td>
+<td><strong>部分核验，无重要新证据</strong></td>
+<td><a href="https://ai.meta.com/blog/" rel="noopener noreferrer" target="_blank">Meta AI 研究/技术博客</a>与<a href="https://github.com/facebookresearch" rel="noopener noreferrer" target="_blank">官方 GitHub</a>可读；Llama Stack 旧路径存在仓库重定向，需再核对维护方及权重许可；未确认 11/12–13 新正式 Llama/SAM 权重或开发 API。Meta 消费产品变化不当作开发者 API。</td>
+</tr>
+<tr>
+<td>⑬</td>
+<td>百度</td>
+<td><strong>部分核验，动态目录待核实</strong></td>
+<td><a href="https://cloud.baidu.com/doc/qianfan/s/Dmw4tskcd" rel="noopener noreferrer" target="_blank">千帆更新动态</a>页面更新时间 <strong>11/9</strong>，内容主要仍是 10 月事项；<a href="https://github.com/PaddlePaddle/PaddleOCR/releases" rel="noopener noreferrer" target="_blank">PaddleOCR Releases</a> 可读。未确认本窗口新 ERNIE Model ID 或 Java SDK；区域、实名、权限与计费需以账号项目及官方最新列表确认。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-6">四、可靠核验的正式版本与 Model ID 基线</h2>
+<p>此处同时列出“已有标识”和“本窗口变化”；<strong>工具版本号不等于模型 ID，预览版不得冒充稳定版</strong>。</p>
+<div aria-label="可横向滚动的数据表" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>产品 / 平台</th>
+<th>官方可核实标识</th>
+<th>状态 / 生命周期 / 使用限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI Codex CLI</td>
+<td><code>0.167.2</code></td>
+<td><strong>稳定版</strong>，北京 11/12 发布；<code>0.170.0-alpha.4</code> 是 <strong>Alpha</strong>，北京 11/13 出现。<a href="https://github.com/openai/codex/releases" rel="noopener noreferrer" target="_blank">Releases</a></td>
+</tr>
+<tr>
+<td>OpenAI API</td>
+<td><code>gpt-6-cyber</code></td>
+<td>11/5 已有<strong>受限制安全研究准入</strong>，非今天发布、非所有组织可用。<a href="https://developers.openai.com/api/docs/changelog" rel="noopener noreferrer" target="_blank">Changelog</a></td>
+</tr>
+<tr>
+<td>Claude Managed Agents</td>
+<td>Self-hosted CMA（无本次公开统一版本号）</td>
+<td><strong>11/12 新增部署形式</strong>；须向 Anthropic 客户团队申请，不代表模型可本地离线推理。<a href="https://platform.claude.com/docs/en/managed-agents/self-hosted" rel="noopener noreferrer" target="_blank">Docs</a></td>
+</tr>
+<tr>
+<td>Anthropic Claude Code</td>
+<td><code>2.1.322</code></td>
+<td>已知稳定版；<a href="https://github.com/anthropics/claude-code/releases" rel="noopener noreferrer" target="_blank">Release</a>。</td>
+</tr>
+<tr>
+<td>Anthropic Models</td>
+<td><code>claude-fable-5-2</code>、<code>claude-mythos-5-2</code></td>
+<td>11/9 <strong>旧发布</strong>；Mythos 受验证准入。官方为这对型号列出 1M Context、128K Max Output、Adaptive Thinking，必须按服务渠道核实。<a href="https://platform.claude.com/docs/en/release-notes/overview" rel="noopener noreferrer" target="_blank">Release Notes</a></td>
+</tr>
+<tr>
+<td>Google Gemini CLI</td>
+<td><code>0.68.0</code> / <code>0.69.0-preview.0</code></td>
+<td>前者稳定，后者 Preview；均非今日新发。<a href="https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/latest.md" rel="noopener noreferrer" target="_blank">Changelog</a></td>
+</tr>
+<tr>
+<td>xAI API</td>
+<td><code>grok-4.7</code></td>
+<td>旧型号；官方称 500K Context，Thinking 支持 low/medium/high/xhigh（默认 high），具体计费看官方区域和上下文区间。<a href="https://docs.x.ai/developers/release-notes" rel="noopener noreferrer" target="_blank">Release Notes</a></td>
+</tr>
+<tr>
+<td>Z.ai</td>
+<td><code>GLM-5.3</code>、<code>GLM-5.3-Flash</code></td>
+<td>既有型号，API 请求精确拼写、Thinking 与价格应从对应平台模型列表核实。<a href="https://docs.z.ai/release-notes/new-released" rel="noopener noreferrer" target="_blank">Docs</a></td>
+</tr>
+<tr>
+<td>DeepSeek API</td>
+<td><code>deepseek-flash</code> → <code>DeepSeek-V4.1-Flash-1017</code></td>
+<td>10/17 已知别名映射；应核验实际路由、Token Usage、计费与可用区域。<a href="https://api-docs.deepseek.com/updates/" rel="noopener noreferrer" target="_blank">Changelog</a></td>
+</tr>
+<tr>
+<td>腾讯混元</td>
+<td>Hy4</td>
+<td>既有产品；不同云接入点的 Model ID、授权与价格需独立确认。<a href="https://www.tencent.com/" rel="noopener noreferrer" target="_blank">腾讯</a></td>
+</tr>
+<tr>
+<td>Qwen Code</td>
+<td><code>0.27.2</code> 稳定 / <code>v1.0.0-preview</code></td>
+<td>11/11 Preview 已报道；不等于 Qwen 模型版本或 API 迁移已完成。<a href="https://github.com/QwenLM/qwen-code/releases" rel="noopener noreferrer" target="_blank">Releases</a></td>
+</tr>
+<tr>
+<td>Kimi Code</td>
+<td><code>2.5.3</code> 稳定 / <code>2.6.0-canary.20261111095258-5518d54</code></td>
+<td>Canary 为预发布，Compaction 与 Windows 修复已报道。<a href="https://github.com/MoonshotAI/kimi-code/releases" rel="noopener noreferrer" target="_blank">Releases</a></td>
+</tr>
+<tr>
+<td>Moonshot 模型</td>
+<td>Kimi K3.1 Pro</td>
+<td>10/24 旧研究基线；1M 上下文为官方产品宣传，账户与渠道是否开放需另核。<a href="https://www.moonshot.ai/" rel="noopener noreferrer" target="_blank">官网</a></td>
+</tr>
+<tr>
+<td>ByteDance</td>
+<td>Doubao Seed 系列</td>
+<td>本窗口无法确认新精确 Model ID，不用产品营销名拼造 API ID。<a href="https://www.volcengine.com/" rel="noopener noreferrer" target="_blank">火山引擎</a></td>
+</tr>
+<tr>
+<td>TypeSafe AI</td>
+<td>Jev 1.14.0</td>
+<td>既有模型版本；Choice/Score/Noul/Box 是类型化决策原语，不是普通生成式聊天 Model ID。<a href="https://docs.typesafe.ai/" rel="noopener noreferrer" target="_blank">文档</a></td>
+</tr>
+<tr>
+<td>Meta AI</td>
+<td>Llama/SAM/Muse（不同产品线）</td>
+<td>本窗口<strong>没有核实新权重版本</strong>；每一权重的许可、再分发、商用和部署限制必须逐项看官方 License，不凭“open”字样推定。<a href="https://ai.meta.com/" rel="noopener noreferrer" target="_blank">Meta AI</a></td>
+</tr>
+<tr>
+<td>百度 PaddleOCR</td>
+<td><code>3.7.0</code>（既有版本）</td>
+<td>OCR 工具版本不同于千帆 ERNIE 模型 ID；11/12–13 新模型无可靠核验。<a href="https://github.com/PaddlePaddle/PaddleOCR/releases" rel="noopener noreferrer" target="_blank">Releases</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>成本和能力比较边界：</strong> 自托管 CMA 的基础设施、数据库、沙箱、日志与推理 Token 是<strong>不同成本项</strong>；官方本次没有公布统一自托管报价，也没有与 OpenAI Agents API、Gemini Agent 等在同一负载/地区/硬件条件下的 P95 对比。不同厂商的 Context Window、Cache、Thinking、工具协议与开源许可不能据版本名进行等价换算。没有可靠口径的数据一律不列数值排名。</p>
+<h2 id="sec-7">五、跨厂商兼容性及迁移矩阵</h2>
+<div aria-label="可横向滚动的数据表" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>工程场景</th>
+<th>当前官方变化 / 不兼容点</th>
+<th>迁移与生产回归动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anthropic 托管 CMA → 完整自托管</td>
+<td>自己运行服务/DB/Sandbox；历史、Skill、Vault、Memory <strong>不会自动迁移</strong>；<code>/v1/messages</code> 在 CMA Server 404</td>
+<td>审查资格、重建资源、验证功能差异；持久化/备份/回滚；独立区分模型 Gateway 和 CMA 地址</td>
+</tr>
+<tr>
+<td>自托管 Sandbox → 自托管 CMA</td>
+<td>前者 Agent 服务仍由 Anthropic 托管；后者控制平面在企业</td>
+<td>按数据驻留诉求决定是否值得自运维，不能仅为“本地执行”重复造控制平面</td>
+</tr>
+<tr>
+<td>CMA Skills / MCP / Agent 多智能体</td>
+<td>内建文档 Skills、Webhook、Zip 解包及部分动态多 Agent 不支持或语义不同</td>
+<td>按差异表做能力检测、文件形式安装、白名单、替代调度与事件流</td>
+</tr>
+<tr>
+<td>Codex <code>0.167.1</code> → <code>0.167.2</code></td>
+<td>Vertex AI 增量工具更新默认行为变化</td>
+<td>对比事件顺序、SSE 断流、模型 Tool Schema、Gateway 日志、禁用开关及回滚</td>
+</tr>
+<tr>
+<td>Codex <code>0.170.0-alpha.4</code></td>
+<td>Alpha，无稳定兼容保证</td>
+<td>只做隔离试验；不得覆盖生产稳定版</td>
+</tr>
+<tr>
+<td>Claude Fable/Mythos 5.2（既有基线）</td>
+<td>思考块前缀校验、跨模型思考块可读性、Computer Toolset、留存约束</td>
+<td>迁移前复核账户权限、Thinking Schema、工具版本和数据保留要求</td>
+</tr>
+<tr>
+<td>Gemini / Qwen / Kimi CLI</td>
+<td>Stable / Preview / Canary 混用会造成 Hooks、Skills、模型选择和 Compaction 差异</td>
+<td>固定运行器版本、Provider ID 和任务快照；长会话注入取消和恢复测试</td>
+</tr>
+<tr>
+<td>多渠道第三方 <code>base_url</code></td>
+<td>“OpenAI 兼容”不代表 Tool Calling、JSON Schema、Thinking、Token 统计和错误码一致</td>
+<td>引入 <code>provider/model/capability</code> 注册表，功能探测，严格认证与预算告警</td>
+</tr>
+<tr>
+<td>Java/Spring Boot/Nacos 企业 Gateway</td>
+<td>配置中心不是持久化任务数据库；重试可能重复副作用</td>
+<td>业务幂等键、Outbox、事件状态机、限流熔断、OpenTelemetry、审计脱敏</td>
+</tr>
+<tr>
+<td>GitHub 官方日报归档</td>
+<td>HTML 生成、文件提交、manifest 索引、Pages 发布是四个不同完成状态</td>
+<td>当日文件先查重、GitHub 乐观 SHA、提交后双回读、线上 URL 单独验证</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-8">六、今天可执行的工程 Checklist</h2>
+<ul>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/><strong>优先读 Anthropic 11/12 <a href="https://platform.claude.com/docs/en/managed-agents/self-hosted" rel="noopener noreferrer" target="_blank">官方总览</a>和<a href="https://platform.claude.com/docs/en/managed-agents/self-hosted/differences" rel="noopener noreferrer" target="_blank">差异表</a></strong>，做出“托管 Agent / 自托管 Sandbox / 完整自托管”三种方案的需求决策；不要把自托管误读为离线模型。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>如果有符合需求的企业资格，向 Anthropic 客户团队申请发行包、许可、运营与价格条款；<strong>没有发行包时不要从第三方下载不明二进制或猜测 Docker 镜像。</strong></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>画出 <code>Client → CMA Server → Inference Gateway → Model</code> 与 <code>CMA Server ↔ PostgreSQL ↔ Worker/Sandbox</code> 的数据、身份和网络边界，标注 Prompt/Tool 结果是否出网。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>给 Agent 执行层补齐 Task/Tool Call ID、持久化、幂等恢复、审批、Worker 心跳和失败分类；Shell/MCP/Git 出站按租户最小授权。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>审计 Java Gateway 的 Base URL、模型别名、Thinking、JSON Schema、MCP、Token Usage、计费归属；分别记录 <code>agent_runtime_version</code> 和 <code>model_id</code>。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>Windows PowerShell 测试机检查 <code>codex --version</code>，仅对 Vertex AI 集成测试 <code>0.167.2</code> 的增量工具事件，保留退出开关及旧配置；不要将 <code>0.170.0-alpha.4</code> 当稳定版。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>如能运行自托管 CMA 测试，核对 PostgreSQL 16+、官方 <code>readyz</code>、容器隔离、存储备份、认证密钥分离、断线重试及 OTel；用完关闭开发环境。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>维持 13 家厂商“新增 / 无重要新增 / 未能完整核实”的真实区分；优先补齐腾讯、字节、TypeSafe 动态 API、百度千帆和 Meta 权重许可的核验缺口。</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>日报发布继续先交付<strong>完整用户可见中文正文</strong>，再生成完整离线 HTML，最后 GitHub 单栏目归档并验证文件和索引；不以任务标记 completed 代替交付成功。</li>
+</ul>
+<h2 id="sec-9">七、综合判断</h2>
+<p><strong>今天最有价值的变化是企业级 Agent 运行时的部署边界改变，不是又出现一个大模型榜单。</strong> Anthropic 允许把 Managed Agents 控制平面及数据存储放入企业自己的基础设施，这对私有数据、审计、云服务商选型和跨语言 Gateway 的设计有重大意义，同时也带来沙箱安全、数据库、网络、升级与运行成本责任。它适合有明确数据驻留与合规需求的团队，不等于所有企业都应自托管。</p>
+<p>Codex <code>0.167.2</code> 则是范围较窄、但值得 Vertex AI 集成团队排查的工程兼容性补录。其余厂商在本次可核验官方证据内没有足以认定的同窗口重大发布；对动态资料缺口如实保留待核验，<strong>不杜撰版本、价格、Benchmark 和可用性</strong>。</p>
+<div class="footer"><a class="back" href="#top">返回顶部</a><p>本报告内容基于所列厂商官方文档/Release，来源日期按原始发布日，无法完整核实处显式标记。仅公开技术信息；无用户个人数据与访问凭据。完整离线打开不依赖外部资源。</p></div></article></div></body></html>
