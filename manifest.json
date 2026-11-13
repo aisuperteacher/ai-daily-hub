@@ -5,7 +5,7 @@
   "readme": "本仓库仅展示已经提交的完整 HTML 报告；页面内容由 categories[].reports 索引。",
   "counts": {
     "topic_count": 10,
-    "verified_full_reports": 66
+    "verified_full_reports": 67
   },
   "categories": [
     {
@@ -496,6 +496,13 @@
       "reports": [
         {
           "date": "2026-11-13",
+          "title": "2026-11-13 · AI/Cloud 全球扩展版（中德法英美 · 26 项完整权益）",
+          "label": "11/13 全球扩展版",
+          "path": "reports/offers/2026-11-13_global-expanded.html",
+          "kind": "full"
+        },
+        {
+          "date": "2026-11-13",
           "title": "AI/Cloud 活动奖励巡检｜2026-11-13｜26 项权益完整报告",
           "label": "2026-11-13",
           "path": "reports/offers/2026-11-13.html",
@@ -515,7 +522,8 @@
           "path": "reports/offers/2026-11-06.html",
           "kind": "full"
         }
-      ]
+      ],
+      "last_run": "2026-11-13"
     },
     {
       "id": "learning",
