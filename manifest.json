@@ -5,7 +5,7 @@
   "readme": "本仓库仅展示已经提交的完整 HTML 报告；页面内容由 categories[].reports 索引。",
   "counts": {
     "topic_count": 10,
-    "verified_full_reports": 64
+    "verified_full_reports": 65
   },
   "categories": [
     {
@@ -519,6 +519,13 @@
       "description": "零基础理解 AI 术语与技术机制，包含 IPA 发音、业务案例、对比和实践练习。",
       "source_status": "partial_archive",
       "reports": [
+        {
+          "date": "2026-11-13",
+          "title": "2026-11-13｜每日 AI 五词精讲：Agent Harness、任务分解、Git Worktree、Unified Diff 与验证闭环",
+          "label": "2026-11-13",
+          "path": "reports/learning/2026-11-13.html",
+          "kind": "full"
+        },
         {
           "date": "2026-11-12",
           "title": "2026-11-12｜让 AI Coding Agent 可控扩展：项目规则、技能、MCP、钩子与权限",
