@@ -5,7 +5,7 @@
   "readme": "本仓库仅展示已经提交的完整 HTML 报告；页面内容由 categories[].reports 索引。",
   "counts": {
     "topic_count": 10,
-    "verified_full_reports": 71
+    "verified_full_reports": 72
   },
   "categories": [
     {
@@ -455,6 +455,13 @@
       "source_status": "partial_archive",
       "reports": [
         {
+          "date": "2026-11-14",
+          "title": "每日科技工作简报｜2026 年 11 月 14 日",
+          "label": "2026-11-14",
+          "path": "reports/tech-brief/2026-11-14.html",
+          "kind": "full"
+        },
+        {
           "date": "2026-11-13",
           "title": "每日科技工作简报｜2026 年 11 月 13 日",
           "label": "2026-11-13",
@@ -511,7 +518,7 @@
           "kind": "full"
         }
       ],
-      "last_run": "2026-11-13"
+      "last_run": "2026-11-14"
     },
     {
       "id": "offers",
