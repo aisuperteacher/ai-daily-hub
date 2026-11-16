@@ -1,11 +1,11 @@
 {
   "version": 3,
-  "updated_at": "2026-11-16",
+  "updated_at": "2026-11-17",
   "scope": "public_briefings_only",
   "readme": "本仓库仅展示已经提交的完整 HTML 报告；页面内容由 categories[].reports 索引。",
   "counts": {
     "topic_count": 10,
-    "verified_full_reports": 89
+    "verified_full_reports": 90
   },
   "categories": [
     {
@@ -399,6 +399,13 @@
       "description": "视频生成/编辑、角色一致性、语音、口型驱动、人脸、3D、制作工作流与实战练习。",
       "source_status": "partial_archive",
       "reports": [
+        {
+          "date": "2026-11-17",
+          "title": "AI 短剧技术雷达｜2026-11-17｜11 项完整技术日报",
+          "label": "2026-11-17",
+          "path": "reports/ai-video/2026-11-17.html",
+          "kind": "full"
+        },
         {
           "date": "2026-11-16",
           "title": "AI 短剧技术雷达｜2026-11-16｜12 项完整报告",
