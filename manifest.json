@@ -5,7 +5,7 @@
   "readme": "本仓库仅展示已经提交的完整 HTML 报告；页面内容由 categories[].reports 索引。",
   "counts": {
     "topic_count": 10,
-    "verified_full_reports": 86
+    "verified_full_reports": 87
   },
   "categories": [
     {
@@ -538,6 +538,13 @@
       "description": "每日精选有业务与工程价值的 AI、云计算、GitHub、数字银行和全球科技新闻。",
       "source_status": "partial_archive",
       "reports": [
+        {
+          "date": "2026-11-16",
+          "title": "每日科技工作简报｜2026 年 11 月 16 日",
+          "label": "2026-11-16",
+          "path": "reports/tech-brief/2026-11-16.html",
+          "kind": "full"
+        },
         {
           "date": "2026-11-15",
           "title": "每日科技工作简报｜2026 年 11 月 15 日",
