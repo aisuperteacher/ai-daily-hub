@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="light"><title>全球 AI 大模型与 Agent 技术官方日报｜2026-11-16</title><style>
+:root{--paper:#f7f6f1;--ink:#1c2734;--accent:#0d5267;--muted:#556475;--yellow:#ffdb71;--mint:#b5ebe1;--line:#b8c7c8;--card:#fffefb}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:15.5px/1.84 system-ui,-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;background:var(--paper);color:var(--ink);overflow-wrap:anywhere}
+a{color:#095c79;text-underline-offset:3px}a:hover{color:#ac483e}a:focus-visible{outline:2px solid #1460b1;outline-offset:2px}
+.hero{background:var(--yellow);border-bottom:3px solid var(--ink);padding:34px max(20px,calc((100vw - 1160px)/2));}
+.hero .overline{font-weight:850;letter-spacing:.15em;font-size:11px}.hero h1{font-size:clamp(29px,4.7vw,48px);line-height:1.2;letter-spacing:-.035em;margin:9px 0}.hero p{font-size:13px;font-weight:650;max-width:840px}
+.layout{max-width:1220px;margin:auto;display:grid;grid-template-columns:216px minmax(0,1fr);gap:24px;padding:24px 18px 72px;align-items:start}
+nav{position:sticky;top:14px;background:var(--card);border:1px solid var(--line);border-top:4px solid var(--ink);border-radius:8px;padding:15px 10px}nav strong{display:block;padding:0 10px 10px;font-size:12px;letter-spacing:.08em}nav a{display:block;font-size:12.2px;padding:7px 10px;text-decoration:none;border-radius:5px;line-height:1.5}nav a:hover{background:#e6f3ef}
+main{min-width:0;background:var(--card);border:1px solid #d6ddd9;border-radius:9px;padding:22px clamp(18px,3.6vw,45px);box-shadow:0 8px 22px #27445b0b}
+main h1{display:none}main h2{font-size:clamp(21px,2.35vw,28px);border-bottom:2px solid var(--ink);letter-spacing:-.02em;line-height:1.35;padding-bottom:10px;margin:38px 0 17px;scroll-margin-top:20px}main h3{font-size:19px;line-height:1.4;margin:29px 0 12px;scroll-margin-top:20px}main h2:first-of-type{margin-top:8px}
+p{margin:10px 0 17px}strong{font-weight:770}li{margin:7px 0}ul,ol{padding-left:23px}
+.table-scroll{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:7px;margin:14px 0 24px}
+table{border-collapse:collapse;width:100%;min-width:650px;line-height:1.56;font-size:13px}th,td{padding:10px 11px;text-align:left;vertical-align:top;border-right:1px solid #d5e1e1;border-bottom:1px solid #dbe6e3}th{background:var(--mint)}tbody tr:nth-child(even){background:#f3f8f5}tr:last-child td{border-bottom:0}td:last-child,th:last-child{border-right:0}
+pre{max-width:100%;overflow-x:auto;font:12.8px/1.65 ui-monospace,Consolas,"Cascadia Code",monospace;background:#1c2b3c;color:#f1f5fa;padding:16px 18px;border-radius:7px;margin:15px 0 23px}code{font:.9em ui-monospace,Consolas,monospace;background:#e9eff0;padding:2px 4px;border-radius:3px}pre code{background:none;color:inherit;padding:0;font-size:inherit;white-space:pre}
+footer{margin-top:30px;padding:17px 0;border-top:2px solid var(--line);font-size:12px;color:var(--muted)}
+@media(max-width:800px){.layout{display:block;padding:0 0 28px}nav{position:relative;top:0;margin:12px 12px 6px;border-top-width:2px;padding:9px;display:flex;gap:5px;overflow-x:auto;white-space:nowrap}nav strong{display:none}nav a{flex:0 0 auto;border:1px solid #d1e1df;padding:6px 9px}main{border-left:0;border-right:0;border-radius:0;padding:14px 15px 26px;box-shadow:none}.hero{padding:25px 16px 21px}body{font-size:14.5px}main h2{font-size:21px;margin:30px 0 15px}main h3{font-size:18px}.table-scroll table{min-width:560px;font-size:12px}pre{font-size:12px;padding:13px}}
+@media(max-width:420px){.hero h1{font-size:28px}.table-scroll table{min-width:525px}main{padding:12px 13px 22px}pre{font-size:11.7px}}
+@media print{nav{display:none}.layout{display:block;padding:0}main{border:none;box-shadow:none}.hero{background:white}h2,h3{break-after:avoid}.table-scroll{overflow:visible}table{min-width:0!important}}
+</style></head><body><header class="hero" id="top"><div class="overline">OFFICIAL AI DAILY · ENGINEERING INTELLIGENCE</div><h1>全球 AI 大模型与 Agent 技术官方日报</h1><p>2026 年 11 月 16 日 · 北京时间 · 十三家厂商官方巡检 · Qwen Code 0.27.4</p></header><div class="layout"><nav aria-label="目录"><strong>CONTENTS · 本期目录</strong><a href="#section-1">一、今日必看摘要</a><a href="#section-2">二、重点更新完整七维分析</a><a href="#section-4">三、配套版本与工程注意事项（不重复计为重大新闻）</a><a href="#section-5">四、13 家厂商官方巡检状态表</a><a href="#section-6">五、经可靠核验的版本与 Model ID 基线</a><a href="#section-7">六、跨厂商兼容性与迁移矩阵</a><a href="#section-8">七、今日工程行动 Checklist</a><a href="#section-9">八、综合判断</a></nav><main><h1>全球 AI 大模型与 Agent 技术官方日报</h1>
+<p><strong>2026 年 11 月 16 日（星期一）｜北京时间｜13 家厂商官方巡检</strong><br/>
+<strong>核查窗口：</strong>与 2026-11-15 已归档日报去重，重点检查 11 月 15 日至今天上午新出现的官方发布。信息截至本次早间核查；各厂商所在时区与北京时间不同，特别列明原始日期。本文只讨论公开资料，不包含私人账户与订阅情况。</p>
+<h2 id="section-1">一、今日必看摘要</h2>
+<p><strong>1．必看｜阿里巴巴 Qwen Code 0.27.4：Managed Agent、权限安全、Hooks 审计、企业消息交付升级。</strong> 官方 GitHub 于 <strong>2026-11-15 07:04 UTC（北京时间 11 月 15 日 15:04）</strong>发布稳定版 <code>v0.27.4</code>，属于上期早间日报之后值得新收录的版本；同日配套 TypeScript SDK <code>v0.1.34</code> 与 Desktop <code>v0.27.4</code>。核心价值是让长任务、受控本地目录、人工授权、Webhook 消息与会话恢复更适合工程治理，而非模型智能提升。官方：<a href="https://github.com/QwenLM/qwen-code/releases/tag/v0.27.4" rel="noopener noreferrer" target="_blank">Qwen Code v0.27.4</a>、<a href="https://github.com/QwenLM/qwen-code/releases/tag/sdk-typescript-v0.1.34" rel="noopener noreferrer" target="_blank">SDK v0.1.34</a>。</p>
+<p><strong>2．建议关注但不升级｜OpenAI Codex 0.171.0-alpha.7 预发布。</strong> 官方 GitHub 显示 <strong>2026-11-15 23:13 UTC（北京时间 11 月 16 日 07:13）</strong>发布 <code>0.171.0-alpha.7</code>，但该页只有构建标识和资产信息，<strong>没有足以确认独立功能变化的正式说明</strong>；不可当作稳定版，更不能推断模型能力、价格或 API 发生变化。正式基线仍为 <code>0.169.0</code>（11 月 13 日 UTC 发布）。官方：<a href="https://github.com/openai/codex/releases" rel="noopener noreferrer" target="_blank">Codex Releases</a>、<a href="https://github.com/openai/codex/releases/tag/rust-v0.169.0" rel="noopener noreferrer" target="_blank">0.169.0 正式版</a>。</p>
+<p>本次没有确认 11 月 16 日新发布的重要基础模型、模型价格调整或大规模退役通知。上期已经介绍过的 Gemini 4 Hydrogen、ERNIE 5.5 Flash Preview，以及 11 月 13 日 DeepSeek 应用 API，不重复包装为今日新发布。</p>
+<h2 id="section-2">二、重点更新完整七维分析</h2>
+<h3 id="section-3">阿里巴巴 / Qwen：Qwen Code v0.27.4（必看）</h3>
+<p><strong>① 官方标题、版本、日期、状态与直接来源</strong></p>
+<p>官方标题为 <em>Release v0.27.4</em>。GitHub Release 记录为 <strong>2026-11-15 07:04 UTC</strong>，北京时间 <strong>2026-11-15 15:04</strong>，是正式发布条目，区别于同日的 <code>v0.27.3-nightly...</code>、此前的 <code>v1.0.0-preview</code>。官方发布页明确写出 <strong>“No known breaking changes”</strong>，仅表示未列出已知破坏性变更，不保证所有插件、第三方 Gateway 和生产流程零风险。官方源：<a href="https://github.com/QwenLM/qwen-code/releases/tag/v0.27.4" rel="noopener noreferrer" target="_blank">完整发布记录</a>。</p>
+<p>配套的 <a href="https://github.com/QwenLM/qwen-code/releases/tag/sdk-typescript-v0.1.34" rel="noopener noreferrer" target="_blank">TypeScript SDK v0.1.34</a> 于 <strong>2026-11-15 08:54 UTC（北京时间 16:54）</strong>发布，注明打包的 CLI 版本是 <code>0.27.4</code>；同日的 <a href="https://github.com/QwenLM/qwen-code/releases/tag/desktop-v0.27.4" rel="noopener noreferrer" target="_blank">Desktop v0.27.4</a> 对应桌面端。<strong>CLI、SDK、Desktop 是不同交付物，均不是 Qwen 模型的 Model ID。</strong></p>
+<p><strong>② 核心变化与技术机制</strong></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>变化领域</th>
+<th>本版官方披露内容</th>
+<th>需要理解的机制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Managed Agent 本地目录</td>
+<td>浏览器用户可临时授权本地目录供会话使用；官方称不持久化凭据和路径</td>
+<td>授权范围、生命周期与最小权限，不能等同于整个磁盘读写授权</td>
+</tr>
+<tr>
+<td>Managed Web Terminal</td>
+<td>增加交互式终端，使用短期票据鉴权 WebSocket，会话附着期间保持运行时活跃</td>
+<td>控制面、执行面、短期凭据、断线重连与审计</td>
+</tr>
+<tr>
+<td>Feishu / WeCom</td>
+<td>新增发送型飞书、企业微信群 Webhook；长消息按顺序分段，超限时给出截断提示</td>
+<td>通道只负责交付，不能把 Webhook 返回成功当作最终业务效果已验收</td>
+</tr>
+<tr>
+<td>Auto Mode 权限</td>
+<td>高风险操作要求显式授权；分类器超时回退受策略约束；Full Access 有显著提示</td>
+<td>“任务相关”不等于“用户已授权”，危险动作必须有独立许可</td>
+</tr>
+<tr>
+<td>Hooks 可观测性</td>
+<td>提供按回合的 Hook 执行记录、只读页面、SDK 访问及签名的会话快照</td>
+<td>事件历史与可核查证据，便于复盘自动化动作</td>
+</tr>
+<tr>
+<td>Agent Loop / 取消</td>
+<td><code>experimental.unifiedAgentLoop</code> 为实验开关；取消发布 <code>loop.cancelled</code>，官方设计中十秒内结束并尽可能保留已完成批次结果</td>
+<td>统一编排路径与“中断不等于失败或成功”的状态机</td>
+</tr>
+<tr>
+<td>Memory / Java SDK</td>
+<td>恢复 <code>/memory</code> 操作与工作区设置；增加 Codex Memory 导入的类型化 SDK 操作；Java SDK 控制回调失败含 request ID、子类型和错误值</td>
+<td>记忆导入是受控操作；跨语言错误需可关联和重试</td>
+</tr>
+<tr>
+<td>Windows / 稳定性</td>
+<td>修复 HTTP(S) URL 被当作文件路径查询的问题；Unicode Edit 处理、子 Agent Context 统计、依赖安全问题等改进</td>
+<td>降低 Windows 误处理、错误上下文展示及某些安全风险</td>
+</tr>
+</tbody>
+</table></div>
+<p>官方没有宣称上述能力默认全部开启：尤其 <code>experimental.unifiedAgentLoop</code> 仍为<strong>实验性、选择性启用</strong>，文档与运行时开关应分别验证。所谓签名快照也不应直接等价于满足企业法律级不可抵赖审计。</p>
+<p><strong>③ 为什么有价值；官方宣称与验证边界</strong></p>
+<p>本次主要改善 <strong>Agent Runtime 的治理与交付可靠性</strong>。以前把终端执行、文件读写、Webhook 推送和模型回答混在一个“任务成功”标志里，容易出现本地目录被过度授权、消息过长被截断、长任务断连后无法确认结果、高危操作被模型自行判断等问题。现在可利用受控目录授权、Hook 记录、短期票据、取消事件与分段交付建立更可审计的工作流。</p>
+<p>但“更安全”“更快”不能直接当成独立评测结论：本版 Release 不提供可跨系统比较的 P95 延迟、真实故障率或成本节省百分比。本期不杜撰 Benchmark，也不据此声称升级后可获得量化收益。相关改进是否有效，需在相同业务任务、网络和权限条件下实测。</p>
+<p><strong>④ 适用产品、业务与工程场景</strong></p>
+<p>适合需要长期运行和人为审批的 Coding Agent、企业内部 AI 操作台、GitHub PR 自动维护、跨部门文件协作、知识库整理、飞书或企业微信通知机器人、多个工作区任务调度，以及企业自建 Managed Agent 管控平台。对于没有采用 Qwen Code 的团队，它同样可以作为架构设计案例；<strong>不意味着必须将 Codex、Claude Code 或现有 Java 服务整体迁移到 Qwen Code</strong>。</p>
+<p><strong>⑤ 对 Java/Spring Boot、Nacos、跨语言 AI Gateway 和 Agent 治理的具体帮助</strong></p>
+<p>应把 <strong>任务运行、文件访问、审批、对外发送</strong>拆成不同的权限边界，而不是用一个 API Key 或一个“Full Access”标志统一放行。建议在跨语言 AI Gateway/Agent Runtime 中设计如下状态与审计字段：</p>
+<pre tabindex="0"><code class="language-text">agent_run: run_id, tenant_id, workspace_id, model_provider, model_id,
+           status, started_at, finished_at, trace_id, cost_estimate
+approval:  approval_id, run_id, action, resource_scope, decided_by,
+           decision, expires_at
+hook:      hook_id, run_id, turn_id, phase, result, error_code, timestamp
+outbox:    event_id, run_id, destination, segment_no, delivery_status,
+           retry_count, idempotency_key
+</code></pre>
+<p>这些是<strong>建议的内部字段示例，并非 Qwen Code 官方请求 Schema</strong>。Spring Boot 可承担审批与审计 API，Nacos 管理非敏感配置及服务发现，数据库存储权威 Run/Approval 状态，消息队列和 Outbox 模式保证至少一次投递下的幂等。Java、Node.js、Go、Python 客户端均应保留原始错误 ID、Hook 事件和工具结构化输出，不要为了统一 API 把不同供应商的工具/Thinking/SSE 消息强行压成一段文本。</p>
+<p>Webhook 要与业务执行隔离：即使飞书/企微端点返回 2xx，也只意味着一次传输得到接受响应；消息展示、分段顺序、重试去重及最终任务成功仍需分别判定。临时文件授权应绑定用户、会话、工作区与有效期，并限制符号链接、目录越界与跨租户访问。</p>
+<p><strong>⑥ 是否值得试用、操作步骤与验收标准</strong></p>
+<p>在 Windows 11 / PowerShell 7 测试环境中，先记录既有版本与环境，并核对官方发行版本；不要直接在生产 Agent 主机运行不受控的 <code>latest</code> 升级：</p>
+<pre tabindex="0"><code class="language-powershell">$ErrorActionPreference = 'Stop'
+node --version
+npm --version
+qwen --version
+npm view @qwen-code/qwen-code version
+npm view @qwen-code/qwen-code@0.27.4 version
+
+# 仅在隔离的测试环境安装明确版本
+npm install -g @qwen-code/qwen-code@0.27.4
+qwen --version
+</code></pre>
+<p>随后使用无私人凭据的虚拟工作区开展五组回归：第一，在临时目录授权会话读取一个样例文件，检查禁用或会话结束后无法访问未授权目录；第二，将较长的非敏感测试消息发往<strong>专用测试飞书/企业微信群</strong>，验证分段顺序、重试行为与截断提示；第三，用低风险操作测试 Hook 日志、Run ID 和签名快照是否可回溯；第四，发起一个耗时但无副作用的任务后取消，确认 <code>loop.cancelled</code> 不被误报为完成；第五，模拟 Windows 中文路径、Unicode 转义、HTTP(S) URL 和第三方 API Base URL 的输入，回归文件、代理与错误处理。</p>
+<p><strong>完成标准：</strong> 未授权目录不可读；管理员撤销权限后不留持久化授权；Webhook 分段完整且不会重复造成业务动作；高风险操作需要明确批准；取消后不产生“已完成”假象；Java/SDK 错误可关联 Trace ID；控制面重启后能恢复或明确标记结果未知。</p>
+<p>迁移前还需检查：官方未在此版宣布新的模型 Context Window、Thinking 档位、Tokenizer、输入输出 JSON Schema、函数调用协议、API Token 单价或地区开放清单；这些仍按所连接模型和服务商核实。自托管的 Qwen Code 运行时与第三方模型 API 的许可、账单、数据传输政策也必须分别审核。实验性 Loop 不能未经灰度直接启用。</p>
+<p><strong>⑦ 是否立即阅读/升级及优先级</strong></p>
+<p><strong>优先级：必看；立即阅读 Release Notes，推荐先灰度试用，不建议生产环境无回归直接升级。</strong> 若正在使用 Managed Agent、Hook、Webhook 或 Java SDK 回调，优先验证权限与恢复改动；若只在终端进行普通问答和文件编辑，可先观察，不必为全部新功能立刻迁移。</p>
+<h2 id="section-4">三、配套版本与工程注意事项（不重复计为重大新闻）</h2>
+<p><strong>Qwen Code TypeScript SDK v0.1.34（小更新）</strong>：官方 11 月 15 日 08:54 UTC 发布，说明其内置 CLI <code>0.27.4</code>。使用自研 Web Shell、Daemon 或 SDK 控制面的团队应<strong>同时锁定 SDK 和 CLI 版本</strong>，以免运行时事件、Hook、恢复接口不匹配。官方：<a href="https://github.com/QwenLM/qwen-code/releases/tag/sdk-typescript-v0.1.34" rel="noopener noreferrer" target="_blank">SDK Release</a>。建议看；未使用 TypeScript SDK 的项目可跳过。没有官方证据表明该 SDK Release 单独改变了模型 Context、Thinking、价格或服务可用区域。</p>
+<p><strong>OpenAI Codex 0.171.0-alpha.7（预发布信息）</strong>：11 月 15 日 23:13 UTC，即北京时间 11 月 16 日 07:13。官方 <a href="https://github.com/openai/codex/releases" rel="noopener noreferrer" target="_blank">Codex Releases</a> 明确标注 Pre-release，说明仅为 <code>Release 0.171.0-alpha.7</code>，没有足够的新功能说明。建议<strong>仅关注</strong>，不升级生产；当前可确认的正式版 <code>0.169.0</code> 已于 11 月 13 日 UTC 发布。相关具体功能（多侧栏、第三方 Provider 配置、Windows Sandbox 与中断修复）源于更早的 <a href="https://github.com/openai/codex/releases/tag/rust-v0.169.0" rel="noopener noreferrer" target="_blank">0.169.0 正式版</a>，不能混算为今天的 Alpha 新功能。</p>
+<h2 id="section-5">四、13 家厂商官方巡检状态表</h2>
+<p>下表的“经核验无重要新增”只表示本轮已检查的可访问官方页面没有发现<strong>能够确认新增日期且有工程价值</strong>的更新，并不保证所有隐藏或账户内变更都不存在。“未能完整核实”保留范围说明。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>状态</th>
+<th>已核查官方入口与判定依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OpenAI</strong></td>
+<td>小更新：Alpha 预发布；无新重大正式发布</td>
+<td><a href="https://github.com/openai/codex/releases" rel="noopener noreferrer" target="_blank">Codex Releases</a>：0.171.0-alpha.7（11/15 UTC）仅 Pre-release；<a href="https://developers.openai.com/api/docs/changelog" rel="noopener noreferrer" target="_blank">API Changelog</a> 最新可见重大项仍为 11/5 <code>gpt-6-cyber</code>。未发现今天新 Responses/Agents API 或 Java SDK 正式公告。</td>
+</tr>
+<tr>
+<td><strong>Anthropic</strong></td>
+<td>经核验无重要新增</td>
+<td><a href="https://platform.claude.com/docs/en/release-notes/overview" rel="noopener noreferrer" target="_blank">Claude Platform Release Notes</a> 未见本窗口新项；<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.325" rel="noopener noreferrer" target="_blank">Claude Code 2.1.325</a> 为 11/13 UTC 发布（北京时间 11/14），并非今天首次发布。此前 Self-hosted Managed Agents 属历史信息。</td>
+</tr>
+<tr>
+<td><strong>Google</strong></td>
+<td>经核验无重要新增</td>
+<td><a href="https://github.com/google-gemini/gemini-cli/releases" rel="noopener noreferrer" target="_blank">Gemini CLI Releases</a> 最新可见稳定版 0.68.0，0.69.0-preview.0 为 Preview；<a href="https://ai.google.dev/gemini-api/docs/changelog" rel="noopener noreferrer" target="_blank">Gemini API</a> 与 <a href="https://docs.cloud.google.com/vertex-ai/docs/release-notes" rel="noopener noreferrer" target="_blank">Vertex AI</a> 未找到本窗口可证实的新正式功能发布日期。</td>
+</tr>
+<tr>
+<td><strong>xAI</strong></td>
+<td>经核验无重要新增</td>
+<td><a href="https://docs.x.ai/developers/release-notes" rel="noopener noreferrer" target="_blank">xAI Release Notes</a> 最近明确日期仍为 11/2 图像模型别名路由调整；文档的“New”导航字样不代表今天上线。</td>
+</tr>
+<tr>
+<td><strong>智谱 / Z.ai</strong></td>
+<td>部分核验，未能穷尽</td>
+<td><a href="https://docs.z.ai/release-notes/new-released" rel="noopener noreferrer" target="_blank">官方模型发布页</a> 显示的最新有日期条目为 8/26 GLM-5.3-Flash；<a href="https://docs.z.ai/" rel="noopener noreferrer" target="_blank">开发文档</a> 可访问，但 Coding Plan、全部模型别名及 API 计费变动不能完整差异核对。</td>
+</tr>
+<tr>
+<td><strong>DeepSeek</strong></td>
+<td>经核验无重要新增</td>
+<td><a href="https://api-docs.deepseek.com/updates/" rel="noopener noreferrer" target="_blank">API Change Log</a> 最近明确条目是 11/13 应用 API 套件，上期已报道；今天无可靠的新模型或正式定价调整证据。</td>
+</tr>
+<tr>
+<td><strong>腾讯</strong></td>
+<td>部分核验，未能穷尽</td>
+<td><a href="https://github.com/Tencent-Hunyuan" rel="noopener noreferrer" target="_blank">腾讯混元官方 GitHub</a> 已核查；Hy4 为先前已报道信息；腾讯云模型服务/TokenHub 动态日志未能全面核实，不能宣称全部没有变更。</td>
+</tr>
+<tr>
+<td><strong>阿里巴巴 / Qwen</strong></td>
+<td><strong>重要更新</strong></td>
+<td><a href="https://github.com/QwenLM/qwen-code/releases/tag/v0.27.4" rel="noopener noreferrer" target="_blank">Qwen Code v0.27.4</a> 11/15 UTC 正式发布；<a href="https://github.com/QwenLM/qwen-code/releases/tag/sdk-typescript-v0.1.34" rel="noopener noreferrer" target="_blank">SDK v0.1.34</a> 配套；<a href="https://help.aliyun.com/zh/model-studio/application-release-notes" rel="noopener noreferrer" target="_blank">百炼 Agent 更新日志</a> 最新明确条目为 11/11 多模态评测，非本期新增。</td>
+</tr>
+<tr>
+<td><strong>Moonshot / Kimi</strong></td>
+<td>经核验无重要新增</td>
+<td><a href="https://github.com/MoonshotAI/kimi-code/releases" rel="noopener noreferrer" target="_blank">Kimi Code Releases</a> 最新可见正式版 2.6.2（11/13 UTC），不是今天新发布；<a href="https://www.moonshot.ai/" rel="noopener noreferrer" target="_blank">官方研究</a> 最近突出 K3.1 Pro（10/24）。</td>
+</tr>
+<tr>
+<td><strong>字节跳动</strong></td>
+<td>部分核验，未能穷尽</td>
+<td><a href="https://seed.bytedance.com/en/blog" rel="noopener noreferrer" target="_blank">Seed Blog</a> 页面动态内容未能完整解析；<a href="https://docs.volcengine.com/docs/ark/model-pricing?redirect=1&amp;lang=zh" rel="noopener noreferrer" target="_blank">火山方舟模型价格</a> 可读取部分现行产品，如 Doubao-Seed 2.1，但没有证据证明价格或型号今天首次变化；Trae/即梦动态仍待核验。</td>
+</tr>
+<tr>
+<td><strong>TypeSafe AI</strong></td>
+<td>部分核验，未发现可证实新增</td>
+<td><a href="https://typesafe.ai/blog" rel="noopener noreferrer" target="_blank">官方博客</a> 仍展示 Jev 1.14.0 相关说明；<a href="https://docs.typesafe.ai/" rel="noopener noreferrer" target="_blank">开发文档</a> 可读，但 <a href="https://api.typesafe.ai/redoc" rel="noopener noreferrer" target="_blank">API ReDoc</a> 需要 JS，不能全面差异核对。Choice/Score/Noul/Box、RLCD 和实验能力不重新包装成今天新增。</td>
+</tr>
+<tr>
+<td><strong>Meta AI</strong></td>
+<td>经核验无重要新增</td>
+<td><a href="https://ai.meta.com/blog/" rel="noopener noreferrer" target="_blank">Meta AI 研究博客</a>、<a href="https://about.fb.com/news/2026/11/" rel="noopener noreferrer" target="_blank">Meta 11 月 Newsroom</a> 和 <a href="https://github.com/meta-llama" rel="noopener noreferrer" target="_blank">meta-llama</a> 已检查；未确认本期新的 Llama 权重、SAM 开发者 API 或许可。消费产品功能不等于可商用模型 API。</td>
+</tr>
+<tr>
+<td><strong>百度</strong></td>
+<td>部分核验，未能穷尽</td>
+<td><a href="https://cloud.baidu.com/doc/qianfan/s/Kmh4stnjp" rel="noopener noreferrer" target="_blank">千帆模型更新记录</a> 页面标注更新于 11/3，<a href="https://cloud.baidu.com/doc/qianfan/s/Gmh4stncc" rel="noopener noreferrer" target="_blank">平台更新记录</a> 未给出本期新日期；<a href="https://github.com/PaddlePaddle/PaddleOCR/releases" rel="noopener noreferrer" target="_blank">PaddleOCR Releases</a> 已检查。此前 ERNIE 5.5 Flash Preview 属历史补录；Java、实名、地域和计费仍按实际账号校验。</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="section-6">五、经可靠核验的版本与 Model ID 基线</h2>
+<p><strong>下表为本次核验得到的公开标识，不代表 13 家的完整可售模型列表；CLI 工具版本不等于 API Model ID。</strong> 预览版与正式版必须保留状态区分。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>产品 / 厂商</th>
+<th>已确认标识 / 版本</th>
+<th>状态或注意事项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Codex CLI</td>
+<td><code>0.169.0</code>；<code>0.171.0-alpha.7</code></td>
+<td>前者 <strong>Stable</strong>（11/13 UTC），后者 <strong>Alpha</strong>（11/15 UTC），<a href="https://github.com/openai/codex/releases" rel="noopener noreferrer" target="_blank">官方</a></td>
+</tr>
+<tr>
+<td>OpenAI API</td>
+<td><code>gpt-6-cyber</code></td>
+<td>11/5 有准入条件的安全研究模型，不是所有账号通用，<a href="https://developers.openai.com/api/docs/changelog" rel="noopener noreferrer" target="_blank">Changelog</a></td>
+</tr>
+<tr>
+<td>Claude Code</td>
+<td><code>2.1.325</code></td>
+<td>已知正式 Release，11/13 UTC，<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.325" rel="noopener noreferrer" target="_blank">官方</a></td>
+</tr>
+<tr>
+<td>Gemini CLI</td>
+<td><code>0.68.0</code> / <code>0.69.0-preview.0</code></td>
+<td>Stable / Preview，<a href="https://github.com/google-gemini/gemini-cli/releases" rel="noopener noreferrer" target="_blank">官方</a></td>
+</tr>
+<tr>
+<td>xAI API</td>
+<td><code>grok-4.7</code></td>
+<td>模型目录可见；上下文及区域按原厂实际账号核查，<a href="https://docs.x.ai/developers/release-notes" rel="noopener noreferrer" target="_blank">官方</a></td>
+</tr>
+<tr>
+<td>Z.ai</td>
+<td><code>GLM-5.3</code>、<code>GLM-5.3-Flash</code></td>
+<td>模型系列标识，实际 API 大小写、别名及 Thinking 配置需查账户，<a href="https://docs.z.ai/release-notes/new-released" rel="noopener noreferrer" target="_blank">官方</a></td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td><code>deepseek-flash</code></td>
+<td>当前公开 API 文档对应 V4.1 Flash 系列，具体底层映射及计费以<a href="https://api-docs.deepseek.com/quick_start/pricing/" rel="noopener noreferrer" target="_blank">官方</a>为准</td>
+</tr>
+<tr>
+<td>腾讯</td>
+<td>Hy4</td>
+<td>项目/模型系列名，不能当作可直接使用的 API Model ID，<a href="https://github.com/Tencent-Hunyuan" rel="noopener noreferrer" target="_blank">官方</a></td>
+</tr>
+<tr>
+<td><strong>Qwen Code CLI</strong></td>
+<td><strong><code>0.27.4</code></strong></td>
+<td>本期正式新增，非模型 ID，<a href="https://github.com/QwenLM/qwen-code/releases/tag/v0.27.4" rel="noopener noreferrer" target="_blank">官方</a></td>
+</tr>
+<tr>
+<td><strong>Qwen Code TypeScript SDK</strong></td>
+<td><strong><code>0.1.34</code></strong></td>
+<td>打包 CLI <code>0.27.4</code>，<a href="https://github.com/QwenLM/qwen-code/releases/tag/sdk-typescript-v0.1.34" rel="noopener noreferrer" target="_blank">官方</a></td>
+</tr>
+<tr>
+<td>Qwen Code Desktop</td>
+<td><code>0.27.4</code></td>
+<td>桌面版本，独立于 SDK，<a href="https://github.com/QwenLM/qwen-code/releases/tag/desktop-v0.27.4" rel="noopener noreferrer" target="_blank">官方</a></td>
+</tr>
+<tr>
+<td>Kimi Code</td>
+<td><code>2.6.2</code></td>
+<td>11/13 UTC 正式版；新于历史 2.5.x，但非今天发布，<a href="https://github.com/MoonshotAI/kimi-code/releases" rel="noopener noreferrer" target="_blank">官方</a></td>
+</tr>
+<tr>
+<td>Kimi 模型</td>
+<td>K3.1 Pro</td>
+<td>历史系列名；API ID、Context/计费按渠道，<a href="https://www.moonshot.ai/" rel="noopener noreferrer" target="_blank">官方</a></td>
+</tr>
+<tr>
+<td>ByteDance</td>
+<td><code>doubao-seed-2.1-pro</code> 等</td>
+<td>方舟定价页可见标识，但未证明今天新增；区域/价格按订单页，<a href="https://docs.volcengine.com/docs/ark/model-pricing?redirect=1&amp;lang=zh" rel="noopener noreferrer" target="_blank">官方</a></td>
+</tr>
+<tr>
+<td>TypeSafe AI</td>
+<td>Jev <code>1.14.0</code></td>
+<td>正式与 Danger Zone 实验能力需分开验证，<a href="https://typesafe.ai/blog" rel="noopener noreferrer" target="_blank">官方</a></td>
+</tr>
+<tr>
+<td>Meta AI / Llama</td>
+<td>无可证实本期新 Model ID</td>
+<td>消费型 Muse 更新不等于模型权重/许可证发布，<a href="https://github.com/meta-llama" rel="noopener noreferrer" target="_blank">官方</a></td>
+</tr>
+<tr>
+<td>百度千帆 / PaddleOCR</td>
+<td>ERNIE 5.5 Flash Preview（此前补录）；PaddleOCR <code>3.7.0</code>（既有）</td>
+<td>不得混同 Preview 模型与 OCR 项目正式版，<a href="https://cloud.baidu.com/doc/qianfan/s/Kmh4stnjp" rel="noopener noreferrer" target="_blank">千帆</a>、<a href="https://github.com/PaddlePaddle/PaddleOCR/releases" rel="noopener noreferrer" target="_blank">OCR</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>本期价格、Context、Thinking 和 Benchmark 判断：</strong> Qwen Code 0.27.4 不是一个基础模型版本，因此不能从它推导模型的上下文窗口、推理档位、OpenAI/Anthropic 兼容程度或 Token 成本。未发现与本次更新同日、可可靠核实且口径一致的跨厂商价格和 P95 延迟数据，不提供伪精确数值。TypeSafe 的官方定价页曾列出 Jev 输入费率，但不是本期新增降价，应另行按结账和用量规则验证。模型权重许可、托管区域、企业认证与数据驻留不能仅凭 GitHub README 判定。</p>
+<h2 id="section-7">六、跨厂商兼容性与迁移矩阵</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>迁移/接入问题</th>
+<th>相关平台</th>
+<th>主要风险</th>
+<th>推荐验证</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>临时目录授权</td>
+<td>Qwen Managed Agent / Windows</td>
+<td>越权读写、符号链接逃逸、会话结束仍可访问</td>
+<td>最小授权、授权到期、跨租户拒绝、审计</td>
+</tr>
+<tr>
+<td>WebSocket 交互式终端</td>
+<td>Qwen Web Terminal / 任意 Agent Runtime</td>
+<td>短期票据泄露、断连后执行状态不明</td>
+<td>TTL、失效、重连、命令审计、心跳</td>
+</tr>
+<tr>
+<td>飞书/企微 Webhook</td>
+<td>Qwen Channels / 事件平台</td>
+<td>长消息截断、重复推送、通道误投</td>
+<td>分段编号、Outbox、去重键、回读</td>
+</tr>
+<tr>
+<td>Hook / Skills 生命周期</td>
+<td>Qwen、Claude Code、Codex</td>
+<td>Hook 执行、工具权限和策略语义不一致</td>
+<td>事件 Schema、拒绝路径、最小权限</td>
+</tr>
+<tr>
+<td>Agent Loop 取消/恢复</td>
+<td>Qwen / MCP Tasks / 分布式任务</td>
+<td>已取消命令部分执行，恢复时重复业务副作用</td>
+<td>状态机、幂等键、补偿、Trace</td>
+</tr>
+<tr>
+<td>自定义 Base URL</td>
+<td>Codex / Qwen / Kimi / DeepSeek</td>
+<td>参数名相似但 Thinking/Tool/SSE/Usage 不兼容</td>
+<td>Provider Adapter、黄金请求、错误码</td>
+</tr>
+<tr>
+<td>长上下文 / Compaction</td>
+<td>Claude / Kimi / Gemini / GPT</td>
+<td>模型名别名、上下文长度、压缩语义变化</td>
+<td>多轮任务回归、上下文边界、缓存计费</td>
+</tr>
+<tr>
+<td>多模态</td>
+<td>Meta / 百度 / 字节 / Google</td>
+<td>模型权重许可、视频/音频单位计费与输入格式不同</td>
+<td>数据授权、Model Card、API Schema</td>
+</tr>
+<tr>
+<td>Java / Nacos 微服务</td>
+<td>企业 Gateway</td>
+<td>敏感参数置于配置中心、熔断重试扩散费用</td>
+<td>Secret Manager、预算、限流、日志脱敏</td>
+</tr>
+<tr>
+<td>GitHub 日报归档</td>
+<td>所有报告流水线</td>
+<td>调度成功≠文件提交成功≠Pages 上线成功</td>
+<td>正文一致性、文件 SHA、Manifest、线上探测</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="section-8">七、今日工程行动 Checklist</h2>
+<ul>
+<li>[ ] 阅读 <a href="https://github.com/QwenLM/qwen-code/releases/tag/v0.27.4" rel="noopener noreferrer" target="_blank">Qwen Code v0.27.4 Release</a>，优先看 Auto Mode、临时目录授权、Web Terminal、Hook 审计、取消与安全依赖修复。</li>
+<li>[ ] 在隔离 Windows/PowerShell 7 环境试用明确版本 <code>@qwen-code/qwen-code@0.27.4</code>，不要依赖未锁定的 <code>latest</code>。</li>
+<li>[ ] 用临时样例工作区测试授权撤销、目录越界、中文路径、Unicode 编辑和第三方 Base URL，不上传内部代码和令牌。</li>
+<li>[ ] 对飞书/企微仅使用测试 Webhook，验证长消息顺序、去重、限流与失败重试；凭据只放 Secret Manager。</li>
+<li>[ ] 为 Agent Runtime 保存 <code>run_id</code>、工具批次、Hook ID、审核状态、取消状态、WebSocket Session ID 与 Trace ID。</li>
+<li>[ ] 检查 Java SDK 控制回调失败是否保留 request ID、错误类型与错误值，确保日志没有密钥。</li>
+<li>[ ] 保持 <code>experimental.unifiedAgentLoop</code> 关闭或仅在灰度环境单独验证，不将实验能力当作 GA。</li>
+<li>[ ] Codex <code>0.171.0-alpha.7</code> 只列入预发布观察清单；生产基线仍以 <code>0.169.0</code> 及自身回归结果为准。</li>
+<li>[ ] 对 Z.ai、腾讯、字节、TypeSafe ReDoc、百度千帆的未穷尽页面保留“待核验”，不要以更新时间直接编造新功能。</li>
+<li>[ ] 发布日报时执行：完整文字正文 → 离线 HTML 内容一致性 → GitHub 文件提交回读 → 最新 Manifest 乐观合并 → 再回读与 Pages 线上状态分开检查。</li>
+</ul>
+<h2 id="section-9">八、综合判断</h2>
+<p><strong>今天有一项值得技术团队关注的真正新增：Qwen Code 0.27.4 的 Agent 工程治理升级；另有 Codex 0.171.0 Alpha 构建，但不能当作新正式产品。</strong> 其它厂商未获得足够新日期证据，不为凑新闻重复历史消息。对企业 AI 应用来说，比追逐单一 CLI 版本更值得做的是用 <strong>明确的状态机、授权边界、Hook 审计、幂等交付与独立模型适配层</strong> 把长任务可靠性落地。</p>
+<p>推荐实际行动是：只选一个无敏感数据的 Agent 任务，在测试环境加入“申请目录授权 → 工具执行 → 人工审批 → Hook 记录 → Webhook 分段推送 → 取消或恢复”全链路回归。只有当权限、恢复、输出一致性、费用与审计都达标，才考虑引入生产。厂商性能及成本宣传与自己的可复现测试必须分开。</p>
+<p><strong>官方核验说明：</strong> 本期全部入选更新附直接官方链接；对无法确认的日期、地区、价格、许可、SDK/API 兼容和模型可用性明确保留未知，不把官方文档访问日冒充功能首发日。</p>
+<footer>官方原始日期与报告日期分别保留；不推测未经官方验证的版本、价格、许可及区域可用性。单文件可完全离线阅读。</footer></main></div></body></html>
