@@ -1,0 +1,217 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>企业级应用架构与 AI 原生技术周报｜2026-11-16</title><style>
+:root{--bg:#f5f7fa;--surface:#fff;--ink:#182735;--muted:#617183;--line:#dfe6eb;--accent:#0b7e7c;--accent2:#0b4a63;--pale:#e9f6f3;--dark:#0f2634}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.85 system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
+.hero{background:linear-gradient(112deg,#132e40,#0c5563 60%,#0b7d76);color:#fff;padding:44px clamp(20px,5vw,72px) 44px;position:relative;overflow:hidden}.hero:before{content:"";width:320px;height:320px;border-radius:50%;border:42px solid #ffffff0b;position:absolute;right:-80px;top:-170px}.hero-inner{max-width:1240px;margin:auto;position:relative}.eyebrow{text-transform:uppercase;letter-spacing:2.4px;font-size:12px;font-weight:750;opacity:.76}.hero h1{font-size:clamp(28px,3.9vw,48px);line-height:1.25;margin:13px 0 12px;letter-spacing:-1px}.hero p{max-width:840px;color:#d8ebed;margin:0;font-size:14px}.hero .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:21px}.hero .meta span{padding:4px 11px;border:1px solid #ffffff43;border-radius:99px;color:#ecfbfa;font-size:12px}.shell{max-width:1300px;margin:0 auto;padding:26px 24px 90px;display:grid;grid-template-columns:270px minmax(0,1fr);gap:28px;align-items:start}.toc{position:sticky;top:18px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;max-height:calc(100vh - 36px);overflow-y:auto;box-shadow:0 2px 14px #162c3b09}.toc-title{font-size:11px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--accent);margin:4px 0 11px}.toc a{display:block;text-decoration:none;color:#3b4f5d;padding:7px 10px;border-left:2px solid transparent;border-radius:4px;font-size:12.5px;line-height:1.5}.toc a:hover{border-left-color:var(--accent);background:var(--pale);color:var(--accent2)}.toc a.h3{padding-left:23px;font-size:11px;color:var(--muted)}.content{background:var(--surface);border:1px solid var(--line);border-radius:18px;min-width:0;padding:clamp(20px,4.3vw,58px);box-shadow:0 8px 28px #14283508}.content h1{display:none}.content h2{font-size:clamp(20px,2.3vw,28px);line-height:1.45;letter-spacing:-.2px;color:#123e51;margin:66px 0 20px;padding:0 0 12px;border-bottom:2px solid #d5ebe8;scroll-margin-top:15px}.content h3{font-size:17px;line-height:1.5;margin:30px 0 12px;color:var(--accent2);scroll-margin-top:15px}.content p{margin:12px 0 17px}.content strong{font-weight:750}.content em{color:#385868}.content a{color:#076986;text-decoration:underline;text-decoration-color:#a2cbca;text-underline-offset:3px;overflow-wrap:anywhere}.content a:hover{color:#b45b38}.content code{background:#f2f4f6;border:1px solid #e1e5e9;border-radius:4px;padding:1px 5px;font:0.88em/1.7 ui-monospace,Consolas,monospace;overflow-wrap:anywhere}.content pre{background:#102630;border:1px solid #254654;color:#e0edf0;padding:19px;border-radius:12px;overflow-x:auto;line-height:1.6;margin:22px 0}.content pre code{background:none;border:0;color:inherit;padding:0;font-size:12px;overflow-wrap:normal}.table-wrap{overflow-x:auto;margin:20px 0 27px;border-radius:10px;border:1px solid var(--line)}table{border-collapse:collapse;width:100%;min-width:530px;font-size:13px;line-height:1.7}th,td{padding:10px 13px;border-right:1px solid #e4eaee;border-bottom:1px solid #e4eaee;text-align:left;vertical-align:top}th{background:#e9f4f3;color:#174b51;font-weight:750}tr:nth-child(even) td{background:#fafcfc}tr:last-child td{border-bottom:0}th:last-child,td:last-child{border-right:0}.content ul,.content ol{padding-left:25px}.content li{margin:9px 0}.task-item{list-style:none;position:relative;margin-left:-8px!important;padding:8px 8px 8px 36px;border-radius:8px;background:#f8fbfb}.task-check{position:absolute;left:9px;top:16px;accent-color:#117f7b;width:17px;height:17px}.task-item.done{text-decoration:line-through;color:var(--muted)}.content blockquote{margin:20px 0;padding:8px 19px;border-left:4px solid var(--accent);background:#eef8f6}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}.actions button,.actions a{display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid #c3d7dc;color:#235b61;border-radius:8px;padding:8px 13px;font-weight:650;font-size:12px;cursor:pointer;text-decoration:none}.actions button:hover,.actions a:hover{background:var(--pale)}footer{margin-top:50px;border-top:1px solid var(--line);padding-top:22px;color:var(--muted);font-size:12px}.mobile-toc{display:none}.notes{font-size:12px;color:var(--muted)}
+@media(max-width:980px){.shell{grid-template-columns:210px minmax(0,1fr);gap:16px;padding:18px}.toc a.h3{display:none}}
+@media(max-width:760px){.hero{padding:30px 20px}.shell{display:block;padding:12px 12px 40px}.toc{display:none}.mobile-toc{display:block;background:white;border:1px solid var(--line);border-radius:10px;padding:10px 15px;margin-bottom:12px}.mobile-toc summary{font-weight:750;color:var(--accent2);cursor:pointer}.mobile-toc a{display:block;font-size:12px;color:#21565b;text-decoration:none;padding:6px 2px}.content{padding:20px 16px;border-radius:11px}.content h2{margin-top:49px;font-size:21px}.content h3{font-size:16px}table{font-size:12px}}
+@media print{body{background:#fff}.hero{background:#fff!important;color:#000;padding:12px 0}.hero p,.hero .meta span{color:#222}.shell{display:block;padding:0}.toc,.mobile-toc,.actions{display:none!important}.content{padding:0;border:0;box-shadow:none}.content h1{display:block}.content h2{break-after:avoid;margin-top:26px}table{min-width:0}.table-wrap{overflow:visible}a{color:black!important}pre{white-space:pre-wrap;color:#111!important;background:#eee!important}footer{color:#333}}
+</style></head><body><header class="hero"><div class="hero-inner"><div class="eyebrow">Distributed &amp; AI Architecture Weekly · 2026 · Week 47</div><h1>企业级应用架构与<br>AI 原生技术周报</h1><p>业务场景驱动 · 跨语言 / 跨平台 · 从真实约束到架构取舍与可验证的实践</p><div class="meta"><span>2026-11-16 · 周一</span><span>覆盖 11/09—11/15</span><span>5 项精选深度分析</span><span>离线完整版</span></div></div></header><div class="shell"><aside class="toc"><div class="toc-title">本期目录 / CONTENTS</div><a class="h1" href="#section-1">企业级应用架构与 AI 原生技术周报</a><a class="h2" href="#section-2">一、本周五项架构雷达</a><a class="h2" href="#section-3">二、Top 1｜OpenTelemetry Collector 将弃用 batch Processor：批处理移动到队列后，容量语义会改变</a><a class="h2" href="#section-8">三、Top 2｜GitHub 10 月事故复盘：共享依赖的重试和错误路由如何把小故障变成平台事故</a><a class="h2" href="#section-13">四、Top 3｜Temporal 自建跨集群复制的 mTLS：有历史副本不等于零数据损失</a><a class="h2" href="#section-18">五、Top 4｜AgentCore Identity 接受纯 OAuth 2.0 Discovery：把协议兼容和权限治理分开</a><a class="h2" href="#section-23">六、Top 5｜OpenTelemetry + Weaver + Agent Harness：用机器可验证的语义契约生成 AI 应用埋点</a><a class="h2" href="#section-28">七、跨场景决策矩阵</a><a class="h2" href="#section-29">八、本周可执行行动清单</a><a class="h2" href="#section-30">九、未来 1—3 年：事实与研判分开</a><a class="h2" href="#section-31">十、本期架构判断</a></aside><details class="mobile-toc"><summary>查看本期目录</summary><a href="#section-2">一、本周五项架构雷达</a><a href="#section-3">二、Top 1｜OpenTelemetry Collector 将弃用 batch Processor：批处理移动到队列后，容量语义会改变</a><a href="#section-8">三、Top 2｜GitHub 10 月事故复盘：共享依赖的重试和错误路由如何把小故障变成平台事故</a><a href="#section-13">四、Top 3｜Temporal 自建跨集群复制的 mTLS：有历史副本不等于零数据损失</a><a href="#section-18">五、Top 4｜AgentCore Identity 接受纯 OAuth 2.0 Discovery：把协议兼容和权限治理分开</a><a href="#section-23">六、Top 5｜OpenTelemetry + Weaver + Agent Harness：用机器可验证的语义契约生成 AI 应用埋点</a><a href="#section-28">七、跨场景决策矩阵</a><a href="#section-29">八、本周可执行行动清单</a><a href="#section-30">九、未来 1—3 年：事实与研判分开</a><a href="#section-31">十、本期架构判断</a></details><main class="content" id="top"><h1 id="section-1">企业级应用架构与 AI 原生技术周报</h1>
+<p><strong>Distributed &amp; AI Architecture Weekly｜2026-11-16（周一）</strong><br/>
+<strong>研究窗口：2026-11-09—2026-11-15，北京时间；公开资料核查截至 11 月 16 日。</strong></p>
+<p>本期以企业生产环境的实际问题排序，不按语言、框架或厂商分配名额。入选的五项分别针对<strong>遥测管道升级与背压、跨服务级联故障、跨地域工作流恢复、Agent 身份协议兼容，以及 GenAI 可观测性自动化</strong>。上期已经报道的 Istio 1.31.4、GitHub 新 Git 存储、DynamoDB Bulk Put、Lambda Durable Functions 配额和 TUI 威胁建模，本期不重复。</p>
+<h2 id="section-2">一、本周五项架构雷达</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>本周材料（原始发布日期）</th>
+<th>业务场景</th>
+<th>采用判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>P0 / 规划</strong></td>
+<td>OpenTelemetry Collector <code>batch</code> Processor 弃用（11/11）</td>
+<td>全企业 Trace / Metric / Log 出口背压和可靠性</td>
+<td><strong>现在盘点、灰度迁移</strong></td>
+</tr>
+<tr>
+<td><strong>P1 / 复盘</strong></td>
+<td>GitHub October Availability Report（11/12）</td>
+<td>数据库路由、重试风暴、共享依赖和业务容灾</td>
+<td><strong>立即转为故障演练用例</strong></td>
+</tr>
+<tr>
+<td><strong>P1 / 试验</strong></td>
+<td>Temporal 跨集群复制 mTLS 指南（11/10）</td>
+<td>金融交易、订单和长任务的异地灾备</td>
+<td><strong>自建平台先 PoC</strong></td>
+</tr>
+<tr>
+<td><strong>P1 / 评估</strong></td>
+<td>Amazon Bedrock AgentCore Identity OAuth 2.0 Discovery 支持（11/13）</td>
+<td>企业 Agent 对接非 OIDC 授权服务器</td>
+<td><strong>混合身份体系按需验证</strong></td>
+</tr>
+<tr>
+<td><strong>P1 / 试验</strong></td>
+<td>OpenTelemetry GenAI Instrumentation Agent Harness（11/12）</td>
+<td>跨框架 Agent tracing、工具轨迹和仪表一致性</td>
+<td><strong>以规范和测试驱动 PoC</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>本周核心架构判断：</strong> 生产级系统不能只问“是否接通”，还必须逐一回答<strong>请求/事件什么时候算被接收、故障时哪一层背压、恢复目标与数据损失窗口由谁证明、调用身份最终被谁授权，以及监控数据是否符合可机器验证的契约</strong>。</p>
+<h2 id="section-3">二、Top 1｜OpenTelemetry Collector 将弃用 <code>batch</code> Processor：批处理移动到队列后，容量语义会改变</h2>
+<p><strong>来源：</strong> OpenTelemetry 官方工程文章 <a class="source-link" href="https://opentelemetry.io/blog/2026/collector-batching-migration/" rel="noopener noreferrer" target="_blank">Deprecating the Collector Batch Processor</a>；<strong>发布日期：2026-11-11</strong>。公告明确的是<strong>计划</strong>：多数 Exporter 在 **Collector v0.171.0（预计 2027-02）**默认开启 Exporter-level Batching；原 <code>batch</code> Processor 计划在 **v0.177.0（预计 2027-05）**从核心及发行版移除。它们并非 2026-11-16 已完成的发布，时间表可能变化。</p>
+<h3 id="section-4">业务问题及约束</h3>
+<p>银行、电商和 AI 平台通常将各语言 SDK 的 Trace、Metric、Log 经 Collector 汇聚，然后发往多个观测后端。出口暂时不可用、峰值流量突增或者某租户异常产生日志时，系统必须在<strong>遥测丢失、内存占用、排队延迟、应用请求背压与后端写入成本</strong>之间选择。<code>batch</code> Processor 的旧设计主要按记录条数合批，内置缓冲对并发、持久化、背压及错误传播的控制有限。</p>
+<h3 id="section-5">技术机制：顺序变化才是迁移风险</h3>
+<p>旧路径为 <code>Receiver → batch Processor → Exporter sending_queue → Backend</code>；新路径推荐 <code>Receiver → Exporter sending_queue → Exporter-level batch → Backend</code>。旧队列默认的 <code>queue_size: 1000</code> 通常存的是<strong>已合批的请求</strong>；新方案里同样标为 <code>1000</code>，可能存的是<strong>未合批的小请求</strong>，其实际可缓冲数据量会显著减少。因此不能简单“删 Processor、加 enabled”就认为可靠性不变。</p>
+<p>新队列可配置 <code>num_consumers</code>（并发）、<code>queue_size</code> 与 <code>sizer: requests|items|bytes</code>（容量度量）、<code>block_on_overflow</code>（阻塞还是快速失败）、<code>wait_for_result</code>（是否等待下游结果）、可选 <code>storage</code>（持久队列）以及 <code>batch.min_size / max_size / flush_timeout</code>。按 <code>bytes</code> 计量有助于控制后端消息体上限，但编码计算有额外 CPU 开销。例子里的 <code>queue_size: 100000</code>（items）、<code>min_size: 5000</code> 只是参数示例，不能当成任何企业的默认容量。</p>
+<pre tabindex="0"><code class="language-yaml"># 仅示意；上线前必须依版本、Exporter 支持情况与负载实测调整
+exporters:
+  otlp:
+    endpoint: observability.example.internal:4317
+    sending_queue:
+      enabled: true
+      sizer: items
+      queue_size: 100000
+      num_consumers: 10
+      batch:
+        enabled: true
+        sizer: items
+        min_size: 5000
+        flush_timeout: 200ms
+</code></pre>
+<h3 id="section-6">架构选型与取舍</h3>
+<p><strong>方案 A：Exporter-level batching</strong>。对大多数出口更直观，合批与重试、队列和超时同属 Exporter，易实施针对后端的隔离限额。代价是不同 Exporter 的队列容量与配置都需重新核算。</p>
+<p><strong>方案 B：新 <code>queue_batch</code> Processor</strong>。适合需要在聚合 Processor 之前合批、或多个 Exporter 共享一次合批处理的场景。复杂度在于多处队列和错误语义容易被误解。<strong>方案 C：应用侧 SDK Batch + Collector 独立队列/存储</strong>，用于特定敏感流量，但别将应用侧缓存误认为持久化可靠交付。</p>
+<p>Java、Go、Python、Node.js 等应用无需因为此公告更换语言 SDK；真正要变的是<strong>Collector 配置、内存预算、Export 超时与遥测 SLO</strong>。SaaS 后端若对 OTLP Payload 有硬上限，应选择按 bytes 的 <code>max_size</code> 并验证分批行为。</p>
+<h3 id="section-7">风险与验证</h3>
+<p>先定位所有 <code>processors: batch</code>，确认 Collector 发行版和每种 Exporter 是否支持新机制；再按<strong>记录量/字节量</strong>重新计算旧、新队列可缓冲的秒数。隔离环境注入后端断连、429、突发超大 Span、进程重启和多租户热点，观察 <code>otelcol_exporter_queue_size</code>、<code>otelcol_exporter_queue_capacity</code>、发送失败、数据丢失、CPU、RSS 和业务请求延迟。对不同信号分别衡量，不要仅凭 Collector Ready 判定成功。带持久化队列也要测试磁盘满和恢复顺序。</p>
+<p><strong>最值得读：</strong> 原文 <em>Queue capacity after migration</em>、<em>Integrated exporter-level queue and batch behavior</em>、<em>Batching by default in 2027</em>。<strong>结论：现在开始盘点并灰度迁移，不等到删除版本才行动；暂不盲目全量切换。</strong></p>
+<p><strong>未来 1—3 年研判：</strong> 遥测平台会更多将排队、背压、重试和批量写入统一治理，容量单位和丢失语义将成为稳定性合同的一部分，而不只是配置调优。</p>
+<h2 id="section-8">三、Top 2｜GitHub 10 月事故复盘：共享依赖的重试和错误路由如何把小故障变成平台事故</h2>
+<p><strong>来源：</strong> GitHub 官方 <a class="source-link" href="https://github.blog/news-insights/company-news/github-availability-report-october-2026/" rel="noopener noreferrer" target="_blank">GitHub availability report: October 2026</a>；<strong>文章发表于 2026-11-12，事故发生在 2026-10</strong>。本期选的是本周新发布的工程复盘，<strong>不能把十月事件说成十一月事故</strong>。</p>
+<h3 id="section-9">业务问题及约束</h3>
+<p>订单系统、统一 API 平台和研发交付系统普遍具有共享数据库、缓存、网络出口和事件流。多个业务团队分别做了超时重试与高可用，但在下游部分故障时，这些“提高成功率”的行为可能同时放大压力，造成全站级联故障。GitHub 的报告提供了同一平台中不同失效模式的真实对照。</p>
+<h3 id="section-10">关键事故机制与证据</h3>
+<p><strong>10 月 6 日：批量迁移压垮共享数据库。</strong> Enterprise Importer 的突发大查询占满数据库连接。网页和 API 在数分钟内出现失败或超时，高峰约 <strong>1.3%</strong> 请求受影响；GitHub 暂停迁移，改为固定尺寸的较小查询批次，并计划在数据库压力上升时自动退避。架构教训：后台任务的并发、Query 成本、连接池与核心交易要有独立预算。</p>
+<p><strong>10 月 7 日：数据库路由元数据陈旧。</strong> 一个新加入的路由管理节点带着已经退役服务器的旧记录当选 Leader，发布错误的写入目标；校验机制没有挡住。维护暂停没有被后续自动任务严格执行，又触发第二次故障。两次写入中断分别约 <strong>10 分钟和 9 分钟</strong>；读操作大体可用。架构教训：Leader 选举安全不等于状态正确，路由配置需要在发布前验证并对“暂停操作”实施强制约束。</p>
+<p><strong>10 月 19 日：缓存断链后的同步重连。</strong> 多个工作实例同时重试连接，挤满共享区域网络链路，影响其他服务。应对包括限制建连速率和监控新连接突增。</p>
+<p><strong>10 月 21 日：事件流 Broker 的连接/内存级联。</strong> 失败后立刻重连，使新连接数与内存压力互相推动；流量转移又压垮其他 Broker。官方通过热点分区迁移、随机重连抖动、较早的内存告警以及备用 Webhook 路径来改善。Audit Log 最长约 <strong>6 小时 46 分钟</strong>才全部追平。不能只测用户 API 恢复，还应测审计和异步补偿链路的 RTO/积压时间。</p>
+<p><strong>10 月 28 日：模型提供商凭证失效。</strong> GitHub Copilot 经某上游模型提供商调用部分模型时凭证被拒，受影响模型约 <strong>十分之一请求失败</strong>；可选择其他模型部分规避，单模型绑定功能更脆弱。架构教训：AI Gateway 必须把上游鉴权错误、模型路由故障域和兜底策略一起设计，而不是看到 401 就无限重试。</p>
+<h3 id="section-11">哪些架构决策因此改变？</h3>
+<p>要把“各服务本身高可用”上升为<strong>共享资源隔离、依赖失败预算与写控制面安全</strong>。实践路线一是固定大小批量、令牌桶限速、Circuit Breaker、指数退避与 Full Jitter，尽量从客户端减少冲击；路线二是在服务入口/Service Mesh/数据库代理上提供集中限流、连接池分仓、数据库工作负载隔离。两者互补：网关无法修复应用在持有 DB Connection 时执行慢远程调用的设计。</p>
+<p>不同技术栈可用 Resilience4j、Polly、Envoy Rate Limit、Go 自建限速器等，判断依据是流量拥有者、所需一致性以及团队能否真实监控每层排队，而不是语言本身。</p>
+<h3 id="section-12">验证与风险</h3>
+<p>建议做四个定向 Game Day：① 迁移作业与订单写入竞争同一数据库连接池；② 新路由 Leader 持有失效节点列表；③ 缓存短时断链后上百个 Client 同时重连；④ AI 模型上游凭证撤销。观察核心业务 p99、Retry Amplification Ratio、连接数、Broker RSS、队列延迟、审计流水追平时间及只读降级是否可用。重试必须配合预算、熔断和幂等，不能把所有 401/403 都当瞬时错误重试。</p>
+<p><strong>最值得读：</strong> 报告中 10/06、10/07、10/19、10/21 和 10/28 的 <em>What went wrong and why?</em> 及 <em>How are we making incidents less likely?</em>。<strong>结论：立即把案例改造成故障演练，不必等待采用某个新平台。</strong></p>
+<p><strong>未来 1—3 年研判：</strong> 从单服务 SLO 转向跨共享依赖的负载预算、恢复关键路径和 AI 模型供应商故障域管理，将成为平台架构的核心职责。</p>
+<h2 id="section-13">四、Top 3｜Temporal 自建跨集群复制的 mTLS：有历史副本不等于零数据损失</h2>
+<p><strong>来源：</strong> Temporal 官方 <a class="source-link" href="https://temporal.io/blog/securing-self-hosted-temporal-cross-cluster-replication-with-mtls" rel="noopener noreferrer" target="_blank">Securing self-hosted Temporal cross-cluster replication with mTLS</a>；<strong>发布日期：2026-11-10</strong>。文章提供双集群演示与配置说明，并非本周发布了全新的 XDC 协议或保证零 RPO。</p>
+<h3 id="section-14">业务问题及约束</h3>
+<p>跨境支付、订单履约、合规审批与 Agent 长任务可能持续数小时或数日。故障恢复时不仅要把容器重新启动，还要恢复执行历史、待执行任务和业务操作标识。如果工作流平台只在一个地域运行，区域中断后即使应用服务启动，Workflow 状态也可能不可得。</p>
+<h3 id="section-15">核心机制</h3>
+<p>Temporal <strong>XDC（Cross-Cluster Replication）<strong>将 Active Cluster 的 Workflow History Events <strong>异步复制</strong>到 Passive Cluster。两个集群各自拥有独立的 Frontend、History、Matching、Worker、持久层及可见性存储。Global Namespace 列出复制集群，每个 Namespace 同一时刻只有</strong>一个 Active Cluster</strong>，可以显式 Failover；不应把它理解为两个地域同时处理同一个 Namespace 的写入。</p>
+<p>通讯路径至少包括三层：集群内 Internode、SDK/CLI 到 Frontend，以及 Remote Cluster 到对端 Frontend 的 gRPC 复制链路。文章对三层配置 mTLS；证书 SAN 必须与访问主机名匹配，<code>remoteClusters</code> 配置与远端地址的主机名关联。示例用共享自签 CA 便于演示，但生产环境应按环境隔离 CA、轮换证书并坚持最小权限。</p>
+<p><strong>特别重要：mTLS 解决传输加密和对端认证，不自动解决业务级授权。</strong> 原文明确说复制场景的 Application-level Authorization/TokenProvider 属额外层次，相关内容会在后续文章讲解，不能认为配置了客户端证书就已覆盖所有权限检查。</p>
+<h3 id="section-16">一致性与运维取舍</h3>
+<p>由于是异步历史复制，主地域刚写入的历史可能尚未到达备用地域。<strong>故障切换可能有非零 RPO</strong>，需按真实 <code>replication_tasks_lag</code> 与业务最大可容忍损失计算；不要承诺 Exactly-once 跨地域副作用。银行扣款/库存扣减仍须有稳定 Business Idempotency Key、外部结果查询和对账恢复，Temporal 历史本身不能回滚已发生的外部支付动作。</p>
+<p>选型路线：<strong>A 自建 Temporal XDC</strong>，跨环境灵活但需要独立数据库、网络、证书轮换和运维；<strong>B 托管 Temporal Cloud HA</strong>，减轻维护但有成本与云依赖；<strong>C MQ + 业务状态表 + 多地域复制</strong>，避免专用工作流平台但状态机、恢复顺序、审批与追踪需团队自建。现有 Java/Spring/Nacos 仅需通过业务适配器接入，不需要把所有同步接口迁移至 Temporal。</p>
+<h3 id="section-17">迁移风险与验证</h3>
+<p>先建立两个完全独立的隔离集群；配置 <code>enableGlobalNamespace</code>、相同的 <code>failoverVersionIncrement</code>，为不同集群提供不同 <code>initialFailoverVersion</code>；检查证书 CA 与 SAN、仅挂载本集群私钥。原文特别提醒 <code>numHistoryShards</code> 与 <code>failoverVersionIncrement</code> 在已有数据后基本不可变，应在上线前定型。</p>
+<p>分别测试 TLS 握手、Namespace 状态双端一致、备用端读取同一个 Run ID、复制延迟、过期证书、证书轮换、网络分区以及切换后的 Worker 恢复。最重要的是按照业务恢复目标实际计算 RPO/RTO，并在外部支付执行后、Workflow 完成事件复制前注入故障，检验幂等。</p>
+<p><strong>最值得读：</strong> <em>Architecture overview</em>、<em>Configure TLS</em>、<em>Verify replication end to end</em>、<em>Test failover</em>、<em>Production hardening notes</em>。<strong>结论：有自建跨地域 Workflow 需求的企业立即做 PoC；一般同步 CRUD 服务无需引入 XDC。</strong></p>
+<p><strong>未来 1—3 年研判：</strong> 可持久化执行框架的高可用会逐渐被要求提供可验证的历史复制进度、业务幂等与跨地域演练，而不仅是多集群部署图。</p>
+<h2 id="section-18">五、Top 4｜AgentCore Identity 接受纯 OAuth 2.0 Discovery：把协议兼容和权限治理分开</h2>
+<p><strong>来源：</strong> AWS 官方 <a class="source-link" href="https://aws.amazon.com/about-aws/whats-new/2026/11/bedrock-agentcore-oauth2-discovery/" rel="noopener noreferrer" target="_blank">Amazon Bedrock AgentCore Identity now supports OAuth 2.0 discovery URLs</a>；<strong>发布日期：2026-11-13</strong>，公告说明在 AgentCore 可用的区域提供且<strong>无附加费用</strong>。</p>
+<h3 id="section-19">业务问题及本周变化</h3>
+<p>企业 Agent 调用 MCP Tool、工单、CRM 或支付查询时，常要接入已有 OAuth 授权服务器。不是所有授权服务器都提供 OpenID Connect（OIDC）Discovery 元数据；一些只实现 OAuth 2.0 Authorization Server Metadata。过去 AgentCore Identity 的相关配置仅接受 OIDC Discovery URL，导致非 OIDC IdP 对接受阻。</p>
+<p>本周开始，AgentCore 的<strong>入站 JWT Authorizer</strong>和<strong>出站 Custom OAuth Credential Provider</strong>可以使用 OAuth 2.0 Authorization Server Discovery URL，也仍支持 OIDC Discovery URL。这是<strong>元数据发现与兼容范围扩大</strong>，不是宣布支持任何 OAuth Flow 或自动完成用户权限委托。</p>
+<h3 id="section-20">架构机制与安全边界</h3>
+<p>典型调用链是 <code>企业用户/Agent → Agent Runtime → Inbound JWT 校验 → AgentCore Identity / Gateway → Outbound OAuth 凭证 → 业务 Tool</code>。Discovery 提供 Endpoint 与服务器元数据，简化 Client 对 Authorization Server 的配置。但身份和授权仍然不同：必须验证 <code>issuer</code>、<code>audience</code>、签名、算法、<code>exp</code>、<code>scope</code>、Token 有效期与业务资源权限；Agent 获取 Token 不等于获得目标系统的数据访问权。</p>
+<p>OAuth 2.0 Metadata 与 OIDC Metadata 所在的 <code>.well-known</code> 地址形式不同。应以实际 IdP 公开元数据及 AgentCore 文档为准，不要手工把一个 URL 字符串替换成另一个路径就认为协议兼容。</p>
+<h3 id="section-21">技术选型与取舍</h3>
+<p><strong>方案 A：AgentCore Identity</strong>，对 AWS Bedrock/AgentCore 平台集成顺畅，减少自建凭证集成工作，但存在供应商依赖、区域与运行平台边界。<strong>方案 B：独立 IdP + Envoy/Kong/自建 AI Gateway</strong>，以 Keycloak、Entra 或其他授权服务器配合 OAuth/OIDC 和独立 Policy Engine 管理，跨运行时一致，但团队需要维护 Token Exchange、凭证缓存、审计和密钥轮换。只读无用户身份的后台 Agent 可以使用受限 Workload Identity；涉及用户敏感操作则须传递可验证的委托范围，必要时采用 HITL。</p>
+<h3 id="section-22">迁移风险、测试与建议</h3>
+<p>用两套隔离的测试 IdP（一个仅支持 OAuth 2.0 元数据，一个支持 OIDC）验证 Discovery 获取、JWKS 轮换、Audience 不匹配、Token 失效、Scope 不足、跨租户调用以及后端 Resource-level deny。禁止将原始访问令牌或 Client Secret 写入 LLM Prompt、Trace 属性与普通日志；IdP 故障时不能降级使用管理员令牌。</p>
+<p><strong>最值得读：</strong> 公告关于 <em>inbound JWT authorization</em> 与 <em>outbound OAuth credential providers</em> 的变化，并沿链接查看 AgentCore 开发文档的 <code>Configure inbound JWT authorizer</code>、<code>Add OAuth client using custom provider</code>。<strong>结论：如果现有授权服务器不支持 OIDC Discovery，值得针对性验证；已稳定使用 OIDC 的企业无需为了这次公告迁移。</strong></p>
+<p><strong>未来 1—3 年研判：</strong> 多 Agent 平台会越来越重视标准 OAuth 元数据、令牌交换、最小权限和跨工具的用户/服务主体授权。协议兼容只是入场条件，真正的治理重点仍是委托权限与审计。</p>
+<h2 id="section-23">六、Top 5｜OpenTelemetry + Weaver + Agent Harness：用机器可验证的语义契约生成 AI 应用埋点</h2>
+<p><strong>来源：</strong> OpenTelemetry 官方 <a class="source-link" href="https://opentelemetry.io/blog/2026/agent-harness-genai-instrumentation/" rel="noopener noreferrer" target="_blank">Building an Agent Harness for OTel Instrumentation with GenAI Semantic Conventions and Weaver</a>；<strong>发布日期：2026-11-12</strong>。文章作者来自阿里云，描述已验证的工程方法和正在向社区上游贡献的工作，不代表所有生成的 Instrumentation 都已并入 OTel 核心正式发行版。</p>
+<h3 id="section-24">业务问题及约束</h3>
+<p>企业同时使用 LangChain、LangGraph、CrewAI、LiteLLM、Google ADK、MCP 及内部 Agent Harness 时，经常出现跨框架 Trace 的 Span 边界、模型名、Token 用量、Tool Call ID 和单位不一致。结果是虽然都向 OTLP 发送数据，却无法稳定地做成本归因、Agent 失败排障、工具调用审计和跨模型对比。逐一手写 Instrumentation 开发与维护成本很高。</p>
+<h3 id="section-25">核心方案</h3>
+<p>文章把 Agent 团队拆分成<strong>研究、计划评审、编码、代码评审与单元测试、Kubernetes 集成测试、观测验证</strong>等阶段。研究 Agent 优先寻找 Framework 公开 Hook/Callback，只有无法覆盖生命周期时才考虑 Method Wrapping。计划产物 <code>execution-plan.md</code> 由人复核后执行，避免 Agent 擅自选择侵入式埋点点位。</p>
+<p>OpenTelemetry GenAI Semantic Conventions 定义 Span、Attribute、Token、Model 和 Tool 等<strong>可检查的目标契约</strong>；<strong>Weaver <code>registry live-check</code><strong>接收运行中产生的 OTLP 数据，用内置和 Rego 规则验证 <code>missing_attribute</code>、<code>type_mismatch</code> 等问题。<code>violation</code> 会触发非零退出码，从而让 CI 阻断不符合规范的埋点。另有</strong>Coverage Matrix</strong>衡量属性覆盖率，但 Coverage 本身不必然是发布门禁，不能混淆“契约有效”和“数据足够完整”。</p>
+<pre tabindex="0"><code class="language-text">Framework Repo → Research → execution-plan.md（人工审查）
+               → Coding → Unit/E2E Tests → OTLP
+               → Weaver Live-check → Soak Test → PR
+                                  ↑ 不合规返回修复
+</code></pre>
+<p>文章报道其团队为多个 Python GenAI 框架与 Agent SDK 开发了插件，包括 CrewAI、LangChain、LangGraph、LiteLLM、Google ADK、Claude Agent SDK 和 MCP 等，插件位于 LoongSuite 分发包中；社区上游化仍在推进。不能把 LoongSuite 的覆盖率结果描述为 OpenTelemetry 官方所有框架的既有覆盖。</p>
+<h3 id="section-26">核心取舍与局限</h3>
+<p><strong>路线 A：人工/社区维护的标准 Instrumentation</strong>，兼容与可控性较好，但新框架覆盖速度有限；<strong>路线 B：Agent 生成 + Weaver 契约验证 + 人工代码审查</strong>，适合自定义 Agent Framework 或 Instrumentation 缺失，但测试环境、规范版本 Pin、沙箱和专家审查成本更高；<strong>路线 C：在应用边界使用 AI Gateway/Proxy 统一观测</strong>，低侵入，但只能看到网关可见的调用，不能代替内部 Agent Loop 和 Tool 生命周期细节。</p>
+<p>文章也指出某些闭源 CLI 内部的 Agent Loop、Tool 调度无法从外部 Python Wrapper 观察。即使 Agent 写出代码，也无法创造底层框架没有暴露的可观测数据。语义契约检查亦不能证明业务结果正确或模型回答质量高。</p>
+<h3 id="section-27">安全风险、验证与建议</h3>
+<p>需要 Pin 使用的 Semantic Convention Registry，防止自动生成代码随规范变化而失效；避免使用可能和未来标准冲突的自造 <code>gen_ai.*</code> 属性。默认对 Prompt、Tool 参数和结果等高敏数据做最小化采集/脱敏，仅在明确授权时开启内容捕获；检验 TraceId 传播、多租户隔离、Token 使用量与真实账单的偏差、Span 完整率以及 Instrumentation 性能和内存回归。</p>
+<p>先选一个非关键的 Python/TypeScript Agent 服务，建立 10—20 个包含成功、超时、工具重试和人工审批的场景：对比手工埋点与 Agent 生成方案的语义违规数、覆盖率、额外延迟、维护成本，再决定是否推广到 Go/Java/.NET。注意 Weaver 的语义检查是跨语言思想，但文章实例主要是 Python 生态，不能推断所有语言可直接复用其插件。</p>
+<p><strong>最值得读：</strong> <em>The pieces</em>、<em>Loop engineering</em>、<em>Verifying the output with Weaver</em>、<em>What didn't work</em>、<em>Where human review matters</em>。<strong>结论：非常值得建立小规模 PoC；不要把 AI 生成的埋点在没有审查时自动部署到生产。</strong></p>
+<p><strong>未来 1—3 年研判：</strong> 企业 AgentOps 的关键能力会从“存有 Trace”提升到“Trace 满足共享的可验证语义规范”，而 Agent 辅助生成与持续修复观测插件可能成为常态。</p>
+<h2 id="section-28">七、跨场景决策矩阵</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>当下最紧迫的问题</th>
+<th>首先定义的业务约束</th>
+<th>首选实验方向</th>
+<th>不应误用的方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>遥测成本高、出口拥塞或升级将破坏数据链</td>
+<td>丢失率、最大排队时长、后端限额、内存/磁盘预算</td>
+<td>Collector Exporter Queue + Batch 灰度及故障注入</td>
+<td>机械复制旧 <code>queue_size: 1000</code></td>
+</tr>
+<tr>
+<td>多服务受一个共享依赖拖垮</td>
+<td>核心交易 SLO、重试预算、共享连接池隔离</td>
+<td>固定批次、限速、Full Jitter、故障域隔离</td>
+<td>对所有失败无限重试</td>
+</tr>
+<tr>
+<td>长交易跨地域恢复</td>
+<td>真实业务 RPO/RTO、外部副作用幂等</td>
+<td>Temporal XDC 或托管 DR；实测复制延迟</td>
+<td>将异步复制说成零 RPO</td>
+</tr>
+<tr>
+<td>Agent 使用不同企业授权服务器</td>
+<td>授权服务器协议、用户/服务身份、资源级权限</td>
+<td>OAuth2/OIDC 元数据与 Token/Scope 拒绝测试</td>
+<td>以 Discovery 成功代替授权正确</td>
+</tr>
+<tr>
+<td>AI 工具链 Trace 无法互相比较</td>
+<td>Span/Attribute 规范、隐私、采集开销</td>
+<td>GenAI SemConv + Weaver + 人工复核</td>
+<td>将 Coverage 合格当成业务质量合格</td>
+</tr>
+</tbody>
+</table></div>
+<p>这里没有一个“所有企业都应采用”的最佳框架。每个场景都需要把<strong>安全、可靠性、性能、成本、复杂度、组织能力和锁定风险</strong>一起纳入决策。对金融与核心交易尤其应优先保障领域不变量，不应让工作流、AI Gateway 或遥测组件反过来成为资金正确性的唯一依据。</p>
+<h2 id="section-29">八、本周可执行行动清单</h2>
+<ul>
+<li class="task-item"><input aria-label="标记完成" class="task-check" type="checkbox"/><strong>第 1 天：Collector 配置普查。</strong> 抽样生产配置，记录 <code>batch</code> Processor、Exporter Queue、当前 Collector 版本和后端限额；列出将来不兼容的配置及负责人。</li>
+<li class="task-item"><input aria-label="标记完成" class="task-check" type="checkbox"/><strong>第 2 天：容量和背压实验。</strong> 在测试环境断开 OTLP 后端 5 分钟，对比旧/新队列能容纳的事件量、最大内存、恢复时长及是否丢失数据。</li>
+<li class="task-item"><input aria-label="标记完成" class="task-check" type="checkbox"/><strong>第 3 天：共享依赖事故桌面演练。</strong> 借鉴 GitHub 10 月复盘，模拟数据库连接池耗尽、错误路由 Leader 和缓存重连风暴；设计限流、暂停和回滚的操作闸门。</li>
+<li class="task-item"><input aria-label="标记完成" class="task-check" type="checkbox"/><strong>第 4 天：跨地域持久化操作 PoC。</strong> 模拟订单支付审批 Workflow 双集群复制，测量 Replica Lag 和主动切换后的业务幂等，而不只检查 Pod Ready。</li>
+<li class="task-item"><input aria-label="标记完成" class="task-check" type="checkbox"/><strong>第 5 天：Agent 可信度与观测合同。</strong> 检查企业 OAuth2/OIDC Discovery 兼容性；选一个 Agent Framework，使用 Weaver 校验一个包含 Tool Call 和 Token Usage 的 Trace。</li>
+</ul>
+<p><strong>建议优先级：</strong> 如已运行 OTel Collector，优先做批处理迁移预案；如团队更关心支付/订单稳定性，优先演练 GitHub 式的共享依赖级联故障；如正在建设 AI Agent 平台，则优先开展 OAuth 身份边界与 GenAI Trace 契约验证。每个练习都应以可复现的失败用例和数值指标收尾，而不仅是跑通 Demo。</p>
+<h2 id="section-30">九、未来 1—3 年：事实与研判分开</h2>
+<p><strong>已经发生的事实：</strong> 2026-11-11 OpenTelemetry 公布 <code>batch</code> Processor 弃用及面向 2027 年的迁移计划；2026-11-12 GitHub 发布了真实生产事故复盘；2026-11-10 Temporal 公布自建 XDC mTLS 实践；2026-11-13 AgentCore 扩大了 OAuth Discovery 兼容；2026-11-12 OpenTelemetry 展示了以 Semantic Conventions 与 Weaver 约束的 Agent 生成埋点工作流。</p>
+<p><strong>研判一（2027—2029）：</strong> 可靠性从“组件部署正常”继续向“队列/背压/恢复/副作用语义可验证”推进；边界条件和故障注入将成为部署验收的一部分。</p>
+<p><strong>研判二（2027—2029）：</strong> AI Gateway 和 Agent Runtime 会逐渐把身份凭证管理、委托权限与 Tool 授权分层；支持更多协议不会自动降低越权风险，因此审计和 Resource-level Policy 会更重要。</p>
+<p><strong>研判三（2027—2029）：</strong> AgentOps 将从日志收集升级为<strong>规范化 Trace + Evaluation + 成本归因 + 安全脱敏</strong>的综合质量工程；但性能基准和自动化程度仍高度依赖具体框架与团队治理成熟度。</p>
+<p><strong>研判四（2027—2029）：</strong> 核心支付与订单系统可能更多依赖异步持久工作流承载等待与补偿，但资金最终状态、扣减幂等与业务一致性仍留在确定性领域系统中，而不是交给 LLM 决策。</p>
+<h2 id="section-31">十、本期架构判断</h2>
+<p>本期五项内容有一条共同主线：<strong>从“功能已配置”走向“执行后果能被证明”。</strong> Collector 配置必须证明负载尖峰下不超出损失预算；GitHub 的复盘证明局部失效可能通过共享资源与重试扩散；Temporal 的多地域部署必须证明真实 RPO 与幂等；Agent 的 OAuth Discovery 只解决了接入兼容，不能替代授权；自动生成的 GenAI Instrumentation 必须通过语义契约与人类审查。</p>
+<p><strong>本周最值得沉淀的架构方法：明确业务不变量 → 划分故障域与授权域 → 描述队列/状态/副作用语义 → 通过故障注入和契约测试验证 → 再决定是否升级平台。</strong></p>
+<p><em>资料核验说明：所有五项均为本窗口内正式发布的官方材料；厂商展示的指标、演示环境以及规划版本均已单独标注，未来预测不作为已证实事实。仅使用公开信息，未包含任何内部配置或个人账户信息。</em></p>
+<div class="actions"><a href="https://aisuperteacher.github.io/ai-daily-hub/">AI Daily Hub 首页</a><button type="button" onclick="window.print()">打印 / 保存为 PDF</button><button type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})">返回顶部</button></div><footer>技术事实以 2026-11-09—11-15 发布的官方资料为依据。未来趋势明确为研判，所有性能数据和未来版本计划都不构成通用承诺。本文件完整内嵌正文、排版与导航脚本；外部来源链接仅在点击时需要网络连接。</footer></main></div><script>(function(){document.querySelectorAll('.task-check').forEach(function(el){el.addEventListener('change',function(){el.closest('li').classList.toggle('done',el.checked)})})})()</script></body></html>
