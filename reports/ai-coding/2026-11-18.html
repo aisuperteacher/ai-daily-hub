@@ -1,0 +1,171 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>AI Dev Tools Daily Brief — 2026-11-18</title><style>
+:root{--ink:#171b26;--navy:#182640;--paper:#fdfbf4;--yellow:#f9d950;--pink:#f5a1ad;--blue:#cbe6ec;--line:#2e3035}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--paper);font:15px/1.73 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+.hero{background:var(--yellow);background-image:radial-gradient(#ecc468 1px,transparent 1px);background-size:15px 15px;border-bottom:5px solid var(--ink);padding:36px max(20px,calc((100vw - 1180px)/2))}
+.hero .kicker{font-size:12px;font-weight:900;letter-spacing:.20em}.hero h1{font-size:clamp(38px,6vw,75px);line-height:1.01;letter-spacing:-.045em;margin:12px 0 17px;max-width:900px}.hero p{background:white;border:2px solid var(--ink);display:inline-block;padding:7px 11px;font-weight:650;margin:0}
+.layout{max-width:1240px;margin:auto;display:grid;grid-template-columns:255px minmax(0,1fr);gap:30px;padding:22px 18px 65px}
+nav{position:sticky;top:12px;align-self:start;max-height:calc(100vh - 24px);overflow-y:auto;background:#fff;border:2px solid var(--ink);box-shadow:5px 5px 0 var(--pink);padding:16px}nav h2{background:none!important;color:var(--ink)!important;box-shadow:none!important;font-size:15px!important;border-bottom:2px solid var(--ink);margin:0 0 9px!important;padding:0 0 7px!important}nav a{display:block;color:#2d3448;text-decoration:none;border-bottom:1px dashed #dad6d0;padding:6px 2px;font-size:12px;line-height:1.45}nav a.sub{padding-left:10px;color:#515766}
+main{min-width:0}main h1{display:none}main h2{font-size:clamp(22px,2.5vw,29px);background:var(--navy);box-shadow:5px 5px 0 var(--pink);color:#fff;padding:12px 17px;margin:42px 0 20px}main h3{font-size:19px;line-height:1.3;border-left:8px solid var(--yellow);padding-left:11px;margin:32px 0 12px}main p,main li{line-height:1.75;overflow-wrap:anywhere}main strong{color:#194378}a{color:#07569b}code{font-family:Consolas,Menlo,monospace;background:#eee9e0;padding:2px 4px;border-radius:3px}pre{border:3px solid var(--ink);background:#182231;color:#f4f3f1;padding:20px;overflow-x:auto;box-shadow:5px 5px 0 var(--blue);font:12px/1.6 Consolas,monospace}pre code{background:none;color:inherit;padding:0}.table-wrap{overflow-x:auto;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--blue);margin:20px 0}table{border-collapse:collapse;width:100%;min-width:680px;font-size:13px}th{background:var(--pink)}th,td{padding:10px;border-right:1px solid #8f8d8b;border-bottom:1px solid #999;text-align:left;vertical-align:top}tr:nth-child(even){background:#f4eee4}.to-top{position:fixed;right:17px;bottom:17px;color:#171b26;background:var(--yellow);border:2px solid var(--ink);padding:7px 12px;text-decoration:none;font-weight:900}.footer{max-width:1240px;margin:auto;border-top:3px solid var(--ink);padding:20px 18px 50px;font-size:12px}
+@media(max-width:860px){.layout{display:block}nav{position:static;max-height:205px;overflow:auto;margin-bottom:22px}.hero{padding:24px 16px}main h2{margin-top:32px}body{font-size:14px}}
+</style></head><body><header class="hero" id="top"><div class="kicker">DAILY ENGINEERING INTELLIGENCE / NOVEMBER 18, 2026</div><h1>AI DEV TOOLS<br>DAILY BRIEF</h1><p>OFFICIAL RELEASE TRACKER · 中文完整技术报告 · 自包含离线版</p></header><div class="layout"><nav><h2>REPORT INDEX</h2><a class="" href="#section-1">一、正式版本与行动总览</a><a class="" href="#section-2">二、OpenCode V1 1.19.6：V1 到 V2 正式升级入口</a><a class="sub " href="#section-3">2.1 V1 客户端主动提供 V2 升级选项</a><a class="sub " href="#section-4">2.2 图片历史 25 MiB 裁剪与请求体过大自动 Compaction</a><a class="" href="#section-5">三、OpenCode PTY 0.6.0：Protocol 9 独立组件升级</a><a class="" href="#section-6">四、Codex CLI 0.169.1：正式补丁发布，暂无重要功能确认</a><a class="" href="#section-7">五、OpenCode V2 2.3.1：新 Tag 不等于正式发行流程完成</a><a class="" href="#section-8">六、Gemini CLI 与 Node.js 26：补报超时兼容风险</a><a class="" href="#section-9">七、其它工具与包生态交叉核验</a><a class="" href="#section-10">八、Windows PowerShell 5.1/7 只读核验命令</a></nav><main><h1>AI Dev Tools Daily Brief — 2026-11-18</h1>
+<p>北京时间 2026 年 11 月 18 日约 07:05 核验；对比 11 月 17 日早报。优先核对官方 Release/Changelog 与 npm，严格区分正式版、Tag 和预发布。</p>
+<p>本期确认 OpenCode V1 1.19.6、OpenCode PTY 0.6.0、Codex CLI 0.169.1 三项正式发行信号，并发现 OpenCode V2 2.3.1 新 Tag。另补报 Gemini CLI 0.68.0 与 Node.js 26 的网络超时兼容问题（该 Issue 提交于 11 月 13 日，不冒充今日修复）。</p>
+<p><strong>行动优先级：</strong> OpenCode V1 → V2 的 Plugins 迁移回归；直接使用 @opencode/pty 的客户端/Daemon 协议测试；Node 26 上 Gemini CLI 超时测试；Codex 0.169.1 暂无官方确认的重要亮点，不需盲目升级。</p>
+<h2 id="section-1">一、正式版本与行动总览</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>工具</th>
+<th>最新核验状态</th>
+<th>严重度与性质</th>
+<th>建议行动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenCode V1</td>
+<td>1.19.6，2026-11-17 07:21 UTC；GitHub、Changelog、npm 一致</td>
+<td>High（迁移用户），利好 + 兼容风险</td>
+<td>Test before upgrading</td>
+</tr>
+<tr>
+<td>OpenCode PTY</td>
+<td>0.6.0 / Protocol 9，2026-11-16 23:36 UTC；GitHub 正式组件发行</td>
+<td>Medium–High，协议风险</td>
+<td>Test before upgrading</td>
+</tr>
+<tr>
+<td>OpenCode V2</td>
+<td>2.3.1 Tag 于 2026-11-17 22:53 UTC；公开 V2 Changelog 仍为 2.3.0</td>
+<td>Medium，发行状态未完全确认</td>
+<td>Avoid unverified upgrade</td>
+</tr>
+<tr>
+<td>Codex CLI</td>
+<td>0.169.1 Stable，2026-11-17 22:21 UTC；GitHub Latest 与 npm 一致</td>
+<td>Low，中性</td>
+<td>No action</td>
+</tr>
+<tr>
+<td>Claude Code</td>
+<td>2.1.326；GitHub 与 npm 一致</td>
+<td>Low，无新增</td>
+<td>No action</td>
+</tr>
+<tr>
+<td>Pi</td>
+<td>1.5.2；GitHub、Pi Changelog、npm 一致</td>
+<td>Low，无新增</td>
+<td>No action</td>
+</tr>
+<tr>
+<td>Gemini CLI</td>
+<td>0.68.0 Stable；Node 26 组合存在公开复现报告</td>
+<td>Medium–High（特定 Runtime），风险</td>
+<td>Test before upgrading Node</td>
+</tr>
+<tr>
+<td>Cursor</td>
+<td>近期官方 Changelog 仍为 11 月 6 日 Voice Chat</td>
+<td>Low，无新增</td>
+<td>No action</td>
+</tr>
+<tr>
+<td>xAI Grok API</td>
+<td>最新明确日期的 Release Notes 仍为 11 月 2 日</td>
+<td>Low，无新增</td>
+<td>No action</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>时间换算（北京时间 UTC+8）：</strong> OpenCode PTY 0.6.0 为 11 月 17 日 07:36；OpenCode V1 1.19.6 为 11 月 17 日 15:21；Codex 0.169.1 为 11 月 18 日 06:21；OpenCode V2 2.3.1 Tag 为 11 月 18 日 06:53。PTY 0.6.0 发生在昨天的日报核验窗口之后。</p>
+<p><strong>核验边界：</strong> OpenCode V1 1.19.6 的官方 GitHub、Changelog 和 <code>opencode-ai/latest</code> 一致。Codex <code>0.169.1</code> 的 GitHub Latest、<code>@openai/codex/latest</code> 一致。Claude、Pi 的官方 GitHub 与 npm 一致。V2 2.3.1 仅获得 Tag 信号，尚无完整 Release Notes、Changelog 和 npm latest 三方核对，不能将单个 Tag 认定为生产可用 Stable。下文 High/Medium/Low 与 Breaking-risk 是工程研判，并非官方 CVE 等级。</p>
+<h2 id="section-2">二、OpenCode V1 1.19.6：V1 到 V2 正式升级入口</h2>
+<p><strong>发布日期：</strong> 2026-11-17 07:21 UTC / 北京时间 15:21。</p>
+<p>官方：<a href="https://github.com/anomalyco/opencode/releases/tag/v1.19.6">GitHub V1 1.19.6 Release</a> · <a href="https://opencode.ai/changelog/v1.19.6">产品 Changelog</a>。</p>
+<h3 id="section-3">2.1 V1 客户端主动提供 V2 升级选项</h3>
+<p><strong>变化内容：</strong> OpenCode V1 客户端提供升级 OpenCode 2.0 的交互入口。V2 可在后台预下载，但只在用户选择 Restart to upgrade、Upgrade on quit 或 Later 后决定何时升级。官方称 Sessions、Projects 和 Settings 会保留，并明确表示 V1 Plugins 需要更新以适配 V2。</p>
+<p><strong>技术意义：</strong> 数据迁移和运行时行为兼容是两回事；V2 的 Plugin API、SDK、MCP 生命周期、Subagent 后台执行及 Windows Process Daemon 与 V1 有差异，不能因为 Session 保留就断言旧插件运行正确。</p>
+<p><strong>场景 A — Windows 11、PowerShell 5.1/7、OpenCode Desktop V1：</strong> <strong>Medium–High／迁移利好 + 兼容风险；行动 Test before upgrading；Breaking-risk Medium。</strong> 备份会话与配置，在测试 Windows 环境验证升级；检查项目目录、Session、Shell、Process Daemon、代理和退出码。安装成功不能代替端到端验收。</p>
+<p><strong>场景 B — V1 Plugins、Extensions、Skills、MCP：</strong> <strong>High／Breaking 风险；行动 Test before upgrading / Change plugins；Breaking-risk High（插件未适配时）。</strong> 逐项核对 Plugin API、事件与 Hooks、Tool Schema、SDK Imports、MCP Auth、Markdown Agent/Rules/Skills 发现路径。插件“能安装”不意味着权限和 Tool API 正确。</p>
+<p><strong>场景 C — 留在 V1 的生产环境：</strong> <strong>Low／中性；行动 No action；Breaking-risk Low。</strong> 入口是可选迁移，选择 Later 即可，不必为了提示立即升级。</p>
+<p><strong>谁可以忽略：</strong> 已在 OpenCode V2、不再使用 V1 的用户。</p>
+<h3 id="section-4">2.2 图片历史 25 MiB 裁剪与请求体过大自动 Compaction</h3>
+<p><strong>变化内容：</strong> V1 历史图片数据超过 <strong>25 MiB</strong> 时，最旧的图片改为占位内容，避免向 Provider 发送超大请求；Provider 报 Request Body Too Large 时触发 Context Compaction 并重试，而非直接终止该 Turn。</p>
+<p><strong>技术意义：</strong> Context Token 上限与 HTTP Body Size 不相同。此机制可减少请求失败，但旧图片将不再完整参与后续推理，不能声称多模态长会话拥有完整历史记忆。</p>
+<p><strong>场景 A — 前端截图调试、视觉 Agent、多图片会话：</strong> <strong>Medium–High／稳定性利好 + 上下文损失风险；行动 Test before upgrading；Breaking-risk Medium。</strong> 用多张测试图片验证占位时机；关键截图须保留原始文件，需要时重新附加或显式读取。</p>
+<p><strong>场景 B — 第三方 API Gateway、Nginx、上传 Body 限制：</strong> <strong>Medium／兼容利好；行动 Test before upgrading；Breaking-risk Low–Medium。</strong> 核对 HTTP 413/Provider 特定错误、Compaction 重试次数和真实请求大小；该机制并不替代网关 Body Size/Timeout 设置。</p>
+<p><strong>谁可以忽略：</strong> 纯文本会话、不使用大量图片或不接近请求体限制者。</p>
+<h2 id="section-5">三、OpenCode PTY 0.6.0：Protocol 9 独立组件升级</h2>
+<p><strong>发布时间：</strong> 2026-11-16 23:36 UTC / 北京时间 2026-11-17 07:36。</p>
+<p>官方：<a href="https://github.com/anomalyco/opencode/releases/tag/process-daemon-v0.6.0">process-daemon-v0.6.0 Release</a>。</p>
+<p><strong>变化内容：</strong> <code>packages/process-daemon</code> 正式发行 <code>@opencode/pty@0.6.0</code>，Protocol <strong>9</strong>，此前 0.5.x 使用 Protocol 8。Release 摘要没有公布完整 Wire Protocol 字段变化或 Client/Daemon 兼容矩阵。</p>
+<p><strong>技术意义：</strong> PTY 组件管理终端输入输出、进程启动、终端尺寸、退出状态和生命周期。Protocol 数字变化意味着集成方需要核对握手与版本协商，但不能仅凭 9 推断所有 8 客户端必然失效。此发行也不等于 OpenCode V1/V2 主程序同步升级。</p>
+<p><strong>场景 A — SDK/自研 Terminal Agent/直接依赖 @opencode/pty：</strong> <strong>Medium–High／潜在协议兼容风险；行动 Test before upgrading；Breaking-risk Medium–High（差异待验证）。</strong> 测试版本握手、错配、Resize、Ctrl+C、Timeout、断线重连、Session 恢复和资源清理。锁定成对 Client/Daemon 版本后再更新生产依赖。</p>
+<p><strong>场景 B — Windows PowerShell 5.1/7、后台 Shell、Runner：</strong> <strong>Medium／兼容风险；行动 Test before upgrading；Breaking-risk Medium。</strong> 以无副作用命令验证 UTF-8/GBK 输出、Exit Code、进程树、工作目录和取消信号。</p>
+<p><strong>场景 C — 普通官方 OpenCode V1/V2 用户：</strong> <strong>Low／中性；行动 No action；新增 Breaking-risk 未确认。</strong> 不必为独立 PTY 发布强制升级 CLI。</p>
+<p><strong>谁可以忽略：</strong> 无直接 PTY SDK、Process Daemon 协议或自定义终端扩展的用户。</p>
+<h2 id="section-6">四、Codex CLI 0.169.1：正式补丁发布，暂无重要功能确认</h2>
+<p><strong>发布时间：</strong> 2026-11-17 22:21 UTC / 北京时间 2026-11-18 06:21。</p>
+<p>官方：<a href="https://github.com/openai/codex/releases/tag/rust-v0.169.1">Codex 0.169.1 Release</a> · <a href="https://registry.npmjs.org/@openai/codex/latest">npm latest</a>。</p>
+<p><strong>变化内容：</strong> GitHub 标为 Latest，npm <code>@openai/codex/latest</code> 为 <strong>0.169.1</strong>。官方说明为 <strong>No verified release highlights available</strong>，仅有 0.169.0 → 0.169.1 的提交对比入口。</p>
+<p><strong>技术意义：</strong> 版本号证实补丁发布，却不足以断言修了 Sandbox 漏洞、改变 MCP、模型、Hook 或 Provider；不能把“补丁号 +1”自动等同安全更新。</p>
+<p><strong>场景 A — Windows/npm Global、普通稳定版用户：</strong> <strong>Low／中性；行动 No action；Breaking-risk 未确认。</strong> 若 0.169.0 运行稳定，可保持并等待可核验变更；遇到具体问题再检查提交与 Issue。</p>
+<p><strong>场景 B — CI/Headless、定制 Provider、Sandbox、MCP：</strong> <strong>Low–Medium／待验证；行动 Test before upgrading；Breaking-risk 未知。</strong> 若生产政策必须更新，先在测试 Runner 回归 <code>codex exec</code>、Exit Code、Tool Permissions、Provider 及 Session Resume。</p>
+<p><strong>谁可以忽略：</strong> 0.169.0 符合需求、没有受影响已知故障的用户。<code>0.171.0-alpha.*</code> 是预发布，不是稳定版。</p>
+<h2 id="section-7">五、OpenCode V2 2.3.1：新 Tag 不等于正式发行流程完成</h2>
+<p><strong>版本信号：</strong> <code>v2.3.1</code> GitHub Tag 显示 2026-11-17 22:53 UTC / 北京时间 <strong>2026-11-18 06:53</strong>；产品 V2 Changelog 仍为 <strong>2.3.0</strong>，没有取得独立 Release Notes 与 npm <code>latest</code> 的一致确认。</p>
+<p>官方：<a href="https://github.com/anomalyco/opencode/releases/tag/v2.3.1">V2 2.3.1 Tag 页面</a> · <a href="https://opencode.ai/changelog">产品 Changelog</a>。</p>
+<p><strong>技术意义：</strong> Git Tag、GitHub Release、npm Dist-tag、客户端自动升级是不同发布信号。刚创建 Tag 的几分钟内，不应断言可以安全升级生产环境，也不能猜测具体 Breaking。</p>
+<p><strong>场景 A — 生产 V2、Windows/npm Global：</strong> <strong>Medium／发行状态不确定；行动 Avoid unverified upgrade；Breaking-risk 未知。</strong> 等待正式发行说明，并核对 GitHub、Changelog、npm <code>dist-tags</code> 后再做 Smoke Test。</p>
+<p><strong>场景 B — SDK、Extensions、Process Daemon：</strong> <strong>Medium–High／潜在兼容风险；行动 Test before upgrading；Breaking-risk 未知。</strong> 不推测未公开 Tool Schema、Hooks 和 SDK 差异。</p>
+<p><strong>谁可以忽略：</strong> 不跟踪 Git Tag 或不使用 V2 早期版本的用户。</p>
+<h2 id="section-8">六、Gemini CLI 与 Node.js 26：补报超时兼容风险</h2>
+<p><strong>问题首次提交：</strong> 2026-11-13，涉及 Gemini CLI <strong>0.68.0</strong>、Node.js <strong>26.13.0</strong>；不是今日发布的正式修复。</p>
+<p>官方仓库公开问题：<a href="https://github.com/google-gemini/gemini-cli/issues/30280">gemini-cli #30280</a>。</p>
+<p><strong>变化内容/证据性质：</strong> 这是仍开放、具备复现的 Issue。报告称 Node 26 内建 Fetch/Undici 所用 Global Dispatcher 标识与 Gemini CLI 捆绑的 Undici 不一致，造成部分模型请求没有应用 CLI 配置的响应头超时；预期约 60 秒，但测试中可能等到 Node 默认约 300 秒。报告使用本地 Mock Server，没有发起真实付费 API 请求。</p>
+<p><strong>技术意义：</strong> Node 升级能改变 HTTP Client、Proxy、Timeout 的实际运行语义，而非仅改变 JS 语法支持。Agent 的超时失效可能导致 CI 任务挂起、长时间重试及资源占用。</p>
+<p><strong>场景 A — Windows 11 + Gemini CLI 0.68.0 + Node 26：</strong> <strong>Medium–High／兼容风险；行动 Avoid untested Node 26 migration；Breaking-risk Medium。</strong> 若目前使用 Node 24 且稳定，先不要为追新版直接将生产 CLI 切到 Node 26；测试超时、代理、Ctrl+C、Exit Code。</p>
+<p><strong>场景 B — CI/Headless、第三方 Gemini API Gateway：</strong> <strong>High（依赖严格超时者）／可靠性风险；行动 Test before upgrading / Change runtime if affected；Breaking-risk Medium–High。</strong> 在本地模拟延迟响应头，验证失败时间、重试与 Runner Job Timeout；外层 Timeout 不能替代 HTTP 底层修复。</p>
+<p><strong>场景 C — Node 22/24 等其他组合：</strong> <strong>Low／未确认受影响；行动 No action；Breaking-risk 未确认。</strong> 报告的 Node 24.22.3 对照实验没有出现同一问题，但不能据此概括所有 Node 24 配置。</p>
+<p><strong>谁可以忽略：</strong> 未在 Node 26 下运行 Gemini CLI、且不依赖该请求超时路径者。问题尚待官方确认和正式修复；不能把 0.69 Preview 的其它变更当作已解决。</p>
+<h2 id="section-9">七、其它工具与包生态交叉核验</h2>
+<p><strong>Claude Code：</strong> 仍为 <strong>2.1.326</strong>，官方 GitHub Latest 和 npm 主包一致；昨日 Code Mode、MCP、Gateway 身份、Managed Permissions、Compaction 变化已经完整报告，本期无新正式大版本。<strong>Low／No action；新增 Breaking-risk 未确认。</strong> <a href="https://github.com/anthropics/claude-code/releases">Releases</a> · <a href="https://registry.npmjs.org/@anthropic-ai/claude-code/latest">npm</a>。</p>
+<p><strong>Pi（earendil-works/pi）：</strong> 仍为 <strong>1.5.2</strong>，GitHub Release、Pi Changelog 与 <code>@earendil-works/pi-coding-agent/latest</code> 一致。仓库提交不能当成正式 npm 发布。<strong>Low／No action；新增 Breaking-risk 未确认。</strong> <a href="https://github.com/earendil-works/pi/releases">Releases</a> · <a href="https://pi.dev/changelog">Changelog</a> · <a href="https://registry.npmjs.org/@earendil-works/pi-coding-agent/latest">npm</a>。</p>
+<p><strong>Gemini CLI Stable：</strong> 仍为 <strong>0.68.0</strong>，0.69.0 Preview 不计正式版；本期为 Runtime Issue 补报，不是 Stable 升级。 <a href="https://github.com/google-gemini/gemini-cli/releases">Gemini Releases</a>。</p>
+<p><strong>Cursor：</strong> 最近官方 Changelog 为 11 月 6 日 Voice Chat with Agents，本期没有可确认的新 Cursor Rules、MCP、Agent SDK 或 Marketplace Breaking。<strong>Low／No action。</strong> <a href="https://cursor.com/changelog">Cursor Changelog</a>。</p>
+<p><strong>xAI Grok API：</strong> 最近明确日期的官方 Release Notes 为 11 月 2 日 Imagine Model Routing，本期没有可确认的新 Text/Voice API、Remote MCP、OAuth 或 Tool Schema Breaking。<strong>Low／No action。</strong> <a href="https://docs.x.ai/developers/release-notes">xAI Release Notes</a>。</p>
+<p><strong>AGENTS.md / CLAUDE.md / Cursor Rules / GEMINI.md：</strong> 没有核验到跨产品统一继承优先级的新标准；OpenCode V1 → V2 的 Settings 数据迁移，也不能证明旧 Plugin Permissions 和 Agent Rules 兼容。</p>
+<h2 id="section-10">八、Windows PowerShell 5.1/7 只读核验命令</h2>
+<p>下面命令不会安装/升级；npm Registry 查询需要网络。</p>
+<pre><code class="language-powershell"># 正式与预发布标签
+npm view @openai/codex dist-tags --json
+npm view @opencode/cli dist-tags --json
+npm view opencode-ai dist-tags --json
+npm view @opencode/pty dist-tags --json
+npm view @anthropic-ai/claude-code dist-tags --json
+npm view @earendil-works/pi-coding-agent dist-tags --json
+npm view @google/gemini-cli dist-tags --json
+
+# 本地实际命令入口与版本
+Get-Command codex,opencode,claude,pi,gemini -All -ErrorAction SilentlyContinue
+codex --version
+opencode --version
+claude --version
+pi --version
+gemini --version
+
+# npm 全局安装情况
+npm ls -g --depth=0
+
+# Node/npm Runtime
+node --version
+npm --version
+
+# OpenCode PTY 独立包
+npm ls -g @opencode/pty --depth=0
+</code></pre>
+<p><strong>行动总结：</strong> OpenCode V1 不必为迁移提示盲目切 V2；先审核插件和备份数据。已经在 V2 上的用户不必因独立 PTY Protocol 9 强制升级主 CLI。Codex 0.169.1 缺少官方重要变更摘要，可暂维持 0.169.0。Gemini + Node 26 应单独做超时回归。</p>
+<p><strong>验证边界：</strong> 本报告核对公开的官方 GitHub Releases、正式 npm 数据、Changelog 与仓库问题；没有在个人 Windows、PowerShell、WSL、v2rayN、API 中转或 CI 上实际升级/复现。工程严重度不是官方安全分数。</p>
+<p><strong>官方来源总览：</strong> <a href="https://github.com/anomalyco/opencode/releases/tag/v1.19.6">OpenCode V1 1.19.6</a> · <a href="https://github.com/anomalyco/opencode/releases/tag/process-daemon-v0.6.0">OpenCode PTY 0.6.0</a> · <a href="https://github.com/anomalyco/opencode/releases/tag/v2.3.1">OpenCode V2 2.3.1</a> · <a href="https://github.com/openai/codex/releases/tag/rust-v0.169.1">Codex 0.169.1</a> · <a href="https://github.com/google-gemini/gemini-cli/issues/30280">Gemini Issue #30280</a>。</p>
+</main></div><footer class="footer">AI Dev Tools Daily Brief · 2026-11-18 · 仅公开可核验信息 · 无 CDN、图片或外部脚本 · 可离线阅读</footer><a class="to-top" href="#top">↑ TOP</a></body></html>
