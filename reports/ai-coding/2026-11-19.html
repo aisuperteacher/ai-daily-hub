@@ -1,0 +1,285 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>AI Dev Tools Daily Brief — 2026-11-19</title><style>
+:root{--ink:#182031;--paper:#fffdf5;--sun:#ffe05c;--pink:#f4a6b7;--blue:#dceef5;--navy:#1b2847;--line:#202733}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.8 system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+.hero{border-bottom:5px solid var(--line);padding:40px max(20px,calc((100vw - 1170px)/2));background:var(--sun);background-image:radial-gradient(#ecc061 1px,transparent 1px);background-size:14px 14px}
+.hero small{display:inline-block;border:2px solid var(--line);background:white;padding:4px 10px;font-weight:800;letter-spacing:0.12em}.hero .huge{font-size:clamp(38px,7vw,79px);font-weight:950;line-height:1.04;letter-spacing:-.065em;margin:15px 0}.hero p{margin:6px 0;font-weight:650}
+.shell{max-width:1230px;margin:auto;padding:22px 20px 65px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:30px}
+.sidebar{position:sticky;top:12px;align-self:start;max-height:calc(100vh - 25px);overflow-y:auto;border:2px solid var(--line);background:#fff;padding:16px;box-shadow:5px 5px 0 var(--pink)}.sidebar strong{display:block;border-bottom:2px solid;padding-bottom:5px}.nav{display:block;text-decoration:none;color:#254460;border-bottom:1px dashed #ccc;padding:6px 4px;font-size:12px}.nav3{padding-left:15px}.nav1{font-weight:900}.nav2{font-weight:700}main{min-width:0}main h1{display:none}main h2{background:var(--navy);color:#fff;padding:13px 17px;margin:43px 0 23px;font-size:clamp(23px,3.4vw,31px);box-shadow:6px 6px 0 var(--pink)}main h3{font-size:19px;border-left:8px solid var(--sun);padding:6px 12px;margin:31px 0 15px;background:#faf3de}p,li{overflow-wrap:anywhere}a{color:#0f5392}strong{color:#0b3f7c}code{font-family:Consolas,"Cascadia Code",monospace;background:#ece9dc;border-radius:3px;padding:1px 3px}pre{background:#171e2b;color:#f7f9fb;border:3px solid #111;box-shadow:5px 5px 0 var(--blue);overflow:auto;padding:18px;font:12px/1.65 Consolas,monospace}pre code{background:none;color:inherit;padding:0}table{width:100%;border-collapse:collapse;min-width:690px;font-size:13px}table th,table td{border:1px solid #555;padding:10px;vertical-align:top;text-align:left}th{background:var(--pink)}tr:nth-child(even){background:#f8f2e8}.table-scroll{overflow-x:auto;border:2px solid var(--line);box-shadow:5px 5px 0 var(--blue)}blockquote{border-left:4px solid var(--sun);margin:16px 0;padding:6px 16px;background:#fff}.back{position:fixed;bottom:15px;right:15px;background:var(--sun);padding:7px 13px;border:2px solid var(--line);font-weight:800;color:var(--ink);text-decoration:none}footer{max-width:1230px;margin:0 auto 50px;border-top:3px solid var(--ink);padding:19px;font-size:12px;color:#4c4d52}
+@media(max-width:850px){.hero{padding:28px 18px}.shell{display:block;padding:18px 13px}.sidebar{position:static;max-height:210px;margin-bottom:27px}body{font-size:14px}main h3{font-size:17px}pre{font-size:11px}}
+</style></head><body><header id="top" class="hero"><small>AI CODING PRESS / 2026.11.19 / BEIJING</small><div class="huge">AI DEV TOOLS<br>DAILY BRIEF</div><p>Codex · Claude Code · OpenCode · Pi · Gemini · Cursor · Grok</p><p>完整正文可视化镜像 · 可离线打开 · 无 CDN / 图片</p></header><div class="shell"><aside class="sidebar"><strong>目录 / CONTENTS</strong><a class="nav nav1" href="#section-1">AI Dev Tools Daily Brief — 2026-11-19</a><a class="nav nav2" href="#section-2">一、正式版本总览</a><a class="nav nav2" href="#section-3">二、OpenCode V2 2.3.1 / 2.3.2：优先处理执行语义变化</a><a class="nav nav3" href="#section-4">2.1 Shell 命令超时后默认转入后台，不再直接杀死</a><a class="nav nav3" href="#section-5">2.2 Background Compaction 默认开启</a><a class="nav nav3" href="#section-6">2.3 Schedules 迁移为 Automations：条件任务可能被丢弃</a><a class="nav nav3" href="#section-7">2.4 CLAUDE.md 与 AGENTS.md 发现规则调整</a><a class="nav nav3" href="#section-8">2.5 Code Mode 结构化 read 返回值、Plugin Tool Rename</a><a class="nav nav3" href="#section-9">2.6 GPT-6.2 Prompt Caching 修复：多轮成本可能显著下降</a><a class="nav nav3" href="#section-10">2.7 Windows WinGet 安装渠道落后于正式发行</a><a class="nav nav2" href="#section-11">三、Codex CLI 0.170.0：权限、MCP 与 Windows 可靠性</a><a class="nav nav3" href="#section-12">3.1 MCP OAuth 登录、取消、注销的并发竞争修复</a><a class="nav nav3" href="#section-13">3.2 Sandbox 权限更新和子线程不再丢失既有约束</a><a class="nav nav3" href="#section-14">3.3 Windows 文件替换、Runtime Registration 与网络回退</a><a class="nav nav3" href="#section-15">3.4 TUI WebRTC Voice、同名 MCP Server、OTel Header 自动刷新</a><a class="nav nav2" href="#section-16">四、Claude Code 2.1.327：优先关注文件保护、MCP 与配置完整性</a><a class="nav nav3" href="#section-17">4.1 Remote Control / Worktree 停止时误删 Git-Ignored 文件的修复</a><a class="nav nav3" href="#section-18">4.2 claude mcp add-json 支持标准输入，降低命令行凭据暴露</a><a class="nav nav3" href="#section-19">4.3 Project MCP 增删不再破坏 .mcp.json 的其它字段</a><a class="nav nav3" href="#section-20">4.4 /status 增强 Skills、Hooks、权限配置故障诊断</a><a class="nav nav3" href="#section-21">4.5 GitHub 安装、导出覆盖与停止命令竞态修复</a><a class="nav nav2" href="#section-22">五、Pi、Gemini、Cursor、xAI Grok：其它核验结果</a><a class="nav nav2" href="#section-23">六、Windows PowerShell 5.1 / 7 今日检查命令</a><a class="nav nav2" href="#section-24">七、官方来源索引</a></aside><main><h1 id="section-1">AI Dev Tools Daily Brief — 2026-11-19</h1>
+<p>北京时间 2026 年 11 月 19 日早报 · 对比 11 月 18 日报告 · 正式版本、官方 Changelog 与工程风险核验。</p>
+<p>本期确认三组值得重点关注的正式发行：<strong>Codex CLI 0.170.0、OpenCode V2 2.3.1 / 2.3.2，以及 Claude Code 2.1.327</strong>。</p>
+<p>其中 OpenCode 的变化最大：Shell 超时后不再默认终止进程、后台 Compaction 默认开启、实验性 Schedules 迁移为 Automations、<code>CLAUDE.md</code> 发现规则调整，以及 GPT-6.2 Prompt Cache 费用修复。对 Windows、自动化和自定义 SDK 用户，这些不只是体验改善，还可能影响执行语义、数据一致性及成本。</p>
+<p>Claude Code 2.1.327 发布于北京时间 <strong>11 月 18 日约 07:17</strong>，晚于昨日 07:05 左右的核验窗口，因此作为本期补报，而不把它冒充今天新发布的版本。</p>
+<h2 id="section-2">一、正式版本总览</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+  <th>工具</th>
+  <th>核验状态</th>
+  <th>风险与行动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Codex CLI</strong></td>
+  <td><strong>0.170.0 Stable</strong> · 2026-11-18 11:40（北京）</td>
+  <td>High／权限与 MCP 修复；Test before upgrading</td>
+</tr>
+<tr>
+  <td><strong>OpenCode V2</strong></td>
+  <td><strong>2.3.2 Stable</strong> · 2026-11-18；同日发布 2.3.1</td>
+  <td>High／执行行为 Breaking；Test before upgrading</td>
+</tr>
+<tr>
+  <td><strong>Claude Code</strong></td>
+  <td><strong>2.1.327</strong> · 2026-11-18 07:17（北京）</td>
+  <td>High／安全及数据保护；Upgrade after canary</td>
+</tr>
+<tr>
+  <td>earendil-works/pi</td>
+  <td><strong>1.5.2</strong> · 2026-11-10</td>
+  <td>Low／无新增正式重大更新；No action</td>
+</tr>
+<tr>
+  <td>Gemini CLI</td>
+  <td><strong>0.68.0 Stable</strong> · 2026-11-10</td>
+  <td>Low／无新增 Stable；No action</td>
+</tr>
+<tr>
+  <td>Cursor</td>
+  <td>最近正式产品公告为 11 月 6 日 Voice Chat</td>
+  <td>Low／无新增重要发行；No action</td>
+</tr>
+<tr>
+  <td>xAI Grok API</td>
+  <td>最近明确日期的官方 Release Notes 为 11 月 2 日</td>
+  <td>Low／无新增重要发行；No action</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>核验边界：</strong> Codex 0.170.0 得到 OpenAI 官方 Changelog、GitHub Release 记录和包版本记录支持；OpenCode 2.3.2 得到官网 Changelog 和 GitHub 发布记录支持；Claude 2.1.327 得到 GitHub Release 记录和多份对官方发行内容的同步记录支持。npm Registry 的 <code>latest</code> 标签未能对所有工具实时直读，因此不将未直接验证的 npm 标签宣称为已核实。</p>
+<p>版本按正式 Stable/Release 口径统计，不混入 Codex Alpha、Gemini Preview 或仅有仓库提交的未发行功能。下文风险等级为场景化工程判断，不代表官方 CVSS。</p>
+<h2 id="section-3">二、OpenCode V2 2.3.1 / 2.3.2：优先处理执行语义变化</h2>
+<p>两版均在 2026 年 11 月 18 日正式发布；2.3.2 是当前核验的较新稳定版。</p>
+<p>官方来源：<a href="https://opencode.ai/changelog">OpenCode Changelog</a> · <a href="https://github.com/anomalyco/opencode/releases/tag/v2.3.1">2.3.1 Release</a> · <a href="https://github.com/anomalyco/opencode/releases/tag/v2.3.2">2.3.2 Release</a>。</p>
+<h3 id="section-4">2.1 Shell 命令超时后默认转入后台，不再直接杀死</h3>
+<p><strong>变化内容：</strong> 在 OpenCode 2.3.1 中，Shell Command 达到超时时间但仍在运行时，默认转入后台继续执行，任务结束后再报告结果。旧实验性 <code>shell_timeout_background</code> 开关不再决定是否启用，遗留配置仍能加载。前台命令设置 <code>timeout: 0</code> 现在表示采用默认 <strong>120 秒</strong>，不再表示无限等待。</p>
+<p><strong>技术意义：</strong> 这是 <strong>Timeout Semantics 的 Breaking Change</strong>。原来超时后进程被终止；现在可能是前台等待结束，但实际进程仍在编译、测试甚至写入文件。Shell Tool 返回与操作系统进程完成不再天然同步。</p>
+<p><strong>场景 A — Windows PowerShell 5.1/7、长时间 Maven/npm 构建。</strong> 严重度：<strong>High／可靠性利好 + 执行风险</strong>。行动：<strong>Test before upgrading</strong>。Breaking-risk：<strong>High</strong>。</p>
+<p>例如 Maven 构建运行 180 秒，但前台等待设为 120 秒。新版可能在 120 秒时把构建放到后台，而不是取消它。如果此时 Agent 又启动第二次构建、删除 <code>target</code> 目录或进入下一步部署，两个操作可能相互干扰。</p>
+<p>需要验证后台进程 ID、完成事件、退出码、进程清理以及同一目录的并发写入，不能仅凭 Shell Tool 的第一条回复判断任务已经成功。</p>
+<p><strong>场景 B — CI/Headless、自动化部署、数据库迁移脚本。</strong> 严重度：<strong>High／Breaking 风险</strong>。行动：<strong>Change orchestration / Test before upgrading</strong>。Breaking-risk：<strong>High</strong>。</p>
+<p>原本依赖 Tool Timeout 来终止子进程的控制流程必须重新审查。应增加真正的业务级终止机制、任务状态跟踪和超时后的取消/补偿逻辑；不要让后台部署与后续操作无序并发。</p>
+<p><strong>谁可以忽略：</strong> 只运行很短的 Shell 命令、不依赖 Timeout 控制进程生命周期的用户。</p>
+<h3 id="section-5">2.2 Background Compaction 默认开启</h3>
+<p><strong>变化内容：</strong> 当 Session 接近自动上下文压缩阈值，OpenCode 会提前在后台生成摘要，降低用户下一轮消息等待 Compaction 的概率。</p>
+<p>如果要关闭：</p>
+<pre><code class="language-json">{
+  &quot;compaction&quot;: {
+    &quot;background&quot;: false
+  }
+}
+</code></pre>
+<p>旧的 <code>experimental.background_compaction</code> 配置已经被新的正式配置路径取代。</p>
+<p><strong>技术意义：</strong> Compaction 从按需阻塞操作变为预测性后台任务。速度可能提升，但即使最后没有使用预生成摘要，也可能产生 Token 消耗。</p>
+<p><strong>场景 A — 长 Context、多 Agent、长代码审查任务。</strong> 严重度：<strong>Medium–High／体验利好 + 成本风险</strong>。行动：<strong>Test before upgrading</strong>。Breaking-risk：Medium。</p>
+<p>在相同模型和 Prompt 下记录 Compaction 次数、后台摘要请求、实际总费用和摘要是否保持关键任务状态。尤其多 Agent 场景中，不要误以为所有后台摘要都一定被后续 Session 使用。</p>
+<p><strong>场景 B — 低频会话、严格费用预算的 API Key 用户。</strong> 严重度：Medium／成本风险。行动：<strong>Change config（必要时）</strong>。Breaking-risk：Low–Medium。</p>
+<p>如果提前生成摘要的成本高于节约的等待时间，可以关闭 Background Compaction。</p>
+<p><strong>谁可以忽略：</strong> 短会话、不接近上下文阈值或完全不关心后台摘要开销的用户。</p>
+<h3 id="section-6">2.3 Schedules 迁移为 Automations：条件任务可能被丢弃</h3>
+<p><strong>变化内容：</strong> 2.3.1 将实验性 Schedules 演进为 Automations，由 <code>automations</code> Feature Flag 控制，旧 <code>schedules</code> Flag 暂时兼容。</p>
+<p>Automations 可以按指定时间、间隔、Cron 或推送的 MCP Event 运行，发送 Prompt 给指定 Session / Subagent，或由 Code Mode Program 决定是否继续执行。</p>
+<p>迁移时，原先仍处于启用或暂停状态的普通 Prompt Schedules 会保留；<strong>带有 Condition、Run Limit 的旧 Schedules，以及已经完成的 Schedules，不会完整迁移。</strong> 官方新增 <code>/automation</code> 及 <code>automation_*</code> 工具入口。</p>
+<p><strong>技术意义：</strong> 这是任务数据模型的迁移，不是简单改名。旧任务在配置中存在过，不代表升级后一定仍在 Automation Registry 里。</p>
+<p><strong>场景 A — OpenCode 定时 Agent、自动日报、CI 触发工作流。</strong> 严重度：<strong>High／新能力利好 + 任务丢失风险</strong>。行动：<strong>Test before upgrading / Change config</strong>。Breaking-risk：<strong>High（使用条件调度或运行次数限制时）</strong>。</p>
+<p>升级前导出当前任务定义及状态，升级后逐项核对任务数量、条件、目标 Session、实际触发时间和 MCP Event。对被迁移逻辑丢弃的任务，应基于原定义人工重建，不要让重复任务与旧调度同时执行。</p>
+<p><strong>场景 B — 自建 Agent Harness、MCP 事件驱动自动化。</strong> 严重度：Medium–High／编排利好。行动：<strong>Test before adopting</strong>。Breaking-risk：Medium。</p>
+<p>MCP Event 可能重复或迟到，需增加事件 ID、去重和权限控制。Code Mode 决定是否运行的逻辑不能代替服务端业务授权。</p>
+<p><strong>谁可以忽略：</strong> 从未使用 OpenCode 实验性 Schedules / Automations 的用户。</p>
+<h3 id="section-7">2.4 <code>CLAUDE.md</code> 与 <code>AGENTS.md</code> 发现规则调整</h3>
+<p><strong>变化内容：</strong> 2.3.1 恢复了读取 <code>CLAUDE.md</code> 的部分兼容逻辑：目录中没有 <code>AGENTS.md</code> 时可读取该目录的 <code>CLAUDE.md</code>；缺少全局 <code>AGENTS.md</code> 时，可回退到 <code>~/.claude/CLAUDE.md</code>。</p>
+<p>设置 <code>OPENCODE_DISABLE_CLAUDE_CODE</code> 或 <code>OPENCODE_DISABLE_CLAUDE_CODE_PROMPT</code>，可以跳过相关 <code>CLAUDE.md</code> 指令加载。</p>
+<p><strong>技术意义：</strong> 指令发现改变会影响 Agent 的 System/Developer Prompt 拼装。代码仓库没有变化，但 Agent 的行为可能因额外加载旧 <code>CLAUDE.md</code> 而发生变化。</p>
+<p><strong>场景 A — 同时使用 Claude Code、Codex、OpenCode 的仓库。</strong> 严重度：<strong>High（存在不同规则时）／兼容利好 + 指令冲突风险</strong>。行动：<strong>Test before upgrading / Change config</strong>。Breaking-risk：Medium–High。</p>
+<p>检查根目录、子目录、全局规则内容是否有相互矛盾的要求，避免旧规则重新加载后覆盖团队期望的工作流程。不要把文件名相似理解为跨产品有完全一致的权限优先级。</p>
+<p><strong>场景 B — OpenCode 独立项目，无 <code>CLAUDE.md</code>。</strong> 严重度：Low／中性。行动：No action。Breaking-risk：Low。</p>
+<p><strong>谁可以忽略：</strong> 没有兼容 Claude Rules 需求、且未存放 <code>CLAUDE.md</code> 的用户。</p>
+<h3 id="section-8">2.5 Code Mode 结构化 <code>read</code> 返回值、Plugin Tool Rename</h3>
+<p><strong>变化内容：</strong> 2.3.1 调整 Code Mode 与 Plugins 接收到的 <code>read</code> Tool Result，区分文本（含 offset、lineCount、next）、目录条目和媒体 URI 等结构化结果，而不是让插件依赖旧的混合表示。</p>
+<p>另外，Plugin 的 <code>tool.execute.before</code> 重命名 Tool 的行为现在可以应用到 Code Mode 内部 Tool Calls；调用不存在的 Tool 会返回被拒绝的 Promise，允许 <code>.catch()</code>、<code>Promise.allSettled()</code> 按预期处理。Code Mode 还可使用 Node.js <code>Buffer</code>，并支持更简洁的 Search 调用形式。</p>
+<p><strong>技术意义：</strong> Tool 的模型可见摘要与扩展代码接收的数据结构不同。此次变化主要影响直接调用底层 Tool API 的扩展作者，而不是所有模型回答。</p>
+<p><strong>场景 A — TypeScript SDK、Code Mode Extensions、Plugin Hooks。</strong> 严重度：<strong>High（直接集成者）／API 兼容利好 + Breaking 风险</strong>。行动：<strong>Change code / Test before upgrading</strong>。Breaking-risk：<strong>High</strong>。</p>
+<p>检查旧代码是否直接读取 <code>read</code> 的字符串或旧属性，分别测试文件、目录、媒体、空结果以及不存在的 Tool。对 Tool Rename，应核验重命名后实际工具身份和权限仍然正确。</p>
+<p><strong>场景 B — 仅使用官方 TUI 内置工具。</strong> 严重度：Low／中性。行动：No action。Breaking-risk：Low。</p>
+<p><strong>谁可以忽略：</strong> 不编写 OpenCode SDK 或 Code Mode 扩展的用户。</p>
+<h3 id="section-9">2.6 GPT-6.2 Prompt Caching 修复：多轮成本可能显著下降</h3>
+<p><strong>变化内容：</strong> OpenCode 2.3.2 修复 GPT-6.2 使用 Responses API 时的 System Prompt 缓存失效问题。</p>
+<p>原先通过 Responses <code>instructions</code> 字段发送的 System Prompt 可能在每一步被当作未缓存输入重新计费；现在在 OpenAI、ChatGPT Sign-in、GitHub Copilot、Zen、Azure、OpenRouter 等 Responses 路径上，将该 Prompt 作为前置 Developer Message 发送，使后续步骤可以复用缓存前缀。</p>
+<p>官方给出的例子中，GitHub Copilot <code>gpt-6.2-sol</code> 每步未缓存输入从约 <strong>14,000 Tokens 降到 3 Tokens</strong>，这是具体测试场景，不代表所有 Provider 都有相同降幅。<code>/responses/compact</code> 也会读取相同的缓存前缀。</p>
+<p><strong>技术意义：</strong> Prompt Caching 是否命中，不只取决于 Model ID，也取决于消息字段、角色、顺序和 Provider 是否支持对应缓存语义。</p>
+<p><strong>场景 A — GPT-6.2、OpenAI-compatible Gateway、OpenRouter、Azure。</strong> 严重度：<strong>Medium–High／成本与性能利好 + 兼容风险</strong>。行动：<strong>Test before upgrading</strong>。Breaking-risk：Medium。</p>
+<p>核对真实请求是否采用新的 Developer Message 格式，Gateway 是否接受该结构，缓存读写统计是否准确。不要将官方示例的 Token 减少幅度直接套用到自己的账单。</p>
+<p><strong>场景 B — 长会话、多次 Tool Calling、频繁 Compaction。</strong> 严重度：Medium–High／成本利好。行动：<strong>Upgrade after canary</strong>。Breaking-risk：Low–Medium。</p>
+<p>建议对比两版相同任务的 <code>input_tokens</code>、<code>cached_tokens</code>、输出 Tokens 及总费用。</p>
+<p><strong>谁可以忽略：</strong> 不使用 GPT-6.2 或相关 Responses 路径的用户。</p>
+<h3 id="section-10">2.7 Windows WinGet 安装渠道落后于正式发行</h3>
+<p><strong>变化内容：</strong> OpenCode 仓库在 2026 年 11 月 18 日收到并确认了一个 Windows 安装渠道问题：当时 <code>Anomaly.OpenCode</code> 的 WinGet CLI Manifest 仍为 <strong>2.2.7</strong>，Desktop Manifest 为 <strong>2.3.0</strong>，而 GitHub 正式发行已达 <strong>2.3.2</strong>。</p>
+<p>从 WinGet 安装的 OpenCode，执行 <code>opencode upgrade</code> 时可能依赖 WinGet 所报告的最新版本，因此会提示已是最新，而实际上并未升级。该问题有官方仓库 Issue 的复现与维护者回应，但<strong>尚不能宣称所有 Windows 用户或未来的 WinGet 状态都如此</strong>。</p>
+<p><strong>场景 A — Windows 11 + PowerShell + WinGet 安装。</strong> 严重度：<strong>High（需要新版本修复者）／升级渠道风险</strong>。行动：<strong>Change install strategy / Test before upgrading</strong>。Breaking-risk：Medium。</p>
+<pre><code class="language-powershell">winget list --id Anomaly.OpenCode -e
+winget show --id Anomaly.OpenCode -e
+opencode --version
+</code></pre>
+<p>如果 WinGet 的可用版本明显滞后，优先核对官方 GitHub 发布包与安装指南；迁移安装方式前备份配置和 Session，避免不同安装渠道的可执行文件互相覆盖。</p>
+<p><strong>场景 B — npm/global、官方独立安装器。</strong> 严重度：Low–Medium／中性。行动：No action / Verify actual version。Breaking-risk：Low。</p>
+<p><strong>谁可以忽略：</strong> 不通过 WinGet 安装 OpenCode 的用户。</p>
+<h2 id="section-11">三、Codex CLI 0.170.0：权限、MCP 与 Windows 可靠性</h2>
+<p>正式发布：2026-11-18 03:40 UTC，即北京时间 2026-11-18 11:40。</p>
+<p>官方来源：<a href="https://github.com/openai/codex/releases/tag/rust-v0.170.0">Codex 0.170.0 GitHub Release</a> · <a href="https://learn.chatgpt.com/docs/changelog">OpenAI Codex 官方 Changelog</a>。</p>
+<h3 id="section-12">3.1 MCP OAuth 登录、取消、注销的并发竞争修复</h3>
+<p><strong>变化内容：</strong> 0.170.0 修复 MCP OAuth 凭据在用户取消操作、Login 和 Logout 并发发生时的竞争问题。</p>
+<p><strong>技术意义：</strong> OAuth 凭据刷新与生命周期操作存在顺序依赖。旧请求的完成结果不能覆盖较新的登录或注销状态，否则可能发生“用户以为已注销，但旧认证信息仍被使用”或突然掉线。</p>
+<p><strong>场景 A — Remote MCP、多个身份、企业 OAuth Connector。</strong> 严重度：<strong>High／认证安全与正确性利好</strong>。行动：<strong>Test before upgrading</strong>。Breaking-risk：Medium。</p>
+<p>验证登录后取消、刷新过程中注销、多个 Session 同时访问同一 Server，以及重新登录后的实际身份。测试时只记录身份状态，不输出 Refresh Token。</p>
+<p><strong>场景 B — 本地 Stdio MCP、无 OAuth。</strong> 严重度：Low／中性。行动：No action。Breaking-risk：Low。</p>
+<p><strong>谁可以忽略：</strong> 不使用 MCP OAuth 的 Codex 用户。</p>
+<h3 id="section-13">3.2 Sandbox 权限更新和子线程不再丢失既有约束</h3>
+<p><strong>变化内容：</strong> 0.170.0 修复了 Permission Update 和 Child Threads 某些情况下没有保留原有 Sandbox Restrictions 的问题。Windows 文件替换时的权限保留也获得修复。</p>
+<p><strong>技术意义：</strong> 当 Agent 创建 Child Thread 或调整部分权限时，原先仍然有效的限制不应被意外丢失。对多 Agent 和无人值守执行系统，这比普通 UI 修复重要得多。</p>
+<p><strong>场景 A — Windows Sandbox、<code>codex exec</code>、多 Agent。</strong> 严重度：<strong>High／安全利好 + 兼容风险</strong>。行动：<strong>Upgrade after canary</strong>。Breaking-risk：Medium–High。</p>
+<p>使用无副作用的权限测试，验证子线程不能写入原本被限制的路径、不能访问未授权网络，且 Permission Profile 切换不会清除既有 Deny。</p>
+<p><strong>场景 B — 企业 CI / Headless Runner。</strong> 严重度：High／治理可靠性利好。行动：<strong>Test before upgrading</strong>。Breaking-risk：Medium–High。</p>
+<p>升级后原本错误获得权限的任务可能开始失败，这属于需要修复的执行策略问题，而不是应当直接取消 Sandbox 的理由。</p>
+<p><strong>谁可以忽略：</strong> 没有多线程/动态 Permission Update、只在普通默认受信任 Session 中工作的人可忽略专项回归。</p>
+<h3 id="section-14">3.3 Windows 文件替换、Runtime Registration 与网络回退</h3>
+<p><strong>变化内容：</strong> 0.170.0 修复 Windows 文件替换时的行为和 Sandbox Permission Preservation、Runtime Registration 恢复问题。</p>
+<p>同时，WebSocket 请求体过大时，会更直接地回退到 HTTP，而不是进行不必要的重试。Cloud Conversations 的自动重连更稳定，客户端重连时保留仍在进行的 Recovery Turns。</p>
+<p><strong>技术意义：</strong> Runtime、Transport 和 Session Recovery 是不同故障层。WebSocket 回退不等于所有第三方 Gateway 必然兼容 HTTP 路径；Cloud 重连成功也不等于业务写操作绝对没有重复。</p>
+<p><strong>场景 A — Windows 11、PowerShell 5.1/7、临时文件替换。</strong> 严重度：Medium–High／可靠性利好。行动：<strong>Test before upgrading</strong>。Breaking-risk：Medium。</p>
+<p>测试文件写入、重命名、覆盖、锁定文件、Sandbox 目录权限及恢复后的文件内容。</p>
+<p><strong>场景 B — 第三方 Gateway、WebSocket、长会话、远程 Agent。</strong> 严重度：Medium–High／网络兼容利好。行动：<strong>Test before upgrading</strong>。Breaking-risk：Medium。</p>
+<p>验证 WebSocket 大请求、HTTP Fallback、TLS、代理、Cloud Session 恢复及副作用幂等性。</p>
+<p><strong>谁可以忽略：</strong> 不使用 WebSocket/Cloud Connection、也不受 Windows 文件替换问题影响的用户。</p>
+<h3 id="section-15">3.4 TUI WebRTC Voice、同名 MCP Server、OTel Header 自动刷新</h3>
+<p><strong>变化内容：</strong> Codex 0.170.0 增加 TUI 实时语音通话的 WebRTC 协商能力；新增实验性支持不同 Environment 中存在同名 MCP Server；OpenTelemetry HTTP Exporter 可以自动刷新认证 Header。</p>
+<p><strong>技术意义：</strong> 语音涉及新的实时连接与授权；MCP Server 同名则涉及 Server Namespace，不能只依赖短名称来确认真正调用目标；Telemetry Token 自动刷新可以减少长期 Agent 的监控中断，但不意味着凭据权限可以无限扩大。</p>
+<p><strong>场景 A — TUI 语音、Windows 终端。</strong> 严重度：Medium／新能力利好。行动：<strong>Test before adopting</strong>。Breaking-risk：Low–Medium。</p>
+<p>验证实际客户端是否支持语音入口、麦克风权限和网络 WebRTC 连接。<strong>发行说明只确认协商能力，不保证所有账户、地区和终端均已开放完整语音界面。</strong></p>
+<p><strong>场景 B — 多 Environment、Remote MCP、相同 Server Name。</strong> 严重度：Medium–High／实验能力利好 + 命名冲突风险。行动：<strong>Test before enabling</strong>。Breaking-risk：Medium。</p>
+<p>验证不同 Environment 的 Server Identity、Tool Discovery、OAuth 身份与执行权限，不要让同名服务误路由。</p>
+<p><strong>场景 C — OTel Collector、企业监控、长期 Runner。</strong> 严重度：Medium／可观测性利好。行动：<strong>Test before upgrading</strong>。Breaking-risk：Low–Medium。</p>
+<p>测试 Exporter 凭据过期、刷新失败、重试和日志脱敏，不能把认证 Header 打印进公开日报或 CI 日志。</p>
+<p><strong>谁可以忽略：</strong> 不使用 TUI 语音、实验性多环境 MCP 或 OTel HTTP Exporter 的用户。</p>
+<h2 id="section-16">四、Claude Code 2.1.327：优先关注文件保护、MCP 与配置完整性</h2>
+<p>发布于 2026-11-17 23:17 UTC 左右，即北京时间 2026-11-18 07:17。</p>
+<p>官方来源：<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.327">Claude Code 2.1.327 Release</a>。发行内容另经同步的 <a href="https://www.devagentradar.com/assistants/claude-code/releases/2.1.327">完整变更记录</a> 核对。</p>
+<h3 id="section-17">4.1 Remote Control / Worktree 停止时误删 Git-Ignored 文件的修复</h3>
+<p><strong>变化内容：</strong> 2.1.327 修复了 Remote Control 在 Worktree 模式停止服务时，可能删除仍在运行 Session 的 Git-Ignored 文件，例如 <code>.env</code> 的问题。</p>
+<p>此外，修复 Self-hosted Runner 开启 <code>--use-anthropic-git-proxy</code> 时，因 <code>GIT_CONFIG_GLOBAL</code> 指向一个已有非空目录而错误删除该目录的情况。新版会保留目录、忽略该变量并发出警告。</p>
+<p><strong>技术意义：</strong> Agent 的 Session Cleanup 和进程终止不能越过文件所有权边界。<code>.env</code> 虽然被 Git 忽略，但可能包含本地运行配置，不能被当作安全可删除的临时文件。</p>
+<p><strong>场景 A — Windows Git Worktree、远程 Agent、Claude Remote Control。</strong> 严重度：<strong>High／数据保护利好</strong>。行动：<strong>Upgrade now after canary</strong>。Breaking-risk：Medium。</p>
+<p>准备可销毁的测试仓库和无敏感内容的 <code>.env</code>，验证停止 Remote Control、Session 重连与 Worktree 清理，不应删除仍由会话使用的文件。</p>
+<p><strong>场景 B — Self-hosted Runner、SSH、Git Proxy。</strong> 严重度：High／文件安全利好 + 环境行为变化。行动：<strong>Test before upgrading</strong>。Breaking-risk：Medium。</p>
+<p>检查 <code>GIT_CONFIG_GLOBAL</code> 的真实类型与路径，确认服务不会删除现有目录，并正确处理警告。不要在生产服务器上通过故意破坏真实 Git 配置来测试。</p>
+<p><strong>谁可以忽略：</strong> 不使用 Remote Control、Worktree 或 Self-hosted Git Proxy 的个人交互用户。</p>
+<h3 id="section-18">4.2 <code>claude mcp add-json</code> 支持标准输入，降低命令行凭据暴露</h3>
+<p><strong>变化内容：</strong> 2.1.327 新增 <code>claude mcp add-json &lt;name&gt; -</code>，从 stdin 读取 MCP Server 的 JSON 配置，而不是必须把 JSON 原文作为命令行参数传递。</p>
+<p>它需要在 Claude Code Session 外的系统终端执行，不能直接在 Claude Code 交互 Session 内使用。</p>
+<p><strong>技术意义：</strong> 命令行参数可能被 Shell 历史、进程检查器、终端日志或自动化平台捕获。通过标准输入传递配置可减少这一暴露面，但<strong>不代表凭据存储文件本身已被加密</strong>。</p>
+<p><strong>场景 A — Windows PowerShell、Remote MCP、OAuth/API Key。</strong> 严重度：<strong>Medium–High／凭据安全利好</strong>。行动：<strong>Test before adopting</strong>。Breaking-risk：Low。</p>
+<p>例如从一个已妥善保护、采用 UTF-8 编码的测试配置文件读取：</p>
+<pre><code class="language-powershell"># 仅使用不含真实密钥的测试配置
+Get-Content -LiteralPath .\mcp-test.json -Raw |
+  claude mcp add-json demo-server -
+</code></pre>
+<p>检查配置是否写入预期 Scope、是否保留 JSON 结构。不要在历史命令中粘贴真实 Token。</p>
+<p><strong>谁可以忽略：</strong> 不使用 <code>claude mcp add-json</code> 或不需要从命令行安装 MCP Server 的用户。</p>
+<h3 id="section-19">4.3 Project MCP 增删不再破坏 <code>.mcp.json</code> 的其它字段</h3>
+<p><strong>变化内容：</strong> 修复 <code>claude mcp add</code> / <code>claude mcp remove</code> 在 Project Scope 操作时，可能删除 <code>.mcp.json</code> 中其它顶层键，例如 <code>$schema</code> 或其它工具自定义的 <code>servers</code> 配置。</p>
+<p><strong>技术意义：</strong> 配置更新应当是目标字段的定向修改，而不是把自己无法识别的字段全部丢弃。对多个 Agent 共享一个配置仓库的团队，这属于重要的数据完整性修复。</p>
+<p><strong>场景 A — 多 MCP Server、共享仓库、跨工具配置。</strong> 严重度：<strong>High／配置完整性利好</strong>。行动：<strong>Upgrade after canary</strong>。Breaking-risk：Low–Medium。</p>
+<p>备份测试 <code>.mcp.json</code>，分别执行添加与删除测试 Server，验证未知顶层键和其它 Server 配置仍被保留。</p>
+<p><strong>谁可以忽略：</strong> 没有项目级 <code>.mcp.json</code> 或不使用 Claude 命令管理 MCP 的用户。</p>
+<h3 id="section-20">4.4 <code>/status</code> 增强 Skills、Hooks、权限配置故障诊断</h3>
+<p><strong>变化内容：</strong> <code>/status</code> 可以显示加载失败的 Agent、Skill、Command、Output Style，Keybinding 错误、不可用 Sandbox、被忽略的 Permission Settings，以及永远不会匹配的 Hook Matchers。</p>
+<p><code>/config</code> 也会提示某一配置项是否被其它更高优先级设置覆盖。Gateway Hint Headers 新增可选的 <code>x-claude-code-managed-settings-checksum</code>；需要配置 <code>CLAUDE_CODE_GATEWAY_HINT_HEADERS=1</code> 的托管启用条件。</p>
+<p><strong>技术意义：</strong> “配置文件存在”与“实际已加载生效”是两件事。特别是 Permission Deny、PreToolUse Hooks 和 Skills Discovery，静默失效往往比启动失败更危险。</p>
+<p><strong>场景 A — Windows + PowerShell Hooks、Skills/Plugins、Managed Settings。</strong> 严重度：<strong>High（依赖安全 Hook 者）／可观测性利好</strong>。行动：<strong>Test before upgrading</strong>。Breaking-risk：Low–Medium。</p>
+<p>升级后使用 <code>/status</code> 和 <code>/config</code> 检查文件是否被实际加载、Hook Matcher 是否能匹配真实 Tool，以及企业托管权限是否覆盖本地配置。</p>
+<p><strong>场景 B — 第三方 Gateway、企业多机配置一致性。</strong> 严重度：Medium／治理利好。行动：<strong>Test before adopting</strong>。Breaking-risk：Low。</p>
+<p>Managed Settings Checksum 可用于诊断配置漂移，但不能把它当作数字签名或独立安全认证机制。</p>
+<p><strong>谁可以忽略：</strong> 没有自定义 Hooks、Skills、权限规则和企业托管配置的用户。</p>
+<h3 id="section-21">4.5 GitHub 安装、导出覆盖与停止命令竞态修复</h3>
+<p><strong>变化内容：</strong> <code>/install-github-app</code> 修改仓库前现在要求确认；<code>/export</code> 在覆盖已有文件前要求确认。</p>
+<p>另修复 Cloud 或 Self-hosted Runner 某些无 Feature Flags 场景中，用户按 Stop 后，迟到的审批结果可能让已批准的命令继续执行的问题。</p>
+<p><strong>技术意义：</strong> 这些改动涉及不可逆副作用的确认时机。安装 GitHub App、覆盖文件以及停止正在执行的命令，不应该只凭过期的授权结果继续操作。</p>
+<p><strong>场景 A — GitHub 仓库管理、导出脚本、文件覆盖。</strong> 严重度：<strong>Medium–High／数据保护利好</strong>。行动：<strong>Test before upgrading</strong>。Breaking-risk：Medium。</p>
+<p>检查覆盖确认、拒绝后的文件完整性、无界面模式下的失败状态，避免自动化卡在无人处理的确认界面。</p>
+<p><strong>场景 B — Cloud Runner、远程 Agent、权限审批。</strong> 严重度：<strong>High／安全利好</strong>。行动：<strong>Upgrade after canary</strong>。Breaking-risk：Medium。</p>
+<p>验证 Stop 后原命令不会因延迟审批再次继续执行。</p>
+<p><strong>谁可以忽略：</strong> 不使用上述 GitHub、Export、Remote Runner 功能的用户。</p>
+<h2 id="section-22">五、Pi、Gemini、Cursor、xAI Grok：其它核验结果</h2>
+<p><strong>Pi（earendil-works/pi）：</strong> GitHub Releases 和官方 Changelog 仍指向 <strong>1.5.2</strong>。此前已报道的默认模型、Message Threads、Prompt Cache Warming、Tool Schema、MCP OAuth 与 Extensions 更新没有新增正式版本可覆盖。<strong>Low／中性；No action；新增 Breaking-risk 未确认。</strong></p>
+<p><strong>Gemini CLI：</strong> 官方 Stable Changelog 与 Release 仍为 <strong>0.68.0</strong>；0.69.0 Preview 不当作正式 Stable。本期没有确认新的正式 Hooks、Extensions、MCP、Windows 或 Node Runtime 修复。此前 Node 26 网络超时兼容报告仍需单独测试，不能假设 Preview 已修复。<strong>Low／中性；No action；新增 Stable Breaking-risk 未确认。</strong></p>
+<p><strong>Cursor：</strong> 当前未确认比 11 月 6 日 Voice Chat 更晚的正式产品级 Rules、CLI、Agent SDK 或 Marketplace Breaking 公告。11 月 18 日的 CursorBench 4.1 测试任务调整属于评测配置变化，不是 IDE/CLI Release；不应将它记为新的 Cursor Stable 版本。<strong>Low／No action。</strong></p>
+<p><strong>xAI Grok API：</strong> 本次没有核验到新的官方 Text/Voice API、MCP OAuth 或 Tool Schema Breaking 公告。最近明确的官方 Release Notes 仍是 11 月 2 日的 Imagine 路由变更。<strong>Low／No action；新增 Breaking-risk 未确认。</strong></p>
+<p><strong>跨产品 Agent Rules：</strong> OpenCode 本期重新读取部分 <code>CLAUDE.md</code> 是有根据的单产品行为变化，并不代表 Claude Code、Codex <code>AGENTS.md</code>、Cursor Rules 和 Gemini <code>GEMINI.md</code> 共享统一的优先级模型。各工具仍应独立验证 Rule Discovery、加载范围、继承及权限执行。</p>
+<h2 id="section-23">六、Windows PowerShell 5.1 / 7 今日检查命令</h2>
+<p>以下命令为只读核验，不会升级或修改软件。npm 查询需要网络。</p>
+<pre><code class="language-powershell"># 1. 检查正式版与预发布标签
+npm view @openai/codex dist-tags --json
+npm view @opencode/cli dist-tags --json
+npm view @anthropic-ai/claude-code dist-tags --json
+npm view @earendil-works/pi-coding-agent dist-tags --json
+npm view @google/gemini-cli dist-tags --json
+
+# 2. 检查本地运行版本及同名命令
+Get-Command codex,opencode,claude,pi,gemini `
+  -All -ErrorAction SilentlyContinue
+
+codex --version
+opencode --version
+claude --version
+pi --version
+gemini --version
+
+# 3. OpenCode Windows WinGet 发布状态
+winget list --id Anomaly.OpenCode -e
+winget show --id Anomaly.OpenCode -e
+
+# 4. 只检查文件是否存在，不打印内容
+@(
+  (Join-Path $HOME '.claude.json'),
+  (Join-Path $HOME '.claude\settings.json'),
+  (Join-Path $HOME '.codex\config.toml')
+) | ForEach-Object {
+  [pscustomobject]@{
+    Path = $_
+    Exists = Test-Path -LiteralPath $_
+  }
+}
+
+# 5. 只查看环境变量是否已设置
+'ANTHROPIC_BASE_URL',
+'ANTHROPIC_API_KEY',
+'HTTP_PROXY',
+'HTTPS_PROXY',
+'ALL_PROXY',
+'OPENCODE_DISABLE_CLAUDE_CODE' | ForEach-Object {
+  [pscustomobject]@{
+    Name = $_
+    Set = [bool][Environment]::GetEnvironmentVariable($_)
+  }
+}
+
+# 6. MCP 与插件发现情况
+claude mcp list
+claude plugin list
+</code></pre>
+<p><strong>本期行动优先级：</strong> 先验证 OpenCode 2.3.2 的 Shell 超时、后台 Compaction、旧调度迁移和规则加载；再检查 Codex 0.170.0 的 Sandbox 权限继承和 MCP OAuth；随后处理 Claude Code 2.1.327 的 Worktree 文件保护与 Project MCP 配置完整性。所有涉及后台写入、权限和身份的测试应使用可销毁项目及假凭据。</p>
+<p><strong>验证范围：</strong> 本次是官方文档与版本发布核查，没有在实际 Windows 主机、PowerShell、WSL、第三方 Gateway 或 CI 中执行升级和回归测试。具体风险等级需要以实际部署路径和配置为准。</p>
+<h2 id="section-24">七、官方来源索引</h2>
+<p><a href="https://opencode.ai/changelog">OpenCode 官方 Changelog</a> · <a href="https://github.com/anomalyco/opencode/releases/tag/v2.3.1">OpenCode 2.3.1</a> · <a href="https://github.com/anomalyco/opencode/releases/tag/v2.3.2">OpenCode 2.3.2</a> · <a href="https://github.com/anomalyco/opencode/issues/64714">OpenCode WinGet Issue #64714</a> · <a href="https://github.com/openai/codex/releases/tag/rust-v0.170.0">Codex 0.170.0</a> · <a href="https://learn.chatgpt.com/docs/changelog">OpenAI Codex Changelog</a> · <a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.327">Claude Code 2.1.327</a> · <a href="https://github.com/earendil-works/pi/releases">Pi Releases</a> · <a href="https://pi.dev/changelog">Pi Changelog</a> · <a href="https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/latest.md">Gemini Stable Changelog</a> · <a href="https://cursor.com/changelog">Cursor Changelog</a> · <a href="https://docs.x.ai/developers/release-notes">xAI Developer Release Notes</a>。</p>
+</main></div><footer>独立 AI Coding 工具日报 | 完整报告，包含全部更新场景、风险、建议、命令和来源 | 全部为公开资料，不包含个人账号或密钥</footer><a class="back" href="#top">↑ TOP</a></body></html>
