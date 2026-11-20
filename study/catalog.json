@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "学以致用 · 我的学习中心",
-  "updated_at": "2026-11-18",
+  "updated_at": "2026-11-21",
   "categories": [
     {
       "id": "ai",
@@ -30,9 +30,42 @@
     {
       "id": "computer-fundamentals",
       "name": "计算机基础"
+    },
+    {
+      "id": "developer-tools",
+      "name": "开发工具"
     }
   ],
   "topics": [
+    {
+      "id": "git-worktree",
+      "title": "Git Worktree：原理、工作流与并行开发实战",
+      "summary": "从并行开发与线上修复场景出发，理解 Git 对象库、分支引用与各工作树独立的 HEAD、暂存区和工作文件。通过正常流程与分支冲突模拟、自测和终端实验练习。",
+      "category": "developer-tools",
+      "tags": [
+        "Git",
+        "Worktree",
+        "版本控制",
+        "并行开发",
+        "分支管理",
+        "动手实验"
+      ],
+      "editions": [
+        {
+          "id": "be81bf6696891cc4",
+          "label": "2026-11-19 · Git Worktree 互动实战",
+          "file": "study/lessons/git-worktree/be81bf6696891cc4.html",
+          "date": "2026-11-19",
+          "sha256": "be81bf6696891cc4e86535cf85d28ede18afac7dda75501e85d46514efde8e5d",
+          "source_names": [
+            "git_worktree_interactive_guide.html"
+          ]
+        }
+      ],
+      "recommended": "be81bf6696891cc4",
+      "updated_at": "2026-11-19",
+      "search_text": "Git Worktree｜原理、工作流与并行开发实战 ↳ Git 原理实验室 / Worktree 为什么 底层原理 交互演练 实战命令 自测 Git × Engineering Workflow · 离线互动课 一份仓库，多块工作现场。 一边写新功能，一边修线上 Bug：为什么 git worktree 能做到互不打断？从工作目录、HEAD、index 和共享 Git 对象库出发，亲手推演一遍。 约 12 分钟 适用 Windows / Linux / macOS 包含冲突分支演示 无需联网 01 · 先看到它要解决的问题 你在 feature/payment 改了十几个文件，还没提交；线上支付超时，需要立刻从主线修复。 传统切换分支 一块工作目录 ，不断 stash → switch → 修复 → switch → pop 。上下文中断，还要小心误恢复或冲突。 使用 Git Worktree 不同任务拥有不同目录 。原目录未提交的修改留在原地；另开一个目录修 Bug，各自独立编辑、构建、提交。 一句话： Worktree 并不是一份新 clone 。它将“共享的仓库历史”与“独立的工作现场”拆开管理。 02 · 真正的底层原理 仓库的数据在共享对象数据库；每个 worktree 有各自的文件、HEAD 和暂存区（index）。点击标签观察哪些部分共享、哪些部分隔离。 ◈ 公共 Git 数据 · $GIT_COMMON_DIR 主工作树的 .git/ · 对象库通常不复制 objects/ commit · tree · blob refs/heads/ 共享分支引用 config 默认共享仓库配置 📁 payment-app/ 原始 main worktree feature/payment 独立 HEAD / index / 工作文件 📁 payment-hotfix/ linked worktree A hotfix/payment 独立 HEAD / index / 工作文件 📁 payment-release/ linked worktree B release/1.0 独立 HEAD / index / 工作文件 真实结构中，每个附属目录的 .git 通常是一个小文本文件，指向主仓库内 .git/worktrees/<name>/ 的私有元数据。 看共享部分 看独立部分 共享：Git 提交对象、标签及常规分支引用等。某个 worktree 新提交会写入同一个对象库，对应分支引用也在同一仓库中更新。 HEAD 是什么？ 当前工作现场指向哪个分支或提交。每个 worktree 有自己的 HEAD，因此可以同时站在不同分支。 index 是什么？ 本工作现场的暂存区，记录下一次提交准备纳入的文件内容。 git add 只暂存当前 worktree 的改动。 03 · 让 Git 在你眼前执行一遍 原目录有 12 个未提交文件。选择“正常修复”观察提交过程，或切到“分支冲突”看 Git 为什么拒绝同一分支在两个 worktree 中同时检出。 模拟器 · 支付超时 Hotfix 正常修复 分支冲突 阶段 1 / 8 正常流程 01 初始状态 原目录继续开发功能。 📁 原工作目录 payment-app HEAD： feature/payment 工作文件： 12 个未提交改动 index： 原有暂存状态不变 📁 新工作目录 payment-hotfix 状态： 尚未创建 HEAD： — index / 文件： — ◈ 共享 Git 仓库 objects/： 现有历史对象 refs/heads/： feature/payment、main ← 上一步 下一步 → ▶ 自动演示 ↺ 重置 提示：逐步点击“下一步”，观察 index、分支引用和工作文件如何变化。 04 · 真实终端里怎么做 以下命令兼容 PowerShell、Git Bash 与常见 Unix Shell。假设当前所在目录名为 payment-app ，当前分支为 feature/payment 。 ① 更新远程主线信息（不改变当前未提交文件） git fetch origin 这里选择 origin/main 作为修复基线。 ② 从主线创建独立的修复分支和目录 git worktree add -b hotfix/payment ../payment-hotfix origin/main -b 创建新分支； ../payment-hotfix 是另一个真实目录。 ③ 进入新目录、修改、测试和提交 cd ../payment-hotfix git status git add . git commit -m \"fix: payment timeout\" git push -u origin hotfix/payment 在团队仓库中通过 Pull Request / Merge Request 合并回主线。推荐确认测试通过后再推送。 ④ 返回原目录，删除不再需要的 worktree cd ../payment-app git worktree list git worktree remove ../payment-hotfix 完成后原功能分支的 12 个未提交文件仍在。 删除 worktree 不会自动删除其分支。 必会的辅助命令 git worktree list 查看全部； git worktree move 挪动目录； git worktree repair 修复关联； git worktree prune 清理遗留元数据。 看清 .git 的指向 在 linked worktree 里运行 git rev-parse --git-dir 和 git rev-parse --git-common-dir ，可观察私有元数据与共享仓库的位置。 05 · 什么时候用哪种方式？ 方式 工作文件 Git 对象库 典型场景 git switch 同一份目录内切换 共享 简单、低频的串行任务 git worktree 每个任务独立目录 同一仓库共享 Hotfix、并行功能、多个 AI Agent git clone 独立目录 独立仓库对象库（通常） 真正需要完整独立仓库环境 注意这些边界： 默认不能在两个 worktree 中同时检出同一个本地分支；独立目录不等于独立数据库、端口、依赖缓存或远程分支。每个项目单独安装/构建依赖，并为并行运行的服务分配独立端口和测试数据库。 06 · 3 题检验是否真正理解 答题后会显示机制解释；答错可重新选择。答案与分数只存在于本次页面运行期间。 07 · 给自己一个 10 分钟实验 找一个已经初始化 Git 的练习项目，在原目录随意修改文件但不要提交。 运行 git worktree add -b experiment/wt ../wt-demo HEAD 。 在新目录修改一个文件并提交，返回原目录观察：原文件修改仍在，但 Git 提交对象共享。 分别在两处运行 git status 、 git worktree list 。 确认新目录没有未提交内容后用 git worktree remove ../wt-demo 清理。 实验说明：这里为了安全从 HEAD 新建实验分支，与前面“从远程 main 进行 Hotfix”的真实工作流不同。主项目无需切换分支，也无需执行 stash。 依据： Git 官方文档 https://git-scm.com/docs/git-worktree 。本页为离线教学模拟，阶段及状态为可学习的简化表示，不替代真实 Git 执行或团队 CI 流程。页面不访问网络、不上传代码。"
+    },
     {
       "id": "twos-complement-8bit",
       "title": "8 位补码：为什么是 −128～127",
@@ -551,8 +584,8 @@
     }
   ],
   "stats": {
-    "topic_count": 15,
-    "document_count": 28,
-    "category_count": 7
+    "topic_count": 16,
+    "document_count": 29,
+    "category_count": 8
   }
 }
