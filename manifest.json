@@ -5,7 +5,7 @@
   "readme": "本仓库仅展示已经提交的完整 HTML 报告；页面内容由 categories[].reports 索引。",
   "counts": {
     "topic_count": 10,
-    "verified_full_reports": 104
+    "verified_full_reports": 105
   },
   "categories": [
     {
@@ -373,6 +373,13 @@
       "description": "结合 GitHub Trending、Star 增长与仓库更新，分析开源项目用途、成熟度、优劣、风险和场景。",
       "source_status": "partial_archive",
       "reports": [
+        {
+          "date": "2026-11-21",
+          "title": "GitHub 热榜日报｜2026-11-21（16 个仓库完整分析）",
+          "label": "2026-11-21",
+          "path": "reports/github-trending/2026-11-21.html",
+          "kind": "full"
+        },
         {
           "date": "2026-11-20",
           "title": "GitHub 热榜日报｜2026-11-20｜15 个仓库完整版",
