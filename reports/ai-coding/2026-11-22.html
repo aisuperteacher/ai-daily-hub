@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>AI Dev Tools Daily Brief — 2026-11-22</title><style>
+:root{--ink:#182231;--night:#182943;--cream:#fffaf0;--yellow:#f9d84c;--red:#e85f64;--aqua:#b8e9ed;--muted:#586074;--line:#1c2433}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:15.5px/1.78 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;overflow-wrap:anywhere}a{color:#064e88;text-underline-offset:3px}a:hover{color:#aa2740} .mast{border-bottom:5px solid var(--line);padding:35px max(20px,calc((100vw - 1250px)/2));background:radial-gradient(circle,#edbb39 1.5px,transparent 1.6px) 0 0/16px 16px,var(--yellow)}.mast .kicker{text-transform:uppercase;font-size:12px;font-weight:900;letter-spacing:.18em;background:var(--night);color:white;display:inline-block;padding:4px 14px}.mast .name{font-size:clamp(39px,7.1vw,88px);font-weight:950;line-height:.94;letter-spacing:-.06em;margin:16px 0;text-transform:uppercase;text-shadow:3px 3px 0 white}.mast .date{font-weight:800;letter-spacing:.05em;border:2px solid var(--line);background:white;display:inline-block;padding:5px 12px}.wrap{max-width:1290px;margin:auto;padding:24px 18px;display:grid;grid-template-columns:240px minmax(0,1fr);gap:34px}.toc{position:sticky;top:16px;align-self:start;border:2px solid var(--line);box-shadow:6px 6px 0 var(--aqua);padding:16px;background:#fff}.toc p{margin:0 0 12px;border-bottom:2px solid var(--line);font-size:12px;letter-spacing:.14em;font-weight:900}.toc a{display:block;text-decoration:none;font-size:13px;padding:8px 4px;border-bottom:1px dashed #dad5c9;line-height:1.25;font-weight:650}.toc a:hover{background:var(--yellow)}main{min-width:0}main>h1{font-size:0;margin:0}main>h2{background:var(--night);color:white;padding:12px 20px;font-size:clamp(21px,2.9vw,30px);box-shadow:5px 5px 0 var(--red);margin:45px 0 24px;scroll-margin-top:12px;line-height:1.3}main>h3{font-size:21px;margin:30px 0 12px;border-left:8px solid var(--red);padding-left:12px;line-height:1.38;scroll-margin-top:12px}main>p,main>ul,main>ol,main>blockquote{margin:15px 0}main>p:first-of-type{border:2px solid var(--line);box-shadow:5px 5px 0 var(--yellow);padding:15px;background:white}strong{color:#142e67}h2 strong,h3 strong{color:inherit}h2{font-weight:850}.tablewrap{overflow-x:auto;margin:20px 0;border:2px solid var(--line);box-shadow:5px 5px 0 var(--aqua)}table{width:100%;border-collapse:collapse;min-width:780px;background:white;font-size:13px;line-height:1.5}th{background:var(--yellow);text-transform:none}th,td{padding:11px;border:1px solid #bcb7ac;text-align:left;vertical-align:top}tr:nth-child(even){background:#f4f4f1}pre{background:var(--night);color:#f4f6f8;border:3px solid #14171e;padding:19px;overflow:auto;font:12.5px/1.6 Consolas,"Cascadia Code",monospace;box-shadow:5px 5px 0 var(--red)}code{font:0.91em Consolas,"Cascadia Code",monospace;background:#ebf0f2;border-radius:3px;padding:2px 3px}pre code{padding:0;color:inherit;background:transparent;font-size:inherit}hr{border:0;border-top:2px dashed #9e9f9c;margin:38px 0}.footer{max-width:1290px;margin:0 auto 60px;padding:20px 18px;border-top:3px solid var(--line);font-size:12px;color:var(--muted)}.stickytop{position:fixed;right:18px;bottom:18px;background:var(--yellow);padding:6px 12px;border:2px solid var(--line);font-weight:900;text-decoration:none;box-shadow:2px 2px 0 var(--red)}@media(max-width:900px){.wrap{display:block;padding:16px}.toc{position:static;margin-bottom:28px}.mast{padding:25px 18px}.mast .name{text-shadow:2px 2px 0 white}main>h2{margin-top:32px}main>h3{font-size:18px}body{font-size:14.3px}.stickytop{right:9px;bottom:9px}}@media print{.toc,.stickytop{display:none}.wrap{display:block}main>h2{break-after:avoid}pre{white-space:pre-wrap}.mast{background:var(--yellow)}}
+</style></head><body>
+<header id="top" class="mast"><span class="kicker">The Coding Tools Dispatch · Official Release Intelligence</span><div class="name">AI DEV TOOLS<br>DAILY BRIEF</div><span class="date">2026 / 11 / 22 · BEIJING TIME · FULL EDITION</span></header>
+<div class="wrap"><aside class="toc"><p>CONTENTS / 全文目录</p><a class="level1" href="#section-1">AI Dev Tools Daily Brief — 2026-11-22</a>
+<a class="level2" href="#section-2">一、核验版本与行动总览</a>
+<a class="level2" href="#section-3">二、Claude Code 2.1.330：官方重要变化</a>
+<a class="level2" href="#section-11">三、Gemini CLI 0.69.0 / 0.70.0：补报安全与 Windows 变化</a>
+<a class="level2" href="#section-17">四、其它工具核验与跨产品规则</a>
+<a class="level2" href="#section-18">五、Windows PowerShell 5.1/7 今日只读核验</a>
+<a class="level2" href="#section-19">六、官方来源索引</a></aside><main><h1 id="section-1">AI Dev Tools Daily Brief — 2026-11-22</h1>
+<p><strong>北京时间 2026 年 11 月 22 日 06:55｜官方 Stable / Release 监测｜补齐此前漏报版本</strong></p>
+<p><strong>本期有重要更新，不能归类为「今日无重要变化」。</strong> 本轮发现两组此前日报遗漏的正式版本：<strong>Claude Code 2.1.330</strong>（北京时间 <strong>11 月 21 日 06:32</strong> 发布）和 <strong>Gemini CLI 0.69.0 → 0.70.0</strong>（北京时间分别为 <strong>11 月 19 日 09:45</strong>、<strong>11 月 20 日 05:08</strong> 发布）。它们不是 11 月 22 日才发布的版本；本次按原发布日期明确补报。尤其 Gemini CLI 0.70.0 包含 <strong>Shell 权限策略、MCP 启动权限和正则匹配引擎的安全强化</strong>，值得优先回归。没有发现 11 月 21 日 06:55 至 11 月 22 日 06:55 之间比这两组更新更高的相关正式版；GitHub 的 Alpha / Preview / Nightly 不当作 Stable。官方来源：<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.330">Claude 2.1.330</a>、<a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.70.0">Gemini 0.70.0</a>、<a href="https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/latest.md">Gemini Stable Changelog</a>。</p>
+<h2 id="section-2">一、核验版本与行动总览</h2>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+  <th>工具</th>
+  <th>最新正式版本（本期核验）</th>
+  <th>本期结论</th>
+  <th>行动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Claude Code</td>
+  <td><strong>2.1.330</strong> · 2026-11-21 06:32（北京）</td>
+  <td><strong>High</strong> · Worktree/权限/多进程状态与 Gateway 可靠性</td>
+  <td><strong>Test before upgrading</strong></td>
+</tr>
+<tr>
+  <td>Gemini CLI</td>
+  <td><strong>0.70.0 Stable</strong> · 2026-11-20 05:08（北京）</td>
+  <td><strong>High</strong> · Shell Policy / MCP / IDE 安全，补报 0.69.0</td>
+  <td><strong>Test before upgrading</strong></td>
+</tr>
+<tr>
+  <td>Codex CLI</td>
+  <td><strong>0.171.0 Stable</strong> · 2026-11-20 08:44（北京）</td>
+  <td>Low · 新出现的 0.173 Alpha 非 Stable</td>
+  <td><strong>No action</strong></td>
+</tr>
+<tr>
+  <td>Pi (<code>earendil-works/pi</code>)</td>
+  <td><strong>1.6.0</strong> · 2026-11-20 19:35（北京）</td>
+  <td>Low · 此后无新正式版；近期提交不等于发布</td>
+  <td><strong>No action</strong></td>
+</tr>
+<tr>
+  <td>OpenCode V2</td>
+  <td><strong>2.3.2</strong> · 2026-11-18</td>
+  <td>Low · 正式 Changelog 无更高 V2 版本</td>
+  <td><strong>No action</strong></td>
+</tr>
+<tr>
+  <td>Cursor</td>
+  <td>最近正式产品 Changelog：<strong>2026-11-06</strong></td>
+  <td>Low · 未核实新增 Rules / Agent / MCP Breaking</td>
+  <td><strong>No action</strong></td>
+</tr>
+<tr>
+  <td>xAI Grok API</td>
+  <td>最近官方 Release Notes：<strong>2026-11-19</strong>（<code>grok-build-0.1</code> EOL）</td>
+  <td>Low · 此后未核实新增正式变化</td>
+  <td><strong>No action</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>交叉核验边界：</strong> Claude 的 GitHub Latest 与 npm <code>@anthropic-ai/claude-code/latest</code> 都是 2.1.330；Codex GitHub Latest 与 npm <code>@openai/codex/latest</code> 都是 0.171.0；Pi GitHub Latest、<a href="https://pi.dev/changelog">Pi Changelog</a> 与 npm <code>@earendil-works/pi-coding-agent/latest</code> 都是 1.6.0；Gemini 0.70.0 由 GitHub Latest 和官方 Stable Changelog 双重确认，npm Registry <code>latest</code> 直读本轮失败，<strong>不声称 Gemini npm 标签已独立核实</strong>；OpenCode 2.3.2 由官方 Changelog 与 GitHub Release 交叉核验。Cursor 和 xAI 以官方产品 Changelog / API Release Notes 为准。风险评级属于工程判断，不是厂商 CVSS。</p>
+<h2 id="section-3">二、Claude Code 2.1.330：官方重要变化</h2>
+<p><strong>发布：</strong> 2026-11-20 22:32 UTC = 北京时间 <strong>2026-11-21 06:32</strong>。来源：<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.330">GitHub Release v2.1.330</a>，<a href="https://registry.npmjs.org/@anthropic-ai/claude-code/latest">npm 最新包元数据</a>。</p>
+<h3 id="section-4">2.1 Enterprise Admin Console 登录继承组织配置和 Gateway</h3>
+<p><strong>变化内容：</strong> <code>claude auth login</code> 可以登录 Anthropic Enterprise Admin Console 管理的组织，并应用该组织的设置和 Cloud Provider / Gateway；新增 <code>CLAUDE_CODE_FULL_SIGN_IN_LINK=1</code> 以在短登录链接失败时输出完整登录 URL。</p>
+<p><strong>技术意义：</strong> 身份认证成功与实际执行的模型出口、组织策略、Permission Rules、费用归属不同，企业登录可能使新会话自动应用组织级配置。完整登录链接可能包含敏感或短时授权数据，不能打印到公开日志。</p>
+<p><strong>场景 A — 企业 SSO、第三方 API Gateway、Bedrock/Vertex/Foundry：</strong> <strong>High／治理利好 + 路由风险；Test before upgrading / Verify config；breaking-risk Medium–High。</strong> 用测试身份验证组织 ID、请求实际 Provider、Model ID、代理出口、Managed Settings 与身份回退；不可把已登录等同于 Gateway 路由正确。</p>
+<p><strong>场景 B — Windows PowerShell、SSH / Headless 认证：</strong> <strong>Medium／认证便利 + 日志风险；Test before adopting；breaking-risk Low–Medium。</strong> 若需要完整登录 URL，只在受控终端使用 <code>CLAUDE_CODE_FULL_SIGN_IN_LINK=1</code>，不要将登录链接复制到 CI 公共日志。</p>
+<p><strong>谁可以忽略：</strong> 不使用企业托管组织、只使用既有个人认证的用户。</p>
+<h3 id="section-5">2.2 Self-hosted Runner 工作目录、插件来源和结构化安装结果</h3>
+<p><strong>变化内容：</strong> 新增 <code>--start-dir</code> / <code>SELF_HOSTED_RUNNER_START_DIR</code>，让自托管 Runner 从仓库的某个子目录工作，同时保持原有 Settings / Hooks 加载规则；当 Cloud/Runner 无法取得不属于会话仓库的 Plugin Marketplace 或 Anthropic 托管 Git 阻止插件自有仓库时，会明确提示。<code>claude plugin install --json</code> 新增 <code>commandPrinted</code> 和 <code>commandFailed</code>；Runner 增加「工单→注册」和「工单→首次 Session」时长指标。</p>
+<p><strong>技术意义：</strong> 启动工作目录、项目指令发现、Hook 加载和插件源码信任是不同控制面。插件安装命令打印了 stderr 不等于执行失败，应分别看 <code>commandPrinted</code> / <code>commandFailed</code>。</p>
+<p><strong>场景 A — 远程 Agent、Monorepo、Git Worktree、Self-hosted CI：</strong> <strong>Medium–High／可控性利好 + 路径兼容风险；Test before adopting；breaking-risk Medium。</strong> 在测试仓库核对从子目录启动后的 CWD、相对文件路径、Hooks、CLAUDE.md 加载和仓库边界；不能据此假设权限限定在子目录。</p>
+<p><strong>场景 B — Plugin Marketplace、自动安装脚本、监控：</strong> <strong>Medium／诊断利好 + API 结果变化；Change parsing / Test before upgrading；breaking-risk Low–Medium。</strong> 对 <code>--json</code> 返回新增字段使用宽容解析，检查插件真正安装状态；Metrics 统计排队/启动延迟，不代表任务成功完成。</p>
+<p><strong>谁可以忽略：</strong> 不使用 Self-hosted Runner、远程插件市场或解析插件安装 JSON 的用户。</p>
+<h3 id="section-6">2.3 并发 Worktree 删除、Rewind 和持久配置竞态修复</h3>
+<p><strong>变化内容：</strong> 修复 <code>ExitWorktree</code> 或退出对话框误删<strong>另一个仍在运行的 Claude Session 所用 Worktree</strong>；多个 Claude 进程同时保存 User Settings 时更改丢失；多个 Task Update 导致依赖与元数据丢失；磁盘满时不完整的 <code>~/.claude.json</code> 备份覆盖良好备份；紧邻文件修改的排队 Prompt/嵌套 Skills 使 <code>/rewind</code> 恢复到错误版本。</p>
+<p><strong>技术意义：</strong> Session 生命周期、文件归属、任务元数据和备份是持久化一致性问题，不能只靠 UI 提示「已退出」「已恢复」判定安全。</p>
+<p><strong>场景 A — Git Worktree、多 Agent、并发 Claude CLI：</strong> <strong>High／数据保护利好；Upgrade after canary；breaking-risk Medium。</strong> 在临时仓库中开启两个 Session，检查退出一个后另一个 Worktree 仍存在，并通过 <code>git status</code>/<code>git diff</code> 核对 <code>/rewind</code> 后文件内容。</p>
+<p><strong>场景 B — Windows 并行终端、企业多任务、低磁盘空间：</strong> <strong>High／配置完整性利好；Test before upgrading；breaking-risk Low–Medium。</strong> 预备份无密钥测试配置；验证并发配置保存后 Settings、Task Dependencies 和 Backup 都完好，避免在生产主目录测试磁盘耗尽。</p>
+<p><strong>谁可以忽略：</strong> 只有单 Session 且不使用 Worktree、Rewind 或并发任务的用户可忽略专项测试。</p>
+<h3 id="section-7">2.4 Windows Git Bash、WSL 休眠重连、长上下文与 WebFetch</h3>
+<p><strong>变化内容：</strong> 修复 Windows 上 Git Bash 启动耗时约 10–60 秒后，后续 Bash 命令持续变慢；Linux/WSL 休眠超过两分钟后第一次 Prompt 等待旧连接约三分钟；超长会话自动 Compaction 后冻结；WebFetch 读取特定网页卡住或返回空结果。</p>
+<p><strong>技术意义：</strong> Shell 启动成本与后续命令生命周期、失效网络连接重试、Compaction 和 WebFetch 属于独立路径，修复旨在提高稳定性，而不表示所有代理超时或网站访问问题都已解决。</p>
+<p><strong>场景 A — Windows 11 + PowerShell 调用 Git Bash：</strong> <strong>Medium–High／性能利好；Test before upgrading；breaking-risk Low–Medium。</strong> 在相同仓库比较首条与后续 Shell 执行耗时、Exit Code、中文路径及代理环境变量，检查 Git Bash 启动脚本影响。</p>
+<p><strong>场景 B — WSL、长 Context、代理环境中的 WebFetch：</strong> <strong>Medium–High／可靠性利好；Test before upgrading；breaking-risk Low–Medium。</strong> 休眠再恢复测试、超长对话摘要是否保留关键任务、网页抓取空结果及网络代理行为；不要以「没有卡死」替代最终数据校验。</p>
+<p><strong>谁可以忽略：</strong> 不使用 Git Bash/WSL、长上下文或 WebFetch 的用户。</p>
+<h3 id="section-8">2.5 MCP Input Schema、共享 Server 生命周期与 Connector 发现</h3>
+<p><strong>变化内容：</strong> 多个 MCP Tools 使用上游 API 不接受的 Input Schema 时，旧版可能使模型 Turn 报 <code>JSON schema is invalid</code> 且会话文件增长很多 MB；现在修复。Subagent 声明的 MCP Server 不会在其中一个子 Agent 结束时被误关（其它 Agent 仍在使用）；终端 @Mention 的 Connector / Plugin MCP Resources 可以正确附加；不同名称但共享 Server URL 的 claude.ai Connectors 不再被错误去重。</p>
+<p><strong>技术意义：</strong> Schema Validation、Server Session 引用计数、资源身份及工具可见性是 MCP 的关键边界；单纯按 URL 或 Server 名称去重会丢失逻辑资源。</p>
+<p><strong>场景 A — 自建 MCP、Java/TypeScript Tool Schema、第三方 Gateway：</strong> <strong>High／协议正确性利好；Test before upgrading；breaking-risk Medium。</strong> 用测试 <code>oneOf</code>/<code>anyOf</code>、无效属性及多个 Server 对比 Tool Discovery、上游返回错误、会话文件增长和结果类型；无效工具不应使整个 Session 崩溃。</p>
+<p><strong>场景 B — 多 Agent、Plugin MCP、同 URL 的不同 Connector：</strong> <strong>High／工具生命周期利好；Test before upgrading；breaking-risk Medium。</strong> 并发启动/结束不同 Subagents，验证仍在使用的 MCP Server 未被过早关闭，@Mention 注入实际资源正确且权限未扩大。</p>
+<p><strong>谁可以忽略：</strong> 单独使用简单内置 Tools、不使用 MCP/Connector 的用户。</p>
+<h3 id="section-9">2.6 Code Mode、背景权限状态、Hooks 与 Headless 返回码</h3>
+<p><strong>变化内容：</strong> Code Mode 修复读取数百文件并遇到 Path-scoped Rules / Read Deny 后长时间停顿；修复 MCP Tool 请求结束 Turn 时被忽略、Auto Mode 中 Mod 提示改变 Thinking 与 Prompt Cache、Esc 加 <code>/compact</code> 后文件未正确恢复；背景 Subagent Stop 不生效或继续等待，以及批准 Plan 后沿用旧 Permission Mode。<code>SessionStart</code> Hook 写入的环境变量在 <code>claude -p --continue</code> 中得以保留。重定向输出至已满磁盘时，<code>claude -p</code> 不再无消息返回 Exit 0，而是报错并 <strong>Exit 1</strong>（部分 NFS 满盘场景仍有限制）。</p>
+<p><strong>技术意义：</strong> Code Mode 的 JavaScript Tool 编排与 Tool-level Permission、状态恢复、主进程 Exit Code 不能脱钩；Exit 0 应与真正成功写入结果一致。</p>
+<p><strong>场景 A — Code Mode、Agent Teams、Skills / Mods、MCP：</strong> <strong>High／权限与执行正确性利好；Test before upgrading；breaking-risk Medium–High。</strong> 测试 Read Deny、停止子 Agent、MCP 结束 Turn、取消+Compaction 的文件状态及真实 Tool Call 副作用。</p>
+<p><strong>场景 B — CI/Headless、PowerShell Hooks、远程 Runner：</strong> <strong>High／可靠性利好 + Exit Code 行为变化；Test before upgrading / Change error handling；breaking-risk Medium。</strong> 测试 SessionStart 配置环境变量的保存与 Headless 输出写入错误，确保 CI 把非零退出当失败，不吞掉 stderr。</p>
+<p><strong>谁可以忽略：</strong> 不启用 Code Mode、后台 Agent、Hooks 或 <code>claude -p</code> 的用户。</p>
+<h3 id="section-10">2.7 其它修复：模型选择、LSP、CLAUDE.md 与缓存</h3>
+<p><strong>变化内容：</strong> 修复 Bedrock Mantle 未选模型时忽略固定的 Opus Model；Google Agent Platform 在 <code>--settings '{&quot;fastMode&quot;:true}'</code> 与 <code>ANTHROPIC_MODEL</code> 组合下未启用 Fast Mode（修复后<strong>可能按 Fast Mode 费率计费</strong>）；修复 LSP 启动过程的并发诊断失败与 Esc 取消无效、<code>CLAUDE.md</code> 含 HTML 注释时丢失 Markdown 引用链接、同名用户/项目 Agent 由文件搜索顺序随机选中、Plugin 并发安装时列表缺失，以及 <code>/mcp</code> 对 Plugin Server 归类错误。</p>
+<p><strong>技术意义：</strong> 这是模型路由/成本、IDE Tool Lifecycle、Instructions 文件解析及 Skills/Plugin Discovery 的一致性修复。</p>
+<p><strong>场景 A — Bedrock/Vertex/Gateway、模型或 Fast Mode 成本敏感：</strong> <strong>High（对应 Provider）／准确性利好 + 费用变化风险；Verify config / Test before upgrading；breaking-risk Medium。</strong> 核对请求 Model ID、实际 Fast Mode、Token 费用和账户限额，不因 UI 文案默认认为费率没变。</p>
+<p><strong>场景 B — IDE LSP、自定义 Agents、CLAUDE.md、Plugins：</strong> <strong>Medium／兼容利好；Test before upgrading；breaking-risk Low–Medium。</strong> 并发运行 LSP、Esc、Markdown 引用、同名 Agent 和 Plugin 安装测试，确认按预期的加载层级和身份执行。</p>
+<p><strong>谁可以忽略：</strong> 不使用指定模型路径、LSP、自定义 Instructions 或 Plugin 的用户。</p>
+<h2 id="section-11">三、Gemini CLI 0.69.0 / 0.70.0：补报安全与 Windows 变化</h2>
+<p><strong>真实发布日期：</strong> <code>0.69.0</code> 为 2026-11-19 01:45 UTC / 北京时间 <strong>11 月 19 日 09:45</strong>；<code>0.70.0 Stable</code> 为 2026-11-19 21:08 UTC / 北京时间 <strong>11 月 20 日 05:08</strong>。当前正式 Latest 是 <strong>0.70.0</strong>，<code>0.71.0-preview.0</code> 与 Nightly 均不是 Stable。来源：<a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.69.0">0.69.0 Release</a>、<a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.70.0">0.70.0 Release</a>、<a href="https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/latest.md">官方 Stable Changelog</a>。</p>
+<h3 id="section-12">3.1 Policy Engine：<code>re2js</code>、Shell Regex 与未知变量必须 Ask</h3>
+<p><strong>变化内容：</strong> 0.70.0 让 Policy <code>argsPattern</code> 使用 <code>re2js</code> 进行线性时间正则匹配，降低恶意或复杂 Regex 的 ReDoS 风险；<code>commandPrefix</code>、<code>commandRegex</code> 改为匹配 Shell Tool 顶层 Command 参数；对<strong>无法解析变量展开</strong>的 Shell Command 保持 <code>ASK_USER</code>，避免误判已批准。</p>
+<p><strong>技术意义：</strong> Shell 授权应依据真正的命令参数及未知展开结果，不应仅靠字符串中的一部分匹配放行；Regex 选择也影响规则匹配效率及语义。</p>
+<p><strong>场景 A — Windows PowerShell 5.1/7、Shell Allow/Deny、企业 Policy：</strong> <strong>High／安全利好 + 旧规则兼容风险；Test before upgrading；breaking-risk Medium–High。</strong> 在可销毁仓库核验 <code>$env:</code>、变量拼接、嵌套命令、Policy Regex、<code>ASK_USER</code>、大小写及引号；不要通过全局放开 Shell 规避新审批。</p>
+<p><strong>场景 B — Headless CI、自动审批的 Agent：</strong> <strong>High／安全利好 + 无人值守卡住风险；Change config / Test before upgrading；breaking-risk High（依赖旧模糊 Allow 规则者）。</strong> 将需要的命令显式限定为可审核参数；无法判定时拒绝或终止自动化，而不是静默允许。</p>
+<p><strong>谁可以忽略：</strong> 不使用 Shell Tool 或自定义 Policy 的用户。</p>
+<h3 id="section-13">3.2 系统 MCP Server 权限和 Symbolic Link 目标确认</h3>
+<p><strong>变化内容：</strong> 0.70.0 会跳过 Command Permission 不安全的 System MCP Servers；涉及链接时向用户披露 Canonical Target Path，相关 Consent 默认选 No。</p>
+<p><strong>技术意义：</strong> 配置列出 MCP Server 并不代表可以可信执行；Symlink/别名路径可能隐藏真实文件目标。升级后原先能启动的 Server 可能因权限检查被拒绝，这是需要处理的安全信号。</p>
+<p><strong>场景 A — Windows + MCP、系统级 Server、自定义服务：</strong> <strong>High／安全利好 + 兼容风险；Test before upgrading；breaking-risk High（Server 权限不规范时）。</strong> 检查安装目录和文件访问控制、Server 权限来源、拒绝原因和 Tool Discovery；不要直接禁用检查。</p>
+<p><strong>场景 B — 符号链接、WSL、多个工作目录：</strong> <strong>Medium–High／透明度利好；Test before upgrading；breaking-risk Medium。</strong> 对可销毁测试目录检查 Canonical Target 与工作区边界，确认不会因为链接名而误授权写入外部目录。</p>
+<p><strong>谁可以忽略：</strong> 不使用系统 MCP 或链接目录的用户。</p>
+<h3 id="section-14">3.3 Windows PowerShell 变量、ACP / Headless 流水线及终止语义（0.69.0）</h3>
+<p><strong>变化内容：</strong> 0.69.0 修复 PowerShell 命令变量替换的误报和 Policy 处理；模板中的字面量 <code>$</code> 不再被错误替换；管道 stdin 会等待 EOF，不再错误销毁 <code>process.stdin</code>；Headless Abort 会正确结束子进程、记录被取消的工具并保留信号 Exit Code；ACP Tool Call 更新中的 ANSI Output 正确序列化，失败输出也更规范。</p>
+<p><strong>技术意义：</strong> <code>$</code> 在 PowerShell 和模板中具有不同含义；错误展开可能导致执行不符合预期的命令。Headless Abort 必须清理子进程并将真实终止状态报告给宿主。</p>
+<p><strong>场景 A — Windows 11、PowerShell 5.1/7、含 <code>$</code> 的 Hooks/Commands：</strong> <strong>High（此前误解析者）／正确性利好；Test before upgrading；breaking-risk Medium。</strong> 用不含密钥的本地脚本检查字面量 <code>$</code>、<code>$env:</code>、管道输入 EOF、命令实际参数和 Exit Code。</p>
+<p><strong>场景 B — ACP 客户端、IDE、CI/Headless：</strong> <strong>Medium–High／协议与取消稳定性利好；Test before upgrading；breaking-risk Medium。</strong> 模拟长进程取消，检查子进程退出、ACP Tool Result 是否重复/拼接和最终退出信号。</p>
+<p><strong>谁可以忽略：</strong> 不使用 PowerShell 特殊变量、ACP 或 Headless 模式的用户。</p>
+<h3 id="section-15">3.4 Model API Timeout、429 重试、请求体与模型列表</h3>
+<p><strong>变化内容：</strong> 0.69.0 支持跨认证模式调整模型请求 Header Timeout：<code>model.requestTimeoutMs</code> / <code>GEMINI_API_HEADERS_TIMEOUT_MS</code>，并修复静默卡住和多小时的 Quota Retry；0.70.0 在设置超过默认 300 秒的 Request Timeout 时同步扩展 Undici <code>bodyTimeout</code>，改进模型目录显示的 Output Token Limits 和 Auth Capabilities。</p>
+<p><strong>技术意义：</strong> Header Timeout、Body Timeout、整体业务 Job Timeout 是不同约束；单独提高上限可能拖慢故障发现。模型目录标注修正也不代表 Provider 真正开放了额外 Token 配额。</p>
+<p><strong>场景 A — 代理/v2rayN、第三方 Gemini Gateway、长上下文：</strong> <strong>Medium–High／稳定性利好 + 超时配置风险；Test before upgrading / Change config if needed；breaking-risk Medium。</strong> 用本地 Mock Server 做延迟响应头、长响应体和超额 429，验证重试上限、实际请求终止及代理行为。</p>
+<p><strong>场景 B — CI/Headless、成本敏感：</strong> <strong>Medium／诊断利好；Test before upgrading；breaking-risk Low–Medium。</strong> 保留独立 CI 外层超时并检查真实退出码，避免内部重试无限占用构建配额。</p>
+<p><strong>谁可以忽略：</strong> 不用长请求、不碰 Quota Retry、只用默认参数且运行稳定的用户。</p>
+<h3 id="section-16">3.5 IDE 发现隔离、Worktree/Resume、Skills / Instructions 与多模态</h3>
+<p><strong>变化内容：</strong> 0.70.0 把 IDE Companion Discovery 改为 Per-user 目录并原子写入端口文件；认证重启保留选定 Worktree，只有 Chat Resume 成功才恢复 Workspace Directories；<code>${VAR:-default}</code> 中变量设为<strong>空字符串</strong>时正确使用默认值，Session Preview 保留 Unicode 并去掉 ANSI 噪声。0.69.0 还修复 <code>@file</code> 引用首尾空白丢失、多模态 Tool Response 缺失和中途流式重试文本拼接，收紧一次性内联的二进制资产边界。</p>
+<p><strong>技术意义：</strong> IDE 端口文件是本地控制面发现信息，必须避免不同用户互相干扰；Workspace、Worktree 与 Prompt 引用的实际文件范围则关系到 Agent 恢复后的安全与数据完整性。</p>
+<p><strong>场景 A — VS Code/IDE、Windows 多用户、本地 Agent：</strong> <strong>Medium–High／隔离利好；Test before upgrading；breaking-risk Medium。</strong> 验证多个 Windows 用户/IDE Window 的 Discovery、端口文件读写、连接退出和重新发现。</p>
+<p><strong>场景 B — Worktree、AGENTS.md/GEMINI.md 项目规则、Session Resume：</strong> <strong>Medium–High／可靠性利好；Test before upgrading；breaking-risk Medium。</strong> 检查重连后当前目录、已信任目录、Rule Discovery、<code>@file</code> 实际内容和 Workspace 范围，不应把 <code>GEMINI.md</code> 与别的工具规则当成统一优先级。</p>
+<p><strong>场景 C — 多模态、ACP、文件处理：</strong> <strong>Medium／结果完整性利好；Test before upgrading；breaking-risk Low–Medium。</strong> 验证图片、文本混合 Tool Responses 和失败重试后是否丢失/拼接内容。</p>
+<p><strong>谁可以忽略：</strong> 不使用 IDE 集成、跨目录恢复或多模态工具的用户。</p>
+<h2 id="section-17">四、其它工具核验与跨产品规则</h2>
+<p><strong>Codex CLI：</strong> <a href="https://github.com/openai/codex/releases">GitHub Releases</a> 和 <a href="https://registry.npmjs.org/@openai/codex/latest">npm latest</a> 都确认 Stable <strong>0.171.0</strong>，本期出现 0.173.0 Alpha 不是正式新版本；上期已报 Remote Exec、模型目录、MCP/Permissions。<strong>Low／中性；No action；新增 breaking-risk 未确认；只用 Stable 者可忽略 Alpha。</strong></p>
+<p><strong>Pi：</strong> <a href="https://github.com/earendil-works/pi/releases">GitHub Releases</a>、<a href="https://pi.dev/changelog">官方 Changelog</a>、<a href="https://registry.npmjs.org/@earendil-works/pi-coding-agent/latest">npm latest</a> 一致确认 <strong>1.6.0</strong>，没有更高正式版；已报道 Default Model GPT-6.2、<code>render()</code> 只读数组、<code>find</code> Glob、Undici 8.12.4。<strong>Low／中性；No action；新增 breaking-risk 未确认；已做 1.6.0 回归者可忽略。</strong></p>
+<p><strong>OpenCode V2：</strong> <a href="https://opencode.ai/changelog">产品 Changelog</a> 与 <a href="https://github.com/anomalyco/opencode/releases/tag/v2.3.2">2.3.2 Release</a> 一致，最新仍为 <strong>2.3.2</strong>，未确认更高正式版。<strong>Low／中性；No action；新增 breaking-risk 未确认；不追 Nightly 的用户可忽略提交动态。</strong></p>
+<p><strong>Cursor：</strong> <a href="https://cursor.com/changelog">官方 Changelog</a> 最近公告为 2026-11-06 Voice Chat with Agents，没有在本期发现新的 Cursor Rules、Agent SDK、CLI 或 MCP 正式发布。<strong>Low／中性；No action；新增 breaking-risk 未确认；不使用其最新 Voice 功能者可忽略。</strong></p>
+<p><strong>xAI Grok API：</strong> <a href="https://docs.x.ai/developers/release-notes">官方 Release Notes</a> 最近为 2026-11-19 <code>grok-build-0.1</code> EOL，前一期已报；未确认 11 月 21 日新增 Tool Schema / MCP / API Breaking。<strong>Low／中性；No action；新增 breaking-risk 未确认；不使用已终止 Model ID 的用户可忽略。</strong></p>
+<p><strong>AGENTS.md / CLAUDE.md / Cursor Rules / GEMINI.md：</strong> 本期没有可靠官方资料说明这些 Instructions 获得跨产品统一的发现、继承和权限优先级。Claude 的 Path-scoped Rules 与 Gemini 的 Shell Policy、Folder Trust 是不同机制，必须各自验收。</p>
+<h2 id="section-18">五、Windows PowerShell 5.1/7 今日只读核验</h2>
+<p>下列命令仅查询版本、命令入口和配置是否存在，不修改软件或打印凭据；npm Registry 查询需要联网。</p>
+<pre><code class="language-powershell"># 1. 交叉核对 Stable / Preview / Alpha 发行标签
+npm view @anthropic-ai/claude-code dist-tags --json
+npm view @google/gemini-cli dist-tags --json
+npm view @openai/codex dist-tags --json
+npm view @earendil-works/pi-coding-agent dist-tags --json
+npm view @opencode/cli dist-tags --json
+
+# 2. 本地运行版本、PATH 中全部同名入口
+Get-Command claude,gemini,codex,pi,opencode -All -ErrorAction SilentlyContinue
+claude --version
+gemini --version
+codex --version
+pi --version
+opencode --version
+
+# 3. Runtime 与 npm 全局安装
+node --version
+npm --version
+npm ls -g --depth=0
+
+# 4. 只看配置是否存在，不输出文件内容
+@(
+  (Join-Path $HOME '.claude.json'),
+  (Join-Path $HOME '.claude\settings.json'),
+  (Join-Path $HOME '.codex\config.toml'),
+  (Join-Path $HOME '.gemini\settings.json')
+) | ForEach-Object {
+  [pscustomobject]@{ Path = $_; Exists = Test-Path -LiteralPath $_ }
+}
+
+# 5. 只检查相关环境变量有无设置，不打印敏感值
+'ANTHROPIC_BASE_URL','ANTHROPIC_MODEL','HTTP_PROXY',
+'HTTPS_PROXY','GEMINI_API_HEADERS_TIMEOUT_MS',
+'SELF_HOSTED_RUNNER_START_DIR','CLAUDE_CODE_FULL_SIGN_IN_LINK' | ForEach-Object {
+  [pscustomobject]@{
+    Name = $_
+    Set = [bool][Environment]::GetEnvironmentVariable($_)
+  }
+}
+</code></pre>
+<p><strong>建议顺序：</strong> ① Gemini 0.70.0 的 Shell Policy / 系统 MCP 权限必须先做 Canary Test；② Claude 2.1.330 的并发 Worktree 删除、配置保存、MCP 生命周期和 Headless Exit Code 值得回归；③ 再观察 Windows Git Bash/WSL、长上下文、IDE/ACP 和 Gateway。生产环境请锁定已验证的模型与 Provider，使用可销毁测试仓库和假凭据进行授权测试。</p>
+<p><strong>验证边界：</strong> 本日报核查的是发行记录与公开官方文档，没有在实际 Windows、WSL、v2rayN、第三方 Gateway、生产 MCP/CI 环境升级或执行测试。<strong>本期重要内容属于漏报补齐；没有将其写成 11 月 22 日刚发布的新版本。</strong></p>
+<h2 id="section-19">六、官方来源索引</h2>
+<p><a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.330">Claude Code 2.1.330 Release</a> · <a href="https://registry.npmjs.org/@anthropic-ai/claude-code/latest">Claude npm Latest</a> · <a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.69.0">Gemini CLI 0.69.0 Release</a> · <a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.70.0">Gemini CLI 0.70.0 Release</a> · <a href="https://github.com/google-gemini/gemini-cli/blob/main/docs/changelogs/latest.md">Gemini Stable Changelog</a> · <a href="https://github.com/openai/codex/releases">Codex Releases</a> · <a href="https://registry.npmjs.org/@openai/codex/latest">Codex npm Latest</a> · <a href="https://github.com/earendil-works/pi/releases">Pi Releases</a> · <a href="https://pi.dev/changelog">Pi Changelog</a> · <a href="https://registry.npmjs.org/@earendil-works/pi-coding-agent/latest">Pi npm Latest</a> · <a href="https://opencode.ai/changelog">OpenCode Changelog</a> · <a href="https://cursor.com/changelog">Cursor Changelog</a> · <a href="https://docs.x.ai/developers/release-notes">xAI Release Notes</a>。</p>
+</main></div>
+<footer class="footer">AI Dev Tools Daily Brief · 2026-11-22 · 真实正式发布日期，补报不伪造 · 原始官方来源均为可点击链接 · 自包含 UTF-8 离线 HTML，无外部 CDN · 公开技术资料，不含个人密钥与账号数据</footer><a class="stickytop" href="#top">↑ TOP</a>
+</body></html>
