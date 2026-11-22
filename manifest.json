@@ -5,7 +5,7 @@
   "readme": "本仓库仅展示已经提交的完整 HTML 报告；页面内容由 categories[].reports 索引。",
   "counts": {
     "topic_count": 10,
-    "verified_full_reports": 110
+    "verified_full_reports": 111
   },
   "categories": [
     {
@@ -668,6 +668,13 @@
       "source_status": "partial_archive",
       "reports": [
         {
+          "date": "2026-11-22",
+          "title": "自媒体政策与机会周报｜2026.11.16—11.22",
+          "label": "11/16—11/22 完整周报",
+          "path": "reports/creator-policy/2026-11-22.html",
+          "kind": "full"
+        },
+        {
           "date": "2026-11-15",
           "title": "自媒体政策与机会周报｜2026.11.09—11.15",
           "label": "2026-11-15",
@@ -688,7 +695,8 @@
           "path": "reports/creator-policy/2026-11-06_midweek.html",
           "kind": "full"
         }
-      ]
+      ],
+      "last_run": "2026-11-22"
     },
     {
       "id": "tech-brief",
