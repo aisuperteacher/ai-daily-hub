@@ -1,0 +1,263 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>GitHub 热榜日报｜2026-11-23</title><style>:root{--paper:#fbf7ed;--ink:#191919;--accent:#db653f;--yellow:#f8d75b;--mint:#b8e8d2}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.72 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}main{max-width:1180px;margin:auto;padding:18px 23px 65px}a{color:#145c8b;overflow-wrap:anywhere}header{background:var(--yellow);border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:30px;margin:12px 9px 36px 0}.kicker{font-size:12px;letter-spacing:.17em;font-weight:800}header h1{font-size:clamp(29px,5vw,55px);line-height:1.1;margin:15px 0}.stats{display:flex;gap:10px;flex-wrap:wrap}.stats span{font-weight:750;border:2px solid var(--ink);background:white;padding:7px 12px}h2{font-size:clamp(23px,3vw,32px);border-bottom:4px solid var(--ink);padding-bottom:10px;margin-top:47px}h3{line-height:1.35}section{scroll-margin-top:15px}.table{overflow-x:auto;border:2px solid var(--ink);background:white}table{border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid #aaa}th{background:var(--mint);white-space:nowrap}nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:7px;margin:18px 0}nav a{border:1.5px solid var(--ink);background:white;padding:8px 11px;font-size:13px;text-decoration:none;font-weight:700}.controls{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0}.controls input{font:inherit;flex:1;min-width:190px;padding:12px;border:2px solid var(--ink);border-radius:0}.controls button{background:var(--yellow);font:700 14px system-ui;cursor:pointer;border:2px solid var(--ink);padding:12px}details.repo{background:#fff;border:2px solid var(--ink);margin:13px 0;scroll-margin-top:14px}details.repo summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:14px;padding:14px}summary::-webkit-details-marker{display:none}details.repo[open] summary{border-bottom:2px solid var(--ink);background:#fff1d4}.idx{font-weight:950;font-size:25px;color:#b54627}.repo-name{font-weight:800;font-size:17px;overflow-wrap:anywhere}.heat{margin-left:auto;font-size:12px;text-align:right;color:#285e4d}.details{padding:12px 20px 20px}.details p{margin:10px 0}.risk{background:#fff0e8;border-left:4px solid var(--accent);padding:9px 12px}.top{border:2px solid var(--ink);background:white;padding:18px;display:flex;gap:15px;margin:13px 0}.top .idx{font-size:38px}.top h3{margin:0}.callout{border:2px solid var(--ink);background:var(--mint);padding:16px;margin-top:20px}footer{margin-top:45px;border-top:3px solid var(--ink);padding:16px;color:#555;font-size:13px}@media(max-width:650px){main{padding:12px}header{padding:16px;box-shadow:4px 4px 0 var(--ink)}details.repo summary{flex-wrap:wrap}.heat{flex-basis:100%;text-align:left;margin-left:40px}.details{padding:10px 13px}th,td{padding:7px 8px;font-size:12px}.top{padding:12px}}@media print{nav,.controls{display:none}header{box-shadow:none}.repo{break-inside:avoid}}</style></head><body><main>
+<header><div class="kicker">GLOBAL OPEN SOURCE RADAR · 2026-11-23 · BEIJING</div><h1>GitHub 热榜日报</h1><p><strong>核心判断：</strong>开源 AI 开发工具正在从“让 Agent 执行任务”转向“让 Agent 能力可测量、工作流可审计、故障可诊断”。本期优先研究 NVIDIA SkillEvaluator、腾讯 LoopForge 与 OpenSRE。</p><div class="stats"><span>15 个项目</span><span>12 个热点＋3 个工程精选</span><span>Top 3</span><span>13 项实验</span></div></header>
+<section id="overview"><h2>一、数据口径与今日项目总览</h2><p><strong>报告时间：</strong>北京时间 2026 年 11 月 23 日上午。主要采用 2026 年 11 月 22 日的 GitHub Trending 历史榜单，结合仓库公开 README、文档、Releases 核对项目身份和功能。<b>+N / 7天</b> 仅代表当期历史快照记录的七日 Star 变化，不是 11 月 23 日自然日增长，也不等于 stars today。不同统计窗口不能视作严格排名。Spring AI、AgentScope Java 和 OpenRewrite 为工程精选，并非昨日全站日榜项目。</p><div class="table"><table><thead><tr><th>#</th><th>官方 GitHub 仓库</th><th>近期热度或活动</th><th>是否值得关注</th></tr></thead><tbody>
+<tr><td>1</td><td><a href="https://github.com/HKUDS/CLI-Anything" target="_blank" rel="noopener noreferrer">HKUDS/CLI-Anything</a></td><td>2026-11-22 全站日榜第 3；同口径 Star 日增未核实</td><td>★★★★★</td></tr>
+<tr><td>2</td><td><a href="https://github.com/NVIDIA/SkillEvaluator" target="_blank" rel="noopener noreferrer">NVIDIA/SkillEvaluator</a></td><td>2026-11-22 历史趋势：近七日 +2,906 Star</td><td>★★★★★ · Top 1</td></tr>
+<tr><td>3</td><td><a href="https://github.com/Tencent/LoopForge" target="_blank" rel="noopener noreferrer">Tencent/LoopForge</a></td><td>2026-11-22 历史趋势：近七日 +4,290 Star</td><td>★★★★★ · Top 2</td></tr>
+<tr><td>4</td><td><a href="https://github.com/Tracer-Cloud/opensre" target="_blank" rel="noopener noreferrer">Tracer-Cloud/opensre</a></td><td>2026-11-22 全站日榜第 13；2026-11-11 有正式 Release</td><td>★★★★★ · Top 3</td></tr>
+<tr><td>5</td><td><a href="https://github.com/cursor/plugins" target="_blank" rel="noopener noreferrer">cursor/plugins</a></td><td>2026-11-22 历史趋势：近七日 +1,961 Star；全站日榜第 5</td><td>★★★★★</td></tr>
+<tr><td>6</td><td><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener noreferrer">obra/superpowers</a></td><td>2026-11-22 历史趋势：近七日 +6,033 Star；全站日榜第 2</td><td>★★★★★</td></tr>
+<tr><td>7</td><td><a href="https://github.com/ag-ui-protocol/ag-ui" target="_blank" rel="noopener noreferrer">ag-ui-protocol/ag-ui</a></td><td>2026-11-22 历史趋势：近七日 +3,452 Star</td><td>★★★★★</td></tr>
+<tr><td>8</td><td><a href="https://github.com/dream-num/univer" target="_blank" rel="noopener noreferrer">dream-num/univer</a></td><td>2026-11-22 历史趋势：近七日 +5,799 Star</td><td>★★★★★</td></tr>
+<tr><td>9</td><td><a href="https://github.com/cloudflare/security-audit-skill" target="_blank" rel="noopener noreferrer">cloudflare/security-audit-skill</a></td><td>2026-11-22 归档：过去 30 天持续上榜（30/30）；不代表每日有 Release</td><td>★★★★★</td></tr>
+<tr><td>10</td><td><a href="https://github.com/nginx/nginx" target="_blank" rel="noopener noreferrer">nginx/nginx</a></td><td>2026-11-22 全站日榜第 7；未核实同日新版</td><td>★★★★★</td></tr>
+<tr><td>11</td><td><a href="https://github.com/D4Vinci/Scrapling" target="_blank" rel="noopener noreferrer">D4Vinci/Scrapling</a></td><td>2026-11-22 历史趋势：近七日 +1,721 Star</td><td>★★★★☆</td></tr>
+<tr><td>12</td><td><a href="https://github.com/debpalash/VoiceStudio" target="_blank" rel="noopener noreferrer">debpalash/VoiceStudio</a></td><td>2026-11-22 历史趋势：近七日 +5,218 Star</td><td>★★★★☆</td></tr>
+<tr><td>13</td><td><a href="https://github.com/spring-projects/spring-ai" target="_blank" rel="noopener noreferrer">spring-projects/spring-ai</a></td><td>企业工程精选；本期未确认 11/23 新正式版或同窗口 Star 增长</td><td>★★★★★</td></tr>
+<tr><td>14</td><td><a href="https://github.com/agentscope-ai/agentscope-java" target="_blank" rel="noopener noreferrer">agentscope-ai/agentscope-java</a></td><td>企业工程精选；本期未取得同窗口 Star 或新版本信号</td><td>★★★★★</td></tr>
+<tr><td>15</td><td><a href="https://github.com/openrewrite/rewrite" target="_blank" rel="noopener noreferrer">openrewrite/rewrite</a></td><td>企业工程精选；11/23 当日新正式版未核实</td><td>★★★★★</td></tr>
+</tbody></table></div></section><section id="repos"><h2>二、逐仓库完整分析</h2><p>每一项均包含官方地址、用途、技术栈、近期热度、优势、缺点、成熟度与维护、适用场景、关注建议和具体实验。</p><div class="controls"><input id="search" type="search" placeholder="搜索仓库、功能、技术、风险…" aria-label="仓库搜索"><button id="expand" type="button">展开全部</button><button id="collapse" type="button">折叠全部</button></div><nav aria-label="仓库目录">
+<a href="#repo-1">01 · HKUDS/CLI-Anything</a>
+<a href="#repo-2">02 · NVIDIA/SkillEvaluator</a>
+<a href="#repo-3">03 · Tencent/LoopForge</a>
+<a href="#repo-4">04 · Tracer-Cloud/opensre</a>
+<a href="#repo-5">05 · cursor/plugins</a>
+<a href="#repo-6">06 · obra/superpowers</a>
+<a href="#repo-7">07 · ag-ui-protocol/ag-ui</a>
+<a href="#repo-8">08 · dream-num/univer</a>
+<a href="#repo-9">09 · cloudflare/security-audit-skill</a>
+<a href="#repo-10">10 · nginx/nginx</a>
+<a href="#repo-11">11 · D4Vinci/Scrapling</a>
+<a href="#repo-12">12 · debpalash/VoiceStudio</a>
+<a href="#repo-13">13 · spring-projects/spring-ai</a>
+<a href="#repo-14">14 · agentscope-ai/agentscope-java</a>
+<a href="#repo-15">15 · openrewrite/rewrite</a>
+</nav>
+<details class="repo" id="repo-1" open><summary><span class="idx">01</span><span class="repo-name">HKUDS/CLI-Anything</span><span class="heat">2026-11-22 全站日榜第 3；同口径 Star 日增未核实</span></summary><div class="details">
+<p><strong>官方 GitHub 地址：</strong><a href="https://github.com/HKUDS/CLI-Anything" target="_blank" rel="noopener noreferrer">HKUDS/CLI-Anything</a></p>
+<p><strong>主要用途：</strong>将现有软件封装成可供 Coding Agent 调用的结构化命令行接口，减少对图形界面点击的依赖。</p>
+<p><strong>技术栈／语言：</strong>Python、CLI Harness、Shell、Agent 工具集成</p>
+<p><strong>近期热度与增长信号：</strong>2026-11-22 全站日榜第 3；同口径 Star 日增未核实</p>
+<p><strong>核心优点：</strong>CLI 便于测试、组合、记录执行日志，能明确处理错误码、重试和验收。</p>
+<p class="risk"><strong>主要缺点／局限：</strong>自动生成 CLI 不一定覆盖全部软件功能；文件写入、系统命令和外部进程存在权限风险，软件版本变化也可能使 Harness 失效。</p>
+<p><strong>成熟度与维护活跃度：</strong>成长阶段；公开实现和生态关注明显，但不同软件的适配质量需要独立测试。</p>
+<p><strong>适合人群／场景：</strong>Codex、Pi、Claude Code 与传统软件、桌面应用及旧系统集成。</p>
+<p><strong>是否值得我关注：</strong>★★★★★</p>
+<p><strong>行动建议：</strong>选择无敏感数据的测试程序生成 CLI，检查帮助、JSON 输出、错误码、重复执行和异常输入。</p>
+<p><strong>来源链接：</strong><a href="https://github.com/HKUDS/CLI-Anything" target="_blank" rel="noopener noreferrer">HKUDS/CLI-Anything</a> 官方 README／文档／公开活动</p>
+</div></details>
+<details class="repo" id="repo-2" open><summary><span class="idx">02</span><span class="repo-name">NVIDIA/SkillEvaluator</span><span class="heat">2026-11-22 历史趋势：近七日 +2,906 Star</span></summary><div class="details">
+<p><strong>官方 GitHub 地址：</strong><a href="https://github.com/NVIDIA/SkillEvaluator" target="_blank" rel="noopener noreferrer">NVIDIA/SkillEvaluator</a></p>
+<p><strong>主要用途：</strong>评估 Agent Skills/Plugins 的规范、安全、Harness 兼容、重复内容和真实 Agent 任务表现。</p>
+<p><strong>技术栈／语言：</strong>Python 3.12–3.14、CLI、静态扫描、语义相似度、Docker、Agent Evaluation、CI</p>
+<p><strong>近期热度与增长信号：</strong>2026-11-22 历史趋势：近七日 +2,906 Star</p>
+<p><strong>核心优点：</strong>把技能评估分为格式和安全、重复识别、任务有效性三层；部分第一层检查无需模型密钥，并提供 CI 模板。</p>
+<p class="risk"><strong>主要缺点／局限：</strong>完整评测需模型、扫描器和 Docker 等依赖，可能产生费用；合成测试与模型裁判有偏差。官方标注 Experimental，不应视为企业安全认证。</p>
+<p><strong>成熟度与维护活跃度：</strong>早中期；NVIDIA 官方维护，具备测试和 CI 文档，但无企业 SLA 承诺。</p>
+<p><strong>适合人群／场景：</strong>Codex、Pi、Claude Code Skills 仓库治理、插件质量门禁与升级测试。</p>
+<p><strong>是否值得我关注：</strong>★★★★★ · Top 1</p>
+<p><strong>行动建议：</strong>准备正常、重复和缺陷 Skill 各一个，先执行无密钥静态检查，再测量实际任务成功率，人工审查误判。</p>
+<p><strong>来源链接：</strong><a href="https://github.com/NVIDIA/SkillEvaluator" target="_blank" rel="noopener noreferrer">NVIDIA/SkillEvaluator</a> 官方 README／文档／公开活动</p>
+</div></details>
+<details class="repo" id="repo-3" open><summary><span class="idx">03</span><span class="repo-name">Tencent/LoopForge</span><span class="heat">2026-11-22 历史趋势：近七日 +4,290 Star</span></summary><div class="details">
+<p><strong>官方 GitHub 地址：</strong><a href="https://github.com/Tencent/LoopForge" target="_blank" rel="noopener noreferrer">Tencent/LoopForge</a></p>
+<p><strong>主要用途：</strong>将 CodeBuddy、Codex、Claude Code、脚本与人工审批编排为可重复的 Coding Agent 软件交付 SOP。</p>
+<p><strong>技术栈／语言：</strong>Go、Docker、Web 工作台、Coding Agent CLI、工作流编排</p>
+<p><strong>近期热度与增长信号：</strong>2026-11-22 历史趋势：近七日 +4,290 Star</p>
+<p><strong>核心优点：</strong>能把一次性聊天升级为需求、编码、测试、人工关卡和 PR 的可观察交付过程，便于复用与审计。</p>
+<p class="risk"><strong>主要缺点／局限：</strong>多 Agent 状态、密钥、仓库权限、容器边界和费用都需要治理；节点重试可能导致重复业务操作。</p>
+<p><strong>成熟度与维护活跃度：</strong>早中期；仓库持续开发、近期社区关注明显，尚未独立验证大规模生产稳定性。</p>
+<p><strong>适合人群／场景：</strong>小团队自动化开发、Codex/Claude Code 协作与持续交付。</p>
+<p><strong>是否值得我关注：</strong>★★★★★ · Top 2</p>
+<p><strong>行动建议：</strong>隔离测试仓库中构建“需求→编码→测试→审批→PR”，模拟测试失败、审批拒绝和执行中断。</p>
+<p><strong>来源链接：</strong><a href="https://github.com/Tencent/LoopForge" target="_blank" rel="noopener noreferrer">Tencent/LoopForge</a> 官方 README／文档／公开活动</p>
+</div></details>
+<details class="repo" id="repo-4" open><summary><span class="idx">04</span><span class="repo-name">Tracer-Cloud/opensre</span><span class="heat">2026-11-22 全站日榜第 13；2026-11-11 有正式 Release</span></summary><div class="details">
+<p><strong>官方 GitHub 地址：</strong><a href="https://github.com/Tracer-Cloud/opensre" target="_blank" rel="noopener noreferrer">Tracer-Cloud/opensre</a></p>
+<p><strong>主要用途：</strong>利用 CI/CD 失败、构建日志、近期代码变更与可观测证据，辅助诊断构建部署故障。</p>
+<p><strong>技术栈／语言：</strong>Python、CLI、LLM Tool Calling、CI/CD、日志与可观测性集成</p>
+<p><strong>近期热度与增长信号：</strong>2026-11-22 全站日榜第 13；2026-11-11 有正式 Release</p>
+<p><strong>核心优点：</strong>鼓励基于可追溯日志和变更证据诊断故障，可减少无效重跑；近期版本改进调查证据查询。</p>
+<p class="risk"><strong>主要缺点／局限：</strong>需要访问 CI、仓库和监控数据，权限敏感；模型可能误判根因。官方 Windows Release 安装说明要求 WSL，不能假设原生 PowerShell 安装。</p>
+<p><strong>成熟度与维护活跃度：</strong>活跃开发的成长项目，有持续 Release；连接器与部署兼容性需要逐项检查。</p>
+<p><strong>适合人群／场景：</strong>GitHub Actions、Maven CI、企业 SRE、DevOps 排障。</p>
+<p><strong>是否值得我关注：</strong>★★★★★ · Top 3</p>
+<p><strong>行动建议：</strong>构建故意失败的 Maven 单测流水线，对照人工调查检查根因和证据，不授予生产写权限。</p>
+<p><strong>来源链接：</strong><a href="https://github.com/Tracer-Cloud/opensre" target="_blank" rel="noopener noreferrer">Tracer-Cloud/opensre</a> 官方 README／文档／公开活动</p>
+</div></details>
+<details class="repo" id="repo-5" open><summary><span class="idx">05</span><span class="repo-name">cursor/plugins</span><span class="heat">2026-11-22 历史趋势：近七日 +1,961 Star；全站日榜第 5</span></summary><div class="details">
+<p><strong>官方 GitHub 地址：</strong><a href="https://github.com/cursor/plugins" target="_blank" rel="noopener noreferrer">cursor/plugins</a></p>
+<p><strong>主要用途：</strong>Cursor 官方插件规范与插件集合，将 Skills、规则、工具配置和工作流模块化打包。</p>
+<p><strong>技术栈／语言：</strong>TypeScript、JSON Manifest、Markdown、Agent Skills、MCP</p>
+<p><strong>近期热度与增长信号：</strong>2026-11-22 历史趋势：近七日 +1,961 Star；全站日榜第 5</p>
+<p><strong>核心优点：</strong>统一 Manifest、目录与安装方式，方便管理可复用的 Agent 能力。</p>
+<p class="risk"><strong>主要缺点／局限：</strong>插件可能扩大命令、源码及外部服务访问范围；安全质量与维护水平仍取决于每个插件。</p>
+<p><strong>成熟度与维护活跃度：</strong>官方持续维护，生态增长；各插件成熟度并不相同。</p>
+<p><strong>适合人群／场景：</strong>Cursor 插件开发、团队 Skills/Plugins/MCP 治理。</p>
+<p><strong>是否值得我关注：</strong>★★★★★</p>
+<p><strong>行动建议：</strong>审查一个官方插件的 plugin.json、所需权限、安装行为，与 Codex/Pi 的 Skill 结构对比。</p>
+<p><strong>来源链接：</strong><a href="https://github.com/cursor/plugins" target="_blank" rel="noopener noreferrer">cursor/plugins</a> 官方 README／文档／公开活动</p>
+</div></details>
+<details class="repo" id="repo-6" open><summary><span class="idx">06</span><span class="repo-name">obra/superpowers</span><span class="heat">2026-11-22 历史趋势：近七日 +6,033 Star；全站日榜第 2</span></summary><div class="details">
+<p><strong>官方 GitHub 地址：</strong><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener noreferrer">obra/superpowers</a></p>
+<p><strong>主要用途：</strong>向 Coding Agent 提供需求分析、实施计划、测试驱动开发、代码验证与交付收尾等可复用工程方法。</p>
+<p><strong>技术栈／语言：</strong>Shell、Markdown、Agent Skills、Hooks、CLI 集成</p>
+<p><strong>近期热度与增长信号：</strong>2026-11-22 历史趋势：近七日 +6,033 Star；全站日榜第 2</p>
+<p><strong>核心优点：</strong>能强化先规划、先测试、再实现、最后验收的开发流程，减少无证据宣称完成。</p>
+<p class="risk"><strong>主要缺点／局限：</strong>对简单任务可能增加步骤和模型费用；不同 Harness 的 Hooks 与规则执行效果不同。</p>
+<p><strong>成熟度与维护活跃度：</strong>中高；技能体系完整、社区采用广且持续维护；量化收益仍须实测。</p>
+<p><strong>适合人群／场景：</strong>Java 开发、复杂重构、Codex/Claude Code/Pi 质量工作流。</p>
+<p><strong>是否值得我关注：</strong>★★★★★</p>
+<p><strong>行动建议：</strong>对同一个 Java 小需求分别用普通 Agent 与 Superpowers，比较测试、缺陷、耗时和 Token 成本。</p>
+<p><strong>来源链接：</strong><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener noreferrer">obra/superpowers</a> 官方 README／文档／公开活动</p>
+</div></details>
+<details class="repo" id="repo-7" open><summary><span class="idx">07</span><span class="repo-name">ag-ui-protocol/ag-ui</span><span class="heat">2026-11-22 历史趋势：近七日 +3,452 Star</span></summary><div class="details">
+<p><strong>官方 GitHub 地址：</strong><a href="https://github.com/ag-ui-protocol/ag-ui" target="_blank" rel="noopener noreferrer">ag-ui-protocol/ag-ui</a></p>
+<p><strong>主要用途：</strong>标准化 Agent 与前端的文本流、Tool 事件、共享状态及人工批准等交互协议。</p>
+<p><strong>技术栈／语言：</strong>TypeScript、Python、事件协议、前端 SDK、Agent 适配器</p>
+<p><strong>近期热度与增长信号：</strong>2026-11-22 历史趋势：近七日 +3,452 Star</p>
+<p><strong>核心优点：</strong>减少不同 Agent Runtime 对前端事件的重复适配，使过程、运行状态与审批可视化。</p>
+<p class="risk"><strong>主要缺点／局限：</strong>协议不自动解决权限、断线重放、消息去重与业务幂等；客户端需做版本兼容性测试。</p>
+<p><strong>成熟度与维护活跃度：</strong>中高；协议、SDK、示例和社区集成持续维护。</p>
+<p><strong>适合人群／场景：</strong>企业 Agent 工作台、实时 Web 交互、人工审核。</p>
+<p><strong>是否值得我关注：</strong>★★★★★</p>
+<p><strong>行动建议：</strong>创建只读 Tool 网页，验证运行、工具事件、人工拒绝、断线和恢复。</p>
+<p><strong>来源链接：</strong><a href="https://github.com/ag-ui-protocol/ag-ui" target="_blank" rel="noopener noreferrer">ag-ui-protocol/ag-ui</a> 官方 README／文档／公开活动</p>
+</div></details>
+<details class="repo" id="repo-8" open><summary><span class="idx">08</span><span class="repo-name">dream-num/univer</span><span class="heat">2026-11-22 历史趋势：近七日 +5,799 Star</span></summary><div class="details">
+<p><strong>官方 GitHub 地址：</strong><a href="https://github.com/dream-num/univer" target="_blank" rel="noopener noreferrer">dream-num/univer</a></p>
+<p><strong>主要用途：</strong>为产品嵌入可编辑的表格、文档、公式计算和办公协作能力，适合承载 AI 的结构化输出。</p>
+<p><strong>技术栈／语言：</strong>TypeScript、Web Office SDK、Sheets/Docs、插件、公式引擎</p>
+<p><strong>近期热度与增长信号：</strong>2026-11-22 历史趋势：近七日 +5,799 Star</p>
+<p><strong>核心优点：</strong>AI 产出可让用户继续编辑、撤销、校验和保存，比静态答案更容易形成持续使用的工作台。</p>
+<p class="risk"><strong>主要缺点／局限：</strong>开源核心与商业模块存在功能边界；复杂公式、XLSX 导入导出及大文件性能需实测。</p>
+<p><strong>成熟度与维护活跃度：</strong>中高；工程模块和文档较完整，社区与版本持续发展。</p>
+<p><strong>适合人群／场景：</strong>AI 报表、数据分析、在线教学、可编辑办公产品。</p>
+<p><strong>是否值得我关注：</strong>★★★★★</p>
+<p><strong>行动建议：</strong>用模拟订单数据测试 Agent 修改后公式、撤销、持久化和导出。</p>
+<p><strong>来源链接：</strong><a href="https://github.com/dream-num/univer" target="_blank" rel="noopener noreferrer">dream-num/univer</a> 官方 README／文档／公开活动</p>
+</div></details>
+<details class="repo" id="repo-9" open><summary><span class="idx">09</span><span class="repo-name">cloudflare/security-audit-skill</span><span class="heat">2026-11-22 归档：过去 30 天持续上榜（30/30）；不代表每日有 Release</span></summary><div class="details">
+<p><strong>官方 GitHub 地址：</strong><a href="https://github.com/cloudflare/security-audit-skill" target="_blank" rel="noopener noreferrer">cloudflare/security-audit-skill</a></p>
+<p><strong>主要用途：</strong>让 Coding Agent 分阶段执行授权源码安全审计，记录覆盖范围并输出可独立验证的结构化结果。</p>
+<p><strong>技术栈／语言：</strong>Agent Skills、JavaScript、JSON Schema、多阶段 Agent 工作流</p>
+<p><strong>近期热度与增长信号：</strong>2026-11-22 归档：过去 30 天持续上榜（30/30）；不代表每日有 Release</p>
+<p><strong>核心优点：</strong>重视证据、覆盖范围和独立复核，可借鉴为普通 AI Coding 质量验收机制。</p>
+<p class="risk"><strong>主要缺点／局限：</strong>多轮验证耗时耗费模型资源，独立 Agent 判断并非绝对正确；只能用于授权项目。</p>
+<p><strong>成熟度与维护活跃度：</strong>方法设计较完整，社区关注持续；实际漏洞检出率需独立衡量。</p>
+<p><strong>适合人群／场景：</strong>DevSecOps、代码安全、Agent Skills 质量门禁。</p>
+<p><strong>是否值得我关注：</strong>★★★★★</p>
+<p><strong>行动建议：</strong>在公开练习仓库测试审计范围、发现证据及误报分类，避免扫描未经授权目标。</p>
+<p><strong>来源链接：</strong><a href="https://github.com/cloudflare/security-audit-skill" target="_blank" rel="noopener noreferrer">cloudflare/security-audit-skill</a> 官方 README／文档／公开活动</p>
+</div></details>
+<details class="repo" id="repo-10" open><summary><span class="idx">10</span><span class="repo-name">nginx/nginx</span><span class="heat">2026-11-22 全站日榜第 7；未核实同日新版</span></summary><div class="details">
+<p><strong>官方 GitHub 地址：</strong><a href="https://github.com/nginx/nginx" target="_blank" rel="noopener noreferrer">nginx/nginx</a></p>
+<p><strong>主要用途：</strong>高性能 HTTP 服务器、反向代理、负载均衡、缓存、TLS 终止与 TCP/UDP 转发。</p>
+<p><strong>技术栈／语言：</strong>C、事件驱动 I/O、HTTP/TLS、动态/静态模块与配置</p>
+<p><strong>近期热度与增长信号：</strong>2026-11-22 全站日榜第 7；未核实同日新版</p>
+<p><strong>核心优点：</strong>长期稳定、资源使用可控，适合 Docker 站点、服务入口及网关。</p>
+<p class="risk"><strong>主要缺点／局限：</strong>配置错误会导致重定向循环、TLS、缓存、真实客户端 IP 和代理头安全问题。</p>
+<p><strong>成熟度与维护活跃度：</strong>高；官方长期维护，文档和安全更新体系成熟。</p>
+<p><strong>适合人群／场景：</strong>Debian VPS、Docker、Cloudflare 源站、企业 Web 服务。</p>
+<p><strong>是否值得我关注：</strong>★★★★★</p>
+<p><strong>行动建议：</strong>在测试环境执行 nginx -t，验证 TLS、301/302、Host/X-Forwarded-*、缓存和真实 HTTP 跳转链。</p>
+<p><strong>来源链接：</strong><a href="https://github.com/nginx/nginx" target="_blank" rel="noopener noreferrer">nginx/nginx</a> 官方 README／文档／公开活动</p>
+</div></details>
+<details class="repo" id="repo-11" open><summary><span class="idx">11</span><span class="repo-name">D4Vinci/Scrapling</span><span class="heat">2026-11-22 历史趋势：近七日 +1,721 Star</span></summary><div class="details">
+<p><strong>官方 GitHub 地址：</strong><a href="https://github.com/D4Vinci/Scrapling" target="_blank" rel="noopener noreferrer">D4Vinci/Scrapling</a></p>
+<p><strong>主要用途：</strong>提供 HTTP 抓取、JavaScript 渲染、DOM 提取、异步并发爬取、CLI 与 MCP/Agent Skill 接口。</p>
+<p><strong>技术栈／语言：</strong>Python、HTTP、浏览器自动化、异步爬虫、MCP</p>
+<p><strong>近期热度与增长信号：</strong>2026-11-22 历史趋势：近七日 +1,721 Star</p>
+<p><strong>核心优点：</strong>整合多种网页采集方式，减少自己维护 DOM 解析与会话重试的工作。</p>
+<p class="risk"><strong>主要缺点／局限：</strong>反爬、动态页面及网络变化影响数据质量；须遵守网站条款、robots.txt 和个人信息规定，抓取成功不等于事实准确。</p>
+<p><strong>成熟度与维护活跃度：</strong>中等；文档和代码测试逐步完善，维护活跃。</p>
+<p><strong>适合人群／场景：</strong>公开技术资料、日报数据采集、RAG 预处理。</p>
+<p><strong>是否值得我关注：</strong>★★★★☆</p>
+<p><strong>行动建议：</strong>抓取三篇公开博客，评估正文完整率、发表时间、原文 URL、请求耗时和失败率。</p>
+<p><strong>来源链接：</strong><a href="https://github.com/D4Vinci/Scrapling" target="_blank" rel="noopener noreferrer">D4Vinci/Scrapling</a> 官方 README／文档／公开活动</p>
+</div></details>
+<details class="repo" id="repo-12" open><summary><span class="idx">12</span><span class="repo-name">debpalash/VoiceStudio</span><span class="heat">2026-11-22 历史趋势：近七日 +5,218 Star</span></summary><div class="details">
+<p><strong>官方 GitHub 地址：</strong><a href="https://github.com/debpalash/VoiceStudio" target="_blank" rel="noopener noreferrer">debpalash/VoiceStudio</a></p>
+<p><strong>主要用途：</strong>本地语音转写、语音合成、配音和音频制作工具，可连接本地 API/MCP。</p>
+<p><strong>技术栈／语言：</strong>Python、语音模型、GPU/CPU 推理、音频处理</p>
+<p><strong>近期热度与增长信号：</strong>2026-11-22 历史趋势：近七日 +5,218 Star</p>
+<p><strong>核心优点：</strong>本地处理利于保护素材，适合将语音工作流自动化并降低对云端服务的依赖。</p>
+<p class="risk"><strong>主要缺点／局限：</strong>效果依赖模型、语言、硬件和驱动；需要评估安装、内存、许可及授权声音素材，区分 AGPL 与商业授权。</p>
+<p><strong>成熟度与维护活跃度：</strong>中等；功能范围广、热度高，但各音频引擎稳定性不同。</p>
+<p><strong>适合人群／场景：</strong>AI 配音、短视频、播客、字幕和音频制作。</p>
+<p><strong>是否值得我关注：</strong>★★★★☆</p>
+<p><strong>行动建议：</strong>使用自己录制并授权的音频，测试转写及配音，记录错误率、耗时与硬件资源。</p>
+<p><strong>来源链接：</strong><a href="https://github.com/debpalash/VoiceStudio" target="_blank" rel="noopener noreferrer">debpalash/VoiceStudio</a> 官方 README／文档／公开活动</p>
+</div></details>
+<details class="repo" id="repo-13" open><summary><span class="idx">13</span><span class="repo-name">spring-projects/spring-ai</span><span class="heat">企业工程精选；本期未确认 11/23 新正式版或同窗口 Star 增长</span></summary><div class="details">
+<p><strong>官方 GitHub 地址：</strong><a href="https://github.com/spring-projects/spring-ai" target="_blank" rel="noopener noreferrer">spring-projects/spring-ai</a></p>
+<p><strong>主要用途：</strong>为 Spring 应用统一模型调用、结构化输出、RAG、Tool Calling 与 MCP 接入。</p>
+<p><strong>技术栈／语言：</strong>Java、Spring Boot、Maven、MCP、向量数据库</p>
+<p><strong>近期热度与增长信号：</strong>企业工程精选；本期未确认 11/23 新正式版或同窗口 Star 增长</p>
+<p><strong>核心优点：</strong>适合与企业 Spring 业务服务集成，降低模型供应商适配的重复开发。</p>
+<p class="risk"><strong>主要缺点／局限：</strong>新版本要核对兼容关系，RC 需独立验证；Tool 抽象不负责领域授权、事务、幂等和回滚。</p>
+<p><strong>成熟度与维护活跃度：</strong>Spring 生态成熟；新 AI 组件持续演进，按具体发布版本评估稳定性。</p>
+<p><strong>适合人群／场景：</strong>Java 企业 AI、RAG、MCP Server、业务 Tool Gateway。</p>
+<p><strong>是否值得我关注：</strong>★★★★★</p>
+<p><strong>行动建议：</strong>实现只读订单 Tool，验证 Schema、访问拒绝、超时、重试和 Session 并发。</p>
+<p><strong>来源链接：</strong><a href="https://github.com/spring-projects/spring-ai" target="_blank" rel="noopener noreferrer">spring-projects/spring-ai</a> 官方 README／文档／公开活动</p>
+</div></details>
+<details class="repo" id="repo-14" open><summary><span class="idx">14</span><span class="repo-name">agentscope-ai/agentscope-java</span><span class="heat">企业工程精选；本期未取得同窗口 Star 或新版本信号</span></summary><div class="details">
+<p><strong>官方 GitHub 地址：</strong><a href="https://github.com/agentscope-ai/agentscope-java" target="_blank" rel="noopener noreferrer">agentscope-ai/agentscope-java</a></p>
+<p><strong>主要用途：</strong>构建拥有会话状态、事件流、工具执行、人工审批和多 Agent 编排能力的 Java 长任务应用。</p>
+<p><strong>技术栈／语言：</strong>Java 17+、Maven、Agent Runtime、事件与持久化组件</p>
+<p><strong>近期热度与增长信号：</strong>企业工程精选；本期未取得同窗口 Star 或新版本信号</p>
+<p><strong>核心优点：</strong>适合分离模型推理与领域服务，开展长任务状态恢复和审批治理。</p>
+<p class="risk"><strong>主要缺点／局限：</strong>Agent 恢复状态不意味着业务副作用只执行一次；写库和消息发送仍需幂等或补偿。</p>
+<p><strong>成熟度与维护活跃度：</strong>中高；已有清晰的模块及版本演进，故障恢复和跨版本行为需要专项测试。</p>
+<p><strong>适合人群／场景：</strong>企业长任务 Agent、分布式工具执行、人工审批。</p>
+<p><strong>是否值得我关注：</strong>★★★★★</p>
+<p><strong>行动建议：</strong>写库成功后制造 Agent 超时和重试，检查重复记录、任务恢复和审批日志。</p>
+<p><strong>来源链接：</strong><a href="https://github.com/agentscope-ai/agentscope-java" target="_blank" rel="noopener noreferrer">agentscope-ai/agentscope-java</a> 官方 README／文档／公开活动</p>
+</div></details>
+<details class="repo" id="repo-15" open><summary><span class="idx">15</span><span class="repo-name">openrewrite/rewrite</span><span class="heat">企业工程精选；11/23 当日新正式版未核实</span></summary><div class="details">
+<p><strong>官方 GitHub 地址：</strong><a href="https://github.com/openrewrite/rewrite" target="_blank" rel="noopener noreferrer">openrewrite/rewrite</a></p>
+<p><strong>主要用途：</strong>使用 AST 与声明式 Recipe 自动执行 Java 代码、依赖和构建配置的批量迁移。</p>
+<p><strong>技术栈／语言：</strong>Java、Maven、Gradle、AST、Recipe</p>
+<p><strong>近期热度与增长信号：</strong>企业工程精选；11/23 当日新正式版未核实</p>
+<p><strong>核心优点：</strong>规则可版本化、重复执行、易于 Diff 审阅并能与 CI 编译测试结合。</p>
+<p class="risk"><strong>主要缺点／局限：</strong>语法改写正确不保证业务语义等价；反射、动态配置和环境依赖需要完整回归。</p>
+<p><strong>成熟度与维护活跃度：</strong>高；长期维护，企业迁移实践丰富。</p>
+<p><strong>适合人群／场景：</strong>JDK/Spring 升级、多模块 Maven 项目、技术债治理。</p>
+<p><strong>是否值得我关注：</strong>★★★★★</p>
+<p><strong>行动建议：</strong>在多模块测试工程执行一个 Recipe，核对 Diff、编译、单测和再次运行的幂等性。</p>
+<p><strong>来源链接：</strong><a href="https://github.com/openrewrite/rewrite" target="_blank" rel="noopener noreferrer">openrewrite/rewrite</a> 官方 README／文档／公开活动</p>
+</div></details>
+</section><section id="top3"><h2>三、今日 Top 3 与推荐理由</h2>
+<div class="top"><span class="idx">01</span><div><h3><a href="https://github.com/NVIDIA/SkillEvaluator" target="_blank" rel="noopener noreferrer">NVIDIA/SkillEvaluator</a></h3><p>把 Skills 从“凭感觉有用”转变为可测试、可衡量的资产。先用三个自建 Skill 对比静态规范、重复内容和真实任务成功率；注意 Python 版本、模型费用和 Experimental 支持级别。</p></div></div>
+<div class="top"><span class="idx">02</span><div><h3><a href="https://github.com/Tencent/LoopForge" target="_blank" rel="noopener noreferrer">Tencent/LoopForge</a></h3><p>让多个 Coding Agent 在可复用 SOP 中完成真实交付而不只是同时聊天。优先验证人审、节点失败恢复、重复执行和仓库访问边界。</p></div></div>
+<div class="top"><span class="idx">03</span><div><h3><a href="https://github.com/Tracer-Cloud/opensre" target="_blank" rel="noopener noreferrer">Tracer-Cloud/opensre</a></h3><p>使用 CI 日志、代码变更及运行证据解释交付失败。先通过故意失败的 Maven CI 验证根因，暂不开放生产自动修复权限。</p></div></div>
+<p>三者形成可实践的闭环：<b>SkillEvaluator 验证能力 → LoopForge 编排交付 → OpenSRE 调查失败</b>，分别解决质量、流程和可靠性问题。</p></section><section id="trends"><h2>四、五项技术趋势与架构判断</h2>
+<p><strong>趋势一：Skills 从配置文件变成持续测试的工程资产。</strong>SkillEvaluator、Superpowers 和 Cursor Plugins 分别关注质量、工程方法和打包规范；安装成功不能证明任务成功率提升。</p>
+<p><strong>趋势二：多 Agent 编排需要交付与权限治理。</strong>LoopForge 与 AG-UI 提供流程和事件展示，生产系统仍需身份授权、幂等、重试与人工审核。</p>
+<p><strong>趋势三：CI 排障成为独立 AI 应用场景。</strong>OpenSRE 的价值在于根据日志与变更证据调查原因，而不是反复重跑失败任务。</p>
+<p><strong>趋势四：数据与内容型 Agent 需要来源治理。</strong>Scrapling 支持采集、Univer 支持可编辑结果、VoiceStudio 支持音频，但采集许可、证据和素材授权不可省略。</p>
+<p><strong>趋势五：企业架构不能只追 Star。</strong>NGINX、Spring AI、AgentScope Java 和 OpenRewrite 解决不同层的系统可靠性，兼容、恢复和安全通常比热榜增长更关键。</p>
+</section><section id="actions"><h2>五、今日行动计划</h2><div class="table"><table><thead><tr><th>优先级</th><th>实验</th><th>建议投入</th><th>核心验收</th></tr></thead><tbody>
+<tr><td>P0</td><td>SkillEvaluator 三项 Skill 对照</td><td>45 分钟</td><td>规范、重复、任务成功率</td></tr>
+<tr><td>P0</td><td>LoopForge 最小 SOP</td><td>60 分钟</td><td>审批、重试、PR</td></tr>
+<tr><td>P0</td><td>OpenSRE Maven CI 排障</td><td>45 分钟</td><td>根因、日志证据</td></tr>
+<tr><td>P1</td><td>CLI-Anything 软件适配</td><td>40 分钟</td><td>命令、错误码、权限</td></tr>
+<tr><td>P1</td><td>Superpowers Java TDD</td><td>45 分钟</td><td>质量、耗时、成本</td></tr>
+<tr><td>P1</td><td>Cursor Plugins 安全审查</td><td>30 分钟</td><td>Manifest、权限</td></tr>
+<tr><td>P1</td><td>AG-UI 事件流</td><td>40 分钟</td><td>状态、断线、审批</td></tr>
+<tr><td>P1</td><td>Scrapling 公开博客采集</td><td>35 分钟</td><td>完整率、时间戳</td></tr>
+<tr><td>P1</td><td>Univer 可编辑报表</td><td>45 分钟</td><td>公式、撤销、导出</td></tr>
+<tr><td>P2</td><td>NGINX 测试配置审查</td><td>30 分钟</td><td>TLS、代理、跳转</td></tr>
+<tr><td>P2</td><td>VoiceStudio 本地配音</td><td>45 分钟</td><td>准确率、延迟、资源</td></tr>
+<tr><td>P2</td><td>Spring AI / AgentScope Java</td><td>60 分钟</td><td>权限、恢复、幂等</td></tr>
+<tr><td>P2</td><td>OpenRewrite Java Recipe</td><td>40 分钟</td><td>Diff、编译、单测</td></tr>
+</tbody></table></div><p><b>只有 90 分钟：</b>先完成 SkillEvaluator 的三个 Skill 对照（45 分钟），再用 OpenSRE 分析演示 Maven CI 故障（45 分钟），均不连接生产环境。</p></section><section id="sources"><h2>六、主要来源和准确性边界</h2>
+<p><a href="https://trend.ondo.sh/github/2026-11-22/en.html" target="_blank" rel="noopener noreferrer">GitHub 2026-11-22 历史趋势</a></p>
+<p><a href="https://github.com/trending" target="_blank" rel="noopener noreferrer">GitHub 官方 Trending</a></p>
+<p><a href="https://github.com/NVIDIA/SkillEvaluator" target="_blank" rel="noopener noreferrer">NVIDIA SkillEvaluator 官方说明</a></p>
+<p><a href="https://github.com/Tracer-Cloud/opensre/releases" target="_blank" rel="noopener noreferrer">OpenSRE Releases</a></p>
+<p><a href="https://github.com/D4Vinci/Scrapling" target="_blank" rel="noopener noreferrer">Scrapling README</a></p>
+<p><a href="https://github.com/debpalash/VoiceStudio" target="_blank" rel="noopener noreferrer">VoiceStudio README</a></p>
+<p>其他项目以各自官方仓库 README、开源文档与 Releases 为依据。未独立执行性能、安全检出率、Token 费用或商业收益 Benchmark。成长阶段、成熟度与关注等级是基于公开资料的工程判断；GitHub 历史热度不等于生产就绪。</p><div class="callout"><b>最终结论：</b>从 Agent Skills 评测、到多 Agent SOP、再到 CI 故障诊断，建立可验证的交付质量闭环，而非仅仅尝试更多模型与插件。</div></section><footer>AI Daily Hub · GitHub 热榜日报 · 2026-11-23 · UTF-8 · 自包含离线 HTML · 无外部 CDN 或图片</footer></main><script>const r=[...document.querySelectorAll("details.repo")];const q=document.getElementById("search");q.addEventListener("input",()=>{const s=q.value.toLowerCase().trim();for(const el of r){el.hidden=!el.textContent.toLowerCase().includes(s);if(s&&!el.hidden)el.open=true;}});document.getElementById("expand").onclick=()=>r.forEach(x=>x.open=true);document.getElementById("collapse").onclick=()=>r.forEach(x=>x.open=false);</script></body></html>
