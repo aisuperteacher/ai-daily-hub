@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>企业级应用架构与 AI 原生技术周报｜2026-11-23</title><style>
+:root{--paper:#f8fafc;--card:#ffffff;--ink:#182532;--muted:#536579;--blue:#175c7e;--accent:#167d84;--line:#e2e7ee;--code:#132330;--tag:#e9f4f5}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.84 system-ui,-apple-system,Segoe UI,PingFang SC,Microsoft YaHei,Noto Sans SC,sans-serif}a{color:var(--blue);text-underline-offset:3px;overflow-wrap:anywhere}a:hover{color:#0d8896}.masthead{background:#fff;border-bottom:1px solid var(--line);padding:35px max(22px,calc((100vw - 1230px)/2));}.eyebrow{font-size:12px;color:var(--accent);font-weight:800;letter-spacing:.08em}.masthead h1{max-width:1000px;margin:9px 0 10px;font-size:clamp(27px,3.4vw,40px);line-height:1.26}.masthead p{margin:0;color:var(--muted);font-size:13px}.shell{max-width:1280px;margin:auto;padding:28px 22px 72px;display:grid;grid-template-columns:238px minmax(0,1fr);gap:24px}.toc{position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}.toc strong{display:block;font-size:13px;margin-bottom:10px}.toc a{display:block;padding:9px 4px;border-top:1px solid #edf0f4;text-decoration:none;color:var(--muted);font-size:12px;line-height:1.5}.toc a:hover{color:var(--blue)}.article{min-width:0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:36px clamp(18px,4vw,58px);box-shadow:0 9px 28px #1e3a4c08}.article>h1:first-child{display:none}h2{font-size:clamp(19px,2.2vw,27px);line-height:1.4;margin:52px 0 20px;padding:0 0 13px;border-bottom:2px solid #dbeaed;scroll-margin-top:16px}h3{font-size:17px;line-height:1.5;margin:30px 0 11px;color:#174f68}p{margin:13px 0}strong{font-weight:750}blockquote{background:#f3f8fa;margin:22px 0;padding:12px 18px;border-left:4px solid #16818b}.table-wrap{width:100%;overflow-x:auto;margin:22px 0 30px;border:1px solid var(--line);border-radius:9px}table{border-collapse:collapse;width:100%;min-width:590px;font-size:13px;line-height:1.64}th,td{padding:11px 12px;vertical-align:top;text-align:left;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}th:last-child,td:last-child{border-right:0}tr:last-child td{border-bottom:0}th{background:#edf5f7;font-weight:750}tbody tr:nth-child(even){background:#fafcfd}pre{background:var(--code);color:#e3eff5;overflow:auto;padding:18px;border-radius:9px;font:12.5px/1.65 Consolas,Menlo,monospace}code{font-family:Consolas,Menlo,monospace;font-size:.90em;background:#eef4f6;padding:1px 3px;border-radius:4px;overflow-wrap:anywhere}pre code{background:none;padding:0;color:inherit}ul,ol{padding-left:26px}li{margin:8px 0}.foot{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}.actions{margin-top:13px}button{border:1px solid #b4ccd4;background:#f1f8f9;color:#174f68;border-radius:7px;padding:8px 12px;font-weight:700;cursor:pointer}@media(max-width:920px){.shell{display:block;padding:14px}.toc{position:static;max-height:none;margin-bottom:14px;padding:14px}.toc details:not([open]) nav{display:none}.toc summary{cursor:pointer;font-weight:700}.toc a{padding:7px 4px}.article{padding:20px 15px}.masthead{padding:25px 19px}h2{margin-top:40px}table{font-size:12px;min-width:520px}}@media(min-width:921px){.toc summary{display:none}}@media print{body{background:white}.masthead{padding:0 0 12px}.shell{display:block;padding:0}.toc,.actions{display:none}.article{border:0;box-shadow:none;padding:0}h2,h3{break-after:avoid}a{color:inherit;text-decoration:none}pre{white-space:pre-wrap}table{min-width:unset;font-size:10px}}
+</style></head><body><header class="masthead"><div class="eyebrow">DISTRIBUTED &amp; AI ARCHITECTURE WEEKLY · 2026 / 11 / 23</div><h1>企业级应用架构与 AI 原生技术周报</h1><p>研究窗口：2026 年 11 月 16—22 日（北京时间） · 完整离线报告 · 技术选型以业务场景为先</p></header><div class="shell"><aside class="toc"><details open><summary>报告目录</summary><nav><strong>目录 / CONTENTS</strong><a href="#section-1">一、本周 Top 5 架构雷达</a>
+<a href="#section-2">二、Top 1：Kubernetes kube-proxy IPVS 退出路线——网络升级不是改一个配置值</a>
+<a href="#section-7">三、Top 2：Temporal Sync-Head / Async-Tail——如何让 API 快速返回，又保留可靠的后续动作</a>
+<a href="#section-12">四、Top 3：Cloud Storage Object Enrichments——让非结构化对象直接承载 Agent 可用上下文</a>
+<a href="#section-17">五、Top 4：Aurora PostgreSQL Express 从互联网连接切换到 VPC——AI 原型升生产必须设计安全单向门</a>
+<a href="#section-22">六、Top 5：Confluent Cloud 事件流网络边界变化——允许外部访问后，安全边界由谁负责？</a>
+<a href="#section-27">七、跨场景架构决策矩阵</a>
+<a href="#section-28">八、可执行行动清单</a>
+<a href="#section-29">九、未来 1—3 年趋势：事实与研判分开</a>
+<a href="#section-30">十、本期结论与推荐阅读顺序</a></nav></details><div class="actions"><button type="button" onclick="window.print()">打印 / 保存 PDF</button></div></aside><main class="article"><h1>企业级应用架构与 AI 原生技术周报</h1>
+<p><strong>Distributed &amp; AI Architecture Weekly｜2026 年 11 月 23 日（星期一）</strong><br/>
+<strong>研究窗口：2026 年 11 月 16—22 日（北京时间）</strong><br/>
+<strong>主题：Kubernetes 网络数据面迁移、同步交易与持久异步执行的边界、对象存储原生 AI 上下文、数据库从原型走向私网、事件流出站网络治理。</strong></p>
+<p>本期只选择在研究窗口内发布、且确实影响工程决策的五项官方材料。排序按业务场景和架构影响，而非厂商或语言。上一期已分析的 Collector Batch Processor 迁移、GitHub 事故复盘、Temporal 跨集群 mTLS、AgentCore OAuth Discovery 和 GenAI Instrumentation Harness 不再重复。</p>
+<h2 id="section-1">一、本周 Top 5 架构雷达</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>官方新进展（发布日期）</th>
+<th>解决的关键场景</th>
+<th>本期判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0</td>
+<td>Kubernetes 计划在 1.40 默认停用 IPVS（11/16）</td>
+<td>K8s 服务网络兼容性与集群升级</td>
+<td>使用 IPVS 的团队立即清点，分阶段迁移</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Temporal Sync-Head / Async-Tail 生产案例（11/17）</td>
+<td>同步获取交易结果、异步可靠完成副作用</td>
+<td>有长尾操作的核心 API 值得 PoC</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Google Cloud Storage Object Enrichments 预览（11/19）</td>
+<td>大规模非结构化数据变成可检索的 Agent 上下文</td>
+<td>有海量对象资产的企业先做准确率与成本实验</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Aurora PostgreSQL Express 支持原地切入 VPC（11/19）</td>
+<td>AI/开发原型晋级生产的网络隔离</td>
+<td>使用该配置的团队评估迁移</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Confluent Cloud Custom SMT 外部访问 GA / PNI 扩展（11/20、11/19）</td>
+<td>事件流连接器调用 KMS、私有流处理/查询服务</td>
+<td>需要私网合规的流平台优先验证</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>本周最重要的架构判断：不要将“API 已返回成功”“执行状态可恢复”“对象有 AI 元数据”“数据库在私网”“消息处理可调用外部系统”混为一个承诺。它们对应不同的完成语义、一致性边界、故障域与安全授权。</strong></p>
+<h2 id="section-2">二、Top 1：Kubernetes kube-proxy IPVS 退出路线——网络升级不是改一个配置值</h2>
+<p><strong>官方来源：</strong> <a href="https://kubernetes.io/blog/2026/11/16/ipvs-removal/" rel="noopener noreferrer" target="_blank">Scheduling the removal of the kube-proxy IPVS backend（Kubernetes，2026-11-16）</a>；文中指向 <a href="https://github.com/kubernetes/enhancements/issues/5495" rel="noopener noreferrer" target="_blank">KEP-5495</a> 作为计划背景。<strong>事实核验：</strong> Kubernetes 1.35 已弃用 <code>ipvs</code> 模式；最新 KEP-5495 分阶段计划为：<strong>1.37</strong> 引入默认开启的 <code>KubeProxyIPVS</code> Feature Gate，<strong>1.40</strong> 将其默认关闭，<strong>1.43</strong> 锁定关闭并移除相关代码（1.46 清理 Feature Gate）。11 月 16 日的博客将 1.40 概括为移除时间点，细化执行阶段以 KEP 为准；这些均是未来计划，并非 2026-11-23 已完成。</p>
+<h3 id="section-3">真实业务场景与约束</h3>
+<p>支付、订单、风控和 AI 推理服务运行在 K8s 上，业务请求通过 Service、EndpointSlice 和 kube-proxy 的数据面规则抵达 Pod。集群可能已经使用 IPVS 多年，历史选型理由是规则匹配与大规模 Endpoint 更新性能。升级 Kubernetes、Linux 发行版或者内核时，团队不能只保证 Pod Running；必须验证 ClusterIP、NodePort、负载均衡、源地址处理、Service 会话行为和网络策略协同工作。</p>
+<h3 id="section-4">技术机制：为什么当初快，现在要退场</h3>
+<p>旧版 <code>iptables</code> 模式一度存在新建连接遍历规则与整表重写的扩展问题。IPVS 基于内核哈希结构、增量更新规避了部分问题，但内核 IPVS API 无法完整表达 Kubernetes Service 的全部语义；一些功能必须回落到 <code>iptables</code>。IPVS 不支持批量更新的限制，也会在大规模变化时产生性能问题。所谓 IPVS 调度器的优势亦有限，因为每个节点上的 kube-proxy 独立工作，并无全局共享的调度状态。</p>
+<p><code>nftables</code> 模式自 Kubernetes 1.29 引入、1.33 GA。<strong>官方推荐：集群不低于 Kubernetes 1.36、Linux 内核不低于 5.13 时，优先评估 nftables</strong>，因为重要的性能与扩展修正未全部回移到 1.36 之前的版本。旧集群或内核不能升级时，可先研究现代 <code>iptables</code> 模式。官方表示切换到 nftables 可修改 kube-proxy 配置并重启 Pods；切换至 iptables 时则建议逐节点重启，不能把二者的操作要求混同。</p>
+<h3 id="section-5">路线、取舍和架构影响</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>路线</th>
+<th>适用前提</th>
+<th>取舍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nftables</code></td>
+<td>K8s 1.36+、内核 5.13+ 的官方推荐组合</td>
+<td>更完整 Service 语义和良好扩展性；需验证 OS / CNI / kube-proxy 行为</td>
+</tr>
+<tr>
+<td>现代 <code>iptables</code></td>
+<td>K8s 或内核暂不能满足上面前提</td>
+<td>升级门槛较低，但极大规模 Service 更新时仍需关注 CPU 与延迟</td>
+</tr>
+<tr>
+<td>由 CNI 提供 eBPF Service 代理</td>
+<td>已采用 Cilium 等且明确替代 kube-proxy</td>
+<td>不必按传统代理路径切换，但必须核验 CNI 版本支持、Service 语义与故障恢复</td>
+</tr>
+</tbody>
+</table></div>
+<p>选择不是 Java、Go 或 Rust 的问题，而是集群网络契约问题。切换可能改变 Connection Tracking、SNAT、NodePort、本地流量策略和监控方式；不能直接套用官方性能图作为自己集群的 p99 保证。</p>
+<h3 id="section-6">风险、迁移与验证</h3>
+<p>先导出所有集群的 <code>kube-proxy</code> 模式、K8s 版本、节点内核与发行版；再在隔离测试集群运行 Service 功能矩阵，覆盖多节点流量、Endpoint 大量变化、长连接、滚动发布、网络策略以及应用真实 p95/p99。灰度切换一个节点池，监测连接失败率、Service 规则同步耗时、kube-proxy CPU 和回滚条件。生产环境需要提前确认托管 K8s 平台是否允许直接修改 kube-proxy ConfigMap。</p>
+<p><strong>最值得读：</strong> <em>Why was the ipvs backend written?</em>、<em>Why is it being deprecated?</em>、<em>Switching away from ipvs</em>。<strong>采用判断：使用 IPVS 的团队立即规划；不使用 IPVS 的团队只需记录升级兼容矩阵。</strong></p>
+<p><strong>未来 1—3 年研判：</strong> K8s 网络数据面的长期维护复杂度和 Service 语义完整性，会比单一基准测试性能更影响企业网络方案。不同 CNI/代理模式共存的组织将更重视端到端网络回归测试。</p>
+<h2 id="section-7">三、Top 2：Temporal Sync-Head / Async-Tail——如何让 API 快速返回，又保留可靠的后续动作</h2>
+<p><strong>官方来源：</strong> <a href="https://temporal.io/blog/fast-apis-with-durable-execution-using-temporal-update-with-start" rel="noopener noreferrer" target="_blank">The sync-head / async-tail pattern: fast APIs with durable execution using Temporal Update-With-Start（Temporal，2026-11-17）</a>。文章为 Azra AI 工程团队分享的生产案例，并非本周新发布的 Temporal SDK 大版本。</p>
+<h3 id="section-8">真实业务场景与约束</h3>
+<p>一个临床业务 API 接受用户确认，必须在亚秒级返回数据库中新建实体的 ID，但审计日志、关联系统通知、分析平台和外部注册表的操作需要可靠完成。电商订单、支付申请、库存预留、企业审批也有相同形态：用户需要同步知道“核心写入是否成功”，却不应该一直等待 Kafka、外部 Webhook 或下游系统恢复。</p>
+<h3 id="section-9">技术机制：一个 Workflow，两个失败预算</h3>
+<pre><code class="language-text">POST /business-action
+   │ UpdateWithStart（Workflow 不存在则启动，并发送 Update）
+   ▼
+Temporal Workflow
+   ├─ Sync Head：短超时、有限重试 → 数据库提交 → 返回业务 ID
+   │                                           └─ HTTP 200 给调用者
+   └─ Async Tail：审计 / 消息 / Webhook → 持久重试 → 告警或人工补偿
+</code></pre>
+<p>核心是 <code>UpdateWithStart</code> 将<strong>启动 Workflow 与提交 Update 请求</strong>组合到一次服务端原子操作。API 等待的是 <code>WorkflowUpdateStage.COMPLETED</code>，即 Head 产生业务结果，而不是只等 <code>ACCEPTED</code>。Head 采用 Fail-fast 策略（案例示意最多三次尝试）；Tail 可以使用指数退避、限时内重试，以及可观察的失败状态。<strong>这里的原子性只覆盖 Temporal 的 Start + Update 请求，不是 Temporal History 与业务数据库之间的跨系统 ACID 事务。</strong>即使 Update 验证或业务逻辑失败，新建的 Workflow 仍可能继续存在，需要明确清理和结束策略。</p>
+<p>Azra AI 报告其环境中的 Head 响应时间样本大约为 p50 <strong>268ms</strong>、p95 <strong>370ms</strong>、p99 <strong>454ms</strong>（样本量约 229 次）；这些是特定部署与负载下的工程测量，不能当成通用延迟 SLA。</p>
+<h3 id="section-10">路线、取舍与风险</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>路线</th>
+<th>优点</th>
+<th>约束和成本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Temporal Update-With-Start</td>
+<td>同一持久工作流内管理短路径与长尾恢复，易追踪步骤</td>
+<td>Workflow 控制面进入请求热路径，SDK 与 Worker 治理增加复杂度</td>
+</tr>
+<tr>
+<td>事务 Outbox + CDC（Debezium/Kafka）</td>
+<td>业务记录和 Outbox 事件在同一 DB 事务里提交，断连后可重放</td>
+<td>维护 Outbox/CDC、事件 Schema 与消费者幂等；长时 Saga 需另行编排</td>
+</tr>
+<tr>
+<td>数据库事务 + 独立状态机/队列</td>
+<td>可按具体需求最小实现、避免重型平台</td>
+<td>需要自己证明写入与任务投递的可靠性，谨防双写窗口</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>可靠性边界：</strong> Workflow 的重放和 Activity 重试不等于外部支付、发邮件、更新库存 Exactly-once。若 DB 已写入但 Worker 在记录完成前崩溃，Head 可能重试；必须用稳定 <code>workflowId</code>/业务请求 ID 的幂等约束防止重复写入。Tail 在最终超时后仍可能失败，必须告警、人工处理、重置或对账，不能把“已返回 200”宣称为全部下游已完成。</p>
+<h3 id="section-11">如何验证及升级影响</h3>
+<p>选择低风险的订单提交或审批动作，分别实现 Temporal 与 Outbox 版本。注入 Temporal 不可用、数据库 Deadlock、Head 写完即崩溃、Kafka 停机 10—40 分钟、重复 HTTP 请求、Workflow Reset，比较 p99、重复写入、审计一致率、恢复时间和运维成本。案例选择 Temporal 不可用时 <strong>hard-fail</strong>，不从正常路径悄悄降级为直接 DB + MQ 双写；这是一个业务取舍，应结合可用性目标评估。已有 Java/Spring/Micronaut 可通过 SDK 接入，Go、TypeScript、Python 则根据 SDK 能力采用同一业务模式。</p>
+<p><strong>最值得读：</strong> <em>The concept: sync-head / async-tail</em>、<em>Why UpdateWithStart?</em>、<em>What if a downstream outage outlasts the retry policy?</em>、<em>The fallback fallacy</em>、<em>Idempotency via conflict policies</em>。<strong>采用判断：跨领域写入、强审计且有长尾副作用的 API 值得 PoC；简单只读查询无须引入。</strong></p>
+<p><strong>未来 1—3 年研判：</strong> 统一接口调用平台将更清晰地区分“同步返回已提交状态”和“异步操作最终完成状态”，Durable Operation 可能成为企业能力目录的重要执行类型，但不会替代所有 RPC。</p>
+<h2 id="section-12">四、Top 3：Cloud Storage Object Enrichments——让非结构化对象直接承载 Agent 可用上下文</h2>
+<p><strong>官方来源：</strong> <a href="https://cloud.google.com/blog/products/storage-data-transfer/cost-effective-ai-context-extraction-from-unstructured-gcs-data" rel="noopener noreferrer" target="_blank">Introducing object enrichments: Transform unstructured data into agent-ready context（Google Cloud，2026-11-19）</a>。<strong>事实核验：</strong> 当前为 <strong>Preview</strong>；公告中提及的 Gemini 深度多模态增强需要另行申请或等待，不应误认为全部已 GA。</p>
+<h3 id="section-13">真实业务场景与约束</h3>
+<p>物流、保险、电商、制造和金融企业累积大量图片、PDF、音视频与扫描文件。Agent 处理一个订单争议，不可能每次把数千个对象原文全部发送给模型——这样会推高 Token、延迟、网络与推理费用。传统做法用事件总线 + Worker + OCR/图像识别 + 元数据数据库 + 向量检索库，但对象搬迁、删除后可能留下孤立元数据，并造成权限配置不一致。</p>
+<h3 id="section-14">技术机制：对象字节与上下文元数据同处一个治理边界</h3>
+<p>新功能在 Cloud Storage 中针对指定 Bucket/对象运行模型，生成图像标签、物体识别、面部检测、内容分类及 PDF 分类等结构化信息，并写回该对象的 <strong>Object Context</strong>（与对象关联的结构化键值上下文）。它可以随对象复制、移动和复制过程一起管理，在对象删除时一并清理，并通过 IAM 单独控制上下文读写。应用可按上下文过滤对象列表，或借助 Storage Insights 将上下文用于 BigQuery 分析；也可以让 Agent 通过 Cloud Storage MCP Server 在 IAM 约束下检索。</p>
+<pre><code class="language-text">PDF / Image / Media 对象 → Enrichment Job → Object Context
+                                         ├─ 对象过滤 / 搜索
+                                         ├─ BigQuery SQL 联合分析
+                                         └─ Agent MCP / RAG 检索
+</code></pre>
+<p>产品公告给出的<strong>公开示例定价</strong>是 1,000 万张图片或 PDF 约 <strong>700 美元</strong>（对应所列基础模型与价格条件），并宣称某些图像标注场景相对其他云供应商同类服务可节省 75%。这些是供应商公告条件下的示例/比较，不等于任意模型、区域或复杂 Gemini 推理均为此价格。</p>
+<h3 id="section-15">竞争路线与架构取舍</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>路线</th>
+<th>适用场景</th>
+<th>主要取舍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GCS Object Enrichments + Object Context</td>
+<td>对象已在 GCS，重视统一生命周期和权限</td>
+<td>托管简单、上下文紧贴原对象；预览可用范围、模型灵活性和云锁定需评估</td>
+</tr>
+<tr>
+<td>S3/Azure Blob + EventBridge/Event Grid + Lambda/Functions + 元数据表</td>
+<td>跨多种模型、复杂业务元数据和控制流程</td>
+<td>更灵活，可移植性由抽象层决定；队列重试、删除清理、治理成本更高</td>
+</tr>
+<tr>
+<td>MinIO/对象存储 + Kafka + Flink/Worker + PostgreSQL/向量库</td>
+<td>私有部署、数据驻留或自定义模型推理</td>
+<td>权限与一致性更可控但需自建运维、回填、重试与版本追踪</td>
+</tr>
+</tbody>
+</table></div>
+<p>结构化对象标签不等于 RAG 的完整知识库：复杂跨文档问答仍可能需要 OCR 文本、分块、Hybrid Retrieval、重排、证据引用与授权过滤。</p>
+<h3 id="section-16">风险、验证与采用建议</h3>
+<p>核心风险是识别错误被 Agent 当成事实、对象更新后上下文陈旧、敏感图片/文件被未经授权的角色访问，以及基于 Object Context 的索引同步落后。建议构造带真值标签的 1,000 个公开或脱敏对象，对比分类 Precision/Recall、长尾对象处理时延、每百万对象成本、对象覆盖更新与删除后的上下文一致性，以及不同 IAM Role 的可见范围。还应明确预览期 SLA、区域、模型与数据处理位置，不能将宣传例子直接代入生产预算。</p>
+<p><strong>最值得读：</strong> <em>Agents need context, not raw bytes</em>、<em>Key benefits</em>、<em>Context lives where the bytes live</em>、<em>Get started</em>。<strong>采用判断：有海量多模态对象的 GCS 用户值得进行小规模评测；对强监管关键流程仍应保留人工抽检和证据链。</strong></p>
+<p><strong>未来 1—3 年研判：</strong> 对象存储将更多内建 AI 元数据加工与检索索引能力，但对于高准确性、细粒度授权和跨对象推理的工作负载，专用检索层仍可能不可替代。</p>
+<h2 id="section-17">五、Top 4：Aurora PostgreSQL Express 从互联网连接切换到 VPC——AI 原型升生产必须设计安全单向门</h2>
+<p><strong>官方来源：</strong> <a href="https://aws.amazon.com/blogs/database/from-instant-aurora-postgresql-databases-to-production-ready-in-your-vpc/" rel="noopener noreferrer" target="_blank">From instant Aurora PostgreSQL databases to production-ready in your VPC（AWS Database Blog，2026-11-19）</a>。<strong>事实核验：</strong> 这是针对 <strong>Aurora PostgreSQL Express Configuration</strong> 的网络切换能力，不可推断所有 Aurora/RDS 配置都具备相同行为。</p>
+<h3 id="section-18">真实业务场景与约束</h3>
+<p>AI Coding Agent 为新工具创建了一个可立即连接的 Aurora PostgreSQL Express 实例，原型阶段通过互联网接入网关与 IAM 数据库认证访问。进入生产后要求 VPC 私网、Security Group、RDS Proxy、Global Database、Blue/Green 等更成熟的运维能力。过去常需快照恢复到新集群、迁移数据、切换 Endpoint 与应用配置，带来时间窗口与风险。</p>
+<h3 id="section-19">本周变化与原理</h3>
+<p>现在可以通过一次 <code>modify-db-cluster</code> 操作把 Express 集群切入 VPC 模式，<strong>保留原数据与 Endpoint 名称</strong>，同时关闭 Internet Access Gateway。连接端的 DNS 解析结果变化，现有数据库连接会短暂断开并需要重连；“Endpoint 不变”不等于网络不中断。系统也支持从一开始创建 VPC 模式的 Express 实例。</p>
+<pre><code class="language-text">原型：Agent / Client → Internet Access Gateway → Aurora Express
+生产：App / Agent → VPC 路由 + Security Group → 同一 Aurora 集群
+                            （数据与 Endpoint 名称保留）
+</code></pre>
+<p>关键配置检查包括：各可用区拥有足够 IP 的 DB Subnet Group、入站 5432 的 Security Group、无状态 Network ACL 的回程端口、每类调用者到 VPC 的私网路径、DNS TTL、TLS 信任链。<strong>连接直接 Aurora 时使用 RDS 证书，原 Internet Gateway 连接的证书信任链不同</strong>，使用 <code>sslmode=verify-full</code> 的客户端必须核验 CA Bundle。</p>
+<h3 id="section-20">权限、安全与方案比较</h3>
+<p>AWS 引入单独 IAM 权限来控制进入/离开 VPC 的方向，例如切入需要 <code>rds:EnableVpcNetworking</code>、<code>rds:DisableInternetAccessGateway</code> 以及相关 <code>rds:ModifyDBCluster</code> 权限。可允许 Agent 把数据库<strong>收紧到私网</strong>，但不给它将数据库重新暴露公网的权限。迁出 VPC 还涉及不同权限和认证约束，若激活了依赖 VPC 的 RDS Proxy、Global Database、Blue/Green 等功能，需要先处理相关依赖。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>路线</th>
+<th>优点</th>
+<th>主要风险</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Express 原地改为 VPC</td>
+<td>不迁移数据或更换 Endpoint，缩短原型晋级生产流程</td>
+<td>现有连接中断、网络和 TLS 前置条件复杂，AWS 依赖</td>
+</tr>
+<tr>
+<td>新建私网数据库 + 备份/逻辑迁移</td>
+<td>流程通用、可同时设计表结构和资源隔离</td>
+<td>数据校验、复制落后、切换窗口、应用 Endpoint 变更</td>
+</tr>
+<tr>
+<td>自管 PostgreSQL/其他云私网数据库</td>
+<td>可以结合既有私有网络与合规策略</td>
+<td>容灾、升级、备份、观测和权限维护由团队承担</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="section-21">风险验证与阅读建议</h3>
+<p>官方要求使用 <strong>2026-11-19 及之后发布、支持该参数的 AWS CLI/Boto3</strong>。上线前需要分别验证从 EC2、应用服务、管理终端和 Agent Tool 到 VPC 的路径；测试现有连接断开、连接池重建、DNS TTL、TLS <code>verify-full</code>、故障自动回退和监控告警。某些前置条件错误可能导致 Aurora 拒绝或回滚变更，应核查 RDS Events；不能把“自动回退”当作无中断保证。</p>
+<p><strong>最值得读：</strong> <em>How the connection changes</em>、<em>Before you move</em>、<em>Move the cluster</em>、<em>Move the cluster back</em>。<strong>采用判断：使用该 Express Configuration 的团队可尽早评估；其他 PostgreSQL 部署只需借鉴原型转生产的网络治理和最小权限思想。</strong></p>
+<p><strong>未来 1—3 年研判：</strong> AI Agent 自动创建基础设施越普遍，越需要“默认便于开发，生产阶段按权限和网络策略收紧”的可验证迁移机制，而不是授予 Agent 长期管理公网暴露的能力。</p>
+<h2 id="section-22">六、Top 5：Confluent Cloud 事件流网络边界变化——允许外部访问后，安全边界由谁负责？</h2>
+<p><strong>官方来源：</strong> <a href="https://docs.confluent.io/cloud/current/release-notes/" rel="noopener noreferrer" target="_blank">Confluent Cloud Release Notes（2026-11-19、11-20）</a>；<a href="https://docs.confluent.io/cloud/current/connectors/configure-custom-single-message-transforms/custom-smt-external-egress.html" rel="noopener noreferrer" target="_blank">Enable External Network Calls from Custom SMTs</a>；<a href="https://docs.confluent.io/cloud/current/networking/aws-pni.html" rel="noopener noreferrer" target="_blank">Use Private Network Interface on Confluent Cloud</a>。<strong>事实核验：</strong> 11 月 20 日 Release Notes 宣布 Custom SMT External Egress 在 fully managed connectors 上 <strong>GA</strong>；目前某些说明页仍留有之前 Limited Availability 的措辞，应以最新公告、账户 Region 与支持矩阵核验，不把旧文档当成现行普遍授权。</p>
+<h3 id="section-23">真实业务场景与约束</h3>
+<p>Kafka CDC/Connector 在推送支付、客户或订单事件时可能需要调用 KMS、Secret Store、Tokenization 或数据补充接口。过去为了让 Connector 调用外部服务，团队往往拆出额外处理服务或流处理作业。另一方面，企业要求 Kafka、Flink、Iceberg Catalog、低延迟查询服务之间的数据面尽量使用私网，不经公网出口。</p>
+<h3 id="section-24">本周变化与具体机制</h3>
+<p>11 月 20 日：Confluent Cloud fully managed Connector 的 Custom Single Message Transform（SMT）获得 External Egress GA。默认情况下 Custom SMT 不允许外部网络访问；启用时由 Connector 配置 <code>csmt.egress.enable=true</code> 开启，适用于调用 KMS、密钥存储或补充 API。官方文档列出的前置条件包括已上传 Custom SMT Artifact、外部服务在同一区域；如访问 AWS 私有端点，还可能需要 Egress PrivateLink Endpoint。配置通过 CLI、REST API 或 Terraform，而非仅点击控制台。</p>
+<p>11 月 19 日：在 AWS 上，现有 Private Network Interface（PNI）连接的覆盖范围扩展至 Confluent Cloud for Apache Flink、Tableflow Iceberg REST Catalog、Lightning Tables。适用于已通过 PNI 连接 Enterprise 或 Freight 集群的架构；可以复用同一 PNI，而非再建立每个服务独立的 PrivateLink。<strong>PNI 不是所有 Kafka 集群类型或所有云上环境都通用的私网能力。</strong></p>
+<h3 id="section-25">两条不同技术路线及取舍</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>路线</th>
+<th>优点</th>
+<th>成本/风险</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>托管 Connector + Custom SMT External Egress</td>
+<td>记录级轻量转换与 KMS/Enrichment 调用集中实现</td>
+<td>每条消息的外部 RTT、超时、重试和机密泄露可能直接卡住 Connector</td>
+</tr>
+<tr>
+<td>Kafka → Flink/Streams 独立 Enrichment 服务</td>
+<td>可以统一批处理、缓存、重试、隔离慢速 API</td>
+<td>多一层状态与部署，可能增加处理延迟、成本和重放复杂性</td>
+</tr>
+<tr>
+<td>AWS PNI 私网访问 Flink/Tableflow/Lightning</td>
+<td>降低多服务私网连接配置复杂度，复用 ENI 路径</td>
+<td>AWS、集群类型、VPC 路由与 Security Group 限制；部署与排障要求更高</td>
+</tr>
+</tbody>
+</table></div>
+<p>这里的关键原则是：<strong>SMT 运行在数据管道的关键路径上，允许它访问外部网络，就必须把外部端点当成可能拖慢整条流的故障依赖。</strong> 不应把重型、不可预测延迟或可能产生不可逆副作用的业务逻辑塞进 SMT。</p>
+<h3 id="section-26">安全、可靠性、兼容与验证</h3>
+<p>为外部请求设置连接与读取超时、有限重试、错误日志和清晰的 Dead Letter/跳过策略；对密钥服务实行最小权限、固定目标地址和 egress allowlist（具体支持形式需核对环境）。测试外部 KMS 不可用、HTTP 429、DNS 失败、TLS 证书变更、Kafka Rebalance 与重复投递。必须检查日志中是否意外记录明文敏感字段。对 PNI 路线，验证 ENI 的 Security Group、DNS、路由、区域与集群类型、失败切换和审计权限。</p>
+<p><strong>最值得读：</strong> Release Notes 中 <em>November 20 / November 19, 2026</em>，Custom SMT 文档的 <em>Prerequisites</em>、<em>Limitations</em>、<em>Best practices</em>，PNI 文档的 <em>Considerations</em> 与 <em>Access services over PNI</em>。<strong>采用判断：需要事件级 KMS/Enrichment 或 AWS 私网访问流数据能力时值得试验；超高吞吐或核心资金操作先比较独立流处理服务的隔离优势。</strong></p>
+<p><strong>未来 1—3 年研判：</strong> 流平台可能把更多上下文与密钥访问移入托管连接器，但企业仍需显式设计外部依赖故障预算和私网数据边界；对资金等高价值事件，审计与幂等会继续留在领域层。</p>
+<h2 id="section-27">七、跨场景架构决策矩阵</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>业务决策</th>
+<th>先确认业务不变量</th>
+<th>优先候选</th>
+<th>必须验证</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>K8s 升级与服务网络</td>
+<td>路由语义、既有长连接、集群支持边界</td>
+<td>nftables / iptables / 支持的 eBPF Service 代理</td>
+<td>Service 行为、p99、切换与回滚</td>
+</tr>
+<tr>
+<td>同步事务 + 长尾动作</td>
+<td>HTTP 何时算成功、尾部可延迟多久</td>
+<td>Temporal Update-With-Start / Outbox CDC</td>
+<td>DB 幂等、失败后事件完整率、双写窗口</td>
+</tr>
+<tr>
+<td>Agent 查询海量非结构化资料</td>
+<td>数据驻留、可见权限、误判代价</td>
+<td>Object Context / 自建 ETL + 索引</td>
+<td>Precision/Recall、删除同步、成本</td>
+</tr>
+<tr>
+<td>AI 原型数据库转生产</td>
+<td>哪些主体可以连库、禁止公网暴露</td>
+<td>Aurora Express → VPC / 新建私网实例</td>
+<td>连接中断、DNS、TLS 与 IAM</td>
+</tr>
+<tr>
+<td>托管事件流调用外部系统</td>
+<td>外部服务超时预算、消息重放语义</td>
+<td>SMT Egress / Flink/Streams Enrichment</td>
+<td>背压、密钥安全、死信与私网连通性</td>
+</tr>
+</tbody>
+</table></div>
+<p>架构不要先以 Java/Spring、Go、云平台或某个 AI Framework 划分阵营。对核心交易，先确定是否必须原子提交与幂等；对数据平台，先确定重放、权限与新鲜度；对 Agent，先确定允许的副作用和审计边界，再决定用什么语言或基础设施。</p>
+<h2 id="section-28">八、可执行行动清单</h2>
+<ul>
+<li><strong>当天执行：</strong> 如果运行 Kubernetes IPVS，生成集群与内核版本清单，建立面向 1.40 默认停用及 1.43 计划移除的迁移路线；若使用托管 K8s，先核对提供商的 kube-proxy 可配置性。</li>
+<li><strong>本周验证：</strong> 实现一个订单/审批 Sync-Head / Async-Tail PoC，模拟“数据库已写入、消息服务断开、Worker 崩溃、调用方重试”，证明不会重复写入和漏审计。</li>
+<li><strong>数据评测：</strong> 从公开/脱敏图片和 PDF 构造标注样本，比较 GCS Enrichment 与自建处理链的准确率、吞吐、每千对象费用、IAM 隔离和删除一致性。</li>
+<li><strong>安全收敛：</strong> 为 AI 原型数据库绘制连接方清单，测试网络收紧后的 DNS/TLS/连接池行为，并审核 Agent 能否将私网数据库重新开放公网。</li>
+<li><strong>事件流可靠性：</strong> 在隔离环境把外部 Enrichment/KMS 延迟提升到数秒，检查 SMT 是否使 Connector 积压，并验证有限重试、告警和故障恢复。</li>
+</ul>
+<p>建议先完成 <strong>K8s IPVS 存量清查</strong>（有明确未来破坏性兼容节点），其次做 <strong>同步核心事务 + 异步副作用</strong>实验（对支付、订单、Agent 工具执行都有长期价值）。</p>
+<h2 id="section-29">九、未来 1—3 年趋势：事实与研判分开</h2>
+<p><strong>已经确认的事实：</strong> Kubernetes SIG Network 公布了 IPVS 的弃用/计划移除路线；Temporal 11/17 公开了 Sync-Head/Async-Tail 的真实工程案例；Google 11/19 推出 Preview 级对象上下文增强；AWS 11/19 提供 Express 数据库原地切入 VPC；Confluent 11/19—20 扩展了私网服务接入并宣布 Custom SMT External Egress GA。这些不代表所有厂商方案都已经普遍 GA，也不代表案例指标可直接复制。</p>
+<p><strong>研判一——网络数据面会收敛到语义正确、生命周期可维护的实现。</strong> 高性能不是唯一目标，跨版本兼容和故障时的可解释性将成为升级评审重点。</p>
+<p><strong>研判二——业务接口契约将出现更清晰的两阶段语义。</strong> “核心状态已提交”和“审计、通知、外部动作已最终完成”会分别被治理，可靠性预算进入 API 契约。</p>
+<p><strong>研判三——对象存储将部分吸收 AI 预处理能力。</strong> 通用分类和标签可能成为数据底座能力，但复杂 RAG/跨文档推理仍需独立质量评测与检索治理。</p>
+<p><strong>研判四——AI 生成的基础设施必须有自动化生产化安全门槛。</strong> 从快速创建数据库到符合企业私网、IAM、备份、TLS 和审计要求，仍然需要经过不可绕过的权限和合规检查。</p>
+<p><strong>研判五——托管事件流会越来越多地引入外部调用和私网能力。</strong> 这改善开发体验，但把更多外部失败路径带入流处理热路径；SLO、背压和重放治理的重要性随之提升。</p>
+<h2 id="section-30">十、本期结论与推荐阅读顺序</h2>
+<p>本周五项变化都在强化同一个架构原则：<strong>减少无意义的耦合，但明确真正需要协调和证明的业务状态。</strong> Kubernetes 解决 Service 数据面的生命周期，Temporal 解决同步结果与异步过程的衔接，GCS 探索对象与上下文的同生命周期治理，Aurora 将原型到生产网络治理变成可操作变更，Confluent 则暴露了管道内外部网络调用的明确风险。</p>
+<p><strong>推荐顺序：</strong> 首先检查自己的 Kubernetes 代理模式；其次精读 Temporal 的 <code>UpdateWithStart</code> 原子性边界和外部副作用幂等；然后根据业务选择 GCS 对象上下文、Aurora VPC 迁移或 Confluent 私网/SMT 实验。最终验收标准不应是新功能配置成功，而应是<strong>一致性、安全性、故障恢复和成本在真实业务约束下可以重复验证</strong>。</p>
+<div class="foot">本报告依据 2026 年 11 月 16—22 日官方公开资料整理；部分未来计划或预览能力可能变化，生产前请核验原文及支持矩阵。报告内容和样式可离线阅读，外部官方资料链接需要联网打开。</div></main></div></body></html>
