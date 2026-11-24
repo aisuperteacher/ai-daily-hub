@@ -1,0 +1,394 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Dev Tools Daily Brief — 2026-11-25</title><style>html{scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;background:#fffdf4;color:#182136;font:15px/1.75 system-ui,-apple-system,"Microsoft YaHei",sans-serif}header{background:#ffdb48;border-bottom:5px solid #182136;padding:32px max(18px,calc((100vw - 1140px)/2));background-image:radial-gradient(#dfad57 1px,transparent 1px);background-size:15px 15px}header b{font-size:clamp(30px,5vw,55px);line-height:1.1;display:block}header small{font-family:monospace;letter-spacing:.12em}.layout{max-width:1200px;margin:auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:28px;padding:24px 18px 70px}nav{position:sticky;top:12px;align-self:start;max-height:90vh;overflow:auto;background:white;border:2px solid #182136;padding:14px;box-shadow:5px 5px 0 #f6a4b9}nav a{display:block;padding:4px 0;border-bottom:1px dashed #ccc;font-size:13px;text-decoration:none}.level3{padding-left:13px;color:#4a5468}main{min-width:0}main h1{display:none}h2{background:#182136;color:white;padding:12px 16px;font-size:25px;box-shadow:5px 5px 0 #f6a4b9;margin:35px 0 20px}h3{border-left:7px solid #ffdb48;padding-left:12px;font-size:19px;margin:28px 0 12px}p{overflow-wrap:anywhere;margin:12px 0}a{color:#07568e}code{font-family:Consolas,monospace}pre{background:#192131;color:white;padding:17px;overflow:auto;border:2px solid #111;line-height:1.65;font-size:12px;white-space:pre}pre code{font:inherit}.scroll{overflow:auto;border:2px solid #182136}table{width:100%;border-collapse:collapse;min-width:660px;font-size:13px}th,td{padding:10px;border:1px solid #999;text-align:left;vertical-align:top}th{background:#f6a4b9}tr:nth-child(even){background:#f5efdf}details{border:2px solid #182136;background:white;padding:12px;margin:25px 0}details pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f9f6ec;color:#182136;border:0}summary{cursor:pointer;font-weight:bold}@media(max-width:850px){.layout{display:block}nav{position:static;max-height:240px;margin-bottom:20px}h2{font-size:21px}h3{font-size:17px}}</style></head><body><header><small>OFFICIAL RELEASE TRACKER / 2026-11-25 / BEIJING</small><b>AI DEV TOOLS<br>DAILY BRIEF</b><p>完整工程简报 · 安全 / 兼容 / Agent Runtime</p></header><div class="layout"><nav><strong>目录 CONTENTS</strong><a class="level2" href="#s2">一、版本核验</a><a class="level2" href="#s3">二、Gemini CLI 0.71.1：A2A 安全升级具有明确兼容影响</a><a class="level3" href="#s4">2.1 A2A Server 强制 Bearer Token、Host/Origin 校验</a><a class="level3" href="#s5">2.2 PowerShell 命令解析不再阻塞 Spinner</a><a class="level2" href="#s6">三、Claude Code 2.1.331：Windows 策略、Hooks、Plugins 与 Code Mode</a><a class="level3" href="#s7">3.1 Windows 注册表托管策略启动优先级</a><a class="level3" href="#s8">3.2 Hooks、Skills 权限与多 Agent 审批</a><a class="level3" href="#s9">3.3 Plugin 安装、依赖与 11 月 30 日策略预警</a><a class="level3" href="#s10">3.4 Code Mode 云 Provider、权限恢复与内存</a><a class="level3" href="#s11">3.5 Gateway、MCP、Headless 和文件完整性</a><a class="level3" href="#s12">3.6 IDE/Windows 其它实用修复</a><a class="level2" href="#s13">四、Codex CLI 0.172.0：MCP、Sandbox 和 SDK</a><a class="level3" href="#s14">4.1 Optional Stdio MCP 默认延迟启动</a><a class="level3" href="#s15">4.2 单工具审批 Reviewer</a><a class="level3" href="#s16">4.3 Resume 沙箱权限和跨 OS 工作区恢复</a><a class="level3" href="#s17">4.4 Code Mode gRPC、模型迁移与 Provider 错误</a><a class="level2" href="#s18">五、OpenCode 2.4.0 与 2.4.1：Agent 自动化与插件生态发生实质变化</a><a class="level3" href="#s19">5.1 Automation 与 MCP Events</a><a class="level3" href="#s20">5.2 Desktop Browser 与持久化身份</a><a class="level3" href="#s21">5.3 Plugins 自动更新、TUI 与 SDK 接口</a><a class="level3" href="#s22">5.4 MCP 协商与 Provider 认证</a><a class="level3" href="#s23">5.5 Compaction、模型速度和存储</a><a class="level3" href="#s24">5.6 工具改名与视频任务</a><a class="level2" href="#s25">六、Pi、Cursor、xAI：发行状态及未发布风险</a><a class="level3" href="#s26">Pi 1.6.0：仓库问题不能当成新版本</a><a class="level3" href="#s27">Cursor</a><a class="level3" href="#s28">xAI Grok</a><a class="level2" href="#s29">七、Windows PowerShell 5.1/7 检查与行动</a></nav><main><h1 id="s1">AI Dev Tools Daily Brief — 2026-11-25</h1>
+<p>核验基准：北京时间 2026-11-25 07:01；由于 11 月 24 日日报未在仓库归档，本期从最近已归档的 11 月 23 日向前追溯，补报漏掉的正式版本，保留原发布日期，不伪称全部是今日发布。</p>
+<p>今日优先级：Gemini CLI 0.71.1 的 A2A 认证和输入校验、Claude Code 2.1.331 的 Windows 管理策略与权限/插件修复、OpenCode 2.4.0–2.4.1 的自动化和插件更新机制、Codex CLI 0.172.0 的 MCP 延迟启动及恢复时的沙箱权限。</p>
+<h2 id="s2">一、版本核验</h2>
+<div class="scroll"><table>
+<tr><th>工具</th><th>已确认的正式版本或状态</th><th>建议</th></tr>
+<tr><td>Codex CLI</td><td>0.172.0；2026-11-24 08:03（北京）；GitHub 正式 Tag + npm 主包、SDK 一致</td><td>Test before upgrading</td></tr>
+<tr><td>Claude Code</td><td>2.1.331；11-24 05:34（北京）；GitHub + npm 主包一致</td><td>Test before upgrading</td></tr>
+<tr><td>Gemini CLI</td><td>0.71.0：11-24 09:16；0.71.1：11-24 11:50（北京）；GitHub + npm 主包及 core 一致</td><td>A2A 用户优先升级并迁移认证</td></tr>
+<tr><td>OpenCode V2</td><td>2.4.0：11-23 17:22；2.4.1：11-23 23:57（北京）；GitHub 正式 Tag + npm @opencode/cli 2.4.1</td><td>Test before upgrading</td></tr>
+<tr><td>OpenCode V1</td><td>1.19.6；11-17；独立旧发行线</td><td>No action / 迁移 V2 前测试</td></tr>
+<tr><td>Pi</td><td>1.6.0；11-20；GitHub Latest + npm latest 一致；有 Windows/effort 相关仓库活动</td><td>暂不追未发布修复</td></tr>
+<tr><td>Cursor</td><td>官方产品 Changelog 与详细 Release Notes 已检索；未核实到本窗口新的有明确版本/日期的核心变更</td><td>No action；不宣称客户端最新版本</td></tr>
+<tr><td>xAI Grok</td><td>API Release Notes 明确 11-19 停止 grok-build-0.1；Grok Build CLI 官方 Changelog 未成功读取</td><td>旧模型调用者 Change config</td></tr>
+</table></div>
+<p>Codex 0.173/0.174 Alpha、Gemini 0.72 Preview 与开发包不计入 Stable。npm Registry JSON 直读未成功，已使用官方 npm 包页面交叉核对；OpenCode GitHub latest 接口返回 V1，故以正式 V2 Tag 和 npm V2 主包判断，不混淆两条发行线。</p>
+<h2 id="s3">二、Gemini CLI 0.71.1：A2A 安全升级具有明确兼容影响</h2>
+<h3 id="s4">2.1 A2A Server 强制 Bearer Token、Host/Origin 校验</h3>
+<p>0.71.1，2026-11-24 11:50（北京），将 PR #30420 回补至 0.71.0。服务器启动时读取 GEMINI_IPC_SECRET，未设置时读取 CODER_AGENT_AUTH_TOKEN；每个 HTTP 请求（包括 Agent Card）都必须带 Authorization: Bearer。缺失/错误令牌为 401；没有配置服务端令牌则返回 500。Host 及存在时的 Origin 必须属于 loopback，否则返回 403。任务创建忽略客户端传入的 isTrusted，按服务端配置判断工作区信任，并校验 workspacePath；restore 限制检查点文件位于检查点目录内。</p>
+<p>技术意义：从占位式检查转为服务端真实身份验证和路径边界控制；A2A 与 MCP 是不同协议，不能把该修复解释为所有 MCP 传输都新增认证。</p>
+<p>场景 A：远程 Agent、ACP/A2A 集成、代理、CI/headless —— High／安全利好及 Breaking 风险；Upgrade now after canary + Change config；breaking-risk High。同步升级服务端与客户端，验证有效令牌、401、错误 Host/Origin 403、无配置 500；现有反向代理或浏览器跨域调用可能因 loopback 约束失败，不应为了连通而移除校验。</p>
+<p>场景 B：普通 Gemini 终端、不运行 A2A Server —— Low／中性；No action（专项配置）；breaking-risk Low；可忽略认证迁移。</p>
+<p>PowerShell 测试（已启动本地 A2A 测试服务，令牌来自安全注入的环境变量；不要打印真实令牌）：</p>
+<pre><code>
+$token = $env:GEMINI_IPC_SECRET
+
+if (-not $token) { $token = $env:CODER_AGENT_AUTH_TOKEN }
+
+if (-not $token) { throw 'Missing test token' }
+
+Invoke-WebRequest -Uri 'http://localhost:41242/listCommands' -Headers @{Authorization=&quot;Bearer $token&quot;} -UseBasicParsing
+
+# 缺令牌的请求预期返回 401（PowerShell 可能抛出异常）
+
+Invoke-WebRequest -Uri 'http://localhost:41242/listCommands' -UseBasicParsing
+
+</code></pre>
+<p>来源：<a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.71.1" target="_blank" rel="noopener noreferrer">0.71.1 Release</a> · <a href="https://github.com/google-gemini/gemini-cli/pull/30420" target="_blank" rel="noopener noreferrer">PR #30420</a></p>
+<h3 id="s5">2.2 PowerShell 命令解析不再阻塞 Spinner</h3>
+<p>0.71.0，2026-11-24 09:16（北京），将 PowerShell 命令解析改为异步执行。技术意义：Shell 解析和终端 UI 更新解耦，减少 Agent 等待解析时界面冻结；这不等于降低审批强度或所有 PowerShell 语法问题已修复。</p>
+<p>Windows 10/11 + PowerShell 5.1/7：Medium／可靠性利好；Test before upgrading；breaking-risk Low–Medium。测试长命令、带引号路径、变量、管道和用户取消，并对照审批结果。Linux/macOS 不走 PowerShell 解析者可忽略专项测试。</p>
+<p>来源：<a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.71.0" target="_blank" rel="noopener noreferrer">0.71.0 Release</a> · <a href="https://github.com/google-gemini/gemini-cli/pull/30334" target="_blank" rel="noopener noreferrer">PR #30334</a></p>
+<p>0.72.0-preview.0 同日包含 Windows ~\ 路径展开、按最近活跃时间恢复 Session、嵌套 .gitignore 否定规则修复；这些尚不能据 Preview 公告断言已进入 0.71.1 Stable。Low／预发布观察；No action（Stable 用户）；自愿试验者 Test before upgrading。</p>
+<h2 id="s6">三、Claude Code 2.1.331：Windows 策略、Hooks、Plugins 与 Code Mode</h2>
+<p>版本日期：2026-11-23 21:34 UTC，即北京时间 11 月 24 日 05:34。属于本期补报，不是 11 月 25 日新发行。</p>
+<p>来源：<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.331" target="_blank" rel="noopener noreferrer">官方 Release</a> · <a href="https://www.npmjs.com/package/@anthropic-ai/claude-code?activeTab=versions" target="_blank" rel="noopener noreferrer">npm</a></p>
+<h3 id="s7">3.1 Windows 注册表托管策略启动优先级</h3>
+<p>启动时 HKLM 托管策略优先于 managed-settings.json，损坏策略值可能阻止启动；修复注册表含非 ASCII 字符导致无法启动的问题。技术意义：企业策略源优先级影响真实权限和启动可用性，不能仅备份 JSON 文件。</p>
+<p>Windows 企业受管设备：High／安全治理利好及启动风险；Test before upgrading；breaking-risk High。升级前由管理员核对 HKLM 策略有效性、JSON 配置、实际生效规则及 Unicode，不能擅自删除策略绕过限制。无受管策略的个人 Windows 用户：Low／中性；No action（专项）；可忽略企业策略迁移。</p>
+<h3 id="s8">3.2 Hooks、Skills 权限与多 Agent 审批</h3>
+<p>Stop/SubagentStop 在 Desktop 读取 Transcript 时等待最后回复；PermissionRequest Hook 保存 Skill(name:*) 的允许规则修复；PermissionDenied 的 retry:true 语义调整为只有用户要求该调用时才重试；修复子 Agent 未指定模型时 Agent(model:*) 规则错误阻挡后续消息。</p>
+<p>技术意义：Hook 触发时点、Transcript 完整性与权限策略作用域决定自动化审计是否可靠，拒绝后的重试不应被视为无条件授权。</p>
+<p>场景 A：PowerShell/自定义 Hooks、Skills 审批、CI —— High／安全及可靠性利好；Test before upgrading；breaking-risk Medium–High。测试最后回复是否可读、Allow 规则存储位置、拒绝后是否真正停止未授权请求。</p>
+<p>场景 B：多 Agent/模型权限规则 —— Medium–High／利好；Test before upgrading；breaking-risk Medium。分别测试命名模型与默认模型的子 Agent 创建、后续消息和拒绝路径。无 Hooks、Skills 权限和多 Agent 的用户可忽略专项。</p>
+<h3 id="s9">3.3 Plugin 安装、依赖与 11 月 30 日策略预警</h3>
+<p>Manifest 新增 optionalDependencies，依赖插件可独立禁用/卸载；修复更新中断后残缺插件目录被加载，以及托管审批不可交互时插件 CLI 无输出挂起。官方预告 2026-11-30 或之后，managed extraKnownMarketplaces 将默认自动更新；在相应条目设置 &quot;autoUpdate&quot;: false 可选择退出。预告不代表本版已切换默认值。</p>
+<p>技术意义：插件安装图与自动升级属于供应链执行边界；版本、插件代码与生效权限必须分别验证。</p>
+<p>企业 Marketplace、定制 Skills/Plugins、npm/global、无人值守安装：High／供应链治理风险与可靠性利好；Change config（审查后）+ Test before upgrading；breaking-risk Medium–High。固定经审核的版本，模拟断网中断安装，检查依赖、组件完整性及审批失败退出；在 11 月 30 日前审查托管 Marketplace。无插件或未使用托管 Marketplace 者可忽略对应专项。</p>
+<h3 id="s10">3.4 Code Mode 云 Provider、权限恢复与内存</h3>
+<p>终端 Code Mode 扩展到 Bedrock、Google Cloud Agent Platform、Foundry、Claude Platform on AWS；修复 Resume/Continue 改变权限模式时丢失 Thinking 与缓存，并保留起始 Ask 模式对脚本的限制；修复大文件与后台子 Agent 内存增长、长 MCP 调用返回后台提示而非数据、等待交互审批时误触十分钟超时；长脚本输出提供完整文件路径。</p>
+<p>技术意义：Code Mode 的脚本执行、权限、工具返回数据与模型 Provider 是独立边界，尤其不能将代码成功运行等同于全部权限可用。</p>
+<p>云 Provider、自研 Mod、长上下文、多 Agent：High／利好及时序风险；Test before upgrading；breaking-risk Medium–High。测试原权限恢复、长 Tool Call、交互等待、超时、输出文件、内存和实际费用。普通不用 Code Mode 的 CLI 用户可忽略专项。</p>
+<h3 id="s11">3.5 Gateway、MCP、Headless 和文件完整性</h3>
+<p>新增 claude doctor API 可达性检查；CLAUDE_CODE_DISABLE_RESPONSE_COMPRESSION 用于会截断压缩响应的代理，但官方暂不建议 Self-hosted Runner/Remote Control 使用。Gateway 新增 oidc.groups_jsonpath、CLAUDE_GATEWAY_IDP_CONNECT_BY_HOSTNAME=1（oidc.use_proxy:true 时改变 IdP 代理路径）；OTel gen_ai.usage.* 等字段中输入 Token 含缓存 Token。修复畸形本地/WebSocket MCP 回复挂起、远程 MCP 超时后无法恢复、无 Tool 名的自定义 API 回复崩溃、Headless PushNotification 错误状态、Compaction XML 摘要丢失，以及 Rewind 恢复失败后仍删除文件和 Workflow 残留 Shell/MCP。</p>
+<p>场景 A：Windows 代理、第三方 API Gateway、MCP —— High／可靠性利好及配置风险；Test before upgrading；breaking-risk Medium。用 claude doctor 对照实际 API/代理错误；分别测试流式压缩、畸形 Tool 回复、超时重连。不能把兼容开关全局部署到 Runner。</p>
+<p>场景 B：企业 OIDC、FinOps/OTel —— Medium–High／治理利好；Change config（确需）+ Test before upgrading；breaking-risk Medium。核对组映射、代理边界和缓存 Token 统计，避免新旧指标双计。</p>
+<p>场景 C：CI、多 Agent、长上下文、Rewind —— High／数据保护与可靠性利好；Upgrade after canary；breaking-risk Medium。模拟恢复失败，检查原文件、任务退出、后台资源清理和摘要完整性。无相关集成用户可忽略专项。</p>
+<h3 id="s12">3.6 IDE/Windows 其它实用修复</h3>
+<p>修复 FAT32/exFAT 文件写入反复审批、低内存崩溃、Remote Control 新子 Agent 步骤缺失；VS Code 修复 Rewind 后 Agent 继续编辑、符号链接工作区未保存文件被覆盖和被组织禁用 Bypass 后错误恢复到 Auto；新增测试失败快速修复、合并冲突处理入口。</p>
+<p>Windows 外接盘、VS Code/远程开发：Medium–High／数据保护利好；Test before upgrading；breaking-risk Low–Medium。测试符号链接、未保存文件、回退与终止、实际权限模式。纯终端、不使用对应文件系统者可忽略 IDE 专项。</p>
+<h2 id="s13">四、Codex CLI 0.172.0：MCP、Sandbox 和 SDK</h2>
+<p>版本日期：2026-11-24 00:03 UTC，北京时间 08:03。官方正式 Release，npm 主包、codex-sdk、responses-api-proxy 均显示 0.172.0。</p>
+<p>来源：<a href="https://github.com/openai/codex/releases/tag/rust-v0.172.0" target="_blank" rel="noopener noreferrer">官方 Release</a> · <a href="https://www.npmjs.com/package/@openai/codex" target="_blank" rel="noopener noreferrer">npm</a> · <a href="https://www.npmjs.com/package/@openai/codex-sdk" target="_blank" rel="noopener noreferrer">SDK</a></p>
+<h3 id="s14">4.1 Optional Stdio MCP 默认延迟启动</h3>
+<p>已缓存 Tool Catalog 的 optional Stdio MCP Server 可以在首次调用时才启动，required Server 仍在启动阶段建立连接（#62366）。技术意义：启动更快，但“Tool 可见”不代表 MCP 进程已运行，连接故障可能延后到首次调用。</p>
+<p>Windows/npm Global、MCP、本地/远程 Agent：High／性能利好及生命周期变化；Test before upgrading；breaking-risk Medium–High。测试首次调用的启动时延、凭据、进程退出和缓存过期；不要把启动日志当成 Tool Ready。无 Stdio MCP 或无依赖启动副作用者可忽略专项。</p>
+<p>来源：<a href="https://github.com/openai/codex/pull/62366" target="_blank" rel="noopener noreferrer">PR #62366</a></p>
+<h3 id="s15">4.2 单工具审批 Reviewer</h3>
+<p>连接应用可以按单个工具配置 approvals_reviewer；优先于连接账户、应用、应用默认值及 Session 设置，但仍受 Managed Requirements 限制（#62360）。先匹配 Tool 原始名，再匹配标题。示例：</p>
+<pre><code>
+[apps.calendar.tools.calendar_create_event]
+
+approvals_reviewer = &quot;user&quot;
+
+</code></pre>
+<p>技术意义：同一连接中的只读与写入工具可采用不同审批策略；这不是给工具新增执行权限。</p>
+<p>企业 Connectors、MCP、Agent 审批：High／细粒度权限利好；Test before adopting / Change config；breaking-risk Medium。测试写入需要人工批准、只读工具按预期执行、Managed Policy 不被覆盖；无连接应用者可忽略。</p>
+<p>来源：<a href="https://github.com/openai/codex/pull/62360" target="_blank" rel="noopener noreferrer">PR #62360</a></p>
+<h3 id="s16">4.3 Resume 沙箱权限和跨 OS 工作区恢复</h3>
+<p>codex exec resume 恢复保存的 Sandbox 权限、工作目录及 Workspace Roots（显式覆盖除外）；远程客户端和服务端跨 OS 时保持工作目录、Workspace Roots、Writable Paths；Windows MXC 沙箱迁移到公开 V1 SDK，并补充启动诊断。另暂停了重复的仅遥测 Runtime Integrity Checks（#62389），不等于关闭 Sandbox Enforcement。</p>
+<p>Windows PowerShell、远程 Linux/WSL、CI、Headless：High／安全正确性利好及兼容风险；Test before upgrading；breaking-risk Medium–High。测试新会话与 Resume 的实际可写路径、拒绝边界、客户端/服务端路径映射、显式覆盖及启动错误。不要为了恢复任务放宽 Sandbox。仅本地新建短会话且无自定义权限者可忽略专项。</p>
+<p>来源：<a href="https://github.com/openai/codex/pull/62194" target="_blank" rel="noopener noreferrer">Resume PR #62194</a> · <a href="https://github.com/openai/codex/pull/62389" target="_blank" rel="noopener noreferrer">Integrity Checks PR #62389</a></p>
+<h3 id="s17">4.4 Code Mode gRPC、模型迁移与 Provider 错误</h3>
+<p>Code Mode 所有 Host Connections 使用 gRPC，code_mode_host_grpc 弃用；App-server Setup/Sign-in 支持 Amazon Bedrock Runtime；流式 Provider 错误即时报告，并区分 API 消费上限；openai-docs Skill 补充 GPT-6.2 Astra/Sol 端点和 Tool Calling 迁移说明。父 Turn 中断后保留子 Agent 排队回复；TUI 支持 Thread Links、命令补全及任务组导航。</p>
+<p>场景 A：自研 Host、SDK imports、Code Mode、第三方 Provider —— Medium–High／迁移风险；Test before upgrading / Change config（审查弃用字段）；breaking-risk Medium–High。测试 gRPC 连接、远程 Host、Stream Error、SDK JSONL、模型 Tool Schema 与真实费用。</p>
+<p>场景 B：多 Agent、TUI —— Medium／利好；Test before upgrading；breaking-risk Low–Medium。测试中断后子 Agent 消息不丢失，避免把保留回复当作新执行。未使用 Code Mode/SDK 或多 Agent 的个人用户可忽略专项。</p>
+<h2 id="s18">五、OpenCode 2.4.0 与 2.4.1：Agent 自动化与插件生态发生实质变化</h2>
+<p>补报原始发布日期：2.4.0 为 2026-11-23 09:22 UTC（北京 17:22）；2.4.1 为 11-23 15:57 UTC（北京 23:57）。两者为 V2 正式发行；V1 仍为 1.19.6。</p>
+<p>来源：<a href="https://github.com/anomalyco/opencode/releases/tag/v2.4.0" target="_blank" rel="noopener noreferrer">2.4.0 Release</a> · <a href="https://github.com/anomalyco/opencode/releases/tag/v2.4.1" target="_blank" rel="noopener noreferrer">2.4.1 Release</a> · <a href="https://www.npmjs.com/package/@opencode/cli?activeTab=versions" target="_blank" rel="noopener noreferrer">npm V2</a></p>
+<h3 id="s19">5.1 Automation 与 MCP Events</h3>
+<p>2.4.0 支持定时、间隔、Cron、MCP Event 触发 Prompt、Code Mode 或固定 Shell；Shell 在创建时审批一次并记录每次退出码和输出。/automation 管理任务，设置 &quot;automations&quot;: false 禁用。MCP Events 使用 Beta 推送协议，含参数检查、心跳、重连；过大的事件可能跳过。2.4.1 插件新增 ctx.experimental.automation.{create,list,delete}。</p>
+<p>定时任务、Windows PowerShell、CI、MCP、多 Agent：High／能力利好及持久权限风险；Test before adopting / Change config；breaking-risk Medium–High。测试任务创建、取消、重启、重复事件与并发、失败重试和审计；Shell 一次批准不意味着所有后续动态行为都已审查，外部写入要做幂等。没有后台自动化需求者可禁用并忽略 API。</p>
+<h3 id="s20">5.2 Desktop Browser 与持久化身份</h3>
+<p>2.4.0 内置浏览器可导入 Chrome/Edge/Firefox/Safari 登录状态和历史，支持扩展、持久 Profile 与 Agent 操作；browser Deny 可以拒绝 Agent 浏览器调用。</p>
+<p>企业 IDE、账号会话、Web 自动化：High／能力利好及数据权限风险；Test before adopting；breaking-risk Medium。用隔离测试 Profile，不导入个人或生产登录，核对 Browser Deny、上传、下载、站点权限及取消操作。只用 TUI/CLI 的人可忽略 Desktop 专项。</p>
+<h3 id="s21">5.3 Plugins 自动更新、TUI 与 SDK 接口</h3>
+<p>2.4.0 对 name@latest、版本范围、Git 分支或 semver 范围的插件在启动和每 24 小时自动检查并加载新匹配版本；裸包名、精确版本、非 latest 标签、Git Tag/Commit 不自动更新。新版本加载失败可回退旧插件。Code Mode 路径 tools.opencode.session_rename/session_move 改为 tools.opencode.session.rename/.move，直接 Tool 名与权限操作不变。2.4.0 TUI Plugin Renderer 改接 OpenTUI Block（block.text），删除 codeBlockStyle/escaped；要求 OpenTUI 0.9.4+，2.4.1 又放宽到支持 0.8.0 起的依赖范围。插件恢复后台异步加载，SDK 初始 Model/Provider 等列表可能为空或不完整，不再等待五秒。</p>
+<p>场景 A：生产 Plugins、供应链 —— High／自动更新风险；Change config / Test before upgrading；breaking-risk High（依赖动态版本者）。使用已审核的精确版本/Commit，测试热重载、回退、实际权限。</p>
+<p>场景 B：自定义 TUI、SDK imports、Code Mode —— High／明确接口迁移；Test before upgrading；breaking-risk High。修改调用路径和 Renderer，监听 model.updated 等事件或等待 plugin.list/目标条目，别把启动初期空列表当永久不可用。</p>
+<p>谁可忽略：不安装定制 Plugins、不使用 SDK/Code Mode 的普通用户。</p>
+<h3 id="s22">5.4 MCP 协商与 Provider 认证</h3>
+<p>2.4.0 未设置 protocol 的 MCP Server 优先尝试新协议，再回退旧握手；有故障的旧 Server 可设 protocol: &quot;legacy&quot;。GitHub Copilot 不再读取 GITHUB_TOKEN，应改 COPILOT_GITHUB_TOKEN 或 OAuth。ChatGPT Plan 模型列表从 models.dev 获取，注销 ChatGPT 登录时也向 OpenAI 撤销；Provider timeout 覆盖更多生成/压缩请求。2.4.1 修复仅有 config、未 /connect 登录的 Ollama 等 Provider 在 /models 不显示。</p>
+<p>MCP/自定义 Provider、GitHub Actions、Windows、第三方 Gateway：High／兼容及认证变化；Change config + Test before upgrading；breaking-risk High（依赖旧变量者）。测试 MCP 握手、Token 最小权限、模型发现、真实授权、超时和注销；不要将 GITHUB_TOKEN 当 Copilot 凭据。没有这些集成可忽略专项。</p>
+<h3 id="s23">5.5 Compaction、模型速度和存储</h3>
+<p>2.4.0 Assistant Parts 独立行持久化，可用 experimental.part_rows:false 恢复旧写入路径（本发行版）；保存的 Blob 一周后清理，项目中保存的副本不受影响。2.4.1 修复 keep.tokens 保留超量历史和长 Goal Session 额外缓存费用，以及 macOS 12 SQLite 保存故障；experimental.model_speeds 启用后，Service Tier 成为可记忆的速度选项，/speed、/fast 显示相对价格。</p>
+<p>长 Context、远程 SDK、存储、成本：Medium–High／可靠性利好及计费/迁移风险；Test before upgrading；breaking-risk Medium。验证数据库备份、历史读取、Compaction Token 上限、缓存命中、Blob 下载生命周期、实际 Service Tier 与费用。短会话且不改速度或存储设置者可忽略专项。</p>
+<h3 id="s24">5.6 工具改名与视频任务</h3>
+<p>2.4.0 experimental_image_generate 改名 generate_image，旧 Permission Rules 自动映射但已保存 Always Allow 审批不迁移，需要重新审批；generate_video 在已连接 Provider 支持时运行后台任务，支持重启恢复及工作区保存，默认模型 experimental.video_generate.model。Windows Taskbar 可显示待处理权限和任务状态。</p>
+<p>工具权限、AI 视频生产和后台任务：Medium–High／能力利好及兼容风险；Test before upgrading；breaking-risk Medium。更新依赖工具名的脚本，验证重新审批、模型费用、生成失败、恢复及文件落地。未用图像/视频工具者可忽略。V1 1.19.6 升级 V2 需先验证插件兼容，不要把两个 npm 发行线当同一包。</p>
+<h2 id="s25">六、Pi、Cursor、xAI：发行状态及未发布风险</h2>
+<h3 id="s26">Pi 1.6.0：仓库问题不能当成新版本</h3>
+<p>11-20 正式 v1.6.0 仍与 npm latest 1.6.0 一致。该版 GPT-6.2 Sol 为 openai/azure/openai-codex 默认；Extension render() 变为 readonly string[]，修改返回数组需先复制（此前已发布，不重复计作本日新版本）。</p>
+<p>仓库近期值得注意：#12408（非默认安装位置 Git for Windows 可能错误选择 System32 的 WSL 启动器）于 11-24 更新为 closed；#12361（openai-codex high/xhigh 请求实际 effort 可能为 medium）于 11-23 更新为 closed；#12340（Windows Git Bash 长 RPC 命令截断且可能假成功）仍 open，修复 PR #12369 尚未合并；#12208 JSON 模式失败仍可能 Exit 0，#12318 Team/Enterprise OAuth scope 问题仍 open。关闭 Issue 不代表 npm 1.6.0 已包含修复。</p>
+<p>Windows 不使用 WSL、Git Bash/RPC、CI：High／当前版本风险；Test before upgrading / Avoid（未经验证的长脚本自动化）；breaking-risk Medium–High。核对实际 Bash 路径、完整输出标记、退出码和 JSON stopReason，测试命令不要产生业务副作用。自定义模型/高推理设置：Medium–High／潜在结果偏差；验证真实请求和响应的 effort，勿只信 UI。使用其他 Provider、没有这些场景者可忽略专项。不建议为了未发布修复直接安装 main。</p>
+<p>来源：<a href="https://github.com/earendil-works/pi/releases" target="_blank" rel="noopener noreferrer">Pi Releases</a> · <a href="https://www.npmjs.com/package/@earendil-works/pi-coding-agent?activeTab=versions" target="_blank" rel="noopener noreferrer">npm Tags</a> · <a href="https://github.com/earendil-works/pi/issues/12408" target="_blank" rel="noopener noreferrer">#12408</a> · <a href="https://github.com/earendil-works/pi/issues/12361" target="_blank" rel="noopener noreferrer">#12361</a> · <a href="https://github.com/earendil-works/pi/issues/12340" target="_blank" rel="noopener noreferrer">#12340</a> · <a href="https://github.com/earendil-works/pi/pull/12369" target="_blank" rel="noopener noreferrer">#12369</a> · <a href="https://github.com/earendil-works/pi/issues/12208" target="_blank" rel="noopener noreferrer">#12208</a> · <a href="https://github.com/earendil-works/pi/issues/12318" target="_blank" rel="noopener noreferrer">#12318</a></p>
+<h3 id="s27">Cursor</h3>
+<p>已查产品 Changelog、详细 Release Notes；本次取得的页面未能确认本窗口新增的准确产品版本/发布日期，因此不称“无更新”或某个客户端版本是最新。Low／证据不足；No action（不基于未经证实消息升级）；breaking-risk 未确定。继续从官方客户端 About 和 Release Notes 核对，不把论坛 Bug Report 当正式发行。</p>
+<p>来源：<a href="https://cursor.com/changelog" target="_blank" rel="noopener noreferrer">Cursor Changelog</a> · <a href="https://prod.cursor.com/docs/release-notes" target="_blank" rel="noopener noreferrer">Release Notes</a></p>
+<h3 id="s28">xAI Grok</h3>
+<p>API 官方说明 grok-build-0.1 于 2026-11-19 停止服务，未列自动替代模型。旧模型仍出现在某些历史文档/迁移指南中，不表示仍可用；尤其早前 grok-code-fast-1 的重定向目标曾是它。High（仍依赖旧 Slug 的用户）／Breaking 风险；Change config；breaking-risk High。查找模型 ID 和 Gateway 映射，选择当前账户可用模型后验证 Tool Calling、上下文及成本。没有旧 Slug 依赖者可忽略。此为历史风险提示，不是今日新发布。Grok Build CLI 的官方 Changelog 未能读取、GitHub Latest 接口返回 404，故不声称当前 CLI 最新版本或无更新。</p>
+<p>来源：<a href="https://docs.x.ai/developers/release-notes?release=2026-11-f16a2d1a" target="_blank" rel="noopener noreferrer">API Release Notes</a> · <a href="https://docs.x.ai/developers/migration/may-15-retirement" target="_blank" rel="noopener noreferrer">早期迁移指南</a> · <a href="https://x.ai/changelog/build" target="_blank" rel="noopener noreferrer">Grok Build Changelog</a></p>
+<h2 id="s29">七、Windows PowerShell 5.1/7 检查与行动</h2>
+<p>先处理 Gemini A2A 认证，再检查 Claude 管理策略、Marketplace、MCP；OpenCode 先固定插件与确认自动化权限；Codex 测试 MCP Lazy Startup 和 Resume；Pi 检查真实 Bash 路径与 JSON 失败。以下为只读命令，不执行安装：</p>
+<pre><code>
+Get-Command codex,claude,pi,opencode,gemini,grok -All -ErrorAction SilentlyContinue
+
+Get-Command git,bash -All -ErrorAction SilentlyContinue
+
+where.exe git
+
+where.exe bash
+
+npm view @openai/codex dist-tags --json
+
+npm view @anthropic-ai/claude-code dist-tags --json
+
+npm view @earendil-works/pi-coding-agent dist-tags --json
+
+npm view @opencode/cli dist-tags --json
+
+npm view opencode-ai dist-tags --json
+
+npm view @google/gemini-cli dist-tags --json
+
+claude doctor
+
+codex --version
+
+pi --version
+
+opencode --version
+
+gemini --version
+
+</code></pre>
+<p>建议在隔离项目对比升级前后：实际 Binary、模型 ID、Provider、授权路径、MCP 连接、Hooks、退出码、文件完整性、Token 和成本。只输出凭据是否存在，不分享真实值。没有核实到跨产品 AGENTS.md/CLAUDE.md/Cursor Rules 优先级的新统一标准。</p>
+<p>证据及边界：正式发布通过官方 GitHub API 的 Tag/发布时间/预发布字段与可读 npm 页面交叉核对。Cursor、Grok CLI 部分来源受限；没有在真实 Windows、PowerShell、MCP Server、第三方 API Gateway 或生产 CI 上执行回归。风险等级为场景工程判断而非 CVE 分数。11 月 24 日缺失日报不以今日内容冒充历史原稿，本期仅归档 11 月 25 日。</p><details><summary>完整 Markdown 原文（便于复制及核对）</summary><pre># AI Dev Tools Daily Brief — 2026-11-25
+
+核验基准：北京时间 2026-11-25 07:01；由于 11 月 24 日日报未在仓库归档，本期从最近已归档的 11 月 23 日向前追溯，补报漏掉的正式版本，保留原发布日期，不伪称全部是今日发布。
+
+今日优先级：Gemini CLI 0.71.1 的 A2A 认证和输入校验、Claude Code 2.1.331 的 Windows 管理策略与权限/插件修复、OpenCode 2.4.0–2.4.1 的自动化和插件更新机制、Codex CLI 0.172.0 的 MCP 延迟启动及恢复时的沙箱权限。
+
+## 一、版本核验
+
+| 工具 | 已确认的正式版本或状态 | 建议 |
+|---|---|---|
+| Codex CLI | 0.172.0；2026-11-24 08:03（北京）；GitHub 正式 Tag + npm 主包、SDK 一致 | Test before upgrading |
+| Claude Code | 2.1.331；11-24 05:34（北京）；GitHub + npm 主包一致 | Test before upgrading |
+| Gemini CLI | 0.71.0：11-24 09:16；0.71.1：11-24 11:50（北京）；GitHub + npm 主包及 core 一致 | A2A 用户优先升级并迁移认证 |
+| OpenCode V2 | 2.4.0：11-23 17:22；2.4.1：11-23 23:57（北京）；GitHub 正式 Tag + npm @opencode/cli 2.4.1 | Test before upgrading |
+| OpenCode V1 | 1.19.6；11-17；独立旧发行线 | No action / 迁移 V2 前测试 |
+| Pi | 1.6.0；11-20；GitHub Latest + npm latest 一致；有 Windows/effort 相关仓库活动 | 暂不追未发布修复 |
+| Cursor | 官方产品 Changelog 与详细 Release Notes 已检索；未核实到本窗口新的有明确版本/日期的核心变更 | No action；不宣称客户端最新版本 |
+| xAI Grok | API Release Notes 明确 11-19 停止 grok-build-0.1；Grok Build CLI 官方 Changelog 未成功读取 | 旧模型调用者 Change config |
+
+Codex 0.173/0.174 Alpha、Gemini 0.72 Preview 与开发包不计入 Stable。npm Registry JSON 直读未成功，已使用官方 npm 包页面交叉核对；OpenCode GitHub latest 接口返回 V1，故以正式 V2 Tag 和 npm V2 主包判断，不混淆两条发行线。
+
+## 二、Gemini CLI 0.71.1：A2A 安全升级具有明确兼容影响
+
+### 2.1 A2A Server 强制 Bearer Token、Host/Origin 校验
+
+0.71.1，2026-11-24 11:50（北京），将 PR #30420 回补至 0.71.0。服务器启动时读取 GEMINI_IPC_SECRET，未设置时读取 CODER_AGENT_AUTH_TOKEN；每个 HTTP 请求（包括 Agent Card）都必须带 Authorization: Bearer。缺失/错误令牌为 401；没有配置服务端令牌则返回 500。Host 及存在时的 Origin 必须属于 loopback，否则返回 403。任务创建忽略客户端传入的 isTrusted，按服务端配置判断工作区信任，并校验 workspacePath；restore 限制检查点文件位于检查点目录内。
+
+技术意义：从占位式检查转为服务端真实身份验证和路径边界控制；A2A 与 MCP 是不同协议，不能把该修复解释为所有 MCP 传输都新增认证。
+
+场景 A：远程 Agent、ACP/A2A 集成、代理、CI/headless —— High／安全利好及 Breaking 风险；Upgrade now after canary + Change config；breaking-risk High。同步升级服务端与客户端，验证有效令牌、401、错误 Host/Origin 403、无配置 500；现有反向代理或浏览器跨域调用可能因 loopback 约束失败，不应为了连通而移除校验。
+
+场景 B：普通 Gemini 终端、不运行 A2A Server —— Low／中性；No action（专项配置）；breaking-risk Low；可忽略认证迁移。
+
+PowerShell 测试（已启动本地 A2A 测试服务，令牌来自安全注入的环境变量；不要打印真实令牌）：
+```powershell
+$token = $env:GEMINI_IPC_SECRET
+if (-not $token) { $token = $env:CODER_AGENT_AUTH_TOKEN }
+if (-not $token) { throw 'Missing test token' }
+Invoke-WebRequest -Uri 'http://localhost:41242/listCommands' -Headers @{Authorization=&quot;Bearer $token&quot;} -UseBasicParsing
+# 缺令牌的请求预期返回 401（PowerShell 可能抛出异常）
+Invoke-WebRequest -Uri 'http://localhost:41242/listCommands' -UseBasicParsing
+```
+来源：[0.71.1 Release](https://github.com/google-gemini/gemini-cli/releases/tag/v0.71.1) · [PR #30420](https://github.com/google-gemini/gemini-cli/pull/30420)
+
+### 2.2 PowerShell 命令解析不再阻塞 Spinner
+
+0.71.0，2026-11-24 09:16（北京），将 PowerShell 命令解析改为异步执行。技术意义：Shell 解析和终端 UI 更新解耦，减少 Agent 等待解析时界面冻结；这不等于降低审批强度或所有 PowerShell 语法问题已修复。
+
+Windows 10/11 + PowerShell 5.1/7：Medium／可靠性利好；Test before upgrading；breaking-risk Low–Medium。测试长命令、带引号路径、变量、管道和用户取消，并对照审批结果。Linux/macOS 不走 PowerShell 解析者可忽略专项测试。
+来源：[0.71.0 Release](https://github.com/google-gemini/gemini-cli/releases/tag/v0.71.0) · [PR #30334](https://github.com/google-gemini/gemini-cli/pull/30334)
+
+0.72.0-preview.0 同日包含 Windows ~\ 路径展开、按最近活跃时间恢复 Session、嵌套 .gitignore 否定规则修复；这些尚不能据 Preview 公告断言已进入 0.71.1 Stable。Low／预发布观察；No action（Stable 用户）；自愿试验者 Test before upgrading。
+
+## 三、Claude Code 2.1.331：Windows 策略、Hooks、Plugins 与 Code Mode
+
+版本日期：2026-11-23 21:34 UTC，即北京时间 11 月 24 日 05:34。属于本期补报，不是 11 月 25 日新发行。
+来源：[官方 Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.331) · [npm](https://www.npmjs.com/package/@anthropic-ai/claude-code?activeTab=versions)
+
+### 3.1 Windows 注册表托管策略启动优先级
+
+启动时 HKLM 托管策略优先于 managed-settings.json，损坏策略值可能阻止启动；修复注册表含非 ASCII 字符导致无法启动的问题。技术意义：企业策略源优先级影响真实权限和启动可用性，不能仅备份 JSON 文件。
+
+Windows 企业受管设备：High／安全治理利好及启动风险；Test before upgrading；breaking-risk High。升级前由管理员核对 HKLM 策略有效性、JSON 配置、实际生效规则及 Unicode，不能擅自删除策略绕过限制。无受管策略的个人 Windows 用户：Low／中性；No action（专项）；可忽略企业策略迁移。
+
+### 3.2 Hooks、Skills 权限与多 Agent 审批
+
+Stop/SubagentStop 在 Desktop 读取 Transcript 时等待最后回复；PermissionRequest Hook 保存 Skill(name:*) 的允许规则修复；PermissionDenied 的 retry:true 语义调整为只有用户要求该调用时才重试；修复子 Agent 未指定模型时 Agent(model:*) 规则错误阻挡后续消息。
+
+技术意义：Hook 触发时点、Transcript 完整性与权限策略作用域决定自动化审计是否可靠，拒绝后的重试不应被视为无条件授权。
+
+场景 A：PowerShell/自定义 Hooks、Skills 审批、CI —— High／安全及可靠性利好；Test before upgrading；breaking-risk Medium–High。测试最后回复是否可读、Allow 规则存储位置、拒绝后是否真正停止未授权请求。
+场景 B：多 Agent/模型权限规则 —— Medium–High／利好；Test before upgrading；breaking-risk Medium。分别测试命名模型与默认模型的子 Agent 创建、后续消息和拒绝路径。无 Hooks、Skills 权限和多 Agent 的用户可忽略专项。
+
+### 3.3 Plugin 安装、依赖与 11 月 30 日策略预警
+
+Manifest 新增 optionalDependencies，依赖插件可独立禁用/卸载；修复更新中断后残缺插件目录被加载，以及托管审批不可交互时插件 CLI 无输出挂起。官方预告 2026-11-30 或之后，managed extraKnownMarketplaces 将默认自动更新；在相应条目设置 &quot;autoUpdate&quot;: false 可选择退出。预告不代表本版已切换默认值。
+
+技术意义：插件安装图与自动升级属于供应链执行边界；版本、插件代码与生效权限必须分别验证。
+
+企业 Marketplace、定制 Skills/Plugins、npm/global、无人值守安装：High／供应链治理风险与可靠性利好；Change config（审查后）+ Test before upgrading；breaking-risk Medium–High。固定经审核的版本，模拟断网中断安装，检查依赖、组件完整性及审批失败退出；在 11 月 30 日前审查托管 Marketplace。无插件或未使用托管 Marketplace 者可忽略对应专项。
+
+### 3.4 Code Mode 云 Provider、权限恢复与内存
+
+终端 Code Mode 扩展到 Bedrock、Google Cloud Agent Platform、Foundry、Claude Platform on AWS；修复 Resume/Continue 改变权限模式时丢失 Thinking 与缓存，并保留起始 Ask 模式对脚本的限制；修复大文件与后台子 Agent 内存增长、长 MCP 调用返回后台提示而非数据、等待交互审批时误触十分钟超时；长脚本输出提供完整文件路径。
+
+技术意义：Code Mode 的脚本执行、权限、工具返回数据与模型 Provider 是独立边界，尤其不能将代码成功运行等同于全部权限可用。
+
+云 Provider、自研 Mod、长上下文、多 Agent：High／利好及时序风险；Test before upgrading；breaking-risk Medium–High。测试原权限恢复、长 Tool Call、交互等待、超时、输出文件、内存和实际费用。普通不用 Code Mode 的 CLI 用户可忽略专项。
+
+### 3.5 Gateway、MCP、Headless 和文件完整性
+
+新增 claude doctor API 可达性检查；CLAUDE_CODE_DISABLE_RESPONSE_COMPRESSION 用于会截断压缩响应的代理，但官方暂不建议 Self-hosted Runner/Remote Control 使用。Gateway 新增 oidc.groups_jsonpath、CLAUDE_GATEWAY_IDP_CONNECT_BY_HOSTNAME=1（oidc.use_proxy:true 时改变 IdP 代理路径）；OTel gen_ai.usage.* 等字段中输入 Token 含缓存 Token。修复畸形本地/WebSocket MCP 回复挂起、远程 MCP 超时后无法恢复、无 Tool 名的自定义 API 回复崩溃、Headless PushNotification 错误状态、Compaction XML 摘要丢失，以及 Rewind 恢复失败后仍删除文件和 Workflow 残留 Shell/MCP。
+
+场景 A：Windows 代理、第三方 API Gateway、MCP —— High／可靠性利好及配置风险；Test before upgrading；breaking-risk Medium。用 claude doctor 对照实际 API/代理错误；分别测试流式压缩、畸形 Tool 回复、超时重连。不能把兼容开关全局部署到 Runner。
+场景 B：企业 OIDC、FinOps/OTel —— Medium–High／治理利好；Change config（确需）+ Test before upgrading；breaking-risk Medium。核对组映射、代理边界和缓存 Token 统计，避免新旧指标双计。
+场景 C：CI、多 Agent、长上下文、Rewind —— High／数据保护与可靠性利好；Upgrade after canary；breaking-risk Medium。模拟恢复失败，检查原文件、任务退出、后台资源清理和摘要完整性。无相关集成用户可忽略专项。
+
+### 3.6 IDE/Windows 其它实用修复
+
+修复 FAT32/exFAT 文件写入反复审批、低内存崩溃、Remote Control 新子 Agent 步骤缺失；VS Code 修复 Rewind 后 Agent 继续编辑、符号链接工作区未保存文件被覆盖和被组织禁用 Bypass 后错误恢复到 Auto；新增测试失败快速修复、合并冲突处理入口。
+
+Windows 外接盘、VS Code/远程开发：Medium–High／数据保护利好；Test before upgrading；breaking-risk Low–Medium。测试符号链接、未保存文件、回退与终止、实际权限模式。纯终端、不使用对应文件系统者可忽略 IDE 专项。
+
+## 四、Codex CLI 0.172.0：MCP、Sandbox 和 SDK
+
+版本日期：2026-11-24 00:03 UTC，北京时间 08:03。官方正式 Release，npm 主包、codex-sdk、responses-api-proxy 均显示 0.172.0。
+来源：[官方 Release](https://github.com/openai/codex/releases/tag/rust-v0.172.0) · [npm](https://www.npmjs.com/package/@openai/codex) · [SDK](https://www.npmjs.com/package/@openai/codex-sdk)
+
+### 4.1 Optional Stdio MCP 默认延迟启动
+
+已缓存 Tool Catalog 的 optional Stdio MCP Server 可以在首次调用时才启动，required Server 仍在启动阶段建立连接（#62366）。技术意义：启动更快，但“Tool 可见”不代表 MCP 进程已运行，连接故障可能延后到首次调用。
+
+Windows/npm Global、MCP、本地/远程 Agent：High／性能利好及生命周期变化；Test before upgrading；breaking-risk Medium–High。测试首次调用的启动时延、凭据、进程退出和缓存过期；不要把启动日志当成 Tool Ready。无 Stdio MCP 或无依赖启动副作用者可忽略专项。
+来源：[PR #62366](https://github.com/openai/codex/pull/62366)
+
+### 4.2 单工具审批 Reviewer
+
+连接应用可以按单个工具配置 approvals_reviewer；优先于连接账户、应用、应用默认值及 Session 设置，但仍受 Managed Requirements 限制（#62360）。先匹配 Tool 原始名，再匹配标题。示例：
+```toml
+[apps.calendar.tools.calendar_create_event]
+approvals_reviewer = &quot;user&quot;
+```
+技术意义：同一连接中的只读与写入工具可采用不同审批策略；这不是给工具新增执行权限。
+
+企业 Connectors、MCP、Agent 审批：High／细粒度权限利好；Test before adopting / Change config；breaking-risk Medium。测试写入需要人工批准、只读工具按预期执行、Managed Policy 不被覆盖；无连接应用者可忽略。
+来源：[PR #62360](https://github.com/openai/codex/pull/62360)
+
+### 4.3 Resume 沙箱权限和跨 OS 工作区恢复
+
+codex exec resume 恢复保存的 Sandbox 权限、工作目录及 Workspace Roots（显式覆盖除外）；远程客户端和服务端跨 OS 时保持工作目录、Workspace Roots、Writable Paths；Windows MXC 沙箱迁移到公开 V1 SDK，并补充启动诊断。另暂停了重复的仅遥测 Runtime Integrity Checks（#62389），不等于关闭 Sandbox Enforcement。
+
+Windows PowerShell、远程 Linux/WSL、CI、Headless：High／安全正确性利好及兼容风险；Test before upgrading；breaking-risk Medium–High。测试新会话与 Resume 的实际可写路径、拒绝边界、客户端/服务端路径映射、显式覆盖及启动错误。不要为了恢复任务放宽 Sandbox。仅本地新建短会话且无自定义权限者可忽略专项。
+来源：[Resume PR #62194](https://github.com/openai/codex/pull/62194) · [Integrity Checks PR #62389](https://github.com/openai/codex/pull/62389)
+
+### 4.4 Code Mode gRPC、模型迁移与 Provider 错误
+
+Code Mode 所有 Host Connections 使用 gRPC，code_mode_host_grpc 弃用；App-server Setup/Sign-in 支持 Amazon Bedrock Runtime；流式 Provider 错误即时报告，并区分 API 消费上限；openai-docs Skill 补充 GPT-6.2 Astra/Sol 端点和 Tool Calling 迁移说明。父 Turn 中断后保留子 Agent 排队回复；TUI 支持 Thread Links、命令补全及任务组导航。
+
+场景 A：自研 Host、SDK imports、Code Mode、第三方 Provider —— Medium–High／迁移风险；Test before upgrading / Change config（审查弃用字段）；breaking-risk Medium–High。测试 gRPC 连接、远程 Host、Stream Error、SDK JSONL、模型 Tool Schema 与真实费用。
+场景 B：多 Agent、TUI —— Medium／利好；Test before upgrading；breaking-risk Low–Medium。测试中断后子 Agent 消息不丢失，避免把保留回复当作新执行。未使用 Code Mode/SDK 或多 Agent 的个人用户可忽略专项。
+
+## 五、OpenCode 2.4.0 与 2.4.1：Agent 自动化与插件生态发生实质变化
+
+补报原始发布日期：2.4.0 为 2026-11-23 09:22 UTC（北京 17:22）；2.4.1 为 11-23 15:57 UTC（北京 23:57）。两者为 V2 正式发行；V1 仍为 1.19.6。
+来源：[2.4.0 Release](https://github.com/anomalyco/opencode/releases/tag/v2.4.0) · [2.4.1 Release](https://github.com/anomalyco/opencode/releases/tag/v2.4.1) · [npm V2](https://www.npmjs.com/package/@opencode/cli?activeTab=versions)
+
+### 5.1 Automation 与 MCP Events
+
+2.4.0 支持定时、间隔、Cron、MCP Event 触发 Prompt、Code Mode 或固定 Shell；Shell 在创建时审批一次并记录每次退出码和输出。/automation 管理任务，设置 &quot;automations&quot;: false 禁用。MCP Events 使用 Beta 推送协议，含参数检查、心跳、重连；过大的事件可能跳过。2.4.1 插件新增 ctx.experimental.automation.{create,list,delete}。
+
+定时任务、Windows PowerShell、CI、MCP、多 Agent：High／能力利好及持久权限风险；Test before adopting / Change config；breaking-risk Medium–High。测试任务创建、取消、重启、重复事件与并发、失败重试和审计；Shell 一次批准不意味着所有后续动态行为都已审查，外部写入要做幂等。没有后台自动化需求者可禁用并忽略 API。
+
+### 5.2 Desktop Browser 与持久化身份
+
+2.4.0 内置浏览器可导入 Chrome/Edge/Firefox/Safari 登录状态和历史，支持扩展、持久 Profile 与 Agent 操作；browser Deny 可以拒绝 Agent 浏览器调用。
+
+企业 IDE、账号会话、Web 自动化：High／能力利好及数据权限风险；Test before adopting；breaking-risk Medium。用隔离测试 Profile，不导入个人或生产登录，核对 Browser Deny、上传、下载、站点权限及取消操作。只用 TUI/CLI 的人可忽略 Desktop 专项。
+
+### 5.3 Plugins 自动更新、TUI 与 SDK 接口
+
+2.4.0 对 name@latest、版本范围、Git 分支或 semver 范围的插件在启动和每 24 小时自动检查并加载新匹配版本；裸包名、精确版本、非 latest 标签、Git Tag/Commit 不自动更新。新版本加载失败可回退旧插件。Code Mode 路径 tools.opencode.session_rename/session_move 改为 tools.opencode.session.rename/.move，直接 Tool 名与权限操作不变。2.4.0 TUI Plugin Renderer 改接 OpenTUI Block（block.text），删除 codeBlockStyle/escaped；要求 OpenTUI 0.9.4+，2.4.1 又放宽到支持 0.8.0 起的依赖范围。插件恢复后台异步加载，SDK 初始 Model/Provider 等列表可能为空或不完整，不再等待五秒。
+
+场景 A：生产 Plugins、供应链 —— High／自动更新风险；Change config / Test before upgrading；breaking-risk High（依赖动态版本者）。使用已审核的精确版本/Commit，测试热重载、回退、实际权限。
+场景 B：自定义 TUI、SDK imports、Code Mode —— High／明确接口迁移；Test before upgrading；breaking-risk High。修改调用路径和 Renderer，监听 model.updated 等事件或等待 plugin.list/目标条目，别把启动初期空列表当永久不可用。
+谁可忽略：不安装定制 Plugins、不使用 SDK/Code Mode 的普通用户。
+
+### 5.4 MCP 协商与 Provider 认证
+
+2.4.0 未设置 protocol 的 MCP Server 优先尝试新协议，再回退旧握手；有故障的旧 Server 可设 protocol: &quot;legacy&quot;。GitHub Copilot 不再读取 GITHUB_TOKEN，应改 COPILOT_GITHUB_TOKEN 或 OAuth。ChatGPT Plan 模型列表从 models.dev 获取，注销 ChatGPT 登录时也向 OpenAI 撤销；Provider timeout 覆盖更多生成/压缩请求。2.4.1 修复仅有 config、未 /connect 登录的 Ollama 等 Provider 在 /models 不显示。
+
+MCP/自定义 Provider、GitHub Actions、Windows、第三方 Gateway：High／兼容及认证变化；Change config + Test before upgrading；breaking-risk High（依赖旧变量者）。测试 MCP 握手、Token 最小权限、模型发现、真实授权、超时和注销；不要将 GITHUB_TOKEN 当 Copilot 凭据。没有这些集成可忽略专项。
+
+### 5.5 Compaction、模型速度和存储
+
+2.4.0 Assistant Parts 独立行持久化，可用 experimental.part_rows:false 恢复旧写入路径（本发行版）；保存的 Blob 一周后清理，项目中保存的副本不受影响。2.4.1 修复 keep.tokens 保留超量历史和长 Goal Session 额外缓存费用，以及 macOS 12 SQLite 保存故障；experimental.model_speeds 启用后，Service Tier 成为可记忆的速度选项，/speed、/fast 显示相对价格。
+
+长 Context、远程 SDK、存储、成本：Medium–High／可靠性利好及计费/迁移风险；Test before upgrading；breaking-risk Medium。验证数据库备份、历史读取、Compaction Token 上限、缓存命中、Blob 下载生命周期、实际 Service Tier 与费用。短会话且不改速度或存储设置者可忽略专项。
+
+### 5.6 工具改名与视频任务
+
+2.4.0 experimental_image_generate 改名 generate_image，旧 Permission Rules 自动映射但已保存 Always Allow 审批不迁移，需要重新审批；generate_video 在已连接 Provider 支持时运行后台任务，支持重启恢复及工作区保存，默认模型 experimental.video_generate.model。Windows Taskbar 可显示待处理权限和任务状态。
+
+工具权限、AI 视频生产和后台任务：Medium–High／能力利好及兼容风险；Test before upgrading；breaking-risk Medium。更新依赖工具名的脚本，验证重新审批、模型费用、生成失败、恢复及文件落地。未用图像/视频工具者可忽略。V1 1.19.6 升级 V2 需先验证插件兼容，不要把两个 npm 发行线当同一包。
+
+## 六、Pi、Cursor、xAI：发行状态及未发布风险
+
+### Pi 1.6.0：仓库问题不能当成新版本
+
+11-20 正式 v1.6.0 仍与 npm latest 1.6.0 一致。该版 GPT-6.2 Sol 为 openai/azure/openai-codex 默认；Extension render() 变为 readonly string[]，修改返回数组需先复制（此前已发布，不重复计作本日新版本）。
+
+仓库近期值得注意：#12408（非默认安装位置 Git for Windows 可能错误选择 System32 的 WSL 启动器）于 11-24 更新为 closed；#12361（openai-codex high/xhigh 请求实际 effort 可能为 medium）于 11-23 更新为 closed；#12340（Windows Git Bash 长 RPC 命令截断且可能假成功）仍 open，修复 PR #12369 尚未合并；#12208 JSON 模式失败仍可能 Exit 0，#12318 Team/Enterprise OAuth scope 问题仍 open。关闭 Issue 不代表 npm 1.6.0 已包含修复。
+
+Windows 不使用 WSL、Git Bash/RPC、CI：High／当前版本风险；Test before upgrading / Avoid（未经验证的长脚本自动化）；breaking-risk Medium–High。核对实际 Bash 路径、完整输出标记、退出码和 JSON stopReason，测试命令不要产生业务副作用。自定义模型/高推理设置：Medium–High／潜在结果偏差；验证真实请求和响应的 effort，勿只信 UI。使用其他 Provider、没有这些场景者可忽略专项。不建议为了未发布修复直接安装 main。
+来源：[Pi Releases](https://github.com/earendil-works/pi/releases) · [npm Tags](https://www.npmjs.com/package/@earendil-works/pi-coding-agent?activeTab=versions) · [#12408](https://github.com/earendil-works/pi/issues/12408) · [#12361](https://github.com/earendil-works/pi/issues/12361) · [#12340](https://github.com/earendil-works/pi/issues/12340) · [#12369](https://github.com/earendil-works/pi/pull/12369) · [#12208](https://github.com/earendil-works/pi/issues/12208) · [#12318](https://github.com/earendil-works/pi/issues/12318)
+
+### Cursor
+
+已查产品 Changelog、详细 Release Notes；本次取得的页面未能确认本窗口新增的准确产品版本/发布日期，因此不称“无更新”或某个客户端版本是最新。Low／证据不足；No action（不基于未经证实消息升级）；breaking-risk 未确定。继续从官方客户端 About 和 Release Notes 核对，不把论坛 Bug Report 当正式发行。
+来源：[Cursor Changelog](https://cursor.com/changelog) · [Release Notes](https://prod.cursor.com/docs/release-notes)
+
+### xAI Grok
+
+API 官方说明 grok-build-0.1 于 2026-11-19 停止服务，未列自动替代模型。旧模型仍出现在某些历史文档/迁移指南中，不表示仍可用；尤其早前 grok-code-fast-1 的重定向目标曾是它。High（仍依赖旧 Slug 的用户）／Breaking 风险；Change config；breaking-risk High。查找模型 ID 和 Gateway 映射，选择当前账户可用模型后验证 Tool Calling、上下文及成本。没有旧 Slug 依赖者可忽略。此为历史风险提示，不是今日新发布。Grok Build CLI 的官方 Changelog 未能读取、GitHub Latest 接口返回 404，故不声称当前 CLI 最新版本或无更新。
+来源：[API Release Notes](https://docs.x.ai/developers/release-notes?release=2026-11-f16a2d1a) · [早期迁移指南](https://docs.x.ai/developers/migration/may-15-retirement) · [Grok Build Changelog](https://x.ai/changelog/build)
+
+## 七、Windows PowerShell 5.1/7 检查与行动
+
+先处理 Gemini A2A 认证，再检查 Claude 管理策略、Marketplace、MCP；OpenCode 先固定插件与确认自动化权限；Codex 测试 MCP Lazy Startup 和 Resume；Pi 检查真实 Bash 路径与 JSON 失败。以下为只读命令，不执行安装：
+```powershell
+Get-Command codex,claude,pi,opencode,gemini,grok -All -ErrorAction SilentlyContinue
+Get-Command git,bash -All -ErrorAction SilentlyContinue
+where.exe git
+where.exe bash
+npm view @openai/codex dist-tags --json
+npm view @anthropic-ai/claude-code dist-tags --json
+npm view @earendil-works/pi-coding-agent dist-tags --json
+npm view @opencode/cli dist-tags --json
+npm view opencode-ai dist-tags --json
+npm view @google/gemini-cli dist-tags --json
+claude doctor
+codex --version
+pi --version
+opencode --version
+gemini --version
+```
+建议在隔离项目对比升级前后：实际 Binary、模型 ID、Provider、授权路径、MCP 连接、Hooks、退出码、文件完整性、Token 和成本。只输出凭据是否存在，不分享真实值。没有核实到跨产品 AGENTS.md/CLAUDE.md/Cursor Rules 优先级的新统一标准。
+
+证据及边界：正式发布通过官方 GitHub API 的 Tag/发布时间/预发布字段与可读 npm 页面交叉核对。Cursor、Grok CLI 部分来源受限；没有在真实 Windows、PowerShell、MCP Server、第三方 API Gateway 或生产 CI 上执行回归。风险等级为场景工程判断而非 CVE 分数。11 月 24 日缺失日报不以今日内容冒充历史原稿，本期仅归档 11 月 25 日。</pre></details></main></div></body></html>
