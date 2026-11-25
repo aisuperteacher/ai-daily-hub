@@ -1,0 +1,230 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Dev Tools Daily Brief — 2026-11-26</title><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fcf9ef;color:#1b2534;font:15px/1.78 system-ui,"Microsoft YaHei",sans-serif}header{background:#ffdc4f;border-bottom:5px solid #182136;padding:35px max(18px,calc((100vw - 1160px)/2));background-image:radial-gradient(#e1b960 1px,transparent 1px);background-size:14px 14px}header strong{display:block;font-size:clamp(32px,6vw,60px);line-height:1.1;letter-spacing:-.035em}header small{font-family:monospace;letter-spacing:.12em}.layout{max-width:1220px;margin:auto;padding:22px 18px 60px;display:grid;grid-template-columns:260px minmax(0,1fr);gap:32px}nav{position:sticky;top:12px;max-height:94vh;overflow:auto;align-self:start;background:white;border:2px solid #182136;padding:14px;box-shadow:5px 5px 0 #f1a2b3}nav a{display:block;text-decoration:none;font-size:13px;border-bottom:1px dashed #ccc;padding:5px 0}nav .l3{padding-left:12px;color:#465367}main{min-width:0}main h1{display:none}h2{color:white;background:#1b2b49;padding:12px 15px;box-shadow:5px 5px 0 #f1a2b3;font-size:clamp(20px,3vw,26px);margin:36px 0 20px}h3{font-size:18px;border-left:7px solid #ffdc4f;padding-left:12px;margin:29px 0 12px}p{overflow-wrap:anywhere}a{color:#07558c}.scroll{overflow-x:auto;border:2px solid #182136}table{min-width:680px;width:100%;border-collapse:collapse;font-size:13px}td,th{border:1px solid #9b9b9b;padding:10px;vertical-align:top;text-align:left}th{background:#f1a2b3}tr:nth-child(even){background:#f1ebda}pre{overflow:auto;padding:16px;background:#1b2534;color:#f7f6ed;border:2px solid #182136;font:12px/1.7 Consolas,monospace}code{font:inherit}details{padding:12px;background:white;border:2px solid #182136;margin-top:32px}details pre{background:#faf6e9;color:#182136;white-space:pre-wrap;overflow-wrap:anywhere;border:0}summary{font-weight:bold;cursor:pointer}@media(max-width:850px){.layout{display:block;padding:16px 13px}nav{position:static;max-height:230px;margin-bottom:20px}h3{font-size:16px}}</style></head><body><header><small>OFFICIAL RELEASE TRACKER / 2026-11-26 / BEIJING</small><strong>AI DEV TOOLS<br>DAILY BRIEF</strong><p>完整技术日报 · 版本 / Agent Runtime / 安全与兼容</p></header><div class="layout"><nav><b>目录 / CONTENTS</b><a class="l2" href="#section-2">一、版本核验与今日优先级</a><a class="l2" href="#section-3">二、Pi 1.6.1（正式发布：2026-11-25 13:41:35 UTC，北京时间 21:41:35）</a><a class="l3" href="#section-4">2.1 原生 Windows 的 Git Bash 发现、进程清理与 WSL 升级保护</a><a class="l3" href="#section-5">2.2 GPT-6 推理等级及 GPT-6.2 WebSocket 缓存修复</a><a class="l3" href="#section-6">2.3 Provider 响应事件、重试与模型兼容</a><a class="l3" href="#section-7">2.4 Extensions 明确 Breaking：Notices 设置及决策模型</a><a class="l3" href="#section-8">2.5 RPC、MCP、输出完整性与仍未解决的问题</a><a class="l2" href="#section-9">三、Claude Code 2.1.332（正式发布：2026-11-25 01:32:14 UTC，北京时间 09:32:14）</a><a class="l3" href="#section-10">3.1 MCP Skills（Beta）与 PreSkillShellCommand</a><a class="l3" href="#section-11">3.2 Hooks、MCP 与 Headless 的卡死及错误成功</a><a class="l3" href="#section-12">3.3 云 Provider 模型别名、默认模型、Auto Mode 和区域</a><a class="l3" href="#section-13">3.4 Windows、Worktree、Gateway 与运维兼容</a><a class="l2" href="#section-14">四、Cursor SDK 1.5.0（2026-11-24，补报）</a><a class="l3" href="#section-15">4.1 MCP OAuth、团队权限与本地 Shell 边界</a><a class="l3" href="#section-16">4.2 流式事件、成本、重连与 Hooks</a><a class="l2" href="#section-17">五、其它工具与历史补核</a><a class="l2" href="#section-18">六、Windows PowerShell 只读核验与验收</a></nav><main><h1 id="section-1">AI Dev Tools Daily Brief — 2026-11-26</h1>
+<p>核验基准：北京时间 2026-11-26 07:02。对比 11 月 25 日日报。本期主要新增 Pi 1.6.1、Claude Code 2.1.332；补报 11 月 24 日 Cursor SDK 1.5.0，并补核此前无法读取的 Grok Build 1.0.92。后两项保留原发布日期，不冒充今日新发行。</p>
+<h2 id="section-2">一、版本核验与今日优先级</h2>
+<div class="scroll"><table><tr><th>工具</th><th>正式版本或已确认状态</th><th>行动</th></tr><tr><td>Pi</td><td>1.6.1；11-25 21:41（北京），GitHub Tag、npm latest、Pi Changelog 一致</td><td>High；Test before upgrading</td></tr><tr><td>Claude Code</td><td>2.1.332；11-25 09:32（北京），GitHub Tag 与 npm latest 一致</td><td>High；Test before upgrading</td></tr><tr><td>Cursor SDK</td><td>1.5.0；11-24，官方 SDK Release Notes 与 PyPI 一致；npm 独立读取受限</td><td>High（SDK 集成）；Test before upgrading</td></tr><tr><td>Codex CLI</td><td>0.172.0 Stable；GitHub 与 npm 一致；0.174 Alpha 不计正式版</td><td>No action</td></tr><tr><td>OpenCode</td><td>V2 2.4.1、V1 1.19.6；GitHub 与官方 Changelog；V2 npm 本次读取受限</td><td>No action</td></tr><tr><td>Gemini CLI</td><td>0.71.1 Stable；GitHub 与 npm 一致</td><td>No action（已处理 A2A 安全升级者）</td></tr><tr><td>xAI Grok Build</td><td>1.0.92；11-19 官方 Changelog；未独立确认二进制发行标签</td><td>补报；按需测试</td></tr></table></div>
+<p>今日优先顺序：Pi Windows Shell 与实际推理等级；Claude Code MCP Skills、加载前 Hook 与云模型默认值；Cursor SDK MCP OAuth/权限及本地 Shell 工作目录。High/Medium/Low 和 breaking-risk 是工程影响判断，不是官方 CVE 分数。</p>
+<h2 id="section-3">二、Pi 1.6.1（正式发布：2026-11-25 13:41:35 UTC，北京时间 21:41:35）</h2>
+<p>来源：<a href="https://github.com/earendil-works/pi/releases/tag/v1.6.1" target="_blank" rel="noopener noreferrer">GitHub v1.6.1</a> · <a href="https://pi.dev/changelog" target="_blank" rel="noopener noreferrer">官方 Changelog</a> · <a href="https://registry.npmjs.org/@earendil-works/pi-coding-agent/latest" target="_blank" rel="noopener noreferrer">npm latest</a>。主包及 pi-ai、pi-mcp、pi-tui、pi-codemode、pi-agent-core 依赖版本均为 1.6.1；Node.js 要求 &gt;=22.19.0。</p>
+<h3 id="section-4">2.1 原生 Windows 的 Git Bash 发现、进程清理与 WSL 升级保护</h3>
+<p>变化：修复非默认安装位置的 Git for Windows 被遗漏、误用 System32 的 WSL Bash 启动器的问题（#12408）；优先通过 PATH 中的 git.exe 查询 Git 2.47+ 支持的 git var GIT_SHELL_PATH。Windows 关闭终端、Ctrl+D、/quit 或结束 RPC 时改善 session_shutdown 和子进程清理。通过 WSL 调用 Windows 安装的 pi update 不再使用 Linux npm 重建 Windows 安装，而是明确拒绝。</p>
+<p>技术意义：Shell 选择决定命令执行环境，退出时子进程未清理可能导致后台任务继续写文件；Windows 与 WSL 的安装产物不能混用。</p>
+<p>场景 A：Windows 10/11 + PowerShell、原生 Git Bash、非默认安装目录。High／可靠性利好；Test before upgrading，通过后 Upgrade now；breaking-risk Medium。检查 Git、Bash、Pi 的 PATH，执行无副作用的 Shell 命令，关闭测试会话后确认子进程退出。场景 B：WSL 调 Windows Pi、RPC/CI。High／兼容风险与保护利好；Change config，将两套安装分开；breaking-risk Medium–High。不使用 Windows 或 WSL 互操作者可忽略专项。</p>
+<h3 id="section-5">2.2 GPT-6 推理等级及 GPT-6.2 WebSocket 缓存修复</h3>
+<p>变化：#12361 修复 openai-codex 首次请求无视选定 thinking level 而从 medium 开始的问题；#12367 修复 Codex WebSocket 连接过期后 GPT-6.2 早期 reasoning 因 prefix_mismatch 被丢弃。Gemini 4 Hydrogen/Neon 在 google、google-vertex 上的 xhigh 映射也得到修复。</p>
+<p>技术意义：UI 显示的 effort 不等同于首个实际模型请求的 effort；断线重连也不应无故丢弃推理上下文。</p>
+<p>场景 A：OpenAI Codex Provider、高推理、长上下文。High／正确性利好；Test before upgrading；breaking-risk Medium（实际推理耗时及费用可能改变）。对照首轮请求、重连前后 reasoning drop 通知和 usage，不使用单次任务评价能力。场景 B：Gemini 自定义模型或 thinkingLevelMap。Medium／兼容利好；Test before upgrading；breaking-risk Low–Medium。未用这些模型、推理等级或 Provider 者可忽略。</p>
+<h3 id="section-6">2.3 Provider 响应事件、重试与模型兼容</h3>
+<p>变化：after_provider_response 在 OpenAI、Azure、Anthropic、Google 上扩展到 HTTP 4xx/5xx 与每次重试，可观察 Retry-After；新增多种临时错误重试，包括 Cloudflare 525、Anthropic 流式 api_error、OpenRouter 空响应；不再把 plugin_request_too_large 误当上下文溢出。Google 安全拦截不再当不完整流重试。Mistral 默认模型改为 mistral-medium-latest；部分 Claude 5.5 经 Copilot、Cloudflare/Vercel Gateway 使用 off 时映射到最低支持等级。修复 Bedrock AWS SSO + HTTPS_PROXY 挂起，及若干 Gateway Tool Calling/JSON Schema 兼容问题。Google 模型可通过 models.json 的 compat.supportsStrictMode 为非标准 ID 启用 strict tools。</p>
+<p>技术意义：错误、重试、模型能力与最终成功是不同状态。事件监听器现在可能为同一逻辑请求触发多次，off 也不一定等于零推理。</p>
+<p>场景 A：第三方 API Gateway、自定义 Provider/模型、OpenTelemetry/Extension。High／兼容利好及行为风险；Test before upgrading / Change config；breaking-risk Medium–High。检查事件去重、重试次数、429/525/400、实际模型 ID、usage 与费用。场景 B：自定义 Gemini 模型 ID、MCP Tool Schema、Bedrock/SSO。Medium–High／利好；Test before upgrading；breaking-risk Medium。用无副作用工具验证 strict schema 和代理认证。不使用相关 Provider 或扩展者可忽略专项。</p>
+<h3 id="section-7">2.4 Extensions 明确 Breaking：Notices 设置及决策模型</h3>
+<p>变化：showCacheMissNotices 拆成 notices.cacheMisses、notices.cacheWarming、notices.compactionCosts、notices.reasoningDrops，旧值自动迁移至四项；SettingsManager.getShowCacheMissNotices()/setShowCacheMissNotices() 已删除，改用 getNotices()/setNotice()。ctx.ui.select/confirm/input 新增 blockedKind，可区分权限、问题、登录等终端阻塞状态。Code Mode models.classify() 新增 Copilot gpt-6-luna-decisions 和 Radius 决策模型，结果提供 responseId；Copilot 仅显示账户有权限的决策模型。</p>
+<p>技术意义：终端状态和模型分类逐渐成为可编程 Agent Harness 契约；配置迁移不代表 SDK 方法仍兼容。</p>
+<p>场景 A：自定义 TypeScript Extensions/SDK imports。High／明确 Breaking；Change config + Test before upgrading；breaking-risk High。搜索旧字段与方法，按新版类型定义迁移，重新 typecheck。场景 B：模型路由、分类器、权限对话与多 Agent。Medium／能力利好；Test before adopting；breaking-risk Low–Medium。核对分类模型授权、responseId 与实际账单；分类结果不能替代强制权限校验。普通用户由设置自动迁移，可忽略 SDK 专项。</p>
+<h3 id="section-8">2.5 RPC、MCP、输出完整性与仍未解决的问题</h3>
+<p>变化：长 RPC/Session/llama.cpp 事件解析不再反复扫描未完成行；MCP 回显字符串 ID 导致超时、超大 Streamable HTTP 事件阻塞得到修复；Bash 完整输出临时文件保存失败时保留截断输出并提供 full_output_error/fullOutputError，而非崩溃。超大历史 Session 的栈溢出得到修复。</p>
+<p>场景：Windows RPC、MCP、CI、长上下文。High／可靠性利好；Test before upgrading；breaking-risk Medium。验证大 JSONL 消息、字符串 ID、截断标记、临时目录写入失败及真实业务产物。#12340（Windows 长 RPC 命令截断）和 #12208（JSON Mode 假成功）仍为 open；本版不能宣称已经修复。长命令宜写入脚本文件，并同时校验退出码和 stopReason。#12318（Anthropic Team/Enterprise OAuth）于北京时间 11-26 04:29 关闭，维护者说明无法复现且未获补充，不是确认修复；受影响者应使用官方支持的认证路径。无 RPC/MCP/上述认证场景者可忽略。</p>
+<p>仓库观察：1.6.1 之后 main 已有 Ctrl+Break Windows 优雅退出（#12553）、Copilot effort/tool 改变时保持 prompt cache（#12539）等提交；未确认进入下一正式版，不建议为这些修复直接安装 main。来源：<a href="https://github.com/earendil-works/pi/commits/main/" target="_blank" rel="noopener noreferrer">提交记录</a> · <a href="https://github.com/earendil-works/pi/issues/12340" target="_blank" rel="noopener noreferrer">#12340</a> · <a href="https://github.com/earendil-works/pi/issues/12208" target="_blank" rel="noopener noreferrer">#12208</a> · <a href="https://github.com/earendil-works/pi/issues/12318" target="_blank" rel="noopener noreferrer">#12318</a>。</p>
+<h2 id="section-9">三、Claude Code 2.1.332（正式发布：2026-11-25 01:32:14 UTC，北京时间 09:32:14）</h2>
+<p>来源：<a href="https://github.com/anthropics/claude-code/releases/tag/v2.1.332" target="_blank" rel="noopener noreferrer">GitHub Release</a> · <a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">官方 CHANGELOG</a> · <a href="https://registry.npmjs.org/@anthropic-ai/claude-code/latest" target="_blank" rel="noopener noreferrer">npm latest</a>。npm 元数据要求 Node &gt;=22.0.0；原生安装渠道与 npm 安装应分别验证。</p>
+<h3 id="section-10">3.1 MCP Skills（Beta）与 PreSkillShellCommand</h3>
+<p>变化：MCP Server 可提供 Skills，以 server:skill 命名显示在斜杠菜单中，其他 Skills 名称不变。新增 PreSkillShellCommand Hook，可在 Skill/Command 加载时拒绝其内嵌 Shell 命令。2.1.331 及更早版本的设置文件若包含新事件，会在启动时打开提示对话框。</p>
+<p>技术意义：Skill 的来源从本地文件和插件扩展到 MCP Server，加载过程也可能触发 Shell，因此安全审查必须覆盖加载阶段，而不仅是模型发起 Tool Call 阶段。Beta 功能不等于所有 MCP Server 自动支持，不应把 Hook 当成完整沙箱。</p>
+<p>场景 A：自定义 Skills、Plugins、MCP Server、PowerShell Hooks。High／能力和安全利好；Test before adopting / Change config；breaking-risk Medium–High。隔离项目测试同名 Skill、服务断开、内嵌无副作用命令的 Allow/Deny、实际 Shell 和审计结果。场景 B：混合版本团队及 Headless。High／启动兼容风险；Test before upgrading；breaking-risk High（旧客户端读取新 Hook）。先统一版本再分发配置；不能假设旧版自动忽略字段。无 MCP Skills 和新 Hook 的用户可忽略专项。</p>
+<h3 id="section-11">3.2 Hooks、MCP 与 Headless 的卡死及错误成功</h3>
+<p>变化：修复多通配符权限规则匹配长命令冻结、Hook 无限输出导致内存增长，以及超大日志造成阻塞/上下文溢出（约 50,000 字符以上缩短）；本地 MCP stdout 洪泛不再冻结终端；SSE MCP 断流后端点变化的重连问题改善；MCP Task ID 支持长度至 1,024 字符。登录凭据保存失败时 claude auth login 返回 Exit 1；无人写入的命名管道读取在 20 秒后失败；Headless/Cloud 不再把刚启动的 foreground fork 误报为完成；Code Mode 改善过大工具输入、后台命令与 Resume 丢失回复。</p>
+<p>技术意义：权限检查必须可终止，后台任务启动、完成、失败和取消应是独立状态。</p>
+<p>场景 A：CI、Headless、Agent SDK、多 Agent、远程 MCP。High／正确性利好；Upgrade now after canary；breaking-risk Medium–High。验证登录失败退出码、长任务真实完成、取消、SSE 重连、长 ID 和错误日志截断。场景 B：Windows PowerShell Hooks、旧 Stdio MCP。Medium–High／稳定性利好；Test before upgrading；breaking-risk Medium。验证命令匹配、Ctrl+C、超时及日志内容；不要依赖日志无限保留。无这些集成者可忽略专项。</p>
+<h3 id="section-12">3.3 云 Provider 模型别名、默认模型、Auto Mode 和区域</h3>
+<p>变化：Google Cloud Agent Platform 与 Microsoft Foundry 的 sonnet 别名转为 Sonnet 5.5，Foundry opus 转为 Opus 5.5，Foundry 默认模型也转为 Sonnet 5.5；Bedrock 常规 sonnet 仍为 4.5，Bedrock Mantle sonnet 为 Sonnet 5（不是 5.5）。Google Cloud sonnet/后台请求改读 VERTEX_REGION_CLAUDE_5_5_SONNET；仅设置旧 4_5 变量时改走 CLOUD_ML_REGION 或 us-east5。上述部分云平台的终端/VS Code 在移至 Sonnet 5/5.5 且未设置权限模式时默认启动 Auto Mode；disableAutoMode:&quot;disable&quot; 可关闭。--model default 在模型不可用时可回退旧模型；Foundry 的 Sonnet 4、Opus 4/4.1 被视为退役。SDK/claude -p 中途消息在不获取 Feature Flags 的环境中改变用户消息语义，转发文本可标记 isSynthetic:true。</p>
+<p>技术意义：别名并非固定模型 ID，默认值可能改变能力、区域、费用、审批方式及缓存行为。</p>
+<p>场景 A：Foundry/Vertex/Bedrock、多云 Gateway。High／模型与权限迁移风险；Change config + Test before upgrading；breaking-risk High。核对部署 claude-sonnet-5-5、ANTHROPIC_DEFAULT_SONNET_MODEL、区域、实际 Model ID、可用模型列表及权限模式。场景 B：Agent SDK 转发消息、云端 CI。Medium–High／行为风险；Test before upgrading；breaking-risk Medium–High。核对真实消息角色、模型回退及授权。固定模型且不用相关云 Provider/SDK 的用户可忽略专项。</p>
+<h3 id="section-13">3.4 Windows、Worktree、Gateway 与运维兼容</h3>
+<p>变化：修复 CLAUDE.md 和 Rules 在进入/恢复 .claude/worktrees 时重复发送的多数情况；/permissions 拒绝保存下次启动会被跳过的规则。Windows Marketplace 添加在杀毒软件短暂占用下载文件时重试；VS Code 修复 Windows 11 24H2+、特定 VS Code 1.101/1.102 的 NTFS 会话 fork/记忆/输出样式保存问题。第三方 Provider 崩溃后 Resume 消息丢失、代理 413 长会话恢复、压缩响应错误提示改善。Desktop Code 的 OTel service.name 改为 claude-code-desktop；Self-hosted Runner OAuth Token 前缀允许 oat02-，脱敏器不能只匹配 oat01-。macOS computer-use 成为启用该功能时的保留 Skill 名。</p>
+<p>场景 A：Windows、Git Worktree、VS Code、插件安装。High／可靠性利好；Test before upgrading；breaking-risk Medium。验证 Instructions 不重复但仍加载、规则保存、NTFS/杀毒软件占用。场景 B：企业 Gateway、日志及 Runner。High／运维兼容及凭据保护风险；Change config + Test before upgrading；breaking-risk Medium–High。核对 OTel 标签、代理 413、脱敏整个 Token、认证失败及 Resume。场景 C：macOS 自定义 computer-use Skill。Medium／明确命名冲突；Change config；breaking-risk High（命中名称者）。纯 CLI 无相关集成者可忽略专项。</p>
+<h2 id="section-14">四、Cursor SDK 1.5.0（2026-11-24，补报）</h2>
+<p>官方 <a href="https://prod.cursor.com/docs/release-notes/sdk" target="_blank" rel="noopener noreferrer">SDK Release Notes</a> · <a href="https://prod.cursor.com/docs/release-notes" target="_blank" rel="noopener noreferrer">综合 Release Notes</a> · <a href="https://pypi.org/project/cursor-sdk/" target="_blank" rel="noopener noreferrer">Python PyPI</a>。这是 @cursor/sdk / cursor-sdk，不是 Cursor IDE 版本或另一套 Agent SDK；npm latest 本次未独立读取成功。</p>
+<h3 id="section-15">4.1 MCP OAuth、团队权限与本地 Shell 边界</h3>
+<p>变化：显式传入 mcpServers 的 Server 被团队策略禁止时，本地 Agent 抛出 InlineMcpServersBlockedError，而不是静默跳过；项目/用户配置中被禁止的 Server 仍会跳过。显式 Server 的 OAuth 按 URL 绑定，旧登录被清除、需要重新认证；API Key 启动的本地 Agent 可正确访问获授权的 Cursor-hosted MCP。修复 Shell 命令错误使用宿主进程启动目录，改用 Agent 工作目录；凭据文件采用仅当前用户可读权限及原子替换。</p>
+<p>场景 A：企业 MCP、OAuth、自研 SDK、本地 Agent/CI。High／安全利好与兼容风险；Test before upgrading + Change config；breaking-risk High。捕获新错误、重新登录、检查同名不同 URL Server 不共享 OAuth、校验实际 CWD 与写入边界。场景 B：普通 IDE/不调用 SDK。Low／中性；No action；可忽略专项。权限和身份来源须独立于模型提示词验证。</p>
+<h3 id="section-16">4.2 流式事件、成本、重连与 Hooks</h3>
+<p>变化：新增 shell-tool-call-delta（实时 stdout/stderr），本地 onDelta 对每次模型调用提供对应 step-started/step-completed；取消或失败时 usage 保留已完成模型调用统计（可能只是下界）。新增 local.onConnectionStateChange、local.sandboxOptions.binaryPath / CURSOR_SDK_SANDBOX_BINARY；云 Agent 不接受本地重连选项。Python 支持 CURSOR_SDK_USE_HTTP1_FOR_AGENT=true，解决部分代理 HTTP/2 流兼容。修复 sessionStart additional_context 未进入首轮，包括 Claude Code 风格 SessionStart；本地模型列表超时和 429 容错、5 分钟缓存刷新、retryAfterMs；检查点保存及跨工作区隔离改善。自定义 LocalAgentStore 可禁用事件持久化，新增 Agent.disposeLocalStores()，对应存储扩展为 TypeScript 专属。</p>
+<p>技术意义：SDK 的事件契约、权限助手、上下文注入和成本统计都涉及实际 Agent Runtime。失败任务也可能产生费用；日志事件可能包含敏感命令输出。</p>
+<p>场景 A：TypeScript/Python SDK、CI、流式 UI。High／可观测性利好及事件兼容风险；Test before upgrading；breaking-risk High（穷举 switch 处理事件者）。新增事件分支，验证取消 usage、stdout/stderr 脱敏、重连与超时。场景 B：Windows 代理、自定义 Sandbox、本地 Hook/长历史。High／可靠性利好及配置风险；Test before adopting；breaking-risk Medium。只使用可信 helper，校验首次模型上下文、真实工作目录和检查点；只有确认 HTTP/2 代理故障才试 HTTP/1.1。云端或普通 IDE 用户可忽略对应本地 SDK 配置。</p>
+<h2 id="section-17">五、其它工具与历史补核</h2>
+<p>Codex CLI：GitHub Releases 正式版 0.172.0 与 <a href="https://www.npmjs.com/package/@openai/codex" target="_blank" rel="noopener noreferrer">npm 主包</a> 一致。0.174.0-alpha.6 等是预发布，无新 Stable 要重复报告；No action（Stable 用户）。<a href="https://github.com/openai/codex/releases" target="_blank" rel="noopener noreferrer">GitHub Releases</a>。</p>
+<p>OpenCode：官方 <a href="https://opencode.ai/changelog" target="_blank" rel="noopener noreferrer">Changelog</a> 和 <a href="https://github.com/anomalyco/opencode/releases" target="_blank" rel="noopener noreferrer">GitHub Releases</a> 最新 V2 正式记录为 2.4.1，V1 1.19.6。V2 npm 本次受限，不能宣称 Registry latest 已核验；昨日已详报自动化、插件自动更新与 SDK 迁移。No action（已回归者）。</p>
+<p>Gemini CLI：0.71.1 Stable，<a href="https://github.com/google-gemini/gemini-cli/releases" target="_blank" rel="noopener noreferrer">GitHub</a> 与 <a href="https://www.npmjs.com/package/@google/gemini-cli" target="_blank" rel="noopener noreferrer">npm</a> 一致；0.72 Preview 不计 Stable。昨日已报告 A2A Bearer/Host/Origin 强制校验；已升级并验证者 No action。官方 npm README 同时明确该工具主要用于企业 Code Assist，个人免费及 Google AI 计划已转 Antigravity CLI（2026-06-18），这是旧迁移提示，不是今日变化。</p>
+<p>Cursor 产品：官方 <a href="https://cursor.com/changelog" target="_blank" rel="noopener noreferrer">产品 Changelog</a> 最新公开大项仍为 11-06 Voice Chat；详细 Release Notes 提供更多版本（如 11-20 IDE/Agents Window 3.31），不能仅凭营销 Changelog 判断 SDK/客户端无更新。此期新增补报的是 SDK 1.5.0，不将其当作 IDE 最新版本。</p>
+<p>Grok Build 1.0.92（2026-11-19，历史补核）：官方 <a href="https://x.ai/changelog/build" target="_blank" rel="noopener noreferrer">Build Changelog</a> 本次成功读取，页面标示 1.0.92。Headless streaming/JSON 输出可包含 MCP Tool 返回的图像；grok inspect 显示 Headless 实际会加载的 Hooks，并注明需要目录信任者。1.0.91 同日新增 --system-prompt-file，修复 JSON 错误保留已有回复，MCP 过大结果截断并落盘。技术意义：JSON 消费者要支持多媒体及部分失败结果，不能把 inspect 的 Hook 列表当作实际授权。CI/Headless/MCP/自定义 Hooks：Medium–High／利好及兼容风险；Test before upgrading；breaking-risk Medium。检查 JSON Schema、输出大小、目录信任、退出码及临时文件权限。普通交互用户可忽略专项。API 官方 <a href="https://docs.x.ai/developers/release-notes" target="_blank" rel="noopener noreferrer">Release Notes</a> 最近明确日期仍是 11-19 的 grok-build-0.1 退役，昨日已报。CLI 没有独立二进制版本信号，本次不宣称完成双源核验。</p>
+<h2 id="section-18">六、Windows PowerShell 只读核验与验收</h2>
+<p>以下命令只查询版本、路径和配置元数据，不安装软件；npm 查询需要网络。git var GIT_SHELL_PATH 需要 Git 2.47+。</p>
+<pre><code>Get-Command pi,claude,codex,opencode,gemini,grok -All -ErrorAction SilentlyContinue
+Get-Command git,bash -All -ErrorAction SilentlyContinue
+where.exe git
+where.exe bash
+git --version
+git var GIT_SHELL_PATH
+node --version
+pi --version
+claude --version
+npm view @earendil-works/pi-coding-agent dist-tags --json
+npm view @anthropic-ai/claude-code dist-tags --json
+npm view @openai/codex dist-tags --json
+npm view @opencode/cli dist-tags --json
+npm view @google/gemini-cli dist-tags --json
+npm view @cursor/sdk dist-tags --json
+python -m pip index versions cursor-sdk</code></pre>
+<p>建议先在可销毁项目验证 Pi 的 Shell 路径和子进程清理、首轮 effort、扩展 typecheck；随后检查 Claude 的 Skill 加载前 Hook、新旧客户端兼容、实际云模型及审批模式；最后验证 Cursor SDK 的 MCP OAuth、事件解析、工作目录和 usage。不要把退出码、模型显示名称、工具可见或目录信任当作完整执行成功。</p>
+<p>核验边界：本次使用公开 GitHub Release/Tag、近期仓库活动、官方文档及可读取的包元数据；OpenCode V2 和 Cursor TypeScript SDK 的 npm 直读受限，Grok Build 未取得独立发行标签。本次没有实际安装或执行 Windows/PowerShell、MCP、第三方网关及生产 CI 回归；未发现跨产品 AGENTS.md、CLAUDE.md、Cursor Rules 优先级统一变更的可靠证据。</p><details><summary>完整原始文字（可复制核对）</summary><pre id="original-text"># AI Dev Tools Daily Brief — 2026-11-26
+
+核验基准：北京时间 2026-11-26 07:02。对比 11 月 25 日日报。本期主要新增 Pi 1.6.1、Claude Code 2.1.332；补报 11 月 24 日 Cursor SDK 1.5.0，并补核此前无法读取的 Grok Build 1.0.92。后两项保留原发布日期，不冒充今日新发行。
+
+## 一、版本核验与今日优先级
+
+| 工具 | 正式版本或已确认状态 | 行动 |
+|---|---|---|
+| Pi | 1.6.1；11-25 21:41（北京），GitHub Tag、npm latest、Pi Changelog 一致 | High；Test before upgrading |
+| Claude Code | 2.1.332；11-25 09:32（北京），GitHub Tag 与 npm latest 一致 | High；Test before upgrading |
+| Cursor SDK | 1.5.0；11-24，官方 SDK Release Notes 与 PyPI 一致；npm 独立读取受限 | High（SDK 集成）；Test before upgrading |
+| Codex CLI | 0.172.0 Stable；GitHub 与 npm 一致；0.174 Alpha 不计正式版 | No action |
+| OpenCode | V2 2.4.1、V1 1.19.6；GitHub 与官方 Changelog；V2 npm 本次读取受限 | No action |
+| Gemini CLI | 0.71.1 Stable；GitHub 与 npm 一致 | No action（已处理 A2A 安全升级者） |
+| xAI Grok Build | 1.0.92；11-19 官方 Changelog；未独立确认二进制发行标签 | 补报；按需测试 |
+
+今日优先顺序：Pi Windows Shell 与实际推理等级；Claude Code MCP Skills、加载前 Hook 与云模型默认值；Cursor SDK MCP OAuth/权限及本地 Shell 工作目录。High/Medium/Low 和 breaking-risk 是工程影响判断，不是官方 CVE 分数。
+
+## 二、Pi 1.6.1（正式发布：2026-11-25 13:41:35 UTC，北京时间 21:41:35）
+
+来源：[GitHub v1.6.1](https://github.com/earendil-works/pi/releases/tag/v1.6.1) · [官方 Changelog](https://pi.dev/changelog) · [npm latest](https://registry.npmjs.org/@earendil-works/pi-coding-agent/latest)。主包及 pi-ai、pi-mcp、pi-tui、pi-codemode、pi-agent-core 依赖版本均为 1.6.1；Node.js 要求 &gt;=22.19.0。
+
+### 2.1 原生 Windows 的 Git Bash 发现、进程清理与 WSL 升级保护
+
+变化：修复非默认安装位置的 Git for Windows 被遗漏、误用 System32 的 WSL Bash 启动器的问题（#12408）；优先通过 PATH 中的 git.exe 查询 Git 2.47+ 支持的 git var GIT_SHELL_PATH。Windows 关闭终端、Ctrl+D、/quit 或结束 RPC 时改善 session_shutdown 和子进程清理。通过 WSL 调用 Windows 安装的 pi update 不再使用 Linux npm 重建 Windows 安装，而是明确拒绝。
+
+技术意义：Shell 选择决定命令执行环境，退出时子进程未清理可能导致后台任务继续写文件；Windows 与 WSL 的安装产物不能混用。
+
+场景 A：Windows 10/11 + PowerShell、原生 Git Bash、非默认安装目录。High／可靠性利好；Test before upgrading，通过后 Upgrade now；breaking-risk Medium。检查 Git、Bash、Pi 的 PATH，执行无副作用的 Shell 命令，关闭测试会话后确认子进程退出。场景 B：WSL 调 Windows Pi、RPC/CI。High／兼容风险与保护利好；Change config，将两套安装分开；breaking-risk Medium–High。不使用 Windows 或 WSL 互操作者可忽略专项。
+
+### 2.2 GPT-6 推理等级及 GPT-6.2 WebSocket 缓存修复
+
+变化：#12361 修复 openai-codex 首次请求无视选定 thinking level 而从 medium 开始的问题；#12367 修复 Codex WebSocket 连接过期后 GPT-6.2 早期 reasoning 因 prefix_mismatch 被丢弃。Gemini 4 Hydrogen/Neon 在 google、google-vertex 上的 xhigh 映射也得到修复。
+
+技术意义：UI 显示的 effort 不等同于首个实际模型请求的 effort；断线重连也不应无故丢弃推理上下文。
+
+场景 A：OpenAI Codex Provider、高推理、长上下文。High／正确性利好；Test before upgrading；breaking-risk Medium（实际推理耗时及费用可能改变）。对照首轮请求、重连前后 reasoning drop 通知和 usage，不使用单次任务评价能力。场景 B：Gemini 自定义模型或 thinkingLevelMap。Medium／兼容利好；Test before upgrading；breaking-risk Low–Medium。未用这些模型、推理等级或 Provider 者可忽略。
+
+### 2.3 Provider 响应事件、重试与模型兼容
+
+变化：after_provider_response 在 OpenAI、Azure、Anthropic、Google 上扩展到 HTTP 4xx/5xx 与每次重试，可观察 Retry-After；新增多种临时错误重试，包括 Cloudflare 525、Anthropic 流式 api_error、OpenRouter 空响应；不再把 plugin_request_too_large 误当上下文溢出。Google 安全拦截不再当不完整流重试。Mistral 默认模型改为 mistral-medium-latest；部分 Claude 5.5 经 Copilot、Cloudflare/Vercel Gateway 使用 off 时映射到最低支持等级。修复 Bedrock AWS SSO + HTTPS_PROXY 挂起，及若干 Gateway Tool Calling/JSON Schema 兼容问题。Google 模型可通过 models.json 的 compat.supportsStrictMode 为非标准 ID 启用 strict tools。
+
+技术意义：错误、重试、模型能力与最终成功是不同状态。事件监听器现在可能为同一逻辑请求触发多次，off 也不一定等于零推理。
+
+场景 A：第三方 API Gateway、自定义 Provider/模型、OpenTelemetry/Extension。High／兼容利好及行为风险；Test before upgrading / Change config；breaking-risk Medium–High。检查事件去重、重试次数、429/525/400、实际模型 ID、usage 与费用。场景 B：自定义 Gemini 模型 ID、MCP Tool Schema、Bedrock/SSO。Medium–High／利好；Test before upgrading；breaking-risk Medium。用无副作用工具验证 strict schema 和代理认证。不使用相关 Provider 或扩展者可忽略专项。
+
+### 2.4 Extensions 明确 Breaking：Notices 设置及决策模型
+
+变化：showCacheMissNotices 拆成 notices.cacheMisses、notices.cacheWarming、notices.compactionCosts、notices.reasoningDrops，旧值自动迁移至四项；SettingsManager.getShowCacheMissNotices()/setShowCacheMissNotices() 已删除，改用 getNotices()/setNotice()。ctx.ui.select/confirm/input 新增 blockedKind，可区分权限、问题、登录等终端阻塞状态。Code Mode models.classify() 新增 Copilot gpt-6-luna-decisions 和 Radius 决策模型，结果提供 responseId；Copilot 仅显示账户有权限的决策模型。
+
+技术意义：终端状态和模型分类逐渐成为可编程 Agent Harness 契约；配置迁移不代表 SDK 方法仍兼容。
+
+场景 A：自定义 TypeScript Extensions/SDK imports。High／明确 Breaking；Change config + Test before upgrading；breaking-risk High。搜索旧字段与方法，按新版类型定义迁移，重新 typecheck。场景 B：模型路由、分类器、权限对话与多 Agent。Medium／能力利好；Test before adopting；breaking-risk Low–Medium。核对分类模型授权、responseId 与实际账单；分类结果不能替代强制权限校验。普通用户由设置自动迁移，可忽略 SDK 专项。
+
+### 2.5 RPC、MCP、输出完整性与仍未解决的问题
+
+变化：长 RPC/Session/llama.cpp 事件解析不再反复扫描未完成行；MCP 回显字符串 ID 导致超时、超大 Streamable HTTP 事件阻塞得到修复；Bash 完整输出临时文件保存失败时保留截断输出并提供 full_output_error/fullOutputError，而非崩溃。超大历史 Session 的栈溢出得到修复。
+
+场景：Windows RPC、MCP、CI、长上下文。High／可靠性利好；Test before upgrading；breaking-risk Medium。验证大 JSONL 消息、字符串 ID、截断标记、临时目录写入失败及真实业务产物。#12340（Windows 长 RPC 命令截断）和 #12208（JSON Mode 假成功）仍为 open；本版不能宣称已经修复。长命令宜写入脚本文件，并同时校验退出码和 stopReason。#12318（Anthropic Team/Enterprise OAuth）于北京时间 11-26 04:29 关闭，维护者说明无法复现且未获补充，不是确认修复；受影响者应使用官方支持的认证路径。无 RPC/MCP/上述认证场景者可忽略。
+
+仓库观察：1.6.1 之后 main 已有 Ctrl+Break Windows 优雅退出（#12553）、Copilot effort/tool 改变时保持 prompt cache（#12539）等提交；未确认进入下一正式版，不建议为这些修复直接安装 main。来源：[提交记录](https://github.com/earendil-works/pi/commits/main/) · [#12340](https://github.com/earendil-works/pi/issues/12340) · [#12208](https://github.com/earendil-works/pi/issues/12208) · [#12318](https://github.com/earendil-works/pi/issues/12318)。
+
+## 三、Claude Code 2.1.332（正式发布：2026-11-25 01:32:14 UTC，北京时间 09:32:14）
+
+来源：[GitHub Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.332) · [官方 CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md) · [npm latest](https://registry.npmjs.org/@anthropic-ai/claude-code/latest)。npm 元数据要求 Node &gt;=22.0.0；原生安装渠道与 npm 安装应分别验证。
+
+### 3.1 MCP Skills（Beta）与 PreSkillShellCommand
+
+变化：MCP Server 可提供 Skills，以 server:skill 命名显示在斜杠菜单中，其他 Skills 名称不变。新增 PreSkillShellCommand Hook，可在 Skill/Command 加载时拒绝其内嵌 Shell 命令。2.1.331 及更早版本的设置文件若包含新事件，会在启动时打开提示对话框。
+
+技术意义：Skill 的来源从本地文件和插件扩展到 MCP Server，加载过程也可能触发 Shell，因此安全审查必须覆盖加载阶段，而不仅是模型发起 Tool Call 阶段。Beta 功能不等于所有 MCP Server 自动支持，不应把 Hook 当成完整沙箱。
+
+场景 A：自定义 Skills、Plugins、MCP Server、PowerShell Hooks。High／能力和安全利好；Test before adopting / Change config；breaking-risk Medium–High。隔离项目测试同名 Skill、服务断开、内嵌无副作用命令的 Allow/Deny、实际 Shell 和审计结果。场景 B：混合版本团队及 Headless。High／启动兼容风险；Test before upgrading；breaking-risk High（旧客户端读取新 Hook）。先统一版本再分发配置；不能假设旧版自动忽略字段。无 MCP Skills 和新 Hook 的用户可忽略专项。
+
+### 3.2 Hooks、MCP 与 Headless 的卡死及错误成功
+
+变化：修复多通配符权限规则匹配长命令冻结、Hook 无限输出导致内存增长，以及超大日志造成阻塞/上下文溢出（约 50,000 字符以上缩短）；本地 MCP stdout 洪泛不再冻结终端；SSE MCP 断流后端点变化的重连问题改善；MCP Task ID 支持长度至 1,024 字符。登录凭据保存失败时 claude auth login 返回 Exit 1；无人写入的命名管道读取在 20 秒后失败；Headless/Cloud 不再把刚启动的 foreground fork 误报为完成；Code Mode 改善过大工具输入、后台命令与 Resume 丢失回复。
+
+技术意义：权限检查必须可终止，后台任务启动、完成、失败和取消应是独立状态。
+
+场景 A：CI、Headless、Agent SDK、多 Agent、远程 MCP。High／正确性利好；Upgrade now after canary；breaking-risk Medium–High。验证登录失败退出码、长任务真实完成、取消、SSE 重连、长 ID 和错误日志截断。场景 B：Windows PowerShell Hooks、旧 Stdio MCP。Medium–High／稳定性利好；Test before upgrading；breaking-risk Medium。验证命令匹配、Ctrl+C、超时及日志内容；不要依赖日志无限保留。无这些集成者可忽略专项。
+
+### 3.3 云 Provider 模型别名、默认模型、Auto Mode 和区域
+
+变化：Google Cloud Agent Platform 与 Microsoft Foundry 的 sonnet 别名转为 Sonnet 5.5，Foundry opus 转为 Opus 5.5，Foundry 默认模型也转为 Sonnet 5.5；Bedrock 常规 sonnet 仍为 4.5，Bedrock Mantle sonnet 为 Sonnet 5（不是 5.5）。Google Cloud sonnet/后台请求改读 VERTEX_REGION_CLAUDE_5_5_SONNET；仅设置旧 4_5 变量时改走 CLOUD_ML_REGION 或 us-east5。上述部分云平台的终端/VS Code 在移至 Sonnet 5/5.5 且未设置权限模式时默认启动 Auto Mode；disableAutoMode:&quot;disable&quot; 可关闭。--model default 在模型不可用时可回退旧模型；Foundry 的 Sonnet 4、Opus 4/4.1 被视为退役。SDK/claude -p 中途消息在不获取 Feature Flags 的环境中改变用户消息语义，转发文本可标记 isSynthetic:true。
+
+技术意义：别名并非固定模型 ID，默认值可能改变能力、区域、费用、审批方式及缓存行为。
+
+场景 A：Foundry/Vertex/Bedrock、多云 Gateway。High／模型与权限迁移风险；Change config + Test before upgrading；breaking-risk High。核对部署 claude-sonnet-5-5、ANTHROPIC_DEFAULT_SONNET_MODEL、区域、实际 Model ID、可用模型列表及权限模式。场景 B：Agent SDK 转发消息、云端 CI。Medium–High／行为风险；Test before upgrading；breaking-risk Medium–High。核对真实消息角色、模型回退及授权。固定模型且不用相关云 Provider/SDK 的用户可忽略专项。
+
+### 3.4 Windows、Worktree、Gateway 与运维兼容
+
+变化：修复 CLAUDE.md 和 Rules 在进入/恢复 .claude/worktrees 时重复发送的多数情况；/permissions 拒绝保存下次启动会被跳过的规则。Windows Marketplace 添加在杀毒软件短暂占用下载文件时重试；VS Code 修复 Windows 11 24H2+、特定 VS Code 1.101/1.102 的 NTFS 会话 fork/记忆/输出样式保存问题。第三方 Provider 崩溃后 Resume 消息丢失、代理 413 长会话恢复、压缩响应错误提示改善。Desktop Code 的 OTel service.name 改为 claude-code-desktop；Self-hosted Runner OAuth Token 前缀允许 oat02-，脱敏器不能只匹配 oat01-。macOS computer-use 成为启用该功能时的保留 Skill 名。
+
+场景 A：Windows、Git Worktree、VS Code、插件安装。High／可靠性利好；Test before upgrading；breaking-risk Medium。验证 Instructions 不重复但仍加载、规则保存、NTFS/杀毒软件占用。场景 B：企业 Gateway、日志及 Runner。High／运维兼容及凭据保护风险；Change config + Test before upgrading；breaking-risk Medium–High。核对 OTel 标签、代理 413、脱敏整个 Token、认证失败及 Resume。场景 C：macOS 自定义 computer-use Skill。Medium／明确命名冲突；Change config；breaking-risk High（命中名称者）。纯 CLI 无相关集成者可忽略专项。
+
+## 四、Cursor SDK 1.5.0（2026-11-24，补报）
+
+官方 [SDK Release Notes](https://prod.cursor.com/docs/release-notes/sdk) · [综合 Release Notes](https://prod.cursor.com/docs/release-notes) · [Python PyPI](https://pypi.org/project/cursor-sdk/)。这是 @cursor/sdk / cursor-sdk，不是 Cursor IDE 版本或另一套 Agent SDK；npm latest 本次未独立读取成功。
+
+### 4.1 MCP OAuth、团队权限与本地 Shell 边界
+
+变化：显式传入 mcpServers 的 Server 被团队策略禁止时，本地 Agent 抛出 InlineMcpServersBlockedError，而不是静默跳过；项目/用户配置中被禁止的 Server 仍会跳过。显式 Server 的 OAuth 按 URL 绑定，旧登录被清除、需要重新认证；API Key 启动的本地 Agent 可正确访问获授权的 Cursor-hosted MCP。修复 Shell 命令错误使用宿主进程启动目录，改用 Agent 工作目录；凭据文件采用仅当前用户可读权限及原子替换。
+
+场景 A：企业 MCP、OAuth、自研 SDK、本地 Agent/CI。High／安全利好与兼容风险；Test before upgrading + Change config；breaking-risk High。捕获新错误、重新登录、检查同名不同 URL Server 不共享 OAuth、校验实际 CWD 与写入边界。场景 B：普通 IDE/不调用 SDK。Low／中性；No action；可忽略专项。权限和身份来源须独立于模型提示词验证。
+
+### 4.2 流式事件、成本、重连与 Hooks
+
+变化：新增 shell-tool-call-delta（实时 stdout/stderr），本地 onDelta 对每次模型调用提供对应 step-started/step-completed；取消或失败时 usage 保留已完成模型调用统计（可能只是下界）。新增 local.onConnectionStateChange、local.sandboxOptions.binaryPath / CURSOR_SDK_SANDBOX_BINARY；云 Agent 不接受本地重连选项。Python 支持 CURSOR_SDK_USE_HTTP1_FOR_AGENT=true，解决部分代理 HTTP/2 流兼容。修复 sessionStart additional_context 未进入首轮，包括 Claude Code 风格 SessionStart；本地模型列表超时和 429 容错、5 分钟缓存刷新、retryAfterMs；检查点保存及跨工作区隔离改善。自定义 LocalAgentStore 可禁用事件持久化，新增 Agent.disposeLocalStores()，对应存储扩展为 TypeScript 专属。
+
+技术意义：SDK 的事件契约、权限助手、上下文注入和成本统计都涉及实际 Agent Runtime。失败任务也可能产生费用；日志事件可能包含敏感命令输出。
+
+场景 A：TypeScript/Python SDK、CI、流式 UI。High／可观测性利好及事件兼容风险；Test before upgrading；breaking-risk High（穷举 switch 处理事件者）。新增事件分支，验证取消 usage、stdout/stderr 脱敏、重连与超时。场景 B：Windows 代理、自定义 Sandbox、本地 Hook/长历史。High／可靠性利好及配置风险；Test before adopting；breaking-risk Medium。只使用可信 helper，校验首次模型上下文、真实工作目录和检查点；只有确认 HTTP/2 代理故障才试 HTTP/1.1。云端或普通 IDE 用户可忽略对应本地 SDK 配置。
+
+## 五、其它工具与历史补核
+
+Codex CLI：GitHub Releases 正式版 0.172.0 与 [npm 主包](https://www.npmjs.com/package/@openai/codex) 一致。0.174.0-alpha.6 等是预发布，无新 Stable 要重复报告；No action（Stable 用户）。[GitHub Releases](https://github.com/openai/codex/releases)。
+
+OpenCode：官方 [Changelog](https://opencode.ai/changelog) 和 [GitHub Releases](https://github.com/anomalyco/opencode/releases) 最新 V2 正式记录为 2.4.1，V1 1.19.6。V2 npm 本次受限，不能宣称 Registry latest 已核验；昨日已详报自动化、插件自动更新与 SDK 迁移。No action（已回归者）。
+
+Gemini CLI：0.71.1 Stable，[GitHub](https://github.com/google-gemini/gemini-cli/releases) 与 [npm](https://www.npmjs.com/package/@google/gemini-cli) 一致；0.72 Preview 不计 Stable。昨日已报告 A2A Bearer/Host/Origin 强制校验；已升级并验证者 No action。官方 npm README 同时明确该工具主要用于企业 Code Assist，个人免费及 Google AI 计划已转 Antigravity CLI（2026-06-18），这是旧迁移提示，不是今日变化。
+
+Cursor 产品：官方 [产品 Changelog](https://cursor.com/changelog) 最新公开大项仍为 11-06 Voice Chat；详细 Release Notes 提供更多版本（如 11-20 IDE/Agents Window 3.31），不能仅凭营销 Changelog 判断 SDK/客户端无更新。此期新增补报的是 SDK 1.5.0，不将其当作 IDE 最新版本。
+
+Grok Build 1.0.92（2026-11-19，历史补核）：官方 [Build Changelog](https://x.ai/changelog/build) 本次成功读取，页面标示 1.0.92。Headless streaming/JSON 输出可包含 MCP Tool 返回的图像；grok inspect 显示 Headless 实际会加载的 Hooks，并注明需要目录信任者。1.0.91 同日新增 --system-prompt-file，修复 JSON 错误保留已有回复，MCP 过大结果截断并落盘。技术意义：JSON 消费者要支持多媒体及部分失败结果，不能把 inspect 的 Hook 列表当作实际授权。CI/Headless/MCP/自定义 Hooks：Medium–High／利好及兼容风险；Test before upgrading；breaking-risk Medium。检查 JSON Schema、输出大小、目录信任、退出码及临时文件权限。普通交互用户可忽略专项。API 官方 [Release Notes](https://docs.x.ai/developers/release-notes) 最近明确日期仍是 11-19 的 grok-build-0.1 退役，昨日已报。CLI 没有独立二进制版本信号，本次不宣称完成双源核验。
+
+## 六、Windows PowerShell 只读核验与验收
+
+以下命令只查询版本、路径和配置元数据，不安装软件；npm 查询需要网络。git var GIT_SHELL_PATH 需要 Git 2.47+。
+
+~~~powershell
+Get-Command pi,claude,codex,opencode,gemini,grok -All -ErrorAction SilentlyContinue
+Get-Command git,bash -All -ErrorAction SilentlyContinue
+where.exe git
+where.exe bash
+git --version
+git var GIT_SHELL_PATH
+node --version
+pi --version
+claude --version
+npm view @earendil-works/pi-coding-agent dist-tags --json
+npm view @anthropic-ai/claude-code dist-tags --json
+npm view @openai/codex dist-tags --json
+npm view @opencode/cli dist-tags --json
+npm view @google/gemini-cli dist-tags --json
+npm view @cursor/sdk dist-tags --json
+python -m pip index versions cursor-sdk
+~~~
+
+建议先在可销毁项目验证 Pi 的 Shell 路径和子进程清理、首轮 effort、扩展 typecheck；随后检查 Claude 的 Skill 加载前 Hook、新旧客户端兼容、实际云模型及审批模式；最后验证 Cursor SDK 的 MCP OAuth、事件解析、工作目录和 usage。不要把退出码、模型显示名称、工具可见或目录信任当作完整执行成功。
+
+核验边界：本次使用公开 GitHub Release/Tag、近期仓库活动、官方文档及可读取的包元数据；OpenCode V2 和 Cursor TypeScript SDK 的 npm 直读受限，Grok Build 未取得独立发行标签。本次没有实际安装或执行 Windows/PowerShell、MCP、第三方网关及生产 CI 回归；未发现跨产品 AGENTS.md、CLAUDE.md、Cursor Rules 优先级统一变更的可靠证据。</pre></details></main></div></body></html>
