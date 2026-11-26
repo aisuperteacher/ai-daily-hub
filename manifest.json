@@ -1,11 +1,11 @@
 {
   "version": 3,
-  "updated_at": "2026-11-26",
+  "updated_at": "2026-11-27",
   "scope": "public_briefings_only",
   "readme": "本仓库仅展示已经提交的完整 HTML 报告；页面内容由 categories[].reports 索引。",
   "counts": {
     "topic_count": 10,
-    "verified_full_reports": 127
+    "verified_full_reports": 128
   },
   "categories": [
     {
@@ -430,6 +430,13 @@
       "source_status": "partial_archive",
       "reports": [
         {
+          "date": "2026-11-27",
+          "title": "GitHub 热榜日报｜2026-11-27（8 个仓库完整分析）",
+          "label": "2026-11-27 · NiFi / T3 Code / DBeaver",
+          "path": "reports/github-trending/2026-11-27.html",
+          "kind": "full"
+        },
+        {
           "date": "2026-11-26",
           "title": "GitHub 热榜日报｜2026-11-26（12 个仓库完整分析）",
           "label": "2026-11-26 · Agent Substrate / Kestra / Multica",
@@ -563,7 +570,7 @@
           "kind": "full"
         }
       ],
-      "last_run": "2026-11-26"
+      "last_run": "2026-11-27"
     },
     {
       "id": "ai-video",
