@@ -1,11 +1,11 @@
 {
   "version": 3,
-  "updated_at": "2026-11-27",
+  "updated_at": "2026-11-28",
   "scope": "public_briefings_only",
   "readme": "本仓库仅展示已经提交的完整 HTML 报告；页面内容由 categories[].reports 索引。",
   "counts": {
     "topic_count": 10,
-    "verified_full_reports": 129
+    "verified_full_reports": 130
   },
   "categories": [
     {
@@ -430,6 +430,13 @@
       "source_status": "partial_archive",
       "reports": [
         {
+          "date": "2026-11-28",
+          "title": "GitHub 热榜日报｜2026-11-28（8 个仓库完整分析）",
+          "label": "2026-11-28 · LoopForge / Arcane / StarRocks",
+          "path": "reports/github-trending/2026-11-28.html",
+          "kind": "full"
+        },
+        {
           "date": "2026-11-27",
           "title": "GitHub 热榜日报｜2026-11-27（8 个仓库完整分析）",
           "label": "2026-11-27 · NiFi / T3 Code / DBeaver",
@@ -570,7 +577,7 @@
           "kind": "full"
         }
       ],
-      "last_run": "2026-11-27"
+      "last_run": "2026-11-28"
     },
     {
       "id": "ai-video",
